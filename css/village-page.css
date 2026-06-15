@@ -1,0 +1,264 @@
+/* Village page editorial components — layout only; colours come from page markup */
+
+/* Quick facts panel */
+.village-facts__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(139, 131, 120, 0.15);
+}
+
+.village-facts__row:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Portrait experience cards */
+.village-experience__image {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.village-experience__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.village-experience:hover .village-experience__image img {
+    transform: scale(1.06);
+}
+
+.village-experience__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(42, 39, 35, 0.08);
+    transition: background 0.4s ease;
+}
+
+.village-experience:hover .village-experience__image::after {
+    background: transparent;
+}
+
+/* Itinerary timeline */
+.village-itinerary {
+    position: relative;
+}
+
+.village-itinerary__line {
+    position: absolute;
+    left: 7px;
+    top: 0.5rem;
+    width: 1px;
+    height: calc(100% - 1.5rem);
+    background: rgba(139, 131, 120, 0.25);
+}
+
+.village-itinerary__step {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 2.5rem;
+}
+
+.village-itinerary__step:last-child {
+    padding-bottom: 0;
+}
+
+.village-itinerary__dot {
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    width: 15px;
+    height: 15px;
+    border-radius: 9999px;
+    background: #f5f1ea;
+    border: 1px solid #8b8378;
+}
+
+.village-itinerary__step:last-child .village-itinerary__dot {
+    background: #8b8378;
+}
+
+/* FAQ accordion */
+.village-faq details {
+    border: 1px solid rgba(139, 131, 120, 0.2);
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.village-faq details:hover {
+    background: #eae5dc;
+}
+
+.village-faq details + details {
+    margin-top: 0.5rem;
+}
+
+.village-faq summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.village-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.village-faq details[open] summary .material-symbols-outlined {
+    transform: rotate(180deg);
+}
+
+.village-faq summary .material-symbols-outlined {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Nearby village tiles */
+.village-nearby {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    display: block;
+    border-radius: 4px;
+}
+
+.village-nearby img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.village-nearby:hover img {
+    transform: scale(1.05);
+}
+
+.village-nearby__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(42, 39, 35, 0.85) 0%, transparent 55%);
+}
+
+.village-nearby__copy {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+}
+
+/* Pros / cons markers */
+.village-pros-cons__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    flex-shrink: 0;
+}
+
+.village-pros-cons__dot--pro {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.village-pros-cons__dot--con {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+/* Visited-by-us callout */
+.village-visited {
+    border-left: 3px solid #8b8378;
+    padding-left: 1.5rem;
+}
+
+/* Data tables */
+.village-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.village-table th,
+.village-table td {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(139, 131, 120, 0.15);
+}
+
+.village-table th {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #8b8378;
+}
+
+.village-table tr:last-child th,
+.village-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Crowd level pills */
+.village-crowd--quiet { color: #4a7c59; }
+.village-crowd--moderate { color: #8b7355; }
+.village-crowd--busy { color: #9b4d4d; }
+
+/* Combine-with trip cards */
+.village-combine {
+    border: 1px solid rgba(139, 131, 120, 0.2);
+    padding: 1.5rem 1.75rem;
+    transition: background 0.3s ease;
+}
+
+.village-combine:hover {
+    background: #eae5dc;
+}
+
+/* Season cards */
+.village-season {
+    border-top: 2px solid rgba(139, 131, 120, 0.3);
+    padding-top: 1.25rem;
+}
+
+/* Tip list */
+.village-tips li {
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.village-tips li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #8b8378;
+}
+
+/* Spec grid (photography, accessibility) */
+.village-spec dt {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8b8378;
+    margin-bottom: 0.35rem;
+}
+
+.village-spec dd {
+    font-size: 14px;
+    color: #4a443f;
+    margin: 0 0 1.25rem;
+}
+
+.village-spec dd:last-child {
+    margin-bottom: 0;
+}

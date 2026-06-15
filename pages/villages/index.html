@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Villages | Visit Cotswolds</title>
+<!-- Google Fonts: EB Garamond for Serif, Inter for Sans -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed": "#1c1c19",
+                "inverse-primary": "#5f5e5b",
+                "surface-container-lowest": "#0e0e0e",
+                "secondary-fixed": "#e9e2d5",
+                "on-secondary-fixed-variant": "#4b463d",
+                "outline": "#929189",
+                "tertiary-fixed-dim": "#d5c5a5",
+                "on-secondary-container": "#bfb8ab",
+                "error": "#ffb4ab",
+                "surface-variant": "#353434",
+                "on-background": "#e5e2e1",
+                "primary": "#c9c6c2",
+                "surface-container-highest": "#353434",
+                "surface-bright": "#3a3938",
+                "secondary-container": "#4d493f",
+                "primary-fixed": "#e5e2de",
+                "surface-container": "#201f1f",
+                "on-primary": "#31302e",
+                "on-error": "#690005",
+                "tertiary": "#d5c5a5",
+                "on-secondary-fixed": "#1e1b13",
+                "surface-container-high": "#2b2a29",
+                "on-tertiary-fixed": "#231a06",
+                "error-container": "#93000a",
+                "primary-container": "#0f0f0d",
+                "on-tertiary-fixed-variant": "#51452d",
+                "on-primary-container": "#7d7b78",
+                "outline-variant": "#474741",
+                "inverse-surface": "#e5e2e1",
+                "surface-container-low": "#1c1b1b",
+                "primary-fixed-dim": "#c9c6c2",
+                "background": "#141313",
+                "on-secondary": "#343027",
+                "tertiary-container": "#150e00",
+                "surface-tint": "#c9c6c2",
+                "secondary": "#cdc6b9",
+                "on-surface": "#e5e2e1",
+                "on-error-container": "#ffdad6",
+                "on-surface-variant": "#c8c7be",
+                "inverse-on-surface": "#313030",
+                "on-primary-fixed-variant": "#474744",
+                "surface": "#141313",
+                "secondary-fixed-dim": "#cdc6b9",
+                "surface-dim": "#141313",
+                "on-tertiary": "#392f19",
+                "on-tertiary-container": "#887a5f",
+                "tertiary-fixed": "#f2e1c0"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "margin-mobile": "20px",
+                "margin-desktop": "64px",
+                "gutter": "32px",
+                "unit": "8px",
+                "container-max": "1440px"
+            },
+            "fontFamily": {
+                "label-caps": ["Inter"],
+                "headline-md": ["EB Garamond"],
+                "display-lg": ["EB Garamond"],
+                "body-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "display-lg-mobile": ["EB Garamond"]
+            },
+            "fontSize": {
+                "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "500" }],
+                "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+                "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "300" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            background-color: rgba(15, 15, 13, 0.8);
+            backdrop-filter: blur(24px);
+        }
+        .editorial-overlay {
+            background: linear-gradient(to bottom, rgba(20, 19, 19, 0) 0%, rgba(20, 19, 19, 0.85) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            background-color: #141313;
+        }
+        .village-card {
+            aspect-ratio: 1 / 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-lg text-on-background selection:bg-tertiary-fixed selection:text-on-tertiary-fixed has-site-header">
+<!-- Top Navigation -->
+<header class="site-header">
+<div class="site-header__inner">
+<div class="site-header__left">
+<button type="button" class="site-header__icon-btn site-header__menu" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<a href="../../index.html" class="site-header__logo" aria-label="Visit Cotswolds"><img src="../../assets/logo/visit-cotswolds.svg" alt="" width="400" height="80" decoding="async"/></a>
+<div class="site-header__right">
+<nav class="site-header__nav" aria-label="Main navigation">
+<a class="is-active" href="index.html">Villages</a>
+<a href="../places-to-stay.html">Stays</a>
+<a href="../places-to-eat.html">Eat</a>
+<a href="../things-to-do.html">Experiences</a>
+<a href="../journal.html">Journal</a>
+<a href="../plan-your-visit.html">Plan</a>
+</nav>
+<button type="button" class="site-header__icon-btn" aria-label="Search">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[353px] min-h-[300px] flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Misty Cotswolds village" class="w-full h-full object-cover grayscale-[0.2] brightness-[0.4]" data-alt="A cinematic, low-light shot of a historic Cotswold village at dawn, with thick morning mist clinging to honey-colored stone cottages and ancient slate roofs. The atmosphere is quiet, moody, and ethereal, with deep shadows and soft, diffused light highlighting the architectural textures. A dark color palette dominates, with hints of muted limestone and deep green moss, perfectly capturing a high-end heritage aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdQLQEt2oracOjV9v6K8xMgxnm6vvDc_yTA5bfji5bBJdLTmB8KEee8Vpu_aUpu74xcLMCWs8aw_N8vQyvA-3XWzy2NerGqQqUYbdoiwqvh8V-aUcRCUd0jj7xQgLE7kpUv0TQq3G899iVibfBzdGgV-IIqAnaV36X-7o7FBI6k1eWxw0P1H6iVoFtqUag_aRQmrpaTrgSKXl9w10b6o3HzIugIWo27DWRxLq0kE8xa_hHIueeGt_6H0e2NPwP9BvnHXEPWXOjjw"/>
+<div class="absolute inset-0 editorial-overlay"></div>
+</div>
+<div class="relative z-10 w-full px-margin-mobile md:px-margin-desktop pb-12 max-w-container-max mx-auto">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">The Villages</h2>
+<p class="font-body-lg text-on-surface-variant max-w-md">Filter by region to find your perfect stay.</p>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="py-8 bg-background sticky top-[5.5rem] z-40 border-b border-outline/5">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-4 overflow-x-auto hide-scrollbar">
+<button class="whitespace-nowrap px-6 py-2 rounded-lg bg-primary-fixed-dim text-on-primary-fixed font-label-caps text-label-caps transition-all active:scale-95">ALL</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-lg border border-outline/20 text-on-surface-variant font-label-caps text-label-caps hover:border-primary transition-all active:scale-95">NORTH COTSWOLDS</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-lg border border-outline/20 text-on-surface-variant font-label-caps text-label-caps hover:border-primary transition-all active:scale-95">CENTRAL COTSWOLDS</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-lg border border-outline/20 text-on-surface-variant font-label-caps text-label-caps hover:border-primary transition-all active:scale-95">SOUTH COTSWOLDS</button>
+</div>
+</div>
+</section>
+<!-- Village Grid -->
+<section class="py-12 md:py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+<!-- Village Card 1: Bibury -->
+<a href="bibury.html" class="village-card group relative w-full overflow-hidden rounded-lg cursor-pointer block">
+<img alt="Bibury Village" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking view of Arlington Row in Bibury, featuring the iconic 14th-century weavers' cottages. The image is captured in a cinematic, high-contrast dark mode style with deep shadows and muted, warm lighting on the honey-toned limestone walls. The surrounding greenery is a rich, dark emerald, and the river Coln reflects the moody sky. The composition is wide and editorial, focusing on heritage and tranquility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU0QoPCkEtDZ7azlTfwYT9RLLC0a26MUS4ldKrQV9xomcsBqn5ocXLQ3HctBEiB7YW_BgGa_CJ5SvKuS4ykxjulaBwo9IAbufx_xlPJU00mq7og0ZD99Q8sCFtqbJPyZWbtVnl1pTmiC5rJ2PwBKT61s33TT6SFTEBj55UaetxDIO7tbCzBB65Tne7kyU2ntnjfCZt9-wjpD0R2ASu7aSYbpWVbLl9ZwAG3HH9jAD_ep9-WFxRcxSwoMC1WicxzV6Sf4LTZJVQ_g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-4 md:p-6 w-full">
+<span class="font-label-caps text-[10px] md:text-label-caps text-secondary tracking-widest block mb-1 md:mb-2">GLOUCESTERSHIRE</span>
+<h3 class="font-display-lg text-2xl md:text-3xl lg:text-4xl text-primary leading-tight">Bibury</h3>
+</div>
+</a>
+<!-- Village Card 2: Castle Combe -->
+<a href="castle-combe.html" class="village-card group relative w-full overflow-hidden rounded-lg cursor-pointer block">
+<img alt="Castle Combe Village" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An editorial wide shot of the stone bridge and idyllic cottages of Castle Combe, Wiltshire. The scene is set in a moody, rainy late afternoon with wet stone surfaces glistening under dim, cool light. The atmosphere is intensely cinematic and quiet, utilizing a dark color palette of charcoal, wet limestone, and deep forest greens. The focus is on the timeless, preserved architecture of one of England's prettiest villages." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAayhb7s6DjpYTdMSlM6HCa5h5n2iDAmUDJVjjy1-5_wAn4I62s0UrZJK3zgnRwdUQHKH9yY8ezxbsuSNSf-Viev-cvUka9KSfrWIGwbE9Jhtuldh-ewZP5PU1lE0FrPSQudpBYFlhckYjbJSy7OJ3yixM0NyalV6mSzxuXiXlVO-H6OwTXlOp5Q5Nc4YdT9ftpWSaM0knOAIzP3xt9gNqrggIAPfasno7A6uvTfkM5rXhlM5MHJy8C4eYDXujW5_t5GRZqiWE3Ww"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-4 md:p-6 w-full">
+<span class="font-label-caps text-[10px] md:text-label-caps text-secondary tracking-widest block mb-1 md:mb-2">WILTSHIRE</span>
+<h3 class="font-display-lg text-2xl md:text-3xl lg:text-4xl text-primary leading-tight">Castle Combe</h3>
+</div>
+</a>
+<!-- Village Card 3: Bourton-on-the-Water -->
+<a href="bourton-on-the-water.html" class="village-card group relative w-full overflow-hidden rounded-lg cursor-pointer block">
+<img alt="Bourton-on-the-Water Village" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene night-time view of Bourton-on-the-Water, showing the low stone bridges spanning the river Windrush. The honey-colored shops are softly backlit, casting warm reflections onto the dark, rippling water. The aesthetic is sophisticated and quiet, emphasizing the 'Venice of the Cotswolds' through a cinematic lens with deep contrast, midnight blues, and amber accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2OYmP99WzoPuPHjxK2WUDU9rD-SqEEgghBkbxhliHCfLwwKmyLLA86EnLEcZaO17y5nxCkw-H1-eo2fYTa-lMwSCtIMOxxqtpH9fgzKC4kYDSBiUy-wypyRM9MSU8tC6aLMfGd8al3XlT_rUea4clV48_IulmyXE1VKfM8GnbOPtAL0QJ8KSZrcYgZItfPgH0RK6PVOccPT6Yu-CuzevnaspddsOYSOLe9XgOgvCb7DEFi_YSpll04SkX_r67BTDj7F7CTU4KTw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-4 md:p-6 w-full">
+<span class="font-label-caps text-[10px] md:text-label-caps text-secondary tracking-widest block mb-1 md:mb-2">GLOUCESTERSHIRE</span>
+<h3 class="font-display-lg text-2xl md:text-3xl lg:text-4xl text-primary leading-tight">Bourton-on-the-Water</h3>
+</div>
+</a>
+<!-- Village Card 4: Burford -->
+<a href="burford.html" class="village-card group relative w-full overflow-hidden rounded-lg cursor-pointer block">
+<img alt="Burford Village" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A majestic wide-angle shot looking down the steep high street of Burford at dusk. The historic stone buildings with their gabled roofs are silhouetted against a deep indigo sky. Street lamps cast long, atmospheric shadows and a warm glow on the cobbled pavements. The image feels authoritative and heritage-rich, using a dark cinematic color grade to highlight the architectural grandeur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcSEzoi2FjiOObPxAhJ63qUDZOrWm03UwHJ8B7k9KEXh0hPBaP1dc5IzKOjWs-3gsDgERYixw7nrvjPkMHHMbs9rNKQpJj0_ZMpE-MBqAR4ORYrvvnwG4bBMzslv4_jA0HCDsCSIvr9ryPZej_immYdFxd9PWJBCU4TaXZTxzY9QIqR5pWFPGIa6UuhSLTPeDel2Z2E90hc2OlBvtv8vz0FXEhGc31MJPj8H0Irk8kgn4SEWyiyIigmCdJrjns_2wEB9es2mhuQg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-4 md:p-6 w-full">
+<span class="font-label-caps text-[10px] md:text-label-caps text-secondary tracking-widest block mb-1 md:mb-2">OXFORDSHIRE</span>
+<h3 class="font-display-lg text-2xl md:text-3xl lg:text-4xl text-primary leading-tight">Burford</h3>
+</div>
+</a>
+<!-- Village Card 5: Snowshill -->
+<a href="snowshill.html" class="village-card group relative w-full overflow-hidden rounded-lg cursor-pointer block">
+<img alt="Snowshill Village" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A secluded and intimate view of the hilltop village of Snowshill, surrounded by rolling dark hills. The image features the ancient church and manor house nestled among dense trees, captured during the blue hour for a mysterious, quiet mood. The color palette is dominated by deep blues, muted grays, and the subtle warmth of stone walls, creating a feeling of exclusive, tranquil escape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADFD8A8gnmpFYZWCqaIFaRzHDGIy9LoKy-fbotKiGzZR6Mhqnl8J2mLva0sqf6lbYVTeUb6-P6wQIJTVFrlXVP0xH8csR2J4jxa6Y3tgN6o0c_WvrQBNeKiTl2Iq6KiKsGWmDozRC4pBcVnipo0FIgbO7V6Xs3cAwHbuUbL-wGyVLs52Z9q-s-3b63rF8jsyQ_AgNGZz8mh3R0MCTVDOUmqDS0ZCTipKzfYJqTHC9i_DLrTDH6j0CwB0mRyUNETHUJrvLuAfqrzg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-4 md:p-6 w-full">
+<span class="font-label-caps text-[10px] md:text-label-caps text-secondary tracking-widest block mb-1 md:mb-2">GLOUCESTERSHIRE</span>
+<h3 class="font-display-lg text-2xl md:text-3xl lg:text-4xl text-primary leading-tight">Snowshill</h3>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest full-width bottom-0 border-t border-outline/10">
+<div class="flex flex-col items-center w-full px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto gap-12">
+<a href="../../index.html" class="site-logo" aria-label="Visit Cotswolds"><img src="../../assets/logo/visit-cotswolds.svg" alt="Visit Cotswolds" width="400" height="80"/></a>
+<nav class="flex flex-wrap justify-center gap-8 md:gap-16">
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../../index.html">THE COLLECTION</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="index.html">VILLAGE GUIDE</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../journal.html">JOURNAL</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../places-to-stay.html">STAYS</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../places-to-eat.html">EAT</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../things-to-do.html">EXPERIENCES</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../plan-your-visit.html">PLAN</a>
+</nav>
+<div class="flex flex-col items-center gap-4">
+<p class="font-body-sm text-body-sm text-secondary text-center tracking-widest">© 2024 VISIT COTSWOLDS. UNHURRIED LUXURY.</p>
+<div class="flex gap-6 mt-4">
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="facebook">face_nod</span></a>
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="instagram">infrared</span></a>
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll interaction for filter buttons
+        const filterButtons = document.querySelectorAll('button[class*="rounded-lg"]');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary-fixed-dim', 'text-on-primary-fixed');
+                    b.classList.add('border', 'border-outline/20', 'text-on-surface-variant');
+                });
+                this.classList.add('bg-primary-fixed-dim', 'text-on-primary-fixed');
+                this.classList.remove('border', 'border-outline/20', 'text-on-surface-variant');
+            });
+        });
+
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.village-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(40px)';
+            card.style.transition = 'all 0.8s cubic-bezier(0.22, 1, 0.36, 1)';
+            observer.observe(card);
+        });
+    </script>
+<link href="../../css/site-header.css" rel="stylesheet"/>
+<link href="../../css/site-nav.css" rel="stylesheet"/>
+<script src="../../js/site-nav.js"></script>
+<script src="../../js/site-logo.js"></script>
+</body></html>
