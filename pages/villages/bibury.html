@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bibury | Visit Cotswolds</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#1c1c19",
+                    "inverse-primary": "#5f5e5b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed": "#e9e2d5",
+                    "on-secondary-fixed-variant": "#4b463d",
+                    "outline": "#929189",
+                    "tertiary-fixed-dim": "#d5c5a5",
+                    "on-secondary-container": "#bfb8ab",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#353434",
+                    "on-background": "#e5e2e1",
+                    "primary": "#c9c6c2",
+                    "surface-container-highest": "#353434",
+                    "surface-bright": "#3a3938",
+                    "secondary-container": "#4d493f",
+                    "primary-fixed": "#e5e2de",
+                    "surface-container": "#201f1f",
+                    "on-primary": "#31302e",
+                    "on-error": "#690005",
+                    "tertiary": "#d5c5a5",
+                    "on-secondary-fixed": "#1e1b13",
+                    "surface-container-high": "#2b2a29",
+                    "on-tertiary-fixed": "#231a06",
+                    "error-container": "#93000a",
+                    "primary-container": "#0f0f0d",
+                    "on-tertiary-fixed-variant": "#51452d",
+                    "on-primary-container": "#7d7b78",
+                    "outline-variant": "#474741",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "primary-fixed-dim": "#c9c6c2",
+                    "background": "#141313",
+                    "on-secondary": "#343027",
+                    "tertiary-container": "#150e00",
+                    "surface-tint": "#c9c6c2",
+                    "secondary": "#cdc6b9",
+                    "on-surface": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#c8c7be",
+                    "inverse-on-surface": "#313030",
+                    "on-primary-fixed-variant": "#474744",
+                    "surface": "#141313",
+                    "secondary-fixed-dim": "#cdc6b9",
+                    "surface-dim": "#141313",
+                    "on-tertiary": "#392f19",
+                    "on-tertiary-container": "#887a5f",
+                    "tertiary-fixed": "#f2e1c0",
+                    "limestone": "#C9B99A",
+                    "chalk-light": "#F5F1EA"
+            },
+            "borderRadius": {
+                    "DEFAULT": "4px",
+                    "lg": "4px",
+                    "xl": "8px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "headline-md": ["EB Garamond"],
+                    "display-lg": ["EB Garamond"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["EB Garamond"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "300"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .glass-nav {
+            background: rgba(15, 15, 13, 0.4);
+            backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(20, 19, 19, 0) 0%, rgba(20, 19, 19, 0.9) 100%);
+        }
+        .image-zoom-container:hover img {
+            transform: scale(1.03);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-tertiary selection:text-on-tertiary has-site-header">
+<!-- Top Navigation -->
+<header class="site-header">
+<div class="site-header__inner">
+<div class="site-header__left">
+<button type="button" class="site-header__icon-btn site-header__menu" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<a href="../../index.html" class="site-header__logo" aria-label="Visit Cotswolds"><img src="../../assets/logo/visit-cotswolds.svg" alt="" width="400" height="80" decoding="async"/></a>
+<div class="site-header__right">
+<nav class="site-header__nav" aria-label="Main navigation">
+<a class="is-active" href="index.html">Villages</a>
+<a href="../places-to-stay.html">Stays</a>
+<a href="../places-to-eat.html">Eat</a>
+<a href="../things-to-do.html">Experiences</a>
+<a href="../whats-on.html">What's On</a>
+<a href="../journal.html">Journal</a>
+<a href="../plan-your-visit.html">Plan</a>
+</nav>
+<button type="button" class="site-header__icon-btn" aria-label="Search">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="village-hero">
+<img alt="" aria-hidden="true" class="village-hero__bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeIomPYsuYVLcrIBeVaBdc6oG1jF9318pUacCADOsp588HRPlZTmSShhOnc8SQFpljLnoKghpy4B8LAcj9iV-fdVjNJ8D5OoZo80Ovf1OKOO1d412dpxXYZtOeV9thp_361gEJAuZp0D_l_O4yEzrhlShaomwE27km85UXDJezfFg6ybmedmgqT1bg-1FZoxu5p3KZy42IANCsx-AJ_UhAK7aplj64SeJW9dl6npKmzJGIDJZc2Z2qW03rvFS0hwgGXl8Rl8ywDw"/>
+<div class="village-hero__gradient" aria-hidden="true"></div>
+<div class="village-hero__content">
+<div class="village-hero__grid">
+<div class="village-hero__copy">
+<span class="font-label-caps text-label-caps text-secondary tracking-[0.3em] uppercase">Gloucestershire</span>
+<h1 class="font-display-lg text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] text-primary leading-none tracking-tighter">Bibury</h1>
+<p class="font-headline-md text-secondary mt-3 md:mt-4 max-w-xl italic text-[22px] md:text-[28px]">"The most beautiful village in England."</p>
+</div>
+<div class="village-hero__media">
+<div class="village-hero__video-wrap" data-village-video>
+<span class="village-hero__video-badge">Village film</span>
+<video class="village-hero__video" poster="https://lh3.googleusercontent.com/aida-public/AB6AXuBeIomPYsuYVLcrIBeVaBdc6oG1jF9318pUacCADOsp588HRPlZTmSShhOnc8SQFpljLnoKghpy4B8LAcj9iV-fdVjNJ8D5OoZo80Ovf1OKOO1d412dpxXYZtOeV9thp_361gEJAuZp0D_l_O4yEzrhlShaomwE27km85UXDJezfFg6ybmedmgqT1bg-1FZoxu5p3KZy42IANCsx-AJ_UhAK7aplj64SeJW9dl6npKmzJGIDJZc2Z2qW03rvFS0hwgGXl8Rl8ywDw" controls playsinline preload="metadata" aria-label="Bibury village film placeholder">
+</video>
+<div class="village-hero__video-placeholder" aria-hidden="true">
+<div class="village-hero__play">
+<span class="material-symbols-outlined">play_arrow</span>
+</div>
+<span class="village-hero__video-label">Placeholder · final film coming soon</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Village Guide Content -->
+<main class="bg-background text-on-background py-16 md:py-24 lg:py-40">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Intro & Quick Facts -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter md:gap-16 items-start mb-24 md:mb-32">
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-block px-4 py-2 bg-surface-container-high border border-limestone/20">
+<span class="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">Curated Overview</span>
+</div>
+<h2 class="font-display-lg text-[40px] md:text-[56px] text-primary leading-tight">A Masterpiece in Stone</h2>
+<div class="font-body-lg text-body-lg text-on-surface-variant space-y-6 max-w-2xl">
+<p>Bibury is the quintessential Cotswold destination, drawing photography enthusiasts and history lovers from across the globe. Its fame is anchored by <span class="text-limestone italic font-headline-md">Arlington Row</span>, a 14th-century monastic wool store that has become the definitive image of rural England.</p>
+<p>Visitors are drawn to the seamless harmony between the honey-hued limestone architecture and the vibrant ecology of the River Coln. It is a place built for the slow rhythm of the countryside—best enjoyed by those willing to walk the winding paths and linger in the shadows of its gabled roofs.</p>
+</div>
+</div>
+<aside class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 border border-limestone/10 relative">
+<h3 class="font-label-caps text-label-caps text-limestone mb-8 border-b border-outline-variant/20 pb-4 tracking-widest">QUICK FACTS</h3>
+<div class="village-facts">
+<div class="village-facts__row">
+<span class="font-label-caps text-[10px] text-limestone tracking-widest uppercase">Time Needed</span>
+<span class="font-body-sm text-on-surface">2–3 Hours</span>
+</div>
+<div class="village-facts__row">
+<span class="font-label-caps text-[10px] text-limestone tracking-widest uppercase">Typical Crowd</span>
+<span class="font-body-sm text-on-surface">High (11am–3pm)</span>
+</div>
+<div class="village-facts__row">
+<span class="font-label-caps text-[10px] text-limestone tracking-widest uppercase">Dog Friendly</span>
+<span class="font-body-sm text-on-surface">Yes (on leads)</span>
+</div>
+<div class="village-facts__row">
+<span class="font-label-caps text-[10px] text-limestone tracking-widest uppercase">Family Friendly</span>
+<span class="font-body-sm text-on-surface">Yes</span>
+</div>
+<div class="village-facts__row">
+<span class="font-label-caps text-[10px] text-limestone tracking-widest uppercase">Photography</span>
+<span class="font-body-sm text-on-surface">★★★★★</span>
+</div>
+<div class="village-facts__row">
+<span class="font-label-caps text-[10px] text-limestone tracking-widest uppercase">Best Season</span>
+<span class="font-body-sm text-on-surface">Spring / Autumn</span>
+</div>
+<div class="village-facts__row">
+<span class="font-label-caps text-[10px] text-limestone tracking-widest uppercase">Parking</span>
+<span class="font-body-sm text-on-surface">~80 spaces · Pay &amp; display</span>
+</div>
+</div>
+<a class="block w-full mt-10 border border-limestone text-limestone hover:bg-limestone hover:text-primary-container font-label-caps text-label-caps py-4 text-center transition-colors duration-300 uppercase tracking-widest" href="../plan-your-visit.html">Plan Your Visit</a>
+</aside>
+</div>
+<!-- Our Take -->
+<div class="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center bg-surface-container-low p-8 md:p-12 border border-outline-variant/20">
+<div class="lg:col-span-5 aspect-[4/5] overflow-hidden order-2 lg:order-1">
+<img alt="Arlington Row cottages in morning light, Bibury" class="w-full h-full object-cover grayscale-[0.15] transition-transform duration-1000 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdaIOjfCUUG9l8p6wM7DBw2LAl3H5rF9Do99o_Oe5kkg7_M3RacztrvcakWzvHf5eNNR1NuZUx1jWgnWHCqVvn32NMsGZwkIlx09DKR1EXRE2TnG67Ab1FAdAG8BhyM4tklPPqqfgPiDvrF5dwbrjXEaFZkE9zJAYpoXeBJsCz4hO49pON6W4JoAtkLCXxIY0LMfkN2EwpLXVWDvm2j8Bno8rWXhS22yoGz-QkoaZv8e4vEXKcjLNKyrttZYYD1j5C_H-mgsaAqw"/>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2">
+<span class="inline-block px-4 py-2 bg-surface-container border border-limestone/20 font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">Visited By Us</span>
+<p class="font-label-caps text-[10px] text-limestone tracking-widest uppercase mt-4 mb-8">Last updated · May 2026</p>
+<h2 class="font-display-lg text-[32px] md:text-[40px] text-primary mb-6 leading-tight">Our Take</h2>
+<div class="village-visited space-y-5 font-body-lg text-body-lg text-on-surface-variant">
+<p>We visited Bibury on a <strong class="text-on-surface font-normal">Wednesday morning in May 2026</strong>. By 9am the village was almost empty—the river path and Arlington Row felt genuinely peaceful. By 11am, coach groups had begun arriving and the main road through the village was noticeably busier.</p>
+<p>The riverside walk along the Coln was our favourite part of the visit—quieter than the cottages themselves, with trout visible in the clear water and far fewer people beyond the bridge.</p>
+<p>If we were visiting again in summer, we would arrive before 8:30am or come after 4pm. Midday on a weekend is the one time we would actively avoid it.</p>
+</div>
+</div>
+</div>
+<!-- Crowd Intelligence & Who Is Bibury Best For? -->
+<div class="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+<div class="lg:col-span-4 w-full max-w-md lg:max-w-none">
+<h2 class="font-display-lg text-[28px] md:text-[36px] text-primary mb-3 md:mb-4 leading-tight">Crowd Intelligence</h2>
+<p class="font-body-sm text-on-surface-variant mb-6 leading-relaxed">Based on our May 2026 visit. Weekdays are consistently quieter than Saturdays in peak months.</p>
+<div class="village-crowd-block village-panel border border-outline-variant/20 overflow-hidden">
+<table class="village-table village-table--crowd w-full">
+<thead>
+<tr>
+<th scope="col">Time</th>
+<th scope="col">Crowd Level</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant">
+<tr>
+<td class="text-on-surface">7–9am</td>
+<td class="village-crowd--quiet font-medium">Very Quiet</td>
+</tr>
+<tr>
+<td class="text-on-surface">9–11am</td>
+<td class="village-crowd--moderate font-medium">Moderate</td>
+</tr>
+<tr>
+<td class="text-on-surface">11am–3pm</td>
+<td class="village-crowd--busy font-medium">Very Busy</td>
+</tr>
+<tr>
+<td class="text-on-surface">4pm onwards</td>
+<td class="village-crowd--quiet font-medium">Quieter</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+<div class="bg-surface-container-low p-6 md:p-8 border border-outline-variant/10 village-panel h-full">
+<h2 class="font-headline-md text-[22px] md:text-[24px] text-primary mb-5 md:mb-6 flex items-center gap-3">
+<span class="village-pros-cons__dot village-pros-cons__dot--pro"></span> Perfect For
+</h2>
+<ul class="font-body-sm text-on-surface-variant space-y-3">
+<li class="flex gap-3"><span class="text-limestone">—</span> First-time Cotswolds visitors</li>
+<li class="flex gap-3"><span class="text-limestone">—</span> Photographers (especially early morning)</li>
+<li class="flex gap-3"><span class="text-limestone">—</span> International visitors seeking the iconic image</li>
+<li class="flex gap-3"><span class="text-limestone">—</span> Couples and slow-travel day trips</li>
+<li class="flex gap-3"><span class="text-limestone">—</span> Families with children who enjoy riverside walks</li>
+</ul>
+</div>
+<div class="bg-surface-container p-6 md:p-8 border border-outline-variant/20 village-panel h-full">
+<h2 class="font-headline-md text-[22px] md:text-[24px] text-primary mb-5 md:mb-6 flex items-center gap-3">
+<span class="village-pros-cons__dot village-pros-cons__dot--con"></span> Maybe Skip If
+</h2>
+<ul class="font-body-sm text-on-surface-variant space-y-3">
+<li class="flex gap-3"><span class="text-limestone">—</span> You dislike crowds (unless visiting before 9am)</li>
+<li class="flex gap-3"><span class="text-limestone">—</span> You are seeking hidden, off-radar villages</li>
+<li class="flex gap-3"><span class="text-limestone">—</span> You need step-free access throughout</li>
+<li class="flex gap-3"><span class="text-limestone">—</span> You only have 20 minutes—a rushed visit rarely satisfies</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Local Tips -->
+<div class="mb-24 md:mb-32">
+<h2 class="font-display-lg text-[36px] md:text-[48px] text-primary mb-8 leading-tight">Local Tips</h2>
+<p class="font-body-sm text-on-surface-variant mb-8 max-w-2xl">Practical insights from our visits—the kind of advice you would get from someone who has been there recently.</p>
+<ul class="village-tips grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 font-body-sm text-on-surface-variant">
+<li>Arrive before 9am in summer if you want Arlington Row without a crowd.</li>
+<li>Weekdays are significantly quieter than Saturdays, even in peak season.</li>
+<li>Most visitors only stay 30–60 minutes—you will see more in two unhurried hours.</li>
+<li>The best photos are often <em>not</em> taken directly in front of Arlington Row—try the bridge and river path.</li>
+<li>The village feels completely different after 4pm when coach traffic drops off.</li>
+<li>Park at the Trout Farm car park rather than attempting on-street spaces on the B4425.</li>
+<li>The riverside path beyond the bridge is where locals walk—most tourists never go there.</li>
+<li>There is no admission fee to walk the village—it is free to visit.</li>
+</ul>
+</div>
+<!-- What Most Visitors Miss -->
+<div class="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<div class="lg:col-span-7">
+<h2 class="font-display-lg text-[36px] md:text-[48px] text-primary mb-6 leading-tight">What Most Visitors Miss</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Most visitors photograph Arlington Row and leave within the hour. That misses the quieter, more rewarding parts of Bibury entirely.</p>
+<ul class="space-y-6 font-body-sm text-on-surface-variant">
+<li class="flex gap-4">
+<span class="font-headline-md text-limestone shrink-0">01</span>
+<div><strong class="text-on-surface font-normal">The river beyond the bridge.</strong> Follow the Coln past Arlington Row—the path opens onto Rack Isle meadows with far fewer people.</div>
+</li>
+<li class="flex gap-4">
+<span class="font-headline-md text-limestone shrink-0">02</span>
+<div><strong class="text-on-surface font-normal">Rack Isle walk.</strong> A short loop around the water meadows rewards with kingfishers, wildflowers (in season), and a different angle on the cottages.</div>
+</li>
+<li class="flex gap-4">
+<span class="font-headline-md text-limestone shrink-0">03</span>
+<div><strong class="text-on-surface font-normal">Early morning atmosphere.</strong> Mist on the river and empty lanes before 8:30am—entirely different from the midday experience.</div>
+</li>
+<li class="flex gap-4">
+<span class="font-headline-md text-limestone shrink-0">04</span>
+<div><strong class="text-on-surface font-normal">St Mary's Church.</strong> Often overlooked; worth ten minutes for the Saxon doorway and quiet churchyard.</div>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-5 aspect-[4/3] overflow-hidden rounded-sm">
+<img alt="Rack Isle water meadows beside the River Coln in Bibury" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7kvAQ5rbHG34W2nT4XMucT3y9M2YV4Sk0V-JGp-Ni4FpgbDmvKZyh43PWjuhn5OQYd1TiU8-eId5lkKzg_pCT-d4aK4YDHKjejJIFZX2FBW_gGPNqliGz5YIafpLzEx3-7DmrlEiQM7-wY-kVCjqBop54UTeNci70x8rZx93UCce6lJa5cSwvs_IH8PwmjpbdQADyeKlv70vR-ckAaGELnJYixUl3ymnKkSdIVnsuVDu84E-2DRso-MhKxzk6DEyz9alGVjJPMw"/>
+</div>
+</div>
+<!-- Curated Experiences -->
+<div class="mt-32 md:mt-48 mb-24 md:mb-32">
+<h2 class="font-display-lg text-[36px] md:text-[48px] text-primary mb-12 md:mb-20 text-center leading-tight">Curated Experiences</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+<div class="village-experience group">
+<div class="village-experience__image">
+<img alt="Arlington Row cottages" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKbvZy_pDxfY0J0HZI4hx1seJMV67v1e_q-y4FmU1fBVy-fJtae_XdF8Zx78f8pXKq2lNe25Q-PcRnB2jJ7tLK6QNS0oEdcdU3TvOKBiYWjKl7TV-ZX6B5cF1gkWhJvZZPnJGmKeXlGxP1UCXlbTacI6mQpq15KnebUBFh3AKCN0UrUuiLC2p_sJ0dFC2f5h0dIyuD2WzKqZXzoZUeAHxmLHcDtlTfBKZpVyiiaTNdScpDpaqog5_68u5KD0gHfURv9oQc9NbFBA"/>
+</div>
+<h3 class="font-headline-md text-primary mb-3">Arlington Row</h3>
+<p class="font-body-sm text-on-surface-variant mb-5 leading-relaxed">The most photographed street in Britain. These National Trust cottages are best viewed from the bridge at first light.</p>
+<div class="p-5 bg-surface-container border-l border-limestone">
+<p class="font-body-sm italic text-limestone leading-relaxed">Insider tip: follow the path past the cottages for a secluded view of Rack Isle meadows.</p>
+</div>
+</div>
+<div class="village-experience group">
+<div class="village-experience__image">
+<img alt="River Coln in Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7kvAQ5rbHG34W2nT4XMucT3y9M2YV4Sk0V-JGp-Ni4FpgbDmvKZyh43PWjuhn5OQYd1TiU8-eId5lkKzg_pCT-d4aK4YDHKjejJIFZX2FBW_gGPNqliGz5YIafpLzEx3-7DmrlEiQM7-wY-kVCjqBop54UTeNci70x8rZx93UCce6lJa5cSwvs_IH8PwmjpbdQADyeKlv70vR-ckAaGELnJYixUl3ymnKkSdIVnsuVDu84E-2DRso-MhKxzk6DEyz9alGVjJPMw"/>
+</div>
+<h3 class="font-headline-md text-primary mb-3">River Coln Stroll</h3>
+<p class="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Walk alongside crystal-clear waters past Rack Isle meadows—the most peaceful perspective of the village, with far fewer people than the main road.</p>
+<div class="p-5 bg-surface-container border-l border-limestone">
+<p class="font-body-sm italic text-limestone leading-relaxed">Insider tip: most visitors never go beyond the bridge—this is where locals walk.</p>
+</div>
+</div>
+<div class="village-experience group">
+<div class="village-experience__image">
+<img alt="The Swan Hotel, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7hVkUiJmSKlt_tiClMvED0Qni2RABiXVoa6N2_k5CHJquIwlDlFGZ_ZXJOGCY6U1HYE86ZLV4ybCIh6zDV3IS-5To-2v43EdoBN22nBSbI65EYX2PKc6jl_F2vTHAfH67J_k83LhrheRNCukZvJ4-RN7eJFCs4Yvh9fIi1_zzGxAroeUovHrY0tlCc3-Ja7Nq6HUD7fmRYH2HBVsTqr6f70Yo0XWn_Jb8sUWn1PA1hP0JdXSAHvZZi0vGCfOUQb7gT_4-FpCBpg"/>
+</div>
+<h3 class="font-headline-md text-primary mb-3">The Swan Hotel</h3>
+<p class="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Seasonal menus in an elegant riverside setting—or a quiet coffee in the garden before the midday tour buses arrive.</p>
+<div class="p-5 bg-surface-container border-l border-limestone">
+<p class="font-body-sm italic text-limestone leading-relaxed">Insider tip: book lunch ahead on summer weekends—the garden fills quickly.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Seasonal Advice -->
+<div class="mb-24 md:mb-32">
+<h2 class="font-display-lg text-[36px] md:text-[48px] text-primary mb-10 leading-tight">Seasonal Advice</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+<div class="village-season">
+<h3 class="font-label-caps text-label-caps text-limestone mb-3 tracking-widest uppercase">Spring</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">Best for blossom along the river and Rack Isle wildflowers. Crowds build from Easter onwards—visit on a weekday if possible.</p>
+</div>
+<div class="village-season">
+<h3 class="font-label-caps text-label-caps text-limestone mb-3 tracking-widest uppercase">Summer</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">Most crowded, especially July–August weekends. Arrive before 9am or after 4pm. Long daylight hours suit extended river walks.</p>
+</div>
+<div class="village-season">
+<h3 class="font-label-caps text-label-caps text-limestone mb-3 tracking-widest uppercase">Autumn</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">Our pick for colours—golden stone against amber leaves. Crowds drop after October half-term. Mornings can be misty and atmospheric.</p>
+</div>
+<div class="village-season">
+<h3 class="font-label-caps text-label-caps text-limestone mb-3 tracking-widest uppercase">Winter</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">Quietest atmosphere and fewest coach groups. Some cafés reduce hours. Cold, crisp days can be beautiful—wrap up and enjoy the solitude.</p>
+</div>
+</div>
+</div>
+<!-- Combine With -->
+<div class="mb-24 md:mb-32">
+<h2 class="font-display-lg text-[36px] md:text-[48px] text-primary mb-4 leading-tight">Combine With</h2>
+<p class="font-body-sm text-on-surface-variant mb-10 max-w-2xl">Trip-planning suggestions based on driving times from Bibury. Adjust for your pace—we prefer one village properly over three rushed.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+<div class="village-combine">
+<div class="village-combine__images">
+<img alt="Arlington Row, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdaIOjfCUUG9l8p6wM7DBw2LAl3H5rF9Do99o_Oe5kkg7_M3RacztrvcakWzvHf5eNNR1NuZUx1jWgnWHCqVvn32NMsGZwkIlx09DKR1EXRE2TnG67Ab1FAdAG8BhyM4tklPPqqfgPiDvrF5dwbrjXEaFZkE9zJAYpoXeBJsCz4hO49pON6W4JoAtkLCXxIY0LMfkN2EwpLXVWDvm2j8Bno8rWXhS22yoGz-QkoaZv8e4vEXKcjLNKyrttZYYD1j5C_H-mgsaAqw"/>
+<img alt="River Coln and Rack Isle, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7kvAQ5rbHG34W2nT4XMucT3y9M2YV4Sk0V-JGp-Ni4FpgbDmvKZyh43PWjuhn5OQYd1TiU8-eId5lkKzg_pCT-d4aK4YDHKjejJIFZX2FBW_gGPNqliGz5YIafpLzEx3-7DmrlEiQM7-wY-kVCjqBop54UTeNci70x8rZx93UCce6lJa5cSwvs_IH8PwmjpbdQADyeKlv70vR-ckAaGELnJYixUl3ymnKkSdIVnsuVDu84E-2DRso-MhKxzk6DEyz9alGVjJPMw"/>
+</div>
+<div class="village-combine__body">
+<p class="font-label-caps text-[10px] text-limestone tracking-widest uppercase mb-2">Half Day</p>
+<p class="font-headline-md text-[22px] text-on-surface mb-2">Bibury only</p>
+<p class="font-body-sm text-on-surface-variant">Arrive early, walk Arlington Row, Rack Isle loop, lunch at The Swan or Trout Farm café. Depart before peak crowds.</p>
+</div>
+</div>
+<div class="village-combine">
+<div class="village-combine__images">
+<img alt="Bibury village" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKbvZy_pDxfY0J0HZI4hx1seJMV67v1e_q-y4FmU1fBVy-fJtae_XdF8Zx78f8pXKq2lNe25Q-PcRnB2jJ7tLK6QNS0oEdcdU3TvOKBiYWjKl7TV-ZX6B5cF1gkWhJvZZPnJGmKeXlGxP1UCXlbTacI6mQpq15KnebUBFh3AKCN0UrUuiLC2p_sJ0dFC2f5h0dIyuD2WzKqZXzoZUeAHxmLHcDtlTfBKZpVyiiaTNdScpDpaqog5_68u5KD0gHfURv9oQc9NbFBA"/>
+<img alt="Burford high street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcSEzoi2FjiOObPxAhJ63qUDZOrWm03UwHJ8B7k9KEXh0hPBaP1dc5IzKOjWs-3gsDgERYixw7nrvjPkMHHMbs9rNKQpJj0_ZMpE-MBqAR4ORYrvvnwG4bBMzslv4_jA0HCDsCSIvr9ryPZej_immYdFxd9PWJBCU4TaXZTxzY9QIqR5pWFPGIa6UuhSLTPeDel2Z2E90hc2OlBvtv8vz0FXEhGc31MJPj8H0Irk8kgn4SEWyiyIigmCdJrjns_2wEB9es2mhuQg"/>
+</div>
+<div class="village-combine__body">
+<p class="font-label-caps text-[10px] text-limestone tracking-widest uppercase mb-2">Full Day</p>
+<p class="font-headline-md text-[22px] text-on-surface mb-2">Bibury + <a class="underline underline-offset-4 hover:text-limestone" href="burford.html">Burford</a></p>
+<p class="font-body-sm text-on-surface-variant">Morning in Bibury, then 15 minutes to Burford for high-street browsing, lunch, and St John the Baptist Church. ~12 miles apart.</p>
+</div>
+</div>
+<div class="village-combine">
+<div class="village-combine__images">
+<img alt="Bibury at dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeIomPYsuYVLcrIBeVaBdc6oG1jF9318pUacCADOsp588HRPlZTmSShhOnc8SQFpljLnoKghpy4B8LAcj9iV-fdVjNJ8D5OoZo80Ovf1OKOO1d412dpxXYZtOeV9thp_361gEJAuZp0D_l_O4yEzrhlShaomwE27km85UXDJezfFg6ybmedmgqT1bg-1FZoxu5p3KZy42IANCsx-AJ_UhAK7aplj64SeJW9dl6npKmzJGIDJZc2Z2qW03rvFS0hwgGXl8Rl8ywDw"/>
+<img alt="Castle Combe village" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZzSxhwh3G-GPdDTZHdnNseY8Kruoos_azgiSAJPVf8PNF_lZKRWLsJeWYJkNMlPVhm2ay8kPfBfiBRLRIIS-gQxLMxXT6ap2ODE9c84ZAiWIgUrl-ZgtBXmNxZzM_-F-Yx_F3sMPi4Q7S_teIddxgLu_JIm6QRWrllM_SLQmVNssZy33Mih-BrZ4iUxxC4usb_iaV-svBDdOOL2EjxigSL98nU1qTfi1ix5aqnxdL5Rfw5L53hcUKC2r1Z99DWrS68fFxm_1R4w"/>
+</div>
+<div class="village-combine__body">
+<p class="font-label-caps text-[10px] text-limestone tracking-widest uppercase mb-2">Photography Day</p>
+<p class="font-headline-md text-[22px] text-on-surface mb-2">Bibury + <a class="underline underline-offset-4 hover:text-limestone" href="castle-combe.html">Castle Combe</a></p>
+<p class="font-body-sm text-on-surface-variant">Golden-hour Bibury at dawn, then Castle Combe for afternoon light on the bridge and market cross. Allow 45 mins between villages.</p>
+</div>
+</div>
+<div class="village-combine">
+<div class="village-combine__images">
+<img alt="Bourton-on-the-Water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2OYmP99WzoPuPHjxK2WUDU9rD-SqEEgghBkbxhliHCfLwwKmyLLA86EnLEcZaO17y5nxCkw-H1-eo2fYTa-lMwSCtIMOxxqtpH9fgzKC4kYDSBiUy-wypyRM9MSU8tC6aLMfGd8al3XlT_rUea4clV48_IulmyXE1VKfM8GnbOPtAL0QJ8KSZrcYgZItfPgH0RK6PVOccPT6Yu-CuzevnaspddsOYSOLe9XgOgvCb7DEFi_YSpll04SkX_r67BTDj7F7CTU4KTw"/>
+<img alt="Stow-on-the-Wold market square" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDft2Vi-TcOa89IUWMb29YlBljUDBINgwv7Tma3GKcgjnYDDg2eT3Jn-UyMlMggfLGfalQ2zR_TlKAQhBTXHWmX5b3UZp_omTi0x_EfXHydJQUpOEMNrGa_GaqEkIGu_-_1vzUO98Sgg617r1rojNrSuYZiMS1teyxnRYGxMRWIOKgsA1eH8XbBqDv2Rc_8loCM18Y9MJaJv0zynsYTdTcEU4gABDnwm05Bixdv39gL9_ipKUuJbLEwuhvgyxhPaSpxAWCaK3XHYg"/>
+</div>
+<div class="village-combine__body">
+<p class="font-label-caps text-[10px] text-limestone tracking-widest uppercase mb-2">Weekend</p>
+<p class="font-headline-md text-[22px] text-on-surface mb-2">Bibury + <a class="underline underline-offset-4 hover:text-limestone" href="bourton-on-the-water.html">Bourton</a> + Stow-on-the-Wold</p>
+<p class="font-body-sm text-on-surface-variant">Spread across two days if possible. Day one: Bibury and Burford. Day two: Bourton-on-the-Water and Stow-on-the-Wold. Base in Burford or Bibury.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Places to Stay & Eat -->
+<section class="mt-24 md:mt-32 lg:mt-48">
+<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
+<h4 class="font-label-caps text-label-caps text-limestone tracking-[0.2em]">PLACES TO STAY</h4>
+<a class="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0" href="../places-to-stay.html">View all stays</a>
+</div>
+<div class="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
+<a class="village-pick group" href="../places-to-stay.html">
+<div class="village-pick__image">
+<img alt="The Swan Hotel, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7hVkUiJmSKlt_tiClMvED0Qni2RABiXVoa6N2_k5CHJquIwlDlFGZ_ZXJOGCY6U1HYE86ZLV4ybCIh6zDV3IS-5To-2v43EdoBN22nBSbI65EYX2PKc6jl_F2vTHAfH67J_k83LhrheRNCukZvJ4-RN7eJFCs4Yvh9fIi1_zzGxAroeUovHrY0tlCc3-Ja7Nq6HUD7fmRYH2HBVsTqr6f70Yo0XWn_Jb8sUWn1PA1hP0JdXSAHvZZi0vGCfOUQb7gT_4-FpCBpg"/>
+</div>
+<p class="village-pick__title">The Swan Hotel</p>
+<p class="village-pick__meta">Riverside Classic · Bibury</p>
+</a>
+<a class="village-pick group" href="../places-to-stay.html">
+<div class="village-pick__image">
+<img alt="Barnsley House hotel and gardens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlCFJGj3w0v_ygGqlr7jPrd9PpYeBbc2zCUXaq8mkYSyuU9c7BA4_k7cv7FF6ZfKOxZa9wC7J85OzQmaU7aFDOsOigVKjust5HxQa4QRi3Ay5jFRTq8hhVymGe0RrXuC9aZQI3ZUWju459LoCojrOdd5g96QOdGmdqAbB6ZfCT531hm-EW0_nZ1ZwHWAijceWCoHEcWsjqDRRNvaTGEfqHXWGloeLFTRmoHEqFLRmLrHonYCVG2fpwm3xX-riwnqJW_U5mPc-psw"/>
+</div>
+<p class="village-pick__title">Barnsley House</p>
+<p class="village-pick__meta">Garden Retreat · 3 miles</p>
+</a>
+<a class="village-pick group" href="../places-to-stay.html">
+<div class="village-pick__image">
+<img alt="Lords of the Manor, Upper Slaughter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP7HvhgsNOtPnoOWLmNhiE8fB5_2NtrxOenfDPrYUYiH8irmiwUv6Y9PNmSzpXW7ocAWsiNPEDPtoClaMsUmVAYGr2j1tWaCB_PgeRio62R3b7gVW_dKax0mzzFvimq064r1wRvmXcF0Mme5xIsUzhrrgLllzGKBDvm5Fiwt-tygkBQa9Q1ltkRTbfkiZhyvP3QkQmJ3nwTfwI1DLygTtpH7g_Dq_OCSzaOacmXhwc9ZfB1Ho7x8cH_a64kl8wt9m6sxJLEBdIUg"/>
+</div>
+<p class="village-pick__title">Lords of the Manor</p>
+<p class="village-pick__meta">Country House · Upper Slaughter</p>
+</a>
+<a class="village-pick group" href="../places-to-stay.html">
+<div class="village-pick__image">
+<img alt="The Fish Hotel, Broadwell" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEUPk_qz3mEgZxcD2qEHsRaBaeDUXls38pOh0qY9hFOIu53qTusEXgT3WcoJk6fu8rl-scnsXx5HDyHKDP7yV5Od8vTvw3eSvuJCBhOi03dmLKPPWZx8gnp51eA_levoIUx9eRVMqs09H_YllMHx1CaSgnDjb6sDEjqKdbfOqPQxOsvcr68j6IXb20-ZnAZ_gsQmKPLYkRGZQleHLpIUpIFiOIAeN5KE1Wpd5260bE_GT6TXTkl9aUO1lM6EqoGyvUDuM4fvMu1w"/>
+</div>
+<p class="village-pick__title">The Fish Hotel</p>
+<p class="village-pick__meta">Village Retreat · 8 miles</p>
+</a>
+<a class="village-pick group" href="../places-to-stay.html">
+<div class="village-pick__image">
+<img alt="Dormy House, Broadway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0lqvrnrsJ59jYrA4pvhJUYgYj_JIPi6HHYcadi71_NBA_Lp5J-kar8615_Lx191gU33rVQ54qOIYoV7o_kx8varXayu6myLT2Aw6XxJrQkQr4lWV7GZca4RzNnMkjxFJPNvHSCQ31FlzljMjex5Zqp19e6qoMRs1DZFinSB07eO2JO1BEKmXprjGnHjF03lK2zkkt7cgqGpmjrkOq3vtTQnvtHaficUoS0CH7A8uwXH4_WuuWhGI_t0S5uQtKTmKpL_GmW0Ev6A"/>
+</div>
+<p class="village-pick__title">Dormy House</p>
+<p class="village-pick__meta">Spa Escape · Broadway</p>
+</a>
+</div>
+</section>
+<section class="mt-16 md:mt-24">
+<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
+<h4 class="font-label-caps text-label-caps text-limestone tracking-[0.2em]">PLACES TO EAT</h4>
+<a class="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0" href="../places-to-eat.html">View all dining</a>
+</div>
+<div class="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
+<a class="village-pick group" href="../places-to-eat.html">
+<div class="village-pick__image">
+<img alt="The Swan Hotel dining room, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcHrj45CrB30MUy1C0zu0ni8ywKRf6rlphruiZJOPSfbYG6kxJ_QvMMdNDo1gH5PhfY2t-9okVHu-Zn19ed5sQeDyUURndgU3KlhBy75pAayMk18ETxdX7FS5gpWI7d4KJMwOLIs5PBHtmk1xgfBpatuw6jN0eBiykNrNhXHUXs76YmxRwknUIVfIQmjTPdH2ce78_dyhwZDCeHXaS0qNOf4qcJNSeQW3c5h4kWxOW9x2DzAaRg8lBjcwPkyBPA3Bwc6b43FJ5Hg"/>
+</div>
+<p class="village-pick__title">The Swan Hotel</p>
+<p class="village-pick__meta">Seasonal Dining · Bibury</p>
+</a>
+<a class="village-pick group" href="../places-to-eat.html">
+<div class="village-pick__image">
+<img alt="The Catherine Wheel pub, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU6AyCINJL83qGUXjOaG4-mkBiR5uEKaWIJ1enV8kXAo7uDWWNt0HKePihs9NzKvn_8Gs8Nh5tge_pmOUKM-GvW7MZ7_Zb3XFR0ocFywilMvP6MrG36Y46_b26pib8rF6VHORhDkmVq4scwp9-sXwCux0VmZ12ziJrROZYRz15IlJUQseRXQeGO87BDNPK_42vKFW-DwqzF0yXoGlGpVFalysYj-4wFhHgBh5LCQNbhWEwgaE8TwmXZkU0ZCMTPMmNnrmiKNKoeg"/>
+</div>
+<p class="village-pick__title">The Catherine Wheel</p>
+<p class="village-pick__meta">Traditional Pub · Bibury</p>
+</a>
+<a class="village-pick group" href="../places-to-eat.html">
+<div class="village-pick__image">
+<img alt="Bibury Trout Farm Cafe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWhZPHaf_FsCEMfNAoan8-CIvf4a1O2pSsKOqcQsz85UbtBWACPwQ9nU5F1CUzDuo-SdA9dvegpo3GsIc4uA3cdBhkb6EMh3dbzcWBgJ0kaqYCamgihunFld7e3RjGawQS0SaFRcDRE_uKVEMc8WVZytaxYxBOWmwZcX8pXG-8NTaW4PdM-4sEkXae8kFoErVYjcbJzDSn5799nw61axxUef3JXB5ZPq4AxHlp0pLAEiybS4WqSNWs5Xf4n4TE3r6c_5kskGVzyg"/>
+</div>
+<p class="village-pick__title">Trout Farm Café</p>
+<p class="village-pick__meta">Riverside Lunch · Bibury</p>
+</a>
+<a class="village-pick group" href="../places-to-eat.html">
+<div class="village-pick__image">
+<img alt="Afternoon tea at Lords of the Manor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyQ2M2E8EHp1rtyqjpZ5peJNMJWLmw8W228zDOVNio85z1DoaiSWxpN4cQvg7g9hr2y0zC6PjGGdJKb7PFn4cqvZplGQGJt91Osn-DlDdKGgacj_Y-VFUd7ATiZ5W0bPCZYMfnqAxxU6OVwHglip3O2jkvBQ2U68tSBdQ8vT0CZSJ_EEWRdMhBEGoFv3ZRR0MkciPfjyOXECVIr4c9XkUWVXuZWeVB8VWt8p5f32fWFcwg6cqeTfVst1zrMonVfXCECelbh-fBtw"/>
+</div>
+<p class="village-pick__title">Lords of the Manor</p>
+<p class="village-pick__meta">Afternoon Tea · Upper Slaughter</p>
+</a>
+<a class="village-pick group" href="../places-to-eat.html">
+<div class="village-pick__image">
+<img alt="The Wild Rabbit, Kingham" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADN4N08pW4ta4Y0Eb9VjZv23P0L_nWWAJq5RfYfxdUGU8uqRY8PISIsOnQth51AeZ-7Vy-JkZHzg8yNjLqE2W7IBO1h3MezWnblh-wTMchIgqSXzmf2vgkUAba3G8Pz1nZUeMMpoNgr5TCgkoMxrM_Q0K-d3dEFTyBaaO2t-XtBijbfmk9Cba2Ow_9N5wisVfNsLfAlFvUlavBmuLEXcg6jXG_UxuSkbW4QoDUJcsYUL5rhhNoknUY1l-PFvwo-96UxfATdPAM_w"/>
+</div>
+<p class="village-pick__title">The Wild Rabbit</p>
+<p class="village-pick__meta">Organic Pub · 12 miles</p>
+</a>
+</div>
+</section>
+<!-- Practical Guides -->
+<div class="mt-24 md:mt-32 lg:mt-48 mb-24 md:mb-32">
+<div class="mb-10 md:mb-12 village-practical-header text-left">
+<span class="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase block mb-3">Plan Your Visit</span>
+<h2 class="font-display-lg text-[28px] sm:text-[32px] md:text-[40px] text-primary leading-tight text-left">Practical Guides</h2>
+</div>
+<!-- Parking with map -->
+<div class="village-panel village-parking overflow-hidden mb-8 md:mb-12 border border-outline-variant/20">
+<div class="village-parking-grid grid grid-cols-1 lg:grid-cols-2 lg:items-stretch">
+<div class="village-map min-h-[240px] sm:min-h-[280px] lg:min-h-[420px]">
+<iframe class="village-map__embed" title="Map showing Bibury Trout Farm car park and village parking" src="https://maps.google.com/maps?q=Bibury+Trout+Farm+Car+Park,+Bibury,+GL7+5NP&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""></iframe>
+</div>
+<div class="village-parking-content flex flex-col">
+<div class="flex items-start sm:items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-limestone shrink-0">local_parking</span>
+<h3 class="font-headline-md text-xl sm:text-[24px] md:text-[28px] text-primary leading-tight">Parking Guide</h3>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-6 leading-relaxed">Main car park on the B4425, opposite Bibury Trout Farm. Pay-and-display machines accept card and coins. Arrive before 10am on summer weekends—the overflow field opens when the main lot is full.</p>
+<div class="village-parking-locations mb-8">
+<div class="village-parking-location">
+<span class="village-parking-location__marker village-parking-location__marker--primary" aria-hidden="true"></span>
+<div>
+<p class="font-label-caps text-[10px] text-limestone tracking-widest uppercase mb-1">Main Car Park</p>
+<p class="font-body-sm text-on-surface mb-1">Trout Farm Car Park · B4425 · GL7 5NP</p>
+<p class="font-body-sm text-on-surface-variant">~80 spaces · pay &amp; display · 2 min walk to Arlington Row</p>
+</div>
+</div>
+<div class="village-parking-location">
+<span class="village-parking-location__marker village-parking-location__marker--secondary" aria-hidden="true"></span>
+<div>
+<p class="font-label-caps text-[10px] text-limestone tracking-widest uppercase mb-1">Overflow Field</p>
+<p class="font-body-sm text-on-surface-variant">Grass overflow opens in peak summer when main lot is full—same pay machines apply.</p>
+</div>
+</div>
+<div class="village-parking-location">
+<span class="village-parking-location__marker village-parking-location__marker--secondary" aria-hidden="true"></span>
+<div>
+<p class="font-label-caps text-[10px] text-limestone tracking-widest uppercase mb-1">On-Street (Not Recommended)</p>
+<p class="font-body-sm text-on-surface-variant">Limited spaces on the B4425 through the village—blocks residents and coaches.</p>
+</div>
+</div>
+</div>
+<dl class="village-spec village-spec--parking mb-8">
+<dt>Cost</dt>
+<dd>Typically £3–£5 for 2–4 hours</dd>
+<dt>Best Time</dt>
+<dd>Before 10am weekends</dd>
+</dl>
+<a class="inline-flex items-center justify-center gap-2 font-label-caps text-[10px] text-limestone tracking-widest uppercase border border-limestone/40 px-5 py-3 hover:bg-limestone hover:text-primary-container transition-colors mt-auto w-full sm:w-auto" href="https://www.google.com/maps/search/?api=1&amp;query=Bibury+Trout+Farm+Car+Park+GL7+5NP" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-base">open_in_new</span>
+Open in Google Maps
+</a>
+</div>
+</div>
+</div>
+<!-- Photography, Accessibility & Rain -->
+<div class="village-guides-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+<div class="village-panel village-guide-panel border border-outline-variant/20">
+<div class="village-guide-header">
+<span class="material-symbols-outlined">photo_camera</span>
+<h3 class="font-headline-md text-[22px] text-primary">Photography Guide</h3>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Specialist notes from our May 2026 visit—not generic &ldquo;it&rsquo;s photogenic&rdquo; advice.</p>
+<div class="village-guide-tips">
+<div class="village-guide-tip">
+<span class="village-guide-tip__label">Best Lens</span>
+<p class="village-guide-tip__text">24–70mm covers Arlington Row and river scenes; 70–200mm for stone and window detail.</p>
+</div>
+<div class="village-guide-tip">
+<span class="village-guide-tip__label">Best Time</span>
+<p class="village-guide-tip__text">Before 9am on weekdays. Mist is common on May–October mornings.</p>
+</div>
+<div class="village-guide-tip">
+<span class="village-guide-tip__label">Best Viewpoint</span>
+<p class="village-guide-tip__text">The small bridge over the River Coln—the classic Arlington Row composition.</p>
+</div>
+<div class="village-guide-tip">
+<span class="village-guide-tip__label">Sunset?</span>
+<p class="village-guide-tip__text">Not ideal—cottages face east. Golden light is better at sunrise or late afternoon from the river path.</p>
+</div>
+<div class="village-guide-tip">
+<span class="village-guide-tip__label">Drone?</span>
+<p class="village-guide-tip__text">Restricted over the village and National Trust land. No-fly zones are actively enforced.</p>
+</div>
+<div class="village-guide-tip">
+<span class="village-guide-tip__label">Tripod</span>
+<p class="village-guide-tip__text">Allowed—arrive early to set up without blocking the narrow bridge.</p>
+</div>
+</div>
+</div>
+<div class="village-panel village-guide-panel border border-outline-variant/20">
+<div class="village-guide-header">
+<span class="material-symbols-outlined">accessible</span>
+<h3 class="font-headline-md text-[22px] text-primary">Accessibility Guide</h3>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Honest notes on surfaces and gradients—Bibury rewards planning ahead for mobility needs.</p>
+<div class="village-guide-tips">
+<div class="village-guide-tip">
+<span class="village-access-level village-access-level--partial">Partial access</span>
+<span class="village-guide-tip__label">Wheelchair Suitability</span>
+<p class="village-guide-tip__text">Main road through the village is relatively level. River paths and Rack Isle have uneven gravel and steps.</p>
+</div>
+<div class="village-guide-tip">
+<span class="village-access-level village-access-level--moderate">Moderate</span>
+<span class="village-guide-tip__label">Pushchair Suitability</span>
+<p class="village-guide-tip__text">Fine on paved sections; difficult on meadow paths and near the Arlington Row bridge.</p>
+</div>
+<div class="village-guide-tip">
+<span class="village-access-level village-access-level--limited">Limited</span>
+<span class="village-guide-tip__label">Mobility Limitations</span>
+<p class="village-guide-tip__text">Arlington Row has narrow pavements and a steep-ish bridge. The Trout Farm area is more accessible.</p>
+</div>
+<div class="village-guide-tip">
+<span class="village-guide-tip__label">Surface Conditions</span>
+<p class="village-guide-tip__text">Mix of tarmac, gravel, and grass. Can be muddy after rain—waterproof footwear recommended.</p>
+</div>
+</div>
+</div>
+<div class="village-panel village-guide-panel border border-outline-variant/20 md:col-span-2 xl:col-span-1">
+<div class="village-guide-header">
+<span class="material-symbols-outlined">rainy</span>
+<h3 class="font-headline-md text-[22px] text-primary">If It Rains</h3>
+</div>
+<p class="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Rain does not need to cancel a Bibury visit. These options keep you dry or make the most of a wet day.</p>
+<div class="village-rain-options">
+<div class="village-rain-option">
+<span class="material-symbols-outlined village-rain-option__icon">restaurant</span>
+<div>
+<p class="village-rain-option__title">The Swan Hotel</p>
+<p class="village-rain-option__desc">Lunch or tea in the dining room or bar—a warm refuge with river views.</p>
+</div>
+</div>
+<div class="village-rain-option">
+<span class="material-symbols-outlined village-rain-option__icon">outdoor_garden</span>
+<div>
+<p class="village-rain-option__title">Trout Farm Café</p>
+<p class="village-rain-option__desc">Covered seating near the river—ideal for a coffee while showers pass.</p>
+</div>
+</div>
+<div class="village-rain-option">
+<span class="material-symbols-outlined village-rain-option__icon">directions_walk</span>
+<div>
+<p class="village-rain-option__title">Quick Village Circuit</p>
+<p class="village-rain-option__desc">Arlington Row and back via the main road—about 20 minutes under an umbrella.</p>
+</div>
+</div>
+<div class="village-rain-option">
+<span class="material-symbols-outlined village-rain-option__icon">church</span>
+<div>
+<p class="village-rain-option__title">St Mary&rsquo;s Church</p>
+<p class="village-rain-option__desc">Dry interior and a quiet churchyard—often overlooked on wet days.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Travel Notes & FAQs -->
+<div class="mb-24 md:mb-32 max-w-3xl mx-auto">
+<h2 class="font-display-lg text-[32px] md:text-[40px] text-primary mb-4 text-center">Travel Notes &amp; FAQs</h2>
+<p class="font-body-sm text-on-surface-variant text-center mb-10">Answers based on our visits and the questions visitors search for most often.</p>
+<div class="village-faq">
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Is Bibury free to visit?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Yes. There is no admission fee to walk the village, Arlington Row, or the public river paths. Parking, food, and accommodation are separate costs.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Is Bibury worth visiting?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Yes—with the right timing. Its architectural unity and riverside setting are genuinely exceptional. We would avoid midday on a summer Saturday, but an early weekday morning visit is among the best experiences in the Cotswolds.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+How long should I stay?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Allow 2–3 hours to see Arlington Row, walk the river, and have a coffee or lunch. Most coach groups only stay 45 minutes—you will gain a much richer experience with a little more time.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Is Bibury busy?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">It can be, especially 11am–3pm on weekends and school holidays between May and September. On our May 2026 visit it was almost empty at 9am and noticeably busy by 11am. Weekdays and early mornings are much quieter.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Where should I park?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Use the main pay-and-display car park on the B4425 opposite Bibury Trout Farm (GL7 5NP). It holds roughly 80 vehicles with overflow in peak season. Avoid parking on the narrow village roads.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Can I visit Bibury without a car?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">It is possible but less convenient. The nearest station is Kemble (12 miles). Bus services are limited—check routes from Cirencester or Northleach depending on the day. Taxis from Kemble or Cirencester should be pre-booked.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Can you swim in the river?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Swimming in the Coln through Bibury is not recommended. The river is shallow in places but runs through private land and the Trout Farm. Wild swimming is better suited to designated spots elsewhere in the Cotswolds.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Is Bibury dog friendly?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Yes. Dogs are welcome on outdoor paths and in many pub gardens including The Swan. Keep dogs on leads near Rack Isle and the river to protect wildlife.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Is Bibury good for families?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Yes, with caveats. Children enjoy the river, trout farm, and ducks. Paths near the meadows are uneven for pushchairs. Pair with Bourton-on-the-Water for family attractions if needed.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Can you go inside Arlington Row?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">No. Arlington Row cottages are National Trust-owned and privately tenanted. You can photograph them from the public path and bridge, but please do not enter gardens or peer through windows.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+What is the best time to visit Bibury?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Before 9am on a weekday, or after 4pm any day. Spring and autumn offer the best balance of weather and crowds. Summer is fine if you avoid the 11am–3pm window.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Are there toilets in Bibury?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Public toilets are available near the Trout Farm car park. The Swan Hotel and cafés also serve customers—please buy something if using their facilities.</p>
+</details>
+<details>
+<summary class="font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
+Is Bibury accessible for wheelchairs?
+<span class="material-symbols-outlined text-limestone">expand_more</span>
+</summary>
+<p class="font-body-sm text-on-surface-variant mt-5 leading-relaxed">Partially. The main road through the village is relatively level, but Arlington Row bridge, river paths, and Rack Isle have steps, gravel, and narrow surfaces. The Trout Farm area offers the most accessible option.</p>
+</details>
+</div>
+</div>
+<!-- Beyond Bibury -->
+<div class="mb-24 md:mb-32">
+<h2 class="font-display-lg text-[32px] md:text-[40px] text-primary mb-10">Beyond Bibury</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+<a class="village-nearby group" href="bourton-on-the-water.html">
+<img alt="Bourton-on-the-Water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2OYmP99WzoPuPHjxK2WUDU9rD-SqEEgghBkbxhliHCfLwwKmyLLA86EnLEcZaO17y5nxCkw-H1-eo2fYTa-lMwSCtIMOxxqtpH9fgzKC4kYDSBiUy-wypyRM9MSU8tC6aLMfGd8al3XlT_rUea4clV48_IulmyXE1VKfM8GnbOPtAL0QJ8KSZrcYgZItfPgH0RK6PVOccPT6Yu-CuzevnaspddsOYSOLe9XgOgvCb7DEFi_YSpll04SkX_r67BTDj7F7CTU4KTw"/>
+<div class="village-nearby__gradient" aria-hidden="true"></div>
+<div class="village-nearby__copy">
+<span class="font-label-caps text-[10px] text-on-background/80 tracking-[0.3em] uppercase block mb-1">15 Mins Away</span>
+<span class="font-headline-md text-[24px] text-on-background">Bourton-on-the-Water</span>
+</div>
+</a>
+<a class="village-nearby group" href="burford.html">
+<img alt="Burford high street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcSEzoi2FjiOObPxAhJ63qUDZOrWm03UwHJ8B7k9KEXh0hPBaP1dc5IzKOjWs-3gsDgERYixw7nrvjPkMHHMbs9rNKQpJj0_ZMpE-MBqAR4ORYrvvnwG4bBMzslv4_jA0HCDsCSIvr9ryPZej_immYdFxd9PWJBCU4TaXZTxzY9QIqR5pWFPGIa6UuhSLTPeDel2Z2E90hc2OlBvtv8vz0FXEhGc31MJPj8H0Irk8kgn4SEWyiyIigmCdJrjns_2wEB9es2mhuQg"/>
+<div class="village-nearby__gradient" aria-hidden="true"></div>
+<div class="village-nearby__copy">
+<span class="font-label-caps text-[10px] text-on-background/80 tracking-[0.3em] uppercase block mb-1">12 Mins Away</span>
+<span class="font-headline-md text-[24px] text-on-background">Burford</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Getting Here -->
+<div class="mt-24 md:mt-32 lg:mt-48 bg-surface-container-low border-y border-outline-variant/20 p-8 md:p-12 lg:p-20">
+<div class="max-w-3xl">
+<h4 class="font-label-caps text-label-caps text-limestone mb-6 tracking-[0.2em]">GETTING HERE</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-limestone">train</span>
+<div>
+<p class="font-body-sm font-semibold mb-2 text-on-surface">BY RAIL</p>
+<p class="font-body-sm text-on-surface-variant">The nearest station is Kemble (12 miles). Direct services run from London Paddington. Taxis are available but booking is recommended.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-limestone">directions_car</span>
+<div>
+<p class="font-body-sm font-semibold mb-2 text-on-surface">PARKING</p>
+<p class="font-body-sm text-on-surface-variant">Use the pay-and-display car park on the B4425 opposite Bibury Trout Farm. Arrive before 10am on weekends to avoid the busiest periods.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest text-secondary py-20 px-margin-mobile md:px-margin-desktop border-t border-outline/10">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-12 text-center">
+<a href="../../index.html" class="site-logo" aria-label="Visit Cotswolds"><img src="../../assets/logo/visit-cotswolds.svg" alt="Visit Cotswolds" width="400" height="80"/></a>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="font-label-caps text-label-caps tracking-widest text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../../index.html">THE COLLECTION</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="index.html">VILLAGE GUIDE</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../journal.html">JOURNAL</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../places-to-stay.html">STAYS</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../places-to-eat.html">EAT</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../things-to-do.html">EXPERIENCES</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../whats-on.html">WHAT'S ON</a>
+<a class="font-label-caps text-label-caps tracking-widest text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../plan-your-visit.html">PLAN</a>
+</div>
+<div class="font-body-sm text-body-sm text-[#4b463d] tracking-widest">
+                © 2024 VISIT COTSWOLDS. UNHURRIED LUXURY.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for the header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.site-header');
+            if (!header) return;
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(20, 19, 19, 0.95)';
+            } else {
+                header.style.background = '';
+            }
+        });
+    </script>
+<link href="../../css/site-header.css" rel="stylesheet"/>
+<link href="../../css/village-hero.css" rel="stylesheet"/>
+<link href="../../css/village-page.css" rel="stylesheet"/>
+<link href="../../css/site-nav.css" rel="stylesheet"/>
+<script src="../../js/site-nav.js"></script>
+<script src="../../js/site-logo.js"></script>
+<script src="../../js/village-hero.js"></script>
+</body></html>

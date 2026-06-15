@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Things to Do | Cotswolds Heritage Cinematic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #141313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .season-card {
+            height: 100vh;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+        }
+        .glass-overlay {
+            background: linear-gradient(to bottom, rgba(15, 15, 13, 0.4) 0%, rgba(15, 15, 13, 0.8) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Snap scrolling for the cinematic experience */
+        .snap-container {
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+        .snap-container::-webkit-scrollbar {
+            display: none;
+        }
+        .snap-section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#1c1c19",
+                        "inverse-primary": "#5f5e5b",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed": "#e9e2d5",
+                        "on-secondary-fixed-variant": "#4b463d",
+                        "outline": "#929189",
+                        "tertiary-fixed-dim": "#d5c5a5",
+                        "on-secondary-container": "#bfb8ab",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353434",
+                        "on-background": "#e5e2e1",
+                        "primary": "#c9c6c2",
+                        "surface-container-highest": "#353434",
+                        "surface-bright": "#3a3938",
+                        "secondary-container": "#4d493f",
+                        "primary-fixed": "#e5e2de",
+                        "surface-container": "#201f1f",
+                        "on-primary": "#31302e",
+                        "on-error": "#690005",
+                        "tertiary": "#d5c5a5",
+                        "on-secondary-fixed": "#1e1b13",
+                        "surface-container-high": "#2b2a29",
+                        "on-tertiary-fixed": "#231a06",
+                        "error-container": "#93000a",
+                        "primary-container": "#0f0f0d",
+                        "on-tertiary-fixed-variant": "#51452d",
+                        "on-primary-container": "#7d7b78",
+                        "outline-variant": "#474741",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-fixed-dim": "#c9c6c2",
+                        "background": "#141313",
+                        "on-secondary": "#343027",
+                        "tertiary-container": "#150e00",
+                        "surface-tint": "#c9c6c2",
+                        "secondary": "#cdc6b9",
+                        "on-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c8c7be",
+                        "inverse-on-surface": "#313030",
+                        "on-primary-fixed-variant": "#474744",
+                        "surface": "#141313",
+                        "secondary-fixed-dim": "#cdc6b9",
+                        "surface-dim": "#141313",
+                        "on-tertiary": "#392f19",
+                        "on-tertiary-container": "#887a5f",
+                        "tertiary-fixed": "#f2e1c0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-md": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-sm selection:bg-tertiary/30 has-site-header">
+<!-- Header -->
+<header class="site-header">
+<div class="site-header__inner">
+<div class="site-header__left">
+<button type="button" class="site-header__icon-btn site-header__menu" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<a href="../index.html" class="site-header__logo" aria-label="Visit Cotswolds"><img src="../assets/logo/visit-cotswolds.svg" alt="" width="400" height="80" decoding="async"/></a>
+<div class="site-header__right">
+<nav class="site-header__nav" aria-label="Main navigation">
+<a href="villages/index.html">Villages</a>
+<a href="places-to-stay.html">Stays</a>
+<a href="places-to-eat.html">Eat</a>
+<a class="is-active" href="things-to-do.html">Experiences</a>
+<a href="whats-on.html">What's On</a>
+<a href="journal.html">Journal</a>
+<a href="plan-your-visit.html">Plan</a>
+</nav>
+<button type="button" class="site-header__icon-btn" aria-label="Search">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="snap-container h-screen overflow-y-auto">
+<!-- Hero Section -->
+<section class="snap-section min-h-screen flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop relative">
+<div class="absolute inset-0 z-0">
+
+</div>
+<div class="relative z-10 space-y-4">
+<span class="font-label-caps text-label-caps tracking-[0.3em] text-secondary/60">THE COLLECTION</span>
+<h2 class="font-display-lg text-[80px] md:text-[120px] leading-none text-primary italic">Things to Do</h2>
+<p class="font-body-lg text-on-surface-variant max-w-xl mx-auto opacity-70">Experience the unhurried luxury of the English countryside through its ever-changing seasons.</p>
+<div class="pt-12">
+<div class="w-[1px] h-24 bg-gradient-to-b from-primary to-transparent mx-auto"></div>
+</div>
+</div>
+</section>
+<!-- Seasonal Cards: Spring -->
+<section class="snap-section season-card group overflow-hidden">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A cinematic, low-angle shot of a lush Cotswold woodland floor in spring, blanketed with wild garlic white flowers and vibrant green leaves. Soft, dappled sunlight filters through the canopy of ancient oak trees, creating a serene, ethereal atmosphere. The color palette is dominated by deep forest greens and brilliant whites, consistent with a high-end travel magazine aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANIc35sWgQT3k_XqoYQKgAQWoUdfKKAZa7FPx4ZfLsEJL1EEECdkr82EiiVo9gx2YDpKf7E6yLexhIXQ8YAXdaWf0yjZOljAFEjVXoshJBfRMcNO1nWDNWBOFGQ-reQaV09Ak6O1E0G3FbrTGPh-lFeTmJm1GW6b-Psp7szxIlK6N2ldSuUeQEr9heSUMFwz1AcrxDJt-RKvy_gNe0c-RuACWgzCcv8HKhlsyw7oe_yX4koqWqwJZywHmlg4v9c2lKgO3GAOFreg"/>
+<div class="absolute inset-0 glass-overlay"></div>
+</div>
+<div class="relative h-full flex flex-col justify-end p-margin-mobile md:p-margin-desktop pb-24 md:pb-32">
+<div class="max-w-4xl">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">01 / SPRING</span>
+<h3 class="font-display-lg text-display-lg-mobile md:text-[96px] text-primary mb-6">Spring in the Cotswolds</h3>
+<div class="flex flex-wrap gap-8 items-center border-t border-outline/10 pt-8">
+<button class="border border-secondary/30 px-8 py-3 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all duration-300">EXPLORE AWAKENING</button>
+<p class="font-body-sm text-on-surface-variant max-w-sm">From wild garlic carpets to the first blossoms of the orchard, witness a landscape reborn.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Seasonal Cards: Summer -->
+<section class="snap-section season-card group">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="An expansive, wide-angle cinematic view of rolling purple lavender fields at sunset in the Cotswolds. The golden hour light casts long, warm shadows and highlights the vibrant purple hues against the deep green landscape. The horizon is dotted with silhouettes of historic stone farm buildings. The mood is sophisticated and tranquil, featuring a rich, dark-mode friendly palette of deep violets and warm ambers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTNyYdMbhxoMynkjEMfzlu6MT7RhqfkpNIw4EHSYcX1K7vJxi0V8oefJn8inqvhzc42d8Gc7tx1XakYbuAyF0yMfSAsg43RYgaFz0EKiTaMcW_H5qS8bo7bYUFKD4xHm3M6PesaPurcDX9jomZEh-EBYJ9t1OId0srDRqYRIhYMOAxFOxAu3fJaDlGsgOiA5sxFPKUdl7bmtD_tI87UjjM9vnxF_CswTVQw3aMx4m0EvcO4jkidqRchi9uBnKjaYRi9Hc_yjz_Jg"/>
+<div class="absolute inset-0 glass-overlay"></div>
+</div>
+<div class="relative h-full flex flex-col justify-end p-margin-mobile md:p-margin-desktop pb-24 md:pb-32">
+<div class="max-w-4xl">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">02 / SUMMER</span>
+<h3 class="font-display-lg text-display-lg-mobile md:text-[96px] text-primary mb-6">Summer in the Cotswolds</h3>
+<div class="flex flex-wrap gap-8 items-center border-t border-outline/10 pt-8">
+<button class="border border-secondary/30 px-8 py-3 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all duration-300">EXPLORE NOON</button>
+<p class="font-body-sm text-on-surface-variant max-w-sm">Golden stone basks in the long sunlight while lavender scents the afternoon air.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Seasonal Cards: Autumn -->
+<section class="snap-section season-card group">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A vertical, editorial composition of a winding country road in the Cotswolds during autumn, lined with towering, ancient beech trees with leaves in shades of burnt orange and deep gold. Mist clings to the valley floor in the distance. The lighting is soft and moody, emphasizing the textures of the damp road and falling leaves. The color scheme focuses on rich ochres, umbers, and dark charcoals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhZXpcC_BcSdd5zN4nXD0duJZtgeNx2Sr1GVFXJvGSZ2JYelg5w--GTGOcBLzMyvHUDS90tbI_BruAurcbi0U1J0l4mC58lbOSFGDOQ4iGecqlM4Pd4oVKvLF_lSFnYxNzbzBF_ochEOJEhvVX97nrHVAOVVR-d9llUMaU1ohQz-ZmfnTZDSI6lr_tX1l8BSQQhNi8lqB3c-YDBSPGlJWgYLTf6j8e6bzz1gjpXBgkczFK1DfHTu-zM2Ug0Q6JSaF2hWq77S9tGQ"/>
+<div class="absolute inset-0 glass-overlay"></div>
+</div>
+<div class="relative h-full flex flex-col justify-end p-margin-mobile md:p-margin-desktop pb-24 md:pb-32">
+<div class="max-w-4xl">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">03 / AUTUMN</span>
+<h3 class="font-display-lg text-display-lg-mobile md:text-[96px] text-primary mb-6">Autumn in the Cotswolds</h3>
+<div class="flex flex-wrap gap-8 items-center border-t border-outline/10 pt-8">
+<button class="border border-secondary/30 px-8 py-3 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all duration-300">EXPLORE HARVEST</button>
+<p class="font-body-sm text-on-surface-variant max-w-sm">A tapestry of copper and gold settles over the valley. The perfect time for fireside contemplation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Seasonal Cards: Winter -->
+<section class="snap-section season-card group">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A cinematic, low-light shot of a traditional honey-colored stone village in the Cotswolds covered in a light dusting of frost at twilight. Wisps of white smoke curl from the chimneys of cottages into a deep blue evening sky. Warm, yellow light glows from small windows, contrasting with the cool, icy blue tones of the landscape. The atmosphere is quiet, cozy, and profoundly peaceful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABTvg8DXGytMvmSyea-hkrPykTnLaU5QidkaeFpdI2Ff7GNqJIKjciOItlegR_1a04aEr4bPU8vCq_tKrJxcxamdGCqcy-zQI0nU3fa6hd2jwTfmmpsUPHAXX7q5cV3QlJdCxFEqozoWcOJv_og3oBsT_cc_hfzv47zkETIGnk81ypFtkegrQ6wWGxShELyxAk1_sXzP6BvibVzzk7dd1sYNhwEDSId5BEWUhX1Tf6uoI8yAh2AkE29SwdgUC0WiRv2xtQz4hAVg"/>
+<div class="absolute inset-0 glass-overlay"></div>
+</div>
+<div class="relative h-full flex flex-col justify-end p-margin-mobile md:p-margin-desktop pb-24 md:pb-32">
+<div class="max-w-4xl">
+<span class="font-label-caps text-label-caps text-tertiary mb-4 block">04 / WINTER</span>
+<h3 class="font-display-lg text-display-lg-mobile md:text-[96px] text-primary mb-6">Winter in the Cotswolds</h3>
+<div class="flex flex-wrap gap-8 items-center border-t border-outline/10 pt-8">
+<button class="border border-secondary/30 px-8 py-3 font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all duration-300">EXPLORE SOLSTICE</button>
+<p class="font-body-sm text-on-surface-variant max-w-sm">Frost-etched stone and chimney smoke. Experience the quietude of a winter's retreat.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="snap-section bg-surface-container-lowest text-secondary full-width bottom-0 border-t border-outline/10">
+<div class="flex flex-col items-center w-full px-margin-mobile md:px-margin-desktop py-16 md:py-20 max-w-container-max mx-auto gap-8 md:gap-12">
+<a href="../index.html" class="site-logo" aria-label="Visit Cotswolds"><img src="../assets/logo/visit-cotswolds.svg" alt="Visit Cotswolds" width="400" height="80"/></a>
+<nav class="flex flex-wrap justify-center gap-x-12 gap-y-6">
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="../index.html">THE COLLECTION</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="villages/index.html">VILLAGE GUIDE</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="journal.html">JOURNAL</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="places-to-stay.html">STAYS</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="places-to-eat.html">EAT</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-tertiary-fixed transition-colors duration-300" href="plan-your-visit.html">PLAN</a>
+</nav>
+<div class="flex gap-6">
+<a class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="share" href="#">share</a>
+<a class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="location_on" href="#">location_on</a>
+</div>
+<p class="font-label-caps text-label-caps text-outline opacity-50">© 2024 VISIT COTSWOLDS. UNHURRIED LUXURY.</p>
+</div>
+</footer>
+</main>
+<!-- Side Navigation / Page Progress -->
+<div class="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-4">
+<div class="w-1 h-1 bg-primary rounded-full opacity-100"></div>
+<div class="w-1 h-1 bg-primary rounded-full opacity-30"></div>
+<div class="w-1 h-1 bg-primary rounded-full opacity-30"></div>
+<div class="w-1 h-1 bg-primary rounded-full opacity-30"></div>
+<div class="w-1 h-1 bg-primary rounded-full opacity-30"></div>
+</div>
+<script>
+        // Smooth scroll listener for dot navigation updates
+        const container = document.querySelector('.snap-container');
+        const dots = document.querySelectorAll('.fixed.right-8 div');
+        const sections = document.querySelectorAll('.snap-section');
+
+        container.addEventListener('scroll', () => {
+            const scrollPos = container.scrollTop;
+            const height = window.innerHeight;
+            const index = Math.round(scrollPos / height);
+            
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('opacity-100');
+                    dot.classList.remove('opacity-30');
+                } else {
+                    dot.classList.add('opacity-30');
+                    dot.classList.remove('opacity-100');
+                }
+            });
+        });
+
+        // Simple Fade-in effect for texts on scroll
+        const observerOptions = {
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const h3 = entry.target.querySelector('h3');
+                    const span = entry.target.querySelector('span');
+                    const controls = entry.target.querySelector('.flex-wrap');
+                    
+                    if (h3) h3.style.opacity = "1";
+                    if (span) span.style.opacity = "1";
+                    if (controls) controls.style.opacity = "1";
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            const title = section.querySelector('h3');
+            if (title) {
+                title.style.opacity = "0";
+                title.style.transition = "opacity 1.5s ease-out 0.2s";
+            }
+            const label = section.querySelector('span');
+            if (label) {
+                label.style.opacity = "0";
+                label.style.transition = "opacity 1s ease-out";
+            }
+            const meta = section.querySelector('.flex-wrap');
+            if (meta) {
+                meta.style.opacity = "0";
+                meta.style.transition = "opacity 1.5s ease-out 0.5s";
+            }
+            observer.observe(section);
+        });
+    </script>
+<link href="../css/site-header.css" rel="stylesheet"/>
+<link href="../css/site-nav.css" rel="stylesheet"/>
+<script src="../js/site-nav.js"></script>
+<script src="../js/site-logo.js"></script>
+</body></html>

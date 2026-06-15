@@ -1,0 +1,115 @@
+/* Mobile navigation overlay */
+.site-nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    pointer-events: none;
+    visibility: hidden;
+    transition: visibility 0.35s ease;
+}
+
+.site-nav-overlay.is-open {
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.site-nav-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 13, 0.72);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.site-nav-overlay.is-open .site-nav-backdrop {
+    opacity: 1;
+}
+
+.site-nav-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(360px, 88vw);
+    height: 100%;
+    background: #1a1917;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.site-nav-overlay.is-open .site-nav-panel {
+    transform: translateX(0);
+}
+
+.site-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-nav-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.15em;
+    color: #e8e4dc;
+}
+
+.site-nav-close {
+    background: none;
+    border: none;
+    color: #c9b896;
+    cursor: pointer;
+    padding: 0.25rem;
+    line-height: 1;
+    transition: opacity 0.2s;
+}
+
+.site-nav-close:hover {
+    opacity: 0.7;
+}
+
+.site-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav-links a {
+    display: block;
+    padding: 1rem 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(232, 228, 220, 0.65);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.2s, padding-left 0.2s;
+}
+
+.site-nav-links a:hover {
+    color: #e8e4dc;
+    padding-left: 0.5rem;
+}
+
+.site-nav-links a.is-active {
+    color: #c9b896;
+    border-bottom-color: rgba(201, 184, 150, 0.3);
+}
+
+body.site-nav-open {
+    overflow: hidden;
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>What's On in the Cotswolds | Visit Cotswolds</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #141313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-overlay {
+            background: linear-gradient(to bottom, rgba(15, 15, 13, 0.2) 0%, rgba(15, 15, 13, 0.9) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .event-card {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .event-card:hover {
+            transform: translateY(-8px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#1c1c19",
+                        "inverse-primary": "#5f5e5b",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#929189",
+                        "on-background": "#e5e2e1",
+                        "primary": "#c9c6c2",
+                        "surface-container-highest": "#353434",
+                        "surface-container": "#201f1f",
+                        "on-primary": "#31302e",
+                        "tertiary": "#d5c5a5",
+                        "primary-container": "#0f0f0d",
+                        "outline-variant": "#474741",
+                        "background": "#141313",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c8c7be",
+                        "surface-container-low": "#1c1b1b",
+                        "limestone": "#C9B99A"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-md": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "300"}]
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-sm selection:bg-tertiary/30 has-site-header">
+<header class="site-header">
+<div class="site-header__inner">
+<div class="site-header__left">
+<button type="button" class="site-header__icon-btn site-header__menu" data-nav-toggle aria-label="Open menu" aria-expanded="false">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<a href="../index.html" class="site-header__logo" aria-label="Visit Cotswolds"><img src="../assets/logo/visit-cotswolds.svg" alt="" width="400" height="80" decoding="async"/></a>
+<div class="site-header__right">
+<nav class="site-header__nav" aria-label="Main navigation">
+<a href="villages/index.html">Villages</a>
+<a href="places-to-stay.html">Stays</a>
+<a href="places-to-eat.html">Eat</a>
+<a href="things-to-do.html">Experiences</a>
+<a class="is-active" href="whats-on.html">What's On</a>
+<a href="journal.html">Journal</a>
+<a href="plan-your-visit.html">Plan</a>
+</nav>
+<button type="button" class="site-header__icon-btn" aria-label="Search">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<section class="relative min-h-[50vh] md:min-h-[60vh] flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop pt-12 pb-10 md:pb-12">
+<div class="space-y-6 max-w-2xl">
+<span class="font-label-caps text-label-caps tracking-[0.3em] text-limestone opacity-80">THE DIARY</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-[100px] leading-[0.95] italic">What's On in the Cotswolds</h1>
+<p class="font-body-lg text-on-surface-variant max-w-lg mx-auto">A curated calendar of heritage, culture, and country pursuits across the Cotswold hills.</p>
+</div>
+</section>
+<section class="sticky top-[var(--site-header-height)] z-40 bg-background/95 backdrop-blur-md border-y border-outline-variant/20 py-5 md:py-6 mb-10 md:mb-12">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-5">
+<div class="flex flex-col lg:flex-row gap-4 lg:gap-6 lg:items-center lg:justify-between">
+<div class="flex flex-col sm:flex-row flex-wrap gap-3 w-full lg:w-auto">
+<button type="button" class="flex items-center gap-4 w-full sm:w-auto sm:min-w-[240px] px-6 py-3 md:py-4 border border-outline-variant/40 rounded-full hover:border-limestone transition-colors">
+<span class="material-symbols-outlined text-limestone">calendar_today</span>
+<span class="font-label-caps text-[10px] md:text-xs opacity-60">SELECT DATE RANGE</span>
+</button>
+<button type="button" class="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">today</span>
+<span class="font-label-caps text-[10px] md:text-xs">TODAY</span>
+</button>
+<button type="button" class="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">weekend</span>
+<span class="font-label-caps text-[10px] md:text-xs">THIS WEEKEND</span>
+</button>
+<button type="button" class="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<span class="font-label-caps text-[10px] md:text-xs">THIS MONTH</span>
+</button>
+</div>
+<div class="flex gap-6 md:gap-8 overflow-x-auto no-scrollbar py-1 w-full lg:w-auto">
+<button type="button" class="font-label-caps text-[10px] tracking-widest text-limestone whitespace-nowrap border-b border-limestone pb-1">ALL EVENTS</button>
+<button type="button" class="font-label-caps text-[10px] tracking-widest opacity-40 hover:opacity-100 transition-opacity whitespace-nowrap pb-1">FESTIVALS</button>
+<button type="button" class="font-label-caps text-[10px] tracking-widest opacity-40 hover:opacity-100 transition-opacity whitespace-nowrap pb-1">MARKETS</button>
+<button type="button" class="font-label-caps text-[10px] tracking-widest opacity-40 hover:opacity-100 transition-opacity whitespace-nowrap pb-1">SPORTING</button>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-24 md:pb-32">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<article class="event-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Artisan Market" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1orKHEyxDjU-n67kpcxPJ0TALyYwMezDzdNTLIKUz77WRGqmE4cZf3eKUoHXfk4agPuoxO8_ihb-ePinGhZW3IKcA2Vv9TD7GcWt5FCUbuCh2ykdr1zu2op2cWp-BVsXJ-kj6UX_zevQKn6NiZunl_2xo1qGWgPYYFIjK93_Ox3rtpkUoo3JR2KsU1Mq_SpIiL7XrVgKvh8MgIHeCPdyjNWwJF6EPrPW9YJo1NHsOgJdTIs21Cm3uxBwlDe4iBJ9U16hu4LWIAg"/>
+<div class="absolute inset-0 glass-overlay opacity-60"></div>
+<div class="absolute top-6 left-6 bg-background/80 backdrop-blur-md px-4 py-3 text-center min-w-[60px]">
+<span class="block font-label-caps text-[10px] opacity-60">MAY</span>
+<span class="block font-headline-md text-2xl">14</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-limestone/70">location_on</span>
+<span class="font-label-caps text-[10px] text-limestone">CHIPPING CAMPDEN</span>
+</div>
+<h3 class="font-headline-md text-2xl group-hover:text-limestone transition-colors">The Artisan Craft Fair</h3>
+<p class="font-body-sm text-on-surface-variant line-clamp-3">A monthly gathering of the finest makers and craftsmen in the heart of the village square. Discover unique textiles, hand-thrown ceramics, and local woodcraft.</p>
+</div>
+</article>
+<article class="event-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Equestrian Events" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIBKgizqNuINElxwaG8jYGcXmenxm-7wA4KC0eBuuVdqNs1gydPocWvMIVDepVaP0A9bHD0lPPMH64CFAjoGRAQfmvh5R-MHHit1DqZPrzwPte8_mjVY7_vcKvEEEv5eit_2CgAV3QsDb6CuckpZpNigTkvThjU38P8bpLGeF66iI3nbkTmdR578Ux2IQEtVhEnX1Wlhu7NS8U5KOEAGjsbH-GPkf_3P597ESI1xciKbdnkJhT1wox3gvQba4VRJLb0zZfPlTOkA"/>
+<div class="absolute inset-0 glass-overlay opacity-60"></div>
+<div class="absolute top-6 left-6 bg-background/80 backdrop-blur-md px-4 py-3 text-center min-w-[60px]">
+<span class="block font-label-caps text-[10px] opacity-60">JUNE</span>
+<span class="block font-headline-md text-2xl">02</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-limestone/70">location_on</span>
+<span class="font-label-caps text-[10px] text-limestone">BADMINTON ESTATE</span>
+</div>
+<h3 class="font-headline-md text-2xl group-hover:text-limestone transition-colors">Badminton Horse Trials</h3>
+<p class="font-body-sm text-on-surface-variant line-clamp-3">The pinnacle of world-class eventing. Experience the thrill of the cross-country course set against the majestic backdrop of Badminton House.</p>
+</div>
+</article>
+<article class="event-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Literary Festival" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAicKIMJSfWfYjRtYW2TCmAwVp3glFn_9E7W06K2RXCIswIOrWbwBJs0R0Ywgdk8PnBLZlgwRResCNXSy0nsKnIM5aoO0tkNZv_JisQ36jVXaTxKyQBsCyJRqvVfEKJIs300ZPF2xitTB6-zGFQeL5FXYte5CExqevaeBmmZFQ4VLZs2XZcrafs9kGCpP603PUXtPgkJqANvfA4WEnklxNVH3kbc1W7ZbzdLRYmO_ikM4ONruEkf78nTa7zQPan0SITT9LW8ACeGQ"/>
+<div class="absolute inset-0 glass-overlay opacity-60"></div>
+<div class="absolute top-6 left-6 bg-background/80 backdrop-blur-md px-4 py-3 text-center min-w-[60px]">
+<span class="block font-label-caps text-[10px] opacity-60">OCT</span>
+<span class="block font-headline-md text-2xl">21</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-limestone/70">location_on</span>
+<span class="font-label-caps text-[10px] text-limestone">CHELTENHAM</span>
+</div>
+<h3 class="font-headline-md text-2xl group-hover:text-limestone transition-colors">Cheltenham Literature Festival</h3>
+<p class="font-body-sm text-on-surface-variant line-clamp-3">The world's oldest literature festival, bringing together best-selling authors, world-renowned poets, and political thinkers for ten days of conversation.</p>
+</div>
+</article>
+<article class="event-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Secret Garden Opening" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjqu6o7Lh6nJIZ4jvWQiGDR6JEo1mjqjnviN6j-SQp737VIp4Rwk7ptZWcG5YiUMY_xD4OycXr9j5xyLGEMXE4GiNZ_nCZHUQOQwElevpMKl1t4-kGkW6g9VjnLyLgZHwrYdBFfbHLXisUg2ZXD0nSYkQrZCpaIy1ndcSJ6pvEEB_yoG98sgqoGEY8JOOf-UrCquAgiS_9KhdvYxzZhfyo1oB66k27EM8MsS4kETA8wc9ok1s10FEkyFxLVM73KzYDUwYwVsmreg"/>
+<div class="absolute inset-0 glass-overlay opacity-60"></div>
+<div class="absolute top-6 left-6 bg-background/80 backdrop-blur-md px-4 py-3 text-center min-w-[60px]">
+<span class="block font-label-caps text-[10px] opacity-60">JULY</span>
+<span class="block font-headline-md text-2xl">08</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-limestone/70">location_on</span>
+<span class="font-label-caps text-[10px] text-limestone">STOW-ON-THE-WOLD</span>
+</div>
+<h3 class="font-headline-md text-2xl group-hover:text-limestone transition-colors">Secret Garden Openings</h3>
+<p class="font-body-sm text-on-surface-variant line-clamp-3">A rare opportunity to explore the private walled gardens of the Cotswolds' most historic manor houses, typically closed to the public.</p>
+</div>
+</article>
+<article class="event-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Evening Recital" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkmtZj9zn-cb03gnChXrZlAYiOD4OwriJV4dFX052_NDNMph-ZsGvh8G2PGibfzp3GPcjQJqlexQAfEWQ5dJOVzAOo_yPwLOe3BT1ra6LNjNaiDgDXDn3Wiq2YPFt5XmYJF9uYhjKuvtO0Ba5U_sGEikWYgSBjI67IJd-Z4iz682wlrUANAQCgzFyKwBc30l1i3ER8wqZZji4C0Js6JjBPRj-U0i-DUb6VifbK6OojGN2dIEqSoLsXzv7sjuDuRQF2YX74gE-fiQ"/>
+<div class="absolute inset-0 glass-overlay opacity-60"></div>
+<div class="absolute top-6 left-6 bg-background/80 backdrop-blur-md px-4 py-3 text-center min-w-[60px]">
+<span class="block font-label-caps text-[10px] opacity-60">AUG</span>
+<span class="block font-headline-md text-2xl">15</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-limestone/70">location_on</span>
+<span class="font-label-caps text-[10px] text-limestone">BOURTON-ON-THE-WATER</span>
+</div>
+<h3 class="font-headline-md text-2xl group-hover:text-limestone transition-colors">Cotswold Music Festival</h3>
+<p class="font-body-sm text-on-surface-variant line-clamp-3">An evening of chamber music within the candlelit acoustics of St. Lawrence's Church. Featuring a performance by the regional philharmonic.</p>
+</div>
+</article>
+<article class="event-card group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Autumn Foraging" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA37ZyHra1VcWSfXRhET6VLMa2ETsHh7wJGr8Jm9qPvTVHTb7Pj75x7CK3I83zoQsMS4mUpDKDAPsQenOigq5lW0i2c5fd9nPpCm_kFSiMnBFu7zO-ntDLychxKD1wCokAOV-d8bknsuBEEO_MwDXpTU5h0AF0p2fa3k4bA7X9ME-WBZuNj3vfoqEztGnPRttRfuk-d_GMjpI646E6tLf4nEcRgrsgbAB9YVS85WnezAcp_Fh9xgrn2bVju1jrCdZ_f0Vtc01REaQ"/>
+<div class="absolute inset-0 glass-overlay opacity-60"></div>
+<div class="absolute top-6 left-6 bg-background/80 backdrop-blur-md px-4 py-3 text-center min-w-[60px]">
+<span class="block font-label-caps text-[10px] opacity-60">SEP</span>
+<span class="block font-headline-md text-2xl">30</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-limestone/70">location_on</span>
+<span class="font-label-caps text-[10px] text-limestone">WYCHWOOD FOREST</span>
+</div>
+<h3 class="font-headline-md text-2xl group-hover:text-limestone transition-colors">Autumn Foraging Workshop</h3>
+<p class="font-body-sm text-on-surface-variant line-clamp-3">Join local herbalists on a guided wander through ancient woodland to identify and harvest the wild bounty of the autumn harvest.</p>
+</div>
+</article>
+</div>
+</section>
+<section class="bg-surface-container-low py-24 md:py-32 border-y border-outline-variant/20 text-center px-margin-mobile md:px-margin-desktop">
+<div class="max-w-xl mx-auto space-y-8">
+<span class="font-label-caps text-label-caps tracking-[0.4em] text-limestone">BE THE FIRST TO KNOW</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-5xl italic leading-tight">Receive the curated monthly diary</h2>
+<p class="font-body-lg text-on-surface-variant">Unlock access to private viewings and exclusive invitations across the Cotswolds.</p>
+<form class="flex flex-col md:flex-row gap-4 pt-4" action="#" method="post">
+<input class="flex-grow bg-transparent border-b border-outline-variant/40 px-4 py-3 font-label-caps text-xs focus:outline-none focus:border-limestone transition-colors" placeholder="YOUR EMAIL ADDRESS" type="email" name="email"/>
+<button class="bg-limestone text-primary-container px-10 py-4 font-label-caps text-[10px] tracking-widest hover:bg-on-background transition-colors" type="submit">SUBSCRIBE</button>
+</form>
+</div>
+</section>
+</main>
+<footer class="relative w-full py-20 bg-surface-container-lowest border-t border-outline-variant/10 flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a href="../index.html" class="site-logo mb-8" aria-label="Visit Cotswolds"><img src="../assets/logo/visit-cotswolds.svg" alt="Visit Cotswolds" width="400" height="80"/></a>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-12">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="villages/index.html">Villages</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="places-to-stay.html">Stays</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="places-to-eat.html">Eat</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="things-to-do.html">Experiences</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="whats-on.html">What's On</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="journal.html">Journal</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="plan-your-visit.html">Plan</a>
+</div>
+<p class="font-body-sm text-on-surface-variant opacity-50">
+            © 2024 Visit Cotswolds. All rights reserved.
+        </p>
+</footer>
+<link href="../css/site-header.css" rel="stylesheet"/>
+<link href="../css/site-nav.css" rel="stylesheet"/>
+<script src="../js/site-nav.js"></script>
+<script src="../js/site-logo.js"></script>
+<script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.event-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-1000');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,57 @@
+/* Site-wide responsive foundation — loaded via site-header.css */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+}
+
+/* Prevent grid/flex children from forcing horizontal overflow */
+[class*='grid'] > *,
+[class*='flex'] > * {
+    min-width: 0;
+}
+
+/* Embedded maps scale on all viewports */
+.village-map__embed,
+iframe[src*='google.com/maps'] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Homepage: curated journeys header */
+@media (max-width: 639px) {
+    .home-journeys__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+
+/* Homepage: village edit card labels */
+@media (max-width: 767px) {
+    .home-village-card__copy {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+    }
+
+    .home-village-card__title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+}
+
+/* Section spacing on small screens */
+@media (max-width: 767px) {
+    .section-padding-mobile {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

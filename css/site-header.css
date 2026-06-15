@@ -1,0 +1,215 @@
+/* Shared site header — centred logo, responsive grid */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+@import url('responsive.css');
+
+:root {
+    --site-header-height: 5.5rem;
+    --site-header-nav-breakpoint: 1400px;
+    --site-logo-ratio: 5 / 1;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--site-header-height);
+    background: rgba(20, 19, 19, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-header--transparent {
+    background: rgba(20, 19, 19, 0.4);
+}
+
+.site-header__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .site-header__inner {
+        padding: 0 64px;
+    }
+}
+
+.site-header__left {
+    display: flex;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+    z-index: 2;
+}
+
+.site-header__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 0.75rem;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .site-header__right {
+        gap: 1.25rem;
+    }
+}
+
+/* Logo is always truly centred regardless of side-column width */
+.site-header__logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    text-decoration: none;
+    z-index: 3;
+    pointer-events: auto;
+    max-width: calc(100% - 5.5rem);
+}
+
+.site-header__logo img,
+.site-header__logo-svg {
+    display: block;
+    height: clamp(2rem, 3.5vw + 0.75rem, 3rem);
+    width: auto;
+    aspect-ratio: var(--site-logo-ratio);
+    max-width: min(15rem, calc(100vw - 5.5rem));
+}
+
+@media (min-width: 768px) {
+    .site-header__logo {
+        max-width: calc(100% - 10rem);
+    }
+
+    .site-header__logo img,
+    .site-header__logo-svg {
+        height: clamp(2.25rem, 2vw + 1.5rem, 3rem);
+        max-width: min(15rem, calc(100vw - 14rem));
+    }
+}
+
+@media (min-width: 1400px) {
+    .site-header__logo {
+        max-width: none;
+    }
+
+    .site-header__logo img,
+    .site-header__logo-svg {
+        height: 3rem;
+        width: 15rem;
+        max-width: 15rem;
+    }
+}
+
+/* Footer / standalone brand mark */
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    text-decoration: none;
+}
+
+.site-logo img,
+.site-logo-svg {
+    display: block;
+    height: clamp(2.25rem, 2.5vw + 1.25rem, 3.5rem);
+    width: auto;
+    aspect-ratio: var(--site-logo-ratio);
+    max-width: min(17.5rem, 90vw);
+}
+
+.site-header__icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    color: #c9c6c2;
+    cursor: pointer;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+}
+
+.site-header__icon-btn:hover {
+    opacity: 0.75;
+}
+
+/* Hamburger visible by default; hidden only when inline nav fits */
+.site-header__menu {
+    display: inline-flex;
+}
+
+.site-header__nav {
+    display: none;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+@media (min-width: 1400px) {
+    .site-header__menu {
+        display: none;
+    }
+
+    .site-header__nav {
+        display: flex;
+    }
+}
+
+.site-header__nav a {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(232, 228, 220, 0.65);
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+@media (min-width: 1280px) {
+    .site-header__nav {
+        gap: 1.5rem;
+    }
+
+    .site-header__nav a {
+        font-size: 12px;
+        letter-spacing: 0.15em;
+    }
+}
+
+.site-header__nav a:hover {
+    color: #e5e2e1;
+}
+
+.site-header__nav a.is-active {
+    color: #c9c6c2;
+    border-bottom: 1px solid rgba(201, 198, 194, 0.35);
+    padding-bottom: 2px;
+}
+
+body.has-site-header {
+    padding-top: var(--site-header-height);
+}
