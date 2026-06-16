@@ -166,8 +166,11 @@
     -webkit-backdrop-filter: blur(8px);
 }
 
-.village-hero__play .material-symbols-outlined {
+.village-hero__play .material-symbols-outlined,
+.village-hero__play svg {
     font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
     font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;
 }
 
@@ -196,4 +199,52 @@
     text-transform: uppercase;
     color: rgba(237, 229, 216, 0.8);
     pointer-events: none;
+}
+
+.village-hero--tight .village-hero__media {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 768px) {
+    .village-hero--tight .village-hero__media {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+.village-hero--tight .village-hero__video-wrap {
+    width: 66.667%;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+    .village-hero--tight .village-hero__media {
+        justify-content: center;
+    }
+
+    .village-hero--tight .village-hero__video-wrap {
+        width: 66.667%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Bibury: hero height follows content — removes empty band above Curated Overview */
+.village-hero--tight {
+    min-height: auto;
+    align-items: flex-start;
+}
+
+.village-hero--tight .village-hero__content {
+    padding-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .village-hero--tight .village-hero__content {
+        padding-bottom: 1.5rem;
+    }
 }

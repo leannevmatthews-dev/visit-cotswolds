@@ -4,8 +4,9 @@
 
 :root {
     --site-header-height: 5.5rem;
-    --site-header-nav-breakpoint: 1400px;
+    --site-header-nav-breakpoint: 1200px;
     --site-logo-ratio: 5 / 1;
+    --site-logo-width: clamp(9rem, 18vw, 15rem);
 }
 
 .site-header {
@@ -26,16 +27,15 @@
 }
 
 .site-header__inner {
-    position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
-    justify-content: space-between;
+    column-gap: clamp(0.75rem, 2vw, 1.5rem);
     height: 100%;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px;
-    gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -45,21 +45,23 @@
 }
 
 .site-header__left {
+    grid-column: 1;
     display: flex;
     align-items: center;
-    flex: 1 1 0;
+    justify-content: flex-start;
+    gap: 0.75rem;
     min-width: 0;
-    z-index: 2;
+    overflow: hidden;
 }
 
 .site-header__right {
+    grid-column: 3;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex: 1 1 0;
-    min-width: 0;
     gap: 0.75rem;
-    z-index: 2;
+    min-width: 0;
+    overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -68,54 +70,27 @@
     }
 }
 
-/* Logo is always truly centred regardless of side-column width */
+/* Logo sits in the centre grid column — nav flanks it on both sides */
 .site-header__logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    grid-column: 2;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     line-height: 0;
     text-decoration: none;
-    z-index: 3;
-    pointer-events: auto;
-    max-width: calc(100% - 5.5rem);
+    flex-shrink: 0;
+    width: var(--site-logo-width);
+    max-width: var(--site-logo-width);
+    z-index: 2;
 }
 
 .site-header__logo img,
 .site-header__logo-svg {
     display: block;
-    height: clamp(2rem, 3.5vw + 0.75rem, 3rem);
-    width: auto;
+    height: clamp(2rem, 2.5vw + 0.75rem, 3rem);
+    width: 100%;
+    max-width: 100%;
     aspect-ratio: var(--site-logo-ratio);
-    max-width: min(15rem, calc(100vw - 5.5rem));
-}
-
-@media (min-width: 768px) {
-    .site-header__logo {
-        max-width: calc(100% - 10rem);
-    }
-
-    .site-header__logo img,
-    .site-header__logo-svg {
-        height: clamp(2.25rem, 2vw + 1.5rem, 3rem);
-        max-width: min(15rem, calc(100vw - 14rem));
-    }
-}
-
-@media (min-width: 1400px) {
-    .site-header__logo {
-        max-width: none;
-    }
-
-    .site-header__logo img,
-    .site-header__logo-svg {
-        height: 3rem;
-        width: 15rem;
-        max-width: 15rem;
-    }
 }
 
 /* Footer / standalone brand mark */
@@ -154,6 +129,10 @@
     opacity: 0.75;
 }
 
+.site-header__burger {
+    display: block;
+}
+
 /* Hamburger visible by default; hidden only when inline nav fits */
 .site-header__menu {
     display: inline-flex;
@@ -162,12 +141,20 @@
 .site-header__nav {
     display: none;
     align-items: center;
-    gap: 1.25rem;
+    gap: clamp(0.5rem, 1vw, 1.25rem);
     flex-wrap: nowrap;
-    overflow: hidden;
+    min-width: 0;
 }
 
-@media (min-width: 1400px) {
+.site-header__nav--left {
+    justify-content: flex-start;
+}
+
+.site-header__nav--right {
+    justify-content: flex-end;
+}
+
+@media (min-width: 1200px) {
     .site-header__menu {
         display: none;
     }
@@ -175,27 +162,34 @@
     .site-header__nav {
         display: flex;
     }
+
+    /* Free space for split nav on static pages that still include a search icon */
+    .site-header__right > .site-header__icon-btn:not(.site-header__menu) {
+        display: none;
+    }
 }
 
 .site-header__nav a {
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: clamp(9px, 0.55vw + 6px, 12px);
     font-weight: 500;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(232, 228, 220, 0.65);
     white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
     transition: color 0.2s;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1400px) {
     .site-header__nav {
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 
     .site-header__nav a {
-        font-size: 12px;
+        flex-shrink: 0;
         letter-spacing: 0.15em;
     }
 }

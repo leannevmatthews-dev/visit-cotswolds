@@ -140,7 +140,31 @@
         return toggles;
     }
 
+    function splitHeaderNav() {
+        var leftCol = document.querySelector('.site-header__left');
+        var rightCol = document.querySelector('.site-header__right');
+        if (!leftCol || !rightCol) return;
+
+        var nav = rightCol.querySelector('.site-header__nav:not(.site-header__nav--right)');
+        if (!nav || leftCol.querySelector('.site-header__nav--left')) return;
+
+        var links = Array.from(nav.querySelectorAll('a'));
+        var splitAt = 4;
+        if (links.length <= splitAt) return;
+
+        var leftNav = document.createElement('nav');
+        leftNav.className = 'site-header__nav site-header__nav--left';
+        leftNav.setAttribute('aria-label', 'Main navigation');
+
+        links.slice(0, splitAt).forEach(function (link) {
+            leftNav.appendChild(link);
+        });
+        nav.classList.add('site-header__nav--right');
+        leftCol.appendChild(leftNav);
+    }
+
     function init() {
+        splitHeaderNav();
         var overlay = buildOverlay();
         var toggles = findMenuToggles();
 
