@@ -3,11 +3,11 @@
 
     var NAV_ITEMS = [
         { id: 'villages', label: 'Villages' },
-        { id: 'journal', label: 'The Journal' },
-        { id: 'whats-on', label: "What's On" },
-        { id: 'experiences', label: 'Experiences' },
         { id: 'stays', label: 'Places to Stay' },
         { id: 'eat', label: 'Places to Eat' },
+        { id: 'experiences', label: 'Things to Do' },
+        { id: 'whats-on', label: "What's On" },
+        { id: 'journal', label: 'The Journal' },
         { id: 'plan', label: 'Plan Your Visit' }
     ];
 
