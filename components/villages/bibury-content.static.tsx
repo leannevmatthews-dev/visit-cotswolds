@@ -1,17 +1,17 @@
 /* Auto-converted from pages/villages/bibury.html */
 import { PlayIcon } from "@/components/icons";
-import { BiburyInBrief } from "@/components/villages/bibury-in-brief";
-import { AtAGlancePanel } from "@/components/villages/at-a-glance-panel";
-import { CombineWithSection } from "@/components/villages/combine-with-section";
-import { VisitorFitSection } from "@/components/villages/visitor-fit-section";
-import { FaqSection } from "@/components/villages/faq-section";
-import { GettingHereSection } from "@/components/villages/getting-here-section";
-import { LocalTipsSection } from "@/components/villages/local-tips-section";
-import { ParkingGuideSection } from "@/components/villages/parking-guide-section";
-import { ReviewedBy } from "@/components/villages/reviewed-by";
-import { SeasonalAdviceSection } from "@/components/villages/seasonal-advice-section";
+import { BiburyInBrief } from "@/components/villages/bibury-in-brief.static";
+import { AtAGlancePanel } from "@/components/villages/static/at-a-glance-panel";
+import { CombineWithSection } from "@/components/villages/static/combine-with-section";
+import { VisitorFitSection } from "@/components/villages/static/visitor-fit-section";
+import { FaqSection } from "@/components/villages/static/faq-section";
+import { GettingHereSection } from "@/components/villages/static/getting-here-section";
+import { LocalTipsSection } from "@/components/villages/static/local-tips-section";
+import { ParkingGuideSection } from "@/components/villages/static/parking-guide-section";
+import { ReviewedBy } from "@/components/villages/static/reviewed-by";
+import { SeasonalAdviceSection } from "@/components/villages/static/seasonal-advice-section";
 import { VillageChecklistSignup } from "@/components/villages/village-checklist-signup";
-import { VillageComparisonSection } from "@/components/villages/village-comparison-section";
+import { VillageComparisonSection } from "@/components/villages/static/village-comparison-section";
 
 export function BiburyContent() {
   return (

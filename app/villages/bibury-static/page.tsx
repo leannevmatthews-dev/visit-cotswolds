@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { BiburyContent } from "@/components/villages/bibury-content";
+import { BiburyContent } from "@/components/villages/bibury-content.static";
 import { VillageHeroVideo } from "@/components/village-hero-video";
-import "../../../css/village-hero.css";
-import "../../../css/village-page.css";
+import "@/css/village-hero.css";
+import "@/css/village-page.css";
 
 export const metadata: Metadata = {
   title: "Bibury | Visit Cotswolds",

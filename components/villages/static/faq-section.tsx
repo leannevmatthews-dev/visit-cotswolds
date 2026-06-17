@@ -1,17 +1,12 @@
-import { getFaqJsonLd } from "@/lib/villages/helpers";
-import type { Village } from "@/lib/villages/types";
+import { BIBURY_FAQ_ITEMS, getBiburyFaqJsonLd } from "@/lib/static/bibury-faq";
 
-type FaqSectionProps = {
-  village: Village;
-};
-
-export function FaqSection({ village }: FaqSectionProps) {
+export function FaqSection() {
   return (
     <div className="mb-24 md:mb-32 max-w-3xl mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(getFaqJsonLd(village.faq_items)),
+          __html: JSON.stringify(getBiburyFaqJsonLd()),
         }}
       />
       <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-4 text-center">
@@ -22,7 +17,7 @@ export function FaqSection({ village }: FaqSectionProps) {
         often.
       </p>
       <div className="village-faq">
-        {village.faq_items.map((item) => (
+        {BIBURY_FAQ_ITEMS.map((item) => (
           <details key={item.question} className="village-faq__item">
             <summary className="village-faq__question font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
               <span>{item.question}</span>

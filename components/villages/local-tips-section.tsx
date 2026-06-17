@@ -1,51 +1,10 @@
-import type { ReactNode } from "react";
+import type { Village } from "@/lib/villages/types";
 
-type LocalTip = {
-  icon: string;
-  text: ReactNode;
+type LocalTipsSectionProps = {
+  village: Village;
 };
 
-const LOCAL_TIPS: LocalTip[] = [
-  {
-    icon: "wb_twilight",
-    text: "Arrive before 9am in summer if you want Arlington Row without a crowd.",
-  },
-  {
-    icon: "calendar_month",
-    text: "Weekdays are significantly quieter than Saturdays, even in peak season.",
-  },
-  {
-    icon: "hourglass_top",
-    text: "Most visitors only stay 30–60 minutes—you will see more in two unhurried hours.",
-  },
-  {
-    icon: "photo_camera",
-    text: (
-      <>
-        The best photos are often <em>not</em> taken directly in front of
-        Arlington Row—try the bridge and river path.
-      </>
-    ),
-  },
-  {
-    icon: "wb_sunny",
-    text: "The village feels completely different after 4pm when coach traffic drops off.",
-  },
-  {
-    icon: "local_parking",
-    text: "Park at the Trout Farm car park rather than attempting on-street spaces on the B4425.",
-  },
-  {
-    icon: "directions_walk",
-    text: "The riverside path beyond the bridge is where locals walk—most tourists never go there.",
-  },
-  {
-    icon: "check_circle",
-    text: "There is no admission fee to walk the village—it is free to visit.",
-  },
-];
-
-export function LocalTipsSection() {
+export function LocalTipsSection({ village }: LocalTipsSectionProps) {
   return (
     <div className="mb-24 md:mb-32">
       <h2 className="font-display-lg text-[36px] md:text-[48px] text-primary mb-4 leading-tight">
@@ -56,12 +15,12 @@ export function LocalTipsSection() {
         someone who has been there recently.
       </p>
       <div className="village-tips-grid">
-        {LOCAL_TIPS.map((tip) => (
-          <div key={String(tip.icon)} className="village-tip">
+        {village.local_tips.map((tip) => (
+          <div key={`${tip.icon}-${tip.tip_text}`} className="village-tip">
             <span className="material-symbols-outlined village-tip__icon">
               {tip.icon}
             </span>
-            <p className="village-tip__text">{tip.text}</p>
+            <p className="village-tip__text">{tip.tip_text}</p>
           </div>
         ))}
       </div>

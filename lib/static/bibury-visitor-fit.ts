@@ -1,4 +1,4 @@
-import type { CrowdPillLevel } from "@/lib/bibury-comparison";
+import type { CrowdPillLevel } from "@/lib/static/bibury-comparison";
 
 export type CrowdIntelligenceRow = {
   time: string;

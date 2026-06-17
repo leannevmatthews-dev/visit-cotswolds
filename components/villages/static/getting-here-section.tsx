@@ -1,10 +1,4 @@
-import type { Village } from "@/lib/villages/types";
-
-type GettingHereSectionProps = {
-  village: Village;
-};
-
-export function GettingHereSection({ village }: GettingHereSectionProps) {
+export function GettingHereSection() {
   return (
     <div className="village-getting-here village-panel village-guide-panel border border-outline-variant/20 mb-8 md:mb-12">
       <div className="village-guide-header">
@@ -21,7 +15,8 @@ export function GettingHereSection({ village }: GettingHereSectionProps) {
               By Rail
             </p>
             <p className="font-body-sm text-on-surface-variant leading-relaxed">
-              {village.getting_here_rail}
+              The nearest station is Kemble (12 miles). Direct services run from
+              London Paddington. Taxis are available but booking is recommended.
             </p>
           </div>
         </div>
@@ -34,7 +29,8 @@ export function GettingHereSection({ village }: GettingHereSectionProps) {
               Parking
             </p>
             <p className="font-body-sm text-on-surface-variant leading-relaxed">
-              {village.getting_here_parking}
+              Use the pay-and-display car park on the B4425 opposite Bibury Trout
+              Farm. Arrive before 10am on weekends to avoid the busiest periods.
             </p>
           </div>
         </div>

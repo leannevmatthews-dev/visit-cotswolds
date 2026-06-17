@@ -1,20 +1,16 @@
-import type { Village } from "@/lib/villages/types";
+import { BIBURY_REVIEWED_BY } from "@/lib/static/bibury-author";
 
-type ReviewedByProps = {
-  village: Village;
-};
-
-export function ReviewedBy({ village }: ReviewedByProps) {
+export function ReviewedBy() {
   return (
     <aside className="village-reviewed-by" aria-label="Reviewed by">
       <p className="village-reviewed-by__label font-label-caps text-[10px] text-limestone tracking-[0.2em] uppercase">
         Reviewed by
       </p>
       <p className="village-reviewed-by__name font-body-sm text-on-surface">
-        {village.reviewed_by_name}
+        {BIBURY_REVIEWED_BY.name}
       </p>
       <p className="village-reviewed-by__credential font-body-sm text-on-surface-variant">
-        {village.reviewed_by_credential}
+        {BIBURY_REVIEWED_BY.credential}
       </p>
     </aside>
   );

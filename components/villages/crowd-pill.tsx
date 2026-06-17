@@ -1,4 +1,4 @@
-import type { CrowdPillLevel } from "@/lib/bibury-comparison";
+import type { CrowdPillLevel } from "@/lib/villages/types";
 
 type CrowdPillProps = {
   level: CrowdPillLevel;

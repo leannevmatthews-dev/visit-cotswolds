@@ -1,20 +1,14 @@
-import type { SeasonalAdvice } from "@/lib/villages/types";
+import { BIBURY_SEASONS } from "@/lib/static/bibury-seasons";
 
-type SeasonalAdviceSectionProps = {
-  seasons: SeasonalAdvice[];
-};
-
-export function SeasonalAdviceSection({ seasons }: SeasonalAdviceSectionProps) {
-  if (seasons.length === 0) return null;
-
+export function SeasonalAdviceSection() {
   return (
     <div className="mb-24 md:mb-32">
       <h2 className="font-display-lg text-[36px] md:text-[48px] text-primary mb-10 leading-tight">
         Seasonal Advice
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-        {seasons.map((season) => (
-          <div key={season.season} className="village-season">
+        {BIBURY_SEASONS.map((season) => (
+          <div key={season.name} className="village-season">
             <h3 className="village-season__heading font-label-caps text-label-caps text-limestone mb-3 tracking-widest uppercase">
               <span
                 className="material-symbols-outlined village-season__icon"
@@ -22,10 +16,10 @@ export function SeasonalAdviceSection({ seasons }: SeasonalAdviceSectionProps) {
               >
                 {season.icon}
               </span>
-              {season.season}
+              {season.name}
             </h3>
             <p className="font-body-sm text-on-surface-variant leading-relaxed">
-              {season.body}
+              {season.description}
             </p>
           </div>
         ))}

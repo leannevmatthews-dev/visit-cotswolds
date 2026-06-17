@@ -1,36 +1,40 @@
-const MAP_EMBED_URL =
-  "https://maps.google.com/maps?q=Bibury+Trout+Farm+Car+Park,+Bibury,+GL7+5NP&t=&z=16&ie=UTF8&iwloc=&output=embed";
+import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
+import { parkingMapEmbedUrl } from "@/lib/villages/helpers";
+import type { Village } from "@/lib/villages/types";
 
-const MAP_LINK_URL =
-  "https://www.google.com/maps/search/?api=1&query=Bibury+Trout+Farm+Car+Park+GL7+5NP";
+type ParkingGuideSectionProps = {
+  village: Village;
+};
 
-const PARKING_LOCATIONS = [
-  {
-    variant: "primary" as const,
-    label: "Main Car Park",
-    title: "Trout Farm Car Park · B4425 · GL7 5NP",
-    detail: "~80 spaces · pay & display · 2 min walk to Arlington Row",
-  },
-  {
-    variant: "secondary" as const,
-    label: "Overflow Field",
-    detail:
-      "Grass overflow opens in peak summer when main lot is full—same pay machines apply.",
-  },
-  {
-    variant: "secondary" as const,
-    label: "On-Street (Not Recommended)",
-    detail:
-      "Limited spaces on the B4425 through the village—blocks residents and coaches.",
-  },
-];
+export function ParkingGuideSection({ village }: ParkingGuideSectionProps) {
+  const parking = village.parking_guide;
+  const mapEmbedUrl = parkingMapEmbedUrl(parking.map_url);
+  const mapLinkUrl = parking.map_url;
 
-const PARKING_SPECS = [
-  { label: "Cost", value: "Typically £3–£5 for 2–4 hours" },
-  { label: "Best Time", value: "Before 10am weekends" },
-];
+  const locations = [
+    {
+      variant: "primary" as const,
+      label: "Main Car Park",
+      title: parking.main_location,
+      detail: parking.main_detail,
+    },
+    {
+      variant: "secondary" as const,
+      label: "Overflow Field",
+      detail: parking.overflow_note,
+    },
+    {
+      variant: "secondary" as const,
+      label: "On-Street (Not Recommended)",
+      detail: parking.on_street_note,
+    },
+  ];
 
-export function ParkingGuideSection() {
+  const specs = [
+    { label: "Cost", value: parking.cost },
+    { label: "Best Time", value: parking.best_time },
+  ];
+
   return (
     <div className="village-panel village-parking overflow-hidden mb-8 md:mb-12">
       <div className="village-parking__layout">
@@ -43,15 +47,13 @@ export function ParkingGuideSection() {
               </h3>
             </div>
             <p className="font-body-sm text-on-surface-variant leading-relaxed">
-              Main car park on the B4425, opposite Bibury Trout Farm.
-              Pay-and-display machines accept card and coins. Arrive before 10am
-              on summer weekends—the overflow field opens when the main lot is
-              full.
+              {parking.main_location}. Pay-and-display machines accept card and
+              coins. {parking.overflow_note}
             </p>
           </div>
 
           <div className="village-parking-locations">
-            {PARKING_LOCATIONS.map((location) => (
+            {locations.map((location) => (
               <div key={location.label} className="village-parking-location">
                 <span
                   className={`village-parking-location__marker village-parking-location__marker--${location.variant}`}
@@ -76,36 +78,45 @@ export function ParkingGuideSection() {
 
           <div className="village-parking__footer">
             <div className="village-parking-specs">
-              {PARKING_SPECS.map((spec) => (
+              {specs.map((spec) => (
                 <div key={spec.label} className="village-parking-spec">
                   <p className="village-parking-spec__label">{spec.label}</p>
                   <p className="village-parking-spec__value">{spec.value}</p>
                 </div>
               ))}
             </div>
-            <a
-              className="village-parking__cta inline-flex items-center justify-center gap-2 font-label-caps text-[10px] text-limestone tracking-widest uppercase border border-limestone/40 px-5 py-3 hover:bg-limestone hover:text-primary-container transition-colors w-full sm:w-auto"
-              href={MAP_LINK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="material-symbols-outlined text-base">
-                open_in_new
-              </span>
-              Open in Google Maps
-            </a>
+            {mapLinkUrl && (
+              <a
+                className="village-parking__cta inline-flex items-center justify-center gap-2 font-label-caps text-[10px] text-limestone tracking-widest uppercase border border-limestone/40 px-5 py-3 hover:bg-limestone hover:text-primary-container transition-colors w-full sm:w-auto"
+                href={mapLinkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="material-symbols-outlined text-base">
+                  open_in_new
+                </span>
+                Open in Google Maps
+              </a>
+            )}
           </div>
         </div>
 
         <div className="village-map village-map--aside">
-          <iframe
-            className="village-map__embed"
-            title="Map showing Bibury Trout Farm car park and village parking"
-            src={MAP_EMBED_URL}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
+          {mapEmbedUrl ? (
+            <iframe
+              className="village-map__embed"
+              title={`Map showing parking near ${village.name}`}
+              src={mapEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          ) : (
+            <VillageImagePlaceholder
+              className="village-compare-card__placeholder absolute inset-0"
+              label="Map coming soon"
+            />
+          )}
         </div>
       </div>
     </div>
