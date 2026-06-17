@@ -14,6 +14,7 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const port = process.env.PORT || "3000";
+const clean = process.argv.includes("--clean");
 const require = createRequire(import.meta.url);
 const nextCli = require.resolve("next/dist/bin/next");
 
@@ -61,8 +62,19 @@ if (!existsSync(path.join(root, "node_modules", "next"))) {
   process.exit(1);
 }
 
+if (!existsSync(path.join(root, "node_modules", "@supabase", "ssr"))) {
+  console.log("Installing missing dependencies...");
+  execSync("npm install", { cwd: root, stdio: "inherit", shell: true });
+}
+
 stopStaleDevServers();
-clearCaches();
+
+if (clean) {
+  clearCaches();
+  console.log("Cleared .next and node_modules/.cache");
+} else {
+  console.log("Keeping .next cache (use npm run dev:reset for a full clean)");
+}
 
 console.log(`Starting Next.js dev server on http://localhost:${port}`);
 

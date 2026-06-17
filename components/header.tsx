@@ -47,7 +47,7 @@ function CloseIcon() {
 
 function isNavItemActive(id: string, pathname: string) {
   if (id === "villages") {
-    return pathname === "/pages/villages/index.html" || pathname.startsWith("/villages");
+    return pathname === "/villages" || pathname.startsWith("/villages/");
   }
   const item = NAV_ITEMS.find((nav) => nav.id === id);
   if (!item) return false;

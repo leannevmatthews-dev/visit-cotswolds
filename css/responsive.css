@@ -12,9 +12,9 @@ svg {
     max-width: 100%;
 }
 
-/* Prevent grid/flex children from forcing horizontal overflow */
-[class*='grid'] > *,
-[class*='flex'] > * {
+/* Prevent grid/flex children from forcing horizontal overflow (not in admin) */
+[class*='grid'] > *:not(.admin-shell *),
+[class*='flex'] > *:not(.admin-shell *) {
     min-width: 0;
 }
 

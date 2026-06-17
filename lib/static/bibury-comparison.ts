@@ -30,7 +30,7 @@ export const BIBURY_COMPARISON_ROWS: VillageComparisonRow[] = [
   },
   {
     village: "Burford",
-    href: "/pages/villages/burford.html",
+    href: "/villages/burford",
     beauty: "Very High",
     crowds: { level: "moderate", label: "Moderate" },
     food: "Good",
@@ -38,7 +38,7 @@ export const BIBURY_COMPARISON_ROWS: VillageComparisonRow[] = [
   },
   {
     village: "Bourton-on-the-Water",
-    href: "/pages/villages/bourton-on-the-water.html",
+    href: "/villages/bourton-on-the-water",
     beauty: "High",
     crowds: { level: "busy", label: "Very High" },
     food: "Very Good",
@@ -51,24 +51,24 @@ export const BIBURY_ALTERNATIVES: VillageAlternative[] = [
     question: "Want fewer crowds?",
     icon: "nature_people",
     villages: [
-      { name: "Snowshill", href: "/pages/villages/snowshill.html" },
-      { name: "Upper Slaughter", href: "/pages/villages/index.html" },
+      { name: "Snowshill", href: "/villages/snowshill" },
+      { name: "Upper Slaughter", href: "/villages" },
     ],
   },
   {
     question: "Want more shops?",
     icon: "storefront",
     villages: [
-      { name: "Burford", href: "/pages/villages/burford.html" },
-      { name: "Stow-on-the-Wold", href: "/pages/villages/index.html" },
+      { name: "Burford", href: "/villages/burford" },
+      { name: "Stow-on-the-Wold", href: "/villages" },
     ],
   },
   {
     question: "Want more cafés?",
     icon: "local_cafe",
     villages: [
-      { name: "Bourton-on-the-Water", href: "/pages/villages/bourton-on-the-water.html" },
-      { name: "Stow-on-the-Wold", href: "/pages/villages/index.html" },
+      { name: "Bourton-on-the-Water", href: "/villages/bourton-on-the-water" },
+      { name: "Stow-on-the-Wold", href: "/villages" },
     ],
   },
 ];

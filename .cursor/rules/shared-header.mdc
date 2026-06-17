@@ -1,0 +1,31 @@
+---
+description: All user-facing pages must use the shared Header via app layout — never duplicate nav markup
+alwaysApply: true
+---
+
+# Shared Header (mandatory)
+
+Every user-facing page **must** use the shared `Header` from `components/header.tsx`, rendered once in `app/layout.tsx`. This is not optional.
+
+## Required pattern
+
+- Add new pages as `app/**/page.tsx` routes so they inherit `app/layout.tsx` automatically.
+- Page components render **only** their main content (`<main>` or equivalent). Never add `<header class="site-header">`, inline nav links, or duplicate burger menus.
+- Register canonical URLs in `lib/nav.ts` and `lib/static-page-routes.ts` (no `/pages/*.html` links in app code).
+
+## Forbidden
+
+- Duplicating header/nav markup in HTML or TSX page files
+- Creating standalone `.html` pages with their own navigation (legacy `pages/*.html` are redirect stubs only)
+- Loading `site-header.css` / `site-nav.js` inside page content — layout owns header styles and behaviour
+
+## Migrating legacy static pages
+
+1. Extract body content (hero + main) into `components/static-pages/*-content.static.tsx` (see `scripts/html-to-static-tsx.mjs`)
+2. Add `app/<route>/page.tsx` that imports the content component
+3. Add a redirect in `lib/static-page-routes.ts`
+4. Run `node scripts/stub-legacy-html.mjs` to replace the old HTML file with a redirect stub
+
+## If you see a page without the shared Header
+
+Treat it as a **bug** and fix immediately by migrating to an App Router page or removing duplicate header markup.

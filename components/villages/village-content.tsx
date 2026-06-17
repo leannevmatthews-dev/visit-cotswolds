@@ -257,7 +257,7 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
                     </h4>
                     <a
                       className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0"
-                      href="/pages/places-to-stay.html"
+                      href="/places-to-stay"
                     >
                       View all stays
                     </a>
@@ -267,7 +267,7 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
                       <PlacePickCard
                         key={pick.name}
                         pick={pick}
-                        fallbackHref="/pages/places-to-stay.html"
+                        fallbackHref="/places-to-stay"
                       />
                     ))}
                   </div>
@@ -282,7 +282,7 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
                     </h4>
                     <a
                       className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0"
-                      href="/pages/places-to-eat.html"
+                      href="/places-to-eat"
                     >
                       View all dining
                     </a>
@@ -292,7 +292,7 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
                       <PlacePickCard
                         key={pick.name}
                         pick={pick}
-                        fallbackHref="/pages/places-to-eat.html"
+                        fallbackHref="/places-to-eat"
                       />
                     ))}
                   </div>

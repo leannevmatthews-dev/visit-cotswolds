@@ -1,0 +1,19 @@
+/* Admin-only overrides — unlayered so they beat responsive.css after client nav from public pages */
+
+.admin-shell [class*="flex"] > *,
+.admin-shell [class*="grid"] > * {
+  min-width: auto;
+}
+
+.admin-shell .admin-actions-cell a,
+.admin-shell .admin-actions-cell button {
+  min-width: fit-content;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.admin-shell .admin-cta {
+  min-width: fit-content;
+  flex-shrink: 0;
+  white-space: nowrap;
+}

@@ -33,7 +33,7 @@ export const BIBURY_COMBINE_TRIPS: CombineTrip[] = [
         Bibury +{" "}
         <a
           className="underline underline-offset-4 hover:text-limestone"
-          href="/pages/villages/burford.html"
+          href="/villages/burford"
         >
           Burford
         </a>
@@ -58,7 +58,7 @@ export const BIBURY_COMBINE_TRIPS: CombineTrip[] = [
         Bibury +{" "}
         <a
           className="underline underline-offset-4 hover:text-limestone"
-          href="/pages/villages/castle-combe.html"
+          href="/villages/castle-combe"
         >
           Castle Combe
         </a>
@@ -83,7 +83,7 @@ export const BIBURY_COMBINE_TRIPS: CombineTrip[] = [
         Bibury +{" "}
         <a
           className="underline underline-offset-4 hover:text-limestone"
-          href="/pages/villages/bourton-on-the-water.html"
+          href="/villages/bourton-on-the-water"
         >
           Bourton
         </a>{" "}

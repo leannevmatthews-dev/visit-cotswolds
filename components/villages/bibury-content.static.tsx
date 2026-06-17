@@ -145,38 +145,38 @@ export function BiburyContent() {
 <section>
 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
 <h4 className="font-label-caps text-label-caps text-limestone tracking-[0.2em]">PLACES TO STAY</h4>
-<a className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0" href="/pages/places-to-stay.html">View all stays</a>
+<a className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0" href="/places-to-stay">View all stays</a>
 </div>
 <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
-<a className="village-pick group" href="/pages/places-to-stay.html">
+<a className="village-pick group" href="/places-to-stay">
 <div className="village-pick__image">
 <img alt="The Swan Hotel, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7hVkUiJmSKlt_tiClMvED0Qni2RABiXVoa6N2_k5CHJquIwlDlFGZ_ZXJOGCY6U1HYE86ZLV4ybCIh6zDV3IS-5To-2v43EdoBN22nBSbI65EYX2PKc6jl_F2vTHAfH67J_k83LhrheRNCukZvJ4-RN7eJFCs4Yvh9fIi1_zzGxAroeUovHrY0tlCc3-Ja7Nq6HUD7fmRYH2HBVsTqr6f70Yo0XWn_Jb8sUWn1PA1hP0JdXSAHvZZi0vGCfOUQb7gT_4-FpCBpg"/>
 </div>
 <p className="village-pick__title">The Swan Hotel</p>
 <p className="village-pick__meta">Riverside Classic · Bibury</p>
 </a>
-<a className="village-pick group" href="/pages/places-to-stay.html">
+<a className="village-pick group" href="/places-to-stay">
 <div className="village-pick__image">
 <img alt="Barnsley House hotel and gardens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlCFJGj3w0v_ygGqlr7jPrd9PpYeBbc2zCUXaq8mkYSyuU9c7BA4_k7cv7FF6ZfKOxZa9wC7J85OzQmaU7aFDOsOigVKjust5HxQa4QRi3Ay5jFRTq8hhVymGe0RrXuC9aZQI3ZUWju459LoCojrOdd5g96QOdGmdqAbB6ZfCT531hm-EW0_nZ1ZwHWAijceWCoHEcWsjqDRRNvaTGEfqHXWGloeLFTRmoHEqFLRmLrHonYCVG2fpwm3xX-riwnqJW_U5mPc-psw"/>
 </div>
 <p className="village-pick__title">Barnsley House</p>
 <p className="village-pick__meta">Garden Retreat · 3 miles</p>
 </a>
-<a className="village-pick group" href="/pages/places-to-stay.html">
+<a className="village-pick group" href="/places-to-stay">
 <div className="village-pick__image">
 <img alt="Lords of the Manor, Upper Slaughter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP7HvhgsNOtPnoOWLmNhiE8fB5_2NtrxOenfDPrYUYiH8irmiwUv6Y9PNmSzpXW7ocAWsiNPEDPtoClaMsUmVAYGr2j1tWaCB_PgeRio62R3b7gVW_dKax0mzzFvimq064r1wRvmXcF0Mme5xIsUzhrrgLllzGKBDvm5Fiwt-tygkBQa9Q1ltkRTbfkiZhyvP3QkQmJ3nwTfwI1DLygTtpH7g_Dq_OCSzaOacmXhwc9ZfB1Ho7x8cH_a64kl8wt9m6sxJLEBdIUg"/>
 </div>
 <p className="village-pick__title">Lords of the Manor</p>
 <p className="village-pick__meta">Country House · Upper Slaughter</p>
 </a>
-<a className="village-pick group" href="/pages/places-to-stay.html">
+<a className="village-pick group" href="/places-to-stay">
 <div className="village-pick__image">
 <img alt="The Fish Hotel, Broadwell" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEUPk_qz3mEgZxcD2qEHsRaBaeDUXls38pOh0qY9hFOIu53qTusEXgT3WcoJk6fu8rl-scnsXx5HDyHKDP7yV5Od8vTvw3eSvuJCBhOi03dmLKPPWZx8gnp51eA_levoIUx9eRVMqs09H_YllMHx1CaSgnDjb6sDEjqKdbfOqPQxOsvcr68j6IXb20-ZnAZ_gsQmKPLYkRGZQleHLpIUpIFiOIAeN5KE1Wpd5260bE_GT6TXTkl9aUO1lM6EqoGyvUDuM4fvMu1w"/>
 </div>
 <p className="village-pick__title">The Fish Hotel</p>
 <p className="village-pick__meta">Village Retreat · 8 miles</p>
 </a>
-<a className="village-pick group" href="/pages/places-to-stay.html">
+<a className="village-pick group" href="/places-to-stay">
 <div className="village-pick__image">
 <img alt="Dormy House, Broadway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0lqvrnrsJ59jYrA4pvhJUYgYj_JIPi6HHYcadi71_NBA_Lp5J-kar8615_Lx191gU33rVQ54qOIYoV7o_kx8varXayu6myLT2Aw6XxJrQkQr4lWV7GZca4RzNnMkjxFJPNvHSCQ31FlzljMjex5Zqp19e6qoMRs1DZFinSB07eO2JO1BEKmXprjGnHjF03lK2zkkt7cgqGpmjrkOq3vtTQnvtHaficUoS0CH7A8uwXH4_WuuWhGI_t0S5uQtKTmKpL_GmW0Ev6A"/>
 </div>
@@ -188,38 +188,38 @@ export function BiburyContent() {
 <section className="mt-16 md:mt-24">
 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
 <h4 className="font-label-caps text-label-caps text-limestone tracking-[0.2em]">PLACES TO EAT</h4>
-<a className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0" href="/pages/places-to-eat.html">View all dining</a>
+<a className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0" href="/places-to-eat">View all dining</a>
 </div>
 <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
-<a className="village-pick group" href="/pages/places-to-eat.html">
+<a className="village-pick group" href="/places-to-eat">
 <div className="village-pick__image">
 <img alt="The Swan Hotel dining room, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcHrj45CrB30MUy1C0zu0ni8ywKRf6rlphruiZJOPSfbYG6kxJ_QvMMdNDo1gH5PhfY2t-9okVHu-Zn19ed5sQeDyUURndgU3KlhBy75pAayMk18ETxdX7FS5gpWI7d4KJMwOLIs5PBHtmk1xgfBpatuw6jN0eBiykNrNhXHUXs76YmxRwknUIVfIQmjTPdH2ce78_dyhwZDCeHXaS0qNOf4qcJNSeQW3c5h4kWxOW9x2DzAaRg8lBjcwPkyBPA3Bwc6b43FJ5Hg"/>
 </div>
 <p className="village-pick__title">The Swan Hotel</p>
 <p className="village-pick__meta">Seasonal Dining · Bibury</p>
 </a>
-<a className="village-pick group" href="/pages/places-to-eat.html">
+<a className="village-pick group" href="/places-to-eat">
 <div className="village-pick__image">
 <img alt="The Catherine Wheel pub, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU6AyCINJL83qGUXjOaG4-mkBiR5uEKaWIJ1enV8kXAo7uDWWNt0HKePihs9NzKvn_8Gs8Nh5tge_pmOUKM-GvW7MZ7_Zb3XFR0ocFywilMvP6MrG36Y46_b26pib8rF6VHORhDkmVq4scwp9-sXwCux0VmZ12ziJrROZYRz15IlJUQseRXQeGO87BDNPK_42vKFW-DwqzF0yXoGlGpVFalysYj-4wFhHgBh5LCQNbhWEwgaE8TwmXZkU0ZCMTPMmNnrmiKNKoeg"/>
 </div>
 <p className="village-pick__title">The Catherine Wheel</p>
 <p className="village-pick__meta">Traditional Pub · Bibury</p>
 </a>
-<a className="village-pick group" href="/pages/places-to-eat.html">
+<a className="village-pick group" href="/places-to-eat">
 <div className="village-pick__image">
 <img alt="Bibury Trout Farm Cafe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWhZPHaf_FsCEMfNAoan8-CIvf4a1O2pSsKOqcQsz85UbtBWACPwQ9nU5F1CUzDuo-SdA9dvegpo3GsIc4uA3cdBhkb6EMh3dbzcWBgJ0kaqYCamgihunFld7e3RjGawQS0SaFRcDRE_uKVEMc8WVZytaxYxBOWmwZcX8pXG-8NTaW4PdM-4sEkXae8kFoErVYjcbJzDSn5799nw61axxUef3JXB5ZPq4AxHlp0pLAEiybS4WqSNWs5Xf4n4TE3r6c_5kskGVzyg"/>
 </div>
 <p className="village-pick__title">Trout Farm Café</p>
 <p className="village-pick__meta">Riverside Lunch · Bibury</p>
 </a>
-<a className="village-pick group" href="/pages/places-to-eat.html">
+<a className="village-pick group" href="/places-to-eat">
 <div className="village-pick__image">
 <img alt="Afternoon tea at Lords of the Manor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyQ2M2E8EHp1rtyqjpZ5peJNMJWLmw8W228zDOVNio85z1DoaiSWxpN4cQvg7g9hr2y0zC6PjGGdJKb7PFn4cqvZplGQGJt91Osn-DlDdKGgacj_Y-VFUd7ATiZ5W0bPCZYMfnqAxxU6OVwHglip3O2jkvBQ2U68tSBdQ8vT0CZSJ_EEWRdMhBEGoFv3ZRR0MkciPfjyOXECVIr4c9XkUWVXuZWeVB8VWt8p5f32fWFcwg6cqeTfVst1zrMonVfXCECelbh-fBtw"/>
 </div>
 <p className="village-pick__title">Lords of the Manor</p>
 <p className="village-pick__meta">Afternoon Tea · Upper Slaughter</p>
 </a>
-<a className="village-pick group" href="/pages/places-to-eat.html">
+<a className="village-pick group" href="/places-to-eat">
 <div className="village-pick__image">
 <img alt="The Wild Rabbit, Kingham" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADN4N08pW4ta4Y0Eb9VjZv23P0L_nWWAJq5RfYfxdUGU8uqRY8PISIsOnQth51AeZ-7Vy-JkZHzg8yNjLqE2W7IBO1h3MezWnblh-wTMchIgqSXzmf2vgkUAba3G8Pz1nZUeMMpoNgr5TCgkoMxrM_Q0K-d3dEFTyBaaO2t-XtBijbfmk9Cba2Ow_9N5wisVfNsLfAlFvUlavBmuLEXcg6jXG_UxuSkbW4QoDUJcsYUL5rhhNoknUY1l-PFvwo-96UxfATdPAM_w"/>
 </div>
@@ -308,7 +308,7 @@ export function BiburyContent() {
 <div className="mb-24 md:mb-32">
 <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-10">Beyond Bibury</h2>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-<a className="village-nearby group" href="/pages/villages/bourton-on-the-water.html">
+<a className="village-nearby group" href="/villages/bourton-on-the-water">
 <img alt="Bourton-on-the-Water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2OYmP99WzoPuPHjxK2WUDU9rD-SqEEgghBkbxhliHCfLwwKmyLLA86EnLEcZaO17y5nxCkw-H1-eo2fYTa-lMwSCtIMOxxqtpH9fgzKC4kYDSBiUy-wypyRM9MSU8tC6aLMfGd8al3XlT_rUea4clV48_IulmyXE1VKfM8GnbOPtAL0QJ8KSZrcYgZItfPgH0RK6PVOccPT6Yu-CuzevnaspddsOYSOLe9XgOgvCb7DEFi_YSpll04SkX_r67BTDj7F7CTU4KTw"/>
 <div className="village-nearby__gradient" aria-hidden="true"></div>
 <div className="village-nearby__copy">
@@ -316,7 +316,7 @@ export function BiburyContent() {
 <span className="font-headline-md text-[24px] text-on-background">Bourton-on-the-Water</span>
 </div>
 </a>
-<a className="village-nearby group" href="/pages/villages/burford.html">
+<a className="village-nearby group" href="/villages/burford">
 <img alt="Burford high street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcSEzoi2FjiOObPxAhJ63qUDZOrWm03UwHJ8B7k9KEXh0hPBaP1dc5IzKOjWs-3gsDgERYixw7nrvjPkMHHMbs9rNKQpJj0_ZMpE-MBqAR4ORYrvvnwG4bBMzslv4_jA0HCDsCSIvr9ryPZej_immYdFxd9PWJBCU4TaXZTxzY9QIqR5pWFPGIa6UuhSLTPeDel2Z2E90hc2OlBvtv8vz0FXEhGc31MJPj8H0Irk8kgn4SEWyiyIigmCdJrjns_2wEB9es2mhuQg"/>
 <div className="village-nearby__gradient" aria-hidden="true"></div>
 <div className="village-nearby__copy">

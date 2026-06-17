@@ -63,7 +63,7 @@ export default function HomePage() {
                 />
               </div>
               <a
-                href="/pages/villages/index.html"
+                href="/villages"
                 className="bg-limestone text-primary-container px-8 md:px-10 py-3 md:py-4 font-label-caps text-label-caps hover:bg-white transition-colors w-full md:w-auto inline-flex items-center justify-center shrink-0"
               >
                 EXPLORE
@@ -125,7 +125,7 @@ export default function HomePage() {
                 The Village Edit
               </h2>
               <a
-                href="/pages/villages/index.html"
+                href="/villages"
                 className="inline-block mt-6 font-label-caps text-label-caps text-limestone/80 hover:text-limestone border-b border-limestone/30 pb-1 transition-colors"
               >
                 VIEW ALL VILLAGES
@@ -174,7 +174,7 @@ export default function HomePage() {
                 </p>
               </div>
               <a
-                href="/pages/places-to-stay.html"
+                href="/places-to-stay"
                 className="border border-limestone/40 px-8 md:px-10 py-3 md:py-4 font-label-caps text-label-caps hover:bg-limestone hover:text-background transition-all duration-500 inline-block w-full md:w-auto text-center"
               >
                 VIEW THE COLLECTION
@@ -185,7 +185,7 @@ export default function HomePage() {
               {STAY_CARDS.map((stay) => (
                 <a
                   key={stay.name}
-                  href="/pages/places-to-stay.html"
+                  href="/places-to-stay"
                   className="group cursor-pointer block min-w-0"
                 >
                   <div className="relative aspect-[3/4] overflow-hidden mb-4 md:mb-6">

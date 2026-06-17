@@ -163,8 +163,25 @@
         leftCol.appendChild(leftNav);
     }
 
+    function initHeaderScroll() {
+        var header = document.querySelector('.site-header');
+        if (!header || !header.classList.contains('site-header--transparent')) return;
+
+        function onScroll() {
+            if (window.scrollY > 50) {
+                header.classList.remove('site-header--transparent');
+            } else {
+                header.classList.add('site-header--transparent');
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
+
     function init() {
         splitHeaderNav();
+        initHeaderScroll();
         var overlay = buildOverlay();
         var toggles = findMenuToggles();
 

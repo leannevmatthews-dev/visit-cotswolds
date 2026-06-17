@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Inter } from "next/font/google";
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
-import "../css/site-header.css";
-import "../css/site-nav.css";
 import "./globals.css";
 
 const inter = Inter({
@@ -38,11 +34,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
         />
       </head>
-      <body className="font-body-lg text-on-surface">
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <body className="font-body-lg text-on-surface">{children}</body>
     </html>
   );
 }

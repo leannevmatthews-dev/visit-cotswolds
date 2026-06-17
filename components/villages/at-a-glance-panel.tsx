@@ -82,7 +82,7 @@ export function AtAGlancePanel({ village }: AtAGlancePanelProps) {
 
       <a
         className="village-at-a-glance__cta block w-full border border-limestone text-limestone hover:bg-limestone hover:text-primary-container font-label-caps text-label-caps py-4 text-center transition-colors duration-300 uppercase tracking-widest"
-        href="/pages/plan-your-visit.html"
+        href="/plan-your-visit"
       >
         Plan Your Visit
       </a>
