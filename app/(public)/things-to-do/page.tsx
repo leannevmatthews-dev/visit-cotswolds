@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { ThingsToDoContent } from "@/components/static-pages/things-to-do-content.static";
+import { ThingsToDoContent } from "@/components/things-to-do/things-to-do-content";
+import "@/css/listing-directory.css";
+import "@/css/village-hero.css";
 
 export const metadata: Metadata = {
   title: "Things to Do | Visit Cotswolds",

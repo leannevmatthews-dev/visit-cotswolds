@@ -14,6 +14,7 @@ export const defaultVillageFormState = (): VillageFormState => ({
   name: "",
   slug: "",
   region_label: "",
+  cotswolds_region: "",
   tagline_quote: "",
   brief_summary: "",
   brief_best_tip: "",

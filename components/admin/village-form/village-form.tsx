@@ -10,12 +10,14 @@ import {
   IconSelect,
   NumberInput,
   RepeatableItemCard,
+  SelectInput,
   TextArea,
   TextInput,
 } from "@/components/admin/village-form/field-primitives";
 import { RepeatableList } from "@/components/admin/village-form/repeatable-list";
 import { defaultVillageFormState } from "@/lib/villages/form-defaults";
 import { slugifyName, validateVillageForm } from "@/lib/villages/form-schema";
+import { COTSWOLDS_REGIONS } from "@/lib/villages/types";
 import type { FormFieldErrors, VillageFormState } from "@/lib/villages/form-types";
 
 type VillageFormProps = {
@@ -142,7 +144,23 @@ export function VillageForm({
             label="Region label"
             value={form.region_label}
             onChange={(value) => setField("region_label", value)}
-            placeholder="West Oxfordshire"
+            placeholder="Gloucestershire"
+            hint="County or area shown on village cards (e.g. Gloucestershire)"
+          />
+          <SelectInput
+            id="cotswolds_region"
+            label="Cotswolds region"
+            value={form.cotswolds_region}
+            onChange={(value) =>
+              setField(
+                "cotswolds_region",
+                value as VillageFormState["cotswolds_region"],
+              )
+            }
+            options={COTSWOLDS_REGIONS}
+            error={errors.cotswolds_region}
+            hint="Used for north / central / south filtering on the Villages listing page"
+            placeholder="Select Cotswolds region"
           />
           <TextInput
             id="tagline_quote"

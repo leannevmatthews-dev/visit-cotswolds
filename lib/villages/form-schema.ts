@@ -1,4 +1,4 @@
-import type { Village } from "@/lib/villages/types";
+import { COTSWOLDS_REGIONS, type Village } from "@/lib/villages/types";
 import { emptyParkingGuide } from "@/lib/villages/form-defaults";
 import { normalizeCombineWithTrip } from "@/lib/villages/helpers";
 import type {
@@ -45,6 +45,13 @@ export function validateVillageForm(
       "Slug must use lowercase letters, numbers, and hyphens only (e.g. bourton-on-the-water).";
   }
 
+  if (
+    !state.cotswolds_region ||
+    !COTSWOLDS_REGIONS.includes(state.cotswolds_region)
+  ) {
+    errors.cotswolds_region = "Select a Cotswolds region.";
+  }
+
   const scoreFields = [
     "score_first_time_visitor",
     "score_couples",
@@ -79,6 +86,7 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
     name: state.name.trim(),
     slug: state.slug.trim(),
     region_label: state.region_label.trim(),
+    cotswolds_region: state.cotswolds_region,
     tagline_quote: state.tagline_quote.trim(),
     brief_summary: state.brief_summary.trim(),
     brief_best_tip: state.brief_best_tip.trim(),
@@ -230,6 +238,7 @@ export function villageToFormState(village: Village): VillageFormState {
     name: village.name,
     slug: village.slug,
     region_label: village.region_label,
+    cotswolds_region: village.cotswolds_region ?? "",
     tagline_quote: village.tagline_quote,
     brief_summary: village.brief_summary,
     brief_best_tip: village.brief_best_tip,

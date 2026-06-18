@@ -1,5 +1,13 @@
 export type CrowdPillLevel = "quiet" | "moderate" | "busy";
 
+export const COTSWOLDS_REGIONS = [
+  "North Cotswolds",
+  "Central Cotswolds",
+  "South Cotswolds",
+] as const;
+
+export type CotswoldsRegion = (typeof COTSWOLDS_REGIONS)[number];
+
 export type CrowdTimeRow = {
   level: string;
   time_range: string;
@@ -96,6 +104,7 @@ export type Village = {
   slug: string;
   name: string;
   region_label: string;
+  cotswolds_region: CotswoldsRegion | null;
   tagline_quote: string;
   video_embed_url: string | null;
   hero_gallery_urls: string[] | null;

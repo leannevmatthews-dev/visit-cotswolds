@@ -1,6 +1,15 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import type { SeasonalAdvice, Village } from "@/lib/villages/types";
 
+export type VillageListRow = {
+  name: string;
+  slug: string;
+  region_label: string;
+  cotswolds_region: string | null;
+  brief_summary: string;
+  hero_gallery_urls: string[] | null;
+};
+
 function createReadClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
@@ -23,6 +32,22 @@ export async function getAllVillageSlugs(): Promise<string[]> {
   }
 
   return (data ?? []).map((row) => row.slug);
+}
+
+export async function getAllVillagesForListing(): Promise<VillageListRow[]> {
+  const supabase = createReadClient();
+
+  const { data, error } = await supabase
+    .from("villages")
+    .select("name, slug, region_label, cotswolds_region, brief_summary, hero_gallery_urls")
+    .order("name", { ascending: true });
+
+  if (error) {
+    console.error("Failed to fetch villages for listing:", error.message);
+    return [];
+  }
+
+  return (data ?? []) as VillageListRow[];
 }
 
 export async function getVillageBySlug(slug: string): Promise<Village | null> {

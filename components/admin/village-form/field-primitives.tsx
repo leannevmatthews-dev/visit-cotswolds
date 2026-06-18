@@ -74,6 +74,46 @@ export function TextInput({
   );
 }
 
+type SelectInputProps = {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: readonly string[];
+  error?: string;
+  hint?: string;
+  placeholder?: string;
+};
+
+export function SelectInput({
+  id,
+  label,
+  value,
+  onChange,
+  options,
+  error,
+  hint,
+  placeholder = "Select…",
+}: SelectInputProps) {
+  return (
+    <Field label={label} id={id} error={error} hint={hint}>
+      <select
+        id={id}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className={inputClassName}
+      >
+        <option value="">{placeholder}</option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </Field>
+  );
+}
+
 type TextAreaProps = {
   id: string;
   label: string;

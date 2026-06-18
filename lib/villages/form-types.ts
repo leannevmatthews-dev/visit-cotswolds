@@ -1,9 +1,10 @@
-import type { Village } from "@/lib/villages/types";
+import type { CotswoldsRegion, Village } from "@/lib/villages/types";
 
 export type VillageFormState = {
   name: string;
   slug: string;
   region_label: string;
+  cotswolds_region: CotswoldsRegion | "";
   tagline_quote: string;
   brief_summary: string;
   brief_best_tip: string;

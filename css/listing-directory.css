@@ -1,0 +1,9 @@
+/* Shared listing directory cards (Places to Eat, Stay, Things to Do) */
+.listing-directory-card__name {
+    font-family: var(--font-eb-garamond), "EB Garamond", serif;
+}
+
+.listing-directory-card__link:focus-visible {
+    outline: 2px solid rgba(201, 185, 154, 0.6);
+    outline-offset: 2px;
+}
