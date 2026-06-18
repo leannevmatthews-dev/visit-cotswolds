@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
+import type { Village } from "@/lib/villages/types";
 
 export type VillageListItem = {
   id: number;
@@ -22,4 +23,24 @@ export async function getAllVillagesForAdmin(): Promise<VillageListItem[]> {
   }
 
   return (data ?? []) as VillageListItem[];
+}
+
+export async function getVillageForAdminBySlug(
+  slug: string,
+): Promise<Village | null> {
+  const cookieStore = await cookies();
+  const supabase = createClient(cookieStore);
+
+  const { data, error } = await supabase
+    .from("villages")
+    .select("*")
+    .eq("slug", slug)
+    .maybeSingle();
+
+  if (error) {
+    console.error(`Failed to fetch village "${slug}" for admin:`, error.message);
+    return null;
+  }
+
+  return (data as Village | null) ?? null;
 }

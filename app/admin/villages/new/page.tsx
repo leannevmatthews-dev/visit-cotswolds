@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { VillageForm } from "@/components/admin/village-form/village-form";
 
 export const metadata: Metadata = {
   title: "New Village | Admin | Visit Cotswolds",
@@ -15,12 +16,14 @@ export default function NewVillagePage() {
       >
         ← Back to villages
       </Link>
-      <h1 className="font-display-lg text-display-lg-mobile md:text-headline-md mt-6 mb-3 text-on-background">
+      <h1 className="font-display-lg text-display-lg-mobile md:text-headline-md mt-6 mb-2 text-on-background">
         New Village
       </h1>
-      <p className="font-body-lg text-on-surface-variant">
-        Village creation form coming next.
+      <p className="font-body-sm mb-8 text-on-surface-variant">
+        Fill in each section below. Name and slug are required.
       </p>
+
+      <VillageForm />
     </main>
   );
 }

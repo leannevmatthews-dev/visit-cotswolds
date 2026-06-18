@@ -17,3 +17,12 @@
   flex-shrink: 0;
   white-space: nowrap;
 }
+
+.admin-icon-select__option:focus-visible {
+  outline: 2px solid rgba(201, 185, 154, 0.6);
+  outline-offset: -2px;
+}
+
+.admin-icon-select__category {
+  z-index: 1;
+}

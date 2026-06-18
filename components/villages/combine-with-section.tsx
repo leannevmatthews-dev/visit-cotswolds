@@ -1,4 +1,5 @@
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
+import { normalizeCombineWithTrip } from "@/lib/villages/helpers";
 import type { CombineWithTrip } from "@/lib/villages/types";
 import type { Village } from "@/lib/villages/types";
 
@@ -20,7 +21,10 @@ export function CombineWithSection({ village }: CombineWithSectionProps) {
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {village.combine_with.map((trip) => (
-          <CombineWithCard key={trip.title} trip={trip} />
+          <CombineWithCard
+            key={trip.title}
+            trip={normalizeCombineWithTrip(trip)}
+          />
         ))}
       </div>
     </div>
@@ -28,24 +32,26 @@ export function CombineWithSection({ village }: CombineWithSectionProps) {
 }
 
 function CombineWithCard({ trip }: { trip: CombineWithTrip }) {
-  const images = trip.image_urls.filter(Boolean);
-
   return (
     <article className="village-combine">
       <div className="village-combine__images">
         <div className="village-combine__place-row">
-          {images.length > 0 ? (
-            images.map((src) => (
-              <div key={src} className="village-combine__image">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt="" />
-              </div>
-            ))
-          ) : (
-            <div className="village-combine__image">
+          <div className="village-combine__image">
+            {trip.left_image_url ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img src={trip.left_image_url} alt="" />
+            ) : (
               <VillageImagePlaceholder />
-            </div>
-          )}
+            )}
+          </div>
+          <div className="village-combine__image">
+            {trip.right_image_url ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img src={trip.right_image_url} alt="" />
+            ) : (
+              <VillageImagePlaceholder />
+            )}
+          </div>
         </div>
       </div>
       <div className="village-combine__body">

@@ -1,0 +1,58 @@
+import type { Village } from "@/lib/villages/types";
+
+export type VillageFormState = {
+  name: string;
+  slug: string;
+  region_label: string;
+  tagline_quote: string;
+  brief_summary: string;
+  brief_best_tip: string;
+  overview_heading: string;
+  overview_body: string;
+  time_needed: string;
+  dog_friendly: string;
+  best_season: string;
+  score_first_time_visitor: number;
+  score_couples: number;
+  score_families: number;
+  score_food_drink: number;
+  score_accessibility: number;
+  score_hidden_gem_factor: number;
+  our_take_body: string;
+  visited_date: string;
+  reviewed_by_name: string;
+  reviewed_by_credential: string;
+  crowd_intelligence_note: string;
+  crowd_times: Village["crowd_times"];
+  perfect_for: Village["perfect_for"];
+  maybe_skip_if: Village["maybe_skip_if"];
+  comparison_stats: NonNullable<Village["comparison_stats"]>;
+  alternative_villages: Village["alternative_villages"];
+  local_tips: Village["local_tips"];
+  hidden_gems: Village["hidden_gems"];
+  curated_experiences: Village["curated_experiences"];
+  combine_with: Village["combine_with"];
+  places_to_stay: Village["places_to_stay"];
+  places_to_eat: Village["places_to_eat"];
+  parking_guide: Village["parking_guide"];
+  getting_here_rail: string;
+  getting_here_parking: string;
+  accessibility_wheelchair: string;
+  accessibility_pushchair: string;
+  accessibility_mobility_notes: string;
+  accessibility_surface: string;
+  rainy_day_options: Village["rainy_day_options"];
+  faq_items: Village["faq_items"];
+  nearby_villages: Village["nearby_villages"];
+  meta_title: string;
+  meta_description: string;
+  alt_text: string;
+  video_embed_url: string;
+  hero_background_image_url: string;
+  our_take_image_url: string;
+  hidden_gems_image_url: string;
+};
+
+export type VillageInsertPayload = Omit<Village, "id">;
+
+export type FormFieldErrors = Partial<Record<keyof VillageFormState | "form", string>>;

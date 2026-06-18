@@ -40,6 +40,7 @@ export function VillageComparisonSection({ village }: VillageComparisonSectionPr
                 }`}
               >
                 <VillageCompareImage
+                  src={row.image_url ?? undefined}
                   alt={`${row.village_name} village`}
                 />
                 <header className="village-compare-card__header">

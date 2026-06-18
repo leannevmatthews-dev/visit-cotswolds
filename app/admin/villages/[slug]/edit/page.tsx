@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { VillageForm } from "@/components/admin/village-form/village-form";
+import { getVillageForAdminBySlug } from "@/lib/villages/admin-queries";
+import { villageToFormState } from "@/lib/villages/form-schema";
 
 type EditVillagePageProps = {
   params: Promise<{ slug: string }>;
@@ -17,6 +21,13 @@ export async function generateMetadata({
 
 export default async function EditVillagePage({ params }: EditVillagePageProps) {
   const { slug } = await params;
+  const village = await getVillageForAdminBySlug(slug);
+
+  if (!village) {
+    notFound();
+  }
+
+  const initialData = villageToFormState(village);
 
   return (
     <main className="mx-auto max-w-container-max px-margin-mobile py-12 md:px-margin-desktop md:py-16">
@@ -26,15 +37,20 @@ export default async function EditVillagePage({ params }: EditVillagePageProps) 
       >
         ← Back to villages
       </Link>
-      <h1 className="font-display-lg text-display-lg-mobile md:text-headline-md mt-6 mb-3 text-on-background">
+      <h1 className="font-display-lg text-display-lg-mobile md:text-headline-md mt-6 mb-2 text-on-background">
         Edit Village
       </h1>
-      <p className="font-body-sm mb-2 text-on-surface-variant">
-        Slug: <span className="text-on-surface">{slug}</span>
+      <p className="font-body-sm mb-8 text-on-surface-variant">
+        Editing <span className="text-on-surface">{village.name}</span> — all
+        fields are pre-filled from Supabase.
       </p>
-      <p className="font-body-lg text-on-surface-variant">
-        Village edit form coming next.
-      </p>
+
+      <VillageForm
+        mode="edit"
+        villageId={village.id}
+        initialData={initialData}
+        originalSlug={slug}
+      />
     </main>
   );
 }

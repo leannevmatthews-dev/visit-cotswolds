@@ -18,6 +18,7 @@ export type ComparisonStat = {
   crowds: string;
   food: string;
   time_needed: string;
+  image_url: string | null;
 };
 
 export type LocalTip = {
@@ -43,7 +44,8 @@ export type CombineWithTrip = {
   title: string;
   body: string;
   duration_label: string;
-  image_urls: string[];
+  left_image_url: string;
+  right_image_url: string;
 };
 
 export type PlacePick = {

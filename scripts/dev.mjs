@@ -44,6 +44,10 @@ function stopStaleDevServers() {
   }
 }
 
+function hasProductionBuildArtifacts() {
+  return existsSync(path.join(root, ".next", "required-server-files.json"));
+}
+
 function clearCaches() {
   const targets = [
     path.join(root, ".next"),
@@ -72,6 +76,11 @@ stopStaleDevServers();
 if (clean) {
   clearCaches();
   console.log("Cleared .next and node_modules/.cache");
+} else if (hasProductionBuildArtifacts()) {
+  clearCaches();
+  console.log(
+    "Cleared .next left over from npm run build (prevents missing CSS/JS chunks in dev)",
+  );
 } else {
   console.log("Keeping .next cache (use npm run dev:reset for a full clean)");
 }
