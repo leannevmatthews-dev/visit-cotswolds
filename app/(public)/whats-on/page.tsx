@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { WhatsOnContent } from "@/components/static-pages/whats-on-content.static";
+import { WhatsOnContent } from "@/components/whats-on/whats-on-content";
+import "@/css/village-hero.css";
 
 export const metadata: Metadata = {
   title: "What's On | Visit Cotswolds",

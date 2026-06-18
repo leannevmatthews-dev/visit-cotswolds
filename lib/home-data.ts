@@ -59,7 +59,7 @@ export const VILLAGE_CARDS = [
   {
     href: "/villages/bourton-on-the-water",
     county: "GLOUCESTERSHIRE",
-    name: "Bourton",
+    name: "Bourton-on-the-Water",
     alt: "Bourton-on-the-Water bridge",
     span: "md:col-span-4",
     height: "md:h-[320px] lg:h-[360px]",
@@ -87,14 +87,14 @@ export const VILLAGE_CARDS = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAZzSxhwh3G-GPdDTZHdnNseY8Kruoos_azgiSAJPVf8PNF_lZKRWLsJeWYJkNMlPVhm2ay8kPfBfiBRLRIIS-gQxLMxXT6ap2ODE9c84ZAiWIgUrl-ZgtBXmNxZzM_-F-Yx_F3sMPi4Q7S_teIddxgLu_JIm6QRWrllM_SLQmVNssZy33Mih-BrZ4iUxxC4usb_iaV-svBDdOOL2EjxigSL98nU1qTfi1ix5aqnxdL5Rfw5L53hcUKC2r1Z99DWrS68fFxm_1R4w",
   },
   {
-    href: "/villages",
+    href: "/villages/snowshill",
     county: "GLOUCESTERSHIRE",
-    name: "Slaughters",
-    alt: "Upper Slaughter manor gardens",
+    name: "Snowshill",
+    alt: "Snowshill village",
     span: "md:col-span-6",
     height: "md:h-[280px] lg:h-[320px]",
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDdOcNnwcH0POjoLioz9hOh138G4xpFszmVQf3fnEGE2dcnnjBRFbp0dmBPqqiVcMYJuOQULEqkMjm9dvNpXmyPrCSN1hQXLXWD91VK64Un4pPyDMJZ923W85Tar1rRae_Qtlm30oDIgGnASlxzuIIgELwvFkYnm0-2iSngPfsXwhIgeCHaVg_24zIQnymVIc2SF5fdvs7dpH2mcTf6ged3O6HoMIOEaZQOt_qEROlQpJkkZ8SLKH2WoTDj3eoWPSsq30g2052sXg",
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuADFD8A8gnmpFYZWCqaIFaRzHDGIy9LoKy-fbotKiGzZR6Mhqnl8J2mLva0sqf6lbYVTeUb6-P6wQIJTVFrlXVP0xH8csR2J4jxa6Y3tgN6o0c_WvrQBNeKiTl2Iq6KiKsGWmDozRC4pBcVnipo0FIgbO7V6Xs3cAwHbuUbL-wGyVLs52Z9q-s-3b63rF8jsyQ_AgNGZz8mh3R0MCTVDOUmqDS0ZCTipKzfYJqTHC9i_DLrTDH6j0CwB0mRyUNETHUJrvLuAfqrzg",
   },
 ] as const;
 

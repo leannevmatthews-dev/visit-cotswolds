@@ -1,46 +1,65 @@
 /* Auto-converted from pages/whats-on.html — body only; header/footer via app layout */
+import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
+
+const WHATS_ON_HERO_IMAGE =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuAIBKgizqNuINElxwaG8jYGcXmenxm-7wA4KC0eBuuVdqNs1gydPocWvMIVDepVaP0A9bHD0lPPMH64CFAjoGRAQfmvh5R-MHHit1DqZPrzwPte8_mjVY7_vcKvEEEv5eit_2CgAV3QsDb6CuckpZpNigTkvThjU38P8bpLGeF66iI3nbkTmdR578Ux2IQEtVhEnX1Wlhu7NS8U5KOEAGjsbH-GPkf_3P597ESI1xciKbdnkJhT1wox3gvQba4VRJLb0zZfPlTOkA";
+
 export function WhatsOnContent() {
   return (
     <>
-      <main>
-      <section className="relative min-h-[50vh] md:min-h-[60vh] flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop pt-12 pb-10 md:pb-12">
-      <div className="space-y-6 max-w-2xl">
-      <span className="font-label-caps text-label-caps tracking-[0.3em] text-limestone opacity-80">THE DIARY</span>
-      <h1 className="font-display-lg text-display-lg-mobile md:text-[100px] leading-[0.95] italic">What's On in the Cotswolds</h1>
-      <p className="font-body-lg text-on-surface-variant max-w-lg mx-auto">A curated calendar of heritage, culture, and country pursuits across the Cotswold hills.</p>
+      <DirectoryPageHero
+        title="What's On"
+        subtitle="Heritage, culture, and country pursuits across the hills."
+        intro="A curated calendar of events, festivals, and cultural moments across the Cotswolds."
+        heroImage={WHATS_ON_HERO_IMAGE}
+      >
+        <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
+          <button
+            type="button"
+            className="flex items-center gap-4 w-full sm:w-auto sm:min-w-[240px] px-6 py-3 md:py-4 border border-outline-variant/40 rounded-full hover:border-limestone transition-colors"
+          >
+            <span className="material-symbols-outlined text-limestone">calendar_today</span>
+            <span className="font-label-caps text-[10px] md:text-xs opacity-60">
+              SELECT DATE RANGE
+            </span>
+          </button>
+          <button
+            type="button"
+            className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors"
+          >
+            <span className="material-symbols-outlined text-sm">today</span>
+            <span className="font-label-caps text-[10px] md:text-xs">TODAY</span>
+          </button>
+          <button
+            type="button"
+            className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors"
+          >
+            <span className="material-symbols-outlined text-sm">weekend</span>
+            <span className="font-label-caps text-[10px] md:text-xs">THIS WEEKEND</span>
+          </button>
+          <button
+            type="button"
+            className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors"
+          >
+            <span className="material-symbols-outlined text-sm">calendar_month</span>
+            <span className="font-label-caps text-[10px] md:text-xs">THIS MONTH</span>
+          </button>
+        </div>
+      </DirectoryPageHero>
+      <main className="bg-background text-on-background">
+      <section className="sticky top-[5.5rem] z-40 border-b border-outline/5 bg-background/95 backdrop-blur-md py-5">
+      <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
+      <div className="flex items-center gap-8 overflow-x-auto no-scrollbar md:gap-10">
+      <button type="button" className="shrink-0 font-label-caps text-label-caps whitespace-nowrap border-b-2 border-primary pb-1 text-primary">ALL EVENTS</button>
+      <button type="button" className="shrink-0 font-label-caps text-label-caps whitespace-nowrap text-on-surface-variant transition-colors hover:text-primary pb-1">FESTIVALS</button>
+      <button type="button" className="shrink-0 font-label-caps text-label-caps whitespace-nowrap text-on-surface-variant transition-colors hover:text-primary pb-1">MARKETS</button>
+      <button type="button" className="shrink-0 font-label-caps text-label-caps whitespace-nowrap text-on-surface-variant transition-colors hover:text-primary pb-1">SPORTING</button>
+      <button type="button" className="shrink-0 font-label-caps text-label-caps whitespace-nowrap text-on-surface-variant transition-colors hover:text-primary pb-1">FAMILY</button>
+      <button type="button" className="shrink-0 font-label-caps text-label-caps whitespace-nowrap text-on-surface-variant transition-colors hover:text-primary pb-1">EVENTS</button>
+      </div>
       </div>
       </section>
-      <section className="sticky top-[var(--site-header-height)] z-40 bg-background/95 backdrop-blur-md border-y border-outline-variant/20 py-5 md:py-6 mb-10 md:mb-12">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-5">
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 lg:items-center lg:justify-between">
-      <div className="flex flex-col sm:flex-row flex-wrap gap-3 w-full lg:w-auto">
-      <button type="button" className="flex items-center gap-4 w-full sm:w-auto sm:min-w-[240px] px-6 py-3 md:py-4 border border-outline-variant/40 rounded-full hover:border-limestone transition-colors">
-      <span className="material-symbols-outlined text-limestone">calendar_today</span>
-      <span className="font-label-caps text-[10px] md:text-xs opacity-60">SELECT DATE RANGE</span>
-      </button>
-      <button type="button" className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors">
-      <span className="material-symbols-outlined text-sm">today</span>
-      <span className="font-label-caps text-[10px] md:text-xs">TODAY</span>
-      </button>
-      <button type="button" className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors">
-      <span className="material-symbols-outlined text-sm">weekend</span>
-      <span className="font-label-caps text-[10px] md:text-xs">THIS WEEKEND</span>
-      </button>
-      <button type="button" className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3 md:py-4 border border-limestone rounded-full text-limestone hover:bg-limestone hover:text-primary-container transition-colors">
-      <span className="material-symbols-outlined text-sm">calendar_month</span>
-      <span className="font-label-caps text-[10px] md:text-xs">THIS MONTH</span>
-      </button>
-      </div>
-      <div className="flex gap-6 md:gap-8 overflow-x-auto no-scrollbar py-1 w-full lg:w-auto">
-      <button type="button" className="font-label-caps text-[10px] tracking-widest text-limestone whitespace-nowrap border-b border-limestone pb-1">ALL EVENTS</button>
-      <button type="button" className="font-label-caps text-[10px] tracking-widest opacity-40 hover:opacity-100 transition-opacity whitespace-nowrap pb-1">FESTIVALS</button>
-      <button type="button" className="font-label-caps text-[10px] tracking-widest opacity-40 hover:opacity-100 transition-opacity whitespace-nowrap pb-1">MARKETS</button>
-      <button type="button" className="font-label-caps text-[10px] tracking-widest opacity-40 hover:opacity-100 transition-opacity whitespace-nowrap pb-1">SPORTING</button>
-      </div>
-      </div>
-      </div>
-      </section>
-      <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-24 md:pb-32">
+      <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-24 md:pb-32 pt-10 md:pt-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       <article className="event-card group cursor-pointer">
       <div className="relative aspect-[3/4] overflow-hidden mb-6 bg-surface-container-low">

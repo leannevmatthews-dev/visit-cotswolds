@@ -1,24 +1,21 @@
 /* Auto-converted from pages/journal.html — body only; header/footer via app layout */
+import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
+
+const JOURNAL_HERO_IMAGE =
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCrECDYU4gHulWuvb31YxisVTyWl0ptVmqm5Kn_vQvJg5qdyPmKc_pZwuoCur55OXTG40v1lE2IQO_xd9e6BtSUgnDJn6p-9i_iXYGMPZalYCcTS6cP_y-GGZ8NTe1DJ6U5TPEJxErcnijNDwwxMzfZZgrWO_5qjAIXFV_VtdtRPJcs_9H1fXeWBvmPirychdwi5okMoIT2DFQW_HXAOc9opTlt-SlEe3s8f00POhh3zOhCjTMwmzwng9f__cVBVqRotRqs63f-xg";
+
 export function JournalContent() {
   return (
     <>
-      {/* Hero Section */}
-      <header className="relative w-full h-[707px] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-      <img className="w-full h-full object-cover" data-alt="A cinematic, wide-angle photograph of the rolling Cotswold hills during the golden hour. The landscape is bathed in a soft, hazy amber light that illuminates the stone walls and distant honey-colored cottages. The atmosphere is quiet and serene, with a slight mist settling in the valleys, creating a deep sense of tranquility and luxury. The color palette is dominated by muted greens and warm limestone tones, adhering to a high-end editorial travel aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrECDYU4gHulWuvb31YxisVTyWl0ptVmqm5Kn_vQvJg5qdyPmKc_pZwuoCur55OXTG40v1lE2IQO_xd9e6BtSUgnDJn6p-9i_iXYGMPZalYCcTS6cP_y-GGZ8NTe1DJ6U5TPEJxErcnijNDwwxMzfZZgrWO_5qjAIXFV_VtdtRPJcs_9H1fXeWBvmPirychdwi5okMoIT2DFQW_HXAOc9opTlt-SlEe3s8f00POhh3zOhCjTMwmzwng9f__cVBVqRotRqs63f-xg" />
-      <div className="absolute inset-0 hero-overlay"></div>
-      </div>
-      <div className="relative z-10 text-center px-margin-mobile">
-      <h1 className="font-cormorant text-[80px] md:text-[120px] font-light italic leading-none text-primary mb-4">
-                      The Journal
-                  </h1>
-      <p className="font-body-lg text-on-surface-variant tracking-[0.2em] uppercase text-sm md:text-base">
-                      Slow stories from the landscape
-                  </p>
-      </div>
-      </header>
+      <DirectoryPageHero
+        title="The Journal"
+        subtitle="Slow stories from the landscape."
+        intro="Stories, guides, and inspiration from the heart of England — written for readers who prefer depth over speed."
+        heroImage={JOURNAL_HERO_IMAGE}
+      />
+      <main className="bg-background text-on-background">
       {/* Latest Stories Section */}
-      <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-40">
+      <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-10 pb-24 md:pt-12 md:pb-40">
       <div className="flex justify-between items-end mb-16">
       <div>
       <span className="text-tertiary font-label-caps text-label-caps mb-2 block">VOLUME 01</span>
@@ -139,7 +136,7 @@ export function JournalContent() {
       </div>
       </div>
       </section>
-      {/* Footer */}
+      </main>
     </>
   );
 }

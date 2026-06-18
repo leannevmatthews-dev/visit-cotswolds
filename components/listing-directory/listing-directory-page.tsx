@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import {
   applyDirectoryFilter,
@@ -113,31 +114,12 @@ export function ListingDirectoryPage({
 
   return (
     <>
-      <section className="village-hero">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          alt=""
-          aria-hidden="true"
-          className="village-hero__bg"
-          src={heroImage}
-        />
-        <div className="village-hero__gradient" aria-hidden="true" />
-        <div className="village-hero__content">
-          <div className="village-hero__copy">
-            <h1 className="font-display-lg text-[48px] sm:text-[56px] md:text-[72px] lg:text-[88px] text-primary leading-none tracking-tighter">
-              {title}
-            </h1>
-            <p className="font-headline-md text-secondary mt-3 md:mt-4 max-w-xl italic text-[22px] md:text-[28px]">
-              {subtitle}
-            </p>
-            {intro && (
-              <p className="font-body-sm text-on-surface-variant mt-4 max-w-xl leading-relaxed">
-                {intro}
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
+      <DirectoryPageHero
+        title={title}
+        subtitle={subtitle}
+        heroImage={heroImage}
+        intro={intro}
+      />
 
       <nav
         className="sticky top-[5.5rem] z-40 border-b border-outline/5 bg-background/95 backdrop-blur-md"
