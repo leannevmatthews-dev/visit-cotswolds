@@ -1,4 +1,4 @@
-import { COTSWOLDS_REGIONS, type Village } from "@/lib/villages/types";
+import { COTSWOLDS_REGIONS, type CotswoldsRegion, type Village } from "@/lib/villages/types";
 import { emptyParkingGuide } from "@/lib/villages/form-defaults";
 import { normalizeCombineWithTrip } from "@/lib/villages/helpers";
 import type {
@@ -86,7 +86,7 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
     name: state.name.trim(),
     slug: state.slug.trim(),
     region_label: state.region_label.trim(),
-    cotswolds_region: state.cotswolds_region,
+    cotswolds_region: state.cotswolds_region as CotswoldsRegion,
     tagline_quote: state.tagline_quote.trim(),
     brief_summary: state.brief_summary.trim(),
     brief_best_tip: state.brief_best_tip.trim(),

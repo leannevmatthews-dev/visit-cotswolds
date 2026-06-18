@@ -1,3 +1,7 @@
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { getOrganizationJsonLd } from "@/lib/seo/schema";
 import { FadeInSection } from "@/components/fade-in-section";
 import {
   HERO_IMAGE,
@@ -6,9 +10,18 @@ import {
   VILLAGE_CARDS,
 } from "@/lib/home-data";
 
+export const metadata: Metadata = pageMetadata({
+  title: "Visit Cotswolds | The Independent Guide to the Cotswolds",
+  description:
+    "The most useful independent guide to the Cotswolds — village guides, places to eat and stay, things to do, and honest advice from real visits.",
+  path: "/",
+});
+
 export default function HomePage() {
   return (
-    <main>
+    <>
+      <JsonLd data={getOrganizationJsonLd()} />
+      <main>
         {/* Hero */}
         <section className="relative min-h-[100dvh] w-full flex flex-col overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -221,5 +234,6 @@ export default function HomePage() {
           </div>
         </FadeInSection>
     </main>
+    </>
   );
 }

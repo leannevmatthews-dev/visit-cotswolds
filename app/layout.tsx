@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Inter } from "next/font/google";
+import { SITE_URL } from "@/lib/seo/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,9 +17,10 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Visit Cotswolds",
   description:
-    "England's most beautiful corner. Villages, valleys, and very good food.",
+    "The most useful independent guide to the Cotswolds — village guides, places to eat and stay, things to do, and honest advice from real visits.",
 };
 
 export default function RootLayout({

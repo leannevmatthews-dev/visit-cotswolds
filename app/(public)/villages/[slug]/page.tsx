@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/seo/json-ld";
 import { VillageHeroVideo } from "@/components/village-hero-video";
 import { VillageContent } from "@/components/villages/village-content";
+import { villagePageMetadata } from "@/lib/seo/metadata";
+import {
+  getBreadcrumbJsonLd,
+  getTouristAttractionJsonLd,
+} from "@/lib/seo/schema";
 import {
   getAllVillageSlugs,
   getSeasonalAdvice,
@@ -29,12 +35,7 @@ export async function generateMetadata({
     return { title: "Village Not Found | Visit Cotswolds" };
   }
 
-  return {
-    title: village.meta_title ?? `${village.name} | Visit Cotswolds`,
-    description:
-      village.meta_description ??
-      `Discover ${village.name} — ${village.brief_summary.slice(0, 140)}…`,
-  };
+  return villagePageMetadata(village);
 }
 
 export default async function VillagePage({ params }: VillagePageProps) {
@@ -50,6 +51,16 @@ export default async function VillagePage({ params }: VillagePageProps) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          getTouristAttractionJsonLd(village),
+          getBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Villages", path: "/villages" },
+            { name: village.name, path: `/villages/${village.slug}` },
+          ]),
+        ]}
+      />
       <VillageHeroVideo />
       <VillageContent village={village} seasons={seasons} />
     </>

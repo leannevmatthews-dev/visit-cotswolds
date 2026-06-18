@@ -47,7 +47,8 @@ export function applyDirectoryFilter(
   }
 
   if (rule.requireFlag) {
-    return listings.filter((listing) => listing[rule.requireFlag] === true);
+    const flag = rule.requireFlag;
+    return listings.filter((listing) => listing[flag] === true);
   }
 
   if (rule.matchListingArea) {
