@@ -1,5 +1,6 @@
 /* Auto-converted from pages/whats-on.html — body only; header/footer via app layout */
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
+import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 
 const WHATS_ON_HERO_IMAGE =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuAIBKgizqNuINElxwaG8jYGcXmenxm-7wA4KC0eBuuVdqNs1gydPocWvMIVDepVaP0A9bHD0lPPMH64CFAjoGRAQfmvh5R-MHHit1DqZPrzwPte8_mjVY7_vcKvEEEv5eit_2CgAV3QsDb6CuckpZpNigTkvThjU38P8bpLGeF66iI3nbkTmdR578Ux2IQEtVhEnX1Wlhu7NS8U5KOEAGjsbH-GPkf_3P597ESI1xciKbdnkJhT1wox3gvQba4VRJLb0zZfPlTOkA";
@@ -171,17 +172,7 @@ export function WhatsOnContent() {
       </article>
       </div>
       </section>
-      <section className="bg-surface-container-low py-24 md:py-32 border-y border-outline-variant/20 text-center px-margin-mobile md:px-margin-desktop">
-      <div className="max-w-xl mx-auto space-y-8">
-      <span className="font-label-caps text-label-caps tracking-[0.4em] text-limestone">BE THE FIRST TO KNOW</span>
-      <h2 className="font-display-lg text-display-lg-mobile md:text-5xl italic leading-tight">Receive the curated monthly diary</h2>
-      <p className="font-body-lg text-on-surface-variant">Unlock access to private viewings and exclusive invitations across the Cotswolds.</p>
-      <form className="flex flex-col md:flex-row gap-4 pt-4" action="#" method="post">
-      <input className="flex-grow bg-transparent border-b border-outline-variant/40 px-4 py-3 font-label-caps text-xs focus:outline-none focus:border-limestone transition-colors" placeholder="YOUR EMAIL ADDRESS" type="email" name="email" />
-      <button className="bg-limestone text-primary-container px-10 py-4 font-label-caps text-[10px] tracking-widest hover:bg-on-background transition-colors" type="submit">SUBSCRIBE</button>
-      </form>
-      </div>
-      </section>
+      <NewsletterSignup />
       </main>
     </>
   );

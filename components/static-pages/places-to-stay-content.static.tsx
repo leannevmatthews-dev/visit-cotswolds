@@ -1,4 +1,6 @@
 /* Auto-converted from pages/places-to-stay.html — body only; header/footer via app layout */
+import { NewsletterSignup } from "@/components/shared/newsletter-signup";
+
 export function PlacesToStayContent() {
   return (
     <>
@@ -73,17 +75,7 @@ export function PlacesToStayContent() {
       </div>
       </div>
       </section>
-      {/* Newsletter / Editorial */}
-      <section className="py-20 bg-surface-container-lowest border-t border-outline-variant/5">
-      <div className="px-margin-mobile text-center">
-      <p className="font-label-caps text-label-caps text-tertiary-container uppercase tracking-[0.3em] mb-4">Newsletter</p>
-      <h2 className="font-headline-md text-headline-md text-primary mb-6">Stay Inspired.</h2>
-      <div className="relative max-w-md mx-auto">
-      <input className="w-full bg-transparent border-b border-outline-variant text-on-surface py-3 focus:outline-none focus:border-primary transition-colors text-body-sm font-body-sm" placeholder="Your Email" type="email" />
-      <button className="absolute right-0 bottom-3 font-label-caps text-[10px] text-primary hover:text-tertiary transition-colors">JOIN</button>
-      </div>
-      </div>
-      </section>
+      <NewsletterSignup />
       </main>
       {/* Footer (Shell) */}
     </>

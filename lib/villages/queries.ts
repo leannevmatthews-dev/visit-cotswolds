@@ -99,6 +99,38 @@ export async function getVillageHeroImagesByNames(
   return images;
 }
 
+/** Hero background URLs for villages matched by slug (homepage village cards). */
+export async function getVillageHeroImagesBySlugs(
+  slugs: string[],
+): Promise<Record<string, string>> {
+  const uniqueSlugs = [...new Set(slugs.map((slug) => slug.trim()).filter(Boolean))];
+  if (uniqueSlugs.length === 0) {
+    return {};
+  }
+
+  const supabase = createReadClient();
+
+  const { data, error } = await supabase
+    .from("villages")
+    .select("slug, hero_background_image_url")
+    .in("slug", uniqueSlugs);
+
+  if (error) {
+    console.error("Failed to fetch village hero images by slug:", error.message);
+    return {};
+  }
+
+  const images: Record<string, string> = {};
+  for (const row of data ?? []) {
+    const url = row.hero_background_image_url?.trim();
+    if (url) {
+      images[row.slug] = url;
+    }
+  }
+
+  return images;
+}
+
 export async function getSeasonalAdvice(): Promise<SeasonalAdvice[]> {
   const supabase = createReadClient();
 

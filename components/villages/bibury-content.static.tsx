@@ -10,7 +10,7 @@ import { LocalTipsSection } from "@/components/villages/static/local-tips-sectio
 import { ParkingGuideSection } from "@/components/villages/static/parking-guide-section";
 import { ReviewedBy } from "@/components/villages/static/reviewed-by";
 import { SeasonalAdviceSection } from "@/components/villages/static/seasonal-advice-section";
-import { VillageChecklistSignup } from "@/components/villages/village-checklist-signup";
+import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import { VillageComparisonSection } from "@/components/villages/static/village-comparison-section";
 
 export function BiburyContent() {
@@ -326,7 +326,7 @@ export function BiburyContent() {
 </a>
 </div>
 </div>
-<VillageChecklistSignup />
+<NewsletterSignup />
 </div>
 </main>
     </>

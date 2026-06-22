@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { JsonLd } from "@/components/seo/json-ld";
-import { pageMetadata } from "@/lib/seo/metadata";
-import { getOrganizationJsonLd } from "@/lib/seo/schema";
 import { FadeInSection } from "@/components/fade-in-section";
+import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import {
   HERO_IMAGE,
   JOURNEY_CARDS,
   STAY_CARDS,
   VILLAGE_CARDS,
 } from "@/lib/home-data";
+import { pageMetadata } from "@/lib/seo/metadata";
+import { getOrganizationJsonLd } from "@/lib/seo/schema";
+import { getVillageHeroImagesBySlugs } from "@/lib/villages/queries";
 
 export const metadata: Metadata = pageMetadata({
   title: "Visit Cotswolds | The Independent Guide to the Cotswolds",
@@ -17,7 +20,11 @@ export const metadata: Metadata = pageMetadata({
   path: "/",
 });
 
-export default function HomePage() {
+export default async function HomePage() {
+  const villageHeroImagesBySlug = await getVillageHeroImagesBySlugs(
+    VILLAGE_CARDS.map((card) => card.slug),
+  );
+
   return (
     <>
       <JsonLd data={getOrganizationJsonLd()} />
@@ -25,12 +32,21 @@ export default function HomePage() {
         {/* Hero */}
         <section className="relative min-h-[100dvh] w-full flex flex-col overflow-hidden">
           <div className="absolute inset-0 z-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="w-full h-full object-cover"
-              alt="A cinematic, wide-angle photograph of a quintessential Cotswolds stone village, like Castle Combe, shrouded in a soft morning mist."
-              src={HERO_IMAGE}
-            />
+            {HERO_IMAGE ? (
+              <Image
+                alt="A cinematic, wide-angle photograph of a quintessential Cotswolds stone village, like Castle Combe, shrouded in a soft morning mist."
+                className="object-cover"
+                fill
+                priority
+                sizes="100vw"
+                src={HERO_IMAGE}
+              />
+            ) : (
+              <div
+                className="absolute inset-0 bg-surface-container-high"
+                aria-hidden="true"
+              />
+            )}
             <div className="absolute inset-0 image-overlay-gradient opacity-80" />
           </div>
 
@@ -88,15 +104,6 @@ export default function HomePage() {
         {/* Curated Journeys */}
         <FadeInSection>
           <div className="pt-24 md:pt-32 pb-0 bg-background">
-            <div className="px-margin-mobile md:px-margin-desktop mb-6 md:mb-8 flex justify-between items-end home-journeys__header">
-              <h2 className="font-display-lg text-2xl sm:text-headline-md italic">
-                Curated Journeys
-              </h2>
-              <span className="font-label-caps text-[10px] text-limestone/70 tracking-widest shrink-0">
-                5 COLLECTIONS
-              </span>
-            </div>
-
             <div className="grid grid-cols-2 md:grid-cols-5 gap-1.5 sm:gap-2 md:gap-2 lg:gap-3 px-margin-mobile md:px-margin-desktop">
               {JOURNEY_CARDS.map((card) => (
                 <a
@@ -104,12 +111,20 @@ export default function HomePage() {
                   href={card.href}
                   className="relative group cursor-pointer overflow-hidden block min-w-0 aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5]"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    alt={card.alt}
-                    src={card.image}
-                  />
+                  {card.image ? (
+                    <Image
+                      alt={card.alt}
+                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                      fill
+                      sizes="(max-width: 768px) 50vw, 20vw"
+                      src={card.image}
+                    />
+                  ) : (
+                    <div
+                      className="absolute inset-0 bg-surface-container-high"
+                      aria-hidden="true"
+                    />
+                  )}
                   <div className="absolute inset-0 image-overlay-gradient" />
                   <div className="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 md:bottom-6 md:left-5">
                     <span className="font-label-caps text-[7px] sm:text-[9px] md:text-[10px] text-limestone block mb-0.5 sm:mb-1 tracking-wider">
@@ -131,11 +146,8 @@ export default function HomePage() {
         <FadeInSection>
           <div className="pb-24 md:pb-32 px-margin-mobile md:px-margin-desktop bg-background">
             <div className="py-12 md:py-16 mb-0 text-center">
-              <span className="font-label-caps text-limestone tracking-[0.3em] block mb-4">
-                ESTABLISHED 1966
-              </span>
               <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg">
-                The Village Edit
+                Cotswolds Villages
               </h2>
               <a
                 href="/villages"
@@ -146,29 +158,41 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4">
-              {VILLAGE_CARDS.map((village) => (
-                <a
-                  key={village.name}
-                  href={village.href}
-                  className={`${village.span} relative group overflow-hidden aspect-[4/3] md:aspect-auto ${village.height} block`}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    alt={village.alt}
-                    src={village.image}
-                  />
-                  <div className="absolute inset-0 image-overlay-gradient" />
-                  <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 home-village-card__copy">
-                    <span className="font-label-caps text-limestone text-[10px] block mb-1">
-                      {village.county}
-                    </span>
-                    <h3 className="font-display-lg home-village-card__title text-headline-md md:text-[40px] italic">
-                      {village.name}
-                    </h3>
-                  </div>
-                </a>
-              ))}
+              {VILLAGE_CARDS.map((village) => {
+                const imageUrl = villageHeroImagesBySlug[village.slug] ?? "";
+
+                return (
+                  <a
+                    key={village.name}
+                    href={village.href}
+                    className={`${village.span} relative group overflow-hidden aspect-[4/3] md:aspect-auto ${village.height} block`}
+                  >
+                    {imageUrl ? (
+                      <Image
+                        alt={village.alt}
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        src={imageUrl}
+                      />
+                    ) : (
+                      <div
+                        className="absolute inset-0 bg-surface-container-high"
+                        aria-hidden="true"
+                      />
+                    )}
+                    <div className="absolute inset-0 image-overlay-gradient" />
+                    <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 home-village-card__copy">
+                      <span className="font-label-caps text-limestone text-[10px] block mb-1">
+                        {village.county}
+                      </span>
+                      <h3 className="font-display-lg home-village-card__title text-headline-md md:text-[40px] italic">
+                        {village.name}
+                      </h3>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </FadeInSection>
@@ -179,22 +203,21 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6 md:gap-8">
               <div>
                 <h2 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-3 md:mb-4">
-                  Quiet Retreats
+                  Places To Stay In The Cotswolds
                 </h2>
                 <p className="font-body-lg text-on-surface-variant max-w-xl text-base md:text-body-lg">
-                  From honey-colored manor houses to secluded shepherd huts, find
-                  a space to breathe.
+                  Handpicked Places To Stay Across The Cotswolds
                 </p>
               </div>
               <a
                 href="/places-to-stay"
                 className="border border-limestone/40 px-8 md:px-10 py-3 md:py-4 font-label-caps text-label-caps hover:bg-limestone hover:text-background transition-all duration-500 inline-block w-full md:w-auto text-center"
               >
-                VIEW THE COLLECTION
+                SEE ALL PLACES TO STAY
               </a>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 gap-x-gutter gap-y-12 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               {STAY_CARDS.map((stay) => (
                 <a
                   key={stay.name}
@@ -202,12 +225,20 @@ export default function HomePage() {
                   className="group cursor-pointer block min-w-0"
                 >
                   <div className="relative aspect-[3/4] overflow-hidden mb-4 md:mb-6">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                      alt={stay.alt}
-                      src={stay.image}
-                    />
+                    {stay.image ? (
+                      <Image
+                        alt={stay.alt}
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 520px) 100vw, (max-width: 1280px) 33vw, 20vw"
+                        src={stay.image}
+                      />
+                    ) : (
+                      <div
+                        className="absolute inset-0 bg-surface-container-high"
+                        aria-hidden="true"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
                   </div>
                   <div className="flex justify-between items-start gap-3">
@@ -233,7 +264,9 @@ export default function HomePage() {
             </div>
           </div>
         </FadeInSection>
-    </main>
+
+        <NewsletterSignup />
+      </main>
     </>
   );
 }

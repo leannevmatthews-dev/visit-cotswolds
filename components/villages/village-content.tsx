@@ -8,7 +8,7 @@ import { LocalTipsSection } from "@/components/villages/local-tips-section";
 import { ParkingGuideSection } from "@/components/villages/parking-guide-section";
 import { ReviewedBy } from "@/components/villages/reviewed-by";
 import { SeasonalAdviceSection } from "@/components/villages/seasonal-advice-section";
-import { VillageChecklistSignup } from "@/components/villages/village-checklist-signup";
+import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import { VillageComparisonSection } from "@/components/villages/village-comparison-section";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import { VillageInBrief } from "@/components/villages/village-in-brief";
@@ -448,7 +448,7 @@ export function VillageContent({
             </div>
           )}
 
-          <VillageChecklistSignup />
+          <NewsletterSignup />
         </div>
       </main>
     </>

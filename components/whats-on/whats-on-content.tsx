@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
+import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import {
   filterWhatsOnEvents,
   formatEventCategories,
@@ -148,34 +149,7 @@ export function WhatsOnContent() {
           )}
         </section>
 
-        <section className="border-y border-outline-variant/20 bg-surface-container-low px-margin-mobile py-24 text-center md:px-margin-desktop md:py-32">
-          <div className="mx-auto max-w-xl space-y-8">
-            <span className="font-label-caps text-label-caps tracking-[0.4em] text-limestone">
-              BE THE FIRST TO KNOW
-            </span>
-            <h2 className="font-display-lg text-display-lg-mobile italic leading-tight md:text-5xl">
-              Receive the curated monthly diary
-            </h2>
-            <p className="font-body-lg text-on-surface-variant">
-              Unlock access to private viewings and exclusive invitations across
-              the Cotswolds.
-            </p>
-            <form className="flex flex-col gap-4 pt-4 md:flex-row" action="#" method="post">
-              <input
-                className="flex-grow border-b border-outline-variant/40 bg-transparent px-4 py-3 font-label-caps text-xs transition-colors focus:border-limestone focus:outline-none"
-                placeholder="YOUR EMAIL ADDRESS"
-                type="email"
-                name="email"
-              />
-              <button
-                className="bg-limestone px-10 py-4 font-label-caps text-[10px] tracking-widest text-primary-container transition-colors hover:bg-on-background"
-                type="submit"
-              >
-                SUBSCRIBE
-              </button>
-            </form>
-          </div>
-        </section>
+        <NewsletterSignup />
       </main>
     </>
   );
