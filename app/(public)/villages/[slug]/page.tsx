@@ -12,7 +12,9 @@ import {
   getAllVillageSlugs,
   getSeasonalAdvice,
   getVillageBySlug,
+  getVillageHeroImagesByNames,
 } from "@/lib/villages/queries";
+import { combineWithVillageNames } from "@/lib/villages/helpers";
 import "@/css/village-hero.css";
 import "@/css/village-page.css";
 
@@ -40,14 +42,23 @@ export async function generateMetadata({
 
 export default async function VillagePage({ params }: VillagePageProps) {
   const { slug } = await params;
-  const [village, seasons] = await Promise.all([
-    getVillageBySlug(slug),
-    getSeasonalAdvice(),
-  ]);
+  const village = await getVillageBySlug(slug);
 
   if (!village) {
     notFound();
   }
+
+  const heroImageNames = [
+    ...(village.comparison_stats ?? []).map((row) => row.village_name),
+    ...(village.combine_with ?? []).flatMap((trip) =>
+      combineWithVillageNames(trip.title),
+    ),
+  ];
+
+  const [seasons, villageHeroImagesByName] = await Promise.all([
+    getSeasonalAdvice(),
+    getVillageHeroImagesByNames(heroImageNames),
+  ]);
 
   return (
     <>
@@ -62,7 +73,12 @@ export default async function VillagePage({ params }: VillagePageProps) {
         ]}
       />
       <VillageHeroVideo />
-      <VillageContent village={village} seasons={seasons} />
+      <VillageContent
+        village={village}
+        seasons={seasons}
+        comparisonHeroImages={villageHeroImagesByName}
+        combineHeroImages={villageHeroImagesByName}
+      />
     </>
   );
 }

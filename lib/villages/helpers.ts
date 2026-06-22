@@ -83,6 +83,50 @@ export function getFaqJsonLd(items: FaqItem[]) {
   };
 }
 
+/** Village names from a combine-with title (split on " + "). */
+export function combineWithVillageNames(title: string): string[] {
+  return title
+    .split(" + ")
+    .map((name) => name.trim())
+    .filter(Boolean);
+}
+
+/** The non-current village in a two-village trip title. */
+export function combineWithOtherVillageName(
+  title: string,
+  currentVillageName: string,
+): string | null {
+  const names = combineWithVillageNames(title);
+  if (names.length !== 2) {
+    return null;
+  }
+
+  return names.find((name) => name !== currentVillageName) ?? null;
+}
+
+/** First village in the title that is not the current page village (3+ village trips). */
+export function combineWithFirstOtherVillageName(
+  title: string,
+  currentVillageName: string,
+): string | null {
+  const names = combineWithVillageNames(title);
+  if (names.length < 3) {
+    return null;
+  }
+
+  return names.find((name) => name !== currentVillageName) ?? null;
+}
+
+/** Second segment after " + " in a combine-with title (legacy helper). */
+export function combineWithSecondVillageName(title: string): string | null {
+  const parts = combineWithVillageNames(title);
+  if (parts.length < 2) {
+    return null;
+  }
+
+  return parts[1] ?? null;
+}
+
 export function heroImageUrl(
   heroGalleryUrls: string[] | null | undefined
 ): string | null {

@@ -12,9 +12,24 @@ const COMPARE_STATS = [
 
 type VillageComparisonSectionProps = {
   village: Village;
+  comparisonHeroImages?: Record<string, string>;
 };
 
-export function VillageComparisonSection({ village }: VillageComparisonSectionProps) {
+function comparisonCardImageUrl(
+  row: NonNullable<Village["comparison_stats"]>[number],
+  comparisonHeroImages: Record<string, string>,
+): string | undefined {
+  const fromVillage = comparisonHeroImages[row.village_name];
+  if (fromVillage) {
+    return fromVillage;
+  }
+  return row.image_url ?? undefined;
+}
+
+export function VillageComparisonSection({
+  village,
+  comparisonHeroImages = {},
+}: VillageComparisonSectionProps) {
   const comparisonRows = village.comparison_stats ?? [];
 
   return (
@@ -40,7 +55,7 @@ export function VillageComparisonSection({ village }: VillageComparisonSectionPr
                 }`}
               >
                 <VillageCompareImage
-                  src={row.image_url ?? undefined}
+                  src={comparisonCardImageUrl(row, comparisonHeroImages)}
                   alt={row.image_alt ?? ""}
                 />
                 <header className="village-compare-card__header">

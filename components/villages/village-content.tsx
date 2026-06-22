@@ -19,6 +19,8 @@ import type { SeasonalAdvice, Village } from "@/lib/villages/types";
 type VillageContentProps = {
   village: Village;
   seasons: SeasonalAdvice[];
+  comparisonHeroImages?: Record<string, string>;
+  combineHeroImages?: Record<string, string>;
 };
 
 function PlacePickCard({
@@ -52,7 +54,12 @@ function PlacePickCard({
   );
 }
 
-export function VillageContent({ village, seasons }: VillageContentProps) {
+export function VillageContent({
+  village,
+  seasons,
+  comparisonHeroImages = {},
+  combineHeroImages = {},
+}: VillageContentProps) {
   const heroBg =
     village.hero_background_image_url?.trim() ||
     heroImageUrl(village.hero_gallery_urls);
@@ -184,7 +191,10 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
           </div>
 
           <VisitorFitSection village={village} />
-          <VillageComparisonSection village={village} />
+          <VillageComparisonSection
+            village={village}
+            comparisonHeroImages={comparisonHeroImages}
+          />
           <LocalTipsSection village={village} />
 
           {village.hidden_gems.length > 0 && (
@@ -264,7 +274,10 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
           )}
 
           <SeasonalAdviceSection seasons={seasons} />
-          <CombineWithSection village={village} />
+          <CombineWithSection
+            village={village}
+            combineHeroImages={combineHeroImages}
+          />
 
           {(village.places_to_stay.length > 0 ||
             village.places_to_eat.length > 0) && (

@@ -1,14 +1,65 @@
 import Image from "next/image";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
-import { normalizeCombineWithTrip } from "@/lib/villages/helpers";
+import {
+  combineWithFirstOtherVillageName,
+  combineWithOtherVillageName,
+  combineWithVillageNames,
+  normalizeCombineWithTrip,
+} from "@/lib/villages/helpers";
 import type { CombineWithTrip } from "@/lib/villages/types";
 import type { Village } from "@/lib/villages/types";
 
 type CombineWithSectionProps = {
   village: Village;
+  combineHeroImages?: Record<string, string>;
 };
 
-export function CombineWithSection({ village }: CombineWithSectionProps) {
+function heroImageFromLookup(
+  villageName: string | null,
+  combineHeroImages: Record<string, string>,
+): string {
+  if (!villageName) {
+    return "";
+  }
+  return combineHeroImages[villageName] ?? "";
+}
+
+function combineLeftImageUrl(village: Village, trip: CombineWithTrip): string {
+  return village.hero_background_image_url?.trim() || trip.left_image_url || "";
+}
+
+function combineRightImageUrl(
+  trip: CombineWithTrip,
+  currentVillageName: string,
+  combineHeroImages: Record<string, string>,
+): string {
+  const otherVillageName = combineWithFirstOtherVillageName(
+    trip.title,
+    currentVillageName,
+  );
+  const fromVillage = heroImageFromLookup(otherVillageName, combineHeroImages);
+  if (fromVillage) {
+    return fromVillage;
+  }
+  return trip.right_image_url || "";
+}
+
+function combineOtherVillageImageUrl(
+  trip: CombineWithTrip,
+  currentVillageName: string,
+  combineHeroImages: Record<string, string>,
+): string {
+  const otherVillageName = combineWithOtherVillageName(
+    trip.title,
+    currentVillageName,
+  );
+  return heroImageFromLookup(otherVillageName, combineHeroImages);
+}
+
+export function CombineWithSection({
+  village,
+  combineHeroImages = {},
+}: CombineWithSectionProps) {
   if (village.combine_with.length === 0) return null;
 
   return (
@@ -24,7 +75,9 @@ export function CombineWithSection({ village }: CombineWithSectionProps) {
         {village.combine_with.map((trip) => (
           <CombineWithCard
             key={trip.title}
+            village={village}
             trip={normalizeCombineWithTrip(trip)}
+            combineHeroImages={combineHeroImages}
           />
         ))}
       </div>
@@ -32,15 +85,75 @@ export function CombineWithSection({ village }: CombineWithSectionProps) {
   );
 }
 
-function CombineWithCard({ trip }: { trip: CombineWithTrip }) {
+function CombineWithCard({
+  village,
+  trip,
+  combineHeroImages,
+}: {
+  village: Village;
+  trip: CombineWithTrip;
+  combineHeroImages: Record<string, string>;
+}) {
+  const villageCount = combineWithVillageNames(trip.title).length;
+  const isTwoVillageTrip = villageCount === 2;
+
+  if (isTwoVillageTrip) {
+    const otherImageUrl = combineOtherVillageImageUrl(
+      trip,
+      village.name,
+      combineHeroImages,
+    );
+
+    return (
+      <article className="village-combine">
+        <div className="village-combine__images">
+          <div className="village-combine__place-row">
+            <div
+              className="village-combine__image"
+              style={{ gridColumn: "1 / -1" }}
+            >
+              {otherImageUrl ? (
+                <Image
+                  src={otherImageUrl}
+                  alt={trip.right_image_alt ?? ""}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              ) : (
+                <VillageImagePlaceholder />
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="village-combine__body">
+          <p className="font-label-caps text-[10px] text-limestone tracking-widest uppercase mb-2">
+            {trip.duration_label}
+          </p>
+          <p className="font-headline-md text-[22px] text-on-surface mb-2">
+            {trip.title}
+          </p>
+          <p className="font-body-sm text-on-surface-variant">{trip.body}</p>
+        </div>
+      </article>
+    );
+  }
+
+  const leftImageUrl = combineLeftImageUrl(village, trip);
+  const rightImageUrl = combineRightImageUrl(
+    trip,
+    village.name,
+    combineHeroImages,
+  );
+
   return (
     <article className="village-combine">
       <div className="village-combine__images">
         <div className="village-combine__place-row">
           <div className="village-combine__image">
-            {trip.left_image_url ? (
+            {leftImageUrl ? (
               <Image
-                src={trip.left_image_url}
+                src={leftImageUrl}
                 alt={trip.left_image_alt ?? ""}
                 fill
                 className="object-cover"
@@ -51,9 +164,9 @@ function CombineWithCard({ trip }: { trip: CombineWithTrip }) {
             )}
           </div>
           <div className="village-combine__image">
-            {trip.right_image_url ? (
+            {rightImageUrl ? (
               <Image
-                src={trip.right_image_url}
+                src={rightImageUrl}
                 alt={trip.right_image_alt ?? ""}
                 fill
                 className="object-cover"
