@@ -22,4 +22,5 @@ export const FOOTER_LINKS = [
   { label: "EAT", href: "/places-to-eat" },
   { label: "JOURNAL", href: "/journal" },
   { label: "PLAN", href: "/plan-your-visit" },
+  { label: "PRIVACY", href: "/privacy-policy" },
 ] as const;
