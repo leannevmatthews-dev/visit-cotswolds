@@ -61,5 +61,7 @@ export const defaultVillageFormState = (): VillageFormState => ({
   video_embed_url: "",
   hero_background_image_url: "",
   our_take_image_url: "",
+  our_take_image_alt: "",
   hidden_gems_image_url: "",
+  hidden_gems_image_alt: "",
 });

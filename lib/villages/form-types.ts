@@ -51,7 +51,9 @@ export type VillageFormState = {
   video_embed_url: string;
   hero_background_image_url: string;
   our_take_image_url: string;
+  our_take_image_alt: string;
   hidden_gems_image_url: string;
+  hidden_gems_image_alt: string;
 };
 
 export type VillageInsertPayload = Omit<Village, "id">;

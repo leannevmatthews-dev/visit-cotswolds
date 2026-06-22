@@ -27,6 +27,7 @@ export type ComparisonStat = {
   food: string;
   time_needed: string;
   image_url: string | null;
+  image_alt?: string | null;
 };
 
 export type LocalTip = {
@@ -46,6 +47,7 @@ export type CuratedExperience = {
   body: string;
   insider_tip: string;
   image_url: string | null;
+  image_alt?: string | null;
 };
 
 export type CombineWithTrip = {
@@ -54,6 +56,8 @@ export type CombineWithTrip = {
   duration_label: string;
   left_image_url: string;
   right_image_url: string;
+  left_image_alt?: string;
+  right_image_alt?: string;
 };
 
 export type PlacePick = {
@@ -61,6 +65,7 @@ export type PlacePick = {
   category: string;
   location_label: string;
   image_url: string | null;
+  image_alt?: string | null;
   external_link: string | null;
 };
 
@@ -89,6 +94,7 @@ export type NearbyVillage = {
   village_name: string;
   drive_time_label: string;
   image_url?: string | null;
+  image_alt?: string | null;
 };
 
 export type SeasonalAdvice = {
@@ -107,6 +113,8 @@ export type Village = {
   cotswolds_region: CotswoldsRegion | null;
   tagline_quote: string;
   video_embed_url: string | null;
+  hero_background_image_url: string | null;
+  our_take_image_url: string | null;
   hero_gallery_urls: string[] | null;
   alt_text: string | null;
   brief_summary: string;
@@ -123,6 +131,7 @@ export type Village = {
   score_accessibility: number;
   score_hidden_gem_factor: number;
   our_take_body: string;
+  our_take_image_alt: string | null;
   visited_date: string;
   reviewed_by_name: string;
   reviewed_by_credential: string;
@@ -135,6 +144,7 @@ export type Village = {
   local_tips: LocalTip[];
   hidden_gems: HiddenGem[];
   hidden_gems_image_url: string | null;
+  hidden_gems_image_alt: string | null;
   curated_experiences: CuratedExperience[];
   combine_with: CombineWithTrip[];
   places_to_stay: PlacePick[];

@@ -120,6 +120,7 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       food: row.food.trim(),
       time_needed: row.time_needed.trim(),
       image_url: emptyToNull(row.image_url ?? ""),
+      image_alt: emptyToNull(row.image_alt ?? ""),
     })),
     alternative_villages: state.alternative_villages.map((row) => ({
       icon: row.icon.trim(),
@@ -143,6 +144,7 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       body: item.body.trim(),
       insider_tip: item.insider_tip.trim(),
       image_url: emptyToNull(item.image_url ?? ""),
+      image_alt: emptyToNull(item.image_alt ?? ""),
     })),
     combine_with: state.combine_with.map((item) => ({
       title: item.title.trim(),
@@ -150,12 +152,15 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       duration_label: item.duration_label.trim(),
       left_image_url: item.left_image_url.trim(),
       right_image_url: item.right_image_url.trim(),
+      left_image_alt: item.left_image_alt?.trim() ?? "",
+      right_image_alt: item.right_image_alt?.trim() ?? "",
     })),
     places_to_stay: state.places_to_stay.map((place) => ({
       name: place.name.trim(),
       category: place.category.trim(),
       location_label: place.location_label.trim(),
       image_url: emptyToNull(place.image_url ?? ""),
+      image_alt: emptyToNull(place.image_alt ?? ""),
       external_link: emptyToNull(place.external_link ?? ""),
     })),
     places_to_eat: state.places_to_eat.map((place) => ({
@@ -163,6 +168,7 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       category: place.category.trim(),
       location_label: place.location_label.trim(),
       image_url: emptyToNull(place.image_url ?? ""),
+      image_alt: emptyToNull(place.image_alt ?? ""),
       external_link: emptyToNull(place.external_link ?? ""),
     })),
     parking_guide: {
@@ -193,13 +199,18 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       village_name: item.village_name.trim(),
       drive_time_label: item.drive_time_label.trim(),
       image_url: emptyToNull(item.image_url ?? ""),
+      image_alt: emptyToNull(item.image_alt ?? ""),
     })),
     meta_title: emptyToNull(state.meta_title),
     meta_description: emptyToNull(state.meta_description),
     alt_text: emptyToNull(state.alt_text),
     video_embed_url: emptyToNull(state.video_embed_url),
+    hero_background_image_url: emptyToNull(state.hero_background_image_url),
+    our_take_image_url: emptyToNull(state.our_take_image_url),
     hero_gallery_urls: heroGalleryUrls.length > 0 ? heroGalleryUrls : null,
     hidden_gems_image_url: emptyToNull(state.hidden_gems_image_url),
+    our_take_image_alt: emptyToNull(state.our_take_image_alt),
+    hidden_gems_image_alt: emptyToNull(state.hidden_gems_image_alt),
   } satisfies VillageInsertPayload;
 }
 
@@ -264,6 +275,7 @@ export function villageToFormState(village: Village): VillageFormState {
     comparison_stats: (village.comparison_stats ?? []).map((row) => ({
       ...row,
       image_url: nullToEmpty(row.image_url),
+      image_alt: nullToEmpty(row.image_alt),
     })),
     alternative_villages: village.alternative_villages ?? [],
     local_tips: village.local_tips ?? [],
@@ -271,16 +283,19 @@ export function villageToFormState(village: Village): VillageFormState {
     curated_experiences: (village.curated_experiences ?? []).map((item) => ({
       ...item,
       image_url: nullToEmpty(item.image_url),
+      image_alt: nullToEmpty(item.image_alt),
     })),
     combine_with: (village.combine_with ?? []).map(normalizeCombineWithTrip),
     places_to_stay: (village.places_to_stay ?? []).map((place) => ({
       ...place,
       image_url: nullToEmpty(place.image_url),
+      image_alt: nullToEmpty(place.image_alt),
       external_link: nullToEmpty(place.external_link),
     })),
     places_to_eat: (village.places_to_eat ?? []).map((place) => ({
       ...place,
       image_url: nullToEmpty(place.image_url),
+      image_alt: nullToEmpty(place.image_alt),
       external_link: nullToEmpty(place.external_link),
     })),
     parking_guide: village.parking_guide
@@ -300,13 +315,20 @@ export function villageToFormState(village: Village): VillageFormState {
     nearby_villages: (village.nearby_villages ?? []).map((item) => ({
       ...item,
       image_url: nullToEmpty(item.image_url),
+      image_alt: nullToEmpty(item.image_alt),
     })),
     meta_title: nullToEmpty(village.meta_title),
     meta_description: nullToEmpty(village.meta_description),
     alt_text: nullToEmpty(village.alt_text),
     video_embed_url: nullToEmpty(village.video_embed_url),
-    hero_background_image_url: village.hero_gallery_urls?.[0] ?? "",
-    our_take_image_url: village.hero_gallery_urls?.[1] ?? "",
+    hero_background_image_url:
+      nullToEmpty(village.hero_background_image_url) ||
+      (village.hero_gallery_urls?.[0] ?? ""),
+    our_take_image_url:
+      nullToEmpty(village.our_take_image_url) ||
+      (village.hero_gallery_urls?.[1] ?? ""),
+    our_take_image_alt: nullToEmpty(village.our_take_image_alt),
     hidden_gems_image_url: nullToEmpty(village.hidden_gems_image_url),
+    hidden_gems_image_alt: nullToEmpty(village.hidden_gems_image_alt),
   };
 }

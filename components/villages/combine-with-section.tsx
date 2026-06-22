@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import { normalizeCombineWithTrip } from "@/lib/villages/helpers";
 import type { CombineWithTrip } from "@/lib/villages/types";
@@ -38,16 +39,26 @@ function CombineWithCard({ trip }: { trip: CombineWithTrip }) {
         <div className="village-combine__place-row">
           <div className="village-combine__image">
             {trip.left_image_url ? (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={trip.left_image_url} alt="" />
+              <Image
+                src={trip.left_image_url}
+                alt={trip.left_image_alt ?? ""}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 20vw"
+              />
             ) : (
               <VillageImagePlaceholder />
             )}
           </div>
           <div className="village-combine__image">
             {trip.right_image_url ? (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={trip.right_image_url} alt="" />
+              <Image
+                src={trip.right_image_url}
+                alt={trip.right_image_alt ?? ""}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 20vw"
+              />
             ) : (
               <VillageImagePlaceholder />
             )}

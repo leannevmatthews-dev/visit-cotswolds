@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { createVillage, updateVillage } from "@/app/admin/actions";
 import { FormSection } from "@/components/admin/village-form/form-section";
+import { ImageUploadField } from "@/components/admin/village-form/image-upload-field";
 import {
   CheckboxInput,
   FieldGrid,
@@ -200,6 +201,24 @@ export function VillageForm({
           onChange={(value) => setField("overview_body", value)}
           rows={6}
         />
+        <ImageUploadField
+          id="hero_background_image_url"
+          label="Hero background image"
+          value={form.hero_background_image_url}
+          onChange={(value) => setField("hero_background_image_url", value)}
+          villageSlug={form.slug}
+          fieldName="hero-background"
+          showAlt={false}
+          hint="Large photo behind the village name, tagline, and video player at the top of the page. Also used as the video poster before play."
+        />
+        <TextInput
+          id="video_embed_url"
+          label="Video embed URL"
+          value={form.video_embed_url}
+          onChange={(value) => setField("video_embed_url", value)}
+          placeholder="https://..."
+          hint="MP4 or video file URL for the village film player in the hero."
+        />
       </FormSection>
 
       <FormSection title="At A Glance">
@@ -302,6 +321,17 @@ export function VillageForm({
             placeholder="Local guide"
           />
         </FieldGrid>
+        <ImageUploadField
+          id="our_take_image_url"
+          label="Our Take section image (optional)"
+          value={form.our_take_image_url}
+          onChange={(value) => setField("our_take_image_url", value)}
+          altValue={form.our_take_image_alt}
+          onAltChange={(value) => setField("our_take_image_alt", value)}
+          villageSlug={form.slug}
+          fieldName="our-take"
+          hint="Portrait photo beside the “Our Take” editorial section (falls back to the hero background if left empty)."
+        />
       </FormSection>
 
       <FormSection title="Crowd Intelligence">
@@ -410,6 +440,7 @@ export function VillageForm({
                 food: "",
                 time_needed: "",
                 image_url: "",
+                image_alt: "",
               })}
               addLabel="Add comparison row"
               emptyLabel="No comparison rows yet."
@@ -426,12 +457,16 @@ export function VillageForm({
                       value={item.village_name}
                       onChange={(value) => update({ village_name: value })}
                     />
-                    <TextInput
+                    <ImageUploadField
                       id={`comparison-image-${index}`}
-                      label="Image URL (optional)"
+                      label="Image (optional)"
+                      hint="Photo shown on this village's comparison card"
                       value={item.image_url ?? ""}
                       onChange={(value) => update({ image_url: value })}
-                      hint="Photo shown on this village's comparison card"
+                      altValue={item.image_alt ?? ""}
+                      onAltChange={(value) => update({ image_alt: value })}
+                      villageSlug={form.slug}
+                      fieldName={`comparison-${index}`}
                     />
                     <TextInput
                       id={`comparison-beauty-${index}`}
@@ -609,6 +644,17 @@ export function VillageForm({
             </RepeatableItemCard>
           )}
         />
+        <ImageUploadField
+          id="hidden_gems_image_url"
+          label="Hidden gems image"
+          value={form.hidden_gems_image_url}
+          onChange={(value) => setField("hidden_gems_image_url", value)}
+          altValue={form.hidden_gems_image_alt}
+          onAltChange={(value) => setField("hidden_gems_image_alt", value)}
+          villageSlug={form.slug}
+          fieldName="hidden-gems"
+          hint="Shown in the “What Most Visitors Miss” section"
+        />
       </FormSection>
 
       <FormSection title="Curated Experiences">
@@ -620,6 +666,7 @@ export function VillageForm({
             body: "",
             insider_tip: "",
             image_url: "",
+            image_alt: "",
           })}
           addLabel="Add experience"
           emptyLabel="No experiences yet."
@@ -649,12 +696,16 @@ export function VillageForm({
                 onChange={(value) => update({ insider_tip: value })}
                 rows={2}
               />
-              <TextInput
+              <ImageUploadField
                 id={`experience-image-${index}`}
-                label="Image URL (optional)"
+                label="Image (optional)"
+                hint="Photo for this specific experience card"
                 value={item.image_url ?? ""}
                 onChange={(value) => update({ image_url: value })}
-                hint="Photo for this specific experience card"
+                altValue={item.image_alt ?? ""}
+                onAltChange={(value) => update({ image_alt: value })}
+                villageSlug={form.slug}
+                fieldName={`experience-${index}`}
               />
             </RepeatableItemCard>
           )}
@@ -671,6 +722,8 @@ export function VillageForm({
             duration_label: "",
             left_image_url: "",
             right_image_url: "",
+            left_image_alt: "",
+            right_image_alt: "",
           })}
           addLabel="Add trip idea"
           emptyLabel="No combine-with items yet."
@@ -701,17 +754,25 @@ export function VillageForm({
                 placeholder="Half day"
               />
               <FieldGrid>
-                <TextInput
+                <ImageUploadField
                   id={`combine-left-image-${index}`}
-                  label="Left image URL"
+                  label="Left image"
                   value={item.left_image_url}
                   onChange={(value) => update({ left_image_url: value })}
+                  altValue={item.left_image_alt ?? ""}
+                  onAltChange={(value) => update({ left_image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`combine-left-${index}`}
                 />
-                <TextInput
+                <ImageUploadField
                   id={`combine-right-image-${index}`}
-                  label="Right image URL"
+                  label="Right image"
                   value={item.right_image_url}
                   onChange={(value) => update({ right_image_url: value })}
+                  altValue={item.right_image_alt ?? ""}
+                  onAltChange={(value) => update({ right_image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`combine-right-${index}`}
                 />
               </FieldGrid>
             </RepeatableItemCard>
@@ -728,6 +789,7 @@ export function VillageForm({
             category: "",
             location_label: "",
             image_url: "",
+            image_alt: "",
             external_link: "",
           })}
           addLabel="Add place to stay"
@@ -757,12 +819,16 @@ export function VillageForm({
                   value={item.location_label}
                   onChange={(value) => update({ location_label: value })}
                 />
-                <TextInput
+                <ImageUploadField
                   id={`stay-image-${index}`}
-                  label="Image URL (optional)"
+                  label="Image (optional)"
+                  hint="Photo for this specific place to stay"
                   value={item.image_url ?? ""}
                   onChange={(value) => update({ image_url: value })}
-                  hint="Photo for this specific place to stay"
+                  altValue={item.image_alt ?? ""}
+                  onAltChange={(value) => update({ image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`stay-${index}`}
                 />
                 <TextInput
                   id={`stay-link-${index}`}
@@ -785,6 +851,7 @@ export function VillageForm({
             category: "",
             location_label: "",
             image_url: "",
+            image_alt: "",
             external_link: "",
           })}
           addLabel="Add place to eat"
@@ -814,12 +881,16 @@ export function VillageForm({
                   value={item.location_label}
                   onChange={(value) => update({ location_label: value })}
                 />
-                <TextInput
+                <ImageUploadField
                   id={`eat-image-${index}`}
-                  label="Image URL (optional)"
+                  label="Image (optional)"
+                  hint="Photo for this specific place to eat"
                   value={item.image_url ?? ""}
                   onChange={(value) => update({ image_url: value })}
-                  hint="Photo for this specific place to eat"
+                  altValue={item.image_alt ?? ""}
+                  onAltChange={(value) => update({ image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`eat-${index}`}
                 />
                 <TextInput
                   id={`eat-link-${index}`}
@@ -1011,6 +1082,7 @@ export function VillageForm({
             village_name: "",
             drive_time_label: "",
             image_url: "",
+            image_alt: "",
           })}
           addLabel="Add nearby village"
           emptyLabel="No nearby villages yet."
@@ -1034,52 +1106,19 @@ export function VillageForm({
                   onChange={(value) => update({ drive_time_label: value })}
                   placeholder="15 min"
                 />
-                <TextInput
+                <ImageUploadField
                   id={`nearby-image-${index}`}
-                  label="Image URL (optional)"
+                  label="Image (optional)"
                   value={item.image_url ?? ""}
                   onChange={(value) => update({ image_url: value })}
+                  altValue={item.image_alt ?? ""}
+                  onAltChange={(value) => update({ image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`nearby-${index}`}
                 />
               </FieldGrid>
             </RepeatableItemCard>
           )}
-        />
-      </FormSection>
-
-      <FormSection
-        title="Media (optional)"
-        description="Plain URL fields only — file upload is a separate task."
-      >
-        <TextInput
-          id="hero_background_image_url"
-          label="Hero background image URL"
-          value={form.hero_background_image_url}
-          onChange={(value) => setField("hero_background_image_url", value)}
-          placeholder="https://..."
-          hint="Large photo behind the village name, tagline, and video player at the top of the page. Also used as the video poster before play."
-        />
-        <TextInput
-          id="our_take_image_url"
-          label="Our Take section image URL (optional)"
-          value={form.our_take_image_url}
-          onChange={(value) => setField("our_take_image_url", value)}
-          placeholder="https://..."
-          hint="Portrait photo beside the “Our Take” editorial section (falls back to the hero background if left empty)."
-        />
-        <TextInput
-          id="video_embed_url"
-          label="Video embed URL"
-          value={form.video_embed_url}
-          onChange={(value) => setField("video_embed_url", value)}
-          placeholder="https://..."
-          hint="MP4 or video file URL for the village film player in the hero."
-        />
-        <TextInput
-          id="hidden_gems_image_url"
-          label="Hidden gems image URL"
-          value={form.hidden_gems_image_url}
-          onChange={(value) => setField("hidden_gems_image_url", value)}
-          hint="Shown in the “What Most Visitors Miss” section"
         />
       </FormSection>
 

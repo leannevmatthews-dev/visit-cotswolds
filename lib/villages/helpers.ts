@@ -6,6 +6,8 @@ type LegacyCombineWithTrip = {
   duration_label: string;
   left_image_url?: string;
   right_image_url?: string;
+  left_image_alt?: string;
+  right_image_alt?: string;
   image_urls?: string[];
 };
 
@@ -18,6 +20,8 @@ export function normalizeCombineWithTrip(raw: LegacyCombineWithTrip): CombineWit
       duration_label: raw.duration_label ?? "",
       left_image_url: raw.left_image_url ?? "",
       right_image_url: raw.right_image_url ?? "",
+      left_image_alt: raw.left_image_alt ?? "",
+      right_image_alt: raw.right_image_alt ?? "",
     };
   }
 
@@ -28,6 +32,8 @@ export function normalizeCombineWithTrip(raw: LegacyCombineWithTrip): CombineWit
     duration_label: raw.duration_label ?? "",
     left_image_url: urls[0] ?? "",
     right_image_url: urls[1] ?? "",
+    left_image_alt: raw.left_image_alt ?? "",
+    right_image_alt: raw.right_image_alt ?? "",
   };
 }
 

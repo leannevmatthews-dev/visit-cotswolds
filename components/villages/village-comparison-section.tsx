@@ -41,7 +41,7 @@ export function VillageComparisonSection({ village }: VillageComparisonSectionPr
               >
                 <VillageCompareImage
                   src={row.image_url ?? undefined}
-                  alt={`${row.village_name} village`}
+                  alt={row.image_alt ?? ""}
                 />
                 <header className="village-compare-card__header">
                   <h3 className="village-compare-card__title font-headline-md text-[20px] text-primary leading-tight">

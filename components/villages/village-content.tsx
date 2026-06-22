@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PlayIcon } from "@/components/icons";
 import { AtAGlancePanel } from "@/components/villages/at-a-glance-panel";
 import { CombineWithSection } from "@/components/villages/combine-with-section";
@@ -34,8 +35,13 @@ function PlacePickCard({
     <a className="village-pick group" href={href}>
       <div className="village-pick__image">
         {pick.image_url ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img alt={pick.name} src={pick.image_url} />
+          <Image
+            alt={pick.image_alt ?? ""}
+            src={pick.image_url}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 50vw, 20vw"
+          />
         ) : (
           <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
         )}
@@ -47,9 +53,14 @@ function PlacePickCard({
 }
 
 export function VillageContent({ village, seasons }: VillageContentProps) {
-  const heroBg = heroImageUrl(village.hero_gallery_urls);
+  const heroBg =
+    village.hero_background_image_url?.trim() ||
+    heroImageUrl(village.hero_gallery_urls);
   const ourTakeImage =
-    village.hero_gallery_urls?.[1] ?? heroBg ?? village.hidden_gems_image_url;
+    village.our_take_image_url?.trim() ||
+    village.hero_gallery_urls?.[1] ||
+    heroBg ||
+    village.hidden_gems_image_url;
   const overviewParagraphs = splitParagraphs(village.overview_body);
   const ourTakeParagraphs = splitParagraphs(village.our_take_body);
   const hasVideo = Boolean(village.video_embed_url);
@@ -58,12 +69,14 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
     <>
       <section className="village-hero village-hero--tight">
         {heroBg ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
+          <Image
             alt=""
-            aria-hidden="true"
-            className="village-hero__bg"
+            aria-hidden
+            className="village-hero__bg object-cover"
             src={heroBg}
+            fill
+            priority
+            sizes="100vw"
           />
         ) : (
           <div
@@ -138,13 +151,14 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
           </div>
 
           <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center bg-surface-container-low p-8 md:p-12 border border-outline-variant/20">
-            <div className="lg:col-span-5 aspect-[4/5] overflow-hidden order-2 lg:order-1">
+            <div className="lg:col-span-5 relative aspect-[4/5] overflow-hidden order-2 lg:order-1">
               {ourTakeImage ? (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  alt={`${village.name} in morning light`}
-                  className="w-full h-full object-cover grayscale-[0.15] transition-transform duration-1000 hover:scale-105"
+                <Image
+                  alt={village.our_take_image_alt ?? ""}
+                  className="object-cover grayscale-[0.15] transition-transform duration-1000 hover:scale-105"
                   src={ourTakeImage}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               ) : (
                 <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[280px]" />
@@ -195,13 +209,14 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
                   ))}
                 </ul>
               </div>
-              <div className="lg:col-span-5 aspect-[4/3] overflow-hidden rounded-sm">
+              <div className="lg:col-span-5 relative aspect-[4/3] overflow-hidden rounded-sm">
                 {village.hidden_gems_image_url ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img
-                    alt={`Hidden gems near ${village.name}`}
-                    className="w-full h-full object-cover"
+                  <Image
+                    alt={village.hidden_gems_image_alt ?? ""}
+                    className="object-cover"
                     src={village.hidden_gems_image_url}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                 ) : (
                   <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[240px]" />
@@ -220,8 +235,13 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
                   <div key={experience.title} className="village-experience group">
                     <div className="village-experience__image">
                       {experience.image_url ? (
-                        /* eslint-disable-next-line @next/next/no-img-element */
-                        <img alt={experience.title} src={experience.image_url} />
+                        <Image
+                          alt={experience.image_alt ?? ""}
+                          src={experience.image_url}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, 33vw"
+                        />
                       ) : (
                         <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[200px]" />
                       )}
@@ -390,8 +410,13 @@ export function VillageContent({ village, seasons }: VillageContentProps) {
                 {village.nearby_villages.map((nearby) => (
                   <div key={nearby.village_name} className="village-nearby">
                     {nearby.image_url ? (
-                      /* eslint-disable-next-line @next/next/no-img-element */
-                      <img alt={nearby.village_name} src={nearby.image_url} />
+                      <Image
+                        alt={nearby.image_alt ?? ""}
+                        src={nearby.image_url}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
                     ) : (
                       <VillageImagePlaceholder className="village-compare-card__placeholder absolute inset-0" />
                     )}

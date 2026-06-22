@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type VillageCompareImageProps = {
   src?: string;
   alt: string;
@@ -5,9 +7,15 @@ type VillageCompareImageProps = {
 
 export function VillageCompareImage({ src, alt }: VillageCompareImageProps) {
   return (
-    <div className="village-compare-card__image">
+    <div className="village-compare-card__image relative">
       {src ? (
-        <img src={src} alt={alt} />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
       ) : (
         <div className="village-compare-card__placeholder" aria-hidden="true">
           <span className="village-compare-card__placeholder-label font-label-caps text-[10px] tracking-widest uppercase">
