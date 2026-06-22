@@ -32,21 +32,23 @@ export default async function HomePage() {
         {/* Hero */}
         <section className="relative min-h-[100dvh] w-full flex flex-col overflow-hidden">
           <div className="absolute inset-0 z-0">
-            {HERO_IMAGE ? (
-              <Image
-                alt="A cinematic, wide-angle photograph of a quintessential Cotswolds stone village, like Castle Combe, shrouded in a soft morning mist."
-                className="object-cover"
-                fill
-                priority
-                sizes="100vw"
-                src={HERO_IMAGE}
-              />
-            ) : (
-              <div
-                className="absolute inset-0 bg-surface-container-high"
-                aria-hidden="true"
-              />
-            )}
+            <div className="relative h-full w-full">
+              {HERO_IMAGE ? (
+                <Image
+                  alt="A cinematic, wide-angle photograph of a quintessential Cotswolds stone village, like Castle Combe, shrouded in a soft morning mist."
+                  className="object-cover"
+                  fill
+                  priority
+                  sizes="100vw"
+                  src={HERO_IMAGE}
+                />
+              ) : (
+                <div
+                  className="absolute inset-0 bg-surface-container-high"
+                  aria-hidden="true"
+                />
+              )}
+            </div>
             <div className="absolute inset-0 image-overlay-gradient opacity-80" />
           </div>
 

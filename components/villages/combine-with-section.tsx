@@ -3,6 +3,7 @@ import { VillageImagePlaceholder } from "@/components/villages/village-image-pla
 import {
   combineWithFirstOtherVillageName,
   combineWithOtherVillageName,
+  combineWithSecondOtherVillageName,
   combineWithVillageNames,
   normalizeCombineWithTrip,
 } from "@/lib/villages/helpers";
@@ -24,11 +25,7 @@ function heroImageFromLookup(
   return combineHeroImages[villageName] ?? "";
 }
 
-function combineLeftImageUrl(village: Village, trip: CombineWithTrip): string {
-  return village.hero_background_image_url?.trim() || trip.left_image_url || "";
-}
-
-function combineRightImageUrl(
+function combineThreePlusLeftImageUrl(
   trip: CombineWithTrip,
   currentVillageName: string,
   combineHeroImages: Record<string, string>,
@@ -37,11 +34,19 @@ function combineRightImageUrl(
     trip.title,
     currentVillageName,
   );
-  const fromVillage = heroImageFromLookup(otherVillageName, combineHeroImages);
-  if (fromVillage) {
-    return fromVillage;
-  }
-  return trip.right_image_url || "";
+  return heroImageFromLookup(otherVillageName, combineHeroImages);
+}
+
+function combineThreePlusRightImageUrl(
+  trip: CombineWithTrip,
+  currentVillageName: string,
+  combineHeroImages: Record<string, string>,
+): string {
+  const otherVillageName = combineWithSecondOtherVillageName(
+    trip.title,
+    currentVillageName,
+  );
+  return heroImageFromLookup(otherVillageName, combineHeroImages);
 }
 
 function combineOtherVillageImageUrl(
@@ -139,8 +144,12 @@ function CombineWithCard({
     );
   }
 
-  const leftImageUrl = combineLeftImageUrl(village, trip);
-  const rightImageUrl = combineRightImageUrl(
+  const leftImageUrl = combineThreePlusLeftImageUrl(
+    trip,
+    village.name,
+    combineHeroImages,
+  );
+  const rightImageUrl = combineThreePlusRightImageUrl(
     trip,
     village.name,
     combineHeroImages,

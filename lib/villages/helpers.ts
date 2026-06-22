@@ -117,6 +117,20 @@ export function combineWithFirstOtherVillageName(
   return names.find((name) => name !== currentVillageName) ?? null;
 }
 
+/** Second village in the title that is not the current page village (3+ village trips). */
+export function combineWithSecondOtherVillageName(
+  title: string,
+  currentVillageName: string,
+): string | null {
+  const names = combineWithVillageNames(title);
+  if (names.length < 3) {
+    return null;
+  }
+
+  const otherNames = names.filter((name) => name !== currentVillageName);
+  return otherNames[1] ?? null;
+}
+
 /** Second segment after " + " in a combine-with title (legacy helper). */
 export function combineWithSecondVillageName(title: string): string | null {
   const parts = combineWithVillageNames(title);
