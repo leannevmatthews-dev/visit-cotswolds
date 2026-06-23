@@ -1,0 +1,53 @@
+.whats-on-day-picker-popup {
+  z-index: 60;
+}
+
+.whats-on-day-picker.rdp-root {
+  --rdp-accent-color: #c9b99a;
+  --rdp-accent-background-color: rgba(201, 185, 154, 0.18);
+  --rdp-day-height: 2.25rem;
+  --rdp-day-width: 2.25rem;
+  --rdp-day_button-height: 2.125rem;
+  --rdp-day_button-width: 2.125rem;
+  --rdp-range_start-color: #0f0f0d;
+  --rdp-range_end-color: #0f0f0d;
+  --rdp-today-color: #c9b99a;
+
+  font-family: var(--font-inter), Inter, sans-serif;
+  color: #e5e2e1;
+}
+
+.whats-on-day-picker .rdp-month_caption {
+  font-family: var(--font-inter), Inter, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.whats-on-day-picker .rdp-weekday {
+  font-family: var(--font-inter), Inter, sans-serif;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9b99a;
+}
+
+.whats-on-day-picker .rdp-day_button {
+  color: #e5e2e1;
+}
+
+.whats-on-day-picker .rdp-day_button:hover:not(:disabled) {
+  background-color: rgba(201, 185, 154, 0.12);
+}
+
+.whats-on-day-picker .rdp-outside .rdp-day_button {
+  color: #929189;
+}
+
+.whats-on-day-picker .rdp-nav_button {
+  color: #c9b99a;
+}
+
+.whats-on-day-picker .rdp-nav_button:hover:not(:disabled) {
+  background-color: rgba(201, 185, 154, 0.12);
+}

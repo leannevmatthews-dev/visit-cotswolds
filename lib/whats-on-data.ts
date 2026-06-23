@@ -18,6 +18,7 @@ export type WhatsOnEvent = {
   location: string;
   month: string;
   day: string;
+  year: number;
   imageUrl: string;
   imageAlt: string;
   categories: WhatsOnCategory[];
@@ -44,6 +45,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "CHIPPING CAMPDEN",
     month: "MAY",
     day: "14",
+    year: 2026,
     imageUrl:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuC1orKHEyxDjU-n67kpcxPJ0TALyYwMezDzdNTLIKUz77WRGqmE4cZf3eKUoHXfk4agPuoxO8_ihb-ePinGhZW3IKcA2Vv9TD7GcWt5FCUbuCh2ykdr1zu2op2cWp-BVsXJ-kj6UX_zevQKn6NiZunl_2xo1qGWgPYYFIjK93_Ox3rtpkUoo3JR2KsU1Mq_SpIiL7XrVgKvh8MgIHeCPdyjNWwJF6EPrPW9YJo1NHsOgJdTIs21Cm3uxBwlDe4iBJ9U16hu4LWIAg",
     imageAlt: "Artisan market stalls in Chipping Campden",
@@ -57,6 +59,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "BADMINTON ESTATE",
     month: "JUNE",
     day: "02",
+    year: 2026,
     imageUrl: WHATS_ON_HERO_IMAGE,
     imageAlt: "Equestrian event at Badminton Estate",
     categories: ["Sporting"],
@@ -69,6 +72,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "CHELTENHAM",
     month: "OCT",
     day: "21",
+    year: 2026,
     imageUrl:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAicKIMJSfWfYjRtYW2TCmAwVp3glFn_9E7W06K2RXCIswIOrWbwBJs0R0Ywgdk8PnBLZlgwRResCNXSy0nsKnIM5aoO0tkNZv_JisQ36jVXaTxKyQBsCyJRqvVfEKJIs300ZPF2xitTB6-zGFQeL5FXYte5CExqevaeBmmZFQ4VLZs2XZcrafs9kGCpP603PUXtPgkJqANvfA4WEnklxNVH3kbc1W7ZbzdLRYmO_ikM4ONruEkf78nTa7zQPan0SITT9LW8ACeGQ",
     imageAlt: "Cheltenham Literature Festival",
@@ -82,6 +86,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "STOW-ON-THE-WOLD",
     month: "JULY",
     day: "08",
+    year: 2026,
     imageUrl:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBjqu6o7Lh6nJIZ4jvWQiGDR6JEo1mjqjnviN6j-SQp737VIp4Rwk7ptZWcG5YiUMY_xD4OycXr9j5xyLGEMXE4GiNZ_nCZHUQOQwElevpMKl1t4-kGkW6g9VjnLyLgZHwrYdBFfbHLXisUg2ZXD0nSYkQrZCpaIy1ndcSJ6pvEEB_yoG98sgqoGEY8JOOf-UrCquAgiS_9KhdvYxzZhfyo1oB66k27EM8MsS4kETA8wc9ok1s10FEkyFxLVM73KzYDUwYwVsmreg",
     imageAlt: "Private walled garden in the Cotswolds",
@@ -95,6 +100,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "BOURTON-ON-THE-WATER",
     month: "AUG",
     day: "15",
+    year: 2026,
     imageUrl:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCkmtZj9zn-cb03gnChXrZlAYiOD4OwriJV4dFX052_NDNMph-ZsGvh8G2PGibfzp3GPcjQJqlexQAfEWQ5dJOVzAOo_yPwLOe3BT1ra6LNjNaiDgDXDn3Wiq2YPFt5XmYJF9uYhjKuvtO0Ba5U_sGEikWYgSBjI67IJd-Z4iz682wlrUANAQCgzFyKwBc30l1i3ER8wqZZji4C0Js6JjBPRj-U0i-DUb6VifbK6OojGN2dIEqSoLsXzv7sjuDuRQF2YX74gE-fiQ",
     imageAlt: "Evening recital at Bourton-on-the-Water",
@@ -108,6 +114,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "WYCHWOOD FOREST",
     month: "SEP",
     day: "30",
+    year: 2026,
     imageUrl:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuA37ZyHra1VcWSfXRhET6VLMa2ETsHh7wJGr8Jm9qPvTVHTb7Pj75x7CK3I83zoQsMS4mUpDKDAPsQenOigq5lW0i2c5fd9nPpCm_kFSiMnBFu7zO-ntDLychxKD1wCokAOV-d8bknsuBEEO_MwDXpTU5h0AF0p2fa3k4bA7X9ME-WBZuNj3vfoqEztGnPRttRfuk-d_GMjpI646E6tLf4nEcRgrsgbAB9YVS85WnezAcp_Fh9xgrn2bVju1jrCdZ_f0Vtc01REaQ",
     imageAlt: "Autumn foraging in Wychwood Forest",
@@ -121,6 +128,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "CORNBURY PARK",
     month: "JUL",
     day: "30",
+    year: 2026,
     imageUrl:
       "https://d3nnbxax8ziilb.cloudfront.net/images/GaU0ezOwJSZ818JGzUc_RUDmdF0=/2767/fill-1200x630/SUN_WILDERNESS24_Callum_Baker_CB1_0827.NEF.jpg",
     imageAlt: "Wilderness Festival at Cornbury Park",
@@ -134,6 +142,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "CHELTENHAM",
     month: "JUL",
     day: "09",
+    year: 2026,
     imageUrl:
       "https://2000trees.co.uk/storage/media-library/1121_20260609123729.jpg",
     imageAlt: "2000trees Festival at Upcote Farm",
@@ -147,6 +156,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "KINGHAM",
     month: "AUG",
     day: "28",
+    year: 2026,
     imageUrl:
       "https://bigfeastival.com/wp-content/uploads/2025/01/The-Big-Feastival-2024_20240823_Atmosphere_GaelleBeri_9077-Instagram.jpeg",
     imageAlt: "Big Feastival on Alex James' Cotswolds farm",
@@ -160,6 +170,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "NESTON PARK",
     month: "JUL",
     day: "23",
+    year: 2026,
     imageUrl:
       "https://womad.co.uk/wp-content/uploads/2026/05/Frame-2147235220.png",
     imageAlt: "WOMAD festival at Neston Park",
@@ -173,6 +184,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "CHELTENHAM",
     month: "JUL",
     day: "01",
+    year: 2026,
     imageUrl:
       "https://cheltenham-festivals.transforms.svdcdn.com/production/Festival-Branding/2024/Generic-Festival-Image-Music-Brand.png",
     imageAlt: "Cheltenham Music Festival",
@@ -186,6 +198,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "WINCHCOMBE",
     month: "JUL",
     day: "17",
+    year: 2026,
     imageUrl:
       "https://sudeleycastle.co.uk/cms-assets/header-images/_ctaCardThumbnail/What-to-do_Sudeley-C.jpg",
     imageAlt: "Fantasy Forest Festival at Sudeley Castle",
@@ -199,6 +212,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "LONGBOROUGH",
     month: "JUN",
     day: "20",
+    year: 2026,
     imageUrl:
       "https://d2pff431r2cpo9.cloudfront.net/files/Productions/2017-Tristan-und-Isolde/low-res/_1200xAUTO_crop_center-center/Chorus-Stuart-Pendred-Kurwenal-LFO-Tristan-und-Isolde-2017-cr-Matthew-Williams-Ellis-8.jpg?mtime=20170608154452",
     imageAlt: "Longborough Festival Opera outdoor production",
@@ -212,6 +226,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "CHARLBURY",
     month: "JUN",
     day: "27",
+    year: 2026,
     imageUrl:
       "https://www.charlburybeerfestival.org/_astro/cbf-drone.CcxCtOjn.jpg",
     imageAlt: "Charlbury Beer Festival at Charlbury Cricket Club",
@@ -225,6 +240,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "BROADWAY",
     month: "AUG",
     day: "01",
+    year: 2026,
     imageUrl:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuC1orKHEyxDjU-n67kpcxPJ0TALyYwMezDzdNTLIKUz77WRGqmE4cZf3eKUoHXfk4agPuoxO8_ihb-ePinGhZW3IKcA2Vv9TD7GcWt5FCUbuCh2ykdr1zu2op2cWp-BVsXJ-kj6UX_zevQKn6NiZunl_2xo1qGWgPYYFIjK93_Ox3rtpkUoo3JR2KsU1Mq_SpIiL7XrVgKvh8MgIHeCPdyjNWwJF6EPrPW9YJo1NHsOgJdTIs21Cm3uxBwlDe4iBJ9U16hu4LWIAg",
     imageAlt: "Broadway Arts Festival",
@@ -238,6 +254,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "SOUTH CERNEY",
     month: "JUL",
     day: "25",
+    year: 2026,
     imageUrl:
       "https://cotswoldfest.co.uk/wp-content/uploads/elementor/thumbs/433982121_951977256935921_1974619111724029604_n-jpg-qo8kkbm6uuvi4jz5h7nw9hrgnmp8mzj6trl7sewt74.webp",
     imageAlt: "Cotswold Fest at South Cerney Airfield",
@@ -251,6 +268,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     location: "WINCHCOMBE",
     month: "OCT",
     day: "01",
+    year: 2026,
     imageUrl:
       "https://sudeleycastle.co.uk/cms-assets/header-images/_ctaCardThumbnail/winchcombe-01.jpg",
     imageAlt: "Winchcombe Walking Festival",
@@ -278,4 +296,171 @@ export function filterWhatsOnEvents(
 
 export function formatEventCategories(categories: WhatsOnCategory[]): string {
   return categories.join(" · ");
+}
+
+export type WhatsOnDateFilter = "today" | "weekend" | "month";
+
+export type WhatsOnDateRange = {
+  start: Date;
+  end: Date;
+};
+
+const MONTH_INDEX: Record<string, number> = {
+  JAN: 0,
+  JANUARY: 0,
+  FEB: 1,
+  FEBRUARY: 1,
+  MAR: 2,
+  MARCH: 2,
+  APR: 3,
+  APRIL: 3,
+  MAY: 4,
+  JUN: 5,
+  JUNE: 5,
+  JUL: 6,
+  JULY: 6,
+  AUG: 7,
+  AUGUST: 7,
+  SEP: 8,
+  SEPT: 8,
+  SEPTEMBER: 8,
+  OCT: 9,
+  OCTOBER: 9,
+  NOV: 10,
+  NOVEMBER: 10,
+  DEC: 11,
+  DECEMBER: 11,
+};
+
+function getEventDate(event: WhatsOnEvent): Date | null {
+  const month = MONTH_INDEX[event.month.trim().toUpperCase()];
+  const day = Number.parseInt(event.day.trim(), 10);
+
+  if (month === undefined || !Number.isFinite(day) || !Number.isFinite(event.year)) {
+    return null;
+  }
+
+  const date = new Date(event.year, month, day);
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+
+function isSameCalendarDate(left: Date, right: Date): boolean {
+  return (
+    left.getFullYear() === right.getFullYear() &&
+    left.getMonth() === right.getMonth() &&
+    left.getDate() === right.getDate()
+  );
+}
+
+export function sortWhatsOnEventsByDate(events: WhatsOnEvent[]): WhatsOnEvent[] {
+  return [...events].sort((left, right) => {
+    const leftDate = getEventDate(left);
+    const rightDate = getEventDate(right);
+
+    if (leftDate === null && rightDate === null) {
+      return 0;
+    }
+
+    if (leftDate === null) {
+      return 1;
+    }
+
+    if (rightDate === null) {
+      return -1;
+    }
+
+    return leftDate.getTime() - rightDate.getTime();
+  });
+}
+
+export function filterUpcomingWhatsOnEvents(
+  events: WhatsOnEvent[],
+  referenceDate: Date = new Date(),
+): WhatsOnEvent[] {
+  const today = new Date(referenceDate);
+  today.setHours(0, 0, 0, 0);
+
+  return events.filter((event) => {
+    const eventDate = getEventDate(event);
+    return eventDate !== null && eventDate >= today;
+  });
+}
+
+function getUpcomingWeekendDates(referenceDate: Date): Date[] {
+  const dayOfWeek = referenceDate.getDay();
+  let daysUntilSaturday: number;
+
+  if (dayOfWeek === 0) {
+    daysUntilSaturday = 6;
+  } else if (dayOfWeek === 6) {
+    daysUntilSaturday = 0;
+  } else {
+    daysUntilSaturday = 6 - dayOfWeek;
+  }
+
+  const saturday = new Date(referenceDate);
+  saturday.setHours(0, 0, 0, 0);
+  saturday.setDate(referenceDate.getDate() + daysUntilSaturday);
+
+  const sunday = new Date(saturday);
+  sunday.setDate(saturday.getDate() + 1);
+  sunday.setHours(0, 0, 0, 0);
+
+  return [saturday, sunday];
+}
+
+export function filterWhatsOnEventsByDate(
+  events: WhatsOnEvent[],
+  dateFilter: WhatsOnDateFilter,
+  referenceDate: Date = new Date(),
+): WhatsOnEvent[] {
+  const today = new Date(referenceDate);
+  today.setHours(0, 0, 0, 0);
+
+  if (dateFilter === "today") {
+    return events.filter((event) => {
+      const eventDate = getEventDate(event);
+      return eventDate !== null && isSameCalendarDate(eventDate, today);
+    });
+  }
+
+  if (dateFilter === "month") {
+    return events.filter((event) => {
+      const eventDate = getEventDate(event);
+      return (
+        eventDate !== null &&
+        eventDate.getFullYear() === today.getFullYear() &&
+        eventDate.getMonth() === today.getMonth()
+      );
+    });
+  }
+
+  const weekendDates = getUpcomingWeekendDates(referenceDate);
+  return events.filter((event) => {
+    const eventDate = getEventDate(event);
+    return (
+      eventDate !== null &&
+      weekendDates.some((weekendDate) => isSameCalendarDate(weekendDate, eventDate))
+    );
+  });
+}
+
+export function filterWhatsOnEventsByDateRange(
+  events: WhatsOnEvent[],
+  range: WhatsOnDateRange,
+): WhatsOnEvent[] {
+  const start = new Date(range.start);
+  start.setHours(0, 0, 0, 0);
+  const end = new Date(range.end);
+  end.setHours(0, 0, 0, 0);
+
+  if (start > end) {
+    return [];
+  }
+
+  return events.filter((event) => {
+    const eventDate = getEventDate(event);
+    return eventDate !== null && eventDate >= start && eventDate <= end;
+  });
 }
