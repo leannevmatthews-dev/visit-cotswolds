@@ -7,9 +7,9 @@ import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Things to Do in the Cotswolds | Visit Cotswolds",
+  title: "Things To Do",
   description:
-    "Walks, gardens, historic sites and experiences across the Cotswolds — curated for every pace and every season.",
+    "Things to do in the Cotswolds — walks, attractions, hidden gems, and local recommendations.",
   path: "/things-to-do",
 });
 

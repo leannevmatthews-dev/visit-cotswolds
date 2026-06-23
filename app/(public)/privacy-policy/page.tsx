@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Privacy Policy | Visit Cotswolds",
-  description:
-    "How Visit Cotswolds collects, uses, and protects your data under UK GDPR.",
+  title: "Privacy Policy",
+  description: "How Visit Cotswolds collects and uses your data.",
   path: "/privacy-policy",
 });
 

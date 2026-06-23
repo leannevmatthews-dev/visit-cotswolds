@@ -8,9 +8,9 @@ import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Cotswolds Villages Guide | Visit Cotswolds",
+  title: "Cotswolds Villages",
   description:
-    "Honest guides to the best villages in the Cotswolds — with real visit notes, crowd timing, and local tips.",
+    "Honest guides to the best villages in the Cotswolds — when to visit, what to see, and what most visitors miss.",
   path: "/villages",
 });
 

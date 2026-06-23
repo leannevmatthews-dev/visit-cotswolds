@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/json-ld";
 import { VillageHeroVideo } from "@/components/village-hero-video";
 import { VillageContent } from "@/components/villages/village-content";
-import { villagePageMetadata } from "@/lib/seo/metadata";
+import { absoluteUrl } from "@/lib/seo/site";
 import {
   getBreadcrumbJsonLd,
   getTouristAttractionJsonLd,
@@ -17,6 +17,9 @@ import {
 import { combineWithVillageNames } from "@/lib/villages/helpers";
 import "@/css/village-hero.css";
 import "@/css/village-page.css";
+
+const DEFAULT_OG_IMAGE =
+  "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/homepage/homepage-hero.jpg";
 
 type VillagePageProps = {
   params: Promise<{ slug: string }>;
@@ -34,10 +37,32 @@ export async function generateMetadata({
   const village = await getVillageBySlug(slug);
 
   if (!village) {
-    return { title: "Village Not Found | Visit Cotswolds" };
+    return { title: "Village Not Found" };
   }
 
-  return villagePageMetadata(village);
+  const description =
+    village.brief_summary?.trim() ||
+    `Discover ${village.name} in the Cotswolds — crowd intelligence, local tips, and everything worth knowing before you visit.`;
+  const ogImage =
+    village.hero_background_image_url?.trim() || DEFAULT_OG_IMAGE;
+
+  return {
+    title: village.name,
+    description,
+    alternates: {
+      canonical: absoluteUrl(`/villages/${village.slug}`),
+    },
+    openGraph: {
+      title: village.name,
+      description,
+      images: [ogImage],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: [ogImage],
+    },
+  };
 }
 
 export default async function VillagePage({ params }: VillagePageProps) {

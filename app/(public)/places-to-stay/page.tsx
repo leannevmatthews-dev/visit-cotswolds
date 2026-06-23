@@ -7,9 +7,9 @@ import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Places to Stay in the Cotswolds | Visit Cotswolds",
+  title: "Places To Stay",
   description:
-    "Hand-picked hotels, inns and retreats across the Cotswolds — chosen for atmosphere, location, and the kind of hospitality that stays with you.",
+    "Handpicked places to stay across the Cotswolds — from riverside inns to country house hotels.",
   path: "/places-to-stay",
 });
 

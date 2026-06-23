@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/seo/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/admin/",
     },
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: "https://visitcotswolds.uk/sitemap.xml",
   };
 }

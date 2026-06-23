@@ -2,12 +2,15 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo/site";
 import { getAllVillageSlugs } from "@/lib/villages/queries";
 
-const LISTING_PAGES = [
+const STATIC_PAGES = [
   "/villages",
-  "/places-to-eat",
   "/places-to-stay",
+  "/places-to-eat",
   "/things-to-do",
-  "/plan-your-visit",
+  "/whats-on",
+  "/about",
+  "/contact",
+  "/privacy-policy",
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -18,14 +21,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: SITE_URL,
       lastModified,
-      changeFrequency: "daily",
-      priority: 1,
+      changeFrequency: "monthly",
+      priority: 1.0,
     },
-    ...LISTING_PAGES.map((path) => ({
+    ...STATIC_PAGES.map((path) => ({
       url: `${SITE_URL}${path}`,
       lastModified,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
   ];
 
@@ -33,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${SITE_URL}/villages/${slug}`,
     lastModified,
     changeFrequency: "weekly",
-    priority: 0.8,
+    priority: 0.6,
   }));
 
   return [...staticEntries, ...villageEntries];

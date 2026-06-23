@@ -3,6 +3,9 @@ import { EB_Garamond, Inter } from "next/font/google";
 import { SITE_URL } from "@/lib/seo/site";
 import "./globals.css";
 
+const DEFAULT_OG_IMAGE =
+  "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/homepage/homepage-hero.jpg";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -18,9 +21,20 @@ const ebGaramond = EB_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Visit Cotswolds",
+  title: {
+    default: "Visit Cotswolds",
+    template: "%s | Visit Cotswolds",
+  },
   description:
     "The most useful independent guide to the Cotswolds — village guides, places to eat and stay, things to do, and honest advice from real visits.",
+  openGraph: {
+    type: "website",
+    images: [DEFAULT_OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [DEFAULT_OG_IMAGE],
+  },
 };
 
 export default function RootLayout({

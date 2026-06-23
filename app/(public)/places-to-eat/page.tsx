@@ -7,9 +7,9 @@ import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Places to Eat in the Cotswolds | Visit Cotswolds",
+  title: "Places To Eat",
   description:
-    "Curated restaurants, pubs and cafés across the Cotswolds — from Michelin-starred dining rooms to village pubs worth the detour.",
+    "The best places to eat and drink across the Cotswolds — pubs, restaurants, cafés, and afternoon tea.",
   path: "/places-to-eat",
 });
 
