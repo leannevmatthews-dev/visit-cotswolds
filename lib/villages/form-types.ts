@@ -35,6 +35,7 @@ export type VillageFormState = {
   combine_with: Village["combine_with"];
   places_to_stay: Village["places_to_stay"];
   places_to_eat: Village["places_to_eat"];
+  local_businesses: Village["local_businesses"];
   parking_guide: Village["parking_guide"];
   getting_here_rail: string;
   getting_here_parking: string;

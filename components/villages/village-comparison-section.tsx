@@ -59,7 +59,7 @@ export function VillageComparisonSection({
                   alt={row.image_alt ?? ""}
                 />
                 <header className="village-compare-card__header">
-                  <h3 className="village-compare-card__title font-headline-md text-[20px] text-primary leading-tight">
+                  <h3 className="village-compare-card__title font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
                     {row.village_name}
                   </h3>
                   {row.is_current && (
@@ -95,7 +95,7 @@ export function VillageComparisonSection({
 
       {village.alternative_villages.length > 0 && (
         <div className={comparisonRows.length > 0 ? "mt-16 md:mt-20" : ""}>
-          <h2 className="font-display-lg text-[28px] md:text-[36px] text-primary mb-4 leading-tight">
+          <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-4 leading-tight">
             If {village.name} Isn&rsquo;t Right For You
           </h2>
           <p className="font-body-sm text-on-surface-variant mb-8 max-w-2xl leading-relaxed">
@@ -114,7 +114,7 @@ export function VillageComparisonSection({
                 >
                   {alternative.icon}
                 </span>
-                <h3 className="village-alternative-card__title font-headline-md text-[20px] text-primary leading-tight">
+                <h3 className="village-alternative-card__title font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
                   {alternative.need}
                 </h3>
                 <p className="village-alternative-card__text font-body-sm text-on-surface-variant">

@@ -9,7 +9,7 @@ export function FaqSection() {
           __html: JSON.stringify(getBiburyFaqJsonLd()),
         }}
       />
-      <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-4 text-center">
+      <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight mb-4 text-center">
         Travel Notes & FAQs
       </h2>
       <p className="font-body-sm text-on-surface-variant text-center mb-10">

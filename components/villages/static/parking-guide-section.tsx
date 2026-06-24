@@ -38,7 +38,7 @@ export function ParkingGuideSection() {
           <div className="village-parking__header">
             <div className="village-guide-header village-parking__title-row">
               <span className="material-symbols-outlined">local_parking</span>
-              <h3 className="font-headline-md text-xl sm:text-[24px] md:text-[28px] text-primary leading-tight">
+              <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
                 Parking Guide
               </h3>
             </div>

@@ -14,8 +14,8 @@ export function FaqSection({ village }: FaqSectionProps) {
           __html: JSON.stringify(getFaqJsonLd(village.faq_items)),
         }}
       />
-      <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-4 text-center">
-        Travel Notes & FAQs
+      <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight mb-4 text-center">
+        {village.name} Travel Notes & FAQs
       </h2>
       <p className="font-body-sm text-on-surface-variant text-center mb-10">
         Answers based on our visits and the questions visitors search for most

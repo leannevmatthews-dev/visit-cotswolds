@@ -48,7 +48,7 @@ const LOCAL_TIPS: LocalTip[] = [
 export function LocalTipsSection() {
   return (
     <div className="mb-24 md:mb-32">
-      <h2 className="font-display-lg text-[36px] md:text-[48px] text-primary mb-4 leading-tight">
+      <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-4 leading-tight">
         Local Tips
       </h2>
       <p className="font-body-sm text-on-surface-variant mb-8 max-w-2xl">

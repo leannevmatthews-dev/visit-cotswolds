@@ -171,6 +171,15 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       image_alt: emptyToNull(place.image_alt ?? ""),
       external_link: emptyToNull(place.external_link ?? ""),
     })),
+    local_businesses: state.local_businesses.map((business) => ({
+      name: business.name.trim(),
+      category: business.category.trim(),
+      description: business.description.trim(),
+      address: emptyToNull(business.address ?? ""),
+      website_url: emptyToNull(business.website_url ?? ""),
+      image_url: emptyToNull(business.image_url ?? ""),
+      image_alt: emptyToNull(business.image_alt ?? ""),
+    })),
     parking_guide: {
       main_location: state.parking_guide.main_location.trim(),
       main_detail: state.parking_guide.main_detail.trim(),
@@ -297,6 +306,13 @@ export function villageToFormState(village: Village): VillageFormState {
       image_url: nullToEmpty(place.image_url),
       image_alt: nullToEmpty(place.image_alt),
       external_link: nullToEmpty(place.external_link),
+    })),
+    local_businesses: (village.local_businesses ?? []).map((business) => ({
+      ...business,
+      address: nullToEmpty(business.address),
+      website_url: nullToEmpty(business.website_url),
+      image_url: nullToEmpty(business.image_url),
+      image_alt: nullToEmpty(business.image_alt),
     })),
     parking_guide: village.parking_guide
       ? {

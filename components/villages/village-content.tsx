@@ -145,7 +145,7 @@ export function VillageContent({
                   Curated Overview
                 </span>
               </div>
-              <h2 className="font-display-lg text-[40px] md:text-[56px] text-primary leading-tight">
+              <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
                 {village.overview_heading}
               </h2>
               <div className="font-body-lg text-body-lg text-on-surface-variant space-y-6 max-w-2xl">
@@ -179,7 +179,7 @@ export function VillageContent({
                 Last updated · {village.visited_date}
               </p>
               <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-6 leading-tight">
-                Our Take
+                Our Take On {village.name}
               </h2>
               <div className="village-visited space-y-5 font-body-lg text-body-lg text-on-surface-variant">
                 {ourTakeParagraphs.map((paragraph) => (
@@ -200,8 +200,8 @@ export function VillageContent({
           {village.hidden_gems.length > 0 && (
             <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
               <div className="lg:col-span-7">
-                <h2 className="font-display-lg text-[36px] md:text-[48px] text-primary mb-6 leading-tight">
-                  What Most Visitors Miss
+                <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-6 leading-tight">
+                  What Most Visitors Miss In {village.name}
                 </h2>
                 <ul className="space-y-6 font-body-sm text-on-surface-variant">
                   {village.hidden_gems.map((gem) => (
@@ -237,8 +237,8 @@ export function VillageContent({
 
           {village.curated_experiences.length > 0 && (
             <div className="mb-24 md:mb-32">
-              <h2 className="font-display-lg text-[36px] md:text-[48px] text-primary mb-8 md:mb-10 text-center leading-tight">
-                Curated Experiences
+              <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 text-center leading-tight">
+                What To See In {village.name}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                 {village.curated_experiences.map((experience) => (
@@ -256,7 +256,7 @@ export function VillageContent({
                         <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[200px]" />
                       )}
                     </div>
-                    <h3 className="font-headline-md text-primary mb-3">
+                    <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">
                       {experience.title}
                     </h3>
                     <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
@@ -286,7 +286,7 @@ export function VillageContent({
                 <section>
                   <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
                     <h4 className="font-label-caps text-label-caps text-limestone tracking-[0.2em]">
-                      PLACES TO STAY
+                      Where To Stay In {village.name}
                     </h4>
                     <a
                       className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0"
@@ -311,7 +311,7 @@ export function VillageContent({
                 <section className="mt-16 md:mt-24">
                   <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
                     <h4 className="font-label-caps text-label-caps text-limestone tracking-[0.2em]">
-                      PLACES TO EAT
+                      Where To Eat In {village.name}
                     </h4>
                     <a
                       className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0"
@@ -334,13 +334,64 @@ export function VillageContent({
             </div>
           )}
 
+          {(village.local_businesses ?? []).length > 0 && (
+            <section className="mb-24 md:mb-32">
+              <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 leading-tight">
+                Local Independents In {village.name}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                {(village.local_businesses ?? []).map((business) => (
+                  <article key={business.name} className="village-experience group">
+                    <div className="village-experience__image">
+                      {business.image_url ? (
+                        <Image
+                          alt={business.image_alt ?? ""}
+                          src={business.image_url}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, 33vw"
+                        />
+                      ) : (
+                        <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[200px]" />
+                      )}
+                    </div>
+                    <span className="font-label-caps text-[10px] text-limestone tracking-widest uppercase">
+                      {business.category}
+                    </span>
+                    <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">
+                      {business.name}
+                    </h3>
+                    <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
+                      {business.description}
+                    </p>
+                    {business.address && (
+                      <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
+                        {business.address}
+                      </p>
+                    )}
+                    {business.website_url && (
+                      <a
+                        className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors"
+                        href={business.website_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit website
+                      </a>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
+
           <div className="mb-24 md:mb-32">
             <div className="mb-10 md:mb-12 village-practical-header text-left">
               <span className="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase block mb-3">
                 Plan Your Visit
               </span>
-              <h2 className="font-display-lg text-[28px] sm:text-[32px] md:text-[40px] text-primary leading-tight text-left">
-                Practical Guides
+              <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight text-left">
+                Planning Your Visit To {village.name}
               </h2>
             </div>
             <ParkingGuideSection village={village} />
@@ -349,7 +400,7 @@ export function VillageContent({
               <div className="village-panel village-guide-panel border border-outline-variant/20">
                 <div className="village-guide-header">
                   <span className="material-symbols-outlined">accessible</span>
-                  <h3 className="font-headline-md text-[22px] text-primary">
+                  <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
                     Accessibility Guide
                   </h3>
                 </div>
@@ -391,7 +442,7 @@ export function VillageContent({
               <div className="village-panel village-guide-panel border border-outline-variant/20">
                 <div className="village-guide-header">
                   <span className="material-symbols-outlined">rainy</span>
-                  <h3 className="font-headline-md text-[22px] text-primary">
+                  <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
                     If It Rains
                   </h3>
                 </div>
@@ -416,7 +467,7 @@ export function VillageContent({
 
           {village.nearby_villages.length > 0 && (
             <div className="mb-24 md:mb-32">
-              <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-10">
+              <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight mb-10">
                 Beyond {village.name}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">

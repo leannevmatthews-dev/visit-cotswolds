@@ -50,7 +50,7 @@ export function BiburyContent() {
 <div className="inline-block px-4 py-2 bg-surface-container-high border border-limestone/20">
 <span className="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">Curated Overview</span>
 </div>
-<h2 className="font-display-lg text-[40px] md:text-[56px] text-primary leading-tight">A Masterpiece in Stone</h2>
+<h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">A Masterpiece in Stone</h2>
 <div className="font-body-lg text-body-lg text-on-surface-variant space-y-6 max-w-2xl">
 <p>Bibury is the quintessential Cotswold destination, drawing photography enthusiasts and history lovers from across the globe. Its fame is anchored by <span className="text-limestone italic font-headline-md">Arlington Row</span>, a 14th-century monastic wool store that has become the definitive image of rural England.</p>
 <p>Visitors are drawn to the seamless harmony between the honey-hued limestone architecture and the vibrant ecology of the River Coln. It is a place built for the slow rhythm of the countryside—best enjoyed by those willing to walk the winding paths and linger in the shadows of its gabled roofs.</p>
@@ -79,7 +79,7 @@ export function BiburyContent() {
 <LocalTipsSection />
 <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
 <div className="lg:col-span-7">
-<h2 className="font-display-lg text-[36px] md:text-[48px] text-primary mb-6 leading-tight">What Most Visitors Miss</h2>
+<h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-6 leading-tight">What Most Visitors Miss</h2>
 <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">Most visitors photograph Arlington Row and leave within the hour. That misses the quieter, more rewarding parts of Bibury entirely.</p>
 <ul className="space-y-6 font-body-sm text-on-surface-variant">
 <li className="flex gap-4">
@@ -105,13 +105,13 @@ export function BiburyContent() {
 </div>
 </div>
 <div className="mb-24 md:mb-32">
-<h2 className="font-display-lg text-[36px] md:text-[48px] text-primary mb-8 md:mb-10 text-center leading-tight">Curated Experiences</h2>
+<h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 text-center leading-tight">Curated Experiences</h2>
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
 <div className="village-experience group">
 <div className="village-experience__image">
 <img alt="Arlington Row cottages" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKbvZy_pDxfY0J0HZI4hx1seJMV67v1e_q-y4FmU1fBVy-fJtae_XdF8Zx78f8pXKq2lNe25Q-PcRnB2jJ7tLK6QNS0oEdcdU3TvOKBiYWjKl7TV-ZX6B5cF1gkWhJvZZPnJGmKeXlGxP1UCXlbTacI6mQpq15KnebUBFh3AKCN0UrUuiLC2p_sJ0dFC2f5h0dIyuD2WzKqZXzoZUeAHxmLHcDtlTfBKZpVyiiaTNdScpDpaqog5_68u5KD0gHfURv9oQc9NbFBA"/>
 </div>
-<h3 className="font-headline-md text-primary mb-3">Arlington Row</h3>
+<h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">Arlington Row</h3>
 <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">The most photographed street in Britain. These National Trust cottages are best viewed from the bridge at first light.</p>
 <div className="p-5 bg-surface-container border-l border-limestone">
 <p className="font-body-sm italic text-limestone leading-relaxed">Insider tip: follow the path past the cottages for a secluded view of Rack Isle meadows.</p>
@@ -121,7 +121,7 @@ export function BiburyContent() {
 <div className="village-experience__image">
 <img alt="River Coln in Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7kvAQ5rbHG34W2nT4XMucT3y9M2YV4Sk0V-JGp-Ni4FpgbDmvKZyh43PWjuhn5OQYd1TiU8-eId5lkKzg_pCT-d4aK4YDHKjejJIFZX2FBW_gGPNqliGz5YIafpLzEx3-7DmrlEiQM7-wY-kVCjqBop54UTeNci70x8rZx93UCce6lJa5cSwvs_IH8PwmjpbdQADyeKlv70vR-ckAaGELnJYixUl3ymnKkSdIVnsuVDu84E-2DRso-MhKxzk6DEyz9alGVjJPMw"/>
 </div>
-<h3 className="font-headline-md text-primary mb-3">River Coln Stroll</h3>
+<h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">River Coln Stroll</h3>
 <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Walk alongside crystal-clear waters past Rack Isle meadows—the most peaceful perspective of the village, with far fewer people than the main road.</p>
 <div className="p-5 bg-surface-container border-l border-limestone">
 <p className="font-body-sm italic text-limestone leading-relaxed">Insider tip: most visitors never go beyond the bridge—this is where locals walk.</p>
@@ -131,7 +131,7 @@ export function BiburyContent() {
 <div className="village-experience__image">
 <img alt="The Swan Hotel, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7hVkUiJmSKlt_tiClMvED0Qni2RABiXVoa6N2_k5CHJquIwlDlFGZ_ZXJOGCY6U1HYE86ZLV4ybCIh6zDV3IS-5To-2v43EdoBN22nBSbI65EYX2PKc6jl_F2vTHAfH67J_k83LhrheRNCukZvJ4-RN7eJFCs4Yvh9fIi1_zzGxAroeUovHrY0tlCc3-Ja7Nq6HUD7fmRYH2HBVsTqr6f70Yo0XWn_Jb8sUWn1PA1hP0JdXSAHvZZi0vGCfOUQb7gT_4-FpCBpg"/>
 </div>
-<h3 className="font-headline-md text-primary mb-3">The Swan Hotel</h3>
+<h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">The Swan Hotel</h3>
 <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Seasonal menus in an elegant riverside setting—or a quiet coffee in the garden before the midday tour buses arrive.</p>
 <div className="p-5 bg-surface-container border-l border-limestone">
 <p className="font-body-sm italic text-limestone leading-relaxed">Insider tip: book lunch ahead on summer weekends—the garden fills quickly.</p>
@@ -232,7 +232,7 @@ export function BiburyContent() {
 <div className="mb-24 md:mb-32">
 <div className="mb-10 md:mb-12 village-practical-header text-left">
 <span className="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase block mb-3">Plan Your Visit</span>
-<h2 className="font-display-lg text-[28px] sm:text-[32px] md:text-[40px] text-primary leading-tight text-left">Practical Guides</h2>
+<h2 className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight text-left">Practical Guides</h2>
 </div>
 <ParkingGuideSection />
 <GettingHereSection />
@@ -240,7 +240,7 @@ export function BiburyContent() {
 <div className="village-panel village-guide-panel border border-outline-variant/20">
 <div className="village-guide-header">
 <span className="material-symbols-outlined">accessible</span>
-<h3 className="font-headline-md text-[22px] text-primary">Accessibility Guide</h3>
+<h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">Accessibility Guide</h3>
 </div>
 <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Honest notes on surfaces and gradients—Bibury rewards planning ahead for mobility needs.</p>
 <div className="village-guide-tips">
@@ -268,7 +268,7 @@ export function BiburyContent() {
 <div className="village-panel village-guide-panel border border-outline-variant/20">
 <div className="village-guide-header">
 <span className="material-symbols-outlined">rainy</span>
-<h3 className="font-headline-md text-[22px] text-primary">If It Rains</h3>
+<h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">If It Rains</h3>
 </div>
 <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">Rain does not need to cancel a Bibury visit. These options keep you dry or make the most of a wet day.</p>
 <div className="village-rain-options">
@@ -306,7 +306,7 @@ export function BiburyContent() {
 </div>
 <FaqSection />
 <div className="mb-24 md:mb-32">
-<h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-10">Beyond Bibury</h2>
+<h2 className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight mb-10">Beyond Bibury</h2>
 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 <a className="village-nearby group" href="/villages/bourton-on-the-water">
 <img alt="Bourton-on-the-Water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2OYmP99WzoPuPHjxK2WUDU9rD-SqEEgghBkbxhliHCfLwwKmyLLA86EnLEcZaO17y5nxCkw-H1-eo2fYTa-lMwSCtIMOxxqtpH9fgzKC4kYDSBiUy-wypyRM9MSU8tC6aLMfGd8al3XlT_rUea4clV48_IulmyXE1VKfM8GnbOPtAL0QJ8KSZrcYgZItfPgH0RK6PVOccPT6Yu-CuzevnaspddsOYSOLe9XgOgvCb7DEFi_YSpll04SkX_r67BTDj7F7CTU4KTw"/>

@@ -904,6 +904,76 @@ export function VillageForm({
         />
       </FormSection>
 
+      <FormSection title="Local Businesses">
+        <RepeatableList
+          items={form.local_businesses}
+          onChange={(items) => setField("local_businesses", items)}
+          createItem={() => ({
+            name: "",
+            category: "",
+            description: "",
+            address: "",
+            website_url: "",
+            image_url: "",
+            image_alt: "",
+          })}
+          addLabel="Add local business"
+          emptyLabel="No local businesses yet."
+          renderItem={(item, index, update, remove) => (
+            <RepeatableItemCard
+              key={index}
+              title={`Business ${index + 1}`}
+              onRemove={remove}
+            >
+              <FieldGrid>
+                <TextInput
+                  id={`business-name-${index}`}
+                  label="Name"
+                  value={item.name}
+                  onChange={(value) => update({ name: value })}
+                />
+                <TextInput
+                  id={`business-category-${index}`}
+                  label="Category"
+                  value={item.category}
+                  onChange={(value) => update({ category: value })}
+                />
+                <TextArea
+                  id={`business-description-${index}`}
+                  label="Description"
+                  value={item.description}
+                  onChange={(value) => update({ description: value })}
+                  rows={3}
+                />
+                <TextInput
+                  id={`business-address-${index}`}
+                  label="Address (optional)"
+                  value={item.address ?? ""}
+                  onChange={(value) => update({ address: value })}
+                />
+                <TextInput
+                  id={`business-website-${index}`}
+                  label="Website URL (optional)"
+                  value={item.website_url ?? ""}
+                  onChange={(value) => update({ website_url: value })}
+                />
+                <ImageUploadField
+                  id={`business-image-${index}`}
+                  label="Image (optional)"
+                  hint="Photo for this local business"
+                  value={item.image_url ?? ""}
+                  onChange={(value) => update({ image_url: value })}
+                  altValue={item.image_alt ?? ""}
+                  onAltChange={(value) => update({ image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`business-${index}`}
+                />
+              </FieldGrid>
+            </RepeatableItemCard>
+          )}
+        />
+      </FormSection>
+
       <FormSection title="Parking Guide">
         <FieldGrid>
           <TextInput

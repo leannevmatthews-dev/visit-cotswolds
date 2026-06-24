@@ -45,6 +45,7 @@ export const defaultVillageFormState = (): VillageFormState => ({
   combine_with: [],
   places_to_stay: [],
   places_to_eat: [],
+  local_businesses: [],
   parking_guide: emptyParkingGuide(),
   getting_here_rail: "",
   getting_here_parking: "",

@@ -9,7 +9,7 @@ export function SeasonalAdviceSection({ seasons }: SeasonalAdviceSectionProps) {
 
   return (
     <div className="mb-24 md:mb-32">
-      <h2 className="font-display-lg text-[36px] md:text-[48px] text-primary mb-10 leading-tight">
+      <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-10 leading-tight">
         Seasonal Advice
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">

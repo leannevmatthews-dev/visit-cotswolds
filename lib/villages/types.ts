@@ -69,6 +69,16 @@ export type PlacePick = {
   external_link: string | null;
 };
 
+export type LocalBusiness = {
+  name: string;
+  category: string;
+  description: string;
+  address?: string | null;
+  website_url?: string | null;
+  image_url?: string | null;
+  image_alt?: string | null;
+};
+
 export type ParkingGuide = {
   cost: string;
   map_url: string | null;
@@ -149,6 +159,7 @@ export type Village = {
   combine_with: CombineWithTrip[];
   places_to_stay: PlacePick[];
   places_to_eat: PlacePick[];
+  local_businesses: LocalBusiness[];
   parking_guide: ParkingGuide;
   getting_here_rail: string;
   getting_here_parking: string;

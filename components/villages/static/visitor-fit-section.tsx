@@ -15,7 +15,7 @@ export function VisitorFitSection() {
             <span className="material-symbols-outlined village-visitor-fit__icon" aria-hidden="true">
               schedule
             </span>
-            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[24px] text-primary leading-tight">
+            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
               Crowd Intelligence
             </h2>
           </header>
@@ -46,7 +46,7 @@ export function VisitorFitSection() {
         <article className="village-visitor-fit__card village-visitor-fit__card--pro">
           <header className="village-visitor-fit__header">
             <span className="village-pros-cons__dot village-pros-cons__dot--pro" aria-hidden="true"></span>
-            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[24px] text-primary leading-tight">
+            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
               Perfect For
             </h2>
           </header>
@@ -60,7 +60,7 @@ export function VisitorFitSection() {
         <article className="village-visitor-fit__card village-visitor-fit__card--con">
           <header className="village-visitor-fit__header">
             <span className="village-pros-cons__dot village-pros-cons__dot--con" aria-hidden="true"></span>
-            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[24px] text-primary leading-tight">
+            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
               Maybe Skip If
             </h2>
           </header>
