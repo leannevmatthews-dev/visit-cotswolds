@@ -154,7 +154,7 @@
     justify-content: flex-end;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
     .site-header__menu {
         display: none;
     }
