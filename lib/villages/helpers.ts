@@ -148,6 +148,14 @@ export function heroImageUrl(
   return heroGalleryUrls[0] ?? null;
 }
 
+/** Derive a village route slug from a display name (nearby cards, etc.). */
+export function villageNameToSlug(villageName: string): string {
+  return villageName
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+}
+
 export function parkingMapEmbedUrl(mapUrl: string | null): string | null {
   if (!mapUrl) return null;
   if (mapUrl.includes("/maps/embed") || mapUrl.includes("output=embed")) {

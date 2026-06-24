@@ -1,52 +1,69 @@
 import Link from "next/link";
-import { MailIcon, PublicIcon, ShareIcon } from "./icons";
-import { Logo } from "./logo";
-import { FOOTER_LINKS } from "@/lib/nav";
+import { NAV_ITEMS } from "@/lib/nav";
+
+const FOOTER_INFORMATION_LINKS = [
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+] as const;
+
+const footerLinkClassName =
+  "font-body-sm text-on-surface-variant transition-colors hover:text-limestone";
+
+const footerHeadingClassName =
+  "font-label-caps text-[10px] text-limestone tracking-widest uppercase";
 
 export function Footer() {
   return (
-    <footer className="bg-surface-container-lowest border-t border-outline-variant/10 py-16 md:py-24 px-margin-mobile md:px-margin-desktop w-full text-center flex flex-col items-center gap-8 md:gap-12">
-      <Link href="/" className="site-logo" aria-label="Visit Cotswolds">
-        <Logo className="site-logo-svg" />
-      </Link>
+    <footer className="w-full border-t border-outline-variant/10 bg-surface-container-lowest">
+      <div className="mx-auto max-w-container-max px-margin-mobile py-16 md:px-margin-desktop md:py-20">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
+          <div>
+            <p className={footerHeadingClassName}>Visit Cotswolds</p>
+            <p className="mt-3 max-w-xs font-body-sm leading-relaxed text-on-surface-variant">
+              The most useful independent guide to the Cotswolds.
+            </p>
+          </div>
 
-      <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-        {FOOTER_LINKS.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-opacity duration-300"
-          >
-            {link.label}
-          </a>
-        ))}
+          <div>
+            <p className={`${footerHeadingClassName} mb-4`}>Explore</p>
+            <nav aria-label="Footer explore links">
+              <ul className="flex flex-col gap-3">
+                {NAV_ITEMS.map((item) => (
+                  <li key={item.id}>
+                    <Link href={item.href} className={footerLinkClassName}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+
+          <div>
+            <p className={`${footerHeadingClassName} mb-4`}>Information</p>
+            <nav aria-label="Footer information links">
+              <ul className="flex flex-col gap-3">
+                {FOOTER_INFORMATION_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className={footerLinkClassName}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
 
-      <div className="flex gap-8">
-        <a
-          className="text-on-surface-variant/40 hover:text-limestone transition-colors"
-          href="#"
-        >
-          <PublicIcon className="h-6 w-6" />
-        </a>
-        <a
-          className="text-on-surface-variant/40 hover:text-limestone transition-colors"
-          href="#"
-        >
-          <MailIcon className="h-6 w-6" />
-        </a>
-        <a
-          className="text-on-surface-variant/40 hover:text-limestone transition-colors"
-          href="#"
-        >
-          <ShareIcon className="h-6 w-6" />
-        </a>
+      <div className="border-t border-outline-variant/10">
+        <div className="mx-auto max-w-container-max px-margin-mobile py-6 md:px-margin-desktop">
+          <p className="font-body-sm text-on-surface-variant/60">
+            © 2026 Visit Cotswolds. All rights reserved.
+          </p>
+        </div>
       </div>
-
-      <p className="font-label-caps text-label-caps text-on-surface-variant/50 max-w-sm leading-relaxed">
-        © 2024 VISIT COTSWOLDS. UNHURRIED LUXURY. <br />
-        A REFINED GUIDE TO THE HEART OF ENGLAND.
-      </p>
     </footer>
   );
 }

@@ -21,9 +21,17 @@ function ListingCard({
   linkExternal: boolean;
   linkLabel: string;
 }) {
+  const linkProps = linkExternal
+    ? { target: "_blank" as const, rel: "noopener noreferrer" }
+    : {};
+
   return (
     <article className="listing-directory-card flex flex-col gap-4">
-      <div className="listing-directory-card__image relative aspect-square overflow-hidden bg-surface-container">
+      <a
+        href={listing.websiteUrl}
+        {...linkProps}
+        className="listing-directory-card__image relative block aspect-square overflow-hidden bg-surface-container"
+      >
         {listing.imageUrl ? (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
@@ -34,7 +42,7 @@ function ListingCard({
         ) : (
           <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-0" />
         )}
-      </div>
+      </a>
 
       <div className="flex flex-col gap-2">
         <div
@@ -63,9 +71,7 @@ function ListingCard({
 
         <a
           href={listing.websiteUrl}
-          {...(linkExternal
-            ? { target: "_blank", rel: "noopener noreferrer" }
-            : {})}
+          {...linkProps}
           className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors hover:text-primary"
         >
           {linkLabel}

@@ -13,7 +13,7 @@ import { VillageComparisonSection } from "@/components/villages/village-comparis
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import { VillageInBrief } from "@/components/villages/village-in-brief";
 import { VisitorFitSection } from "@/components/villages/visitor-fit-section";
-import { heroImageUrl, splitParagraphs } from "@/lib/villages/helpers";
+import { heroImageUrl, splitParagraphs, villageNameToSlug } from "@/lib/villages/helpers";
 import type { SeasonalAdvice, Village } from "@/lib/villages/types";
 
 type VillageContentProps = {
@@ -472,7 +472,11 @@ export function VillageContent({
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {village.nearby_villages.map((nearby) => (
-                  <div key={nearby.village_name} className="village-nearby">
+                  <a
+                    key={nearby.village_name}
+                    href={`/villages/${villageNameToSlug(nearby.village_name)}`}
+                    className="village-nearby"
+                  >
                     {nearby.image_url ? (
                       <Image
                         alt={nearby.image_alt ?? ""}
@@ -493,7 +497,7 @@ export function VillageContent({
                         {nearby.village_name}
                       </span>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
