@@ -65,7 +65,7 @@ function ListingCard({
           {listing.name}
         </h2>
 
-        <p className="font-body-sm text-on-surface-variant line-clamp-2">
+        <p className="font-body-sm text-on-surface-variant">
           {listing.description}
         </p>
 
