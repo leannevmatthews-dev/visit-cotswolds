@@ -14,15 +14,16 @@ export const JOURNEY_CARDS = [
     label: "SLEEP",
     title: "Stays",
     alt: "Luxury boutique manor house bedroom",
-    image: "",
+    image:
+      "https://hotelcms-production.imgix.net/oldbellhotel.co.uk/wp-content/uploads/2022/05/Master_Room-Athelstan.jpg",
   },
   {
     href: "/places-to-eat",
     label: "EAT & DRINK",
     title: "Food & Drink",
-    titleClass: "text-[10px] sm:text-sm md:text-lg lg:text-xl",
     alt: "Fine dining scene in a historic pub",
-    image: "",
+    image:
+      "https://bucklandmanor.co.uk/wp-content/uploads/sites/8/2026/01/4H0A8786-4-1000px.jpg",
   },
   {
     href: "/things-to-do",
@@ -36,7 +37,8 @@ export const JOURNEY_CARDS = [
     label: "THIS SEASON",
     title: "What's On",
     alt: "Vintage garden party event",
-    image: "",
+    image:
+      "https://bigfeastival.com/wp-content/uploads/2025/01/The-Big-Feastival-2024_20240823_Atmosphere_GaelleBeri_9077-Instagram.jpeg",
   },
 ] as const;
 

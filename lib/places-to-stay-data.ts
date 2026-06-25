@@ -1,10 +1,20 @@
 import type { DirectoryFilter, DirectoryListing } from "@/lib/listing-directory";
 
-export type StayListingCategory = "Hotels" | "B&Bs" | "Cottages" | "Glamping";
+export type StayListingCategory =
+  | "Country Estate"
+  | "Spa Hotel"
+  | "Exclusive Use"
+  | "Boutique Hotel"
+  | "Manor House"
+  | "Inn"
+  | "Historic Inn";
 
 export type PlacesToStayListing = DirectoryListing & {
   category: StayListingCategory;
   dogFriendly: boolean;
+  location: string;
+  address: string;
+  pricePerNight: string;
 };
 
 export const PLACES_TO_STAY_HERO_IMAGE =
@@ -12,142 +22,281 @@ export const PLACES_TO_STAY_HERO_IMAGE =
 
 export const STAY_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "all", label: "All Properties" },
-  { id: "hotels", label: "Hotels & Inns", matchCategory: "Hotels" },
-  { id: "bnbs", label: "B&Bs", matchCategory: "B&Bs" },
-  { id: "cottages", label: "Cottages", matchCategory: "Cottages" },
-  { id: "glamping", label: "Glamping", matchCategory: "Glamping" },
-  { id: "dog-friendly", label: "Dog Friendly", requireFlag: "dogFriendly" },
+  {
+    id: "country-estate",
+    label: "Country Estate",
+    matchCategory: "Country Estate",
+  },
+  { id: "spa-hotel", label: "Spa Hotel", matchCategory: "Spa Hotel" },
+  {
+    id: "exclusive-use",
+    label: "Exclusive Use",
+    matchCategory: "Exclusive Use",
+  },
+  {
+    id: "boutique-hotel",
+    label: "Boutique Hotel",
+    matchCategory: "Boutique Hotel",
+  },
+  { id: "manor-house", label: "Manor House", matchCategory: "Manor House" },
+  { id: "inn", label: "Inn", matchCategory: "Inn" },
+  { id: "historic-inn", label: "Historic Inn", matchCategory: "Historic Inn" },
 ];
 
 export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
-    id: "lygon-arms",
-    name: "The Lygon Arms",
+    id: "thyme",
+    name: "Thyme",
     description:
-      "Historic coaching inn on Broadway High Street with panelled bars, open fires, and elegant rooms.",
-    category: "Hotels",
-    dogFriendly: true,
-    priceLevel: 3,
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBF5Peq3duXAD2MQju_mcIys61wjAVI0OyosJba9dh7G6qPtaBZ9WQAkmgBpFrFa5xtzAAFil9T83t0vJDf51a9YOoj6YYAAjSldWSGkZx-JpFkEa8YbnePswa1hpFXtDg8hxuaYuBOJjNyp44HbTQm-Db134zkd9JsttfNl-18lOa2ZSceUjRFHmEZRxKAkQvAvXACcytiL8l1CiAwOqPMD1yorkuQWv_G7O4kuTvY_GnZpenyhE7VzjisP1s9w8TYuZ1ry1c7rQ",
-    imageAlt: "Cotswolds manor house hotel at night with lit windows",
-    websiteUrl: "https://www.lygonarmshotel.co.uk/",
-  },
-  {
-    id: "old-rectory",
-    name: "The Old Rectory",
-    description:
-      "Characterful stone cottage B&B with garden views and a generous Cotswold breakfast.",
-    category: "B&Bs",
-    dogFriendly: false,
-    priceLevel: 2,
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAee6AV0AZU3XfeuPyAwrb6G1uAQkAwFvFZG9xdE2K2xs7M8WHAeCEiHeDYQ5rNxRI1lhjdcsoLv8IUM2H0am0M6Qt29DJ4ThKQyyPtXK-4Kr9lgXxfGOUq7GNxjjqv4DuEBav0EN8JW-rQMZkr_lATXC-EeKY6SFjH2_5e0IgzkJownGD3mvamxjJgf5p9abskO8q5Nixo0rEr5sy44axNmCygsJcI_mZ3fgpxtTM8FUBSDuxNdnvCe8sdCwd5nblpOJc54LsaMQ",
-    imageAlt: "Cozy stone cottage interior with fireplace",
-    websiteUrl: "https://www.theoldrectorycotswolds.co.uk/",
-  },
-  {
-    id: "forest-hideaway",
-    name: "Forest Hideaway",
-    description:
-      "Contemporary cabin tucked into woodland near Chipping Campden — quiet, design-led, and private.",
-    category: "Glamping",
-    dogFriendly: true,
-    priceLevel: 3,
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAXZgRIb4iDrD84merSA4kGz8ns3mDnhg5zG8IJepHbDriu1eWe4PrFbk0kHB7yqD68T578hrYsBj4pBZge5SdEmwF79-pll-dOyXLMRIh8wZioGbqggHjfvToSuPerf-HdJncNAwPZiAWm9pFqezsYUJSkvclSBKZbcmvI4mvx1BpRycLoPeFz26POc02bYw2iDFua7ofXQ9m9UcjMAy7Vg_VFhYlQLQF_ax-FhBgPpHMtW06oBa93lyNI7T7ag70uBOF-rY8y6Q",
-    imageAlt: "Modern wood-clad cabin among Cotswold trees",
-    websiteUrl: "https://www.foresthideaway.co.uk/",
-  },
-  {
-    id: "barnsley-house",
-    name: "Barnsley House",
-    description:
-      "Country-house hotel with Rosemary Verey gardens, spa, and relaxed village setting in Barnsley.",
-    category: "Hotels",
+      "A restored estate in Southrop with its own farm, spa, cookery school, and pub. You can spend three days here without leaving the grounds — most people do.",
+    category: "Country Estate",
+    location: "Southrop, Lechlade",
+    address: "Southrop, Lechlade GL7 3PX",
     dogFriendly: false,
     priceLevel: 3,
+    pricePerNight: "£500+",
     imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAlCFJGj3w0v_ygGqlr7jPrd9PpYeBbc2zCUXaq8mkYSyuU9c7BA4_k7cv7FF6ZfKOxZa9wC7J85OzQmaU7aFDOsOigVKjust5HxQa4QRi3Ay5jFRTq8hhVymGe0RrXuC9aZQI3ZUWju459LoCojrOdd5g96QOdGmdqAbB6ZfCT531hm-EW0_nZ1ZwHWAijceWCoHEcWsjqDRRNvaTGEfqHXWGloeLFTRmoHEqFLRmLrHonYCVG2fpwm3xX-riwnqJW_U5mPc-psw",
-    imageAlt: "Country house hotel and gardens in the Cotswolds",
-    websiteUrl: "https://www.barnsleyhouse.com/",
+      "https://images.squarespace-cdn.com/content/v1/5f6b4b0c38cfbb7e2af14d5e/905d135c-12f0-4967-97bc-251c8e5a543a/Sidalcea+-+Elegant+-+Farmhouse+-+FreddieEllams+-+mar24+-++%281%29.jpg?format=1500w",
+    imageAlt: "Thyme estate Southrop",
+    websiteUrl: "https://www.thyme.co.uk/",
   },
   {
     id: "dormy-house",
     name: "Dormy House",
     description:
-      "Hilltop retreat above Broadway with spa, pool, and far-reaching views over the Vale of Evesham.",
-    category: "Hotels",
+      "A farmhouse hotel on the hills above Broadway with a spa that gets consistently strong reviews. The rooms are well done and the whole operation runs smoothly.",
+    category: "Spa Hotel",
+    location: "Broadway",
+    address: "Willersey Hill, Broadway WR12 7LF",
     dogFriendly: false,
     priceLevel: 3,
+    pricePerNight: "£400+",
     imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAudQsPROnmMD1SzJCuavC_RNJBbD6Zt14BlCT_w-zlCVebqPNc1OEYVohOuvrDfYPTBOxgVkHgIehgX83q8clhO9m-MSHLKZtu6Ny2RIrUkLv5OMcpeZ0ZE7rDdGcxBx2dTonE-T4IezvIv5Dz7LgmzbWrzygRyQNZjOb0jJ6GqeeFdQynbhplnrIlqOZ_Z0GMxx6WXfZDSxtiiXSIBvzk4oOrZXcmameT16xo6iYSPOVeVyg3QMCiI_4uZtjkuycuBOmS1N573g",
-    imageAlt: "Luxury boutique hotel bedroom with valley views",
-    websiteUrl: "https://www.dormyhouse.co.uk/",
+      "https://dormyhouse.co.uk/wp-content/uploads/2023/07/750x500_Dormy_The-Studio-5.jpg",
+    imageAlt: "Dormy House studio room",
+    websiteUrl: "https://dormyhouse.co.uk/",
   },
   {
-    id: "shepherds-hut-bibury",
-    name: "Arlington Shepherd's Hut",
+    id: "foxhill-manor",
+    name: "Foxhill Manor",
     description:
-      "Romantic off-grid hut beside the river — wood burner, stargazing deck, and village walks on the doorstep.",
-    category: "Glamping",
-    dogFriendly: true,
-    priceLevel: 2,
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBpyeUlrbpv0DBKuxOPkok26a6qwuZ3Q407tj1hx3p5yCCNjwxcdvbgBsMyPNhsNKDVFmaDXllP13f6a9g9WT5oaCg8BL0ureYR2TRhtBHHle7-nM9-qJsADdsaoO3QFyLuRGiWh_Wm-iwNbknm0pg_FWKAZEmY5NLCYVT9fwBmHEgTnIenfB5WW74PvVEO5PE3HS3R20LzfFHTSqLvVO5Tuv0IIjYJ3mnc6CHUAoTO9NlZsNS0YtsahgyBpaOyDKI51NBkwAbZKA",
-    imageAlt: "Shepherd's hut with fire glow near a Cotswold river",
-    websiteUrl: "https://www.arlingtonshepherdshut.co.uk/",
-  },
-  {
-    id: "coln-valley-cottage",
-    name: "Coln Valley Cottage",
-    description:
-      "Honey-stone holiday cottage sleeping six, with a walled garden and easy access to Bibury and Burford.",
-    category: "Cottages",
-    dogFriendly: true,
-    priceLevel: 2,
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDdOcNnwcH0POjoLioz9hOh138G4xpFszmVQf3fnEGE2dcnnjBRFbp0dmBPqqiVcMYJuOQULEqkMjm9dvNpXmyPrCSN1hQXLXWD91VK64Un4pPyDMJZ923W85Tar1rRae_Qtlm30oDIgGnASlxzuIIgELwvFkYnm0-2iSngPfsXwhIgeCHaVg_24zIQnymVIc2SF5fdvs7dpH2mcTf6ged3O6HoMIOEaZQOt_qEROlQpJkkZ8SLKH2WoTDj3eoWPSsq30g2052sXg",
-    imageAlt: "Honey-stone cottage with garden in a Cotswold village",
-    websiteUrl: "https://www.colnvalleycottage.co.uk/",
-  },
-  {
-    id: "kingham-bed-breakfast",
-    name: "Kingham Bed & Breakfast",
-    description:
-      "Two-room B&B above a village bakery — unfussy comfort and excellent sourdough at breakfast.",
-    category: "B&Bs",
+      "All-inclusive and genuinely private — the whole manor is yours. One of the few places in the Cotswolds where you won't share your stay with strangers.",
+    category: "Exclusive Use",
+    location: "Broadway",
+    address: "Farncombe Estate, Broadway WR12 7LJ",
     dogFriendly: false,
-    priceLevel: 1,
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDF4Fc4iethe0SWQg9QKgPHqykcEh3OMDuLU71vosj4eDXt0vh7ZP54zJonJbNDsCGUII5GD_kIpLoYjULb0Jkv8O_MyxBzh5_i6AxC6iCuNMDwN_AwDK-s_UKBTp1VaACRtIYDO4m0ancPb6eLCGIPRGkN8HlH0CZyrxvrf0yL7PJx5wQGoBE-u2QE4UBepfBBJcK7H90FqxzrJfaU7LcHdMiICau0k3ODFbwXJHFURcJsvMA5sK2Yyi2YjVueT3C5DbsG3R3bGA",
-    imageAlt: "Village B&B above a stone bakery front",
-    websiteUrl: "https://www.kinghambedandbreakfast.co.uk/",
-  },
-  {
-    id: "slaughters-manor",
-    name: "Slaughters Manor House",
-    description:
-      "Elizabethan manor on the river Eye with panelled dining room and individually styled bedrooms.",
-    category: "Hotels",
-    dogFriendly: true,
     priceLevel: 3,
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDpxuQzk45opIHYWXpXf9IkaVVggnJn71cXR6BZ-eNTDvg3JxDsfoChTLrnQs3nSzn8MGGN3tVJkEREuO9S8pSvm3sOamEbdAfo5sP9Ixg1DgKWcCKPbTDne6VVjrOmwjY24sNahCVa_79V3CqTC6zJT70qxyb23cd2j-xtq_h2177OEUriXIw5qBMNS-nUpK23GoBuP3AzICajERY60vi7JhNY5ocQRRUngiNGtx0lyF3vy22YZ6TiB4zdv_oLgAw8t2shxd0hUQ",
-    imageAlt: "Manor house beside a river in Lower Slaughter",
-    websiteUrl: "https://www.slaughtersmanor.co.uk/",
+    pricePerNight: "£600+",
+    imageUrl: "https://foxhillmanor.com/wp-content/uploads/2026/05/Oak-1.jpg",
+    imageAlt: "Foxhill Manor Oak room",
+    websiteUrl: "https://www.foxhillmanor.com/",
   },
   {
-    id: "hollow-bottom-cottage",
-    name: "Hollow Bottom Cottage",
+    id: "the-fish-hotel",
+    name: "The Fish Hotel",
     description:
-      "Converted barn with exposed beams and a hot tub — ideal base for exploring Stow and the Windrush valley.",
-    category: "Cottages",
-    dogFriendly: true,
+      "Treehouses, shepherd's huts, and cabin suites spread across the Farncombe Estate. A different kind of Cotswolds stay for those who don't want a traditional hotel.",
+    category: "Boutique Hotel",
+    location: "Broadway",
+    address: "Farncombe Estate, Broadway WR12 7LH",
+    dogFriendly: false,
     priceLevel: 2,
+    pricePerNight: "£250+",
     imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCBnymjyuuKFKhrAPqgXbo_vrizXxWRsn5F4zk1t57iAJptbRueUMSpN7BHiHoDT-BZjjJHhHY8hvEGTZCVIGD9UNPB34KK1S01FM_AoXXJPxgK_Nbkl9aFOS5ecb2I4pyxmOeok6cM4dq--Hgd9MfhSTsfgSeUZgey5u6GBmEw4pXvJ9RBH-wxUBpGAPbdfOi7T06bwiw3vNKHME1-_ARwbfo0G2HL6DQD8NELLb42ltdT_AXO2JV8WgNaC80C4m0xyNwMhBi5lA",
-    imageAlt: "Barn conversion cottage with exposed beams",
-    websiteUrl: "https://www.hollowbottomcottage.co.uk/",
+      "https://thefishhotel.co.uk/wp-content/uploads/2023/07/750x500_Fish_small-suite.jpg",
+    imageAlt: "The Fish Hotel small suite",
+    websiteUrl: "https://www.thefishhotel.co.uk/",
+  },
+  {
+    id: "the-painswick",
+    name: "The Painswick",
+    description:
+      "A Palladian villa in Painswick with valley views and interiors that feel more considered than most country house hotels. Fourteen rooms, which keeps it genuinely quiet.",
+    category: "Boutique Hotel",
+    location: "Painswick",
+    address: "Kemps Lane, Painswick GL6 6YB",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£250+",
+    imageUrl:
+      "https://hotelcms-production.imgix.net/thepainswick.co.uk/wp-content/uploads/2026/05/26_June_Painswick_WR_-28.jpg?fit=crop&crop=faces&w=1600&h=1478&auto=compress,format&strip=all",
+    imageAlt: "The Painswick hotel room",
+    websiteUrl: "https://www.thepainswick.co.uk/",
+  },
+  {
+    id: "old-stocks-inn",
+    name: "Old Stocks Inn",
+    description:
+      "A 17th-century inn on Stow's market square, renovated without losing its character. Stow is well placed for the central Cotswolds and this is the best option in town.",
+    category: "Inn",
+    location: "Stow-on-the-Wold",
+    address: "Market Square, Stow-on-the-Wold GL54 1AF",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£200+",
+    imageUrl:
+      "https://www.oldstocksinn.com/images/content/standard-images/rooms/house/room-12/rooms-house-12-standard-2.jpg",
+    imageAlt: "Old Stocks Inn room",
+    websiteUrl: "http://www.oldstocksinn.com/",
+  },
+  {
+    id: "the-wild-rabbit-rooms",
+    name: "The Wild Rabbit",
+    description:
+      "Six rooms above one of the best restaurants in the Cotswolds. Kingham is a proper village and this is the right way to stay in it.",
+    category: "Inn",
+    location: "Kingham",
+    address: "Church St, Kingham OX7 6YA",
+    dogFriendly: false,
+    priceLevel: 3,
+    pricePerNight: "£300+",
+    imageUrl:
+      "https://bookings.thewildrabbit.co.uk/image/fit/640x480/storage/46-rooms-6537c17a9ded6.jpg",
+    imageAlt: "The Wild Rabbit room Kingham",
+    websiteUrl: "https://thewildrabbit.co.uk/",
+  },
+  {
+    id: "buckland-manor",
+    name: "Buckland Manor",
+    description:
+      "A 13th-century manor in ten acres of gardens between Broadway and the hills. Formal in the best sense — attentive service, serious cooking, genuine quiet.",
+    category: "Manor House",
+    location: "Buckland, Broadway",
+    address: "Buckland, Broadway WR12 7LY",
+    dogFriendly: false,
+    priceLevel: 3,
+    pricePerNight: "£400+",
+    imageUrl:
+      "https://bucklandmanor.co.uk/wp-content/uploads/sites/8/2026/01/BMA-Bedrooms-SupFourPost-Oak-Old-Photo-1000px.jpg",
+    imageAlt: "Buckland Manor four poster bedroom",
+    websiteUrl: "https://www.bucklandmanor.co.uk/",
+  },
+  {
+    id: "the-feathered-nest",
+    name: "The Feathered Nest",
+    description:
+      "Four rooms above the restaurant in Nether Westcote with views across the Evenlode Valley. The valley setting is genuinely impressive — book a room that faces it.",
+    category: "Inn",
+    location: "Nether Westcote",
+    address: "Nether Westcote OX7 6SD",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£250+",
+    imageUrl:
+      "https://thefeatherednestinn.co.uk/wp-content/uploads/2023/03/G34A6030-640x480.jpg",
+    imageAlt: "The Feathered Nest Inn room",
+    websiteUrl: "http://www.thefeatherednestinn.co.uk/",
+  },
+  {
+    id: "burleigh-court",
+    name: "Burleigh Court",
+    description:
+      "A Grade II listed manor on the Golden Valley near Minchinhampton. Less well known than most on this list, which is part of its appeal.",
+    category: "Manor House",
+    location: "Minchinhampton",
+    address: "Minchinhampton, Stroud GL5 2PF",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£200+",
+    imageUrl:
+      "https://r.profitroom.com/burleighcourtcotswolds/images/gallery/29d8ac38-3d84-4ec8-8fbb-1eee8ae830dd.jpeg",
+    imageAlt: "Burleigh Court manor house",
+    websiteUrl: "https://burleighcourtcotswolds.co.uk/",
+  },
+  {
+    id: "the-old-bell-hotel",
+    name: "The Old Bell Hotel",
+    description:
+      "Claims to be England's oldest hotel, with records going back to 1220. Malmesbury is on the edge of the Cotswolds but the building alone is worth the detour.",
+    category: "Historic Inn",
+    location: "Malmesbury",
+    address: "Abbey Row, Malmesbury SN16 0BW",
+    dogFriendly: false,
+    priceLevel: 3,
+    pricePerNight: "£250+",
+    imageUrl:
+      "https://hotelcms-production.imgix.net/oldbellhotel.co.uk/wp-content/uploads/2022/05/Master_Room-Athelstan.jpg",
+    imageAlt: "The Old Bell Hotel Athelstan room",
+    websiteUrl: "http://www.oldbellhotel.co.uk/",
+  },
+  {
+    id: "cotswold-house",
+    name: "Cotswold House Hotel",
+    description:
+      "A Regency townhouse on Chipping Campden's high street with a spa in the garden. Chipping Campden is one of the better bases for the northern Cotswolds and this is the right place to stay in it.",
+    category: "Spa Hotel",
+    location: "Chipping Campden",
+    address: "The Square, Chipping Campden GL55 6AN",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£250+",
+    imageUrl:
+      "https://www.cotswoldhouse.com/wp-content/uploads/2025/10/No33_CottageJuniorSuite-5.jpg",
+    imageAlt: "Cotswold House Hotel cottage suite",
+    websiteUrl: "http://www.cotswoldhouse.com/",
+  },
+  {
+    id: "the-bay-tree",
+    name: "The Bay Tree",
+    description:
+      "A medieval building in Burford with a walled garden and rooms that feel genuinely old rather than themed. Quiet, well-located, and unpretentious.",
+    category: "Inn",
+    location: "Burford",
+    address: "Sheep Street, Burford OX18 4LW",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£200+",
+    imageUrl:
+      "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/-/media/sites/cotswolds/bay-tree/2025-rooms-bay-tree/superior-double/bay-tree---beech-bedroom-wide.jpg?la=en&h=1280&w=1920&hash=9A6C89464AA4EE911FA891226E45BF4B",
+    imageAlt: "The Bay Tree Hotel Burford bedroom",
+    websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/",
+  },
+  {
+    id: "the-pig-cotswolds",
+    name: "THE PIG in the Cotswolds",
+    description:
+      "The PIG formula works well here — kitchen garden produce, relaxed service, and rooms that feel lived-in rather than designed. Popular, so book ahead.",
+    category: "Boutique Hotel",
+    location: "Barnsley, Cirencester",
+    address: "Barnsley, Cirencester GL7 5EE",
+    dogFriendly: false,
+    priceLevel: 3,
+    pricePerNight: "£350+",
+    imageUrl:
+      "https://www.thepighotel.com/media/umkdbs2g/field-luxe-5.jpg?rxy=0.49624060150375937,0.5924516572634196&width=2663&v=1dc1c30473b9f90",
+    imageAlt: "THE PIG in the Cotswolds field luxe room",
+    websiteUrl: "https://www.thepighotel.com/in-the-cotswolds/",
+  },
+  {
+    id: "wild-thyme-and-honey",
+    name: "Wild Thyme & Honey",
+    description:
+      "A small boutique inn in Ampney Crucis with six rooms and a kitchen that takes its cooking seriously. Quiet, fairly priced, and easier to get into than the better-known options.",
+    category: "Boutique Hotel",
+    location: "Ampney Crucis",
+    address: "Ampney Crucis, Cirencester GL7 5RY",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£250+",
+    imageUrl:
+      "https://grosvenorpi-wth.imgix.net/0_JEP_2372_dba82a5be7.jpg?fm=avif&auto=format&w=2000",
+    imageAlt: "Wild Thyme and Honey hotel room",
+    websiteUrl: "https://www.wildthymeandhoney.co.uk/",
+  },
+  {
+    id: "the-lygon-arms",
+    name: "The Lygon Arms",
+    description:
+      "A 14th-century coaching inn on Broadway's high street with a history that includes Charles I. The building is the draw — the rooms have been modernised but the bones are impressive.",
+    category: "Historic Inn",
+    location: "Broadway",
+    address: "High Street, Broadway WR12 7DU",
+    dogFriendly: false,
+    priceLevel: 3,
+    pricePerNight: "£350+",
+    imageUrl:
+      "https://www.lygonarmshotel.co.uk/media/ko4jkzl1/high-street-superior-room-the-lygon-arms-1.jpg?anchor=center&mode=crop&quality=70&width=2000&height=1200&rnd=134026624582400000",
+    imageAlt: "The Lygon Arms Broadway",
+    websiteUrl: "https://www.lygonarmshotel.co.uk/",
   },
 ];

@@ -96,6 +96,54 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "bucklandmanor.co.uk",
       },
+      {
+        protocol: "https",
+        hostname: "foxhillmanor.com",
+      },
+      {
+        protocol: "https",
+        hostname: "thefishhotel.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "www.oldstocksinn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "bookings.thewildrabbit.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "r.profitroom.com",
+      },
+      {
+        protocol: "https",
+        hostname: "burleighcourtcotswolds.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "www.cotswoldhouse.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.cotswold-inns-hotels.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "www.thepighotel.com",
+      },
+      {
+        protocol: "https",
+        hostname: "grosvenorpi-wth.imgix.net",
+      },
+      {
+        protocol: "https",
+        hostname: "www.lygonarmshotel.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "bigfeastival.com",
+      },
     ],
   },
   async redirects() {
