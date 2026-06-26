@@ -253,7 +253,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   },
   {
     id: "the-pig-cotswolds",
-    name: "THE PIG in the Cotswolds",
+    name: "The Pig",
     description:
       "The PIG formula works well here — kitchen garden produce, relaxed service, and rooms that feel lived-in rather than designed. Popular, so book ahead.",
     category: "Boutique Hotel",
@@ -300,3 +300,18 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     websiteUrl: "https://www.lygonarmshotel.co.uk/",
   },
 ];
+
+const HOMEPAGE_FEATURED_STAY_IDS = [
+  "the-fish-hotel",
+  "dormy-house",
+  "foxhill-manor",
+  "the-pig-cotswolds",
+] as const;
+
+/** Featured stays for the homepage, in display order. */
+export function getHomepageFeaturedStays(): PlacesToStayListing[] {
+  return HOMEPAGE_FEATURED_STAY_IDS.flatMap((id) => {
+    const listing = PLACES_TO_STAY_LISTINGS.find((stay) => stay.id === id);
+    return listing ? [listing] : [];
+  });
+}

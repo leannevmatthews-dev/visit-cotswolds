@@ -6,9 +6,9 @@ import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import {
   HERO_IMAGE,
   JOURNEY_CARDS,
-  STAY_CARDS,
   VILLAGE_CARDS,
 } from "@/lib/home-data";
+import { getHomepageFeaturedStays } from "@/lib/places-to-stay-data";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { getOrganizationJsonLd } from "@/lib/seo/schema";
 import { getVillageHeroImagesBySlugs } from "@/lib/villages/queries";
@@ -24,6 +24,7 @@ export default async function HomePage() {
   const villageHeroImagesBySlug = await getVillageHeroImagesBySlugs(
     VILLAGE_CARDS.map((card) => card.slug),
   );
+  const featuredStays = getHomepageFeaturedStays();
 
   return (
     <>
@@ -220,20 +221,20 @@ export default async function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 gap-x-gutter gap-y-12 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-              {STAY_CARDS.map((stay) => (
+              {featuredStays.map((stay) => (
                 <a
                   key={stay.name}
                   href="/places-to-stay"
                   className="group cursor-pointer block min-w-0"
                 >
                   <div className="relative aspect-[3/4] overflow-hidden mb-4 md:mb-6">
-                    {stay.image ? (
+                    {stay.imageUrl ? (
                       <Image
-                        alt={stay.alt}
+                        alt={stay.imageAlt}
                         className="object-cover transition-transform duration-1000 group-hover:scale-105"
                         fill
                         sizes="(max-width: 520px) 100vw, (max-width: 1280px) 33vw, 20vw"
-                        src={stay.image}
+                        src={stay.imageUrl}
                       />
                     ) : (
                       <div
@@ -257,7 +258,7 @@ export default async function HomePage() {
                         FROM
                       </span>
                       <span className="font-body-sm text-tertiary text-xs md:text-sm whitespace-nowrap">
-                        {stay.price}
+                        {stay.pricePerNight}
                       </span>
                     </div>
                   </div>
