@@ -57,26 +57,95 @@ function isCompleteDateRange(
   return Boolean(range?.from && range?.to);
 }
 
+const DATE_BADGE_CLASS =
+  "shrink-0 bg-background/80 px-2.5 py-2 text-center backdrop-blur-md sm:px-3 sm:py-2.5 md:min-w-[60px] md:px-4 md:py-3";
+
+const DATE_BADGE_POSITION_CLASS =
+  "absolute left-3 top-3 z-10 sm:left-4 sm:top-4 md:left-6 md:top-6";
+
+const DATE_BADGE_MONTH_CLASS =
+  "block font-label-caps text-[9px] leading-tight opacity-60 sm:text-[10px]";
+
+const DATE_BADGE_DAY_CLASS =
+  "block font-headline-md text-lg leading-none sm:text-xl md:text-2xl";
+
+function abbreviateMonth(month: string): string {
+  return month.trim().slice(0, 3).toUpperCase();
+}
+
+function formatRecurringBadgeLabel(event: WhatsOnEvent): string {
+  return (event.frequency ?? event.recurring ?? "Regular event").toUpperCase();
+}
+
+function shouldShowRecurringDetail(event: WhatsOnEvent): boolean {
+  if (!event.recurring) return false;
+  const badge = (event.frequency ?? event.recurring).trim().toLowerCase();
+  const detail = event.recurring.trim().toLowerCase();
+  return detail !== badge && !detail.startsWith(`${badge},`);
+}
+
 function EventCard({ event }: { event: WhatsOnEvent }) {
+  const hasImage = Boolean(event.imageUrl?.trim());
+  const isRecurring = Boolean(event.recurring);
+  const isMultiDay = Boolean(event.endDay && event.endMonth);
+
   return (
     <article className="event-card group cursor-pointer">
-      <div className="relative mb-6 aspect-square overflow-hidden bg-surface-container-low">
-        <Image
-          alt={event.imageAlt}
-          className="object-cover transition-transform duration-1000 group-hover:scale-105"
-          fill
-          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
-          src={event.imageUrl}
-          unoptimized
-        />
-        <div className="glass-overlay absolute inset-0 opacity-60" />
-        <div className="absolute left-6 top-6 min-w-[60px] bg-background/80 px-4 py-3 text-center backdrop-blur-md">
-          <span className="block font-label-caps text-[10px] opacity-60">
-            {event.month}
-          </span>
-          <span className="block font-headline-md text-2xl">{event.day}</span>
+      <a
+        aria-label={`Visit ${event.title} website`}
+        className="relative mb-6 block aspect-square bg-surface-container-low"
+        href={event.websiteUrl}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div className="absolute inset-0 overflow-hidden">
+          {hasImage ? (
+            <>
+              <Image
+                alt={event.imageAlt}
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                src={event.imageUrl}
+                unoptimized
+              />
+              <div className="glass-overlay absolute inset-0 opacity-60" />
+            </>
+          ) : null}
         </div>
-      </div>
+        {isRecurring ? (
+          <div className={`${DATE_BADGE_POSITION_CLASS} ${DATE_BADGE_CLASS}`}>
+            <span className="block font-label-caps text-[8px] leading-tight sm:text-[10px]">
+              {formatRecurringBadgeLabel(event)}
+            </span>
+          </div>
+        ) : isMultiDay ? (
+          <div
+            className={`${DATE_BADGE_POSITION_CLASS} flex max-w-[calc(100%-1.5rem)] items-center gap-0.5 sm:max-w-[calc(100%-2rem)] sm:gap-1 md:max-w-[calc(100%-3rem)]`}
+          >
+            <div className={DATE_BADGE_CLASS}>
+              <span className={DATE_BADGE_MONTH_CLASS}>
+                {abbreviateMonth(event.month)}
+              </span>
+              <span className={DATE_BADGE_DAY_CLASS}>{event.day}</span>
+            </div>
+            <span className="shrink-0 px-0.5 font-label-caps text-[8px] uppercase opacity-60 sm:text-[10px]">
+              to
+            </span>
+            <div className={DATE_BADGE_CLASS}>
+              <span className={DATE_BADGE_MONTH_CLASS}>
+                {abbreviateMonth(event.endMonth!)}
+              </span>
+              <span className={DATE_BADGE_DAY_CLASS}>{event.endDay}</span>
+            </div>
+          </div>
+        ) : (
+          <div className={`${DATE_BADGE_POSITION_CLASS} ${DATE_BADGE_CLASS}`}>
+            <span className={DATE_BADGE_MONTH_CLASS}>{event.month}</span>
+            <span className={DATE_BADGE_DAY_CLASS}>{event.day}</span>
+          </div>
+        )}
+      </a>
       <div className="space-y-3">
         <div className="flex items-center gap-2">
           <span
@@ -89,15 +158,29 @@ function EventCard({ event }: { event: WhatsOnEvent }) {
             {event.location}
           </span>
         </div>
+        {isRecurring && shouldShowRecurringDetail(event) ? (
+          <p className="font-label-caps text-[10px] text-limestone">{event.recurring}</p>
+        ) : null}
         <span className="font-label-caps text-[10px] tracking-widest text-limestone uppercase">
           {formatEventCategories(event.categories)}
         </span>
         <h3 className="font-headline-md text-2xl transition-colors group-hover:text-limestone">
           {event.title}
         </h3>
-        <p className="font-body-sm line-clamp-3 text-on-surface-variant">
+        <p className="font-body-sm text-on-surface-variant">
           {event.description}
         </p>
+        <a
+          className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors hover:text-primary"
+          href={event.websiteUrl}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Visit Website
+          <span className="material-symbols-outlined text-sm" aria-hidden="true">
+            north_east
+          </span>
+        </a>
       </div>
     </article>
   );
@@ -194,6 +277,15 @@ export function WhatsOnContent() {
     setAppliedDateRange(undefined);
     setCalendarDateRange(undefined);
     setIsDateRangeOpen(false);
+  }
+
+  function handleCategoryFilterChange(filterId: string) {
+    setActiveFilter(filterId);
+
+    if (filterId === "all") {
+      setActiveDateFilter(null);
+      clearDateRange();
+    }
   }
 
   function handleRangeSelect(range: DateRange | undefined) {
@@ -320,7 +412,7 @@ export function WhatsOnContent() {
                   <button
                     key={filter.id}
                     type="button"
-                    onClick={() => setActiveFilter(filter.id)}
+                    onClick={() => handleCategoryFilterChange(filter.id)}
                     className={`shrink-0 whitespace-nowrap font-label-caps text-label-caps transition-colors ${
                       isActive
                         ? "border-b-2 border-primary pb-1 text-primary"
@@ -336,7 +428,7 @@ export function WhatsOnContent() {
         </nav>
 
         <section className="mx-auto max-w-container-max px-margin-mobile pb-24 pt-10 md:px-margin-desktop md:pb-32 md:pt-12">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {visibleEvents.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
