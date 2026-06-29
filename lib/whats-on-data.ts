@@ -396,7 +396,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
   },
   {
     id: "cirencester-abbey-festival-2026",
-    title: "Cirencester Abbey Grounds Music Festival",
+    title: "Phoenix Festival",
     description:
       "A free community music and arts festival in Cirencester's Abbey Grounds over the August bank holiday weekend. Around 20,000 people attend each year. Two days of live music, dance and family entertainment. Free.",
     location: "Abbey Grounds, Cirencester",
@@ -404,10 +404,10 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     day: "29",
     year: 2026,
     imageUrl:
-      "http://static1.squarespace.com/static/563789b6e4b03c7ded1a9ff2/t/565450cbe4b0eb26e63948c1/1448366284278/CTC_white-logo.png?format=1500w",
+      "https://static.wixstatic.com/media/e4d6f7_5b148aa055a5495581b6c92b9bbfa756~mv2.png/v1/fill/w_1960,h_604,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e4d6f7_5b148aa055a5495581b6c92b9bbfa756~mv2.png",
     imageAlt: "Cirencester Abbey Grounds music festival",
     categories: ["Festivals"],
-    websiteUrl: "https://www.cirencester.gov.uk",
+    websiteUrl: "https://www.phoenix-festival.co.uk/",
   },
   {
     id: "country-cup-polo-2026",
@@ -612,7 +612,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     month: "December",
     day: "1",
     year: 2026,
-    imageUrl: "https://www.campdenmarket.co.uk/images/christmas_pictures/IMG-15.JPG",
+    imageUrl: "https://images.pexels.com/photos/29820836/pexels-photo-29820836.jpeg",
     imageAlt: "Chipping Campden Christmas market",
     categories: ["Food & Festivals", "Family"],
     websiteUrl: "https://www.chippingcampdenonline.org/chipping-campden-christmas-market",
