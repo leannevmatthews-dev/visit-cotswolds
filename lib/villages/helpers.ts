@@ -167,3 +167,51 @@ export function parkingMapEmbedUrl(mapUrl: string | null): string | null {
   }
   return mapUrl;
 }
+
+type PlacePickListing = {
+  name: string;
+  imageUrl: string;
+  websiteUrl: string;
+};
+
+function normalizePlacePickName(name: string): string {
+  return name.trim().toLowerCase();
+}
+
+/** Fill missing image/link on village place picks from directory listings by name. */
+export function enrichPlacePicksFromListings<
+  TPick extends {
+    name: string;
+    image_url: string | null;
+    external_link: string | null;
+  },
+>(picks: TPick[], listings: PlacePickListing[]): TPick[] {
+  const listingsByName = new Map(
+    listings.map((listing) => [
+      normalizePlacePickName(listing.name),
+      listing,
+    ]),
+  );
+
+  return picks.map((pick) => {
+    const listing = listingsByName.get(normalizePlacePickName(pick.name));
+    if (!listing) {
+      return pick;
+    }
+
+    const imageUrlEmpty = !pick.image_url?.trim();
+    const externalLinkEmpty = !pick.external_link?.trim();
+
+    return {
+      ...pick,
+      image_url:
+        imageUrlEmpty && listing.imageUrl.trim()
+          ? listing.imageUrl.trim()
+          : pick.image_url,
+      external_link:
+        externalLinkEmpty && listing.websiteUrl.trim()
+          ? listing.websiteUrl.trim()
+          : pick.external_link,
+    };
+  });
+}

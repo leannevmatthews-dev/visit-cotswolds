@@ -63,7 +63,7 @@ export function TextInput({
       <input
         id={id}
         type="text"
-        value={value}
+        value={value ?? ""}
         required={required}
         placeholder={placeholder}
         onChange={(event) => onChange(event.target.value)}
@@ -327,7 +327,7 @@ export function NumberInput({
         type="number"
         min={min}
         max={max}
-        value={value}
+        value={value ?? ""}
         onChange={(event) => onChange(Number(event.target.value))}
         className={inputClassName}
       />

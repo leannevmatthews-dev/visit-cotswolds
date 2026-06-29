@@ -466,7 +466,7 @@
     position: relative;
     padding-left: 1rem;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: var(--text-body-sm);
     line-height: 1.5;
     color: #c8c7be;
 }

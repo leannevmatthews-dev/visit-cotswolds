@@ -13,7 +13,14 @@ import { VillageComparisonSection } from "@/components/villages/village-comparis
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import { VillageInBrief } from "@/components/villages/village-in-brief";
 import { VisitorFitSection } from "@/components/villages/visitor-fit-section";
-import { heroImageUrl, splitParagraphs, villageNameToSlug } from "@/lib/villages/helpers";
+import { PLACES_TO_EAT_LISTINGS } from "@/lib/places-to-eat-data";
+import { PLACES_TO_STAY_LISTINGS } from "@/lib/places-to-stay-data";
+import {
+  enrichPlacePicksFromListings,
+  heroImageUrl,
+  splitParagraphs,
+  villageNameToSlug,
+} from "@/lib/villages/helpers";
 import type { SeasonalAdvice, Village } from "@/lib/villages/types";
 
 type VillageContentProps = {
@@ -71,6 +78,14 @@ export function VillageContent({
   const overviewParagraphs = splitParagraphs(village.overview_body);
   const ourTakeParagraphs = splitParagraphs(village.our_take_body);
   const hasVideo = Boolean(village.video_embed_url);
+  const placesToStay = enrichPlacePicksFromListings(
+    village.places_to_stay,
+    PLACES_TO_STAY_LISTINGS,
+  );
+  const placesToEat = enrichPlacePicksFromListings(
+    village.places_to_eat,
+    PLACES_TO_EAT_LISTINGS,
+  );
 
   return (
     <>
@@ -238,7 +253,7 @@ export function VillageContent({
           {village.curated_experiences.length > 0 && (
             <div className="mb-24 md:mb-32">
               <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 text-center leading-tight">
-                What To See In {village.name}
+                Things To Do In {village.name}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                 {village.curated_experiences.map((experience) => (
@@ -296,7 +311,7 @@ export function VillageContent({
                     </a>
                   </div>
                   <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
-                    {village.places_to_stay.map((pick) => (
+                    {placesToStay.map((pick) => (
                       <PlacePickCard
                         key={pick.name}
                         pick={pick}
@@ -321,7 +336,7 @@ export function VillageContent({
                     </a>
                   </div>
                   <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
-                    {village.places_to_eat.map((pick) => (
+                    {placesToEat.map((pick) => (
                       <PlacePickCard
                         key={pick.name}
                         pick={pick}
@@ -468,7 +483,7 @@ export function VillageContent({
           {village.nearby_villages.length > 0 && (
             <div className="mb-24 md:mb-32">
               <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight mb-10">
-                Beyond {village.name}
+                Villages Near {village.name}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {village.nearby_villages.map((nearby) => (
