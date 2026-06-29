@@ -1,11 +1,10 @@
 export type WhatsOnCategory =
   | "Festivals"
-  | "Food & Festivals"
+  | "Food"
   | "Markets"
   | "Sporting"
   | "Culture"
   | "Family"
-  | "Seasonal"
   | "Events"
   | "Experiences & Wellness";
 
@@ -41,12 +40,11 @@ export const WHATS_ON_HERO_IMAGE =
 export const WHATS_ON_FILTERS: WhatsOnFilter[] = [
   { id: "all", label: "All Events" },
   { id: "festivals", label: "Festivals", matchCategory: "Festivals" },
-  { id: "food-markets", label: "Food & Festivals", matchCategory: "Food & Festivals" },
+  { id: "food", label: "Food", matchCategory: "Food" },
   { id: "markets", label: "Markets", matchCategory: "Markets" },
   { id: "sporting", label: "Sporting", matchCategory: "Sporting" },
   { id: "culture", label: "Culture", matchCategory: "Culture" },
   { id: "family", label: "Family", matchCategory: "Family" },
-  { id: "seasonal", label: "Seasonal", matchCategory: "Seasonal" },
   {
     id: "experiences-wellness",
     label: "Experiences & Wellness",
@@ -67,7 +65,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     imageUrl:
       "https://i0.wp.com/cotswoldshow.co.uk/wp-content/uploads/2026/06/4.png?fit=768%2C960&ssl=1",
     imageAlt: "Cotswold Show Cirencester Park",
-    categories: ["Food & Festivals"],
+    categories: ["Food"],
     websiteUrl: "https://www.cotswoldshow.co.uk",
   },
   {
@@ -82,7 +80,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     imageUrl:
       "https://www.eatdrinkseek.co.uk/wp-content/uploads/2018/11/cotswold-beer-festival-postlip.jpg",
     imageAlt: "Cotswold Beer Festival Postlip Hall",
-    categories: ["Food & Festivals"],
+    categories: ["Food"],
     websiteUrl: "https://postlip.camra.org.uk/",
   },
   {
@@ -257,7 +255,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     imageUrl:
       "https://www.cotswoldlavender.co.uk/cdn/shop/files/DSC_0535.jpg?v=1771843369&width=750",
     imageAlt: "Cotswold Lavender fields Snowshill",
-    categories: ["Seasonal"],
+    categories: ["Experiences & Wellness"],
     websiteUrl: "https://www.cotswoldlavender.co.uk",
   },
   {
@@ -440,7 +438,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     imageUrl:
       "https://bigfeastival.com/wp-content/uploads/2025/01/The-Big-Feastival-2024_20240823_Atmosphere_GaelleBeri_9077-Instagram.jpeg",
     imageAlt: "The Big Feastival Alex James Farm Kingham",
-    categories: ["Festivals", "Food & Festivals"],
+    categories: ["Festivals", "Food"],
     websiteUrl: "https://www.bigfeastival.com",
   },
   {
@@ -454,7 +452,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl: "https://moretonshow.co.uk/wp-content/uploads/2025/06/IMG_5527-1-scaled.jpg",
     imageAlt: "Moreton-in-Marsh Show showground",
-    categories: ["Food & Festivals", "Family"],
+    categories: ["Food", "Family"],
     websiteUrl: "https://www.moretonshow.co.uk",
   },
   {
@@ -501,7 +499,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5523d629e4b0c8f3afe085cf/44a42761-1f81-4743-94f7-56df895cff45/Village-Green-Broadway-Festival-Worcestershire-UK.jpg?format=2500w",
     imageAlt: "Broadway Food Festival high street artisan stalls",
-    categories: ["Food & Festivals"],
+    categories: ["Food"],
     websiteUrl: "https://www.broadway-cotswolds.co.uk/food-festival",
   },
   {
@@ -550,7 +548,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     imageUrl:
       "https://cotswoldfair.com/wp21/wp-content/uploads/2025/07/Website-Images-3.png",
     imageAlt: "Christmas Cotswold Fair Daylesford artisan stalls",
-    categories: ["Food & Festivals"],
+    categories: ["Food"],
     websiteUrl: "https://www.cotswoldfair.com",
   },
   {
@@ -614,7 +612,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl: "https://images.pexels.com/photos/29820836/pexels-photo-29820836.jpeg",
     imageAlt: "Chipping Campden Christmas market",
-    categories: ["Food & Festivals", "Family"],
+    categories: ["Food", "Family"],
     websiteUrl: "https://www.chippingcampdenonline.org/chipping-campden-christmas-market",
   },
   {
@@ -629,7 +627,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     imageUrl:
       "https://gjkgchwqyjmemwadlpjv.supabase.co/storage/v1/object/public/media/bdf4d798-883e-402d-85d3-3e5e10833df1/bjnq498f3t.jpg",
     imageAlt: "Bourton-on-the-Water Christmas market riverside",
-    categories: ["Food & Festivals", "Family"],
+    categories: ["Food", "Family"],
     websiteUrl: "https://www.bourtoninfo.com",
   },
   {
@@ -644,7 +642,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     imageUrl:
       "https://www.cirencesterrocks.co.uk/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fmytownrocks.appspot.com%2Fcirencesterrocks.co.uk%2Flistings%2F18k0L15DStvJKd7V2xCu%2F1637662217603_Christmas-Market.JPG&w=1920&q=75",
     imageAlt: "Cirencester Christmas market market place",
-    categories: ["Food & Festivals"],
+    categories: ["Food"],
     websiteUrl: "https://cirencester.gov.uk/christmas-in-cirencester",
   },
   {
@@ -775,7 +773,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     day: "1",
     year: 2026,
     imageUrl:
-      "https://www.daylesford.com/media/wysiwyg/Fixed_aspect_ratio_image.png?format=webp&quality=85&format=webp&quality=85&width=2912",
+      "https://www.daylesford.com/media/wysiwyg/Demo-Widgets-Images/banner-image-about_us.jpg?format=webp&quality=85",
     imageAlt: "Daylesford Farm seasonal workshop cutting garden",
     categories: ["Experiences & Wellness"],
     websiteUrl: "https://www.daylesford.com/shop/events",

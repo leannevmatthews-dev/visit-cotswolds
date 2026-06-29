@@ -50,13 +50,25 @@
 }
 
 .village-in-brief__tip-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
+    font-family: var(--font-body);
+    font-size: var(--text-label-caps);
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #C9B99A;
     margin-right: 0.35rem;
+}
+
+.village-inline-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(201, 185, 154, 0.45);
+    text-underline-offset: 0.15em;
+    transition: text-decoration-color 0.15s ease;
+}
+
+.village-inline-link:hover {
+    text-decoration-color: #c9b99a;
 }
 
 /* Village reviewed-by byline */
@@ -301,6 +313,38 @@
     }
 }
 
+.village-nearby-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.village-nearby-card__image-link {
+    display: block;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.village-nearby-card__image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--color-surface-container-high, #1f1f1c);
+}
+
+.village-nearby-card__meta {
+    padding: 0 0.25rem;
+}
+
+.village-nearby-card__name {
+    margin: 0;
+}
+
+.village-nearby-card__drive {
+    margin: 0;
+}
+
+/* Legacy nearby overlay cards (static Bibury page) */
 .village-nearby {
     position: relative;
     height: 280px;
@@ -318,6 +362,14 @@
 
 .village-nearby:hover img {
     transform: scale(1.05);
+}
+
+.village-nearby--unlinked {
+    cursor: default;
+}
+
+.village-nearby--unlinked:hover img {
+    transform: none;
 }
 
 .village-nearby__gradient {
@@ -465,7 +517,7 @@
 .village-visitor-fit__list li {
     position: relative;
     padding-left: 1rem;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: var(--text-body-sm);
     line-height: 1.5;
     color: #c8c7be;
@@ -498,8 +550,8 @@
 .village-table {
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: var(--text-body-sm);
 }
 
 .village-table th,
@@ -510,7 +562,7 @@
 }
 
 .village-table th {
-    font-size: 10px;
+    font-size: var(--text-label-caps);
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -691,7 +743,7 @@
     align-items: center;
     padding: 0.25rem 0.625rem;
     border-radius: 9999px;
-    font-size: 10px;
+    font-size: var(--text-label-caps);
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -827,9 +879,9 @@
 }
 
 .village-pick__title {
-    font-family: 'EB Garamond', serif;
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    line-height: 1.25;
+    font-family: var(--font-display);
+    font-size: var(--text-body-lg);
+    line-height: var(--text-body-lg--line-height);
     color: #e5e2e1;
     transition: color 0.3s ease;
 }
@@ -839,8 +891,8 @@
 }
 
 .village-pick__meta {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
+    font-family: var(--font-body);
+    font-size: var(--text-label-caps);
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -973,9 +1025,9 @@
 }
 
 .village-tip__text {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    line-height: 1.55;
+    font-family: var(--font-body);
+    font-size: var(--text-body-lg);
+    line-height: var(--text-body-lg--line-height);
     color: #c8c7be;
     margin: 0;
 }
@@ -986,7 +1038,7 @@
 }
 
 .village-spec dt {
-    font-size: 10px;
+    font-size: var(--text-label-caps);
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -995,7 +1047,8 @@
 }
 
 .village-spec dd {
-    font-size: 14px;
+    font-size: var(--text-body-lg);
+    line-height: var(--text-body-lg--line-height);
     color: #c8c7be;
     margin: 0 0 1.25rem;
 }
@@ -1122,8 +1175,8 @@
 }
 
 .village-parking-spec__label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
+    font-family: var(--font-body);
+    font-size: var(--text-label-caps);
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1132,9 +1185,9 @@
 }
 
 .village-parking-spec__value {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    line-height: 1.55;
+    font-family: var(--font-body);
+    font-size: var(--text-body-lg);
+    line-height: var(--text-body-lg--line-height);
     color: #e5e2e1;
     margin: 0;
 }
@@ -1242,8 +1295,8 @@
 
 .village-guide-tip__label {
     display: block;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
+    font-family: var(--font-body);
+    font-size: var(--text-label-caps);
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1252,9 +1305,9 @@
 }
 
 .village-guide-tip__text {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    line-height: 1.55;
+    font-family: var(--font-body);
+    font-size: var(--text-body-lg);
+    line-height: var(--text-body-lg--line-height);
     color: #c8c7be;
     margin: 0;
 }
@@ -1263,7 +1316,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    font-size: 10px;
+    font-size: var(--text-label-caps);
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -1302,17 +1355,17 @@
 }
 
 .village-rain-option__title {
-    font-family: 'EB Garamond', serif;
-    font-size: 18px;
+    font-family: var(--font-display);
+    font-size: var(--text-body-lg);
+    line-height: var(--text-body-lg--line-height);
     color: #e5e2e1;
     margin: 0 0 0.25rem;
-    line-height: 1.3;
 }
 
 .village-rain-option__desc {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
+    font-family: var(--font-body);
+    font-size: var(--text-body-lg);
+    line-height: var(--text-body-lg--line-height);
     color: #c8c7be;
     margin: 0;
 }
@@ -1328,7 +1381,7 @@
 
     .village-faq__question {
         padding: 1rem 1.25rem;
-        font-size: 11px;
+        font-size: var(--text-label-caps);
         letter-spacing: 0.08em;
         line-height: 1.4;
     }
@@ -1370,7 +1423,7 @@
     }
 
     .village-rain-option__title {
-        font-size: 16px;
+        font-size: var(--text-body-lg);
     }
 
     .village-parking-location {
@@ -1389,11 +1442,11 @@
     .village-table th,
     .village-table td {
         padding: 0.75rem 0.625rem;
-        font-size: 13px;
+        font-size: var(--text-body-sm);
     }
 
     .village-table th {
-        font-size: 9px;
+        font-size: var(--text-label-caps);
     }
 }
 
@@ -1417,4 +1470,23 @@
 
 .village-practical-header {
     text-align: left;
+}
+
+/* Village page typography tokens */
+@media (min-width: 1280px) {
+    .village-pick__title {
+        font-size: clamp(var(--text-body-lg), 2.5vw, 1.5rem);
+    }
+}
+
+@media (max-width: 1279px) {
+    .village-tip__text,
+    .village-guide-tip__text,
+    .village-parking-spec__value,
+    .village-rain-option__desc,
+    .village-spec dd,
+    .village-table {
+        font-size: var(--text-body-sm);
+        line-height: var(--text-body-sm--line-height);
+    }
 }

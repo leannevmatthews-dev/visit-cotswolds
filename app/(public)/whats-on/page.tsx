@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { WhatsOnContent } from "@/components/whats-on/whats-on-content";
 import { pageMetadata } from "@/lib/seo/metadata";
+import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
 export const metadata: Metadata = pageMetadata({

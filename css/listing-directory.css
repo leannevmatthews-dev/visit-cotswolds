@@ -1,9 +1,42 @@
 /* Shared listing directory cards (Places to Eat, Stay, Things to Do) */
 .listing-directory-card__name {
-    font-family: var(--font-eb-garamond), "EB Garamond", serif;
+    font-family: var(--font-display);
 }
 
 .listing-directory-card__link:focus-visible {
     outline: 2px solid rgba(201, 185, 154, 0.6);
     outline-offset: 2px;
+}
+
+/* Directory page hero — mobile typography (shared hero spacing in village-hero.css) */
+@media (max-width: 1279px) {
+    .directory-page-hero .village-hero__copy .directory-page-hero__subtitle {
+        font-size: var(--text-body-lg) !important;
+        line-height: var(--text-body-lg--line-height);
+        margin-top: 0.625rem;
+    }
+
+    .directory-page-hero .village-hero__copy .directory-page-hero__intro {
+        font-size: var(--text-body-sm) !important;
+        line-height: var(--text-body-sm--line-height);
+        margin-top: 0.75rem;
+    }
+
+    .directory-page-hero .directory-page-hero__actions {
+        margin-top: 0.75rem;
+        gap: 0.625rem;
+    }
+
+    .directory-page-hero .directory-page-hero__actions-row {
+        gap: 0.625rem;
+    }
+
+    .listing-directory-filter-nav .listing-directory-filter-nav__inner {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .listing-directory-filter-nav .listing-directory-filter-nav__filters {
+        gap: 1.5rem;
+    }
 }

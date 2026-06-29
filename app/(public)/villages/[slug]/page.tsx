@@ -15,6 +15,7 @@ import {
   getVillageHeroImagesByNames,
 } from "@/lib/villages/queries";
 import { combineWithVillageNames } from "@/lib/villages/helpers";
+import { filterLinkableNearbyVillages } from "@/lib/villages/village-page-links";
 import "@/css/village-hero.css";
 import "@/css/village-page.css";
 
@@ -73,17 +74,29 @@ export default async function VillagePage({ params }: VillagePageProps) {
     notFound();
   }
 
+  const linkableNearbyVillages = filterLinkableNearbyVillages(
+    village.nearby_villages ?? [],
+  );
+
   const heroImageNames = [
     ...(village.comparison_stats ?? []).map((row) => row.village_name),
     ...(village.combine_with ?? []).flatMap((trip) =>
       combineWithVillageNames(trip.title),
     ),
+    ...linkableNearbyVillages.map((nearby) => nearby.village_name),
   ];
 
   const [seasons, villageHeroImagesByName] = await Promise.all([
     getSeasonalAdvice(),
     getVillageHeroImagesByNames(heroImageNames),
   ]);
+
+  const nearbyHeroImages = Object.fromEntries(
+    linkableNearbyVillages.flatMap((nearby) => {
+      const url = villageHeroImagesByName[nearby.village_name];
+      return url ? [[nearby.village_name, url] as const] : [];
+    }),
+  );
 
   return (
     <>
@@ -103,6 +116,8 @@ export default async function VillagePage({ params }: VillagePageProps) {
         seasons={seasons}
         comparisonHeroImages={villageHeroImagesByName}
         combineHeroImages={villageHeroImagesByName}
+        linkableNearbyVillages={linkableNearbyVillages}
+        nearbyHeroImages={nearbyHeroImages}
       />
     </>
   );

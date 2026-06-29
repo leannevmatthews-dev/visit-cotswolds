@@ -10,6 +10,7 @@ import { ReviewedBy } from "@/components/villages/reviewed-by";
 import { SeasonalAdviceSection } from "@/components/villages/seasonal-advice-section";
 import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import { VillageComparisonSection } from "@/components/villages/village-comparison-section";
+import { NearbyVillagesSection } from "@/components/villages/nearby-villages-section";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import { VillageInBrief } from "@/components/villages/village-in-brief";
 import { VisitorFitSection } from "@/components/villages/visitor-fit-section";
@@ -19,8 +20,8 @@ import {
   enrichPlacePicksFromListings,
   heroImageUrl,
   splitParagraphs,
-  villageNameToSlug,
 } from "@/lib/villages/helpers";
+import type { LinkableNearbyVillage } from "@/lib/villages/village-page-links";
 import type { SeasonalAdvice, Village } from "@/lib/villages/types";
 
 type VillageContentProps = {
@@ -28,6 +29,8 @@ type VillageContentProps = {
   seasons: SeasonalAdvice[];
   comparisonHeroImages?: Record<string, string>;
   combineHeroImages?: Record<string, string>;
+  linkableNearbyVillages?: LinkableNearbyVillage[];
+  nearbyHeroImages?: Record<string, string>;
 };
 
 function PlacePickCard({
@@ -66,6 +69,8 @@ export function VillageContent({
   seasons,
   comparisonHeroImages = {},
   combineHeroImages = {},
+  linkableNearbyVillages = [],
+  nearbyHeroImages = {},
 }: VillageContentProps) {
   const heroBg =
     village.hero_background_image_url?.trim() ||
@@ -86,7 +91,6 @@ export function VillageContent({
     village.places_to_eat,
     PLACES_TO_EAT_LISTINGS,
   );
-
   return (
     <>
       <section className="village-hero village-hero--tight">
@@ -157,7 +161,7 @@ export function VillageContent({
             <div className="lg:col-span-7 space-y-8">
               <div className="inline-block px-4 py-2 bg-surface-container-high border border-limestone/20">
                 <span className="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">
-                  Curated Overview
+                  Village Overview
                 </span>
               </div>
               <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
@@ -468,8 +472,12 @@ export function VillageContent({
                         {option.icon}
                       </span>
                       <div>
-                        <p className="village-rain-option__title">{option.name}</p>
-                        <p className="village-rain-option__desc">{option.body}</p>
+                        <p className="village-rain-option__title">
+                          {option.name}
+                        </p>
+                        <p className="village-rain-option__desc">
+                          {option.body}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -480,43 +488,11 @@ export function VillageContent({
 
           <FaqSection village={village} />
 
-          {village.nearby_villages.length > 0 && (
-            <div className="mb-24 md:mb-32">
-              <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight mb-10">
-                Villages Near {village.name}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                {village.nearby_villages.map((nearby) => (
-                  <a
-                    key={nearby.village_name}
-                    href={`/villages/${villageNameToSlug(nearby.village_name)}`}
-                    className="village-nearby"
-                  >
-                    {nearby.image_url ? (
-                      <Image
-                        alt={nearby.image_alt ?? ""}
-                        src={nearby.image_url}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    ) : (
-                      <VillageImagePlaceholder className="village-compare-card__placeholder absolute inset-0" />
-                    )}
-                    <div className="village-nearby__gradient" aria-hidden="true"></div>
-                    <div className="village-nearby__copy">
-                      <span className="font-label-caps text-[10px] text-on-background/80 tracking-[0.3em] uppercase block mb-1">
-                        {nearby.drive_time_label}
-                      </span>
-                      <span className="font-headline-md text-[24px] text-on-background">
-                        {nearby.village_name}
-                      </span>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
+          <NearbyVillagesSection
+            villageName={village.name}
+            nearbyVillages={linkableNearbyVillages}
+            heroImagesByName={nearbyHeroImages}
+          />
 
           <NewsletterSignup />
         </div>

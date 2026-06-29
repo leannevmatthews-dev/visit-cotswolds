@@ -7,6 +7,7 @@ import {
   combineWithVillageNames,
   normalizeCombineWithTrip,
 } from "@/lib/villages/helpers";
+import { linkVillageNamesInText } from "@/lib/villages/link-village-names-in-text";
 import type { CombineWithTrip } from "@/lib/villages/types";
 import type { Village } from "@/lib/villages/types";
 
@@ -136,9 +137,11 @@ function CombineWithCard({
             {trip.duration_label}
           </p>
           <p className="font-headline-md text-[22px] text-on-surface mb-2">
-            {trip.title}
+            {linkVillageNamesInText(trip.title)}
           </p>
-          <p className="font-body-sm text-on-surface-variant">{trip.body}</p>
+          <p className="font-body-sm text-on-surface-variant">
+            {linkVillageNamesInText(trip.body)}
+          </p>
         </div>
       </article>
     );
@@ -192,7 +195,7 @@ function CombineWithCard({
           {trip.duration_label}
         </p>
         <p className="font-headline-md text-[22px] text-on-surface mb-2">
-          {trip.title}
+          {linkVillageNamesInText(trip.title)}
         </p>
         <p className="font-body-sm text-on-surface-variant">{trip.body}</p>
       </div>

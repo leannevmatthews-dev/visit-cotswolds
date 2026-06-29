@@ -32,9 +32,34 @@
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 1440px;
+    max-width: var(--spacing-container-max);
     margin: 0 auto;
-    padding: 5rem 20px 2rem;
+    padding: 5rem var(--spacing-margin-mobile) 2rem;
+}
+
+/* Mobile hero typography and nav clearance (desktop unchanged at 1280px+) */
+@media (max-width: 1279px) {
+    .village-hero {
+        align-items: flex-start;
+    }
+
+    .village-hero__content {
+        padding-top: calc(var(--site-header-height, 5.5rem) + 1.5rem);
+        padding-right: var(--spacing-margin-mobile);
+        padding-bottom: 1.75rem;
+        padding-left: var(--spacing-margin-mobile);
+    }
+
+    .village-hero__copy h1 {
+        font-size: var(--text-display-lg-mobile) !important;
+        line-height: var(--text-display-lg-mobile--line-height);
+        font-weight: var(--text-display-lg-mobile--font-weight);
+    }
+
+    .village-hero__copy p {
+        font-size: var(--text-body-lg) !important;
+        line-height: var(--text-body-lg--line-height);
+    }
 }
 
 @media (max-width: 639px) {
@@ -47,14 +72,6 @@
         min-height: auto;
     }
 
-    .village-hero__content {
-        padding: 4.5rem 20px 1.75rem;
-    }
-
-    .village-hero--tight .village-hero__content {
-        padding-top: 6rem;
-    }
-
     .village-hero__grid {
         gap: 1.5rem;
     }
@@ -64,21 +81,12 @@
         min-width: 0;
     }
 
-    .village-hero__copy h1 {
-        font-size: clamp(2rem, 8.5vw, 2.75rem) !important;
-        line-height: 1.05;
-    }
-
-    .village-hero__copy p {
-        font-size: clamp(1rem, 4.5vw, 1.375rem) !important;
-    }
-
     .village-hero__media {
         display: flex;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
-        padding-inline: 16px;
+        padding-inline: var(--spacing-margin-mobile);
     }
 
     .village-hero__video-wrap {
@@ -99,16 +107,15 @@
     }
 
     .village-hero__video-label {
-        font-size: 9px;
-        letter-spacing: 0.18em;
+        letter-spacing: var(--text-label-caps--letter-spacing);
         text-align: center;
         padding: 0 1rem;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
     .village-hero__content {
-        padding: 7rem 64px 3rem;
+        padding: 7rem var(--spacing-margin-desktop) 3rem;
     }
 }
 
@@ -128,17 +135,6 @@
     .village-hero__copy,
     .village-hero__media {
         min-width: 0;
-    }
-}
-
-@media (min-width: 640px) and (max-width: 1023px) {
-    .village-hero__copy h1 {
-        font-size: clamp(2rem, 4.5vw, 3.75rem) !important;
-        line-height: 1.05;
-    }
-
-    .village-hero__copy p {
-        font-size: clamp(1rem, 2.5vw, 1.5rem) !important;
     }
 }
 
@@ -232,9 +228,9 @@
 }
 
 .village-hero__video-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
+    font-family: var(--font-body);
+    font-size: var(--text-label-caps);
+    font-weight: var(--text-label-caps--font-weight);
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: rgba(237, 229, 216, 0.7);
@@ -249,9 +245,9 @@
     border-radius: 4px;
     border: 1px solid rgba(237, 229, 216, 0.2);
     background: rgba(20, 19, 19, 0.65);
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
+    font-family: var(--font-body);
+    font-size: var(--text-label-caps);
+    font-weight: var(--text-label-caps--font-weight);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(237, 229, 216, 0.8);
@@ -332,7 +328,7 @@
     padding-bottom: 1.25rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
     .village-hero--tight .village-hero__content {
         padding-bottom: 1.5rem;
     }

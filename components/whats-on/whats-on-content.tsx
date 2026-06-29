@@ -23,7 +23,9 @@ import {
 } from "@/lib/whats-on-data";
 
 const DATE_FILTER_BUTTON_CLASS =
-  "flex w-full items-center justify-center gap-2 rounded-full border border-limestone px-8 py-3 font-label-caps text-[10px] transition-colors sm:w-auto md:py-4 md:text-xs";
+  "flex w-full items-center justify-center gap-1.5 rounded-full border border-limestone px-6 py-2.5 font-label-caps text-[10px] transition-colors sm:w-auto xl:gap-2 xl:px-8 xl:py-4 xl:text-xs";
+
+const WHATS_ON_HERO_ACTION_BUTTON_CLASS = `${DATE_FILTER_BUTTON_CLASS} text-limestone hover:bg-limestone hover:text-primary-container`;
 
 function dateFilterButtonStateClass(isActive: boolean): string {
   return isActive
@@ -321,8 +323,8 @@ export function WhatsOnContent() {
         intro="Handpicked events across the Cotswolds. Updated monthly."
         heroImage={WHATS_ON_HERO_IMAGE}
       >
-        <div className="mt-6 flex flex-col gap-3">
-          <div className="flex flex-col flex-wrap gap-3 sm:flex-row">
+        <div className="directory-page-hero__actions mt-3 flex flex-col gap-2.5 xl:mt-6 xl:gap-3">
+          <div className="directory-page-hero__actions-row flex flex-col flex-wrap gap-2.5 sm:flex-row xl:gap-3">
             <div className="relative w-full sm:w-auto" ref={datePickerAnchorRef}>
               <button
                 type="button"
@@ -373,26 +375,26 @@ export function WhatsOnContent() {
             <button
               type="button"
               onClick={() => toggleDateFilter("today")}
-              className="flex w-full items-center justify-center gap-2 rounded-full border border-limestone px-8 py-3 text-limestone transition-colors hover:bg-limestone hover:text-primary-container sm:w-auto md:py-4"
+              className={WHATS_ON_HERO_ACTION_BUTTON_CLASS}
             >
               <span className="material-symbols-outlined text-sm">today</span>
-              <span className="font-label-caps text-[10px] md:text-xs">TODAY</span>
+              <span>TODAY</span>
             </button>
             <button
               type="button"
               onClick={() => toggleDateFilter("weekend")}
-              className="flex w-full items-center justify-center gap-2 rounded-full border border-limestone px-8 py-3 text-limestone transition-colors hover:bg-limestone hover:text-primary-container sm:w-auto md:py-4"
+              className={WHATS_ON_HERO_ACTION_BUTTON_CLASS}
             >
               <span className="material-symbols-outlined text-sm">weekend</span>
-              <span className="font-label-caps text-[10px] md:text-xs">THIS WEEKEND</span>
+              <span>THIS WEEKEND</span>
             </button>
             <button
               type="button"
               onClick={() => toggleDateFilter("month")}
-              className="flex w-full items-center justify-center gap-2 rounded-full border border-limestone px-8 py-3 text-limestone transition-colors hover:bg-limestone hover:text-primary-container sm:w-auto md:py-4"
+              className={WHATS_ON_HERO_ACTION_BUTTON_CLASS}
             >
               <span className="material-symbols-outlined text-sm">calendar_month</span>
-              <span className="font-label-caps text-[10px] md:text-xs">THIS MONTH</span>
+              <span>THIS MONTH</span>
             </button>
           </div>
         </div>
@@ -400,11 +402,11 @@ export function WhatsOnContent() {
 
       <main className="bg-background text-on-background">
         <nav
-          className="sticky top-[5.5rem] z-40 border-b border-outline/5 bg-background/95 py-5 backdrop-blur-md"
+          className="listing-directory-filter-nav sticky top-[5.5rem] z-40 border-b border-outline/5 bg-background/95 backdrop-blur-md"
           aria-label="Filter events by category"
         >
-          <div className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
-            <div className="flex items-center gap-8 overflow-x-auto no-scrollbar md:gap-10">
+          <div className="listing-directory-filter-nav__inner mx-auto max-w-container-max px-margin-mobile xl:px-margin-desktop xl:py-5">
+            <div className="listing-directory-filter-nav__filters flex items-center overflow-x-auto no-scrollbar xl:gap-10">
               {WHATS_ON_FILTERS.map((filter) => {
                 const isActive = activeFilter === filter.id;
 

@@ -57,9 +57,9 @@
 }
 
 .site-nav-title {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.25rem;
-    letter-spacing: 0.15em;
+    font-family: var(--font-display);
+    font-size: var(--text-body-lg);
+    letter-spacing: var(--text-label-caps--letter-spacing);
     color: #e8e4dc;
 }
 
@@ -89,9 +89,9 @@
 .site-nav-links a {
     display: block;
     padding: 1rem 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
+    font-family: var(--font-body);
+    font-size: var(--text-label-caps);
+    font-weight: var(--text-label-caps--font-weight);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(232, 228, 220, 0.65);

@@ -128,11 +128,11 @@ export function ListingDirectoryPage({
       />
 
       <nav
-        className="sticky top-[5.5rem] z-40 border-b border-outline/5 bg-background/95 backdrop-blur-md"
+        className="listing-directory-filter-nav sticky top-[5.5rem] z-40 border-b border-outline/5 bg-background/95 backdrop-blur-md"
         aria-label={filterAriaLabel}
       >
-        <div className="mx-auto flex max-w-container-max items-center justify-between px-margin-mobile py-5 md:px-margin-desktop">
-          <div className="flex items-center gap-8 overflow-x-auto no-scrollbar md:gap-10">
+        <div className="listing-directory-filter-nav__inner mx-auto flex max-w-container-max items-center justify-between px-margin-mobile xl:px-margin-desktop xl:py-5">
+          <div className="listing-directory-filter-nav__filters flex items-center overflow-x-auto no-scrollbar xl:gap-10">
             {filters.map((filter) => {
               const isActive = activeFilter === filter.id;
 
