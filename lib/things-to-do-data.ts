@@ -55,7 +55,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Doughton, Tetbury GL8 8TN",
     familyFriendly: false,
     priceLevel: 3,
-    imageUrl: "",
+    imageUrl: "https://www.highgrovegardens.com/cdn/shop/files/Garden-Highlights-side-by-side-v1719484076341.jpg?v=1758540187&width=1500",
     imageAlt: "Highgrove Gardens Tetbury thyme walk",
     websiteUrl: "https://www.highgrovegardens.com",
   },
@@ -69,7 +69,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Winchcombe GL54 5LP",
     familyFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://sudeleycastle.co.uk/cms-assets/header-images/_headerXl/Homepage-Thumnail_with-video.jpg",
     imageAlt: "Sudeley Castle gardens Winchcombe",
     websiteUrl: "https://sudeleycastle.co.uk",
   },
@@ -83,7 +84,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Gloucester Road, Painswick GL6 6TH",
     familyFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://www.rococogarden.org.uk/wp-content/uploads/2025/04/2-2.png",
     imageAlt: "Painswick Rococo Garden hidden valley",
     websiteUrl: "https://www.rococogarden.org.uk",
   },
@@ -97,7 +99,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Kelmscott, Lechlade GL7 3HJ",
     familyFriendly: false,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/f/f4/Courtyard_-_Kelmscott_Manor_-_Oxfordshire%2C_England_-_DSC00147.jpg",
     imageAlt: "Kelmscott Manor Tudor architecture",
     websiteUrl: "https://kelmscottmanor.org.uk",
   },
@@ -111,7 +114,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Batsford, Moreton-in-Marsh GL56 9AT",
     familyFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/b/bc/Batsford-Arboretum-bridge.jpg",
     imageAlt: "Batsford Arboretum autumn colours Japanese maples",
     websiteUrl: "https://batsarb.co.uk",
   },
@@ -125,7 +129,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Sezincote, Moreton-in-Marsh GL56 9AW",
     familyFriendly: false,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/e/e3/Sezincote_House_and_garden_-_geograph.org.uk_-_6205744.jpg",
     imageAlt: "Sezincote House Neo-Mughal garden",
     websiteUrl: "http://www.sezincote.co.uk",
   },
@@ -139,7 +144,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Whichford Road, Stourton CV36 5EX",
     familyFriendly: false,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c8/Outside_picture_of_Cotswolds_Distillery_main_building.jpg",
     imageAlt: "Cotswolds Distillery whisky barrels",
     websiteUrl: "https://www.cotswoldsdistillery.com",
   },
@@ -153,7 +159,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Gydynap Lane, Stroud GL5 5EY",
     familyFriendly: false,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/e/ec/Woodchester_Valley_Vineyard_-_geograph.org.uk_-_7244370.jpg",
     imageAlt: "Woodchester Valley Vineyard Stroud slopes",
     websiteUrl: "https://www.woodchestervalleyvineyard.co.uk",
   },
@@ -167,7 +174,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Chipping Campden GL55 6LN",
     familyFriendly: false,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/9/97/Kiftsgate_Court_Geograph_4471.jpg",
     imageAlt: "Kiftsgate Court Gardens rose Chipping Campden",
     websiteUrl: "http://www.kiftsgate.co.uk",
   },
@@ -181,7 +189,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Hidcote Bartrim, Chipping Campden GL55 6LR",
     familyFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/b/bf/Hidcote_Manor_Garden_-_geograph.org.uk_-_4298969.jpg",
     imageAlt: "Hidcote Manor Garden Arts and Crafts outdoor rooms",
     websiteUrl: "https://www.nationaltrust.org.uk/hidcote",
   },
@@ -195,7 +204,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Chastleton, Moreton-in-Marsh GL56 0SU",
     familyFriendly: false,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Chastleton_House_-_front.jpg",
     imageAlt: "Chastleton House Jacobean architecture",
     websiteUrl: "https://www.nationaltrust.org.uk/chastleton",
   },
@@ -209,7 +219,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Cornhill Market Place, Stroud GL5 1AP",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/7/71/Farmers%27_market%2C_Stroud.jpg",
     imageAlt: "Stroud Farmers Market Cornhill stalls",
     websiteUrl: "https://www.stroudfarmersmarket.co.uk",
   },
@@ -223,7 +234,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Tetbury GL8 8QS",
     familyFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/d/d4/Westonbirt%2C_the_National_Arboretum_-_geograph.org.uk_-_6654520.jpg",
     imageAlt: "Westonbirt Arboretum treetop walkway autumn",
     websiteUrl: "https://www.forestryengland.uk/westonbirt",
   },
@@ -237,7 +249,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Southrop Manor Estate, Southrop GL7 3PW",
     familyFriendly: false,
     priceLevel: 3,
-    imageUrl: "",
+    imageUrl:
+      "https://images.squarespace-cdn.com/content/v1/5f6b4b0c38cfbb7e2af14d5e/1615580720723-X487TRC4BBZTZ1YONJIG/Thyme+-+The+Cookery+School+-+Food1.jpg",
     imageAlt: "Cookery School at Thyme Southrop estate",
     websiteUrl: "https://www.thyme.co.uk",
   },
@@ -251,9 +264,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Market Place, Chipping Campden GL55 6HB",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cotswold_Way_National_Trail_marker_-_geograph.org.uk_-_335032.jpg",
     imageAlt: "Cotswold Way National Trail Broadway Tower",
-    websiteUrl: "https://www.nationaltrail.co.uk/cotswold-way",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "cotswold-farm-park",
@@ -265,7 +279,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Guiting Power, Cheltenham GL54 5FL",
     familyFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://cotswoldfarmpark.co.uk/media/ctrfvncu/hillside-play.jpg?cc=0.05966061377646743%2C0.33949092066470116%2C0.05966061377646736%2C0&width=2280&height=1140&quality=80",
     imageAlt: "Cotswold Farm Park rare breed animals",
     websiteUrl: "https://cotswoldfarmpark.co.uk",
   },
@@ -279,7 +294,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Batsford Park, Moreton-in-Marsh GL56 9QB",
     familyFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://www.cotswold-falconry.co.uk/images/our-birds/vultures/african-white-backed-vulture.jpg",
     imageAlt: "Cotswold Falconry Centre birds of prey flying",
     websiteUrl: "https://www.cotswold-falconry.co.uk",
   },
@@ -293,9 +309,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Arlington Row, Bibury GL7 5ND",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/b/be/Bibury_2015_06.jpg",
     imageAlt: "Arlington Row Bibury weavers cottages River Coln",
-    websiteUrl: "https://www.nationaltrust.org.uk/arlington-row",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "st-edwards-church-stow",
@@ -307,7 +324,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Stow-on-the-Wold GL54 1AB",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/5/57/Stow-on-the-Wold_church_-_geograph.org.uk_-_2534959.jpg",
     imageAlt: "St Edwards Church Stow yew tree doorway",
     websiteUrl: "https://www.stowbenefice.org.uk",
   },
@@ -321,9 +339,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Cleeve Hill Common, Cheltenham GL52 3PW",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/Cleeve_Hill.jpg",
     imageAlt: "Cleeve Hill panoramic views Severn valley",
-    websiteUrl: "https://www.cleevecommon.org.uk",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "minchinhampton-common",
@@ -335,9 +354,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Minchinhampton GL6 9JJ",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/6/64/Minchinhampton_Common_-_geograph.org.uk_-_6117930.jpg",
     imageAlt: "Minchinhampton Common grazing cattle escarpment",
-    websiteUrl: "https://www.nationaltrust.org.uk/minchinhampton",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "slaughters-riverside-walk",
@@ -349,9 +369,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Copse Hill Road, Lower Slaughter GL54 2HS",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/2/2c/River_Eye_at_Upper_Slaughter-geograph-4298791-by-Clint-Mann.jpg",
     imageAlt: "Lower Slaughter riverside walk River Eye mill",
-    websiteUrl: "https://www.cotswolds.com",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "chipping-campden-walk",
@@ -363,9 +384,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "High Street, Chipping Campden GL55 6HB",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/7/79/Chipping_Campden_High_Street_%28geograph_4837077%29.jpg",
     imageAlt: "Chipping Campden High Street Market Hall wool merchants",
-    websiteUrl: "https://www.chippingcampdenonline.org",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "bibury-trout-farm",
@@ -377,7 +399,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Bibury, Cirencester GL7 5NL",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/1/17/Bibury_Trout_Farm_-_geograph.org.uk_-_1440334.jpg",
     imageAlt: "Bibury Trout Farm catch your own fishing",
     websiteUrl: "https://www.biburytroutfarm.co.uk",
   },
@@ -391,23 +414,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Nympsfield, near Stonehouse GL10 3TS",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/cb/Woodchester_Mansion%2C_Woodchester_Park_-_geograph.org.uk_-_931759.jpg",
     imageAlt: "Woodchester Park unfinished Victorian mansion lakes",
-    websiteUrl: "https://www.nationaltrust.org.uk/woodchester-park",
-  },
-  {
-    id: "cotswold-woollen-weavers",
-    name: "Cotswold Woollen Weavers",
-    description:
-      "A working heritage mill in Filkins near Lechlade where you can watch traditional wool weaving on historic looms. Free to visit. The Cotswolds' prosperity was built entirely on wool and this is the most direct way to understand what that actually looked like.",
-    category: "Unique Experiences",
-    location: "Filkins, Lechlade",
-    address: "Filkins, Lechlade GL7 3JJ",
-    familyFriendly: true,
-    priceLevel: 1,
-    imageUrl: "",
-    imageAlt: "Cotswold Woollen Weavers heritage loom Filkins",
-    websiteUrl: "http://www.cotswoldwoollenweavers.co.uk",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "rack-isle-river-coln",
@@ -419,9 +429,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/1/16/Bibury%2C_Arlington_Row_and_the_stone_bridge_over_the_River_Coln_-_geograph.org.uk_-_4461538.jpg",
     imageAlt: "Rack Isle and River Coln Bibury",
-    websiteUrl: "https://www.visitcotswolds.com",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "burford-high-street",
@@ -433,9 +444,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/Burford_High_Street_-_geograph.org.uk_-_4017747.jpg",
     imageAlt: "Burford High Street",
-    websiteUrl: "https://www.visitcotswolds.com",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "st-john-baptist-church-burford",
@@ -447,7 +459,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/5/59/1053287_Church_St_John_the_Baptist_Burford_20240601_0030.jpg",
     imageAlt: "St John the Baptist Church Burford",
     websiteUrl: "https://www.visitcotswolds.com",
   },
@@ -461,7 +474,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/0/01/Market_Cross_Castle_Combe_-_geograph.org.uk_-_3400473.jpg",
     imageAlt: "Market Cross Castle Combe",
     websiteUrl: "https://www.visitcotswolds.com",
   },
@@ -475,9 +489,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://www.ratedtrips.com/images/styles/walks_header_images/public/00242999_A3.jpg?itok=8SHBWmJu",
     imageAlt: "By Brook Valley Walk Castle Combe",
-    websiteUrl: "https://www.visitcotswolds.com",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "cotswold-lavender-fields",
@@ -489,7 +504,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://www.cotswoldlavender.co.uk/cdn/shop/files/ladies_lavender_field.jpg?v=1652366252&width=3000",
     imageAlt: "Cotswold Lavender Fields Snowshill",
     websiteUrl: "https://www.cotswoldlavender.co.uk",
   },
@@ -503,9 +519,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://nationaltrails.s3.eu-west-2.amazonaws.com/uploads/Snowshill-lo-res-448x300.jpg",
     imageAlt: "Stanton Snowshill Edge Walk",
-    websiteUrl: "https://www.visitcotswolds.com",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "river-windrush-five-bridges",
@@ -517,9 +534,10 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://cotswoldxldirectory.co.uk/wp-content/uploads/2025/06/guide-bourton-on-the-water.jpg",
     imageAlt: "River Windrush Five Bridges Bourton",
-    websiteUrl: "https://www.visitcotswolds.com",
+    websiteUrl: "https://www.alltrails.com",
   },
   {
     id: "cotswold-wildlife-park-burford",
@@ -531,7 +549,8 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "",
     familyFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://www.cotswoldwildlifepark.co.uk/wp-content/uploads/photographer.jpg",
     imageAlt: "Cotswold Wildlife Park",
     websiteUrl: "https://www.cotswoldwildlifepark.co.uk",
   },

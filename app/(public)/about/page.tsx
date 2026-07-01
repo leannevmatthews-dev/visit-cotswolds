@@ -50,6 +50,26 @@ export default function AboutPage() {
 
           <section className="space-y-4">
             <h2 className="font-headline-md text-headline-md text-on-surface">
+              Image Attribution
+            </h2>
+            <p className="font-body-lg text-on-surface-variant leading-relaxed">
+              Images featured on Visit Cotswolds are sourced from official
+              business websites, tourism boards, and licensed image repositories
+              (Wikimedia Commons, Creative Commons). We aim to showcase each
+              location and business accurately. If you are the rights holder of
+              any image and have concerns about its use, please contact us at{" "}
+              <a
+                className="text-limestone underline underline-offset-4 transition-colors hover:text-on-surface"
+                href="mailto:hello@visitcotswolds.uk"
+              >
+                hello@visitcotswolds.uk
+              </a>{" "}
+              and we will address it promptly.
+            </p>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="font-headline-md text-headline-md text-on-surface">
               Get In Touch
             </h2>
             <p className="font-body-lg text-on-surface-variant leading-relaxed">

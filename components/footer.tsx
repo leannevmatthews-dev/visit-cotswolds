@@ -58,9 +58,20 @@ export function Footer() {
       </div>
 
       <div className="border-t border-outline-variant/10">
-        <div className="mx-auto max-w-container-max px-margin-mobile py-6 md:px-margin-desktop">
+        <div className="mx-auto max-w-container-max space-y-3 px-margin-mobile py-6 md:px-margin-desktop">
           <p className="font-body-sm text-on-surface-variant/60">
             © 2026 Visit Cotswolds. All rights reserved.
+          </p>
+          <p className="max-w-3xl text-xs leading-relaxed text-on-surface-variant/50">
+            Images used for editorial purposes. If you are the rights holder and
+            have concerns about usage, please contact us at{" "}
+            <a
+              className="text-on-surface-variant/70 underline underline-offset-2 transition-colors hover:text-limestone"
+              href="mailto:hello@visitcotswolds.uk"
+            >
+              hello@visitcotswolds.uk
+            </a>
+            .
           </p>
         </div>
       </div>

@@ -6,8 +6,9 @@ export const JOURNEY_CARDS = [
     href: "/villages",
     label: "VISIT",
     title: "Villages",
-    alt: "Historic Cotswold limestone archway",
-    image: "",
+    alt: "Cotswold stone houses in a village close",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/4/46/Cotswold_stone_houses_by_Izods_Close_%28geograph_3593868%29.jpg",
   },
   {
     href: "/places-to-stay",
@@ -29,8 +30,9 @@ export const JOURNEY_CARDS = [
     href: "/things-to-do",
     label: "EXPLORE",
     title: "Things To Do",
-    alt: "Dramatic landscape of the rolling green hills",
-    image: "",
+    alt: "Painswick Rococo Garden in the Cotswolds",
+    image:
+      "https://www.rococogarden.org.uk/wp-content/uploads/2025/04/2-2.png",
   },
   {
     href: "/whats-on",
