@@ -42,5 +42,11 @@ export async function getVillageForAdminBySlug(
     return null;
   }
 
-  return (data as Village | null) ?? null;
+  if (!data) return null;
+  const row = data as Record<string, unknown>;
+  const { curated_experiences, ...rest } = row;
+  return {
+    ...rest,
+    things_to_do: (curated_experiences as Village["things_to_do"] | null) ?? [],
+  } as Village;
 }

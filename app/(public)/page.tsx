@@ -70,7 +70,7 @@ export default async function HomePage() {
 
           <div className="relative z-10 flex flex-1 flex-col justify-center items-center text-center max-w-4xl w-full mx-auto px-margin-mobile pt-28 pb-6 md:pt-32 md:pb-10">
             <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg lg:text-[84px] text-on-background mb-3 md:mb-4">
-              An independent guide to the Cotswolds.
+              An Independent Guide to the Cotswolds.
             </h1>
             <p className="font-body-lg text-on-surface-variant/80 tracking-wide uppercase font-light text-sm md:text-base">
               Handpicked, honest and researched properly so you can make the most of your time here.

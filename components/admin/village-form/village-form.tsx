@@ -115,7 +115,7 @@ export function VillageForm({
         </div>
       )}
 
-      <FormSection title="Basics">
+      <FormSection title="1. Basics">
         <FieldGrid>
           <TextInput
             id="name"
@@ -173,7 +173,7 @@ export function VillageForm({
         </FieldGrid>
       </FormSection>
 
-      <FormSection title="Hero & Brief">
+      <FormSection title="2. Hero & Brief">
         <TextArea
           id="brief_summary"
           label="Brief summary"
@@ -231,7 +231,7 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="At A Glance">
+      <FormSection title="3. At A Glance">
         <FieldGrid>
           <TextInput
             id="time_needed"
@@ -301,229 +301,7 @@ export function VillageForm({
         </FieldGrid>
       </FormSection>
 
-      <FormSection title="Our Take & Review">
-        <TextArea
-          id="our_take_body"
-          label="Our take"
-          value={form.our_take_body}
-          onChange={(value) => setField("our_take_body", value)}
-          rows={5}
-        />
-        <FieldGrid>
-          <TextInput
-            id="visited_date"
-            label="Visited date"
-            value={form.visited_date}
-            onChange={(value) => setField("visited_date", value)}
-            placeholder="March 2025"
-          />
-          <TextInput
-            id="reviewed_by_name"
-            label="Reviewed by name"
-            value={form.reviewed_by_name}
-            onChange={(value) => setField("reviewed_by_name", value)}
-          />
-          <TextInput
-            id="reviewed_by_credential"
-            label="Reviewed by credential"
-            value={form.reviewed_by_credential}
-            onChange={(value) => setField("reviewed_by_credential", value)}
-            placeholder="Local guide"
-          />
-        </FieldGrid>
-        <ImageUploadField
-          id="our_take_image_url"
-          label="Our Take section image (optional)"
-          value={form.our_take_image_url}
-          onChange={(value) => setField("our_take_image_url", value)}
-          altValue={form.our_take_image_alt}
-          onAltChange={(value) => setField("our_take_image_alt", value)}
-          villageSlug={form.slug}
-          fieldName="our-take"
-          hint="Portrait photo beside the “Our Take” editorial section (falls back to the hero background if left empty)."
-        />
-      </FormSection>
-
-      <FormSection title="Crowd Intelligence">
-        <TextArea
-          id="crowd_intelligence_note"
-          label="Crowd intelligence note"
-          value={form.crowd_intelligence_note}
-          onChange={(value) => setField("crowd_intelligence_note", value)}
-          rows={3}
-        />
-        <RepeatableList
-          items={form.crowd_times}
-          onChange={(items) => setField("crowd_times", items)}
-          createItem={() => ({ time_range: "", level: "" })}
-          addLabel="Add crowd time"
-          emptyLabel="No crowd times yet."
-          renderItem={(item, index, update, remove) => (
-            <RepeatableItemCard
-              key={index}
-              title={`Crowd time ${index + 1}`}
-              onRemove={remove}
-            >
-              <FieldGrid>
-                <TextInput
-                  id={`crowd-time-range-${index}`}
-                  label="Time range"
-                  value={item.time_range}
-                  onChange={(value) => update({ time_range: value })}
-                  placeholder="Weekday mornings"
-                />
-                <TextInput
-                  id={`crowd-level-${index}`}
-                  label="Level"
-                  value={item.level}
-                  onChange={(value) => update({ level: value })}
-                  placeholder="quiet / moderate / busy"
-                />
-              </FieldGrid>
-            </RepeatableItemCard>
-          )}
-        />
-      </FormSection>
-
-      <FormSection title="Perfect For">
-        <RepeatableList
-          items={form.perfect_for}
-          onChange={(items) => setField("perfect_for", items)}
-          createItem={() => ""}
-          addLabel="Add item"
-          emptyLabel="No items yet."
-          renderItem={(item, index, update, remove) => (
-            <RepeatableItemCard
-              key={index}
-              title={`Item ${index + 1}`}
-              onRemove={remove}
-            >
-              <TextInput
-                id={`perfect-for-${index}`}
-                label="Text"
-                value={item}
-                onChange={(value) => update(() => value)}
-              />
-            </RepeatableItemCard>
-          )}
-        />
-      </FormSection>
-
-      <FormSection title="Maybe Skip If">
-        <RepeatableList
-          items={form.maybe_skip_if}
-          onChange={(items) => setField("maybe_skip_if", items)}
-          createItem={() => ""}
-          addLabel="Add item"
-          emptyLabel="No items yet."
-          renderItem={(item, index, update, remove) => (
-            <RepeatableItemCard
-              key={index}
-              title={`Item ${index + 1}`}
-              onRemove={remove}
-            >
-              <TextInput
-                id={`maybe-skip-if-${index}`}
-                label="Text"
-                value={item}
-                onChange={(value) => update(() => value)}
-              />
-            </RepeatableItemCard>
-          )}
-        />
-      </FormSection>
-
-      <FormSection title="Local Tips">
-        <RepeatableList
-          items={form.local_tips}
-          onChange={(items) => setField("local_tips", items)}
-          createItem={() => ({ icon: "", source: "", tip_text: "" })}
-          addLabel="Add local tip"
-          emptyLabel="No local tips yet."
-          renderItem={(item, index, update, remove) => (
-            <RepeatableItemCard
-              key={index}
-              title={`Tip ${index + 1}`}
-              onRemove={remove}
-            >
-              <FieldGrid>
-                <IconSelect
-                  id={`local-tip-icon-${index}`}
-                  label="Icon"
-                  value={item.icon}
-                  onChange={(value) => update({ icon: value })}
-                />
-                <TextInput
-                  id={`local-tip-source-${index}`}
-                  label="Source (optional)"
-                  value={item.source ?? ""}
-                  onChange={(value) => update({ source: value })}
-                />
-              </FieldGrid>
-              <TextArea
-                id={`local-tip-text-${index}`}
-                label="Tip text"
-                value={item.tip_text}
-                onChange={(value) => update({ tip_text: value })}
-                rows={3}
-              />
-            </RepeatableItemCard>
-          )}
-        />
-      </FormSection>
-
-      <FormSection title="Hidden Gems">
-        <RepeatableList
-          items={form.hidden_gems}
-          onChange={(items) => setField("hidden_gems", items)}
-          createItem={() => ({ number: "", title: "", body: "" })}
-          addLabel="Add hidden gem"
-          emptyLabel="No hidden gems yet."
-          renderItem={(item, index, update, remove) => (
-            <RepeatableItemCard
-              key={index}
-              title={`Hidden gem ${index + 1}`}
-              onRemove={remove}
-            >
-              <FieldGrid>
-                <TextInput
-                  id={`hidden-gem-number-${index}`}
-                  label="Number"
-                  value={item.number}
-                  onChange={(value) => update({ number: value })}
-                  placeholder="01"
-                />
-                <TextInput
-                  id={`hidden-gem-title-${index}`}
-                  label="Title"
-                  value={item.title}
-                  onChange={(value) => update({ title: value })}
-                />
-              </FieldGrid>
-              <TextArea
-                id={`hidden-gem-body-${index}`}
-                label="Body"
-                value={item.body}
-                onChange={(value) => update({ body: value })}
-                rows={3}
-              />
-            </RepeatableItemCard>
-          )}
-        />
-        <ImageUploadField
-          id="hidden_gems_image_url"
-          label="Hidden gems image"
-          value={form.hidden_gems_image_url}
-          onChange={(value) => setField("hidden_gems_image_url", value)}
-          altValue={form.hidden_gems_image_alt}
-          onAltChange={(value) => setField("hidden_gems_image_alt", value)}
-          villageSlug={form.slug}
-          fieldName="hidden-gems"
-          hint="Shown in the “What Most Visitors Miss” section"
-        />
-      </FormSection>
-
-      <FormSection title="Things To Do">
+      <FormSection title="4. Things To Do">
         <RepeatableList
           items={form.things_to_do}
           onChange={(items) => setField("things_to_do", items)}
@@ -578,137 +356,7 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Combine With">
-        <RepeatableList
-          items={form.combine_with}
-          onChange={(items) => setField("combine_with", items)}
-          createItem={() => ({
-            title: "",
-            body: "",
-            duration_label: "",
-            left_image_url: "",
-            right_image_url: "",
-            left_image_alt: "",
-            right_image_alt: "",
-          })}
-          addLabel="Add trip idea"
-          emptyLabel="No combine-with items yet."
-          renderItem={(item, index, update, remove) => (
-            <RepeatableItemCard
-              key={index}
-              title={`Trip ${index + 1}`}
-              onRemove={remove}
-            >
-              <TextInput
-                id={`combine-title-${index}`}
-                label="Title"
-                value={item.title}
-                onChange={(value) => update({ title: value })}
-              />
-              <TextArea
-                id={`combine-body-${index}`}
-                label="Body"
-                value={item.body}
-                onChange={(value) => update({ body: value })}
-                rows={3}
-              />
-              <TextInput
-                id={`combine-duration-${index}`}
-                label="Duration label"
-                value={item.duration_label}
-                onChange={(value) => update({ duration_label: value })}
-                placeholder="Half day"
-              />
-              <FieldGrid>
-                <ImageUploadField
-                  id={`combine-left-image-${index}`}
-                  label="Left image"
-                  value={item.left_image_url}
-                  onChange={(value) => update({ left_image_url: value })}
-                  altValue={item.left_image_alt ?? ""}
-                  onAltChange={(value) => update({ left_image_alt: value })}
-                  villageSlug={form.slug}
-                  fieldName={`combine-left-${index}`}
-                />
-                <ImageUploadField
-                  id={`combine-right-image-${index}`}
-                  label="Right image"
-                  value={item.right_image_url}
-                  onChange={(value) => update({ right_image_url: value })}
-                  altValue={item.right_image_alt ?? ""}
-                  onAltChange={(value) => update({ right_image_alt: value })}
-                  villageSlug={form.slug}
-                  fieldName={`combine-right-${index}`}
-                />
-              </FieldGrid>
-            </RepeatableItemCard>
-          )}
-        />
-      </FormSection>
-
-      <FormSection title="Places To Stay">
-        <RepeatableList
-          items={form.places_to_stay}
-          onChange={(items) => setField("places_to_stay", items)}
-          createItem={() => ({
-            name: "",
-            category: "",
-            location_label: "",
-            image_url: "",
-            image_alt: "",
-            external_link: "",
-          })}
-          addLabel="Add place to stay"
-          emptyLabel="No places to stay yet."
-          renderItem={(item, index, update, remove) => (
-            <RepeatableItemCard
-              key={index}
-              title={`Stay ${index + 1}`}
-              onRemove={remove}
-            >
-              <FieldGrid>
-                <TextInput
-                  id={`stay-name-${index}`}
-                  label="Name"
-                  value={item.name}
-                  onChange={(value) => update({ name: value })}
-                />
-                <TextInput
-                  id={`stay-category-${index}`}
-                  label="Category"
-                  value={item.category}
-                  onChange={(value) => update({ category: value })}
-                />
-                <TextInput
-                  id={`stay-location-${index}`}
-                  label="Location label"
-                  value={item.location_label}
-                  onChange={(value) => update({ location_label: value })}
-                />
-                <ImageUploadField
-                  id={`stay-image-${index}`}
-                  label="Image (optional)"
-                  hint="Photo for this specific place to stay"
-                  value={item.image_url ?? ""}
-                  onChange={(value) => update({ image_url: value })}
-                  altValue={item.image_alt ?? ""}
-                  onAltChange={(value) => update({ image_alt: value })}
-                  villageSlug={form.slug}
-                  fieldName={`stay-${index}`}
-                />
-                <TextInput
-                  id={`stay-link-${index}`}
-                  label="External link (optional)"
-                  value={item.external_link ?? ""}
-                  onChange={(value) => update({ external_link: value })}
-                />
-              </FieldGrid>
-            </RepeatableItemCard>
-          )}
-        />
-      </FormSection>
-
-      <FormSection title="Places To Eat">
+      <FormSection title="5. Places To Eat">
         <RepeatableList
           items={form.places_to_eat}
           onChange={(items) => setField("places_to_eat", items)}
@@ -770,69 +418,61 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Local Businesses">
+      <FormSection title="6. Places To Stay">
         <RepeatableList
-          items={form.local_businesses}
-          onChange={(items) => setField("local_businesses", items)}
+          items={form.places_to_stay}
+          onChange={(items) => setField("places_to_stay", items)}
           createItem={() => ({
             name: "",
             category: "",
-            description: "",
-            address: "",
-            website_url: "",
+            location_label: "",
             image_url: "",
             image_alt: "",
+            external_link: "",
           })}
-          addLabel="Add local business"
-          emptyLabel="No local businesses yet."
+          addLabel="Add place to stay"
+          emptyLabel="No places to stay yet."
           renderItem={(item, index, update, remove) => (
             <RepeatableItemCard
               key={index}
-              title={`Business ${index + 1}`}
+              title={`Stay ${index + 1}`}
               onRemove={remove}
             >
               <FieldGrid>
                 <TextInput
-                  id={`business-name-${index}`}
+                  id={`stay-name-${index}`}
                   label="Name"
                   value={item.name}
                   onChange={(value) => update({ name: value })}
                 />
                 <TextInput
-                  id={`business-category-${index}`}
+                  id={`stay-category-${index}`}
                   label="Category"
                   value={item.category}
                   onChange={(value) => update({ category: value })}
                 />
-                <TextArea
-                  id={`business-description-${index}`}
-                  label="Description"
-                  value={item.description}
-                  onChange={(value) => update({ description: value })}
-                  rows={3}
-                />
                 <TextInput
-                  id={`business-address-${index}`}
-                  label="Address (optional)"
-                  value={item.address ?? ""}
-                  onChange={(value) => update({ address: value })}
-                />
-                <TextInput
-                  id={`business-website-${index}`}
-                  label="Website URL (optional)"
-                  value={item.website_url ?? ""}
-                  onChange={(value) => update({ website_url: value })}
+                  id={`stay-location-${index}`}
+                  label="Location label"
+                  value={item.location_label}
+                  onChange={(value) => update({ location_label: value })}
                 />
                 <ImageUploadField
-                  id={`business-image-${index}`}
+                  id={`stay-image-${index}`}
                   label="Image (optional)"
-                  hint="Photo for this local business"
+                  hint="Photo for this specific place to stay"
                   value={item.image_url ?? ""}
                   onChange={(value) => update({ image_url: value })}
                   altValue={item.image_alt ?? ""}
                   onAltChange={(value) => update({ image_alt: value })}
                   villageSlug={form.slug}
-                  fieldName={`business-${index}`}
+                  fieldName={`stay-${index}`}
+                />
+                <TextInput
+                  id={`stay-link-${index}`}
+                  label="External link (optional)"
+                  value={item.external_link ?? ""}
+                  onChange={(value) => update({ external_link: value })}
                 />
               </FieldGrid>
             </RepeatableItemCard>
@@ -840,7 +480,229 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Parking Guide">
+      <FormSection title="7. Our Take & Review">
+        <TextArea
+          id="our_take_body"
+          label="Our take"
+          value={form.our_take_body}
+          onChange={(value) => setField("our_take_body", value)}
+          rows={5}
+        />
+        <FieldGrid>
+          <TextInput
+            id="visited_date"
+            label="Visited date"
+            value={form.visited_date}
+            onChange={(value) => setField("visited_date", value)}
+            placeholder="March 2025"
+          />
+          <TextInput
+            id="reviewed_by_name"
+            label="Reviewed by name"
+            value={form.reviewed_by_name}
+            onChange={(value) => setField("reviewed_by_name", value)}
+          />
+          <TextInput
+            id="reviewed_by_credential"
+            label="Reviewed by credential"
+            value={form.reviewed_by_credential}
+            onChange={(value) => setField("reviewed_by_credential", value)}
+            placeholder="Local guide"
+          />
+        </FieldGrid>
+        <ImageUploadField
+          id="our_take_image_url"
+          label="Our Take section image (optional)"
+          value={form.our_take_image_url}
+          onChange={(value) => setField("our_take_image_url", value)}
+          altValue={form.our_take_image_alt}
+          onAltChange={(value) => setField("our_take_image_alt", value)}
+          villageSlug={form.slug}
+          fieldName="our-take"
+          hint="Portrait photo beside the “Our Take” editorial section (falls back to the hero background if left empty)."
+        />
+      </FormSection>
+
+      <FormSection title="8. When To Visit">
+        <TextArea
+          id="crowd_intelligence_note"
+          label="Crowd intelligence note"
+          value={form.crowd_intelligence_note}
+          onChange={(value) => setField("crowd_intelligence_note", value)}
+          rows={3}
+        />
+        <RepeatableList
+          items={form.crowd_times}
+          onChange={(items) => setField("crowd_times", items)}
+          createItem={() => ({ time_range: "", level: "" })}
+          addLabel="Add crowd time"
+          emptyLabel="No crowd times yet."
+          renderItem={(item, index, update, remove) => (
+            <RepeatableItemCard
+              key={index}
+              title={`Crowd time ${index + 1}`}
+              onRemove={remove}
+            >
+              <FieldGrid>
+                <TextInput
+                  id={`crowd-time-range-${index}`}
+                  label="Time range"
+                  value={item.time_range}
+                  onChange={(value) => update({ time_range: value })}
+                  placeholder="Weekday mornings"
+                />
+                <TextInput
+                  id={`crowd-level-${index}`}
+                  label="Level"
+                  value={item.level}
+                  onChange={(value) => update({ level: value })}
+                  placeholder="quiet / moderate / busy"
+                />
+              </FieldGrid>
+            </RepeatableItemCard>
+          )}
+        />
+      </FormSection>
+
+      <FormSection title="9. Perfect For">
+        <RepeatableList
+          items={form.perfect_for}
+          onChange={(items) => setField("perfect_for", items)}
+          createItem={() => ""}
+          addLabel="Add item"
+          emptyLabel="No items yet."
+          renderItem={(item, index, update, remove) => (
+            <RepeatableItemCard
+              key={index}
+              title={`Item ${index + 1}`}
+              onRemove={remove}
+            >
+              <TextInput
+                id={`perfect-for-${index}`}
+                label="Text"
+                value={item}
+                onChange={(value) => update(() => value)}
+              />
+            </RepeatableItemCard>
+          )}
+        />
+      </FormSection>
+
+      <FormSection title="10. Maybe Skip If">
+        <RepeatableList
+          items={form.maybe_skip_if}
+          onChange={(items) => setField("maybe_skip_if", items)}
+          createItem={() => ""}
+          addLabel="Add item"
+          emptyLabel="No items yet."
+          renderItem={(item, index, update, remove) => (
+            <RepeatableItemCard
+              key={index}
+              title={`Item ${index + 1}`}
+              onRemove={remove}
+            >
+              <TextInput
+                id={`maybe-skip-if-${index}`}
+                label="Text"
+                value={item}
+                onChange={(value) => update(() => value)}
+              />
+            </RepeatableItemCard>
+          )}
+        />
+      </FormSection>
+
+      <FormSection title="11. Local Tips">
+        <RepeatableList
+          items={form.local_tips}
+          onChange={(items) => setField("local_tips", items)}
+          createItem={() => ({ icon: "", source: "", tip_text: "" })}
+          addLabel="Add local tip"
+          emptyLabel="No local tips yet."
+          renderItem={(item, index, update, remove) => (
+            <RepeatableItemCard
+              key={index}
+              title={`Tip ${index + 1}`}
+              onRemove={remove}
+            >
+              <FieldGrid>
+                <IconSelect
+                  id={`local-tip-icon-${index}`}
+                  label="Icon"
+                  value={item.icon}
+                  onChange={(value) => update({ icon: value })}
+                />
+                <TextInput
+                  id={`local-tip-source-${index}`}
+                  label="Source (optional)"
+                  value={item.source ?? ""}
+                  onChange={(value) => update({ source: value })}
+                />
+              </FieldGrid>
+              <TextArea
+                id={`local-tip-text-${index}`}
+                label="Tip text"
+                value={item.tip_text}
+                onChange={(value) => update({ tip_text: value })}
+                rows={3}
+              />
+            </RepeatableItemCard>
+          )}
+        />
+      </FormSection>
+
+      <FormSection title="12. Hidden Gems">
+        <RepeatableList
+          items={form.hidden_gems}
+          onChange={(items) => setField("hidden_gems", items)}
+          createItem={() => ({ number: "", title: "", body: "" })}
+          addLabel="Add hidden gem"
+          emptyLabel="No hidden gems yet."
+          renderItem={(item, index, update, remove) => (
+            <RepeatableItemCard
+              key={index}
+              title={`Hidden gem ${index + 1}`}
+              onRemove={remove}
+            >
+              <FieldGrid>
+                <TextInput
+                  id={`hidden-gem-number-${index}`}
+                  label="Number"
+                  value={item.number}
+                  onChange={(value) => update({ number: value })}
+                  placeholder="01"
+                />
+                <TextInput
+                  id={`hidden-gem-title-${index}`}
+                  label="Title"
+                  value={item.title}
+                  onChange={(value) => update({ title: value })}
+                />
+              </FieldGrid>
+              <TextArea
+                id={`hidden-gem-body-${index}`}
+                label="Body"
+                value={item.body}
+                onChange={(value) => update({ body: value })}
+                rows={3}
+              />
+            </RepeatableItemCard>
+          )}
+        />
+        <ImageUploadField
+          id="hidden_gems_image_url"
+          label="Hidden gems image"
+          value={form.hidden_gems_image_url}
+          onChange={(value) => setField("hidden_gems_image_url", value)}
+          altValue={form.hidden_gems_image_alt}
+          onAltChange={(value) => setField("hidden_gems_image_alt", value)}
+          villageSlug={form.slug}
+          fieldName="hidden-gems"
+          hint="Shown in the “What Most Visitors Miss” section"
+        />
+      </FormSection>
+
+      <FormSection title="13. Parking Guide">
         <FieldGrid>
           <TextInput
             id="parking-main-location"
@@ -890,7 +752,7 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Getting Here">
+      <FormSection title="14. Getting Here">
         <TextArea
           id="getting-here-rail"
           label="Rail"
@@ -907,7 +769,7 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Accessibility">
+      <FormSection title="15. Accessibility">
         <FieldGrid>
           <TextArea
             id="accessibility-wheelchair"
@@ -940,7 +802,7 @@ export function VillageForm({
         </FieldGrid>
       </FormSection>
 
-      <FormSection title="Rainy Day Options">
+      <FormSection title="16. Rainy Day Options">
         <RepeatableList
           items={form.rainy_day_options}
           onChange={(items) => setField("rainy_day_options", items)}
@@ -979,7 +841,7 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Comparison & Alternatives">
+      <FormSection title="17. Comparison & Alternatives">
         <div className="flex flex-col gap-6">
           <div>
             <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
@@ -1123,7 +985,75 @@ export function VillageForm({
         </div>
       </FormSection>
 
-      <FormSection title="FAQ">
+      <FormSection title="18. Combine With">
+        <RepeatableList
+          items={form.combine_with}
+          onChange={(items) => setField("combine_with", items)}
+          createItem={() => ({
+            title: "",
+            body: "",
+            duration_label: "",
+            left_image_url: "",
+            right_image_url: "",
+            left_image_alt: "",
+            right_image_alt: "",
+          })}
+          addLabel="Add trip idea"
+          emptyLabel="No combine-with items yet."
+          renderItem={(item, index, update, remove) => (
+            <RepeatableItemCard
+              key={index}
+              title={`Trip ${index + 1}`}
+              onRemove={remove}
+            >
+              <TextInput
+                id={`combine-title-${index}`}
+                label="Title"
+                value={item.title}
+                onChange={(value) => update({ title: value })}
+              />
+              <TextArea
+                id={`combine-body-${index}`}
+                label="Body"
+                value={item.body}
+                onChange={(value) => update({ body: value })}
+                rows={3}
+              />
+              <TextInput
+                id={`combine-duration-${index}`}
+                label="Duration label"
+                value={item.duration_label}
+                onChange={(value) => update({ duration_label: value })}
+                placeholder="Half day"
+              />
+              <FieldGrid>
+                <ImageUploadField
+                  id={`combine-left-image-${index}`}
+                  label="Left image"
+                  value={item.left_image_url}
+                  onChange={(value) => update({ left_image_url: value })}
+                  altValue={item.left_image_alt ?? ""}
+                  onAltChange={(value) => update({ left_image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`combine-left-${index}`}
+                />
+                <ImageUploadField
+                  id={`combine-right-image-${index}`}
+                  label="Right image"
+                  value={item.right_image_url}
+                  onChange={(value) => update({ right_image_url: value })}
+                  altValue={item.right_image_alt ?? ""}
+                  onAltChange={(value) => update({ right_image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`combine-right-${index}`}
+                />
+              </FieldGrid>
+            </RepeatableItemCard>
+          )}
+        />
+      </FormSection>
+
+      <FormSection title="19. FAQ">
         <RepeatableList
           items={form.faq_items}
           onChange={(items) => setField("faq_items", items)}
@@ -1154,7 +1084,7 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Nearby Villages">
+      <FormSection title="20. Nearby Villages">
         <RepeatableList
           items={form.nearby_villages}
           onChange={(items) => setField("nearby_villages", items)}
@@ -1202,7 +1132,77 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="SEO">
+      <FormSection title="21. Local Businesses">
+        <RepeatableList
+          items={form.local_businesses}
+          onChange={(items) => setField("local_businesses", items)}
+          createItem={() => ({
+            name: "",
+            category: "",
+            description: "",
+            address: "",
+            website_url: "",
+            image_url: "",
+            image_alt: "",
+          })}
+          addLabel="Add local business"
+          emptyLabel="No local businesses yet."
+          renderItem={(item, index, update, remove) => (
+            <RepeatableItemCard
+              key={index}
+              title={`Business ${index + 1}`}
+              onRemove={remove}
+            >
+              <FieldGrid>
+                <TextInput
+                  id={`business-name-${index}`}
+                  label="Name"
+                  value={item.name}
+                  onChange={(value) => update({ name: value })}
+                />
+                <TextInput
+                  id={`business-category-${index}`}
+                  label="Category"
+                  value={item.category}
+                  onChange={(value) => update({ category: value })}
+                />
+                <TextArea
+                  id={`business-description-${index}`}
+                  label="Description"
+                  value={item.description}
+                  onChange={(value) => update({ description: value })}
+                  rows={3}
+                />
+                <TextInput
+                  id={`business-address-${index}`}
+                  label="Address (optional)"
+                  value={item.address ?? ""}
+                  onChange={(value) => update({ address: value })}
+                />
+                <TextInput
+                  id={`business-website-${index}`}
+                  label="Website URL (optional)"
+                  value={item.website_url ?? ""}
+                  onChange={(value) => update({ website_url: value })}
+                />
+                <ImageUploadField
+                  id={`business-image-${index}`}
+                  label="Image (optional)"
+                  hint="Photo for this local business"
+                  value={item.image_url ?? ""}
+                  onChange={(value) => update({ image_url: value })}
+                  altValue={item.image_alt ?? ""}
+                  onAltChange={(value) => update({ image_alt: value })}
+                  villageSlug={form.slug}
+                  fieldName={`business-${index}`}
+                />
+              </FieldGrid>
+            </RepeatableItemCard>
+          )}
+        />
+      </FormSection>
+
+      <FormSection title="22. SEO">
         <TextInput
           id="meta_title"
           label="Meta title"

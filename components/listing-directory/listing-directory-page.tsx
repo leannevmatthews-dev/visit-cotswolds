@@ -65,7 +65,9 @@ function ListingCard({
           )}
         </div>
 
-        {"location" in listing && listing.location ? (
+        {"location" in listing &&
+        typeof listing.location === "string" &&
+        listing.location ? (
           <span
             className="listing-directory-card__location"
             style={{

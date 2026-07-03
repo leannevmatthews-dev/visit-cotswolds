@@ -4,7 +4,7 @@ export const NAV_ITEMS = [
   { id: "eat", label: "Places To Eat", href: "/places-to-eat" },
   { id: "experiences", label: "Things To Do", href: "/things-to-do" },
   { id: "whats-on", label: "What's On", href: "/whats-on" },
-  { id: "plan", label: "Plan Your Visit", href: "/plan-your-visit" },
+  { id: "plan", label: "Guides", href: "/guides" },
 ] as const;
 
 /** Desktop inline nav: items before index sit left of logo; rest sit right. */

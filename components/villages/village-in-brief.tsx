@@ -14,7 +14,7 @@ export function VillageInBrief({ village }: VillageInBriefProps) {
         {village.brief_summary}
       </p>
       <p className="village-in-brief__tip font-body-sm text-on-surface-variant leading-relaxed">
-        <span className="village-in-brief__tip-label">Best tip:</span>{" "}
+        <span className="village-in-brief__tip-label">Insider tip:</span>{" "}
         {village.brief_best_tip}
       </p>
     </aside>
