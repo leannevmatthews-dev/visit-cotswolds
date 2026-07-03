@@ -16,7 +16,9 @@ import { VillageInBrief } from "@/components/villages/village-in-brief";
 import { VisitorFitSection } from "@/components/villages/visitor-fit-section";
 import { PLACES_TO_EAT_LISTINGS } from "@/lib/places-to-eat-data";
 import { PLACES_TO_STAY_LISTINGS } from "@/lib/places-to-stay-data";
+import { THINGS_TO_DO_LISTINGS } from "@/lib/things-to-do-data";
 import {
+  buildVillageThingsToDo,
   enrichPlacePicksFromListings,
   heroImageUrl,
   splitParagraphs,
@@ -42,25 +44,96 @@ function PlacePickCard({
 }) {
   const href = pick.external_link ?? fallbackHref;
   const meta = `${pick.category} · ${pick.location_label}`;
+  const websiteUrl = pick.external_link?.trim();
 
   return (
-    <a className="village-pick group" href={href}>
-      <div className="village-pick__image">
-        {pick.image_url ? (
-          <Image
-            alt={pick.image_alt ?? ""}
-            src={pick.image_url}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 50vw, 20vw"
-          />
-        ) : (
-          <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
-        )}
-      </div>
-      <p className="village-pick__title">{pick.name}</p>
-      <p className="village-pick__meta">{meta}</p>
-    </a>
+    <div className="village-pick group">
+      <a className="block text-inherit no-underline" href={href}>
+        <div className="village-pick__image">
+          {pick.image_url ? (
+            <Image
+              alt={pick.image_alt ?? ""}
+              src={pick.image_url}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 20vw"
+            />
+          ) : (
+            <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
+          )}
+        </div>
+        <p className="village-pick__title">{pick.name}</p>
+        <p className="village-pick__meta">{meta}</p>
+      </a>
+      {websiteUrl && (
+        <a
+          href={websiteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors hover:text-primary"
+        >
+          Visit website
+          <span className="material-symbols-outlined text-sm" aria-hidden="true">
+            north_east
+          </span>
+        </a>
+      )}
+    </div>
+  );
+}
+
+function ExperienceCard({
+  experience,
+}: {
+  experience: Village["things_to_do"][number];
+}) {
+  const fallbackListing = THINGS_TO_DO_LISTINGS.find(
+    (l) =>
+      l.name === experience.title ||
+      l.name.toLowerCase() === experience.title.toLowerCase(),
+  );
+  const imageUrl = experience.image_url || fallbackListing?.imageUrl || null;
+  const imageAlt =
+    experience.image_alt || fallbackListing?.imageAlt || experience.title;
+  const fallbackHref = "/things-to-do";
+  const meta = fallbackListing
+    ? `${fallbackListing.category} · ${fallbackListing.location}`
+    : null;
+  const websiteUrl = fallbackListing?.websiteUrl?.trim();
+
+  return (
+    <div className="village-pick group">
+      <a className="block text-inherit no-underline" href={fallbackHref}>
+        <div className="village-pick__image">
+          {imageUrl ? (
+            <Image
+              alt={imageAlt}
+              src={imageUrl}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 20vw"
+            />
+          ) : (
+            <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
+          )}
+        </div>
+        <p className="village-pick__title">{experience.title}</p>
+        {meta && <p className="village-pick__meta">{meta}</p>}
+      </a>
+      {websiteUrl && (
+        <a
+          href={websiteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors hover:text-primary"
+        >
+          Visit website
+          <span className="material-symbols-outlined text-sm" aria-hidden="true">
+            north_east
+          </span>
+        </a>
+      )}
+    </div>
   );
 }
 
@@ -75,6 +148,8 @@ export function VillageContent({
   const heroBg =
     village.hero_background_image_url?.trim() ||
     heroImageUrl(village.hero_gallery_urls);
+  const overviewImage =
+    village.overview_image_url?.trim() || heroBg;
   const ourTakeImage =
     village.our_take_image_url?.trim() ||
     village.hero_gallery_urls?.[1] ||
@@ -90,6 +165,11 @@ export function VillageContent({
   const placesToEat = enrichPlacePicksFromListings(
     village.places_to_eat,
     PLACES_TO_EAT_LISTINGS,
+  );
+  const thingsToDo = buildVillageThingsToDo(
+    village.name,
+    village.things_to_do,
+    THINGS_TO_DO_LISTINGS,
   );
   return (
     <>
@@ -154,26 +234,124 @@ export function VillageContent({
       </section>
 
       <main className="bg-background text-on-background pt-6 pb-16 md:pt-8 md:pb-24 lg:pt-10 lg:pb-32">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <VillageInBrief village={village} />
+        <div className="max-w-container-max mx-auto">
+          <div className="village-intro-grid">
+            <VillageInBrief village={village} />
+            <AtAGlancePanel village={village} />
+          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter md:gap-16 items-start mb-24 md:mb-32">
-            <div className="lg:col-span-7 space-y-8">
-              <div className="inline-block px-4 py-2 bg-surface-container-high border border-limestone/20">
-                <span className="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">
-                  Village Overview
-                </span>
+          <nav className="village-jump-links" aria-label="Jump to section">
+            <a href="#things-to-do">Things To Do</a>
+            <a href="#where-to-eat">Where To Eat</a>
+            <a href="#where-to-stay">Where To Stay</a>
+            <a href="#when-to-visit">When To Visit</a>
+            <a href="#local-tips">Local Tips</a>
+            <a href="#parking">Parking</a>
+            <a href="#getting-here">Getting Here</a>
+            <a href="#faqs">FAQs</a>
+          </nav>
+
+          {thingsToDo.length > 0 && (
+            <div id="things-to-do" className="mb-24 md:mb-32">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
+                <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
+                  Things To Do In {village.name}
+                </h2>
               </div>
-              <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
-                {village.overview_heading}
-              </h2>
-              <div className="font-body-lg text-body-lg text-on-surface-variant space-y-6 max-w-2xl">
-                {overviewParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+              <div className="village-picks-grid grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-4 md:gap-6">
+                {thingsToDo.map((experience) => (
+                  <ExperienceCard key={experience.title} experience={experience} />
                 ))}
               </div>
             </div>
-            <AtAGlancePanel village={village} />
+          )}
+
+          {(village.places_to_stay.length > 0 ||
+            village.places_to_eat.length > 0) && (
+            <div className="mb-24 md:mb-32">
+              {village.places_to_eat.length > 0 && (
+                <section id="where-to-eat">
+                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
+                    <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
+                      Where To Eat In {village.name}
+                    </h2>
+                    <a
+                      className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0"
+                      href="/places-to-eat"
+                    >
+                      View all dining
+                    </a>
+                  </div>
+                  <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
+                    {placesToEat.map((pick) => (
+                      <PlacePickCard
+                        key={pick.name}
+                        pick={pick}
+                        fallbackHref="/places-to-eat"
+                      />
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {village.places_to_stay.length > 0 && (
+                <section id="where-to-stay" className="mt-16 md:mt-24">
+                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
+                    <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
+                      Where To Stay In {village.name}
+                    </h2>
+                    <a
+                      className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0"
+                      href="/places-to-stay"
+                    >
+                      View all stays
+                    </a>
+                  </div>
+                  <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
+                    {placesToStay.map((pick) => (
+                      <PlacePickCard
+                        key={pick.name}
+                        pick={pick}
+                        fallbackHref="/places-to-stay"
+                      />
+                    ))}
+                  </div>
+                </section>
+              )}
+            </div>
+          )}
+
+          <div className="mb-24 md:mb-32">
+            <div className="village-overview-grid">
+              <div className="space-y-8">
+                <div className="inline-block px-4 py-2 bg-surface-container-high border border-limestone/20">
+                  <span className="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">
+                    Village Overview
+                  </span>
+                </div>
+                <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
+                  {village.overview_heading}
+                </h2>
+                <div className="font-body-lg text-body-lg text-on-surface-variant space-y-6 max-w-2xl">
+                  {overviewParagraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="village-overview-grid__media">
+                {overviewImage ? (
+                  <Image
+                    alt={`${village.name} village`}
+                    src={overviewImage}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1279px) 100vw, 40vw"
+                  />
+                ) : (
+                  <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[280px]" />
+                )}
+              </div>
+            </div>
           </div>
 
           <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center bg-surface-container-low p-8 md:p-12 border border-outline-variant/20">
@@ -209,12 +387,12 @@ export function VillageContent({
             </div>
           </div>
 
-          <VisitorFitSection village={village} />
-          <VillageComparisonSection
-            village={village}
-            comparisonHeroImages={comparisonHeroImages}
-          />
-          <LocalTipsSection village={village} />
+          <div id="when-to-visit">
+            <VisitorFitSection village={village} />
+          </div>
+          <div id="local-tips">
+            <LocalTipsSection village={village} />
+          </div>
 
           {village.hidden_gems.length > 0 && (
             <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
@@ -254,156 +432,6 @@ export function VillageContent({
             </div>
           )}
 
-          {village.curated_experiences.length > 0 && (
-            <div className="mb-24 md:mb-32">
-              <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 text-center leading-tight">
-                Things To Do In {village.name}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                {village.curated_experiences.map((experience) => (
-                  <div key={experience.title} className="village-experience group">
-                    <div className="village-experience__image">
-                      {experience.image_url ? (
-                        <Image
-                          alt={experience.image_alt ?? ""}
-                          src={experience.image_url}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 640px) 100vw, 33vw"
-                        />
-                      ) : (
-                        <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[200px]" />
-                      )}
-                    </div>
-                    <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">
-                      {experience.title}
-                    </h3>
-                    <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
-                      {experience.body}
-                    </p>
-                    <div className="p-5 bg-surface-container border-l border-limestone">
-                      <p className="font-body-sm italic text-limestone leading-relaxed">
-                        Insider tip: {experience.insider_tip}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          <SeasonalAdviceSection seasons={seasons} />
-          <CombineWithSection
-            village={village}
-            combineHeroImages={combineHeroImages}
-          />
-
-          {(village.places_to_stay.length > 0 ||
-            village.places_to_eat.length > 0) && (
-            <div className="mb-24 md:mb-32">
-              {village.places_to_stay.length > 0 && (
-                <section>
-                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
-                    <h4 className="font-label-caps text-label-caps text-limestone tracking-[0.2em]">
-                      Where To Stay In {village.name}
-                    </h4>
-                    <a
-                      className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0"
-                      href="/places-to-stay"
-                    >
-                      View all stays
-                    </a>
-                  </div>
-                  <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
-                    {placesToStay.map((pick) => (
-                      <PlacePickCard
-                        key={pick.name}
-                        pick={pick}
-                        fallbackHref="/places-to-stay"
-                      />
-                    ))}
-                  </div>
-                </section>
-              )}
-
-              {village.places_to_eat.length > 0 && (
-                <section className="mt-16 md:mt-24">
-                  <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
-                    <h4 className="font-label-caps text-label-caps text-limestone tracking-[0.2em]">
-                      Where To Eat In {village.name}
-                    </h4>
-                    <a
-                      className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors shrink-0"
-                      href="/places-to-eat"
-                    >
-                      View all dining
-                    </a>
-                  </div>
-                  <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
-                    {placesToEat.map((pick) => (
-                      <PlacePickCard
-                        key={pick.name}
-                        pick={pick}
-                        fallbackHref="/places-to-eat"
-                      />
-                    ))}
-                  </div>
-                </section>
-              )}
-            </div>
-          )}
-
-          {(village.local_businesses ?? []).length > 0 && (
-            <section className="mb-24 md:mb-32">
-              <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 leading-tight">
-                Local Independents In {village.name}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                {(village.local_businesses ?? []).map((business) => (
-                  <article key={business.name} className="village-experience group">
-                    <div className="village-experience__image">
-                      {business.image_url ? (
-                        <Image
-                          alt={business.image_alt ?? ""}
-                          src={business.image_url}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 640px) 100vw, 33vw"
-                        />
-                      ) : (
-                        <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[200px]" />
-                      )}
-                    </div>
-                    <span className="font-label-caps text-[10px] text-limestone tracking-widest uppercase">
-                      {business.category}
-                    </span>
-                    <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">
-                      {business.name}
-                    </h3>
-                    <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
-                      {business.description}
-                    </p>
-                    {business.address && (
-                      <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
-                        {business.address}
-                      </p>
-                    )}
-                    {business.website_url && (
-                      <a
-                        className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors"
-                        href={business.website_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Visit website
-                      </a>
-                    )}
-                  </article>
-                ))}
-              </div>
-            </section>
-          )}
-
           <div className="mb-24 md:mb-32">
             <div className="mb-10 md:mb-12 village-practical-header text-left">
               <span className="font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase block mb-3">
@@ -413,8 +441,12 @@ export function VillageContent({
                 Planning Your Visit To {village.name}
               </h2>
             </div>
-            <ParkingGuideSection village={village} />
-            <GettingHereSection village={village} />
+            <div id="parking">
+              <ParkingGuideSection village={village} />
+            </div>
+            <div id="getting-here">
+              <GettingHereSection village={village} />
+            </div>
             <div className="village-guides-grid grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="village-panel village-guide-panel border border-outline-variant/20">
                 <div className="village-guide-header">
@@ -486,13 +518,75 @@ export function VillageContent({
             </div>
           </div>
 
-          <FaqSection village={village} />
+          <VillageComparisonSection
+            village={village}
+            comparisonHeroImages={comparisonHeroImages}
+          />
+          <CombineWithSection
+            village={village}
+            combineHeroImages={combineHeroImages}
+          />
+          <SeasonalAdviceSection seasons={seasons} />
+          <div id="faqs">
+            <FaqSection village={village} />
+          </div>
 
           <NearbyVillagesSection
             villageName={village.name}
             nearbyVillages={linkableNearbyVillages}
             heroImagesByName={nearbyHeroImages}
           />
+
+          {(village.local_businesses ?? []).length > 0 && (
+            <section className="mb-24 md:mb-32">
+              <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 leading-tight">
+                Local Independents In {village.name}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                {(village.local_businesses ?? []).map((business) => (
+                  <article key={business.name} className="village-things-to-do group">
+                    <div className="village-things-to-do__image">
+                      {business.image_url ? (
+                        <Image
+                          alt={business.image_alt ?? ""}
+                          src={business.image_url}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, 33vw"
+                        />
+                      ) : (
+                        <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[200px]" />
+                      )}
+                    </div>
+                    <span className="font-label-caps text-[10px] text-limestone tracking-widest uppercase">
+                      {business.category}
+                    </span>
+                    <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">
+                      {business.name}
+                    </h3>
+                    <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
+                      {business.description}
+                    </p>
+                    {business.address && (
+                      <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
+                        {business.address}
+                      </p>
+                    )}
+                    {business.website_url && (
+                      <a
+                        className="font-label-caps text-[10px] text-limestone/70 hover:text-limestone tracking-widest uppercase border-b border-limestone/30 pb-1 transition-colors"
+                        href={business.website_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit website
+                      </a>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </section>
+          )}
 
           <NewsletterSignup />
         </div>

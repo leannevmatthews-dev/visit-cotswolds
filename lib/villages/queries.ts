@@ -1,5 +1,5 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
-import type { SeasonalAdvice, Village } from "@/lib/villages/types";
+import type { SeasonalAdvice, ThingsToDoItem, Village } from "@/lib/villages/types";
 
 export type VillageListRow = {
   name: string;
@@ -64,7 +64,13 @@ export async function getVillageBySlug(slug: string): Promise<Village | null> {
     return null;
   }
 
-  return data as Village;
+  const row = data as Record<string, unknown>;
+  const { curated_experiences, ...rest } = row;
+
+  return {
+    ...rest,
+    things_to_do: (curated_experiences as ThingsToDoItem[] | null) ?? [],
+  } as Village;
 }
 
 /** Hero background URLs for villages matched by exact name (comparison cards). */

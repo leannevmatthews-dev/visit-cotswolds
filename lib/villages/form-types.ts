@@ -1,4 +1,4 @@
-import type { CotswoldsRegion, Village } from "@/lib/villages/types";
+import type { CotswoldsRegion, ThingsToDoItem, Village } from "@/lib/villages/types";
 
 export type VillageFormState = {
   name: string;
@@ -10,6 +10,7 @@ export type VillageFormState = {
   brief_best_tip: string;
   overview_heading: string;
   overview_body: string;
+  overview_image_url: string;
   time_needed: string;
   dog_friendly: string;
   best_season: string;
@@ -31,7 +32,7 @@ export type VillageFormState = {
   alternative_villages: Village["alternative_villages"];
   local_tips: Village["local_tips"];
   hidden_gems: Village["hidden_gems"];
-  curated_experiences: Village["curated_experiences"];
+  things_to_do: Village["things_to_do"];
   combine_with: Village["combine_with"];
   places_to_stay: Village["places_to_stay"];
   places_to_eat: Village["places_to_eat"];
@@ -57,6 +58,8 @@ export type VillageFormState = {
   hidden_gems_image_alt: string;
 };
 
-export type VillageInsertPayload = Omit<Village, "id">;
+export type VillageInsertPayload = Omit<Village, "id" | "things_to_do"> & {
+  curated_experiences: ThingsToDoItem[];
+};
 
 export type FormFieldErrors = Partial<Record<keyof VillageFormState | "form", string>>;

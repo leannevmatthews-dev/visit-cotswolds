@@ -59,6 +59,103 @@
     margin-right: 0.35rem;
 }
 
+/* In brief + at a glance intro row */
+.village-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-gutter);
+    padding: 0 var(--spacing-margin-desktop);
+    align-items: stretch;
+    width: 100%;
+    max-width: var(--spacing-container-max);
+    margin: 0 auto;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 1279px) {
+    .village-intro-grid {
+        grid-template-columns: 1fr;
+        padding: 0 var(--spacing-margin-mobile);
+    }
+}
+
+.village-intro-grid > * {
+    min-width: 0;
+}
+
+.village-jump-links {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 24px var(--spacing-margin-desktop);
+    scrollbar-width: none;
+}
+
+.village-jump-links::-webkit-scrollbar {
+    display: none;
+}
+
+.village-jump-links a {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 8px 16px;
+    border: 1px solid var(--color-outline-variant);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface-container);
+    color: var(--color-on-surface-variant);
+    font-family: var(--font-body);
+    font-size: var(--text-label-caps);
+    letter-spacing: var(--text-label-caps--letter-spacing);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.village-jump-links a:hover {
+    color: var(--color-limestone);
+    border-color: var(--color-limestone);
+}
+
+@media (max-width: 1279px) {
+    .village-jump-links {
+        flex-wrap: wrap;
+        padding: 16px var(--spacing-margin-mobile);
+    }
+}
+
+.village-overview-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: var(--spacing-gutter);
+    align-items: start;
+}
+
+.village-overview-grid__media {
+    position: relative;
+    align-self: stretch;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    min-height: 100%;
+}
+
+.village-overview-grid__media img {
+    object-fit: cover;
+}
+
+@media (max-width: 1279px) {
+    .village-overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .village-overview-grid__media {
+        order: -1;
+        height: 280px;
+        align-self: auto;
+        min-height: 280px;
+    }
+}
+
 .village-inline-link {
     color: inherit;
     text-decoration: underline;
@@ -199,25 +296,25 @@
     margin-top: 0;
 }
 
-.village-experience__image {
+.village-things-to-do__image {
     aspect-ratio: 1 / 1;
     overflow: hidden;
     position: relative;
     margin-bottom: 1.5rem;
 }
 
-.village-experience__image img {
+.village-things-to-do__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 1s ease;
 }
 
-.village-experience:hover .village-experience__image img {
+.village-things-to-do:hover .village-things-to-do__image img {
     transform: scale(1.06);
 }
 
-.village-experience__image::after {
+.village-things-to-do__image::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -225,7 +322,7 @@
     transition: opacity 0.4s ease;
 }
 
-.village-experience:hover .village-experience__image::after {
+.village-things-to-do:hover .village-things-to-do__image::after {
     opacity: 0.85;
 }
 
@@ -853,6 +950,10 @@
     background: rgba(28, 27, 27, 0.9);
 }
 
+.village-pick__image--square {
+    aspect-ratio: 1 / 1;
+}
+
 @media (min-width: 768px) {
     .village-pick__image {
         margin-bottom: 1.25rem;
@@ -1435,7 +1536,7 @@
         aspect-ratio: 16 / 10;
     }
 
-    .village-experience__image {
+    .village-things-to-do__image {
         margin-bottom: 1rem;
     }
 

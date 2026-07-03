@@ -211,6 +211,16 @@ export function VillageForm({
           showAlt={false}
           hint="Large photo behind the village name, tagline, and video player at the top of the page. Also used as the video poster before play."
         />
+        <ImageUploadField
+          id="overview_image_url"
+          label="Village Overview image"
+          value={form.overview_image_url}
+          onChange={(value) => setField("overview_image_url", value)}
+          villageSlug={form.slug}
+          fieldName="overview"
+          showAlt={false}
+          hint="Shown beside the Village Overview editorial section. If left empty, the hero image is used as a fallback."
+        />
         <TextInput
           id="video_embed_url"
           label="Video embed URL"
@@ -423,150 +433,6 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Comparison & Alternatives">
-        <div className="flex flex-col gap-6">
-          <div>
-            <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
-              Comparison stats
-            </p>
-            <RepeatableList
-              items={form.comparison_stats}
-              onChange={(items) => setField("comparison_stats", items)}
-              createItem={() => ({
-                village_name: "",
-                is_current: false,
-                beauty: "",
-                crowds: "",
-                food: "",
-                time_needed: "",
-                image_url: "",
-                image_alt: "",
-              })}
-              addLabel="Add comparison row"
-              emptyLabel="No comparison rows yet."
-              renderItem={(item, index, update, remove) => (
-                <RepeatableItemCard
-                  key={index}
-                  title={`Comparison ${index + 1}`}
-                  onRemove={remove}
-                >
-                  <FieldGrid>
-                    <TextInput
-                      id={`comparison-village-${index}`}
-                      label="Village name"
-                      value={item.village_name}
-                      onChange={(value) => update({ village_name: value })}
-                    />
-                    <ImageUploadField
-                      id={`comparison-image-${index}`}
-                      label="Image (optional)"
-                      hint="Photo shown on this village's comparison card"
-                      value={item.image_url ?? ""}
-                      onChange={(value) => update({ image_url: value })}
-                      altValue={item.image_alt ?? ""}
-                      onAltChange={(value) => update({ image_alt: value })}
-                      villageSlug={form.slug}
-                      fieldName={`comparison-${index}`}
-                    />
-                    <TextInput
-                      id={`comparison-beauty-${index}`}
-                      label="Beauty"
-                      value={item.beauty}
-                      onChange={(value) => update({ beauty: value })}
-                    />
-                    <TextInput
-                      id={`comparison-crowds-${index}`}
-                      label="Crowds"
-                      value={item.crowds}
-                      onChange={(value) => update({ crowds: value })}
-                    />
-                    <TextInput
-                      id={`comparison-food-${index}`}
-                      label="Food"
-                      value={item.food}
-                      onChange={(value) => update({ food: value })}
-                    />
-                    <TextInput
-                      id={`comparison-time-${index}`}
-                      label="Time needed"
-                      value={item.time_needed}
-                      onChange={(value) => update({ time_needed: value })}
-                    />
-                  </FieldGrid>
-                  <CheckboxInput
-                    id={`comparison-current-${index}`}
-                    label="This is the current village"
-                    checked={item.is_current}
-                    onChange={(checked) => update({ is_current: checked })}
-                  />
-                </RepeatableItemCard>
-              )}
-            />
-          </div>
-
-          <div>
-            <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
-              Alternative villages
-            </p>
-            <RepeatableList
-              items={form.alternative_villages}
-              onChange={(items) => setField("alternative_villages", items)}
-              createItem={() => ({ icon: "", need: "", suggested_villages: [] })}
-              addLabel="Add alternative"
-              emptyLabel="No alternatives yet."
-              renderItem={(item, index, update, remove) => (
-                <RepeatableItemCard
-                  key={index}
-                  title={`Alternative ${index + 1}`}
-                  onRemove={remove}
-                >
-                  <FieldGrid>
-                    <IconSelect
-                      id={`alternative-icon-${index}`}
-                      label="Icon"
-                      value={item.icon}
-                      onChange={(value) => update({ icon: value })}
-                    />
-                    <TextInput
-                      id={`alternative-need-${index}`}
-                      label="Need"
-                      value={item.need}
-                      onChange={(value) => update({ need: value })}
-                    />
-                  </FieldGrid>
-                  <div>
-                    <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
-                      Suggested villages
-                    </p>
-                    <RepeatableList
-                      items={item.suggested_villages}
-                      onChange={(suggested) => update({ suggested_villages: suggested })}
-                      createItem={() => ""}
-                      addLabel="Add village name"
-                      emptyLabel="No suggested villages yet."
-                      renderItem={(name, nameIndex, updateName, removeName) => (
-                        <RepeatableItemCard
-                          key={nameIndex}
-                          title={`Village ${nameIndex + 1}`}
-                          onRemove={removeName}
-                        >
-                          <TextInput
-                            id={`alternative-${index}-village-${nameIndex}`}
-                            label="Village name"
-                            value={name}
-                            onChange={(value) => updateName(() => value)}
-                          />
-                        </RepeatableItemCard>
-                      )}
-                    />
-                  </div>
-                </RepeatableItemCard>
-              )}
-            />
-          </div>
-        </div>
-      </FormSection>
-
       <FormSection title="Local Tips">
         <RepeatableList
           items={form.local_tips}
@@ -657,10 +523,10 @@ export function VillageForm({
         />
       </FormSection>
 
-      <FormSection title="Curated Experiences">
+      <FormSection title="Things To Do">
         <RepeatableList
-          items={form.curated_experiences}
-          onChange={(items) => setField("curated_experiences", items)}
+          items={form.things_to_do}
+          onChange={(items) => setField("things_to_do", items)}
           createItem={() => ({
             title: "",
             body: "",
@@ -668,44 +534,44 @@ export function VillageForm({
             image_url: "",
             image_alt: "",
           })}
-          addLabel="Add experience"
-          emptyLabel="No experiences yet."
+          addLabel="Add thing to do"
+          emptyLabel="No things to do yet."
           renderItem={(item, index, update, remove) => (
             <RepeatableItemCard
               key={index}
-              title={`Experience ${index + 1}`}
+              title={`Things to do ${index + 1}`}
               onRemove={remove}
             >
               <TextInput
-                id={`experience-title-${index}`}
+                id={`things-to-do-title-${index}`}
                 label="Title"
                 value={item.title}
                 onChange={(value) => update({ title: value })}
               />
               <TextArea
-                id={`experience-body-${index}`}
+                id={`things-to-do-body-${index}`}
                 label="Body"
                 value={item.body}
                 onChange={(value) => update({ body: value })}
                 rows={3}
               />
               <TextArea
-                id={`experience-tip-${index}`}
+                id={`things-to-do-tip-${index}`}
                 label="Insider tip"
                 value={item.insider_tip}
                 onChange={(value) => update({ insider_tip: value })}
                 rows={2}
               />
               <ImageUploadField
-                id={`experience-image-${index}`}
+                id={`things-to-do-image-${index}`}
                 label="Image (optional)"
-                hint="Photo for this specific experience card"
+                hint="Photo for this things to do card"
                 value={item.image_url ?? ""}
                 onChange={(value) => update({ image_url: value })}
                 altValue={item.image_alt ?? ""}
                 onAltChange={(value) => update({ image_alt: value })}
                 villageSlug={form.slug}
-                fieldName={`experience-${index}`}
+                fieldName={`things-to-do-${index}`}
               />
             </RepeatableItemCard>
           )}
@@ -1111,6 +977,150 @@ export function VillageForm({
             </RepeatableItemCard>
           )}
         />
+      </FormSection>
+
+      <FormSection title="Comparison & Alternatives">
+        <div className="flex flex-col gap-6">
+          <div>
+            <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
+              Comparison stats
+            </p>
+            <RepeatableList
+              items={form.comparison_stats}
+              onChange={(items) => setField("comparison_stats", items)}
+              createItem={() => ({
+                village_name: "",
+                is_current: false,
+                beauty: "",
+                crowds: "",
+                food: "",
+                time_needed: "",
+                image_url: "",
+                image_alt: "",
+              })}
+              addLabel="Add comparison row"
+              emptyLabel="No comparison rows yet."
+              renderItem={(item, index, update, remove) => (
+                <RepeatableItemCard
+                  key={index}
+                  title={`Comparison ${index + 1}`}
+                  onRemove={remove}
+                >
+                  <FieldGrid>
+                    <TextInput
+                      id={`comparison-village-${index}`}
+                      label="Village name"
+                      value={item.village_name}
+                      onChange={(value) => update({ village_name: value })}
+                    />
+                    <ImageUploadField
+                      id={`comparison-image-${index}`}
+                      label="Image (optional)"
+                      hint="Photo shown on this village's comparison card"
+                      value={item.image_url ?? ""}
+                      onChange={(value) => update({ image_url: value })}
+                      altValue={item.image_alt ?? ""}
+                      onAltChange={(value) => update({ image_alt: value })}
+                      villageSlug={form.slug}
+                      fieldName={`comparison-${index}`}
+                    />
+                    <TextInput
+                      id={`comparison-beauty-${index}`}
+                      label="Beauty"
+                      value={item.beauty}
+                      onChange={(value) => update({ beauty: value })}
+                    />
+                    <TextInput
+                      id={`comparison-crowds-${index}`}
+                      label="Crowds"
+                      value={item.crowds}
+                      onChange={(value) => update({ crowds: value })}
+                    />
+                    <TextInput
+                      id={`comparison-food-${index}`}
+                      label="Food"
+                      value={item.food}
+                      onChange={(value) => update({ food: value })}
+                    />
+                    <TextInput
+                      id={`comparison-time-${index}`}
+                      label="Time needed"
+                      value={item.time_needed}
+                      onChange={(value) => update({ time_needed: value })}
+                    />
+                  </FieldGrid>
+                  <CheckboxInput
+                    id={`comparison-current-${index}`}
+                    label="This is the current village"
+                    checked={item.is_current}
+                    onChange={(checked) => update({ is_current: checked })}
+                  />
+                </RepeatableItemCard>
+              )}
+            />
+          </div>
+
+          <div>
+            <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
+              Alternative villages
+            </p>
+            <RepeatableList
+              items={form.alternative_villages}
+              onChange={(items) => setField("alternative_villages", items)}
+              createItem={() => ({ icon: "", need: "", suggested_villages: [] })}
+              addLabel="Add alternative"
+              emptyLabel="No alternatives yet."
+              renderItem={(item, index, update, remove) => (
+                <RepeatableItemCard
+                  key={index}
+                  title={`Alternative ${index + 1}`}
+                  onRemove={remove}
+                >
+                  <FieldGrid>
+                    <IconSelect
+                      id={`alternative-icon-${index}`}
+                      label="Icon"
+                      value={item.icon}
+                      onChange={(value) => update({ icon: value })}
+                    />
+                    <TextInput
+                      id={`alternative-need-${index}`}
+                      label="Need"
+                      value={item.need}
+                      onChange={(value) => update({ need: value })}
+                    />
+                  </FieldGrid>
+                  <div>
+                    <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
+                      Suggested villages
+                    </p>
+                    <RepeatableList
+                      items={item.suggested_villages}
+                      onChange={(suggested) => update({ suggested_villages: suggested })}
+                      createItem={() => ""}
+                      addLabel="Add village name"
+                      emptyLabel="No suggested villages yet."
+                      renderItem={(name, nameIndex, updateName, removeName) => (
+                        <RepeatableItemCard
+                          key={nameIndex}
+                          title={`Village ${nameIndex + 1}`}
+                          onRemove={removeName}
+                        >
+                          <TextInput
+                            id={`alternative-${index}-village-${nameIndex}`}
+                            label="Village name"
+                            value={name}
+                            onChange={(value) => updateName(() => value)}
+                          />
+                        </RepeatableItemCard>
+                      )}
+                    />
+                  </div>
+                </RepeatableItemCard>
+              )}
+            />
+          </div>
+        </div>
       </FormSection>
 
       <FormSection title="FAQ">

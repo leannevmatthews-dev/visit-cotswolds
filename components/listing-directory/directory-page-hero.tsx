@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 type DirectoryPageHeroProps = {
@@ -17,12 +18,14 @@ export function DirectoryPageHero({
 }: DirectoryPageHeroProps) {
   return (
     <section className="village-hero directory-page-hero">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         alt=""
         aria-hidden="true"
         className="village-hero__bg"
         src={heroImage}
+        fill
+        sizes="100vw"
+        priority
       />
       <div className="village-hero__gradient" aria-hidden="true" />
       <div className="village-hero__content">

@@ -49,7 +49,7 @@ export function AtAGlancePanel({ village }: AtAGlancePanelProps) {
   ];
 
   return (
-    <aside className="village-at-a-glance village-panel lg:col-span-5">
+    <aside className="village-at-a-glance village-panel">
       <h3 className="village-at-a-glance__title font-label-caps text-label-caps text-limestone tracking-widest">
         At A Glance
       </h3>

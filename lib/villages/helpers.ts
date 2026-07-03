@@ -1,4 +1,9 @@
-import type { CombineWithTrip, CrowdPillLevel, FaqItem } from "@/lib/villages/types";
+import type {
+  CombineWithTrip,
+  CrowdPillLevel,
+  FaqItem,
+  ThingsToDoItem,
+} from "@/lib/villages/types";
 
 type LegacyCombineWithTrip = {
   title: string;
@@ -214,4 +219,104 @@ export function enrichPlacePicksFromListings<
           : pick.external_link,
     };
   });
+}
+
+export const VILLAGE_SECTION_PICK_LIMIT = 5;
+
+type ThingsToDoListingSource = {
+  name: string;
+  description: string;
+  location: string;
+  imageUrl: string;
+  imageAlt: string;
+};
+
+const THINGS_TO_DO_STOP_WORDS = new Set([
+  "the",
+  "and",
+  "in",
+  "of",
+  "a",
+  "to",
+  "at",
+  "for",
+]);
+
+function thingsToDoTitleTokens(title: string): Set<string> {
+  return new Set(
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, "")
+      .split(/\s+/)
+      .filter((word) => word.length > 2 && !THINGS_TO_DO_STOP_WORDS.has(word)),
+  );
+}
+
+function thingsToDoTitlesOverlap(a: string, b: string): boolean {
+  const tokensA = thingsToDoTitleTokens(a);
+  const tokensB = thingsToDoTitleTokens(b);
+  let overlap = 0;
+
+  for (const token of tokensA) {
+    if (tokensB.has(token)) {
+      overlap += 1;
+    }
+  }
+
+  return overlap >= 2;
+}
+
+function listingMatchesVillage(location: string, villageName: string): boolean {
+  const normalizedVillage = villageName.trim().toLowerCase();
+
+  return location
+    .toLowerCase()
+    .split(",")
+    .some((part) => part.trim() === normalizedVillage);
+}
+
+function listingToThingsToDoItem(
+  listing: ThingsToDoListingSource,
+): ThingsToDoItem {
+  return {
+    title: listing.name,
+    body: listing.description,
+    insider_tip: "",
+    image_url: listing.imageUrl,
+    image_alt: listing.imageAlt,
+  };
+}
+
+/** Things to do for the village page, filled to five from directory listings when needed. */
+export function buildVillageThingsToDo(
+  villageName: string,
+  thingsToDo: ThingsToDoItem[],
+  listings: ThingsToDoListingSource[],
+): ThingsToDoItem[] {
+  const result = thingsToDo.slice(0, VILLAGE_SECTION_PICK_LIMIT);
+
+  if (result.length >= VILLAGE_SECTION_PICK_LIMIT) {
+    return result;
+  }
+
+  for (const listing of listings) {
+    if (result.length >= VILLAGE_SECTION_PICK_LIMIT) {
+      break;
+    }
+
+    if (!listingMatchesVillage(listing.location, villageName)) {
+      continue;
+    }
+
+    const isDuplicate = result.some((item) =>
+      thingsToDoTitlesOverlap(item.title, listing.name),
+    );
+    if (isDuplicate) {
+      continue;
+    }
+
+    result.push(listingToThingsToDoItem(listing));
+  }
+
+  return result;
 }

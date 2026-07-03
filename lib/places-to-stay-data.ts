@@ -309,23 +309,10 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/-/media/sites/cotswolds/swan/2025-rooms-swan/superior-double-twin/swan-pink-room-8-deluxe-double.jpg",
     imageAlt: "The Swan Hotel Bibury",
     websiteUrl: "https://www.swanhotelbibury.co.uk",
-  },
-  {
-    id: "barnsley-house",
-    name: "Barnsley House",
-    description: "Garden retreat 3 miles from Bibury.",
-    category: "Manor House",
-    location: "Barnsley",
-    address: "",
-    dogFriendly: false,
-    priceLevel: 3,
-    pricePerNight: "£350+",
-    imageUrl: "",
-    imageAlt: "Barnsley House",
-    websiteUrl: "https://www.barnsleyhouse.com",
   },
   {
     id: "bull-burford",
@@ -337,7 +324,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://static1.squarespace.com/static/638e07701ecb054a3cd0a168/t/691ce934feaf05446e63211c/1763502389671/leo+davut+-+1882.jpg",
     imageAlt: "The Bull Burford",
     websiteUrl: "https://www.bullburford.com",
   },
@@ -351,7 +339,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://www.cotswold-inns-hotels.co.uk/the-lamb-inn/-/media/sites/cotswolds/lamb/2025-rooms-lamb/rosie/lamb--rosie--bedroom-bed--chairs.jpg?la=en&h=1280&w=1920&hash=3F1514FA25FB146E24A1CF85E2F363B3",
     imageAlt: "The Lamb Inn Burford",
     websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-lamb-inn",
   },
@@ -365,7 +354,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://i0.wp.com/theangelatburford.co.uk/wp-content/uploads/2026/01/Untitled-design-43.png?w=1024&ssl=1",
     imageAlt: "The Angel at Burford",
     websiteUrl: "https://theangelatburford.co.uk",
   },
@@ -379,7 +369,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 3,
     pricePerNight: "£350+",
-    imageUrl: "",
+    imageUrl:
+      "https://www.exclusive.co.uk/media/kninnbmv/holdersmead-15.jpg?width=1210&height=800&quality=70&v=1da333ba13764a0",
     imageAlt: "The Manor House Castle Combe",
     websiteUrl: "https://www.exclusive.co.uk/the-manor-house",
   },
@@ -393,7 +384,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://www.exclusive.co.uk/media/y24hk2sw/castle-inn-bedrooms-nov-23-15.jpg?rxy=0.39595007108806557,0.4597043573506188&width=588&height=546&quality=70&v=1daf54f0bc17420",
     imageAlt: "The Castle Inn Castle Combe",
     websiteUrl: "https://www.exclusive.co.uk/the-castle-inn",
   },
@@ -407,7 +399,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://www.whitehart-ford.com/youngs/uploads/sites/356/2023/07/Double-1-1024x682.jpeg",
     imageAlt: "The White Hart Ford",
     websiteUrl: "https://www.whitehart-ford.com",
   },
@@ -421,7 +414,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://dialhousehotel.com/wp-content/uploads/aubrey-1-755x466.jpg",
     imageAlt: "The Dial House Bourton",
     websiteUrl: "https://dialhousehotel.com",
   },
@@ -435,7 +429,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://qbook-hotelier-files.s3.eu-west-2.amazonaws.com/Images/8/6/64117aafa2910cd70c5c2260d88c1af8.jpg",
     imageAlt: "Chester House Hotel Bourton",
     websiteUrl: "https://chesterhousehotel.com",
   },
@@ -449,24 +444,10 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://images.trvl-media.com/lodging/5000000/4600000/4592100/4592088/f6ec4d64.jpg?impolicy=fcrop&w=1200&h=800&quality=medium",
     imageAlt: "The Lamb Inn Great Rissington",
     websiteUrl: "https://www.thelambinn.com",
-  },
-  {
-    id: "snowshill-manor-holiday-cottage",
-    name: "Snowshill Manor Holiday Cottage",
-    description: "National Trust cottage opposite Snowshill Manor.",
-    category: "Manor House",
-    location: "Snowshill",
-    address: "",
-    dogFriendly: false,
-    priceLevel: 2,
-    pricePerNight: "£250+",
-    imageUrl: "",
-    imageAlt: "Snowshill Manor Holiday Cottage",
-    websiteUrl:
-      "https://www.nationaltrust.org.uk/holidays/cotswolds-gloucestershire/snowshill-manor-farmhouse",
   },
 ];
 

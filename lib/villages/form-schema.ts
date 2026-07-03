@@ -139,7 +139,7 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       title: (gem.title ?? "").trim(),
       body: (gem.body ?? "").trim(),
     })),
-    curated_experiences: state.curated_experiences.map((item) => ({
+    curated_experiences: state.things_to_do.map((item) => ({
       title: (item.title ?? "").trim(),
       body: (item.body ?? "").trim(),
       insider_tip: (item.insider_tip ?? "").trim(),
@@ -215,6 +215,7 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
     alt_text: emptyToNull(state.alt_text),
     video_embed_url: emptyToNull(state.video_embed_url),
     hero_background_image_url: emptyToNull(state.hero_background_image_url),
+    overview_image_url: emptyToNull(state.overview_image_url),
     our_take_image_url: emptyToNull(state.our_take_image_url),
     hero_gallery_urls: heroGalleryUrls.length > 0 ? heroGalleryUrls : null,
     hidden_gems_image_url: emptyToNull(state.hidden_gems_image_url),
@@ -289,7 +290,7 @@ export function villageToFormState(village: Village): VillageFormState {
     alternative_villages: village.alternative_villages ?? [],
     local_tips: village.local_tips ?? [],
     hidden_gems: village.hidden_gems ?? [],
-    curated_experiences: (village.curated_experiences ?? []).map((item) => ({
+    things_to_do: (village.things_to_do ?? []).map((item) => ({
       ...item,
       image_url: nullToEmpty(item.image_url),
       image_alt: nullToEmpty(item.image_alt),
@@ -340,6 +341,7 @@ export function villageToFormState(village: Village): VillageFormState {
     hero_background_image_url:
       nullToEmpty(village.hero_background_image_url) ||
       (village.hero_gallery_urls?.[0] ?? ""),
+    overview_image_url: nullToEmpty(village.overview_image_url),
     our_take_image_url:
       nullToEmpty(village.our_take_image_url) ||
       (village.hero_gallery_urls?.[1] ?? ""),

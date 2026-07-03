@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { FadeInSection } from "@/components/fade-in-section";
 import { NewsletterSignup } from "@/components/shared/newsletter-signup";
@@ -49,16 +50,30 @@ export default async function HomePage() {
                   aria-hidden="true"
                 />
               )}
+              <div className="absolute inset-0 image-overlay-gradient opacity-80" />
+              <Link
+                href="/things-to-do"
+                className="absolute bottom-4 left-4 z-10 border px-3 py-1.5 font-label-caps text-label-caps text-[var(--color-limestone)] transition-colors hover:text-[color-mix(in_srgb,var(--color-limestone)_85%,white)]"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  backgroundColor:
+                    "color-mix(in srgb, var(--color-surface) 70%, transparent)",
+                  borderColor:
+                    "color-mix(in srgb, var(--color-outline-variant) 35%, transparent)",
+                  borderRadius: "var(--radius-xl)",
+                }}
+              >
+                Cotswolds Lavender Farm
+              </Link>
             </div>
-            <div className="absolute inset-0 image-overlay-gradient opacity-80" />
           </div>
 
           <div className="relative z-10 flex flex-1 flex-col justify-center items-center text-center max-w-4xl w-full mx-auto px-margin-mobile pt-28 pb-6 md:pt-32 md:pb-10">
             <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg lg:text-[84px] text-on-background mb-3 md:mb-4">
-              The Quintessential English Escape.
+              An independent guide to the Cotswolds.
             </h1>
             <p className="font-body-lg text-on-surface-variant/80 tracking-wide uppercase font-light text-sm md:text-base">
-              The Cotswolds: charming villages, scenic valleys, and great food.
+              Handpicked, honest and researched properly so you can make the most of your time here.
             </p>
           </div>
 

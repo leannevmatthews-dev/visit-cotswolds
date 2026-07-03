@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
@@ -33,12 +34,15 @@ function ListingCard({
         className="listing-directory-card__image relative block aspect-square overflow-hidden bg-surface-container"
       >
         {listing.imageUrl ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
-            src={listing.imageUrl}
-            alt={listing.imageAlt}
-            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-          />
+          <div className="listing-card-image">
+            <Image
+              src={listing.imageUrl}
+              alt={listing.imageAlt}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
         ) : (
           <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-0" />
         )}
@@ -60,6 +64,21 @@ function ListingCard({
             </span>
           )}
         </div>
+
+        {"location" in listing && listing.location ? (
+          <span
+            className="listing-directory-card__location"
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "var(--text-label-caps)",
+              color: "var(--color-on-surface-variant)",
+              letterSpacing: "var(--text-label-caps--letter-spacing)",
+              textTransform: "uppercase",
+            }}
+          >
+            {listing.location}
+          </span>
+        ) : null}
 
         <h2 className="listing-directory-card__name font-display-lg text-[26px] leading-tight text-on-background md:text-[28px]">
           {listing.name}

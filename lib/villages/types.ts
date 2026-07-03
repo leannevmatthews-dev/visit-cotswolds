@@ -42,7 +42,7 @@ export type HiddenGem = {
   body: string;
 };
 
-export type CuratedExperience = {
+export type ThingsToDoItem = {
   title: string;
   body: string;
   insider_tip: string;
@@ -131,6 +131,7 @@ export type Village = {
   brief_best_tip: string;
   overview_heading: string;
   overview_body: string;
+  overview_image_url?: string | null;
   time_needed: string;
   dog_friendly: string;
   best_season: string;
@@ -155,7 +156,7 @@ export type Village = {
   hidden_gems: HiddenGem[];
   hidden_gems_image_url: string | null;
   hidden_gems_image_alt: string | null;
-  curated_experiences: CuratedExperience[];
+  things_to_do: ThingsToDoItem[];
   combine_with: CombineWithTrip[];
   places_to_stay: PlacePick[];
   places_to_eat: PlacePick[];

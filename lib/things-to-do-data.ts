@@ -222,7 +222,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/7/71/Farmers%27_market%2C_Stroud.jpg",
     imageAlt: "Stroud Farmers Market Cornhill stalls",
-    websiteUrl: "https://www.stroudfarmersmarket.co.uk",
+    websiteUrl: "https://fresh-n-local.co.uk/trader/stroud/",
   },
   {
     id: "westonbirt-arboretum",
@@ -301,7 +301,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
   },
   {
     id: "arlington-row-walk",
-    name: "Arlington Row Heritage Walk",
+    name: "Arlington Row",
     description:
       "A short walk past the 14th-century weavers' cottages in Bibury along the River Coln. Free to walk at any time. Most visitors only see Arlington Row from the road. The riverside path beyond the bridge is quieter and more interesting, and most people never find it.",
     category: "Walks & Trails",
@@ -312,7 +312,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/b/be/Bibury_2015_06.jpg",
     imageAlt: "Arlington Row Bibury weavers cottages River Coln",
-    websiteUrl: "https://www.alltrails.com",
+    websiteUrl: "https://www.bibury.com/arlington-row/",
   },
   {
     id: "st-edwards-church-stow",
@@ -462,7 +462,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/5/59/1053287_Church_St_John_the_Baptist_Burford_20240601_0030.jpg",
     imageAlt: "St John the Baptist Church Burford",
-    websiteUrl: "https://www.visitcotswolds.com",
+    websiteUrl: "https://www.burfordchurch.org/",
   },
   {
     id: "market-cross-lower-village-castle-combe",

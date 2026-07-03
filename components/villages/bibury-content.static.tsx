@@ -105,10 +105,10 @@ export function BiburyContent() {
 </div>
 </div>
 <div className="mb-24 md:mb-32">
-<h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 text-center leading-tight">Curated Experiences</h2>
+<h2 className="font-display-lg text-[40px] md:text-[52px] text-primary mb-8 md:mb-10 text-center leading-tight">Things To Do</h2>
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-<div className="village-experience group">
-<div className="village-experience__image">
+<div className="village-things-to-do group">
+<div className="village-things-to-do__image">
 <img alt="Arlington Row cottages" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKbvZy_pDxfY0J0HZI4hx1seJMV67v1e_q-y4FmU1fBVy-fJtae_XdF8Zx78f8pXKq2lNe25Q-PcRnB2jJ7tLK6QNS0oEdcdU3TvOKBiYWjKl7TV-ZX6B5cF1gkWhJvZZPnJGmKeXlGxP1UCXlbTacI6mQpq15KnebUBFh3AKCN0UrUuiLC2p_sJ0dFC2f5h0dIyuD2WzKqZXzoZUeAHxmLHcDtlTfBKZpVyiiaTNdScpDpaqog5_68u5KD0gHfURv9oQc9NbFBA"/>
 </div>
 <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">Arlington Row</h3>
@@ -117,8 +117,8 @@ export function BiburyContent() {
 <p className="font-body-sm italic text-limestone leading-relaxed">Insider tip: follow the path past the cottages for a secluded view of Rack Isle meadows.</p>
 </div>
 </div>
-<div className="village-experience group">
-<div className="village-experience__image">
+<div className="village-things-to-do group">
+<div className="village-things-to-do__image">
 <img alt="River Coln in Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7kvAQ5rbHG34W2nT4XMucT3y9M2YV4Sk0V-JGp-Ni4FpgbDmvKZyh43PWjuhn5OQYd1TiU8-eId5lkKzg_pCT-d4aK4YDHKjejJIFZX2FBW_gGPNqliGz5YIafpLzEx3-7DmrlEiQM7-wY-kVCjqBop54UTeNci70x8rZx93UCce6lJa5cSwvs_IH8PwmjpbdQADyeKlv70vR-ckAaGELnJYixUl3ymnKkSdIVnsuVDu84E-2DRso-MhKxzk6DEyz9alGVjJPMw"/>
 </div>
 <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">River Coln Stroll</h3>
@@ -127,8 +127,8 @@ export function BiburyContent() {
 <p className="font-body-sm italic text-limestone leading-relaxed">Insider tip: most visitors never go beyond the bridge—this is where locals walk.</p>
 </div>
 </div>
-<div className="village-experience group">
-<div className="village-experience__image">
+<div className="village-things-to-do group">
+<div className="village-things-to-do__image">
 <img alt="The Swan Hotel, Bibury" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7hVkUiJmSKlt_tiClMvED0Qni2RABiXVoa6N2_k5CHJquIwlDlFGZ_ZXJOGCY6U1HYE86ZLV4ybCIh6zDV3IS-5To-2v43EdoBN22nBSbI65EYX2PKc6jl_F2vTHAfH67J_k83LhrheRNCukZvJ4-RN7eJFCs4Yvh9fIi1_zzGxAroeUovHrY0tlCc3-Ja7Nq6HUD7fmRYH2HBVsTqr6f70Yo0XWn_Jb8sUWn1PA1hP0JdXSAHvZZi0vGCfOUQb7gT_4-FpCBpg"/>
 </div>
 <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">The Swan Hotel</h3>
