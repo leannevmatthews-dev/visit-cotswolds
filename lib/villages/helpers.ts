@@ -175,6 +175,7 @@ export function parkingMapEmbedUrl(mapUrl: string | null): string | null {
 
 type PlacePickListing = {
   name: string;
+  location: string;
   imageUrl: string;
   websiteUrl: string;
 };
@@ -187,6 +188,7 @@ function normalizePlacePickName(name: string): string {
 export function enrichPlacePicksFromListings<
   TPick extends {
     name: string;
+    location_label: string;
     image_url: string | null;
     external_link: string | null;
   },
@@ -209,6 +211,7 @@ export function enrichPlacePicksFromListings<
 
     return {
       ...pick,
+      location_label: listing.location.trim(),
       image_url:
         imageUrlEmpty && listing.imageUrl.trim()
           ? listing.imageUrl.trim()

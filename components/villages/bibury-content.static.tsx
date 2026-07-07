@@ -157,10 +157,10 @@ export function BiburyContent() {
 </a>
 <a className="village-pick group" href="/places-to-stay">
 <div className="village-pick__image">
-<img alt="Barnsley House hotel and gardens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlCFJGj3w0v_ygGqlr7jPrd9PpYeBbc2zCUXaq8mkYSyuU9c7BA4_k7cv7FF6ZfKOxZa9wC7J85OzQmaU7aFDOsOigVKjust5HxQa4QRi3Ay5jFRTq8hhVymGe0RrXuC9aZQI3ZUWju459LoCojrOdd5g96QOdGmdqAbB6ZfCT531hm-EW0_nZ1ZwHWAijceWCoHEcWsjqDRRNvaTGEfqHXWGloeLFTRmoHEqFLRmLrHonYCVG2fpwm3xX-riwnqJW_U5mPc-psw"/>
+<img alt="THE PIG in the Cotswolds field luxe room" src="https://www.thepighotel.com/media/umkdbs2g/field-luxe-5.jpg?rxy=0.49624060150375937,0.5924516572634196&width=2663&v=1dc1c30473b9f90"/>
 </div>
-<p className="village-pick__title">Barnsley House</p>
-<p className="village-pick__meta">Garden Retreat · 3 miles</p>
+<p className="village-pick__title">The Pig</p>
+<p className="village-pick__meta">Boutique Hotel · Barnsley</p>
 </a>
 <a className="village-pick group" href="/places-to-stay">
 <div className="village-pick__image">

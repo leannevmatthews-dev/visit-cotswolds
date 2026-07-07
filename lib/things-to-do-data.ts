@@ -495,6 +495,21 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     websiteUrl: "https://www.alltrails.com",
   },
   {
+    id: "manor-house-walks",
+    name: "Manor House Walks",
+    description:
+      "365 acres of formal gardens and parkland surround the hotel, and non-guests can walk the grounds even if you're not staying or eating here. Castle Combe itself gets busy with day-trippers by late morning, so this is a quieter alternative if you want the village's countryside without the crowds on the high street.",
+    category: "Walks & Trails",
+    location: "Castle Combe",
+    address: "",
+    familyFriendly: true,
+    priceLevel: 1,
+    imageUrl:
+      "https://www.exclusive.co.uk/media/1wul2s2x/manor-house-christmas-2021-282.jpg?rxy=0.5186286808449669,0.7708066715864401&width=2100&height=924&quality=70&v=1db2e9ba11750f0",
+    imageAlt: "",
+    websiteUrl: "https://www.exclusive.co.uk/the-manor-house/things-to-do/",
+  },
+  {
     id: "cotswold-lavender-fields",
     name: "Cotswold Lavender Fields",
     description:
@@ -538,6 +553,36 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "https://cotswoldxldirectory.co.uk/wp-content/uploads/2025/06/guide-bourton-on-the-water.jpg",
     imageAlt: "River Windrush Five Bridges Bourton",
     websiteUrl: "https://www.alltrails.com",
+  },
+  {
+    id: "birdland-park-and-gardens",
+    name: "Birdland Park and Gardens",
+    description:
+      "Nine acres of aviaries and woodland along the River Windrush, and the only breeding colony of King Penguins in England. It's a two-minute drive from the village centre rather than on the main street itself, so don't expect to just stumble on it during a stroll along the water. Good half-day option if you're travelling with kids and need a break from village-hopping.",
+    category: "Family",
+    location: "Bourton-on-the-Water",
+    address: "",
+    familyFriendly: true,
+    priceLevel: 2,
+    imageUrl:
+      "https://www.birdland.co.uk/wp-content/uploads/2016/08/Flamingos-at-Birdland-1.jpg",
+    imageAlt: "Flamingos at Birdland Park and Gardens in Bourton-on-the-Water",
+    websiteUrl: "https://www.birdland.co.uk/",
+  },
+  {
+    id: "cotswold-motoring-museum",
+    name: "Cotswold Motoring Museum",
+    description:
+      "Seven small galleries of vintage cars, motorcycles and toys, best known for housing Brum, the yellow car from the children's TV series. It won't fill a whole day, so treat it as a rainy-afternoon option rather than the main reason to visit Bourton.",
+    category: "Unique Experiences",
+    location: "Bourton-on-the-Water",
+    address: "",
+    familyFriendly: true,
+    priceLevel: 2,
+    imageUrl:
+      "https://www.cotswoldmotoringmuseum.co.uk/wp-content/uploads/2018/02/DOK4.jpg",
+    imageAlt: "Vintage car display at Cotswold Motoring Museum",
+    websiteUrl: "https://www.cotswoldmotoringmuseum.co.uk/",
   },
   {
     id: "cotswold-wildlife-park-burford",

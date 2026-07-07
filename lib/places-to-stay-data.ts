@@ -48,7 +48,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     id: "thyme",
     name: "Thyme",
     description:
-      "A restored estate in Southrop with its own farm, spa, cookery school, and pub. You can spend three days here without leaving the grounds — most people do.",
+      "A restored estate in Southrop with its own farm, spa, cookery school, and pub. You can spend three days here without leaving the grounds, and most people do.",
     category: "Country Estate",
     location: "Southrop, Lechlade",
     address: "Southrop, Lechlade GL7 3PX",
@@ -80,7 +80,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     id: "foxhill-manor",
     name: "Foxhill Manor",
     description:
-      "All-inclusive and genuinely private — the whole manor is yours. One of the few places in the Cotswolds where you won't share your stay with strangers.",
+      "All-inclusive and genuinely private, the whole manor is yours. One of the few places in the Cotswolds where you won't share your stay with strangers.",
     category: "Exclusive Use",
     location: "Broadway",
     address: "Farncombe Estate, Broadway WR12 7LJ",
@@ -159,7 +159,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     id: "buckland-manor",
     name: "Buckland Manor",
     description:
-      "A 13th-century manor in ten acres of gardens between Broadway and the hills. Formal in the best sense — attentive service, serious cooking, genuine quiet.",
+      "A 13th-century manor in ten acres of gardens between Broadway and the hills. Formal in the best sense: attentive service, serious cooking, genuine quiet.",
     category: "Manor House",
     location: "Buckland, Broadway",
     address: "Buckland, Broadway WR12 7LY",
@@ -204,6 +204,22 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     websiteUrl: "https://burleighcourtcotswolds.co.uk/",
   },
   {
+    id: "lords-of-the-manor",
+    name: "Lords of the Manor",
+    description:
+      "Set in Upper Slaughter rather than on a high street, this 17th-century former rectory has held four AA Rosettes for years, not just since a recent refresh. Good base for the short walk down to Lower Slaughter and back for afternoon tea.",
+    category: "Manor House",
+    location: "Upper Slaughter",
+    address: "Upper Slaughter, Cheltenham GL54 2JD",
+    dogFriendly: false,
+    priceLevel: 3,
+    pricePerNight: "£400+",
+    imageUrl:
+      "https://www.lordsofthemanor.com/wp-content/uploads/2022/11/007NKP37940-768x655.jpg",
+    imageAlt: "",
+    websiteUrl: "https://www.lordsofthemanor.com/",
+  },
+  {
     id: "the-old-bell-hotel",
     name: "The Old Bell Hotel",
     description:
@@ -239,7 +255,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     id: "the-bay-tree",
     name: "The Bay Tree",
     description:
-      "A medieval building in Burford with a walled garden and rooms that feel genuinely old rather than themed. Quiet, well-located, and unpretentious.",
+      "Sheep Street rather than the High Street, so a short walk from the main tourist flow rather than in the thick of it. Part of the same small hotel group as several other Cotswold coaching inns, which shows in the house style if you've stayed at one of their others. The restaurant holds an AA Rosette, so it's worth booking dinner even if you're not staying the night.",
     category: "Inn",
     location: "Burford",
     address: "Sheep Street, Burford OX18 4LW",
@@ -247,7 +263,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     priceLevel: 2,
     pricePerNight: "£200+",
     imageUrl:
-      "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/-/media/sites/cotswolds/bay-tree/2025-rooms-bay-tree/superior-double/bay-tree---beech-bedroom-wide.jpg?la=en&h=1280&w=1920&hash=9A6C89464AA4EE911FA891226E45BF4B",
+      "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/-/media/sites/cotswolds/bay-tree/2025-rooms-bay-tree/tanfield/bay-tree-tanfield-sitting-room--fire.jpg",
     imageAlt: "The Bay Tree Hotel Burford bedroom",
     websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/",
   },
@@ -302,7 +318,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "swan-hotel-bibury-stay",
     name: "The Swan Hotel",
-    description: "Riverside classic in Bibury village.",
+    description:
+      "A former 17th-century coaching inn a minute's walk from Arlington Row, with 22 rooms including a handful of cottage suites that come with more space and their own entrance.",
     category: "Boutique Hotel",
     location: "Bibury",
     address: "",
@@ -317,7 +334,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "bull-burford",
     name: "The Bull Burford",
-    description: "Boutique high street hotel in Burford.",
+    description:
+      "A 15th-century coaching inn on Burford's High Street that looks traditional from outside and isn't at all inside. Owned by Matthew Freud, with Banksys and Hirsts on the walls, four very different restaurants, and a hidden poker room behind an old prison door.",
     category: "Boutique Hotel",
     location: "Burford",
     address: "",
@@ -332,7 +350,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "lamb-inn-burford",
     name: "The Lamb Inn",
-    description: "Historic Cotswold inn on Sheep Street.",
+    description:
+      "A 15th-century inn tucked down Sheep Street, just off the main bustle of Burford's High Street. Seventeen individually decorated rooms, log fires in the lounge, and a walled garden that's easy to miss from the street.",
     category: "Historic Inn",
     location: "Burford",
     address: "",
@@ -347,7 +366,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "angel-at-burford",
     name: "The Angel at Burford",
-    description: "Pub with rooms on Witney Street.",
+    description:
+      "A family-run 17th-century pub with just three rooms, all of them above the bar, so ask if you're a light sleeper. Multiple-time winner of Cotswold Pub of the Year, with a walled garden that's easy to miss from Witney Street.",
     category: "Inn",
     location: "Burford",
     address: "",
@@ -362,7 +382,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "manor-house-castle-combe",
     name: "The Manor House",
-    description: "Luxury country house hotel in Castle Combe.",
+    description:
+      "A 14th-century manor set in 365 acres just outside Castle Combe village, with its own Michelin-starred restaurant, an 18-hole golf course, and a village pub of its own down the lane. This is a stay built around the grounds as much as the rooms.",
     category: "Manor House",
     location: "Castle Combe",
     address: "",
@@ -377,7 +398,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "castle-inn-stay",
     name: "The Castle Inn",
-    description: "Village inn in the Market Place.",
+    description:
+      "Twelve rooms above a pub on Castle Combe's market square, a more affordable way to stay in the village than its grander neighbour up the lane.",
     category: "Inn",
     location: "Castle Combe",
     address: "",
@@ -392,7 +414,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "white-hart-ford",
     name: "The White Hart",
-    description: "Coaching inn in Ford, 5 minutes from Castle Combe.",
+    description:
+      "A 16th-century coaching inn in the quiet hamlet of Ford, a five-minute drive from Castle Combe. Eleven rooms above the pub, dogs welcome throughout, and a genuinely rural setting rather than a village-centre one.",
     category: "Historic Inn",
     location: "Ford",
     address: "",
@@ -407,7 +430,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "dial-house-bourton",
     name: "The Dial House",
-    description: "High street hotel in Bourton-on-the-Water.",
+    description:
+      "A hotel in the centre of Bourton dating to 1697, with five rooms designed by Laurence Llewelyn-Bowen. A useful base if you want a proper restaurant on site rather than walking out for dinner.",
     category: "Boutique Hotel",
     location: "Bourton-on-the-Water",
     address: "",
@@ -422,7 +446,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
   {
     id: "chester-house-hotel",
     name: "Chester House Hotel",
-    description: "Central village hotel in Bourton-on-the-Water.",
+    description:
+      "A family-run hotel one road back from the river in Bourton, with an on-site Italian restaurant and its own car park, useful in a village where parking is often the biggest headache. Dogs are welcome, but only in the ground-floor Coach House rooms.",
     category: "Boutique Hotel",
     location: "Bourton-on-the-Water",
     address: "",
@@ -435,9 +460,42 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     websiteUrl: "https://chesterhousehotel.com",
   },
   {
+    id: "the-old-new-inn",
+    name: "The Old New Inn",
+    description:
+      "Nine rooms above a working pub in the middle of Bourton, which means you're a few steps from the river rather than a drive away from it. Overnight guests get into the model village in the grounds before it opens to day visitors, which is worth timing your morning around if you want the place to yourself for ten minutes.",
+    category: "Inn",
+    location: "Bourton-on-the-Water",
+    address: "",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£250+",
+    imageUrl:
+      "https://images.squarespace-cdn.com/content/v1/63d3b9c071106579db927e96/0b668045-9978-496b-a7c6-e5eb8ae02c65/Room+7+-+Beds+2.jpg?format=1500w",
+    imageAlt: "Bedroom at The Old New Inn, Bourton-on-the-Water",
+    websiteUrl: "https://www.theoldnewinn.co.uk/",
+  },
+  {
+    id: "the-lansdowne",
+    name: "The Lansdowne",
+    description:
+      "Adults-only, which sets it apart from most of the family-friendly stays clustered around the village. Fourteen rooms, all en-suite, with parking included, which matters more than it sounds in a village where finding a space in summer can eat up half an hour. Breakfast's included too, so factor that against places that charge it separately.",
+    category: "Boutique Hotel",
+    location: "Bourton-on-the-Water",
+    address: "",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£250+",
+    imageUrl:
+      "https://static.wixstatic.com/media/6f40be_c1d790ea5175473fa58008c1e53be56b~mv2.png/v1/fill/w_1537,h_363,al_c,q_90,enc_avif,quality_auto/6f40be_c1d790ea5175473fa58008c1e53be56b~mv2.png",
+    imageAlt: "",
+    websiteUrl: "https://www.lansdownevilla.co.uk/",
+  },
+  {
     id: "lamb-inn-bourton",
     name: "The Lamb Inn",
-    description: "Historic inn 3 miles from Bourton-on-the-Water.",
+    description:
+      "A honey-stone inn in the quiet village of Great Rissington, three miles from Bourton and a genuinely different pace from it. Around a dozen rooms, a proper restaurant, and a setting that suits people who want the Cotswolds without the crowds.",
     category: "Inn",
     location: "Great Rissington",
     address: "",

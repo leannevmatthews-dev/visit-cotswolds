@@ -87,7 +87,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-ox-barn-at-thyme",
     name: "The Ox Barn at Thyme",
     description:
-      "Dinner inside a 19th-century barn on the Thyme estate. The setting alone justifies the booking — the food makes it worth coming back.",
+      "Dinner inside a 19th-century barn on the Thyme estate. The setting alone justifies the booking, and the food makes it worth coming back.",
     category: "Restaurants",
     location: "Southrop, Lechlade",
     address: "High St, Southrop, Lechlade GL7 3PW",
@@ -327,7 +327,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-porch-house",
     name: "The Porch House",
     description:
-      "Reputedly England's oldest inn dating back to 947 AD, boasting ancient low-timber beams and incredible upscale modern gastro-cooking.",
+      "Reputedly England's oldest inn, dating back to 947 AD. Old low-timber beams sit alongside a genuinely ambitious modern British menu, an odd combination that somehow works in Stow-on-the-Wold.",
     category: "Gastropubs",
     location: "Stow-on-the-Wold",
     address: "1 Digbeth St, Stow-on-the-Wold GL54 1BN",
@@ -342,7 +342,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-mount-inn",
     name: "The Mount Inn",
     description:
-      "Perched high on a steep hillside within an untouched stone village, offering classic pub fare alongside unbeatable panoramic valley vistas.",
+      "Perched high on a steep hillside in an unspoilt stone village, with classic pub food and valley views that are hard to beat anywhere else in the Cotswolds.",
     category: "Gastropubs",
     location: "Stanton, Broadway",
     address: "Stanton, Broadway WR12 7NE",
@@ -357,7 +357,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-old-butchers",
     name: "The Old Butchers",
     description:
-      "A chic, independently owned former butcher's shop beloved for its buzzing atmosphere and outstanding nose-to-tail and fresh seafood menus.",
+      "An independently owned former butcher's shop in Stow-on-the-Wold, known for its buzzing atmosphere and a menu built around nose-to-tail cooking and fresh seafood.",
     category: "Restaurants",
     location: "Stow-on-the-Wold",
     address: "7 Park St, Stow-on-the-Wold GL54 1AQ",
@@ -372,7 +372,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-wheatsheaf-inn",
     name: "The Wheatsheaf Inn",
     description:
-      "A quintessential old coaching inn with an exceptional ivy-draped facade, tiered cottage gardens, and a passionate focus on rustic British cooking.",
+      "An old coaching inn in Northleach with an ivy-draped facade and tiered cottage gardens. Rustic British cooking is the focus, done with more care than the average village pub.",
     category: "Gastropubs",
     location: "Northleach",
     address: "West End, Northleach GL54 3EZ",
@@ -387,7 +387,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-bell-at-sapperton",
     name: "The Bell at Sapperton",
     description:
-      "A beautifully hidden country pub tucked deep inside a tranquil valley, offering exceptional seasonal cooking and a unique wine wall.",
+      "Tucked deep in a quiet valley near Cirencester, easy to miss if you don't know it's there. Seasonal cooking and a genuinely unusual wine wall set it apart from the standard country pub.",
     category: "Gastropubs",
     location: "Sapperton, Cirencester",
     address: "Sapperton, Cirencester GL7 6LE",
@@ -402,7 +402,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "dormy-house",
     name: "Dormy House",
     description:
-      "Reimagined with stylish flair, their afternoon tea concludes with a whimsical, theatrical macaron trolley rolled right to your table.",
+      "Afternoon tea with a theatrical touch: a macaron trolley wheeled to your table at the end of the service. A more stylish, less traditional take on the format than most Cotswolds hotels offer.",
     category: "Afternoon Tea",
     location: "Broadway",
     address: "Willersey Hill, Broadway WR12 7LF",
@@ -417,7 +417,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-painswick",
     name: "The Painswick",
     description:
-      "A delightfully playful, relaxed grazing style service set within a chic Palladian mansion boasting sweeping valley views.",
+      "A relaxed, grazing-style afternoon tea inside a Palladian mansion, with valley views stretching out below. Less formal than the classic tiered-stand tea, which suits some people better than others.",
     category: "Afternoon Tea",
     location: "Painswick",
     address: "Kemps Lane, Painswick GL6 6YB",
@@ -431,7 +431,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "swan-hotel-bibury",
     name: "The Swan Hotel",
-    description: "Seasonal dining overlooking the Coln in Bibury village centre.",
+    description:
+      "Bibury's most polished dining address. The walled garden feels secret even when it's full, and afternoon tea is the single busiest service, booked out weeks ahead most of the year.",
     category: "Restaurants",
     location: "Bibury",
     address: "",
@@ -445,7 +446,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "catherine-wheel-bibury",
     name: "The Catherine Wheel",
-    description: "Traditional pub in the heart of Bibury village.",
+    description:
+      "A 15th-century pub a short walk uphill from Arlington Row, family-run since 2009. Locally sourced pub classics, a fire in winter, a garden in summer, and its own car park, which is rarer than it sounds in Bibury.",
     category: "Gastropubs",
     location: "Bibury",
     address: "",
@@ -459,7 +461,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "trout-farm-cafe",
     name: "Trout Farm Cafe",
-    description: "Riverside lunch spot at Bibury Trout Farm with outdoor seating.",
+    description:
+      "The café at Bibury Trout Farm, England's oldest working trout farm since 1902. Simple food, trout naturally included, eaten outdoors among the ponds. More a stop between fish-feeding and crazy golf than a destination meal.",
     category: "Farm Shops & Cafes",
     location: "Bibury",
     address: "",
@@ -472,7 +475,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "highway-inn-burford",
     name: "The Highway Inn",
-    description: "Tapas bar and inn on Burford High Street.",
+    description:
+      "A 15th-century coaching inn on Burford's High Street with an unexpected Spanish twist. Toro, its tapas restaurant, does sharing plates rather than the pub food you'd expect. Book ahead for dinner, it's popular with locals too.",
     category: "Gastropubs",
     location: "Burford",
     address: "",
@@ -486,20 +490,22 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "spice-lounge-burford",
     name: "Spice Lounge",
-    description: "Indian restaurant in Burford.",
+    description:
+      "An Indian restaurant on Burford High Street with a loyal following, biryani and jalfrezi are what people come back for. Spread over two floors; there's no ground-floor toilet, worth knowing if mobility is a factor.",
     category: "Restaurants",
     location: "Burford",
     address: "",
     dogFriendly: false,
     priceLevel: 2,
-    imageUrl: "https://www.thespiceloungeburford.co.uk/images/order-a-take-away.jpg",
+    imageUrl: "https://www.thespiceloungeburford.co.uk/images/herbs_and_spices.jpg",
     imageAlt: "Spice Lounge Burford",
     websiteUrl: "https://www.thespiceloungeburford.co.uk",
   },
   {
     id: "lynwood-and-co-burford",
     name: "Lynwood and Co",
-    description: "Independent cafe in Burford.",
+    description:
+      "An Australian-style café with sourdough melts and proper coffee, part of a small local group with its own bakery on the Hatherop estate. Seating is tight and it gets busy, more a stop than a lingering breakfast.",
     category: "Farm Shops & Cafes",
     location: "Burford",
     address: "",
@@ -513,7 +519,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "huffkins-burford",
     name: "Huffkins Burford",
-    description: "Bakery and tearoom on Burford High Street.",
+    description:
+      "A bakery and tearoom on Burford High Street since 1890, in a listed building with original beams. Cream tea is the reason to come, alongside the traditional lardy cake, an old-fashioned treat that's increasingly hard to find.",
     category: "Farm Shops & Cafes",
     location: "Burford",
     address: "",
@@ -525,9 +532,25 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     websiteUrl: "https://huffkins.com/pages/burford-cafe-bakery",
   },
   {
+    id: "angel-at-burford",
+    name: "The Angel at Burford",
+    description:
+      "Run by the King family since 2011, tucked just off the High Street rather than on it, which catches out a fair few first-time visitors circling the main drag. Multiple Cotswold Pub of the Year wins over the years rather than a one-off award to hang the reputation on. Ask for the walled garden in summer if the log fire inside isn't your thing.",
+    category: "Gastropubs",
+    location: "Burford",
+    address: "",
+    dogFriendly: false,
+    priceLevel: 2,
+    imageUrl:
+      "https://i0.wp.com/theangelatburford.co.uk/wp-content/uploads/2026/02/Pan-Fried-Seabass-Fillet.png?w=1024&ssl=1",
+    imageAlt: "Pan-fried seabass at The Angel at Burford",
+    websiteUrl: "https://theangelatburford.co.uk/",
+  },
+  {
     id: "castle-inn-castle-combe",
     name: "The Castle Inn",
-    description: "Village pub and restaurant in the Market Place.",
+    description:
+      "Two AA Rosettes for a menu that goes further than the average village pub, seasonal and modern British rather than straightforward pub grub. This is a village that's hosted more than a few film crews over the years.",
     category: "Gastropubs",
     location: "Castle Combe",
     address: "",
@@ -539,9 +562,25 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     websiteUrl: "https://www.exclusive.co.uk/the-castle-inn",
   },
   {
+    id: "bybrook",
+    name: "Bybrook",
+    description:
+      "The Manor House's Michelin-starred restaurant, adults-only for dinner (12 and up), so if you've got younger kids this isn't the meal to plan around unless you're eating in one of the hotel's other spaces instead. Executive chef Robert Potter's tasting menu draws heavily on the hotel's own kitchen garden, which shows up as a genuinely seasonal menu rather than one that just says it is.",
+    category: "Restaurants",
+    location: "Castle Combe",
+    address: "",
+    dogFriendly: false,
+    priceLevel: 3,
+    imageUrl:
+      "https://www.exclusive.co.uk/media/kr2cklpo/bybrook-dishes-rp-feb-23-72.jpg?width=968&height=1260&quality=70&v=1da3d71b1a79680",
+    imageAlt: "Bybrook dishes at The Manor House",
+    websiteUrl: "https://www.exclusive.co.uk/bybrook/",
+  },
+  {
     id: "salutation-inn-castle-combe",
     name: "The Salutation Inn",
-    description: "Country pub near Castle Combe.",
+    description:
+      "A short drive from Castle Combe at The Gibb crossroads, not actually in the village itself, which keeps it quieter than the pubs in the centre. Seasonal, locally sourced food, and a strong reputation for its Sunday roast.",
     category: "Gastropubs",
     location: "Castle Combe",
     address: "",
@@ -555,7 +594,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "old-stables-coffee-shop",
     name: "The Old Stables Coffee Shop",
-    description: "Cafe on the estate near Castle Combe.",
+    description:
+      "Tucked down an alley off the main street and easy to miss, look for the small sign. Run by Philippa and Yasmin, with a log burner, local art on the walls, and a warm welcome for muddy boots and dogs.",
     category: "Farm Shops & Cafes",
     location: "Castle Combe",
     address: "",
@@ -569,7 +609,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "little-picnic-shop-castle-combe",
     name: "The Little Picnic Shop",
-    description: "Picnic and afternoon tea spot in Castle Combe.",
+    description:
+      "Not a café you can walk into, this is a pre-order picnic box service run by Anna, with hampers that come complete with china, blankets, and games. Order ahead; it sells out on busy weekends.",
     category: "Afternoon Tea",
     location: "Castle Combe",
     address: "",
@@ -583,7 +624,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "snowshill-manor-cafe",
     name: "Snowshill Manor Cafe",
-    description: "National Trust cafe at Snowshill Manor.",
+    description:
+      "The National Trust café at Snowshill Manor, serving jacket potatoes and pasties rather than anything ambitious. Useful for refuelling between the manor's eccentric collection and the garden. Dogs welcome outside, not inside the manor.",
     category: "Farm Shops & Cafes",
     location: "Snowshill",
     address: "",
@@ -598,7 +640,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "cotswold-lavender-cabin",
     name: "Cotswold Lavender Cabin",
-    description: "Seasonal snack cabin at Cotswold Lavender Fields.",
+    description:
+      "A seasonal cabin at the lavender fields selling lavender scones, ice cream, and drinks, nothing more substantial. Only open while the lavender blooms, roughly mid-June to early August, so check dates before building a trip around it.",
     category: "Farm Shops & Cafes",
     location: "Snowshill",
     address: "",
@@ -612,7 +655,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "smiths-of-bourton",
     name: "Smiths of Bourton",
-    description: "Burger restaurant in Bourton-on-the-Water.",
+    description:
+      "Handmade burgers from two brothers who started the business mid-pandemic and took third place at the National Burger Awards in 2025. Thirty seats only, worth booking, and the dry-aged beef comes from the same butcher supplying several of the area's better restaurants.",
     category: "Restaurants",
     location: "Bourton-on-the-Water",
     address: "",
@@ -626,7 +670,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "bakery-on-the-water",
     name: "Bakery on the Water",
-    description: "Bakery and cafe in Bourton-on-the-Water.",
+    description:
+      "A family-run bakery right on the River Windrush, with a riverside terrace that's the real draw. Good pastries and a well-regarded quiche, though it gets busy fast and queues build through the middle of the day.",
     category: "Farm Shops & Cafes",
     location: "Bourton-on-the-Water",
     address: "",
@@ -640,7 +685,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
   {
     id: "mousetrap-inn-bourton",
     name: "The Mousetrap Inn",
-    description: "Pub and restaurant in Bourton-on-the-Water.",
+    description:
+      "A 19th-century freehouse at the quieter end of Bourton, away from the crush around the river. Craft ales on tap, a proper Sunday roast, and 11 rooms upstairs if you want to stay. Parking is tight, budget extra time.",
     category: "Gastropubs",
     location: "Bourton-on-the-Water",
     address: "",
@@ -652,9 +698,25 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     websiteUrl: "https://www.themousetrapinn.co.uk",
   },
   {
+    id: "the-old-new-inn",
+    name: "The Old New Inn",
+    description:
+      "The kitchen leans on classic pub dishes rather than trying to reinvent itself, and Sundays mean the set lunch menu only, nothing else. If you're staying at the inn you get 10% off here, which is a reason to eat in rather than walk to one of the busier spots on the main street.",
+    category: "Gastropubs",
+    location: "Bourton-on-the-Water",
+    address: "",
+    dogFriendly: false,
+    priceLevel: 2,
+    imageUrl:
+      "https://images.squarespace-cdn.com/content/v1/63d3b9c071106579db927e96/1739464535029-03DUVJXIG4ZHGKPOUBA4/Pie+-+Keown+Photo.jpg?format=2500w",
+    imageAlt: "Pie dish served at The Old New Inn, Bourton-on-the-Water",
+    websiteUrl: "https://www.theoldnewinn.co.uk/",
+  },
+  {
     id: "dial-house-restaurant",
     name: "The Dial House",
-    description: "Hotel restaurant in Bourton-on-the-Water.",
+    description:
+      "Fine dining in the centre of Bourton, with Maxi's Tipi Lounge next door for something more casual. Reviews on the food are consistently strong; service has been described as correct rather than warm, so opinions split there.",
     category: "Restaurants",
     location: "Bourton-on-the-Water",
     address: "",
