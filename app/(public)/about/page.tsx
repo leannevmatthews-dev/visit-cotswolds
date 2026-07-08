@@ -31,11 +31,27 @@ export default function AboutPage() {
               whether somewhere is worth a two-hour drive.
             </p>
             <p className="font-body-lg text-on-surface-variant leading-relaxed">
-              Visit Cotswolds is an independent guide. We research places properly,
-              visit in person where we can, and only include what we&apos;d genuinely
-              recommend. Not everything makes the cut. Some popular villages are worth
-              skipping on a summer weekend. Some less obvious ones are worth going out
-              of your way for. We try to be honest about which is which.
+              I&apos;m Leanne, and I built Visit Cotswolds after moving to the area
+              and finding most existing guides weren&apos;t much help for actual trip
+              planning. This is an independent guide, not a tourism board site or a
+              directory. I research places properly, visit in person where I can, and
+              only include what I&apos;d genuinely recommend. Not everything makes the
+              cut. Some popular villages are worth skipping on a summer weekend. Some
+              less obvious ones are worth going out of your way for. I try to be
+              honest about which is which.
+            </p>
+            <p className="font-body-lg text-on-surface-variant leading-relaxed">
+              Where I haven&apos;t visited somewhere yet, I say so. Recommendations and
+              honest opinions come from first-hand experience, not from copying what
+              other sites already say.
+            </p>
+            <p className="font-body-lg text-on-surface-variant leading-relaxed">
+              I use AI tools to help with research and drafting, the same way a lot of
+              writers now do. It&apos;s useful for pulling together background
+              information and speeding up the research process. But the actual
+              judgement, whether somewhere&apos;s worth your time, what to skip, what
+              surprised me, always comes from having been there myself. AI doesn&apos;t
+              write opinions on this site. I do.
             </p>
             <p className="font-body-lg text-on-surface-variant leading-relaxed">
               No sponsored content. No tourism board backing. No obligation to present
@@ -43,7 +59,7 @@ export default function AboutPage() {
             </p>
             <p className="font-body-lg text-on-surface-variant leading-relaxed">
               If you come here with a question about where to go, where to stay, or
-              whether something is worth your time, we want you to leave with an
+              whether something&apos;s worth your time, I want you to leave with an
               actual answer.
             </p>
           </div>
@@ -60,9 +76,9 @@ export default function AboutPage() {
               any image and have concerns about its use, please contact us at{" "}
               <a
                 className="text-limestone underline underline-offset-4 transition-colors hover:text-on-surface"
-                href="mailto:hello@visitcotswolds.uk"
+                href="mailto:info@visitcotswolds.uk"
               >
-                hello@visitcotswolds.uk
+                info@visitcotswolds.uk
               </a>{" "}
               and we will address it promptly.
             </p>
@@ -73,9 +89,15 @@ export default function AboutPage() {
               Get In Touch
             </h2>
             <p className="font-body-lg text-on-surface-variant leading-relaxed">
-              Contact us at [email to be added]. We are always happy to hear from
-              readers, local businesses, or anyone with a question about the
-              Cotswolds.
+              Contact me at{" "}
+              <a
+                className="text-limestone underline underline-offset-4 transition-colors hover:text-on-surface"
+                href="mailto:info@visitcotswolds.uk"
+              >
+                info@visitcotswolds.uk
+              </a>
+              . I&apos;m always happy to hear from readers, local businesses, or
+              anyone with a question about the Cotswolds.
             </p>
           </section>
         </div>

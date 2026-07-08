@@ -95,17 +95,6 @@ function StaticBiburyParkingGuideSection() {
                 </div>
               ))}
             </div>
-            <a
-              className="village-parking__cta inline-flex items-center justify-center gap-2 font-label-caps text-[10px] text-limestone tracking-widest uppercase border border-limestone/40 px-5 py-3 hover:bg-limestone hover:text-primary-container transition-colors w-full sm:w-auto"
-              href={STATIC_BIBURY_MAP_EMBED_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="material-symbols-outlined text-base">
-                open_in_new
-              </span>
-              Open in Google Maps
-            </a>
           </div>
         </div>
 

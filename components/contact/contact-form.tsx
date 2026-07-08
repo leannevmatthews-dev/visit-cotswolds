@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const CONTACT_EMAIL = "hello@visitcotswolds.uk";
+const CONTACT_EMAIL = "info@visitcotswolds.uk";
 
 const fieldInputClassName =
   "w-full appearance-none rounded-none border-0 border-b border-limestone/40 bg-transparent py-3 font-body-sm text-on-surface shadow-none outline-none ring-0 transition-colors focus:border-limestone";
@@ -17,40 +17,67 @@ const PREFERRED_CONTACT_OPTIONS = [
   { value: "WhatsApp", label: "WhatsApp" },
 ] as const;
 
+type SubmitStatus = "idle" | "loading" | "success" | "error";
+
 export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [preferredContact, setPreferredContact] = useState("");
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit() {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
     if (!name.trim() || !email.trim() || !message.trim()) {
+      setStatus("error");
+      setErrorMessage("Please fill in your name, email, and message.");
       return;
     }
 
-    const subject = encodeURIComponent(`Contact from ${name.trim()}`);
-    const bodyLines = [
-      `Name: ${name.trim()}`,
-      `Email: ${email.trim()}`,
-      phone.trim() ? `Phone: ${phone.trim()}` : null,
-      preferredContact ? `Preferred contact method: ${preferredContact}` : null,
-      "",
-      message.trim(),
-    ].filter((line) => line !== null);
+    setStatus("loading");
+    setErrorMessage("");
 
-    const body = encodeURIComponent(bodyLines.join("\n"));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+          preferredContactMethod: preferredContact,
+          message: message.trim(),
+        }),
+      });
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+      const data = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        setStatus("error");
+        setErrorMessage(
+          data.error ?? "Something went wrong. Please try again later.",
+        );
+        return;
+      }
+
+      setStatus("success");
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        "Could not send your message. Please check your connection and try again.",
+      );
+    }
   }
 
-  if (submitted) {
+  if (status === "success") {
     return (
       <p className="font-body-lg text-on-surface-variant leading-relaxed">
-        Thank you for getting in touch. Your email client should open shortly —
-        if it doesn&apos;t, you can reach us directly at{" "}
+        Thank you for getting in touch. Your message has been sent — we&apos;ll
+        get back to you as soon as we can. If you don&apos;t hear from us, you can
+        reach us directly at{" "}
         <a
           className="text-limestone underline underline-offset-4 transition-colors hover:text-on-surface"
           href={`mailto:${CONTACT_EMAIL}`}
@@ -63,7 +90,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="flex flex-col gap-8">
+    <form className="flex flex-col gap-8" onSubmit={handleSubmit} noValidate>
       <label className="flex flex-col gap-3">
         <span className={fieldLabelClassName}>Name</span>
         <input
@@ -73,6 +100,8 @@ export function ContactForm() {
           value={name}
           onChange={(event) => setName(event.target.value)}
           className={fieldInputClassName}
+          disabled={status === "loading"}
+          required
         />
       </label>
 
@@ -85,6 +114,8 @@ export function ContactForm() {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           className={fieldInputClassName}
+          disabled={status === "loading"}
+          required
         />
       </label>
 
@@ -97,6 +128,7 @@ export function ContactForm() {
           value={phone}
           onChange={(event) => setPhone(event.target.value)}
           className={fieldInputClassName}
+          disabled={status === "loading"}
         />
       </label>
 
@@ -107,6 +139,7 @@ export function ContactForm() {
           value={preferredContact}
           onChange={(event) => setPreferredContact(event.target.value)}
           className={fieldInputClassName}
+          disabled={status === "loading"}
         >
           {PREFERRED_CONTACT_OPTIONS.map((option) => (
             <option key={option.value || "placeholder"} value={option.value}>
@@ -124,16 +157,24 @@ export function ContactForm() {
           value={message}
           onChange={(event) => setMessage(event.target.value)}
           className={`${fieldInputClassName} resize-y`}
+          disabled={status === "loading"}
+          required
         />
       </label>
 
+      {status === "error" && errorMessage ? (
+        <p className="font-body-sm text-error leading-relaxed" role="alert">
+          {errorMessage}
+        </p>
+      ) : null}
+
       <button
-        type="button"
-        onClick={handleSubmit}
-        className="self-start bg-limestone px-10 py-4 font-label-caps text-label-caps text-primary-container transition-colors hover:bg-on-background"
+        type="submit"
+        disabled={status === "loading"}
+        className="self-start bg-limestone px-10 py-4 font-label-caps text-label-caps text-primary-container transition-colors hover:bg-on-background disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Send Message
+        {status === "loading" ? "Sending…" : "Send Message"}
       </button>
-    </div>
+    </form>
   );
 }

@@ -638,6 +638,20 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "https://www.nationaltrust.org.uk/visit/gloucestershire-cotswolds/snowshill-manor-and-garden",
   },
   {
+    id: "snowshill-arms",
+    name: "Snowshill Arms",
+    description:
+      "A 15th-century village pub serving Donnington ales alongside straightforward pub classics like Gloucester Old Spot sausages and mash. No TV, no music, just a log fire and a skittle alley round the back. Popular with walkers on the Cotswold Way, and it shows on Sundays, when tables go fast without a booking.",
+    category: "Gastropubs",
+    location: "Snowshill",
+    address: "",
+    dogFriendly: true,
+    priceLevel: 1,
+    imageUrl: "http://www.snowshillarms.co.uk/wpimages/wpa5cd2b2c_05_06.jpg",
+    imageAlt: "Snowshill Arms pub exterior",
+    websiteUrl: "http://www.snowshillarms.co.uk",
+  },
+  {
     id: "cotswold-lavender-cabin",
     name: "Cotswold Lavender Cabin",
     description:
