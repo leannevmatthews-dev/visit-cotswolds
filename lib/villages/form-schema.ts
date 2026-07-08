@@ -121,6 +121,16 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
     })),
     perfect_for: state.perfect_for.map((item) => (item ?? "").trim()).filter(Boolean),
     maybe_skip_if: state.maybe_skip_if.map((item) => (item ?? "").trim()).filter(Boolean),
+    own_beauty: emptyToNull(state.own_beauty ?? "") as Village["own_beauty"],
+    own_crowds: emptyToNull(state.own_crowds ?? "") as Village["own_crowds"],
+    own_food: emptyToNull(state.own_food ?? "") as Village["own_food"],
+    own_time_needed: emptyToNull(
+      state.own_time_needed ?? "",
+    ) as Village["own_time_needed"],
+    comparison_village_ids: state.comparison_village_ids.filter(
+      (id) => Number.isFinite(id) && id > 0,
+    ),
+    // Preserve packed stats until the column is dropped (Step 6+).
     comparison_stats: state.comparison_stats.map((row) => ({
       village_name: (row.village_name ?? "").trim(),
       is_current: row.is_current,
@@ -197,6 +207,8 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       on_street_note: (state.parking_guide.on_street_note ?? "").trim(),
       overflow_note: (state.parking_guide.overflow_note ?? "").trim(),
       map_url: emptyToNull(state.parking_guide.map_url ?? ""),
+      map_query: emptyToNull(state.parking_guide.map_query ?? ""),
+      map_override_url: emptyToNull(state.parking_guide.map_override_url ?? ""),
     },
     getting_here_rail: (state.getting_here_rail ?? "").trim(),
     getting_here_parking: (state.getting_here_parking ?? "").trim(),
@@ -291,6 +303,11 @@ export function villageToFormState(village: Village): VillageFormState {
     crowd_times: village.crowd_times ?? [],
     perfect_for: village.perfect_for ?? [],
     maybe_skip_if: village.maybe_skip_if ?? [],
+    own_beauty: village.own_beauty ?? "",
+    own_crowds: village.own_crowds ?? "",
+    own_food: village.own_food ?? "",
+    own_time_needed: village.own_time_needed ?? "",
+    comparison_village_ids: village.comparison_village_ids ?? [],
     comparison_stats: (village.comparison_stats ?? []).map((row) => ({
       ...row,
       image_url: nullToEmpty(row.image_url),
@@ -328,6 +345,8 @@ export function villageToFormState(village: Village): VillageFormState {
       ? {
           ...village.parking_guide,
           map_url: nullToEmpty(village.parking_guide.map_url),
+          map_query: nullToEmpty(village.parking_guide.map_query),
+          map_override_url: nullToEmpty(village.parking_guide.map_override_url),
         }
       : emptyParkingGuide(),
     getting_here_rail: village.getting_here_rail,

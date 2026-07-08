@@ -28,6 +28,12 @@ export type VillageFormState = {
   crowd_times: Village["crowd_times"];
   perfect_for: Village["perfect_for"];
   maybe_skip_if: Village["maybe_skip_if"];
+  own_beauty: Village["own_beauty"] | "";
+  own_crowds: Village["own_crowds"] | "";
+  own_food: Village["own_food"] | "";
+  own_time_needed: Village["own_time_needed"] | "";
+  comparison_village_ids: number[];
+  /** @deprecated Kept in payload until comparison_stats column is dropped. */
   comparison_stats: NonNullable<Village["comparison_stats"]>;
   alternative_villages: Village["alternative_villages"];
   local_tips: Village["local_tips"];

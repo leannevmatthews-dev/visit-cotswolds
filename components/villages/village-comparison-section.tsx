@@ -1,7 +1,7 @@
 import { CrowdPill } from "@/components/villages/crowd-pill";
 import { VillageCompareImage } from "@/components/villages/village-compare-image";
 import { crowdLabelToPillLevel } from "@/lib/villages/helpers";
-import type { Village } from "@/lib/villages/types";
+import type { ComparisonDisplayRow, Village } from "@/lib/villages/types";
 
 const COMPARE_STATS = [
   { key: "beauty", label: "Beauty" },
@@ -12,26 +12,13 @@ const COMPARE_STATS = [
 
 type VillageComparisonSectionProps = {
   village: Village;
-  comparisonHeroImages?: Record<string, string>;
+  comparisonRows?: ComparisonDisplayRow[];
 };
-
-function comparisonCardImageUrl(
-  row: NonNullable<Village["comparison_stats"]>[number],
-  comparisonHeroImages: Record<string, string>,
-): string | undefined {
-  const fromVillage = comparisonHeroImages[row.village_name];
-  if (fromVillage) {
-    return fromVillage;
-  }
-  return row.image_url ?? undefined;
-}
 
 export function VillageComparisonSection({
   village,
-  comparisonHeroImages = {},
+  comparisonRows = [],
 }: VillageComparisonSectionProps) {
-  const comparisonRows = village.comparison_stats ?? [];
-
   return (
     <section className="mb-24 md:mb-32">
       {comparisonRows.length > 0 && (
@@ -55,7 +42,7 @@ export function VillageComparisonSection({
                 }`}
               >
                 <VillageCompareImage
-                  src={comparisonCardImageUrl(row, comparisonHeroImages)}
+                  src={row.image_url ?? undefined}
                   alt={row.image_alt ?? ""}
                 />
                 <header className="village-compare-card__header">

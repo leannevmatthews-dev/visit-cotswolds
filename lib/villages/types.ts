@@ -51,6 +51,18 @@ export type ComparisonStat = {
   image_alt?: string | null;
 };
 
+/** Live comparison card built from own_* ratings (not packed comparison_stats). */
+export type ComparisonDisplayRow = {
+  village_name: string;
+  is_current: boolean;
+  beauty: string;
+  crowds: string;
+  food: string;
+  time_needed: string;
+  image_url?: string | null;
+  image_alt?: string | null;
+};
+
 export type LocalTip = {
   icon: string;
   source?: string;
@@ -102,12 +114,17 @@ export type LocalBusiness = {
 
 export type ParkingGuide = {
   cost: string;
+  /** @deprecated Prefer map_query / map_override_url; retained until column keys are cleaned up. */
   map_url: string | null;
   best_time: string;
   main_detail: string;
   main_location: string;
   overflow_note: string;
   on_street_note: string;
+  /** Short search string (postcode preferred) used to generate the map pin. */
+  map_query?: string | null;
+  /** Full Google Maps URL when automatic search does not resolve correctly. */
+  map_override_url?: string | null;
 };
 
 export type RainyDayOption = {
@@ -171,6 +188,12 @@ export type Village = {
   crowd_times: CrowdTimeRow[];
   perfect_for: string[];
   maybe_skip_if: string[];
+  own_beauty: RatingLevel | null;
+  own_crowds: CrowdRatingLevel | null;
+  own_food: FoodRatingLevel | null;
+  own_time_needed: TimeNeeded | null;
+  comparison_village_ids: number[] | null;
+  /** @deprecated Prefer own_* + comparison_village_ids; retained until column drop. */
   comparison_stats: ComparisonStat[] | null;
   alternative_villages: AlternativeVillage[];
   local_tips: LocalTip[];

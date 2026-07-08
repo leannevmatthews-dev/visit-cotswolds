@@ -2,6 +2,7 @@ import type {
   CombineWithTrip,
   CrowdPillLevel,
   FaqItem,
+  ParkingGuide,
   ThingsToDoItem,
 } from "@/lib/villages/types";
 
@@ -161,16 +162,18 @@ export function villageNameToSlug(villageName: string): string {
     .replace(/[^a-z0-9-]/g, "");
 }
 
-export function parkingMapEmbedUrl(mapUrl: string | null): string | null {
-  if (!mapUrl) return null;
-  if (mapUrl.includes("/maps/embed") || mapUrl.includes("output=embed")) {
-    return mapUrl;
+export function parkingMapEmbedUrl(parking: ParkingGuide): string | null {
+  const override = parking.map_override_url?.trim();
+  if (override) {
+    return override;
   }
-  if (mapUrl.includes("google.com/maps")) {
-    const separator = mapUrl.includes("?") ? "&" : "?";
-    return `${mapUrl}${separator}output=embed`;
+
+  const query = parking.map_query?.trim();
+  if (!query) {
+    return null;
   }
-  return mapUrl;
+
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
 }
 
 type PlacePickListing = {

@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { VillageForm } from "@/components/admin/village-form/village-form";
-import { getVillageForAdminBySlug } from "@/lib/villages/admin-queries";
+import {
+  getAllVillagesForAdmin,
+  getVillageForAdminBySlug,
+} from "@/lib/villages/admin-queries";
 import { villageToFormState } from "@/lib/villages/form-schema";
 
 type EditVillagePageProps = {
@@ -21,13 +24,19 @@ export async function generateMetadata({
 
 export default async function EditVillagePage({ params }: EditVillagePageProps) {
   const { slug } = await params;
-  const village = await getVillageForAdminBySlug(slug);
+  const [village, allVillages] = await Promise.all([
+    getVillageForAdminBySlug(slug),
+    getAllVillagesForAdmin(),
+  ]);
 
   if (!village) {
     notFound();
   }
 
   const initialData = villageToFormState(village);
+  const villageOptions = allVillages
+    .filter((row) => row.id !== village.id)
+    .map((row) => ({ id: row.id, name: row.name }));
 
   return (
     <main className="mx-auto max-w-container-max px-margin-mobile py-12 md:px-margin-desktop md:py-16">
@@ -50,6 +59,7 @@ export default async function EditVillagePage({ params }: EditVillagePageProps) 
         villageId={village.id}
         initialData={initialData}
         originalSlug={slug}
+        villageOptions={villageOptions}
       />
     </main>
   );

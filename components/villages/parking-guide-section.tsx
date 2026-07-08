@@ -8,8 +8,8 @@ type ParkingGuideSectionProps = {
 
 export function ParkingGuideSection({ village }: ParkingGuideSectionProps) {
   const parking = village.parking_guide;
-  const mapEmbedUrl = parkingMapEmbedUrl(parking.map_url);
-  const mapLinkUrl = parking.map_url;
+  const mapEmbedUrl = parkingMapEmbedUrl(parking);
+  const mapLinkUrl = mapEmbedUrl;
 
   const locations = [
     {

@@ -8,6 +8,8 @@ export const emptyParkingGuide = (): VillageFormState["parking_guide"] => ({
   main_location: "",
   overflow_note: "",
   on_street_note: "",
+  map_query: "",
+  map_override_url: "",
 });
 
 export const defaultVillageFormState = (): VillageFormState => ({
@@ -38,6 +40,11 @@ export const defaultVillageFormState = (): VillageFormState => ({
   crowd_times: [],
   perfect_for: [],
   maybe_skip_if: [],
+  own_beauty: "",
+  own_crowds: "",
+  own_food: "",
+  own_time_needed: "",
+  comparison_village_ids: [],
   comparison_stats: [],
   alternative_villages: [],
   local_tips: [],

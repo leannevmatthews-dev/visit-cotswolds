@@ -21,10 +21,6 @@ import { slugifyName, validateVillageForm } from "@/lib/villages/form-schema";
 import {
   COTSWOLDS_REGIONS,
   type CrowdLevel,
-  type CrowdRatingLevel,
-  type FoodRatingLevel,
-  type RatingLevel,
-  type TimeNeeded,
 } from "@/lib/villages/types";
 import type { FormFieldErrors, VillageFormState } from "@/lib/villages/form-types";
 
@@ -33,6 +29,8 @@ type VillageFormProps = {
   villageId?: number;
   initialData?: VillageFormState;
   originalSlug?: string;
+  /** Other villages available for comparison multi-select. */
+  villageOptions?: { id: number; name: string }[];
 };
 
 export function VillageForm({
@@ -40,6 +38,7 @@ export function VillageForm({
   villageId,
   initialData,
   originalSlug,
+  villageOptions = [],
 }: VillageFormProps) {
   const [form, setForm] = useState<VillageFormState>(
     () => initialData ?? defaultVillageFormState(),
@@ -740,12 +739,27 @@ export function VillageForm({
             onChange={(value) => setParkingField("best_time", value)}
           />
           <TextInput
-            id="parking-map-url"
-            label="Map URL (optional)"
-            value={form.parking_guide.map_url ?? ""}
-            onChange={(value) => setParkingField("map_url", value)}
+            id="parking-map-query"
+            label="Car park postcode or name (for map)"
+            value={form.parking_guide.map_query ?? ""}
+            onChange={(value) => setParkingField("map_query", value)}
+            hint="Used to generate the map pin automatically — postcode preferred, or exact car park name plus postcode."
           />
         </FieldGrid>
+        <details className="mt-1">
+          <summary className="cursor-pointer font-label-caps text-[10px] tracking-widest text-on-surface-variant">
+            Advanced: Map override URL (optional)
+          </summary>
+          <div className="mt-3">
+            <TextInput
+              id="parking-map-override-url"
+              label="Map override URL"
+              value={form.parking_guide.map_override_url ?? ""}
+              onChange={(value) => setParkingField("map_override_url", value)}
+              hint="Only needed if the automatic search doesn't point to the right spot"
+            />
+          </div>
+        </details>
         <TextArea
           id="parking-main-detail"
           label="Main detail"
@@ -862,103 +876,100 @@ export function VillageForm({
         <div className="flex flex-col gap-6">
           <div>
             <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
-              Comparison stats
+              This village&rsquo;s ratings
             </p>
-            <RepeatableList
-              items={form.comparison_stats}
-              onChange={(items) => setField("comparison_stats", items)}
-              createItem={() => ({
-                village_name: "",
-                is_current: false,
-                beauty: "Good" as RatingLevel,
-                crowds: "Moderate" as CrowdRatingLevel,
-                food: "Limited" as FoodRatingLevel,
-                time_needed: "Half day" as TimeNeeded,
-                image_url: "",
-                image_alt: "",
-              })}
-              addLabel="Add comparison row"
-              emptyLabel="No comparison rows yet."
-              renderItem={(item, index, update, remove) => (
-                <RepeatableItemCard
-                  key={index}
-                  title={`Comparison ${index + 1}`}
-                  onRemove={remove}
-                >
-                  <FieldGrid>
-                    <TextInput
-                      id={`comparison-village-${index}`}
-                      label="Village name"
-                      value={item.village_name}
-                      onChange={(value) => update({ village_name: value })}
+            <p className="mb-4 font-body-sm text-on-surface-variant">
+              Enter once here — these values power this village&rsquo;s &ldquo;You Are
+              Here&rdquo; card and appear when other villages select it for comparison.
+            </p>
+            <FieldGrid>
+              <SelectInput
+                id="own-beauty"
+                label="Beauty"
+                value={form.own_beauty ?? ""}
+                onChange={(value) =>
+                  setField("own_beauty", value as VillageFormState["own_beauty"])
+                }
+                options={["Good", "High", "Very High", "Exceptional"]}
+                hint="Canonical beauty rating"
+              />
+              <SelectInput
+                id="own-crowds"
+                label="Crowds"
+                value={form.own_crowds ?? ""}
+                onChange={(value) =>
+                  setField("own_crowds", value as VillageFormState["own_crowds"])
+                }
+                options={["Low", "Moderate", "High", "Very High"]}
+                hint="Canonical crowd rating"
+              />
+              <SelectInput
+                id="own-food"
+                label="Food"
+                value={form.own_food ?? ""}
+                onChange={(value) =>
+                  setField("own_food", value as VillageFormState["own_food"])
+                }
+                options={["Limited", "Good", "Strong", "Exceptional"]}
+                hint="Canonical food rating"
+              />
+              <SelectInput
+                id="own-time-needed"
+                label="Time needed"
+                value={form.own_time_needed ?? ""}
+                onChange={(value) =>
+                  setField(
+                    "own_time_needed",
+                    value as VillageFormState["own_time_needed"],
+                  )
+                }
+                options={[
+                  "1-2 hours",
+                  "2-3 hours",
+                  "2-4 hours",
+                  "Half day",
+                  "Full day",
+                ]}
+                hint="Canonical visit length"
+              />
+            </FieldGrid>
+          </div>
+
+          <div>
+            <p className="mb-3 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
+              Compare against
+            </p>
+            <p className="mb-4 font-body-sm text-on-surface-variant">
+              Pick peer villages. Their live ratings are loaded from each peer&rsquo;s
+              own row — you no longer type other villages&rsquo; stats here.
+            </p>
+            {villageOptions.length === 0 ? (
+              <p className="font-body-sm text-on-surface-variant">
+                No other villages available to compare against yet.
+              </p>
+            ) : (
+              <div className="flex flex-col gap-3">
+                {villageOptions.map((option) => {
+                  const checked = form.comparison_village_ids.includes(option.id);
+                  return (
+                    <CheckboxInput
+                      key={option.id}
+                      id={`compare-village-${option.id}`}
+                      label={option.name}
+                      checked={checked}
+                      onChange={(isChecked) => {
+                        const next = isChecked
+                          ? [...form.comparison_village_ids, option.id]
+                          : form.comparison_village_ids.filter(
+                              (id) => id !== option.id,
+                            );
+                        setField("comparison_village_ids", next);
+                      }}
                     />
-                    <ImageUploadField
-                      id={`comparison-image-${index}`}
-                      label="Image (optional)"
-                      hint="Photo shown on this village's comparison card"
-                      value={item.image_url ?? ""}
-                      onChange={(value) => update({ image_url: value })}
-                      altValue={item.image_alt ?? ""}
-                      onAltChange={(value) => update({ image_alt: value })}
-                      villageSlug={form.slug}
-                      fieldName={`comparison-${index}`}
-                    />
-                    <SelectInput
-                      id={`comparison-beauty-${index}`}
-                      label="Beauty"
-                      value={item.beauty}
-                      onChange={(value) =>
-                        update({ beauty: value as RatingLevel })
-                      }
-                      options={["Good", "High", "Very High", "Exceptional"]}
-                      hint="Rating"
-                    />
-                    <SelectInput
-                      id={`comparison-crowds-${index}`}
-                      label="Crowds"
-                      value={item.crowds}
-                      onChange={(value) =>
-                        update({ crowds: value as CrowdRatingLevel })
-                      }
-                      options={["Low", "Moderate", "High", "Very High"]}
-                      hint="Crowd rating"
-                    />
-                    <SelectInput
-                      id={`comparison-food-${index}`}
-                      label="Food"
-                      value={item.food}
-                      onChange={(value) =>
-                        update({ food: value as FoodRatingLevel })
-                      }
-                      options={["Limited", "Good", "Strong", "Exceptional"]}
-                      hint="Food rating"
-                    />
-                    <SelectInput
-                      id={`comparison-time-${index}`}
-                      label="Time needed"
-                      value={item.time_needed}
-                      onChange={(value) =>
-                        update({ time_needed: value as TimeNeeded })
-                      }
-                      options={[
-                        "1-2 hours",
-                        "2-3 hours",
-                        "2-4 hours",
-                        "Half day",
-                        "Full day",
-                      ]}
-                      hint="Estimate"
-                    />
-                  </FieldGrid>
-                  <CheckboxInput
-                    id={`comparison-current-${index}`}
-                    label="This is the current village"
-                    checked={item.is_current}
-                    onChange={(checked) => update({ is_current: checked })}
-                  />
-                </RepeatableItemCard>
-              )}
-            />
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <div>

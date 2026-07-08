@@ -9,10 +9,12 @@ import {
   getTouristAttractionJsonLd,
 } from "@/lib/seo/schema";
 import {
+  buildComparisonDisplayRows,
   getAllVillageSlugs,
   getSeasonalAdvice,
   getVillageBySlug,
   getVillageHeroImagesByNames,
+  getVillagesForComparisonByIds,
 } from "@/lib/villages/queries";
 import { combineWithVillageNames } from "@/lib/villages/helpers";
 import { filterLinkableNearbyVillages } from "@/lib/villages/village-page-links";
@@ -78,18 +80,22 @@ export default async function VillagePage({ params }: VillagePageProps) {
     village.nearby_villages ?? [],
   );
 
+  const comparisonPeerIds = village.comparison_village_ids ?? [];
+
   const heroImageNames = [
-    ...(village.comparison_stats ?? []).map((row) => row.village_name),
     ...(village.combine_with ?? []).flatMap((trip) =>
       combineWithVillageNames(trip.title),
     ),
     ...linkableNearbyVillages.map((nearby) => nearby.village_name),
   ];
 
-  const [seasons, villageHeroImagesByName] = await Promise.all([
+  const [seasons, villageHeroImagesByName, comparisonPeers] = await Promise.all([
     getSeasonalAdvice(),
     getVillageHeroImagesByNames(heroImageNames),
+    getVillagesForComparisonByIds(comparisonPeerIds),
   ]);
+
+  const comparisonRows = buildComparisonDisplayRows(village, comparisonPeers);
 
   const nearbyHeroImages = Object.fromEntries(
     linkableNearbyVillages.flatMap((nearby) => {
@@ -114,7 +120,7 @@ export default async function VillagePage({ params }: VillagePageProps) {
       <VillageContent
         village={village}
         seasons={seasons}
-        comparisonHeroImages={villageHeroImagesByName}
+        comparisonRows={comparisonRows}
         combineHeroImages={villageHeroImagesByName}
         linkableNearbyVillages={linkableNearbyVillages}
         nearbyHeroImages={nearbyHeroImages}

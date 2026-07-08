@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { VillageForm } from "@/components/admin/village-form/village-form";
+import { getAllVillagesForAdmin } from "@/lib/villages/admin-queries";
 
 export const metadata: Metadata = {
   title: "New Village | Admin | Visit Cotswolds",
   robots: { index: false, follow: false },
 };
 
-export default function NewVillagePage() {
+export default async function NewVillagePage() {
+  const allVillages = await getAllVillagesForAdmin();
+  const villageOptions = allVillages.map((row) => ({
+    id: row.id,
+    name: row.name,
+  }));
+
   return (
     <main className="mx-auto max-w-container-max px-margin-mobile py-12 md:px-margin-desktop md:py-16">
       <Link
@@ -23,7 +30,7 @@ export default function NewVillagePage() {
         Fill in each section below. Name and slug are required.
       </p>
 
-      <VillageForm />
+      <VillageForm villageOptions={villageOptions} />
     </main>
   );
 }

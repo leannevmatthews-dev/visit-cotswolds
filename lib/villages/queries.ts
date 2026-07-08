@@ -1,5 +1,21 @@
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
-import type { SeasonalAdvice, ThingsToDoItem, Village } from "@/lib/villages/types";
+import type {
+  ComparisonDisplayRow,
+  SeasonalAdvice,
+  ThingsToDoItem,
+  Village,
+} from "@/lib/villages/types";
+
+export type VillageComparisonPeer = {
+  id: number;
+  name: string;
+  own_beauty: string | null;
+  own_crowds: string | null;
+  own_food: string | null;
+  own_time_needed: string | null;
+  hero_background_image_url: string | null;
+  alt_text: string | null;
+};
 
 export type VillageListRow = {
   name: string;
@@ -71,6 +87,95 @@ export async function getVillageBySlug(slug: string): Promise<Village | null> {
     ...rest,
     things_to_do: (curated_experiences as ThingsToDoItem[] | null) ?? [],
   } as Village;
+}
+
+/** Comparison peer rows matched by id, returned in the same order as `ids`. */
+export async function getVillagesForComparisonByIds(
+  ids: number[],
+): Promise<VillageComparisonPeer[]> {
+  const uniqueIds = [...new Set(ids.filter((id) => Number.isFinite(id)))];
+  if (uniqueIds.length === 0) {
+    return [];
+  }
+
+  const supabase = createReadClient();
+
+  const { data, error } = await supabase
+    .from("villages")
+    .select(
+      "id, name, own_beauty, own_crowds, own_food, own_time_needed, hero_background_image_url, alt_text",
+    )
+    .in("id", uniqueIds);
+
+  if (error) {
+    console.error("Failed to fetch comparison villages by id:", error.message);
+    return [];
+  }
+
+  const byId = new Map(
+    (data ?? []).map((row) => [row.id as number, row as VillageComparisonPeer]),
+  );
+
+  return ids
+    .map((id) => byId.get(id))
+    .filter((row): row is VillageComparisonPeer => Boolean(row));
+}
+
+export function buildComparisonDisplayRows(
+  village: Village,
+  peers: VillageComparisonPeer[],
+): ComparisonDisplayRow[] {
+  const peerRows: ComparisonDisplayRow[] = [];
+
+  for (const peer of peers) {
+    if (
+      !peer.own_beauty ||
+      !peer.own_crowds ||
+      !peer.own_food ||
+      !peer.own_time_needed
+    ) {
+      continue;
+    }
+
+    peerRows.push({
+      village_name: peer.name,
+      is_current: false,
+      beauty: peer.own_beauty,
+      crowds: peer.own_crowds,
+      food: peer.own_food,
+      time_needed: peer.own_time_needed,
+      image_url: peer.hero_background_image_url,
+      image_alt: peer.alt_text,
+    });
+  }
+
+  // No peers (e.g. Snowshill) → hide the comparison cards entirely.
+  if (peerRows.length === 0) {
+    return [];
+  }
+
+  const rows: ComparisonDisplayRow[] = [];
+
+  if (
+    village.own_beauty &&
+    village.own_crowds &&
+    village.own_food &&
+    village.own_time_needed
+  ) {
+    rows.push({
+      village_name: village.name,
+      is_current: true,
+      beauty: village.own_beauty,
+      crowds: village.own_crowds,
+      food: village.own_food,
+      time_needed: village.own_time_needed,
+      image_url: village.hero_background_image_url,
+      image_alt: village.alt_text,
+    });
+  }
+
+  rows.push(...peerRows);
+  return rows;
 }
 
 /** Hero background URLs for villages matched by exact name (comparison cards). */

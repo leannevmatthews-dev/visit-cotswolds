@@ -23,13 +23,19 @@ import {
   heroImageUrl,
   splitParagraphs,
 } from "@/lib/villages/helpers";
-import type { LinkableNearbyVillage } from "@/lib/villages/village-page-links";
-import type { SeasonalAdvice, Village } from "@/lib/villages/types";
+import type {
+  LinkableNearbyVillage,
+} from "@/lib/villages/village-page-links";
+import type {
+  ComparisonDisplayRow,
+  SeasonalAdvice,
+  Village,
+} from "@/lib/villages/types";
 
 type VillageContentProps = {
   village: Village;
   seasons: SeasonalAdvice[];
-  comparisonHeroImages?: Record<string, string>;
+  comparisonRows?: ComparisonDisplayRow[];
   combineHeroImages?: Record<string, string>;
   linkableNearbyVillages?: LinkableNearbyVillage[];
   nearbyHeroImages?: Record<string, string>;
@@ -140,7 +146,7 @@ function ExperienceCard({
 export function VillageContent({
   village,
   seasons,
-  comparisonHeroImages = {},
+  comparisonRows = [],
   combineHeroImages = {},
   linkableNearbyVillages = [],
   nearbyHeroImages = {},
@@ -520,7 +526,7 @@ export function VillageContent({
 
           <VillageComparisonSection
             village={village}
-            comparisonHeroImages={comparisonHeroImages}
+            comparisonRows={comparisonRows}
           />
           <CombineWithSection
             village={village}
