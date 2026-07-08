@@ -19,11 +19,11 @@ export function VisitorFitSection({ village }: VisitorFitSectionProps) {
             >
               schedule
             </span>
-            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
+            <h2 className="village-visitor-fit__title font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
               When To Visit {village.name}
             </h2>
           </header>
-          <p className="village-visitor-fit__intro font-body-sm text-on-surface-variant leading-relaxed">
+          <p className="village-visitor-fit__intro font-body-sm text-on-surface-variant leading-[1.5]">
             {village.crowd_intelligence_note}
           </p>
           <div className="village-visitor-fit__crowd-grid">
@@ -55,7 +55,7 @@ export function VisitorFitSection({ village }: VisitorFitSectionProps) {
               className="village-pros-cons__dot village-pros-cons__dot--pro"
               aria-hidden="true"
             ></span>
-            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
+            <h2 className="village-visitor-fit__title font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
               Perfect For
             </h2>
           </header>
@@ -72,7 +72,7 @@ export function VisitorFitSection({ village }: VisitorFitSectionProps) {
               className="village-pros-cons__dot village-pros-cons__dot--con"
               aria-hidden="true"
             ></span>
-            <h2 className="village-visitor-fit__title font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
+            <h2 className="village-visitor-fit__title font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
               Maybe Skip If
             </h2>
           </header>

@@ -233,8 +233,8 @@ export function VillageContent({
         </div>
       </section>
 
-      <main className="bg-background text-on-background pt-6 pb-16 md:pt-8 md:pb-24 lg:pt-10 lg:pb-32">
-        <div className="max-w-container-max mx-auto">
+      <main className="village-page bg-background text-on-background pt-6 pb-16 md:pt-8 md:pb-24 lg:pt-10 lg:pb-32">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="village-intro-grid">
             <VillageInBrief village={village} />
             <AtAGlancePanel village={village} />
@@ -258,7 +258,7 @@ export function VillageContent({
                   Things To Do In {village.name}
                 </h2>
               </div>
-              <div className="village-picks-grid grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-4 md:gap-6">
+              <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
                 {thingsToDo.map((experience) => (
                   <ExperienceCard key={experience.title} experience={experience} />
                 ))}
@@ -332,7 +332,7 @@ export function VillageContent({
                 <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
                   {village.overview_heading}
                 </h2>
-                <div className="font-body-lg text-body-lg text-on-surface-variant space-y-6 max-w-2xl">
+                <div className="font-body-lg text-on-surface-variant space-y-6 max-w-2xl">
                   {overviewParagraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -378,7 +378,7 @@ export function VillageContent({
               <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-6 leading-tight">
                 Our Take On {village.name}
               </h2>
-              <div className="village-visited space-y-5 font-body-lg text-body-lg text-on-surface-variant">
+              <div className="village-visited space-y-5 font-body-lg text-on-surface-variant">
                 {ourTakeParagraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -564,11 +564,11 @@ export function VillageContent({
                     <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-3">
                       {business.name}
                     </h3>
-                    <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
+                    <p className="font-body-sm text-on-surface-variant mb-5 leading-[1.5]">
                       {business.description}
                     </p>
                     {business.address && (
-                      <p className="font-body-sm text-on-surface-variant mb-5 leading-relaxed">
+                      <p className="font-body-sm text-on-surface-variant mb-5 leading-[1.5]">
                         {business.address}
                       </p>
                     )}

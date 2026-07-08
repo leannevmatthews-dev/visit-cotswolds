@@ -20,7 +20,7 @@ export function GettingHereSection({ village }: GettingHereSectionProps) {
             <p className="font-body-sm font-semibold mb-2 text-on-surface">
               By Rail
             </p>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-on-surface-variant leading-[1.5]">
               {village.getting_here_rail}
             </p>
           </div>
@@ -33,7 +33,7 @@ export function GettingHereSection({ village }: GettingHereSectionProps) {
             <p className="font-body-sm font-semibold mb-2 text-on-surface">
               Parking
             </p>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-on-surface-variant leading-[1.5]">
               {village.getting_here_parking}
             </p>
           </div>

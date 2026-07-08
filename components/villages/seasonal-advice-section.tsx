@@ -24,7 +24,7 @@ export function SeasonalAdviceSection({ seasons }: SeasonalAdviceSectionProps) {
               </span>
               {season.season}
             </h3>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-on-surface-variant leading-[1.5]">
               {season.body}
             </p>
           </div>

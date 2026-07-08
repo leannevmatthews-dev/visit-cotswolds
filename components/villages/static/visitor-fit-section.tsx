@@ -19,7 +19,7 @@ export function VisitorFitSection() {
               Crowd Intelligence
             </h2>
           </header>
-          <p className="village-visitor-fit__intro font-body-sm text-on-surface-variant leading-relaxed">
+          <p className="village-visitor-fit__intro font-body-sm text-on-surface-variant leading-[1.5]">
             Based on our May 2026 visit. Weekdays are quieter than Saturdays in peak
             months.
           </p>

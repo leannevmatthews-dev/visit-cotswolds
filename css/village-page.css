@@ -1,5 +1,50 @@
 /* Village page editorial components — dark cinematic theme */
 
+/* Page-level body text default — headings keep their own text-[Npx] utilities */
+.village-page {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Body/paragraph/list/card copy only — never targets h1/h2/h3 */
+.village-page :where(
+    p.font-body-sm,
+    p.font-body-lg,
+    .font-body-lg > p,
+    ul.font-body-sm,
+    ul.font-body-sm li,
+    span.font-body-sm,
+    dd.font-body-sm,
+    .village-in-brief__text,
+    .village-in-brief__tip,
+    .village-at-a-glance__fact-value,
+    .village-reviewed-by__name,
+    .village-reviewed-by__credential,
+    .village-visited,
+    .village-visited p,
+    .village-visitor-fit__intro,
+    .village-visitor-fit__crowd-time,
+    .village-visitor-fit__list li,
+    .village-tip__text,
+    .village-faq__answer-inner p,
+    .village-guide-tip__text,
+    .village-rain-option__desc,
+    .village-parking-spec__value,
+    .village-parking__header p,
+    .village-parking-location p.font-body-sm,
+    .village-getting-here p.font-body-sm,
+    .village-compare-card__value,
+    .village-alternative-card__text,
+    .village-combine__body > p.font-body-sm,
+    .village-season p.font-body-sm,
+    .village-spec dd,
+    .village-table,
+    .village-table td
+) {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 .village-facts__row {
     display: flex;
     justify-content: space-between;
@@ -41,6 +86,8 @@
 .village-in-brief__text {
     margin: 0 0 0.875rem;
     max-width: 52rem;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-in-brief__tip {
@@ -48,6 +95,8 @@
     padding-top: 0.875rem;
     border-top: 1px solid rgba(146, 145, 137, 0.15);
     max-width: 52rem;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-in-brief__tip-label {
@@ -65,7 +114,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-gutter);
-    padding: 0 var(--spacing-margin-desktop);
+    padding: 0;
     align-items: stretch;
     width: 100%;
     max-width: var(--spacing-container-max);
@@ -76,7 +125,6 @@
 @media (max-width: 1279px) {
     .village-intro-grid {
         grid-template-columns: 1fr;
-        padding: 0 var(--spacing-margin-mobile);
     }
 
     .village-in-brief {
@@ -93,7 +141,7 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 8px;
-    padding: 24px var(--spacing-margin-desktop);
+    padding: 24px 0;
     scrollbar-width: none;
 }
 
@@ -125,7 +173,7 @@
 @media (max-width: 1279px) {
     .village-jump-links {
         flex-wrap: wrap;
-        padding: 16px var(--spacing-margin-mobile);
+        padding: 16px 0;
     }
 }
 
@@ -134,6 +182,12 @@
     grid-template-columns: 3fr 2fr;
     gap: var(--spacing-gutter);
     align-items: start;
+}
+
+.village-overview-grid .font-body-lg,
+.village-overview-grid .font-body-lg p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-overview-grid__media {
@@ -193,10 +247,13 @@
 
 .village-reviewed-by__name {
     margin: 0 0 0.25rem;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-reviewed-by__credential {
     margin: 0;
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -245,6 +302,8 @@
 
 .village-at-a-glance__fact-value {
     text-align: right;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-at-a-glance__divider {
@@ -400,6 +459,8 @@
 .village-faq__answer-inner p {
     margin: 0;
     padding: 0 1.5rem 1.25rem;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 @media (min-width: 768px) {
@@ -575,6 +636,8 @@
 
 .village-visitor-fit__intro {
     margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-visitor-fit__crowd-grid {
@@ -598,6 +661,8 @@
 
 .village-visitor-fit__crowd-time {
     align-self: center;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-visitor-fit__crowd-level {
@@ -620,7 +685,7 @@
     position: relative;
     padding-left: 1rem;
     font-family: var(--font-body);
-    font-size: var(--text-body-sm);
+    font-size: 16px;
     line-height: 1.5;
     color: #c8c7be;
 }
@@ -647,13 +712,16 @@
 .village-visited {
     border-left: 3px solid #C9B99A;
     padding-left: 1.5rem;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-table {
     width: 100%;
     border-collapse: collapse;
     font-family: var(--font-body);
-    font-size: var(--text-body-sm);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-table th,
@@ -838,6 +906,8 @@
 .village-compare-card__value {
     margin: 0;
     color: #f5f5f0;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-crowd-pill {
@@ -919,7 +989,8 @@
 
 .village-alternative-card__text {
     margin: 0;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-alternative-card__link {
@@ -1071,15 +1142,20 @@
     padding: 1.25rem 1.375rem 1.5rem;
 }
 
+.village-combine__body > p.font-body-sm {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 @media (min-width: 768px) {
     .village-combine__body {
         padding: 1.5rem 1.75rem;
     }
 }
 
-.village-season {
-    border-top: 2px solid rgba(201, 185, 154, 0.35);
-    padding-top: 1.25rem;
+.village-season p.font-body-sm {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-season__heading {
@@ -1132,8 +1208,8 @@
 
 .village-tip__text {
     font-family: var(--font-body);
-    font-size: var(--text-body-lg);
-    line-height: var(--text-body-lg--line-height);
+    font-size: 16px;
+    line-height: 1.5;
     color: #c8c7be;
     margin: 0;
 }
@@ -1153,8 +1229,8 @@
 }
 
 .village-spec dd {
-    font-size: var(--text-body-lg);
-    line-height: var(--text-body-lg--line-height);
+    font-size: 16px;
+    line-height: 1.5;
     color: #c8c7be;
     margin: 0 0 1.25rem;
 }
@@ -1292,8 +1368,8 @@
 
 .village-parking-spec__value {
     font-family: var(--font-body);
-    font-size: var(--text-body-lg);
-    line-height: var(--text-body-lg--line-height);
+    font-size: 16px;
+    line-height: 1.5;
     color: #e5e2e1;
     margin: 0;
 }
@@ -1306,6 +1382,16 @@
     .village-parking__cta {
         width: 100%;
     }
+}
+
+.village-parking__header p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.village-parking-location p.font-body-sm {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .village-parking-locations {
@@ -1380,6 +1466,11 @@
     margin-top: 0.25rem;
 }
 
+.village-getting-here p.font-body-sm {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 .village-guide-tips {
     display: flex;
     flex-direction: column;
@@ -1412,8 +1503,8 @@
 
 .village-guide-tip__text {
     font-family: var(--font-body);
-    font-size: var(--text-body-lg);
-    line-height: var(--text-body-lg--line-height);
+    font-size: 16px;
+    line-height: 1.5;
     color: #c8c7be;
     margin: 0;
 }
@@ -1470,8 +1561,8 @@
 
 .village-rain-option__desc {
     font-family: var(--font-body);
-    font-size: var(--text-body-lg);
-    line-height: var(--text-body-lg--line-height);
+    font-size: 16px;
+    line-height: 1.5;
     color: #c8c7be;
     margin: 0;
 }
@@ -1582,17 +1673,5 @@
 @media (min-width: 1280px) {
     .village-pick__title {
         font-size: clamp(var(--text-body-lg), 2.5vw, 1.5rem);
-    }
-}
-
-@media (max-width: 1279px) {
-    .village-tip__text,
-    .village-guide-tip__text,
-    .village-parking-spec__value,
-    .village-rain-option__desc,
-    .village-spec dd,
-    .village-table {
-        font-size: var(--text-body-sm);
-        line-height: var(--text-body-sm--line-height);
     }
 }

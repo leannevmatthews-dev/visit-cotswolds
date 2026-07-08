@@ -1,4 +1,13 @@
-import { COTSWOLDS_REGIONS, type CotswoldsRegion, type Village } from "@/lib/villages/types";
+import {
+  COTSWOLDS_REGIONS,
+  type CrowdLevel,
+  type CrowdRatingLevel,
+  type CotswoldsRegion,
+  type FoodRatingLevel,
+  type RatingLevel,
+  type TimeNeeded,
+  type Village,
+} from "@/lib/villages/types";
 import { emptyParkingGuide } from "@/lib/villages/form-defaults";
 import { normalizeCombineWithTrip } from "@/lib/villages/helpers";
 import type {
@@ -108,17 +117,17 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
     crowd_intelligence_note: (state.crowd_intelligence_note ?? "").trim(),
     crowd_times: state.crowd_times.map((row) => ({
       time_range: (row.time_range ?? "").trim(),
-      level: (row.level ?? "").trim(),
+      level: ((row.level ?? "").trim() as CrowdLevel),
     })),
     perfect_for: state.perfect_for.map((item) => (item ?? "").trim()).filter(Boolean),
     maybe_skip_if: state.maybe_skip_if.map((item) => (item ?? "").trim()).filter(Boolean),
     comparison_stats: state.comparison_stats.map((row) => ({
       village_name: (row.village_name ?? "").trim(),
       is_current: row.is_current,
-      beauty: (row.beauty ?? "").trim(),
-      crowds: (row.crowds ?? "").trim(),
-      food: (row.food ?? "").trim(),
-      time_needed: (row.time_needed ?? "").trim(),
+      beauty: ((row.beauty ?? "").trim() as RatingLevel),
+      crowds: ((row.crowds ?? "").trim() as CrowdRatingLevel),
+      food: ((row.food ?? "").trim() as FoodRatingLevel),
+      time_needed: ((row.time_needed ?? "").trim() as TimeNeeded),
       image_url: emptyToNull(row.image_url ?? ""),
       image_alt: emptyToNull(row.image_alt ?? ""),
     })),

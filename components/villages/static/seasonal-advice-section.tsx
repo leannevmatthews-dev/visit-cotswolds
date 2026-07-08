@@ -18,7 +18,7 @@ export function SeasonalAdviceSection() {
               </span>
               {season.name}
             </h3>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-on-surface-variant leading-[1.5]">
               {season.description}
             </p>
           </div>

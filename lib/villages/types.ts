@@ -1,5 +1,26 @@
 export type CrowdPillLevel = "quiet" | "moderate" | "busy";
 
+export type CrowdLevel =
+  | "Very Quiet"
+  | "Quiet"
+  | "Moderate"
+  | "Busy"
+  | "Very Busy";
+
+export type RatingLevel = "Good" | "High" | "Very High" | "Exceptional";
+export type CrowdRatingLevel =
+  | "Low"
+  | "Moderate"
+  | "High"
+  | "Very High";
+export type FoodRatingLevel = "Limited" | "Good" | "Strong" | "Exceptional";
+export type TimeNeeded =
+  | "1-2 hours"
+  | "2-3 hours"
+  | "2-4 hours"
+  | "Half day"
+  | "Full day";
+
 export const COTSWOLDS_REGIONS = [
   "North Cotswolds",
   "Central Cotswolds",
@@ -9,7 +30,7 @@ export const COTSWOLDS_REGIONS = [
 export type CotswoldsRegion = (typeof COTSWOLDS_REGIONS)[number];
 
 export type CrowdTimeRow = {
-  level: string;
+  level: CrowdLevel;
   time_range: string;
 };
 
@@ -22,10 +43,10 @@ export type AlternativeVillage = {
 export type ComparisonStat = {
   village_name: string;
   is_current: boolean;
-  beauty: string;
-  crowds: string;
-  food: string;
-  time_needed: string;
+  beauty: RatingLevel;
+  crowds: CrowdRatingLevel;
+  food: FoodRatingLevel;
+  time_needed: TimeNeeded;
   image_url: string | null;
   image_alt?: string | null;
 };

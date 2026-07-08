@@ -42,7 +42,7 @@ export function ParkingGuideSection() {
                 Parking Guide
               </h3>
             </div>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-on-surface-variant leading-[1.5]">
               Main car park on the B4425, opposite Bibury Trout Farm.
               Pay-and-display machines accept card and coins. Arrive before 10am
               on summer weekends—the overflow field opens when the main lot is

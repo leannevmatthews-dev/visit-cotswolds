@@ -14,7 +14,7 @@ export function GettingHereSection() {
             <p className="font-body-sm font-semibold mb-2 text-on-surface">
               By Rail
             </p>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-on-surface-variant leading-[1.5]">
               The nearest station is Kemble (12 miles). Direct services run from
               London Paddington. Taxis are available but booking is recommended.
             </p>
@@ -28,7 +28,7 @@ export function GettingHereSection() {
             <p className="font-body-sm font-semibold mb-2 text-on-surface">
               Parking
             </p>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-on-surface-variant leading-[1.5]">
               Use the pay-and-display car park on the B4425 opposite Bibury Trout
               Farm. Arrive before 10am on weekends to avoid the busiest periods.
             </p>

@@ -46,7 +46,7 @@ export function ParkingGuideSection({ village }: ParkingGuideSectionProps) {
                 Parking Guide
               </h3>
             </div>
-            <p className="font-body-sm text-on-surface-variant leading-relaxed">
+            <p className="font-body-sm text-on-surface-variant leading-[1.5]">
               {parking.main_location}. Pay-and-display machines accept card and
               coins. {parking.overflow_note}
             </p>

@@ -510,6 +510,22 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     websiteUrl: "https://www.exclusive.co.uk/the-manor-house/things-to-do/",
   },
   {
+    id: "snowshill-manor-and-garden",
+    name: "Snowshill Manor and Garden",
+    description:
+      "The eccentric former home of Charles Paget Wade, who spent decades collecting everything from samurai armour to mousetraps rather than furnishing the house the way anyone else would. It's a genuine 500-yard walk uphill from the car park to the garden, worth knowing if mobility's a factor, though a buggy runs between the two. Skip it with young children. There's little here to hold their attention room after room, and better to save the visit for when they're old enough to find the oddities interesting rather than boring.",
+    category: "Historic Houses",
+    location: "Snowshill",
+    address: "",
+    familyFriendly: false,
+    priceLevel: 2,
+    imageUrl:
+      "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/gloucestershire-cotswolds/places/snowshill-manor-and-garden/library/summer/adj-the-priests-house-by-nick-taylor-web-crop.jpg?auto=webp&width=676&crop=16:9&dpr=2",
+    imageAlt: "Snowshill Manor and Garden",
+    websiteUrl:
+      "https://www.nationaltrust.org.uk/visit/gloucestershire-cotswolds/snowshill-manor-and-garden",
+  },
+  {
     id: "cotswold-lavender-fields",
     name: "Cotswold Lavender Fields",
     description:

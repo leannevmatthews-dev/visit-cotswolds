@@ -18,7 +18,14 @@ import {
 import { RepeatableList } from "@/components/admin/village-form/repeatable-list";
 import { defaultVillageFormState } from "@/lib/villages/form-defaults";
 import { slugifyName, validateVillageForm } from "@/lib/villages/form-schema";
-import { COTSWOLDS_REGIONS } from "@/lib/villages/types";
+import {
+  COTSWOLDS_REGIONS,
+  type CrowdLevel,
+  type CrowdRatingLevel,
+  type FoodRatingLevel,
+  type RatingLevel,
+  type TimeNeeded,
+} from "@/lib/villages/types";
 import type { FormFieldErrors, VillageFormState } from "@/lib/villages/form-types";
 
 type VillageFormProps = {
@@ -534,7 +541,10 @@ export function VillageForm({
         <RepeatableList
           items={form.crowd_times}
           onChange={(items) => setField("crowd_times", items)}
-          createItem={() => ({ time_range: "", level: "" })}
+          createItem={() => ({
+            time_range: "",
+            level: "Quiet" as CrowdLevel,
+          })}
           addLabel="Add crowd time"
           emptyLabel="No crowd times yet."
           renderItem={(item, index, update, remove) => (
@@ -551,12 +561,19 @@ export function VillageForm({
                   onChange={(value) => update({ time_range: value })}
                   placeholder="Weekday mornings"
                 />
-                <TextInput
+                <SelectInput
                   id={`crowd-level-${index}`}
                   label="Level"
                   value={item.level}
-                  onChange={(value) => update({ level: value })}
-                  placeholder="quiet / moderate / busy"
+                  onChange={(value) => update({ level: value as CrowdLevel })}
+                  options={[
+                    "Very Quiet",
+                    "Quiet",
+                    "Moderate",
+                    "Busy",
+                    "Very Busy",
+                  ]}
+                  hint="Select crowd level"
                 />
               </FieldGrid>
             </RepeatableItemCard>
@@ -853,10 +870,10 @@ export function VillageForm({
               createItem={() => ({
                 village_name: "",
                 is_current: false,
-                beauty: "",
-                crowds: "",
-                food: "",
-                time_needed: "",
+                beauty: "Good" as RatingLevel,
+                crowds: "Moderate" as CrowdRatingLevel,
+                food: "Limited" as FoodRatingLevel,
+                time_needed: "Half day" as TimeNeeded,
                 image_url: "",
                 image_alt: "",
               })}
@@ -886,29 +903,51 @@ export function VillageForm({
                       villageSlug={form.slug}
                       fieldName={`comparison-${index}`}
                     />
-                    <TextInput
+                    <SelectInput
                       id={`comparison-beauty-${index}`}
                       label="Beauty"
                       value={item.beauty}
-                      onChange={(value) => update({ beauty: value })}
+                      onChange={(value) =>
+                        update({ beauty: value as RatingLevel })
+                      }
+                      options={["Good", "High", "Very High", "Exceptional"]}
+                      hint="Rating"
                     />
-                    <TextInput
+                    <SelectInput
                       id={`comparison-crowds-${index}`}
                       label="Crowds"
                       value={item.crowds}
-                      onChange={(value) => update({ crowds: value })}
+                      onChange={(value) =>
+                        update({ crowds: value as CrowdRatingLevel })
+                      }
+                      options={["Low", "Moderate", "High", "Very High"]}
+                      hint="Crowd rating"
                     />
-                    <TextInput
+                    <SelectInput
                       id={`comparison-food-${index}`}
                       label="Food"
                       value={item.food}
-                      onChange={(value) => update({ food: value })}
+                      onChange={(value) =>
+                        update({ food: value as FoodRatingLevel })
+                      }
+                      options={["Limited", "Good", "Strong", "Exceptional"]}
+                      hint="Food rating"
                     />
-                    <TextInput
+                    <SelectInput
                       id={`comparison-time-${index}`}
                       label="Time needed"
                       value={item.time_needed}
-                      onChange={(value) => update({ time_needed: value })}
+                      onChange={(value) =>
+                        update({ time_needed: value as TimeNeeded })
+                      }
+                      options={[
+                        "1-2 hours",
+                        "2-3 hours",
+                        "2-4 hours",
+                        "Half day",
+                        "Full day",
+                      ]}
+                      hint="Estimate"
                     />
                   </FieldGrid>
                   <CheckboxInput

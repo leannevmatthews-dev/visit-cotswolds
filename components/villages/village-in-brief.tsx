@@ -10,10 +10,10 @@ export function VillageInBrief({ village }: VillageInBriefProps) {
       <p className="village-in-brief__label font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">
         {village.name} In Brief
       </p>
-      <p className="village-in-brief__text font-body-sm text-on-surface leading-relaxed">
+      <p className="village-in-brief__text font-body-sm text-on-surface leading-[1.5]">
         {village.brief_summary}
       </p>
-      <p className="village-in-brief__tip font-body-sm text-on-surface-variant leading-relaxed">
+      <p className="village-in-brief__tip font-body-sm text-on-surface-variant leading-[1.5]">
         <span className="village-in-brief__tip-label">Insider tip:</span>{" "}
         {village.brief_best_tip}
       </p>

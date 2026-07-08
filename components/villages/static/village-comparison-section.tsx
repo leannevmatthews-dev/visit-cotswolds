@@ -19,7 +19,7 @@ export function VillageComparisonSection() {
         <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-4 leading-tight">
           How Bibury Compares
         </h2>
-        <p className="font-body-sm text-on-surface-variant max-w-2xl leading-relaxed">
+        <p className="font-body-sm text-on-surface-variant max-w-2xl leading-[1.5]">
           A quick read on how Bibury stacks up against other popular Cotswolds
           villages—based on our visits, not brochure copy.
         </p>
@@ -83,7 +83,7 @@ export function VillageComparisonSection() {
         <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-4 leading-tight">
           If Bibury Isn&rsquo;t Right For You
         </h2>
-        <p className="font-body-sm text-on-surface-variant mb-8 max-w-2xl leading-relaxed">
+        <p className="font-body-sm text-on-surface-variant mb-8 max-w-2xl leading-[1.5]">
           Bibury is not the only option. If your priorities run differently,
           these villages may suit you better.
         </p>

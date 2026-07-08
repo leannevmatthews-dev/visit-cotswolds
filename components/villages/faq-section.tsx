@@ -35,7 +35,7 @@ export function FaqSection({ village }: FaqSectionProps) {
             </summary>
             <div className="village-faq__answer">
               <div className="village-faq__answer-inner">
-                <p className="font-body-sm text-on-surface-variant leading-relaxed">
+                <p className="font-body-sm text-on-surface-variant leading-[1.5]">
                   {item.answer}
                 </p>
               </div>
