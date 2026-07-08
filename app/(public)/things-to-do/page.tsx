@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ThingsToDoContent } from "@/components/things-to-do/things-to-do-content";
 import { pageMetadata } from "@/lib/seo/metadata";
-import { getBreadcrumbJsonLd } from "@/lib/seo/schema";
+import { getBreadcrumbJsonLd, getListingItemListJsonLd } from "@/lib/seo/schema";
+import { THINGS_TO_DO_LISTINGS } from "@/lib/things-to-do-data";
 import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
@@ -17,10 +18,13 @@ export default function ThingsToDoPage() {
   return (
     <>
       <JsonLd
-        data={getBreadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Things to Do", path: "/things-to-do" },
-        ])}
+        data={[
+          getBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Things to Do", path: "/things-to-do" },
+          ]),
+          getListingItemListJsonLd(THINGS_TO_DO_LISTINGS),
+        ]}
       />
       <ThingsToDoContent />
     </>

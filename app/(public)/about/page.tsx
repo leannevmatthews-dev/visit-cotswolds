@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
 import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { getBreadcrumbJsonLd, getPersonJsonLd } from "@/lib/seo/schema";
+
+const LEANNE_ABOUT_SUMMARY =
+  "I'm Leanne Matthews, and I built Visit Cotswolds after moving to the area and finding most existing guides weren't much help for actual trip planning.";
 
 export const metadata: Metadata = pageMetadata({
   title: "About",
@@ -11,6 +16,16 @@ export const metadata: Metadata = pageMetadata({
 
 export default function AboutPage() {
   return (
+    <>
+      <JsonLd
+        data={[
+          getPersonJsonLd(LEANNE_ABOUT_SUMMARY),
+          getBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+        ]}
+      />
     <main className="bg-background text-on-background">
       <article className="mx-auto max-w-3xl px-margin-mobile py-16 md:px-margin-desktop md:py-24">
         <header className="mb-12 md:mb-16">
@@ -31,9 +46,8 @@ export default function AboutPage() {
               whether somewhere is worth a two-hour drive.
             </p>
             <p className="font-body-lg text-on-surface-variant leading-relaxed">
-              I&apos;m Leanne, and I built Visit Cotswolds after moving to the area
-              and finding most existing guides weren&apos;t much help for actual trip
-              planning. This is an independent guide, not a tourism board site or a
+              {LEANNE_ABOUT_SUMMARY}{" "}
+              This is an independent guide, not a tourism board site or a
               directory. I research places properly, visit in person where I can, and
               only include what I&apos;d genuinely recommend. Not everything makes the
               cut. Some popular villages are worth skipping on a summer weekend. Some
@@ -104,5 +118,6 @@ export default function AboutPage() {
       </article>
       <NewsletterSignup />
     </main>
+    </>
   );
 }

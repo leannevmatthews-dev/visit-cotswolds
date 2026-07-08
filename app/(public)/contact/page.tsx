@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { JsonLd } from "@/components/seo/json-ld";
 import { ContactForm } from "@/components/contact/contact-form";
 import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { getBreadcrumbJsonLd } from "@/lib/seo/schema";
 import "@/css/village-hero.css";
 
 const CONTACT_HERO_IMAGE =
@@ -17,6 +19,13 @@ export const metadata: Metadata = pageMetadata({
 
 export default function ContactPage() {
   return (
+    <>
+      <JsonLd
+        data={getBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ])}
+      />
     <main className="bg-background text-on-background">
       <section className="village-hero">
         <Image
@@ -58,5 +67,6 @@ export default function ContactPage() {
 
       <NewsletterSignup />
     </main>
+    </>
   );
 }

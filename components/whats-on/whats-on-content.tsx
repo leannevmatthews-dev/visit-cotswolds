@@ -12,10 +12,8 @@ import {
   filterWhatsOnEvents,
   filterWhatsOnEventsByDate,
   filterWhatsOnEventsByDateRange,
-  filterUpcomingWhatsOnEvents,
   sortWhatsOnEventsByDate,
   formatEventCategories,
-  WHATS_ON_EVENTS,
   WHATS_ON_FILTERS,
   WHATS_ON_HERO_IMAGE,
   type WhatsOnDateFilter,
@@ -188,7 +186,11 @@ function EventCard({ event }: { event: WhatsOnEvent }) {
   );
 }
 
-export function WhatsOnContent() {
+type WhatsOnContentProps = {
+  upcomingEvents: WhatsOnEvent[];
+};
+
+export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
   const [activeFilter, setActiveFilter] = useState(WHATS_ON_FILTERS[0]?.id ?? "all");
   const [activeDateFilter, setActiveDateFilter] = useState<WhatsOnDateFilter | null>(
     null,
@@ -207,7 +209,6 @@ export function WhatsOnContent() {
     !isPartialRangeSelection && isCompleteDateRange(appliedDateRange);
 
   const visibleEvents = useMemo(() => {
-    const upcomingEvents = filterUpcomingWhatsOnEvents(WHATS_ON_EVENTS);
     const categoryFiltered = filterWhatsOnEvents(upcomingEvents, activeFilter);
 
     let filtered: WhatsOnEvent[];
@@ -224,7 +225,7 @@ export function WhatsOnContent() {
     }
 
     return sortWhatsOnEventsByDate(filtered);
-  }, [activeFilter, activeDateFilter, appliedDateRange, hasDateRange]);
+  }, [activeFilter, activeDateFilter, appliedDateRange, hasDateRange, upcomingEvents]);
 
   useEffect(() => {
     if (!isDateRangeOpen || !datePickerAnchorRef.current) {

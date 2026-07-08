@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { getBreadcrumbJsonLd } from "@/lib/seo/schema";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
@@ -9,6 +11,13 @@ export const metadata: Metadata = pageMetadata({
 
 export default function PrivacyPolicyPage() {
   return (
+    <>
+      <JsonLd
+        data={getBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy-policy" },
+        ])}
+      />
     <main className="bg-background text-on-background">
       <article className="mx-auto max-w-3xl px-margin-mobile py-16 md:px-margin-desktop md:py-24">
         <header className="mb-12 md:mb-16">
@@ -94,5 +103,6 @@ export default function PrivacyPolicyPage() {
         </div>
       </article>
     </main>
+    </>
   );
 }
