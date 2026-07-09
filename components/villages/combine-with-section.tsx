@@ -109,6 +109,13 @@ function CombineWithCard({
       village.name,
       combineHeroImages,
     );
+    const otherVillageName = combineWithOtherVillageName(
+      trip.title,
+      village.name,
+    );
+    const otherImageAlt =
+      trip.right_image_alt?.trim() ||
+      (otherVillageName ? `${otherVillageName}, Cotswolds village` : trip.title);
 
     return (
       <article className="village-combine">
@@ -121,7 +128,7 @@ function CombineWithCard({
               {otherImageUrl ? (
                 <Image
                   src={otherImageUrl}
-                  alt={trip.right_image_alt ?? ""}
+                  alt={otherImageAlt}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -157,6 +164,20 @@ function CombineWithCard({
     village.name,
     combineHeroImages,
   );
+  const leftVillageName = combineWithFirstOtherVillageName(
+    trip.title,
+    village.name,
+  );
+  const rightVillageName = combineWithSecondOtherVillageName(
+    trip.title,
+    village.name,
+  );
+  const leftImageAlt =
+    trip.left_image_alt?.trim() ||
+    (leftVillageName ? `${leftVillageName}, Cotswolds village` : trip.title);
+  const rightImageAlt =
+    trip.right_image_alt?.trim() ||
+    (rightVillageName ? `${rightVillageName}, Cotswolds village` : trip.title);
 
   return (
     <article className="village-combine">
@@ -166,7 +187,7 @@ function CombineWithCard({
             {leftImageUrl ? (
               <Image
                 src={leftImageUrl}
-                alt={trip.left_image_alt ?? ""}
+                alt={leftImageAlt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 50vw, 20vw"
@@ -179,7 +200,7 @@ function CombineWithCard({
             {rightImageUrl ? (
               <Image
                 src={rightImageUrl}
-                alt={trip.right_image_alt ?? ""}
+                alt={rightImageAlt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 50vw, 20vw"

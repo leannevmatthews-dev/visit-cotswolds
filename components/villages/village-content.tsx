@@ -58,7 +58,7 @@ function PlacePickCard({
         <div className="village-pick__image">
           {pick.image_url ? (
             <Image
-              alt={pick.image_alt ?? ""}
+              alt={pick.image_alt?.trim() || pick.name}
               src={pick.image_url}
               fill
               className="object-cover"
@@ -177,13 +177,14 @@ export function VillageContent({
     village.things_to_do,
     THINGS_TO_DO_LISTINGS,
   );
+  const heroAlt = village.alt_text?.trim() ?? "";
   return (
     <>
       <section className="village-hero village-hero--tight">
         {heroBg ? (
           <Image
-            alt=""
-            aria-hidden
+            alt={heroAlt}
+            aria-hidden={heroAlt ? undefined : true}
             className="village-hero__bg object-cover"
             src={heroBg}
             fill
@@ -364,7 +365,7 @@ export function VillageContent({
             <div className="lg:col-span-5 relative aspect-[4/5] overflow-hidden order-2 lg:order-1">
               {ourTakeImage ? (
                 <Image
-                  alt={village.our_take_image_alt ?? ""}
+                  alt={village.our_take_image_alt?.trim() || `${village.name} village`}
                   className="object-cover grayscale-[0.15] transition-transform duration-1000 hover:scale-105"
                   src={ourTakeImage}
                   fill
@@ -425,7 +426,10 @@ export function VillageContent({
               <div className="lg:col-span-5 relative aspect-[4/3] overflow-hidden rounded-sm">
                 {village.hidden_gems_image_url ? (
                   <Image
-                    alt={village.hidden_gems_image_alt ?? ""}
+                    alt={
+                      village.hidden_gems_image_alt?.trim() ||
+                      `Hidden gems near ${village.name}`
+                    }
                     className="object-cover"
                     src={village.hidden_gems_image_url}
                     fill
@@ -554,7 +558,7 @@ export function VillageContent({
                     <div className="village-things-to-do__image">
                       {business.image_url ? (
                         <Image
-                          alt={business.image_alt ?? ""}
+                          alt={business.image_alt?.trim() || business.name}
                           src={business.image_url}
                           fill
                           className="object-cover"

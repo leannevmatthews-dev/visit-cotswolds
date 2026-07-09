@@ -64,7 +64,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://i0.wp.com/cotswoldshow.co.uk/wp-content/uploads/2026/06/4.png?fit=768%2C960&ssl=1",
-    imageAlt: "Cotswold Show Cirencester Park",
+    imageAlt: "Cotswold Show and Food Festival, Cirencester Park",
     categories: ["Food"],
     websiteUrl: "https://www.cotswoldshow.co.uk",
   },
@@ -79,7 +79,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://www.eatdrinkseek.co.uk/wp-content/uploads/2018/11/cotswold-beer-festival-postlip.jpg",
-    imageAlt: "Cotswold Beer Festival Postlip Hall",
+    imageAlt: "Cotswold Beer Festival, Postlip Hall",
     categories: ["Food"],
     websiteUrl: "https://postlip.camra.org.uk/",
   },
@@ -93,7 +93,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     day: "2",
     year: 2026,
     imageUrl: "https://www.daylesford.com/media/catalog/product/2/_/2_7.jpg",
-    imageAlt: "Daylesford Farm event",
+    imageAlt: "Country Life Expert Event at Daylesford, Daylesford Farm",
     categories: ["Experiences & Wellness"],
     websiteUrl: "https://www.daylesford.com/shop/events",
   },
@@ -108,7 +108,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://www.daylesford.com/media/klevu_images/850X850/p/i/picnic3-1024x1024_2.jpg",
-    imageAlt: "Daylesford Farm family picnic",
+    imageAlt: "Teddy Bear's Picnic at Daylesford, Daylesford Farm",
     categories: ["Family", "Experiences & Wellness"],
     websiteUrl: "https://www.daylesford.com/shop/events/the-great-british-picnic-30-08-2026",
   },
@@ -125,7 +125,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://2000trees.co.uk/storage/media-library/medium_529_20231018022032.jpg",
-    imageAlt: "2000trees Festival Upcote Farm",
+    imageAlt: "2000trees Festival, Upcote Farm",
     categories: ["Festivals"],
     websiteUrl: "https://2000trees.co.uk/",
   },
@@ -142,7 +142,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cheltenham-festivals.transforms.svdcdn.com/production/Festivals/Music/2025/social-images/41.png?w=1080&q=100&auto=format&fit=crop&dm=1767873279&s=e89811c1845bd9541f9252212ea51d5c",
-    imageAlt: "Cheltenham Music Festival Pittville Pump Room",
+    imageAlt: "Cheltenham Music Festival, Various venues",
     categories: ["Culture"],
     websiteUrl: "https://www.cheltenhamfestivals.org",
   },
@@ -157,7 +157,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5f6b4b0c38cfbb7e2af14d5e/c0768849-4bff-4345-bf1e-06df9810aa7f/Thyme+-+Mural+Artist+Shoot+-+Kerrie+Wood+Photography-101.jpg?format=2500w",
-    imageAlt: "Thyme estate summer art exhibition",
+    imageAlt: "Summer Art Exhibition at Thyme, Thyme",
     categories: ["Culture", "Experiences & Wellness"],
     websiteUrl: "https://www.thyme.co.uk/things-to-do/art-exhibitions",
   },
@@ -172,7 +172,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://ebringtonparish.org.uk/wp-content/uploads/2021/10/Photo-29-12-2023-09-36-24-768x1024.jpg",
-    imageAlt: "Ebrington village fete cricket ground",
+    imageAlt: "Ebrington Village Fete, Ebrington Cricket Ground",
     categories: ["Family"],
     websiteUrl: "https://ebringtonparish.org.uk/notices/ebrington-village-fete/",
   },
@@ -187,7 +187,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://i0.wp.com/chalfest.co.uk/wp-content/uploads/2022/07/DSC_9785-scaled.jpg?fit=2560%2C1709&ssl=1",
-    imageAlt: "Chalfest music festival Chalford Stroud",
+    imageAlt: "Chalfest Music Festival, Chalford",
     categories: ["Festivals"],
     websiteUrl: "https://www.chalfest.co.uk",
   },
@@ -204,7 +204,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://fantasyforest.co.uk/wp-content/uploads/2025/08/Jur-1280p-04486.jpg",
-    imageAlt: "Fantasy Forest Festival Sudeley Castle",
+    imageAlt: "Fantasy Forest Festival, Sudeley Castle",
     categories: ["Family"],
     websiteUrl: "https://fantasyforest.co.uk/",
   },
@@ -221,7 +221,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://d2pff431r2cpo9.cloudfront.net/files/web-home/_1980x1122_crop_center-center/24-theatre-2560x1709.jpg?mtime=20240129162025",
-    imageAlt: "Longborough Festival Opera",
+    imageAlt: "Longborough Festival Opera, Longborough",
     categories: ["Culture"],
     websiteUrl: "https://lfo.org.uk",
   },
@@ -237,7 +237,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     endMonth: "August",
     year: 2026,
     imageUrl: "https://guitingfestival.org/wp-content/uploads/2019/12/X4C0163.jpg",
-    imageAlt: "Guiting Music Festival Guiting Power",
+    imageAlt: "Guiting Music Festival, Guiting Power",
     categories: ["Festivals"],
     websiteUrl: "https://www.guitingfestival.org",
   },
@@ -254,7 +254,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://www.cotswoldlavender.co.uk/cdn/shop/files/DSC_0535.jpg?v=1771843369&width=750",
-    imageAlt: "Cotswold Lavender fields Snowshill",
+    imageAlt: "Cotswold Lavender, Hill Barn Farm",
     categories: ["Experiences & Wellness"],
     websiteUrl: "https://www.cotswoldlavender.co.uk",
   },
@@ -271,7 +271,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cirencesterpolo.co.uk/wp-content/uploads/CambiasoHomePage-1-2048x1499.png",
-    imageAlt: "Warwickshire Cup polo Cirencester Park",
+    imageAlt: "Warwickshire Cup Polo, Cirencester Park Polo Club",
     categories: ["Sporting"],
     websiteUrl: "https://cirencesterpolo.co.uk",
   },
@@ -288,7 +288,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cirencesterpolo.co.uk/wp-content/uploads/CambiasoHomePage-1-2048x1499.png",
-    imageAlt: "Apsley Cup polo Cirencester Park",
+    imageAlt: "Apsley Cup Polo, Cirencester Park Polo Club",
     categories: ["Sporting"],
     websiteUrl: "https://cirencesterpolo.co.uk",
   },
@@ -305,7 +305,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://beaufortpoloclub.com/wp-content/uploads/2022/12/GFP-22-Saturday-George-Gunn-9205-scaled-e1669903375753-2048x1131.jpg",
-    imageAlt: "Gloucestershire Festival of Polo Beaufort Club",
+    imageAlt: "Gloucestershire Festival of Polo, Beaufort Polo Club",
     categories: ["Sporting"],
     websiteUrl: "https://beaufortpoloclub.com",
   },
@@ -322,7 +322,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://d3nnbxax8ziilb.cloudfront.net/images/ss_OvGqcCYKllSyrESdEGkYYs4o=/4374/fill-2400x800/FRI_WILDERNESS25_SaraLincoln_SL_23782.CR3.jpg",
-    imageAlt: "Wilderness Festival Cornbury Park",
+    imageAlt: "Wilderness Festival, Cornbury Park",
     categories: ["Festivals"],
     websiteUrl: "https://www.wildernessfestival.com",
   },
@@ -339,7 +339,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://www.glosvintageextravaganza.co.uk/wp-content/uploads/2018/05/DSCN7349-EDIT-WEB.jpg",
-    imageAlt: "Gloucestershire Vintage Extravaganza South Cerney",
+    imageAlt: "Gloucestershire Vintage and Country Extravaganza, South Cerney Airfield",
     categories: ["Sporting", "Family"],
     websiteUrl: "https://www.glosvintageextravaganza.co.uk",
   },
@@ -356,7 +356,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cirencesterpolo.co.uk/wp-content/uploads/CambiasoHomePage-1-2048x1499.png",
-    imageAlt: "Cirencester Ladies Polo Cirencester Park",
+    imageAlt: "Cirencester Ladies Polo, Cirencester Park Polo Club",
     categories: ["Sporting"],
     websiteUrl: "https://cirencesterpolo.co.uk",
   },
@@ -371,7 +371,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://www.broadwaycarshow.co.uk/wp-content/uploads/2026/02/Broadway-Car-Show-Classic-Car-Sunday-Cotswold-Photographers-Natacha-Murphy-2.jpg",
-    imageAlt: "Broadway Car Show high street",
+    imageAlt: "Broadway Car Show, Broadway High Street",
     categories: ["Sporting"],
     websiteUrl: "https://www.broadwaycarshow.co.uk",
   },
@@ -388,7 +388,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cdn.gloscricket.co.uk/uploads/admin/media-bank/banner/2026/58d7daaf-0338-48a8-bce1-2658b0f29b2c.png?t=1771419883956",
-    imageAlt: "Cheltenham Cricket Festival College ground",
+    imageAlt: "Cheltenham Cricket Festival, Cheltenham College",
     categories: ["Sporting"],
     websiteUrl: "https://www.gloscricket.co.uk/towergate-cheltenham-cricket-festival/",
   },
@@ -403,7 +403,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://static.wixstatic.com/media/e4d6f7_5b148aa055a5495581b6c92b9bbfa756~mv2.png/v1/fill/w_1960,h_604,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/e4d6f7_5b148aa055a5495581b6c92b9bbfa756~mv2.png",
-    imageAlt: "Cirencester Abbey Grounds music festival",
+    imageAlt: "Phoenix Festival, Abbey Grounds",
     categories: ["Festivals"],
     websiteUrl: "https://www.phoenix-festival.co.uk/",
   },
@@ -420,7 +420,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cirencesterpolo.co.uk/wp-content/uploads/CambiasoHomePage-1-2048x1499.png",
-    imageAlt: "Country Cup polo Cirencester Park",
+    imageAlt: "Country Cup Polo, Cirencester Park Polo Club",
     categories: ["Sporting"],
     websiteUrl: "https://cirencesterpolo.co.uk",
   },
@@ -437,7 +437,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://bigfeastival.com/wp-content/uploads/2025/01/The-Big-Feastival-2024_20240823_Atmosphere_GaelleBeri_9077-Instagram.jpeg",
-    imageAlt: "The Big Feastival Alex James Farm Kingham",
+    imageAlt: "The Big Feastival, Alex James' Farm",
     categories: ["Festivals", "Food"],
     websiteUrl: "https://www.bigfeastival.com",
   },
@@ -451,7 +451,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     day: "5",
     year: 2026,
     imageUrl: "https://moretonshow.co.uk/wp-content/uploads/2025/06/IMG_5527-1-scaled.jpg",
-    imageAlt: "Moreton-in-Marsh Show showground",
+    imageAlt: "Moreton-in-Marsh Show, Moreton-in-Marsh Showground",
     categories: ["Food", "Family"],
     websiteUrl: "https://www.moretonshow.co.uk",
   },
@@ -468,7 +468,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://ex7988es9ka.exactdn.com/wp-content/uploads/2026/02/Overview-2-1-768x432.jpg",
-    imageAlt: "Castle Combe Autumn Classic motor racing",
+    imageAlt: "Castle Combe Autumn Classic, Castle Combe Circuit",
     categories: ["Sporting"],
     websiteUrl: "https://www.castlecombecircuit.co.uk",
   },
@@ -483,7 +483,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5523d629e4b0c8f3afe085cf/1660167089445-JOOFHVNXIRAYJJ34CFNN/Broadway-Horticultural-And-Craft-Show-Worcestershire-Cotswolds.jpg?format=2500w",
-    imageAlt: "Broadway Autumn Show horticultural",
+    imageAlt: "Broadway Autumn Show, Broadway",
     categories: ["Family"],
     websiteUrl: "https://www.broadway-cotswolds.co.uk/broadway-horticultural-craft-show",
   },
@@ -498,7 +498,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5523d629e4b0c8f3afe085cf/44a42761-1f81-4743-94f7-56df895cff45/Village-Green-Broadway-Festival-Worcestershire-UK.jpg?format=2500w",
-    imageAlt: "Broadway Food Festival high street artisan stalls",
+    imageAlt: "Broadway Food Festival, Broadway High Street",
     categories: ["Food"],
     websiteUrl: "https://www.broadway-cotswolds.co.uk/food-festival",
   },
@@ -515,7 +515,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://bpiht.co.uk/wp-content/uploads/2025/10/1st-Class-Images-RC90-Winner-719-THE-COMANCH-SC3_0353-scaled.jpg.webp",
-    imageAlt: "Blenheim Palace International Horse Trials",
+    imageAlt: "Blenheim Palace International Horse Trials, Blenheim Palace",
     categories: ["Sporting"],
     websiteUrl: "https://bpiht.co.uk/",
   },
@@ -532,7 +532,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5aaa85dd697a985c81246146/bd2d3e6a-395e-4f1d-ae7d-2924cc8c2450/Nik+Ramage+IMG_6153.jpeg?format=1500w",
-    imageAlt: "Stroud Open Studios artist workspace",
+    imageAlt: "Stroud Open Studios, Various venues",
     categories: ["Culture", "Experiences & Wellness"],
     websiteUrl: "https://www.sitefestival.org.uk/",
   },
@@ -547,7 +547,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cotswoldfair.com/wp21/wp-content/uploads/2025/07/Website-Images-3.png",
-    imageAlt: "Christmas Cotswold Fair Daylesford artisan stalls",
+    imageAlt: "Christmas Cotswold Fair, Evenlode Grounds",
     categories: ["Food"],
     websiteUrl: "https://www.cotswoldfair.com",
   },
@@ -564,7 +564,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://static.wixstatic.com/media/9f1e28_19cd0af4ebdd4f0a9bbdb5c8e00277c5~mv2.jpg/v1/fill/w_1024,h_424,al_c,q_85,enc_avif,quality_auto/9f1e28_19cd0af4ebdd4f0a9bbdb5c8e00277c5~mv2.jpg",
-    imageAlt: "Tetbury Music Festival chamber music",
+    imageAlt: "Tetbury Music Festival, Various venues",
     categories: ["Culture"],
     websiteUrl: "https://www.tetburymusicfestival.com",
   },
@@ -581,7 +581,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cheltenham-festivals.transforms.svdcdn.com/production/Festivals/Literature/2025/social-images/40.png?w=1080&q=100&auto=format&fit=crop&dm=1767874172&s=a898384afa9832fd6f74fdb21483de30",
-    imageAlt: "Cheltenham Literature Festival",
+    imageAlt: "Cheltenham Literature Festival, Various venues",
     categories: ["Culture"],
     websiteUrl: "https://www.cheltenhamfestivals.org",
   },
@@ -597,7 +597,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     endMonth: "November",
     year: 2026,
     imageUrl: "https://filmchelt.org/wp-content/uploads/2026/05/we-pick-winners.jpg",
-    imageAlt: "Cheltenham Film Festival",
+    imageAlt: "Cheltenham Film Festival, Various venues",
     categories: ["Culture"],
     websiteUrl: "https://filmchelt.org",
   },
@@ -611,7 +611,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     day: "1",
     year: 2026,
     imageUrl: "https://images.pexels.com/photos/29820836/pexels-photo-29820836.jpeg",
-    imageAlt: "Chipping Campden Christmas market",
+    imageAlt: "Chipping Campden Christmas Market, Market Square",
     categories: ["Food", "Family"],
     websiteUrl: "https://www.chippingcampdenonline.org/chipping-campden-christmas-market",
   },
@@ -626,7 +626,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://gjkgchwqyjmemwadlpjv.supabase.co/storage/v1/object/public/media/bdf4d798-883e-402d-85d3-3e5e10833df1/bjnq498f3t.jpg",
-    imageAlt: "Bourton-on-the-Water Christmas market riverside",
+    imageAlt: "Bourton-on-the-Water Christmas Market, Bourton-on-the-Water",
     categories: ["Food", "Family"],
     websiteUrl: "https://www.bourtoninfo.com",
   },
@@ -641,7 +641,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://www.cirencesterrocks.co.uk/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fmytownrocks.appspot.com%2Fcirencesterrocks.co.uk%2Flistings%2F18k0L15DStvJKd7V2xCu%2F1637662217603_Christmas-Market.JPG&w=1920&q=75",
-    imageAlt: "Cirencester Christmas market market place",
+    imageAlt: "Cirencester Christmas Market, Market Place",
     categories: ["Food"],
     websiteUrl: "https://cirencester.gov.uk/christmas-in-cirencester",
   },
@@ -656,7 +656,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://fresh-n-local.co.uk/wp-content/uploads/2014/10/stroud-farmers-market-banner-4-1024x372.jpg",
-    imageAlt: "Stroud Farmers Market Cornhill stalls",
+    imageAlt: "Stroud Farmers Market, Cornhill Market Place",
     categories: ["Markets"],
     websiteUrl: "https://fresh-n-local.co.uk/trader/stroud/",
     frequency: "Every Saturday",
@@ -673,7 +673,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5865693637c58153c75d6a77/1483285998974-0V6XZ0ABKJI6PYDGISOS/BracknellMarket.png?format=2500w",
-    imageAlt: "Moreton-in-Marsh Tuesday market high street",
+    imageAlt: "Moreton-in-Marsh Tuesday Market, High Street",
     categories: ["Markets"],
     websiteUrl: "https://www.cotswoldmarkets.com/moretoninmarsh",
     frequency: "Every Tuesday",
@@ -690,7 +690,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5865693637c58153c75d6a77/1598954071705-OYSAUF4SZ5KLE125GJM2/DSC_5601.JPG?format=2500w",
-    imageAlt: "Cirencester Farmers Market local producers",
+    imageAlt: "Cirencester Farmers Market, Market Place",
     categories: ["Markets"],
     websiteUrl: "https://www.cotswoldmarkets.com/cirencester-farmers",
     frequency: "Every Saturday",
@@ -707,7 +707,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://fresh-n-local.co.uk/wp-content/uploads/2014/10/stow-farmers-market-banner-2-1024x372.jpg",
-    imageAlt: "Stow-on-the-Wold Farmers Market market square",
+    imageAlt: "Stow-on-the-Wold Farmers Market, Market Square",
     categories: ["Markets"],
     websiteUrl: "https://fresh-n-local.co.uk/trader/stow/",
     frequency: "Every Thursday",
@@ -724,7 +724,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://cdn.prod.website-files.com/6048f9b32c50f9e335154899/608043055ef2ed7f969f4344_Chater%20image%205.jpeg",
-    imageAlt: "Tetbury Market House historic building",
+    imageAlt: "Tetbury Market, Market House",
     categories: ["Markets"],
     websiteUrl: "https://visittetbury.co.uk/tourism/markets",
     frequency: "Every Wednesday",
@@ -741,7 +741,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5865693637c58153c75d6a77/4514f523-8cb1-4920-b79f-950f1c59e9fe/WhatsApp+Image+2022-03-22+at+12.57.04.jpeg?format=2500w",
-    imageAlt: "Chipping Norton Farmers Market medieval square",
+    imageAlt: "Chipping Norton Farmers Market, Market Place",
     categories: ["Markets"],
     websiteUrl: "https://www.cotswoldmarkets.com/chipping-norton",
     frequency: "Every Wednesday",
@@ -757,7 +757,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     day: "11",
     year: 2026,
     imageUrl: "https://www.lovenailsworth.com/img/Nailsworth%20Summer%20Fayre%20image.svg",
-    imageAlt: "Nailsworth Artisan Market Mortimer Gardens",
+    imageAlt: "Nailsworth Artisan Market, Mortimer Gardens",
     categories: ["Markets"],
     websiteUrl: "https://www.lovenailsworth.com/",
     frequency: "Every Saturday",
@@ -774,7 +774,7 @@ export const WHATS_ON_EVENTS: WhatsOnEvent[] = [
     year: 2026,
     imageUrl:
       "https://www.daylesford.com/media/wysiwyg/Demo-Widgets-Images/banner-image-about_us.jpg?format=webp&quality=85",
-    imageAlt: "Daylesford Farm seasonal workshop cutting garden",
+    imageAlt: "Daylesford Seasonal Workshops, Daylesford Farm",
     categories: ["Experiences & Wellness"],
     websiteUrl: "https://www.daylesford.com/shop/events",
     frequency: "Various dates",

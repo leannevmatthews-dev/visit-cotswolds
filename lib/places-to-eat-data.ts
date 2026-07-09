@@ -50,7 +50,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://thewildrabbit.co.uk/wp-content/uploads/sites/3/2023/09/terrace-1818-960x1280-1-720x960.jpg",
-    imageAlt: "The Wild Rabbit dining room interior",
+    imageAlt: "The Wild Rabbit, restaurants in Kingham",
     websiteUrl: "https://thewildrabbit.co.uk",
   },
   {
@@ -65,7 +65,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://www.countrycreatures.com/wp-content/uploads/2026/02/DRDAugustHighRes-51-copy-720x960.jpg",
-    imageAlt: "The Double Red Duke exterior",
+    imageAlt: "The Double Red Duke, gastropub in Clanfield",
     websiteUrl: "https://www.countrycreatures.com",
   },
   {
@@ -80,7 +80,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://www.daylesford.com/media/wysiwyg/Demo-Widgets-Images/VISIT.jpg?format=webp&quality=85",
-    imageAlt: "Daylesford Organic farm shop barns",
+    imageAlt: "Daylesford Organic, farm shop and cafe in Kingham",
     websiteUrl: "https://www.daylesford.com",
   },
   {
@@ -95,7 +95,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5f6b4b0c38cfbb7e2af14d5e/2257efa7-c8e4-4e79-a931-6d14a71be43f/Thyme+Social+Posters+%2855%29.png?format=750w",
-    imageAlt: "The Ox Barn at Thyme restaurant interior",
+    imageAlt: "The Ox Barn at Thyme, restaurants in Southrop",
     websiteUrl: "https://www.thyme.co.uk",
   },
   {
@@ -110,7 +110,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://thefeatherednestinn.co.uk/wp-content/uploads/2025/02/ED_8420-copy-340x406.jpg",
-    imageAlt: "The Feathered Nest terrace with valley views",
+    imageAlt: "The Feathered Nest, restaurants in Nether Westcote",
     websiteUrl: "https://thefeatherednestinn.co.uk",
   },
   {
@@ -125,7 +125,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/58834cf12994caa61ab8d07a/1757353163486-RQ7H25YB6KF6MWEPBTO5/B08AB51E-5978-4834-97FF-95C3C369E6E0.jpeg?format=1500w",
-    imageAlt: "The Bell Inn Langford exterior",
+    imageAlt: "The Bell Inn, gastropub in Langford",
     websiteUrl: "https://www.thebelllangford.com",
   },
   {
@@ -140,7 +140,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://slaughtersmanor.co.uk/wp-content/uploads/sites/15/2026/02/SMH-AfternoonTea-02-1000px.jpg",
-    imageAlt: "The Slaughters Manor exterior",
+    imageAlt: "The Slaughters Manor, afternoon tea in Lower Slaughter",
     websiteUrl: "https://www.slaughtersmanor.co.uk",
   },
   {
@@ -155,7 +155,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://bucklandmanor.co.uk/wp-content/uploads/sites/8/2026/01/4H0A8786-4-1000px.jpg",
-    imageAlt: "Buckland Manor dining room",
+    imageAlt: "Buckland Manor, afternoon tea in Buckland",
     websiteUrl: "https://www.bucklandmanor.co.uk",
   },
   {
@@ -170,7 +170,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.theswanswinbrook.co.uk/wp-content/uploads/2018/12/The-Swan-Inn-Dining-in-the-Cotswolds.jpg",
-    imageAlt: "The Swan Inn Swinbrook by the River Windrush",
+    imageAlt: "The Swan Inn, gastropub in Swinbrook",
     websiteUrl: "https://www.theswanswinbrook.co.uk/",
   },
   {
@@ -185,7 +185,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://www.lordsofthemanor.com/wp-content/uploads/2022/08/Untitled-design-88-9c5e34d6be63cfbefb7846cf4248d2ae-768x500.png",
-    imageAlt: "Lords of the Manor exterior",
+    imageAlt: "Lords of the Manor, afternoon tea in Upper Slaughter",
     websiteUrl: "https://www.lordsofthemanor.com",
   },
   {
@@ -200,7 +200,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.theebringtonarms.co.uk/wp-content/uploads/sites/2/2026/05/eb-website-summer-asparagus-2-port-960x1280-1-720x960.jpg",
-    imageAlt: "The Ebrington Arms interior",
+    imageAlt: "The Ebrington Arms, gastropub in Ebrington",
     websiteUrl: "https://theebringtonarms.co.uk",
   },
   {
@@ -215,7 +215,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://thekinghamplough.co.uk/wp/wp-content/uploads/2025/09/The-Plough005.webp",
-    imageAlt: "The Kingham Plough exterior on the village green",
+    imageAlt: "The Kingham Plough, gastropub in Kingham",
     websiteUrl: "https://thekinghamplough.co.uk",
   },
   {
@@ -230,7 +230,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://static.wixstatic.com/media/71baee_360ba8387a384c1bafb98d434ca4fa55~mv2.jpg/v1/crop/x_0,y_56,w_3942,h_2130/fill/w_1960,h_1060,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/260303_Woolpack_RoastGroup_017_web.jpg",
-    imageAlt: "The Woolpack Inn Slad Valley",
+    imageAlt: "The Woolpack Inn, gastropub in Slad",
     websiteUrl: "https://www.thewoolpackslad.com/",
   },
   {
@@ -245,7 +245,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://cdn.prod.website-files.com/669b621dc0e98dd563ca2a54/67c9e507b3c92d8fb2eb5c6c_221101_TheLamb_115-min.jpg",
-    imageAlt: "The Chequers Churchill dining room",
+    imageAlt: "The Chequers, gastropub in Churchill",
     websiteUrl: "https://www.thechequerschurchill.com",
   },
   {
@@ -260,7 +260,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://thefoxatoddington.com/wp-content/uploads/sites/5/2026/06/Burrata-05.06.26-720x960.jpg",
-    imageAlt: "The Fox at Oddington exterior",
+    imageAlt: "The Fox at Oddington, gastropub in Lower Oddington",
     websiteUrl: "https://thefoxatoddington.com",
   },
   {
@@ -275,7 +275,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.lionhearth.co.uk/wp-content/uploads/2022/08/img20.jpg",
-    imageAlt: "Broadway Deli courtyard garden",
+    imageAlt: "Broadway Deli, farm shop and cafe in Broadway",
     websiteUrl: "https://www.broadwaydeli.co.uk",
   },
   {
@@ -290,7 +290,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.thevillagepub.co.uk/media/wzsht1hq/thepigvillagepubsep25-25467.jpg?rxy=0.4924812030075188,0.6852018948793142&width=1160&height=870&format=webp&v=1dc73362d0e1c80",
-    imageAlt: "The Village Pub Barnsley exterior",
+    imageAlt: "The Village Pub, gastropub in Barnsley",
     websiteUrl: "https://www.thevillagepub.co.uk",
   },
   {
@@ -305,7 +305,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://rootsandseedskitchengarden.co.uk/wp-content/uploads/2024/04/Home-Page-Brunch.jpg",
-    imageAlt: "Roots and Seeds kitchen garden cafe",
+    imageAlt: "Roots + Seeds, farm shop and cafe in Cirencester",
     websiteUrl: "https://rootsandseeds.co.uk",
   },
   {
@@ -320,7 +320,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.bathurstarms.co.uk/wp-content/uploads/2026/03/sole-lo-1024x683.jpg",
-    imageAlt: "The Bathurst Arms riverside",
+    imageAlt: "The Bathurst Arms, gastropub in North Cerney",
     websiteUrl: "https://bathurstarms.co.uk",
   },
   {
@@ -335,7 +335,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://bunny-wp-pullzone-dlshqqoicq.b-cdn.net/wp-content/uploads/2025/12/JAA_1655-scaled.jpg",
-    imageAlt: "The Porch House Stow-on-the-Wold exterior",
+    imageAlt: "The Porch House, gastropub in Stow-on-the-Wold",
     websiteUrl: "https://www.porch-house.co.uk",
   },
   {
@@ -350,7 +350,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.themountinn.co.uk/wp-content/uploads/2021/06/garden-mount-inn-768x768.jpg",
-    imageAlt: "The Mount Inn Stanton with panoramic views",
+    imageAlt: "The Mount Inn, gastropub in Stanton",
     websiteUrl: "https://www.themountinn.co.uk",
   },
   {
@@ -365,7 +365,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/60d9d2e01167b02d0780ef12/1624888047699-UE93ACVJF66T1MPSIBT1/IMG_2416.jpg?format=1500w",
-    imageAlt: "The Old Butchers dining room Stow-on-the-Wold",
+    imageAlt: "The Old Butchers, restaurants in Stow-on-the-Wold",
     websiteUrl: "https://theoldbutchers.squarespace.com",
   },
   {
@@ -380,7 +380,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.cotswoldswheatsheaf.com/youngs/uploads/sites/337/2025/02/Sunday-Roast-Campaign-48-768x512.jpg",
-    imageAlt: "The Wheatsheaf Inn Northleach exterior",
+    imageAlt: "The Wheatsheaf Inn, gastropub in Northleach",
     websiteUrl: "https://www.countrycreatures.com",
   },
   {
@@ -395,7 +395,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/60d9d2e01167b02d0780ef12/1624888036175-Z8X3VM8RVNJSD5TKS2YB/The-Bell-Sapperton-Country-Pub-Food-Photography-Meat-Platter.jpg?format=750w",
-    imageAlt: "The Bell at Sapperton exterior",
+    imageAlt: "The Bell at Sapperton, gastropub in Sapperton",
     websiteUrl: "https://www.bellsapperton.co.uk",
   },
   {
@@ -410,7 +410,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://dormyhouse.co.uk/wp-content/uploads/2025/07/750x500_afternoon-tea-1.jpg",
-    imageAlt: "Dormy House afternoon tea garden",
+    imageAlt: "Dormy House, afternoon tea in Broadway",
     websiteUrl: "https://dormyhouse.co.uk",
   },
   {
@@ -425,7 +425,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://hotelcms-production.imgix.net/thepainswick.co.uk/wp-content/uploads/2026/06/25_Mar_Painswick_HR_52-Large.jpg?fit=crop&crop=faces&w=2000&h=1111&auto=compress,format&strip=all",
-    imageAlt: "The Painswick afternoon tea grazing spread",
+    imageAlt: "The Painswick, afternoon tea in Painswick",
     websiteUrl: "https://thepainswick.co.uk",
   },
   {
@@ -440,7 +440,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/-/media/sites/cotswolds/main-site/food/aw25/venison--braised-faggot0002.jpg?la=en&h=1280&w=1920&hash=F5CF37C1A30D0DCD67C18C00D1B91312",
-    imageAlt: "The Swan Hotel Bibury",
+    imageAlt: "The Swan Hotel, restaurants in Bibury",
     websiteUrl: "https://www.swanhotelbibury.co.uk",
   },
   {
@@ -455,7 +455,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://catherinewheel-bibury.co.uk/wp-content/uploads/2025/11/Catherine-Wheel-front-view.jpg",
-    imageAlt: "The Catherine Wheel Bibury",
+    imageAlt: "The Catherine Wheel, gastropub in Bibury",
     websiteUrl: "https://www.catherinewheelbibury.co.uk",
   },
   {
@@ -469,7 +469,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     dogFriendly: false,
     priceLevel: 1,
     imageUrl: "https://biburytroutfarm.co.uk/wp-content/uploads/2025/06/food-2.jpg",
-    imageAlt: "Trout Farm Cafe Bibury",
+    imageAlt: "Trout Farm Cafe, farm shop and cafe in Bibury",
     websiteUrl: "https://www.biburytroutfarm.co.uk",
   },
   {
@@ -484,7 +484,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/66a62c3842c7546b897d0101/6c65a28e-e3e2-4342-8b96-6451e3616533/HW-6.jpg?format=1000w",
-    imageAlt: "The Highway Inn Burford",
+    imageAlt: "The Highway Inn, gastropub in Burford",
     websiteUrl: "https://www.highwayburford.com",
   },
   {
@@ -498,7 +498,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     imageUrl: "https://www.thespiceloungeburford.co.uk/images/herbs_and_spices.jpg",
-    imageAlt: "Spice Lounge Burford",
+    imageAlt: "Spice Lounge, restaurants in Burford",
     websiteUrl: "https://www.thespiceloungeburford.co.uk",
   },
   {
@@ -513,7 +513,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://static.wixstatic.com/media/bd2bef_ac435a5a00eb42d5a13a9e701a2728b7~mv2.jpg/v1/crop/x_0,y_182,w_1600,h_1077/fill/w_662,h_446,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202025-04-15%20at%2008_39_16_06a51b3b.jpg",
-    imageAlt: "Lynwood and Co Burford",
+    imageAlt: "Lynwood and Co, farm shop and cafe in Burford",
     websiteUrl: "https://www.lynwoodandco.com",
   },
   {
@@ -528,7 +528,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://huffkins.com/cdn/shop/files/afternoon-tea-gift-set-gs20010-6_2048x.jpg?v=1697459922",
-    imageAlt: "Huffkins Burford",
+    imageAlt: "Huffkins Burford, farm shop and cafe in Burford",
     websiteUrl: "https://huffkins.com/pages/burford-cafe-bakery",
   },
   {
@@ -543,7 +543,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://i0.wp.com/theangelatburford.co.uk/wp-content/uploads/2026/02/Pan-Fried-Seabass-Fillet.png?w=1024&ssl=1",
-    imageAlt: "Pan-fried seabass at The Angel at Burford",
+    imageAlt: "The Angel at Burford, gastropub in Burford",
     websiteUrl: "https://theangelatburford.co.uk/",
   },
   {
@@ -558,7 +558,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://www.exclusive.co.uk/media/0glmksay/the-castle-inn-july-2025-77.jpg?width=2000&height=1530&quality=70&v=1dc0c4935b1e870",
-    imageAlt: "The Castle Inn Castle Combe",
+    imageAlt: "The Castle Inn, gastropub in Castle Combe",
     websiteUrl: "https://www.exclusive.co.uk/the-castle-inn",
   },
   {
@@ -573,7 +573,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 3,
     imageUrl:
       "https://www.exclusive.co.uk/media/kr2cklpo/bybrook-dishes-rp-feb-23-72.jpg?width=968&height=1260&quality=70&v=1da3d71b1a79680",
-    imageAlt: "Bybrook dishes at The Manor House",
+    imageAlt: "Bybrook, restaurants in Castle Combe",
     websiteUrl: "https://www.exclusive.co.uk/bybrook/",
   },
   {
@@ -588,7 +588,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5abb5b9396e76ff863b1527f/1683310216541-5ULO2OQ9JGF1Q4D4QRGV/image-asset.jpeg?format=750w",
-    imageAlt: "The Salutation Inn",
+    imageAlt: "The Salutation Inn, gastropub in Castle Combe",
     websiteUrl: "https://thesalutationinn.com",
   },
   {
@@ -603,7 +603,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5e60e05dfc16cf04dcb7c0c7/1630143625083-GW3MFYK0ZI0EM0F3OGQW/image-asset.jpeg?format=1000w",
-    imageAlt: "The Old Stables Coffee Shop",
+    imageAlt: "The Old Stables Coffee Shop, farm shop and cafe in Castle Combe",
     websiteUrl: "https://www.theoldstables.co.uk",
   },
   {
@@ -618,7 +618,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://scontent.fltn3-2.fna.fbcdn.net/v/t39.30808-6/659765039_1281565890745629_752457617225242758_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=yphg2d2gDeUQ7kNvwEXVLtP&_nc_oc=AdqrUjdUDXiNrQNPqKtYyxL8ADsCchblD0l5lch-b23AVusQtzO3ew9sDp1-YwHeHG69-FO1ZksE9NEJc3La3vql&_nc_zt=23&_nc_ht=scontent.fltn3-2.fna&_nc_gid=C2f8hqBZLzmSVoqLjc8WBg&_nc_ss=7b2a8&oh=00_AQDIif0gGEaS5sEq4F9HYZLfdeSgZYpdbaN2nqpXXdHb6A&oe=6A4D7EBE",
-    imageAlt: "The Little Picnic Shop Castle Combe",
+    imageAlt: "The Little Picnic Shop, afternoon tea in Castle Combe",
     websiteUrl: "https://www.facebook.com/littlepicnicshop",
   },
   {
@@ -633,7 +633,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/library/commercial/fb/food/scone-cream-tea-cream-jam-1460258.jpg?auto=webp&width=1440&crop=16:7&dpr=2",
-    imageAlt: "Snowshill Manor Cafe",
+    imageAlt: "Snowshill Manor Cafe, farm shop and cafe in Snowshill",
     websiteUrl:
       "https://www.nationaltrust.org.uk/visit/gloucestershire-cotswolds/snowshill-manor-and-garden",
   },
@@ -648,7 +648,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     dogFriendly: true,
     priceLevel: 1,
     imageUrl: "http://www.snowshillarms.co.uk/wpimages/wpa5cd2b2c_05_06.jpg",
-    imageAlt: "Snowshill Arms pub exterior",
+    imageAlt: "Snowshill Arms, gastropub in Snowshill",
     websiteUrl: "http://www.snowshillarms.co.uk",
   },
   {
@@ -663,7 +663,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://www.cotswoldlavender.co.uk/cdn/shop/files/IMG_8383.jpg?v=1705577817&width=2000",
-    imageAlt: "Cotswold Lavender Cabin",
+    imageAlt: "Cotswold Lavender Cabin, farm shop and cafe in Snowshill",
     websiteUrl: "https://www.cotswoldlavender.co.uk/pages/visit",
   },
   {
@@ -678,7 +678,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://static.wixstatic.com/media/6968b0_2fae92acbd7b4f7d833c30833950bbd6~mv2.jpeg/v1/fill/w_1365,h_715,al_c,q_85,enc_avif,quality_auto/6968b0_2fae92acbd7b4f7d833c30833950bbd6~mv2.jpeg",
-    imageAlt: "Smiths of Bourton",
+    imageAlt: "Smiths of Bourton, restaurants in Bourton-on-the-Water",
     websiteUrl: "https://www.smithsofbourton.com",
   },
   {
@@ -693,7 +693,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 1,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/66a10ccfd0c26d3683d8f37b/1721830617055-9D8FLGF13IDMOUAMYZ4I/51-1536x1024.jpg?format=2500w",
-    imageAlt: "Bakery on the Water",
+    imageAlt: "Bakery on the Water, farm shop and cafe in Bourton-on-the-Water",
     websiteUrl: "https://www.bakeryonthewater.co.uk",
   },
   {
@@ -708,7 +708,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/66cf39cd084332020c512fc8/70842078-06ca-4e2b-80f8-a03d9aabe35f/MTSept25-34.jpg?format=2500w",
-    imageAlt: "The Mousetrap Inn",
+    imageAlt: "The Mousetrap Inn, gastropub in Bourton-on-the-Water",
     websiteUrl: "https://www.themousetrapinn.co.uk",
   },
   {
@@ -723,7 +723,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/63d3b9c071106579db927e96/1739464535029-03DUVJXIG4ZHGKPOUBA4/Pie+-+Keown+Photo.jpg?format=2500w",
-    imageAlt: "Pie dish served at The Old New Inn, Bourton-on-the-Water",
+    imageAlt: "The Old New Inn, gastropub in Bourton-on-the-Water",
     websiteUrl: "https://www.theoldnewinn.co.uk/",
   },
   {
@@ -738,7 +738,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     priceLevel: 2,
     imageUrl:
       "https://dialhousehotel.com/wp-content/uploads/smoked-salmon-sourdough-755x466.jpg",
-    imageAlt: "The Dial House Restaurant",
+    imageAlt: "The Dial House, restaurants in Bourton-on-the-Water",
     websiteUrl: "https://dialhousehotel.com",
   },
 ];

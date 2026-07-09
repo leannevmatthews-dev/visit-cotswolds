@@ -180,6 +180,7 @@ type PlacePickListing = {
   name: string;
   location: string;
   imageUrl: string;
+  imageAlt: string;
   websiteUrl: string;
 };
 
@@ -193,6 +194,7 @@ export function enrichPlacePicksFromListings<
     name: string;
     location_label: string;
     image_url: string | null;
+    image_alt?: string | null;
     external_link: string | null;
   },
 >(picks: TPick[], listings: PlacePickListing[]): TPick[] {
@@ -210,6 +212,7 @@ export function enrichPlacePicksFromListings<
     }
 
     const imageUrlEmpty = !pick.image_url?.trim();
+    const imageAltEmpty = !pick.image_alt?.trim();
     const externalLinkEmpty = !pick.external_link?.trim();
 
     return {
@@ -219,6 +222,10 @@ export function enrichPlacePicksFromListings<
         imageUrlEmpty && listing.imageUrl.trim()
           ? listing.imageUrl.trim()
           : pick.image_url,
+      image_alt:
+        imageAltEmpty && listing.imageAlt.trim()
+          ? listing.imageAlt.trim()
+          : pick.image_alt,
       external_link:
         externalLinkEmpty && listing.websiteUrl.trim()
           ? listing.websiteUrl.trim()

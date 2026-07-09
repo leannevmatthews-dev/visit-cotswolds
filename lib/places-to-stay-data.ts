@@ -57,7 +57,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£500+",
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/5f6b4b0c38cfbb7e2af14d5e/905d135c-12f0-4967-97bc-251c8e5a543a/Sidalcea+-+Elegant+-+Farmhouse+-+FreddieEllams+-+mar24+-++%281%29.jpg?format=1500w",
-    imageAlt: "Thyme estate Southrop",
+    imageAlt: "Thyme, country estate in Southrop",
     websiteUrl: "https://www.thyme.co.uk/",
   },
   {
@@ -73,7 +73,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£400+",
     imageUrl:
       "https://dormyhouse.co.uk/wp-content/uploads/2023/07/750x500_Dormy_The-Studio-5.jpg",
-    imageAlt: "Dormy House studio room",
+    imageAlt: "Dormy House, spa hotel in Broadway",
     websiteUrl: "https://dormyhouse.co.uk/",
   },
   {
@@ -88,7 +88,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     priceLevel: 3,
     pricePerNight: "£600+",
     imageUrl: "https://foxhillmanor.com/wp-content/uploads/2026/05/Oak-1.jpg",
-    imageAlt: "Foxhill Manor Oak room",
+    imageAlt: "Foxhill Manor, exclusive use in Broadway",
     websiteUrl: "https://www.foxhillmanor.com/",
   },
   {
@@ -104,7 +104,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://thefishhotel.co.uk/wp-content/uploads/2023/07/750x500_Fish_small-suite.jpg",
-    imageAlt: "The Fish Hotel small suite",
+    imageAlt: "The Fish Hotel, boutique hotel in Broadway",
     websiteUrl: "https://www.thefishhotel.co.uk/",
   },
   {
@@ -120,7 +120,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://hotelcms-production.imgix.net/thepainswick.co.uk/wp-content/uploads/2026/05/26_June_Painswick_WR_-28.jpg?fit=crop&crop=faces&w=1600&h=1478&auto=compress,format&strip=all",
-    imageAlt: "The Painswick hotel room",
+    imageAlt: "The Painswick, boutique hotel in Painswick",
     websiteUrl: "https://www.thepainswick.co.uk/",
   },
   {
@@ -136,7 +136,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£200+",
     imageUrl:
       "https://www.oldstocksinn.com/images/content/standard-images/rooms/house/room-12/rooms-house-12-standard-2.jpg",
-    imageAlt: "Old Stocks Inn room",
+    imageAlt: "Old Stocks Inn, inn in Stow-on-the-Wold",
     websiteUrl: "http://www.oldstocksinn.com/",
   },
   {
@@ -152,7 +152,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£300+",
     imageUrl:
       "https://bookings.thewildrabbit.co.uk/image/fit/640x480/storage/46-rooms-6537c17a9ded6.jpg",
-    imageAlt: "The Wild Rabbit room Kingham",
+    imageAlt: "The Wild Rabbit, inn in Kingham",
     websiteUrl: "https://thewildrabbit.co.uk/",
   },
   {
@@ -168,7 +168,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£400+",
     imageUrl:
       "https://bucklandmanor.co.uk/wp-content/uploads/sites/8/2026/01/BMA-Bedrooms-SupFourPost-Oak-Old-Photo-1000px.jpg",
-    imageAlt: "Buckland Manor four poster bedroom",
+    imageAlt: "Buckland Manor, manor house hotel in Buckland",
     websiteUrl: "https://www.bucklandmanor.co.uk/",
   },
   {
@@ -184,7 +184,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://thefeatherednestinn.co.uk/wp-content/uploads/2023/03/G34A6030-640x480.jpg",
-    imageAlt: "The Feathered Nest Inn room",
+    imageAlt: "The Feathered Nest, inn in Nether Westcote",
     websiteUrl: "http://www.thefeatherednestinn.co.uk/",
   },
   {
@@ -200,7 +200,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£200+",
     imageUrl:
       "https://r.profitroom.com/burleighcourtcotswolds/images/gallery/29d8ac38-3d84-4ec8-8fbb-1eee8ae830dd.jpeg",
-    imageAlt: "Burleigh Court manor house",
+    imageAlt: "Burleigh Court, manor house hotel in Minchinhampton",
     websiteUrl: "https://burleighcourtcotswolds.co.uk/",
   },
   {
@@ -216,7 +216,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£400+",
     imageUrl:
       "https://www.lordsofthemanor.com/wp-content/uploads/2022/11/007NKP37940-768x655.jpg",
-    imageAlt: "",
+    imageAlt: "Lords of the Manor, manor house hotel in Upper Slaughter",
     websiteUrl: "https://www.lordsofthemanor.com/",
   },
   {
@@ -232,7 +232,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://hotelcms-production.imgix.net/oldbellhotel.co.uk/wp-content/uploads/2022/05/Master_Room-Athelstan.jpg",
-    imageAlt: "The Old Bell Hotel Athelstan room",
+    imageAlt: "The Old Bell Hotel, historic inn in Malmesbury",
     websiteUrl: "http://www.oldbellhotel.co.uk/",
   },
   {
@@ -248,7 +248,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://www.cotswoldhouse.com/wp-content/uploads/2025/10/No33_CottageJuniorSuite-5.jpg",
-    imageAlt: "Cotswold House Hotel cottage suite",
+    imageAlt: "Cotswold House Hotel, spa hotel in Chipping Campden",
     websiteUrl: "http://www.cotswoldhouse.com/",
   },
   {
@@ -264,7 +264,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£200+",
     imageUrl:
       "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/-/media/sites/cotswolds/bay-tree/2025-rooms-bay-tree/tanfield/bay-tree-tanfield-sitting-room--fire.jpg",
-    imageAlt: "The Bay Tree Hotel Burford bedroom",
+    imageAlt: "The Bay Tree, inn in Burford",
     websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/",
   },
   {
@@ -280,7 +280,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£350+",
     imageUrl:
       "https://www.thepighotel.com/media/umkdbs2g/field-luxe-5.jpg?rxy=0.49624060150375937,0.5924516572634196&width=2663&v=1dc1c30473b9f90",
-    imageAlt: "THE PIG in the Cotswolds field luxe room",
+    imageAlt: "The Pig, boutique hotel in Barnsley",
     websiteUrl: "https://www.thepighotel.com/in-the-cotswolds/",
   },
   {
@@ -296,7 +296,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://grosvenorpi-wth.imgix.net/0_JEP_2372_dba82a5be7.jpg?fm=avif&auto=format&w=2000",
-    imageAlt: "Wild Thyme and Honey hotel room",
+    imageAlt: "Wild Thyme & Honey, boutique hotel in Ampney Crucis",
     websiteUrl: "https://www.wildthymeandhoney.co.uk/",
   },
   {
@@ -312,7 +312,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£350+",
     imageUrl:
       "https://www.lygonarmshotel.co.uk/media/ko4jkzl1/high-street-superior-room-the-lygon-arms-1.jpg?anchor=center&mode=crop&quality=70&width=2000&height=1200&rnd=134026624582400000",
-    imageAlt: "The Lygon Arms Broadway",
+    imageAlt: "The Lygon Arms, historic inn in Broadway",
     websiteUrl: "https://www.lygonarmshotel.co.uk/",
   },
   {
@@ -328,7 +328,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/-/media/sites/cotswolds/swan/2025-rooms-swan/superior-double-twin/swan-pink-room-8-deluxe-double.jpg",
-    imageAlt: "The Swan Hotel Bibury",
+    imageAlt: "The Swan Hotel, boutique hotel in Bibury",
     websiteUrl: "https://www.swanhotelbibury.co.uk",
   },
   {
@@ -344,7 +344,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://static1.squarespace.com/static/638e07701ecb054a3cd0a168/t/691ce934feaf05446e63211c/1763502389671/leo+davut+-+1882.jpg",
-    imageAlt: "The Bull Burford",
+    imageAlt: "The Bull Burford, boutique hotel in Burford",
     websiteUrl: "https://www.bullburford.com",
   },
   {
@@ -360,7 +360,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://www.cotswold-inns-hotels.co.uk/the-lamb-inn/-/media/sites/cotswolds/lamb/2025-rooms-lamb/rosie/lamb--rosie--bedroom-bed--chairs.jpg?la=en&h=1280&w=1920&hash=3F1514FA25FB146E24A1CF85E2F363B3",
-    imageAlt: "The Lamb Inn Burford",
+    imageAlt: "The Lamb Inn, historic inn in Burford",
     websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-lamb-inn",
   },
   {
@@ -376,7 +376,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://i0.wp.com/theangelatburford.co.uk/wp-content/uploads/2026/01/Untitled-design-43.png?w=1024&ssl=1",
-    imageAlt: "The Angel at Burford",
+    imageAlt: "The Angel at Burford, inn in Burford",
     websiteUrl: "https://theangelatburford.co.uk",
   },
   {
@@ -392,7 +392,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£350+",
     imageUrl:
       "https://www.exclusive.co.uk/media/kninnbmv/holdersmead-15.jpg?width=1210&height=800&quality=70&v=1da333ba13764a0",
-    imageAlt: "The Manor House Castle Combe",
+    imageAlt: "The Manor House, manor house hotel in Castle Combe",
     websiteUrl: "https://www.exclusive.co.uk/the-manor-house",
   },
   {
@@ -408,7 +408,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://www.exclusive.co.uk/media/y24hk2sw/castle-inn-bedrooms-nov-23-15.jpg?rxy=0.39595007108806557,0.4597043573506188&width=588&height=546&quality=70&v=1daf54f0bc17420",
-    imageAlt: "The Castle Inn Castle Combe",
+    imageAlt: "The Castle Inn, inn in Castle Combe",
     websiteUrl: "https://www.exclusive.co.uk/the-castle-inn",
   },
   {
@@ -424,7 +424,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://www.whitehart-ford.com/youngs/uploads/sites/356/2023/07/Double-1-1024x682.jpeg",
-    imageAlt: "The White Hart Ford",
+    imageAlt: "The White Hart, historic inn in Ford",
     websiteUrl: "https://www.whitehart-ford.com",
   },
   {
@@ -440,7 +440,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://dialhousehotel.com/wp-content/uploads/aubrey-1-755x466.jpg",
-    imageAlt: "The Dial House Bourton",
+    imageAlt: "The Dial House, boutique hotel in Bourton-on-the-Water",
     websiteUrl: "https://dialhousehotel.com",
   },
   {
@@ -456,7 +456,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://qbook-hotelier-files.s3.eu-west-2.amazonaws.com/Images/8/6/64117aafa2910cd70c5c2260d88c1af8.jpg",
-    imageAlt: "Chester House Hotel Bourton",
+    imageAlt: "Chester House Hotel, boutique hotel in Bourton-on-the-Water",
     websiteUrl: "https://chesterhousehotel.com",
   },
   {
@@ -472,7 +472,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://images.squarespace-cdn.com/content/v1/63d3b9c071106579db927e96/0b668045-9978-496b-a7c6-e5eb8ae02c65/Room+7+-+Beds+2.jpg?format=1500w",
-    imageAlt: "Bedroom at The Old New Inn, Bourton-on-the-Water",
+    imageAlt: "The Old New Inn, inn in Bourton-on-the-Water",
     websiteUrl: "https://www.theoldnewinn.co.uk/",
   },
   {
@@ -488,7 +488,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://static.wixstatic.com/media/6f40be_c1d790ea5175473fa58008c1e53be56b~mv2.png/v1/fill/w_1537,h_363,al_c,q_90,enc_avif,quality_auto/6f40be_c1d790ea5175473fa58008c1e53be56b~mv2.png",
-    imageAlt: "",
+    imageAlt: "The Lansdowne, boutique hotel in Bourton-on-the-Water",
     websiteUrl: "https://www.lansdownevilla.co.uk/",
   },
   {
@@ -504,7 +504,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     pricePerNight: "£250+",
     imageUrl:
       "https://images.trvl-media.com/lodging/5000000/4600000/4592100/4592088/f6ec4d64.jpg?impolicy=fcrop&w=1200&h=800&quality=medium",
-    imageAlt: "The Lamb Inn Great Rissington",
+    imageAlt: "The Lamb Inn, inn in Great Rissington",
     websiteUrl: "https://www.thelambinn.com",
   },
 ];

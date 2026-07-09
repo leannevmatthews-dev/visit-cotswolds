@@ -128,7 +128,7 @@ export function ImageUploadField({
         <div className="relative h-24 w-40 overflow-hidden border border-outline/20 bg-surface-container-low">
           <Image
             src={value.trim()}
-            alt=""
+            alt="Uploaded image preview"
             fill
             className="object-cover"
             sizes="160px"
