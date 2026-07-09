@@ -34,7 +34,7 @@ export default function WhatsOnPage() {
             { name: "Home", path: "/" },
             { name: "What's On", path: "/whats-on" },
           ]),
-          getEventListJsonLd(defaultVisibleEvents),
+          ...getEventListJsonLd(defaultVisibleEvents),
         ]}
       />
       <WhatsOnContent upcomingEvents={upcomingEvents} />

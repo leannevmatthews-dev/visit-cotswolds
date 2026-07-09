@@ -11,8 +11,40 @@ export type ListingLike = {
   name: string;
   description: string;
   imageUrl?: string;
+  websiteUrl?: string;
+  address?: string;
   category?: string;
 };
+
+function getListingPostalAddress(address?: string) {
+  const trimmed = address?.trim();
+  if (!trimmed) {
+    return null;
+  }
+
+  const postcodeMatch = trimmed.match(
+    /\b([A-Z]{1,2}\d{1,2}[A-Z]?\s*\d[A-Z]{2})\s*$/i,
+  );
+
+  if (!postcodeMatch || postcodeMatch.index === undefined) {
+    return {
+      "@type": "PostalAddress" as const,
+      streetAddress: trimmed,
+    };
+  }
+
+  const postalCode = postcodeMatch[1].toUpperCase();
+  const streetAddress = trimmed
+    .slice(0, postcodeMatch.index)
+    .replace(/,\s*$/, "")
+    .trim();
+
+  return {
+    "@type": "PostalAddress" as const,
+    ...(streetAddress ? { streetAddress } : {}),
+    postalCode,
+  };
+}
 
 export function getOrganizationJsonLd() {
   return {
@@ -57,41 +89,103 @@ export function getBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   };
 }
 
-export function getEventListJsonLd(events: WhatsOnEvent[]) {
+const MONTH_INDEX: Record<string, number> = {
+  JAN: 0,
+  JANUARY: 0,
+  FEB: 1,
+  FEBRUARY: 1,
+  MAR: 2,
+  MARCH: 2,
+  APR: 3,
+  APRIL: 3,
+  MAY: 4,
+  JUN: 5,
+  JUNE: 5,
+  JUL: 6,
+  JULY: 6,
+  AUG: 7,
+  AUGUST: 7,
+  SEP: 8,
+  SEPT: 8,
+  SEPTEMBER: 8,
+  OCT: 9,
+  OCTOBER: 9,
+  NOV: 10,
+  NOVEMBER: 10,
+  DEC: 11,
+  DECEMBER: 11,
+};
+
+function formatEventIsoDate(
+  month: string,
+  day: string,
+  year: number,
+): string | null {
+  const monthIndex = MONTH_INDEX[month.trim().toUpperCase()];
+  const dayNumber = Number.parseInt(day.trim(), 10);
+
+  if (
+    monthIndex === undefined ||
+    !Number.isFinite(dayNumber) ||
+    !Number.isFinite(year)
+  ) {
+    return null;
+  }
+
+  const monthPart = String(monthIndex + 1).padStart(2, "0");
+  const dayPart = String(dayNumber).padStart(2, "0");
+  return `${year}-${monthPart}-${dayPart}`;
+}
+
+function getEventDateFields(event: WhatsOnEvent) {
+  if (event.recurring || event.frequency) {
+    return {};
+  }
+
+  const startDate = formatEventIsoDate(event.month, event.day, event.year);
+  if (!startDate) {
+    return {};
+  }
+
+  const endDate =
+    event.endDay && event.endMonth
+      ? formatEventIsoDate(event.endMonth, event.endDay, event.year)
+      : null;
+
   return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    itemListElement: events.map((event, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "Event",
-        name: event.title,
-        description: event.description,
-        location: {
-          "@type": "Place",
-          name: event.location,
-        },
-        ...(event.imageUrl ? { image: event.imageUrl } : {}),
-        ...(event.websiteUrl ? { url: event.websiteUrl } : {}),
-      },
-    })),
+    startDate,
+    ...(endDate ? { endDate } : {}),
   };
 }
 
-export function getListingItemListJsonLd(listings: ListingLike[]) {
-  return {
+export function getEventListJsonLd(events: WhatsOnEvent[]) {
+  return events.map((event) => ({
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    itemListElement: listings.map((listing, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "Place",
-        name: listing.name,
-        description: listing.description,
-        ...(listing.imageUrl ? { image: listing.imageUrl } : {}),
-      },
-    })),
-  };
+    "@type": "Event",
+    name: event.title,
+    description: event.description,
+    location: {
+      "@type": "Place",
+      name: event.location,
+    },
+    ...(event.imageUrl ? { image: event.imageUrl } : {}),
+    ...(event.websiteUrl ? { url: event.websiteUrl } : {}),
+    ...getEventDateFields(event),
+  }));
+}
+
+export function getLocalBusinessListJsonLd(listings: ListingLike[]) {
+  return listings.map((listing) => {
+    const postalAddress = getListingPostalAddress(listing.address);
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: listing.name,
+      description: listing.description,
+      ...(listing.imageUrl ? { image: listing.imageUrl } : {}),
+      ...(listing.websiteUrl ? { url: listing.websiteUrl } : {}),
+      ...(postalAddress ? { address: postalAddress } : {}),
+    };
+  });
 }

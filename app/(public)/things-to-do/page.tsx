@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ThingsToDoContent } from "@/components/things-to-do/things-to-do-content";
 import { pageMetadata } from "@/lib/seo/metadata";
-import { getBreadcrumbJsonLd, getListingItemListJsonLd } from "@/lib/seo/schema";
+import { getBreadcrumbJsonLd, getLocalBusinessListJsonLd } from "@/lib/seo/schema";
 import { THINGS_TO_DO_LISTINGS } from "@/lib/things-to-do-data";
 import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
@@ -23,7 +23,7 @@ export default function ThingsToDoPage() {
             { name: "Home", path: "/" },
             { name: "Things to Do", path: "/things-to-do" },
           ]),
-          getListingItemListJsonLd(THINGS_TO_DO_LISTINGS),
+          ...getLocalBusinessListJsonLd(THINGS_TO_DO_LISTINGS),
         ]}
       />
       <ThingsToDoContent />

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PlacesToStayContent } from "@/components/places-to-stay/places-to-stay-content";
 import { pageMetadata } from "@/lib/seo/metadata";
-import { getBreadcrumbJsonLd, getListingItemListJsonLd } from "@/lib/seo/schema";
+import { getBreadcrumbJsonLd, getLocalBusinessListJsonLd } from "@/lib/seo/schema";
 import { PLACES_TO_STAY_LISTINGS } from "@/lib/places-to-stay-data";
 import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
@@ -23,7 +23,7 @@ export default function PlacesToStayPage() {
             { name: "Home", path: "/" },
             { name: "Places to Stay", path: "/places-to-stay" },
           ]),
-          getListingItemListJsonLd(PLACES_TO_STAY_LISTINGS),
+          ...getLocalBusinessListJsonLd(PLACES_TO_STAY_LISTINGS),
         ]}
       />
       <PlacesToStayContent />

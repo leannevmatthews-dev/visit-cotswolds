@@ -45,7 +45,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "One of the most talked-about restaurants in the Cotswolds. The open kitchen is the focus, the food is serious, and the stone inn setting does everything right.",
     category: "Restaurants",
     location: "Kingham, Chipping Norton",
-    address: "Church St, Kingham, Chipping Norton OX7 6YI",
+    address: "Church St, Kingham, Chipping Norton OX7 6YA",
     dogFriendly: false,
     priceLevel: 3,
     imageUrl:
