@@ -8,9 +8,9 @@ import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Places To Eat",
+  title: "Where To Eat In The Cotswolds",
   description:
-    "The best places to eat and drink across the Cotswolds — pubs, restaurants, cafés, and afternoon tea.",
+    "Where to eat in the Cotswolds: pubs, restaurants, cafés and afternoon tea, reviewed with real visit notes and practical detail.",
   path: "/places-to-eat",
 });
 

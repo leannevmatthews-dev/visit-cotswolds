@@ -29,12 +29,6 @@ const PAGES = [
     source: "pages/things-to-do.html",
   },
   {
-    html: "pages/journal.html",
-    component: "components/static-pages/journal-content.static.tsx",
-    exportName: "JournalContent",
-    source: "pages/journal.html",
-  },
-  {
     html: "pages/plan-your-visit.html",
     component: "components/static-pages/plan-your-visit-content.static.tsx",
     exportName: "PlanYourVisitContent",
@@ -138,7 +132,6 @@ function htmlToJsx(fragment) {
       .replace(/href="places-to-stay\.html"/g, 'href="/places-to-stay"')
       .replace(/href="places-to-eat\.html"/g, 'href="/places-to-eat"')
       .replace(/href="things-to-do\.html"/g, 'href="/things-to-do"')
-      .replace(/href="journal\.html"/g, 'href="/journal"')
       .replace(/href="plan-your-visit\.html"/g, 'href="/plan-your-visit"')
       .replace(/href="whats-on\.html"/g, 'href="/whats-on"')
       .replace(/href="bibury\.html"/g, 'href="/villages/bibury"')
@@ -150,7 +143,6 @@ function htmlToJsx(fragment) {
       .replace(/href="\/pages\/places-to-stay\.html"/g, 'href="/places-to-stay"')
       .replace(/href="\/pages\/places-to-eat\.html"/g, 'href="/places-to-eat"')
       .replace(/href="\/pages\/things-to-do\.html"/g, 'href="/things-to-do"')
-      .replace(/href="\/pages\/journal\.html"/g, 'href="/journal"')
       .replace(/href="\/pages\/plan-your-visit\.html"/g, 'href="/plan-your-visit"')
       .replace(/href="\/pages\/whats-on\.html"/g, 'href="/whats-on"')
       .replace(/href="\/pages\/villages\/([^"]+)\.html"/g, 'href="/villages/$1"')

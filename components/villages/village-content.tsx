@@ -23,14 +23,14 @@ import {
   heroImageUrl,
   splitParagraphs,
 } from "@/lib/villages/helpers";
-import type {
-  LinkableNearbyVillage,
-} from "@/lib/villages/village-page-links";
+import type { LinkableNearbyVillage } from "@/lib/villages/village-page-links";
 import type {
   ComparisonDisplayRow,
   SeasonalAdvice,
   Village,
 } from "@/lib/villages/types";
+
+export const SHOW_VIDEO_SECTION = false; // Re-enable once real films exist
 
 type VillageContentProps = {
   village: Village;
@@ -211,6 +211,7 @@ export function VillageContent({
                 &ldquo;{village.tagline_quote}&rdquo;
               </p>
             </div>
+            {SHOW_VIDEO_SECTION && (
             <div className="village-hero__media">
               <div className="village-hero__video-wrap" data-village-video>
                 <span className="village-hero__video-badge">Village film</span>
@@ -236,6 +237,7 @@ export function VillageContent({
                 )}
               </div>
             </div>
+            )}
           </div>
         </div>
       </section>
@@ -262,7 +264,7 @@ export function VillageContent({
             <div id="things-to-do" className="mb-24 md:mb-32">
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 md:mb-10">
                 <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight">
-                  Things To Do In {village.name}
+                  What To Do In {village.name}
                 </h2>
               </div>
               <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">

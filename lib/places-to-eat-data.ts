@@ -15,7 +15,7 @@ export type PlacesToEatListing = DirectoryListing & {
 };
 
 export const PLACES_TO_EAT_HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuC4r1zr-jb914gcZ_b1OgvlWSS4Qe6gUUrZtgoxCpTATM8WBgQEafMKpJtGDDgPeZNBkVMas_v-dc-j_N1RRvBOOO72TgKswnDF8GysEBhg9vXcRWGJTJvnHvFQpmLPxapIMyyV7Rb6GMYswdOB4TSLkerCDPfFM9bKiIo7beoKnNumqiEWwsuu-jGuZMTeIniElTV-JKiUBzZ0jcz3KGPITK-e48aWf0qwVEW10m2dT1qSn4lNqS0AVscY82jF7bqL6f8KrNi5aw";
+  "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/places-to-eat-hero.jpg";
 
 export const PLACES_TO_EAT_HERO_ALT =
   "Warm interior of a Cotswold pub with honey-coloured stone walls and candlelit tables";

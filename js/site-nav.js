@@ -7,7 +7,6 @@
         { id: 'eat', label: 'Places to Eat' },
         { id: 'experiences', label: 'Things to Do' },
         { id: 'whats-on', label: "What's On" },
-        { id: 'journal', label: 'The Journal' },
         { id: 'plan', label: 'Plan Your Visit' }
     ];
 
@@ -22,7 +21,6 @@
         var maps = {
             0: {
                 villages: 'pages/villages/index.html',
-                journal: 'pages/journal.html',
                 'whats-on': 'pages/whats-on.html',
                 experiences: 'pages/things-to-do.html',
                 stays: 'pages/places-to-stay.html',
@@ -31,7 +29,6 @@
             },
             1: {
                 villages: 'villages/index.html',
-                journal: 'journal.html',
                 'whats-on': 'whats-on.html',
                 experiences: 'things-to-do.html',
                 stays: 'places-to-stay.html',
@@ -40,7 +37,6 @@
             },
             2: {
                 villages: 'index.html',
-                journal: '../journal.html',
                 'whats-on': '../whats-on.html',
                 experiences: '../things-to-do.html',
                 stays: '../places-to-stay.html',
@@ -56,7 +52,6 @@
         var file = path.split('/').pop() || 'index.html';
 
         if (getDepth() === 0 && (file === 'index.html' || file === '')) return '';
-        if (file === 'journal.html') return 'journal';
         if (file === 'whats-on.html') return 'whats-on';
         if (file === 'things-to-do.html') return 'experiences';
         if (file === 'places-to-stay.html') return 'stays';

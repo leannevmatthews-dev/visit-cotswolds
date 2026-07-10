@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/json-ld";
 import { VillageHeroVideo } from "@/components/village-hero-video";
-import { VillageContent } from "@/components/villages/village-content";
+import { VillageContent, SHOW_VIDEO_SECTION } from "@/components/villages/village-content";
 import { absoluteUrl } from "@/lib/seo/site";
 import {
   getBreadcrumbJsonLd,
@@ -43,20 +43,22 @@ export async function generateMetadata({
     return { title: "Village Not Found" };
   }
 
+  const title = village.meta_title?.trim() || village.name;
   const description =
+    village.meta_description?.trim() ||
     village.brief_summary?.trim() ||
     `Discover ${village.name} in the Cotswolds — crowd intelligence, local tips, and everything worth knowing before you visit.`;
   const ogImage =
     village.hero_background_image_url?.trim() || DEFAULT_OG_IMAGE;
 
   return {
-    title: village.name,
+    title,
     description,
     alternates: {
       canonical: absoluteUrl(`/villages/${village.slug}`),
     },
     openGraph: {
-      title: village.name,
+      title,
       description,
       images: [ogImage],
       type: "website",
@@ -116,7 +118,7 @@ export default async function VillagePage({ params }: VillagePageProps) {
           ]),
         ]}
       />
-      <VillageHeroVideo />
+      {SHOW_VIDEO_SECTION && <VillageHeroVideo />}
       <VillageContent
         village={village}
         seasons={seasons}

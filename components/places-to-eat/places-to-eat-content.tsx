@@ -8,7 +8,7 @@ import {
 export function PlacesToEatContent() {
   return (
     <ListingDirectoryPage
-      title="Places to Eat"
+      title="Where To Eat In The Cotswolds"
       subtitle="Serious food in seriously good surroundings."
       intro="The Cotswolds has quietly become one of England's most serious food destinations. Farm kitchens, Michelin-starred dining rooms, and village pubs that take both their sourcing and their cooking seriously. Bring an appetite."
       heroImage={PLACES_TO_EAT_HERO_IMAGE}

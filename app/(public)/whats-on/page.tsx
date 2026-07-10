@@ -14,9 +14,9 @@ import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
 export const metadata: Metadata = pageMetadata({
-  title: "What's On",
+  title: "What's On In The Cotswolds",
   description:
-    "Events and things happening across the Cotswolds — markets, festivals, and seasonal highlights.",
+    "What's on in the Cotswolds: markets, festivals and seasonal events, kept up to date so you know what's actually happening.",
   path: "/whats-on",
 });
 

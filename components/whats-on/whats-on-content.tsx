@@ -319,7 +319,7 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
   return (
     <>
       <DirectoryPageHero
-        title="What's On"
+        title="What's On In The Cotswolds"
         subtitle="The best of what's on in the Cotswolds."
         intro="Handpicked events across the Cotswolds. Updated monthly."
         heroImage={WHATS_ON_HERO_IMAGE}

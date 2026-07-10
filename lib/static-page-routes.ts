@@ -10,7 +10,6 @@ export const STATIC_PAGE_REDIRECTS = [
   { source: "/pages/places-to-stay.html", destination: "/places-to-stay", permanent: false },
   { source: "/pages/places-to-eat.html", destination: "/places-to-eat", permanent: false },
   { source: "/pages/things-to-do.html", destination: "/things-to-do", permanent: false },
-  { source: "/pages/journal.html", destination: "/journal", permanent: false },
   { source: "/pages/plan-your-visit.html", destination: "/guides", permanent: false },
   { source: "/plan-your-visit", destination: "/guides", permanent: false },
   { source: "/pages/whats-on.html", destination: "/whats-on", permanent: false },

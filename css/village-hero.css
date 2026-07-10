@@ -69,7 +69,7 @@
 
     .village-hero--tight {
         max-height: 85vh;
-        min-height: auto;
+        min-height: clamp(18rem, 45vh, 28rem);
     }
 
     .village-hero__grid {
@@ -320,8 +320,8 @@
 
 /* Bibury: hero height follows content — removes empty band above Curated Overview */
 .village-hero--tight {
-    min-height: auto;
-    align-items: flex-start;
+    min-height: clamp(22rem, 52vh, 36rem);
+    align-items: center;
 }
 
 .village-hero--tight .village-hero__content {

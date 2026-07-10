@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BiburyContent } from "@/components/villages/bibury-content.static";
+import { SHOW_VIDEO_SECTION } from "@/components/villages/village-content";
 import { VillageHeroVideo } from "@/components/village-hero-video";
 import "@/css/village-hero.css";
 import "@/css/village-page.css";
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function BiburyPage() {
   return (
     <>
-      <VillageHeroVideo />
+      {SHOW_VIDEO_SECTION && <VillageHeroVideo />}
       <BiburyContent />
     </>
   );

@@ -42,7 +42,7 @@ export function ParkingGuideSection({ village }: ParkingGuideSectionProps) {
             <div className="village-guide-header village-parking__title-row">
               <span className="material-symbols-outlined">local_parking</span>
               <h3 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight">
-                Parking Guide
+                Parking In {village.name}
               </h3>
             </div>
             <p className="font-body-sm text-on-surface-variant leading-[1.5]">

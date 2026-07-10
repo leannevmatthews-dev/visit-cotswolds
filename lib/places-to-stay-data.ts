@@ -18,7 +18,7 @@ export type PlacesToStayListing = DirectoryListing & {
 };
 
 export const PLACES_TO_STAY_HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuC3SQJawZ0K0iOlJ1Dft84V37Cvdc1CB3ESvJp1KgC4KTTGaVggUW997wXNuiJc1mDMQr1DDAD0TogywyQIp3ou3QaublEucb3JAuGYnPo7lju8WiZ9cPlxtDsVyGYiEcIosElxXz3uo1hUrK6uJrCnfv7LsbLNtyG5oYClwBE-aP5yvktoVsjCB5mfWK0JS9r-7Zn2vdr0Vz9kpohWFjD62oEGMSPsnk3OrexShAKpK1JR1hS5aqSJ90GR9bsu9GDRsnL6QBvUxQ";
+  "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/places-to-stay-hero.jpg";
 
 export const STAY_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "all", label: "All Properties" },

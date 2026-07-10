@@ -26,7 +26,6 @@ const REDIRECTS = [
   ["/pages/places-to-stay.html", "pages/places-to-stay.html"],
   ["/pages/places-to-eat.html", "pages/places-to-eat.html"],
   ["/pages/things-to-do.html", "pages/things-to-do.html"],
-  ["/pages/journal.html", "pages/journal.html"],
   ["/pages/plan-your-visit.html", "pages/plan-your-visit.html"],
   ["/pages/whats-on.html", "pages/whats-on.html"],
 ].map(([source, relative]) => ({

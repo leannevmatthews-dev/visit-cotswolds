@@ -14,12 +14,17 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { getOrganizationJsonLd } from "@/lib/seo/schema";
 import { getVillageHeroImagesBySlugs } from "@/lib/villages/queries";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Visit Cotswolds | The Independent Guide to the Cotswolds",
-  description:
-    "The most useful independent guide to the Cotswolds — village guides, places to eat and stay, things to do, and honest advice from real visits.",
-  path: "/",
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Visit Cotswolds | The Independent Guide to the Cotswolds",
+    description:
+      "The independent guide to visiting the Cotswolds: village guides, places to eat and stay, things to do, and real advice from actual visits.",
+    path: "/",
+  }),
+  title: {
+    absolute: "Visit Cotswolds | The Independent Guide to the Cotswolds",
+  },
+};
 
 export default async function HomePage() {
   const villageHeroImagesBySlug = await getVillageHeroImagesBySlugs(

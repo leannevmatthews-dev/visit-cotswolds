@@ -16,7 +16,7 @@ export type ThingsToDoListing = DirectoryListing & {
 };
 
 export const THINGS_TO_DO_HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCl2_Ek8r4Ja1u6mrItd6_ChWU4Ww08S2Xs2MChsDiSn-ecPMTkCzfTA5-xF1IS0tDZnkM_uB0XwmnkELG5mD4H7cK6x_icTOy4SKe-Wmo3VMqZZrzNoQmHjjk6MdtvWvjmGf0DQPppkVbltReZP7tVLNcL5fNwSBtbP2tnhABQLE9koTtDs6_vpaoLRDgtsknHzgU6dPZsU7DcfmSVBXx2NwwMKnP6qljFqtMhlKBpvTxBX0e9xJ2wRmXicSg3UkEyUJK-hR1x5Q";
+  "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/things-to-do-hero.jpg";
 
 export const THINGS_TO_DO_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "all", label: "All Activities" },
