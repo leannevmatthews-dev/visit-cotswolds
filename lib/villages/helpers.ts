@@ -1,7 +1,6 @@
 import type {
   CombineWithTrip,
   CrowdPillLevel,
-  FaqItem,
   ParkingGuide,
   ThingsToDoItem,
 } from "@/lib/villages/types";
@@ -74,20 +73,7 @@ export function splitParagraphs(text: string): string[] {
     .filter(Boolean);
 }
 
-export function getFaqJsonLd(items: FaqItem[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-}
+export { getFaqJsonLd } from "@/lib/seo/schema";
 
 /** Village names from a combine-with title (split on " + "). */
 export function combineWithVillageNames(title: string): string[] {

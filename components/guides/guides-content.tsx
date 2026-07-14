@@ -16,6 +16,7 @@ export function GuidesContent() {
       filters={GUIDES_FILTER_CATEGORIES}
       listings={GUIDES_LISTINGS}
       showPriceLevel={false}
+      linkExternal={false}
       linkLabel="Read guide"
     />
   );

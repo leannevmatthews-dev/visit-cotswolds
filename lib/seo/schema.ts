@@ -89,6 +89,55 @@ export function getBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   };
 }
 
+export function getFaqJsonLd(
+  items: { question: string; answer: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function getArticleJsonLd({
+  title,
+  description,
+  path,
+  datePublished,
+  dateModified,
+  authorName = "Leanne Matthews",
+}: {
+  title: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified: string;
+  authorName?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: absoluteUrl(path),
+    datePublished,
+    dateModified,
+    author: {
+      "@type": "Person",
+      name: authorName,
+      url: absoluteUrl("/about"),
+    },
+    publisher: getOrganizationJsonLd(),
+  };
+}
+
 const MONTH_INDEX: Record<string, number> = {
   JAN: 0,
   JANUARY: 0,

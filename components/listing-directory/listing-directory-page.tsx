@@ -55,7 +55,7 @@ function ListingCard({
           <span className="font-label-caps text-[10px] tracking-widest text-limestone uppercase">
             {listing.category}
           </span>
-          {showPriceLevel && (
+          {showPriceLevel && listing.priceLevel != null && (
             <span
               className="font-body-sm text-on-surface-variant tracking-widest"
               aria-label={`Price level ${listing.priceLevel} of 3`}

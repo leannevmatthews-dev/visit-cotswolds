@@ -1,4 +1,5 @@
-import { getFaqJsonLd } from "@/lib/villages/helpers";
+import { FaqAccordion } from "@/components/shared/faq-accordion";
+import { getFaqJsonLd } from "@/lib/seo/schema";
 import type { Village } from "@/lib/villages/types";
 
 type FaqSectionProps = {
@@ -21,28 +22,7 @@ export function FaqSection({ village }: FaqSectionProps) {
         Answers based on our visits and the questions visitors search for most
         often.
       </p>
-      <div className="village-faq">
-        {village.faq_items.map((item) => (
-          <details key={item.question} className="village-faq__item">
-            <summary className="village-faq__question font-label-caps text-label-caps text-on-surface tracking-widest uppercase">
-              <span>{item.question}</span>
-              <span
-                className="material-symbols-outlined village-faq__icon text-limestone"
-                aria-hidden="true"
-              >
-                expand_more
-              </span>
-            </summary>
-            <div className="village-faq__answer">
-              <div className="village-faq__answer-inner">
-                <p className="font-body-sm text-on-surface-variant leading-[1.5]">
-                  {item.answer}
-                </p>
-              </div>
-            </div>
-          </details>
-        ))}
-      </div>
+      <FaqAccordion items={village.faq_items} />
     </div>
   );
 }

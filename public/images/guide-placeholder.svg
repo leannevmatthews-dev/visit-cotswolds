@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Visit Cotswolds">
+  <rect width="800" height="450" fill="#201f1f"/>
+  <rect x="1" y="1" width="798" height="448" fill="none" stroke="#474741" stroke-width="2"/>
+  <text
+    x="400"
+    y="232"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="28"
+    font-weight="500"
+    letter-spacing="0.08em"
+    fill="#c9b99a"
+  >Visit Cotswolds</text>
+</svg>

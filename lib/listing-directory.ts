@@ -3,7 +3,8 @@ export type DirectoryListing = {
   name: string;
   description: string;
   category: string;
-  priceLevel: 1 | 2 | 3;
+  /** Omit on listings that should never show a price badge (e.g. guides). */
+  priceLevel?: 1 | 2 | 3;
   imageUrl: string;
   imageAlt: string;
   websiteUrl: string;
@@ -25,6 +26,9 @@ export type DirectoryFilter = {
 };
 
 export function formatPriceLevel(level: DirectoryListing["priceLevel"]): string {
+  if (level == null) {
+    return "";
+  }
   return "£".repeat(level);
 }
 

@@ -1,4 +1,8 @@
 import type { DirectoryFilter, DirectoryListing } from "@/lib/listing-directory";
+import {
+  whereAreTheCotswoldsContent,
+  whereAreTheCotswoldsMeta,
+} from "@/lib/static/where-are-the-cotswolds";
 
 export type GuideListingCategory =
   | "Plan Your Trip"
@@ -11,8 +15,33 @@ export type GuideListing = DirectoryListing & {
   location: string;
 };
 
+export type GuideContentBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; level: 2 | 3; text: string }
+  | { type: "list"; style: "bullet" | "numbered"; items: string[] }
+  | { type: "table"; headers: string[]; rows: string[][] }
+  | {
+      type: "image";
+      id: string;
+      alt: string;
+      caption?: string;
+      src?: string;
+      placeholder?: true;
+    }
+  | { type: "faq"; items: { question: string; answer: string }[] };
+
+export type GuideMeta = {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  category: GuideListingCategory;
+  datePublished: string;
+  dateModified: string;
+};
+
 export const GUIDES_HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCwhVC9gqI8AvaYlKwoP6QQ8tAtpNDgV0LMn9K0lqpevoC8MOWtdxaJTbkcV8vUOfnsyrn4Zea6cC3HmLjCN147UGC-zkqaERNOFNtEMumdVVHco_eQJ0pWeiqtiSISBNjlR8FfpaeXUaQWFpjpVbnmGaWbXoW0rEqqNZ6GVBGkPl0lcSVz256Lydtp3A4Nf0wbbq1zihq2rGHG4AMaUNeNK5leurdnFYjvcZcqs4JP5noeOSCNfpC3PwenW5FeRtzrUgFprZpV9A";
+  "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/guides-hero.jpg";
 
 export const GUIDES_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "all", label: "All Guides" },
@@ -38,4 +67,23 @@ export const GUIDES_FILTER_CATEGORIES: DirectoryFilter[] = [
   },
 ];
 
-export const GUIDES_LISTINGS: GuideListing[] = [];
+export const GUIDES_LISTINGS: GuideListing[] = [
+  {
+    id: whereAreTheCotswoldsMeta.slug,
+    name: whereAreTheCotswoldsMeta.title,
+    description: whereAreTheCotswoldsMeta.metaDescription,
+    category: whereAreTheCotswoldsMeta.category,
+    location: "Cotswolds-wide",
+    imageUrl: "/images/guide-placeholder.svg",
+    imageAlt: "Where Are the Cotswolds guide",
+    websiteUrl: "/guides/where-are-the-cotswolds",
+  },
+];
+
+export const GUIDE_CONTENT_MAP: Record<string, GuideContentBlock[]> = {
+  "where-are-the-cotswolds": whereAreTheCotswoldsContent,
+};
+
+export const GUIDE_META_MAP: Record<string, GuideMeta> = {
+  "where-are-the-cotswolds": whereAreTheCotswoldsMeta,
+};
