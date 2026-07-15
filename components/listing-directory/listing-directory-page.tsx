@@ -28,25 +28,37 @@ function ListingCard({
 
   return (
     <article className="listing-directory-card flex flex-col gap-4">
-      <a
-        href={listing.websiteUrl}
-        {...linkProps}
-        className="listing-directory-card__image relative block aspect-square overflow-hidden bg-surface-container"
-      >
-        {listing.imageUrl ? (
-          <div className="listing-card-image">
-            <Image
-              src={listing.imageUrl}
-              alt={listing.imageAlt}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-            />
-          </div>
-        ) : (
-          <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-0" />
-        )}
-      </a>
+      <div className="relative">
+        <a
+          href={listing.websiteUrl}
+          {...linkProps}
+          className="listing-directory-card__image relative block aspect-square overflow-hidden bg-surface-container"
+        >
+          {listing.imageUrl ? (
+            <div className="listing-card-image">
+              <Image
+                src={listing.imageUrl}
+                alt={listing.imageAlt}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+          ) : (
+            <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-0" />
+          )}
+        </a>
+        {listing.imageCredit ? (
+          <a
+            href={listing.imageCredit.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-2 right-2 z-10 max-w-[min(100%,12rem)] rounded bg-black/55 px-1.5 py-0.5 font-body-sm text-[9px] leading-snug text-white/75 underline-offset-2 transition-colors hover:bg-black/70 hover:text-white hover:underline"
+          >
+            {listing.imageCredit.text}
+          </a>
+        ) : null}
+      </div>
 
       <div className="flex flex-col gap-2">
         <div

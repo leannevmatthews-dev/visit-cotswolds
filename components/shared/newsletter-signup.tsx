@@ -6,6 +6,9 @@ const PDF_URL =
   "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/downloads/little-black-book.pdf";
 const PDF_FILENAME = "The-Little-Black-Book-of-the-Cotswolds.pdf";
 
+// Hidden pre-launch — PDF not yet built. Re-enable once guide is ready.
+const SHOW_LITTLE_BLACK_BOOK = false;
+
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -57,6 +60,10 @@ export function NewsletterSignup() {
     } finally {
       setIsLoading(false);
     }
+  }
+
+  if (!SHOW_LITTLE_BLACK_BOOK) {
+    return null;
   }
 
   return (

@@ -6,10 +6,11 @@
     "dev": "node scripts/dev.mjs",
     "dev:clean": "node scripts/dev.mjs",
     "dev:reset": "pkill -f \"next dev\" 2>/dev/null || true; rm -rf .next node_modules/.cache && npm install && node scripts/dev.mjs --clean",
-    "prebuild": "pkill -f \"next dev\" 2>/dev/null || true; rm -rf .next",
+    "prebuild": "pkill -f \"next dev\" 2>/dev/null || true; rm -rf .next && npm run check:attribution",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:attribution": "node --experimental-strip-types scripts/check-image-attribution.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.0",

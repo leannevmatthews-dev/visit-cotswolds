@@ -503,7 +503,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     priceLevel: 2,
     pricePerNight: "£250+",
     imageUrl:
-      "https://images.trvl-media.com/lodging/5000000/4600000/4592100/4592088/f6ec4d64.jpg?impolicy=fcrop&w=1200&h=800&quality=medium",
+      "https://static.wixstatic.com/media/06e2e9_aa8be2d5b2884202b4f7af6c48a0317f~mv2.jpg/v1/fill/w_1630,h_1080,fp_0.50_0.64,q_85,enc_avif,quality_auto/hero-bedroom-03.jpg",
     imageAlt: "The Lamb Inn, inn in Great Rissington",
     websiteUrl: "https://www.thelambinn.com",
   },

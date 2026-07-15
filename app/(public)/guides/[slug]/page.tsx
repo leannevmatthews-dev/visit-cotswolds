@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { GuideBlockRenderer } from "@/components/guides/guide-block-renderer";
+import { GuidePageHero } from "@/components/guides/guide-page-hero";
+import { GuideToc } from "@/components/guides/guide-toc";
+import {
+  buildGuideH2IdByIndex,
+  getGuideTocInsertIndex,
+} from "@/lib/guides/heading-anchors";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   GUIDE_CONTENT_MAP,
@@ -13,6 +19,7 @@ import {
   getBreadcrumbJsonLd,
   getFaqJsonLd,
 } from "@/lib/seo/schema";
+import "@/css/village-hero.css";
 import "@/css/village-page.css";
 
 type GuidePageProps = {
@@ -59,6 +66,10 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
   const faqItems =
     blocks.find((block) => block.type === "faq")?.items ?? [];
+  const tocInsertIndex = getGuideTocInsertIndex(blocks);
+  const introBlocks = blocks.slice(0, tocInsertIndex);
+  const bodyBlocks = blocks.slice(tocInsertIndex);
+  const headingIds = buildGuideH2IdByIndex(blocks);
 
   return (
     <>
@@ -80,7 +91,14 @@ export default async function GuidePage({ params }: GuidePageProps) {
           ...(faqItems.length > 0 ? [getFaqJsonLd(faqItems)] : []),
         ]}
       />
-      <main className="bg-background text-on-background pt-28 pb-16 md:pt-32 md:pb-24 lg:pb-32">
+      {listing.imageUrl ? (
+        <GuidePageHero
+          imageUrl={listing.imageUrl}
+          imageAlt={listing.imageAlt}
+          imageCredit={listing.imageCredit}
+        />
+      ) : null}
+      <main className="bg-background text-on-background pt-6 pb-16 md:pt-8 md:pb-24 lg:pt-10 lg:pb-32">
         <article className="mx-auto max-w-3xl px-margin-mobile md:px-margin-desktop">
           <p className="font-label-caps text-[10px] tracking-widest text-limestone uppercase mb-4">
             {listing.category}
@@ -88,7 +106,13 @@ export default async function GuidePage({ params }: GuidePageProps) {
           <h1 className="font-display-lg text-[40px] sm:text-[48px] md:text-[56px] text-primary leading-tight mb-10 md:mb-14">
             {meta.title}
           </h1>
-          <GuideBlockRenderer blocks={blocks} />
+          <GuideBlockRenderer blocks={introBlocks} headingIds={headingIds} />
+          <GuideToc blocks={blocks} />
+          <GuideBlockRenderer
+            blocks={bodyBlocks}
+            blockOffset={tocInsertIndex}
+            headingIds={headingIds}
+          />
         </article>
       </main>
     </>

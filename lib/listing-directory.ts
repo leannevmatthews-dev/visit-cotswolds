@@ -7,6 +7,8 @@ export type DirectoryListing = {
   priceLevel?: 1 | 2 | 3;
   imageUrl: string;
   imageAlt: string;
+  /** Optional CC / photo credit for externally licensed hero/card images. */
+  imageCredit?: { text: string; url: string };
   websiteUrl: string;
   dogFriendly?: boolean;
   familyFriendly?: boolean;

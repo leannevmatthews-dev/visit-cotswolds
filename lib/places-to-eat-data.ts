@@ -274,8 +274,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     imageUrl:
-      "https://www.lionhearth.co.uk/wp-content/uploads/2022/08/img20.jpg",
-    imageAlt: "Broadway Deli, farm shop and cafe in Broadway",
+      "https://images.pexels.com/photos/27868720/pexels-photo-27868720.jpeg",
+    imageAlt: "A street scene with vintage cars and people outside Broadway Deli",
     websiteUrl: "https://www.broadwaydeli.co.uk",
   },
   {

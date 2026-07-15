@@ -1,5 +1,13 @@
 import type { DirectoryFilter, DirectoryListing } from "@/lib/listing-directory";
 import {
+  cotswoldsWithoutACarContent,
+  cotswoldsWithoutACarMeta,
+} from "@/lib/static/cotswolds-without-a-car";
+import {
+  howFarAreTheCotswoldsFromLondonContent,
+  howFarAreTheCotswoldsFromLondonMeta,
+} from "@/lib/static/how-far-are-the-cotswolds-from-london";
+import {
   whereAreTheCotswoldsContent,
   whereAreTheCotswoldsMeta,
 } from "@/lib/static/where-are-the-cotswolds";
@@ -17,7 +25,7 @@ export type GuideListing = DirectoryListing & {
 
 export type GuideContentBlock =
   | { type: "paragraph"; text: string }
-  | { type: "heading"; level: 2 | 3; text: string }
+  | { type: "heading"; level: 2 | 3 | 4; text: string; id?: string }
   | { type: "list"; style: "bullet" | "numbered"; items: string[] }
   | { type: "table"; headers: string[]; rows: string[][] }
   | {
@@ -26,9 +34,16 @@ export type GuideContentBlock =
       alt: string;
       caption?: string;
       src?: string;
+      imageCredit?: { text: string; url: string };
       placeholder?: true;
     }
-  | { type: "faq"; items: { question: string; answer: string }[] };
+  | { type: "faq"; items: { question: string; answer: string }[] }
+  | { type: "notice"; text: string }
+  | {
+      type: "map_embeds";
+      title?: string;
+      routes: { label: string; origin: string; destination: string }[];
+    };
 
 export type GuideMeta = {
   slug: string;
@@ -78,12 +93,47 @@ export const GUIDES_LISTINGS: GuideListing[] = [
     imageAlt: "Where Are the Cotswolds guide",
     websiteUrl: "/guides/where-are-the-cotswolds",
   },
+  {
+    id: howFarAreTheCotswoldsFromLondonMeta.slug,
+    name: howFarAreTheCotswoldsFromLondonMeta.title,
+    description: howFarAreTheCotswoldsFromLondonMeta.metaDescription,
+    category: howFarAreTheCotswoldsFromLondonMeta.category,
+    location: "Cotswolds-wide",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/f/fa/Road_signs%2C_Upper_Slaugher%2C_Lower_Slaughter_and_Bourton-on-the_Water_7820.jpg",
+    imageAlt:
+      "Road signs for Upper Slaughter, Lower Slaughter and Bourton-on-the-Water",
+    imageCredit: {
+      text: "Photo: Peter K Burian, CC BY-SA 4.0",
+      url: "https://commons.wikimedia.org/wiki/File:Road_signs,_Upper_Slaugher,_Lower_Slaughter_and_Bourton-on-the_Water_7820.jpg",
+    },
+    websiteUrl: "/guides/how-far-are-the-cotswolds-from-london",
+  },
+  {
+    id: cotswoldsWithoutACarMeta.slug,
+    name: cotswoldsWithoutACarMeta.title,
+    description: cotswoldsWithoutACarMeta.metaDescription,
+    category: cotswoldsWithoutACarMeta.category,
+    location: "Cotswolds-wide",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/8/86/Paddington_station_MMB_35_332001.jpg",
+    imageAlt: "London Paddington station platforms",
+    imageCredit: {
+      text: "Photo: mattbuck, CC BY-SA 3.0",
+      url: "https://creativecommons.org/licenses/by-sa/3.0",
+    },
+    websiteUrl: "/guides/cotswolds-without-a-car",
+  },
 ];
 
 export const GUIDE_CONTENT_MAP: Record<string, GuideContentBlock[]> = {
   "where-are-the-cotswolds": whereAreTheCotswoldsContent,
+  "how-far-are-the-cotswolds-from-london": howFarAreTheCotswoldsFromLondonContent,
+  "cotswolds-without-a-car": cotswoldsWithoutACarContent,
 };
 
 export const GUIDE_META_MAP: Record<string, GuideMeta> = {
   "where-are-the-cotswolds": whereAreTheCotswoldsMeta,
+  "how-far-are-the-cotswolds-from-london": howFarAreTheCotswoldsFromLondonMeta,
+  "cotswolds-without-a-car": cotswoldsWithoutACarMeta,
 };

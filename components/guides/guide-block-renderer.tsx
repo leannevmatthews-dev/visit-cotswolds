@@ -1,17 +1,25 @@
 import Image from "next/image";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { GuideImagePlaceholder } from "@/components/guides/guide-image-placeholder";
+import { GuideMapEmbeds } from "@/components/guides/guide-map-embeds";
 import type { GuideContentBlock } from "@/lib/guides-data";
 
 type GuideBlockRendererProps = {
   blocks: GuideContentBlock[];
+  blockOffset?: number;
+  headingIds?: Record<number, string>;
 };
 
-export function GuideBlockRenderer({ blocks }: GuideBlockRendererProps) {
+export function GuideBlockRenderer({
+  blocks,
+  blockOffset = 0,
+  headingIds = {},
+}: GuideBlockRendererProps) {
   return (
     <div className="guide-article space-y-6 md:space-y-8">
       {blocks.map((block, index) => {
-        const key = `${block.type}-${index}`;
+        const blockIndex = blockOffset + index;
+        const key = `${block.type}-${blockIndex}`;
 
         switch (block.type) {
           case "paragraph":
@@ -28,19 +36,30 @@ export function GuideBlockRenderer({ blocks }: GuideBlockRendererProps) {
               return (
                 <h2
                   key={key}
-                  className="font-display-lg text-[32px] md:text-[40px] text-primary leading-tight pt-4 md:pt-6"
+                  id={headingIds[blockIndex]}
+                  className="font-display-lg scroll-mt-28 text-[32px] md:scroll-mt-32 md:text-[40px] text-primary leading-tight pt-4 md:pt-6"
                 >
                   {block.text}
                 </h2>
               );
             }
+            if (block.level === 3) {
+              return (
+                <h3
+                  key={key}
+                  className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight pt-2"
+                >
+                  {block.text}
+                </h3>
+              );
+            }
             return (
-              <h3
+              <h4
                 key={key}
-                className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight pt-2"
+                className="font-headline-sm text-[18px] md:text-[20px] text-primary leading-tight pt-2"
               >
                 {block.text}
-              </h3>
+              </h4>
             );
           case "list": {
             const ListTag = block.style === "numbered" ? "ol" : "ul";
@@ -90,9 +109,19 @@ export function GuideBlockRenderer({ blocks }: GuideBlockRendererProps) {
                       alt={block.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 48rem"
-                      className="object-contain"
+                      className="object-cover object-center"
                       unoptimized={block.src.endsWith(".svg")}
                     />
+                    {block.imageCredit ? (
+                      <a
+                        href={block.imageCredit.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute bottom-2 right-2 z-10 max-w-[min(100%,18rem)] rounded bg-black/55 px-2 py-1 font-body-sm text-[10px] leading-snug text-white/75 underline-offset-2 transition-colors hover:bg-black/70 hover:text-white hover:underline md:text-[11px]"
+                      >
+                        {block.imageCredit.text}
+                      </a>
+                    ) : null}
                   </div>
                   {block.caption ? (
                     <figcaption className="font-body-sm mt-3 text-on-surface-variant">
@@ -114,6 +143,25 @@ export function GuideBlockRenderer({ blocks }: GuideBlockRendererProps) {
               <div key={key} className="pt-2">
                 <FaqAccordion items={block.items} />
               </div>
+            );
+          case "notice":
+            return (
+              <aside
+                key={key}
+                className="border-l-4 border-limestone bg-surface-container-low px-5 py-4 md:px-6 md:py-5"
+              >
+                <p className="font-body-sm text-on-surface-variant leading-relaxed">
+                  {block.text}
+                </p>
+              </aside>
+            );
+          case "map_embeds":
+            return (
+              <GuideMapEmbeds
+                key={key}
+                title={block.title}
+                routes={block.routes}
+              />
             );
           default:
             return null;

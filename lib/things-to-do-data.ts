@@ -102,6 +102,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/f/f4/Courtyard_-_Kelmscott_Manor_-_Oxfordshire%2C_England_-_DSC00147.jpg",
     imageAlt: "Kelmscott Manor, historic houses in Lechlade",
+    imageCredit: { text: "Photo: Daderot (public domain)", url: "https://commons.wikimedia.org/wiki/File:Courtyard_-_Kelmscott_Manor_-_Oxfordshire,_England_-_DSC00147.jpg" },
     websiteUrl: "https://kelmscottmanor.org.uk",
   },
   {
@@ -117,6 +118,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/b/bc/Batsford-Arboretum-bridge.jpg",
     imageAlt: "Batsford Arboretum, garden in Moreton-in-Marsh",
+    imageCredit: { text: "Photo: Mervyn (public domain)", url: "https://commons.wikimedia.org/wiki/File:Batsford-Arboretum-bridge.jpg" },
     websiteUrl: "https://batsarb.co.uk",
   },
   {
@@ -132,6 +134,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/e/e3/Sezincote_House_and_garden_-_geograph.org.uk_-_6205744.jpg",
     imageAlt: "Sezincote House & Garden, historic houses in Moreton-in-Marsh",
+    imageCredit: { text: "Photo: Chris Gunns, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "http://www.sezincote.co.uk",
   },
   {
@@ -147,6 +150,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/c/c8/Outside_picture_of_Cotswolds_Distillery_main_building.jpg",
     imageAlt: "Cotswolds Distillery, unique experiences in Shipston-on-Stour",
+    imageCredit: { text: "Photo: Wikireaderofbrooklyn, CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0" },
     websiteUrl: "https://www.cotswoldsdistillery.com",
   },
   {
@@ -162,6 +166,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/e/ec/Woodchester_Valley_Vineyard_-_geograph.org.uk_-_7244370.jpg",
     imageAlt: "Woodchester Valley Vineyard, unique experiences in Stroud",
+    imageCredit: { text: "Photo: Stephen McKay, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.woodchestervalleyvineyard.co.uk",
   },
   {
@@ -177,6 +182,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/9/97/Kiftsgate_Court_Geograph_4471.jpg",
     imageAlt: "Kiftsgate Court Gardens, garden in Chipping Campden",
+    imageCredit: { text: "Photo: Jerry Evans, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "http://www.kiftsgate.co.uk",
   },
   {
@@ -192,6 +198,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/b/bf/Hidcote_Manor_Garden_-_geograph.org.uk_-_4298969.jpg",
     imageAlt: "Hidcote Manor Garden, garden in Chipping Campden",
+    imageCredit: { text: "Photo: Michael Garlick, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.nationaltrust.org.uk/hidcote",
   },
   {
@@ -207,6 +214,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/c/cf/Chastleton_House_-_front.jpg",
     imageAlt: "Chastleton House, historic houses in Moreton-in-Marsh",
+    imageCredit: { text: "Photo: DeFacto, CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0" },
     websiteUrl: "https://www.nationaltrust.org.uk/chastleton",
   },
   {
@@ -222,6 +230,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/7/71/Farmers%27_market%2C_Stroud.jpg",
     imageAlt: "Stroud Farmers Market, market in Stroud",
+    imageCredit: { text: "Photo: Jongleur100 (public domain)", url: "https://commons.wikimedia.org/wiki/File:Farmers'_market,_Stroud.jpg" },
     websiteUrl: "https://fresh-n-local.co.uk/trader/stroud/",
   },
   {
@@ -237,6 +246,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/d/d4/Westonbirt%2C_the_National_Arboretum_-_geograph.org.uk_-_6654520.jpg",
     imageAlt: "Westonbirt, The National Arboretum, garden in Tetbury",
+    imageCredit: { text: "Photo: Rebecca A Wills, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.forestryengland.uk/westonbirt",
   },
   {
@@ -267,6 +277,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cotswold_Way_National_Trail_marker_-_geograph.org.uk_-_335032.jpg",
     imageAlt: "Cotswold Way National Trail, country walk in Chipping Campden to Bath",
+    imageCredit: { text: "Photo: Caroline Tandy, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -312,6 +323,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/b/be/Bibury_2015_06.jpg",
     imageAlt: "Arlington Row, country walk in Bibury",
+    imageCredit: { text: "Photo: Mike Peel, CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0" },
     websiteUrl: "https://www.bibury.com/arlington-row/",
   },
   {
@@ -327,6 +339,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/5/57/Stow-on-the-Wold_church_-_geograph.org.uk_-_2534959.jpg",
     imageAlt: "St Edward's Church, Stow-on-the-Wold, historic houses in Stow-on-the-Wold",
+    imageCredit: { text: "Photo: Philip Halling, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.stowbenefice.org.uk",
   },
   {
@@ -342,6 +355,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/c/c2/Cleeve_Hill.jpg",
     imageAlt: "Cleeve Hill Circular Walk, country walk in Near Cheltenham",
+    imageCredit: { text: "Photo: Tim Fennell (public domain)", url: "https://commons.wikimedia.org/wiki/File:Cleeve_Hill.jpg" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -357,6 +371,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/6/64/Minchinhampton_Common_-_geograph.org.uk_-_6117930.jpg",
     imageAlt: "Minchinhampton Common, country walk in Minchinhampton",
+    imageCredit: { text: "Photo: Vieve Forward, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -372,6 +387,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/2/2c/River_Eye_at_Upper_Slaughter-geograph-4298791-by-Clint-Mann.jpg",
     imageAlt: "Lower to Upper Slaughter Riverside Walk, country walk in Lower Slaughter",
+    imageCredit: { text: "Photo: Clint Mann, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -387,6 +403,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/7/79/Chipping_Campden_High_Street_%28geograph_4837077%29.jpg",
     imageAlt: "Chipping Campden High Street Walk, country walk in Chipping Campden",
+    imageCredit: { text: "Photo: Anthony O'Neil, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -402,6 +419,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/1/17/Bibury_Trout_Farm_-_geograph.org.uk_-_1440334.jpg",
     imageAlt: "Bibury Trout Farm, family in Bibury",
+    imageCredit: { text: "Photo: Steve Daniels, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.biburytroutfarm.co.uk",
   },
   {
@@ -417,6 +435,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/c/cb/Woodchester_Mansion%2C_Woodchester_Park_-_geograph.org.uk_-_931759.jpg",
     imageAlt: "Woodchester Park, country walk in Stonehouse",
+    imageCredit: { text: "Photo: Brian Robert Marshall, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -432,6 +451,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/1/16/Bibury%2C_Arlington_Row_and_the_stone_bridge_over_the_River_Coln_-_geograph.org.uk_-_4461538.jpg",
     imageAlt: "Rack Isle and the River Coln, country walk in Bibury",
+    imageCredit: { text: "Photo: Michael Garlick, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -447,6 +467,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/3/30/Burford_High_Street_-_geograph.org.uk_-_4017747.jpg",
     imageAlt: "Burford High Street, country walk in Burford",
+    imageCredit: { text: "Photo: Des Blenkinsopp, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -462,6 +483,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/5/59/1053287_Church_St_John_the_Baptist_Burford_20240601_0030.jpg",
     imageAlt: "St John the Baptist Church, historic houses in Burford",
+    imageCredit: { text: "Photo: Tilman2007, CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0" },
     websiteUrl: "https://www.burfordchurch.org/",
   },
   {
@@ -477,6 +499,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/0/01/Market_Cross_Castle_Combe_-_geograph.org.uk_-_3400473.jpg",
     imageAlt: "The Market Cross and Lower Village, historic houses in Castle Combe",
+    imageCredit: { text: "Photo: Martin Dawes, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.visitcotswolds.com",
   },
   {
@@ -490,8 +513,9 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     familyFriendly: true,
     priceLevel: 1,
     imageUrl:
-      "https://www.ratedtrips.com/images/styles/walks_header_images/public/00242999_A3.jpg?itok=8SHBWmJu",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2f/Dry_valley_in_the_southern_Cotswolds_-_geograph.org.uk_-_1232625.jpg",
     imageAlt: "The By Brook Valley Walk, country walk in Castle Combe",
+    imageCredit: { text: "Photo: Maurice Pullin, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {
@@ -566,8 +590,9 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     familyFriendly: true,
     priceLevel: 1,
     imageUrl:
-      "https://cotswoldxldirectory.co.uk/wp-content/uploads/2025/06/guide-bourton-on-the-water.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/ce/The_River_Windrush_-_geograph.org.uk_-_1252151.jpg",
     imageAlt: "The River Windrush and the Five Bridges, country walk in Bourton-on-the-Water",
+    imageCredit: { text: "Photo: Steve Daniels, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
     websiteUrl: "https://www.alltrails.com",
   },
   {

@@ -157,6 +157,12 @@ export const whereAreTheCotswoldsContent: GuideContentBlock[] = [
     text: "The county examples should be understood as orientation rather than a complete list. The official boundary is irregular and does not follow county borders neatly.",
   },
   {
+    type: "image",
+    id: "cotswolds-boundary-sign",
+    alt: "Cotswolds boundary or village entrance sign",
+    placeholder: true,
+  },
+  {
     type: "heading",
     level: 3,
     text: "Why do some websites say five counties and others say six?",
@@ -336,6 +342,12 @@ export const whereAreTheCotswoldsContent: GuideContentBlock[] = [
         "Bristol is outside the Cotswolds, to the south-west, but is a useful arrival point for the southern part of the region.",
       ],
     ],
+  },
+  {
+    type: "image",
+    id: "gateway-town-view",
+    alt: "View of a Cotswolds gateway town",
+    placeholder: true,
   },
   {
     type: "paragraph",
