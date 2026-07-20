@@ -31,6 +31,7 @@ import type {
 } from "@/lib/villages/types";
 
 export const SHOW_VIDEO_SECTION = false; // Re-enable once real films exist
+export const SHOW_OUR_TAKE = false; // Re-enable once real Our Take copy exists
 
 type VillageContentProps = {
   village: Village;
@@ -363,38 +364,40 @@ export function VillageContent({
             </div>
           </div>
 
-          <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center bg-surface-container-low p-8 md:p-12 border border-outline-variant/20">
-            <div className="lg:col-span-5 relative aspect-[4/5] overflow-hidden order-2 lg:order-1">
-              {ourTakeImage ? (
-                <Image
-                  alt={village.our_take_image_alt?.trim() || `${village.name} village`}
-                  className="object-cover grayscale-[0.15] transition-transform duration-1000 hover:scale-105"
-                  src={ourTakeImage}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-              ) : (
-                <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[280px]" />
-              )}
-            </div>
-            <div className="lg:col-span-7 order-1 lg:order-2">
-              <span className="inline-block px-4 py-2 bg-surface-container border border-limestone/20 font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">
-                Visited By Us
-              </span>
-              <p className="font-label-caps text-[10px] text-limestone tracking-widest uppercase mt-4 mb-8">
-                Last updated · {village.visited_date}
-              </p>
-              <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-6 leading-tight">
-                Our Take On {village.name}
-              </h2>
-              <div className="village-visited space-y-5 font-body-lg text-on-surface-variant">
-                {ourTakeParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+          {SHOW_OUR_TAKE && (
+            <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center bg-surface-container-low p-8 md:p-12 border border-outline-variant/20">
+              <div className="lg:col-span-5 relative aspect-[4/5] overflow-hidden order-2 lg:order-1">
+                {ourTakeImage ? (
+                  <Image
+                    alt={village.our_take_image_alt?.trim() || `${village.name} village`}
+                    className="object-cover grayscale-[0.15] transition-transform duration-1000 hover:scale-105"
+                    src={ourTakeImage}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                ) : (
+                  <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[280px]" />
+                )}
               </div>
-              <ReviewedBy village={village} />
+              <div className="lg:col-span-7 order-1 lg:order-2">
+                <span className="inline-block px-4 py-2 bg-surface-container border border-limestone/20 font-label-caps text-[10px] text-limestone tracking-[0.3em] uppercase">
+                  Visited By Us
+                </span>
+                <p className="font-label-caps text-[10px] text-limestone tracking-widest uppercase mt-4 mb-8">
+                  Last updated · {village.visited_date}
+                </p>
+                <h2 className="font-display-lg text-[32px] md:text-[40px] text-primary mb-6 leading-tight">
+                  Our Take On {village.name}
+                </h2>
+                <div className="village-visited space-y-5 font-body-lg text-on-surface-variant">
+                  {ourTakeParagraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+                <ReviewedBy village={village} />
+              </div>
             </div>
-          </div>
+          )}
 
           <div id="when-to-visit">
             <VisitorFitSection village={village} />

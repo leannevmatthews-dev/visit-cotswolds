@@ -6,6 +6,7 @@ import { createPortal } from "react-dom";
 import { DayPicker, type DateRange } from "react-day-picker";
 import "react-day-picker/style.css";
 import "@/css/whats-on-day-picker.css";
+import { DirectoryFilterNav } from "@/components/listing-directory/directory-filter-nav";
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
 import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import {
@@ -402,33 +403,12 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
       </DirectoryPageHero>
 
       <main className="bg-background text-on-background">
-        <nav
-          className="listing-directory-filter-nav sticky top-[5.5rem] z-40 border-b border-outline/5 bg-background/95 backdrop-blur-md"
-          aria-label="Filter events by category"
-        >
-          <div className="listing-directory-filter-nav__inner mx-auto max-w-container-max px-margin-mobile xl:px-margin-desktop xl:py-5">
-            <div className="listing-directory-filter-nav__filters flex items-center overflow-x-auto no-scrollbar xl:gap-10">
-              {WHATS_ON_FILTERS.map((filter) => {
-                const isActive = activeFilter === filter.id;
-
-                return (
-                  <button
-                    key={filter.id}
-                    type="button"
-                    onClick={() => handleCategoryFilterChange(filter.id)}
-                    className={`shrink-0 whitespace-nowrap font-label-caps text-label-caps transition-colors ${
-                      isActive
-                        ? "border-b-2 border-primary pb-1 text-primary"
-                        : "pb-1 text-on-surface-variant hover:text-primary"
-                    }`}
-                  >
-                    {filter.label.toUpperCase()}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </nav>
+        <DirectoryFilterNav
+          ariaLabel="Filter events by category"
+          filters={WHATS_ON_FILTERS}
+          activeFilter={activeFilter}
+          onFilterChange={handleCategoryFilterChange}
+        />
 
         <section className="mx-auto max-w-container-max px-margin-mobile pb-24 pt-10 md:px-margin-desktop md:pb-32 md:pt-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-5">

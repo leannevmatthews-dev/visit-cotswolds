@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
 };
 
+/** Re-enable once homepage search is built (10+ villages & listings). */
+const SHOW_HOME_SEARCH = false;
+
 export default async function HomePage() {
   const villageHeroImagesBySlug = await getVillageHeroImagesBySlugs(
     VILLAGE_CARDS.map((card) => card.slug),
@@ -73,7 +76,13 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="relative z-10 flex flex-1 flex-col justify-center items-center text-center max-w-4xl w-full mx-auto px-margin-mobile pt-28 pb-6 md:pt-32 md:pb-10">
+          <div
+            className={`relative z-10 flex flex-1 flex-col justify-center items-center text-center max-w-4xl w-full mx-auto px-margin-mobile pt-28 md:pt-32 ${
+              SHOW_HOME_SEARCH
+                ? "pb-6 md:pb-10"
+                : "pb-16 md:pb-24"
+            }`}
+          >
             <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg lg:text-[84px] text-on-background mb-3 md:mb-4">
               An Independent Guide to the Cotswolds.
             </h1>
@@ -82,46 +91,48 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="relative z-20 w-full max-w-4xl mx-auto px-margin-mobile pb-8 md:pb-20 shrink-0">
-            <div className="glass flex flex-col md:flex-row items-stretch p-2 rounded">
-              <div className="flex-1 w-full p-3 md:p-4 border-b md:border-b-0 md:border-r border-limestone/10 flex flex-col">
-                <span className="font-label-caps text-[10px] text-limestone/60 mb-1">
-                  WHERE
-                </span>
-                <input
-                  className="bg-transparent border-none focus:ring-0 text-on-surface font-body-sm p-0 placeholder:text-on-surface/30 w-full outline-none"
-                  placeholder="Explore villages..."
-                  type="text"
-                />
+          {SHOW_HOME_SEARCH && (
+            <div className="relative z-20 w-full max-w-4xl mx-auto px-margin-mobile pb-8 md:pb-20 shrink-0">
+              <div className="glass flex flex-col md:flex-row items-stretch p-2 rounded">
+                <div className="flex-1 w-full p-3 md:p-4 border-b md:border-b-0 md:border-r border-limestone/10 flex flex-col">
+                  <span className="font-label-caps text-[10px] text-limestone/60 mb-1">
+                    WHERE
+                  </span>
+                  <input
+                    className="bg-transparent border-none focus:ring-0 text-on-surface font-body-sm p-0 placeholder:text-on-surface/30 w-full outline-none"
+                    placeholder="Explore villages..."
+                    type="text"
+                  />
+                </div>
+                <div className="flex-1 w-full p-3 md:p-4 border-b md:border-b-0 md:border-r border-limestone/10 flex flex-col">
+                  <span className="font-label-caps text-[10px] text-limestone/60 mb-1">
+                    WHEN
+                  </span>
+                  <input
+                    className="bg-transparent border-none focus:ring-0 text-on-surface font-body-sm p-0 placeholder:text-on-surface/30 w-full outline-none"
+                    type="text"
+                    placeholder="Add dates"
+                  />
+                </div>
+                <div className="flex-1 w-full p-3 md:p-4 border-b md:border-b-0 md:border-r border-limestone/10 flex flex-col">
+                  <span className="font-label-caps text-[10px] text-limestone/60 mb-1">
+                    LOOKING FOR
+                  </span>
+                  <input
+                    className="bg-transparent border-none focus:ring-0 text-on-surface font-body-sm p-0 placeholder:text-on-surface/30 w-full outline-none"
+                    placeholder="Experiences, stays..."
+                    type="text"
+                  />
+                </div>
+                <a
+                  href="/villages"
+                  className="bg-limestone text-primary-container px-8 md:px-10 py-3 md:py-4 font-label-caps text-label-caps hover:bg-white transition-colors w-full md:w-auto inline-flex items-center justify-center shrink-0"
+                >
+                  EXPLORE
+                </a>
               </div>
-              <div className="flex-1 w-full p-3 md:p-4 border-b md:border-b-0 md:border-r border-limestone/10 flex flex-col">
-                <span className="font-label-caps text-[10px] text-limestone/60 mb-1">
-                  WHEN
-                </span>
-                <input
-                  className="bg-transparent border-none focus:ring-0 text-on-surface font-body-sm p-0 placeholder:text-on-surface/30 w-full outline-none"
-                  placeholder="Add dates"
-                  type="text"
-                />
-              </div>
-              <div className="flex-1 w-full p-3 md:p-4 border-b md:border-b-0 md:border-r border-limestone/10 flex flex-col">
-                <span className="font-label-caps text-[10px] text-limestone/60 mb-1">
-                  LOOKING FOR
-                </span>
-                <input
-                  className="bg-transparent border-none focus:ring-0 text-on-surface font-body-sm p-0 placeholder:text-on-surface/30 w-full outline-none"
-                  placeholder="Experiences, stays..."
-                  type="text"
-                />
-              </div>
-              <a
-                href="/villages"
-                className="bg-limestone text-primary-container px-8 md:px-10 py-3 md:py-4 font-label-caps text-label-caps hover:bg-white transition-colors w-full md:w-auto inline-flex items-center justify-center shrink-0"
-              >
-                EXPLORE
-              </a>
             </div>
-          </div>
+          )}
         </section>
 
         {/* Curated Journeys */}

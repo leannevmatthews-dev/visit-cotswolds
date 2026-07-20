@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { DirectoryFilterNav } from "@/components/listing-directory/directory-filter-nav";
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import {
@@ -165,33 +166,12 @@ export function ListingDirectoryPage({
         intro={intro}
       />
 
-      <nav
-        className="listing-directory-filter-nav sticky top-[5.5rem] z-40 border-b border-outline/5 bg-background/95 backdrop-blur-md"
-        aria-label={filterAriaLabel}
-      >
-        <div className="listing-directory-filter-nav__inner mx-auto flex max-w-container-max items-center justify-between px-margin-mobile xl:px-margin-desktop xl:py-5">
-          <div className="listing-directory-filter-nav__filters flex items-center overflow-x-auto no-scrollbar xl:gap-10">
-            {filters.map((filter) => {
-              const isActive = activeFilter === filter.id;
-
-              return (
-                <button
-                  key={filter.id}
-                  type="button"
-                  onClick={() => setActiveFilter(filter.id)}
-                  className={`shrink-0 font-label-caps text-label-caps whitespace-nowrap transition-colors ${
-                    isActive
-                      ? "border-b-2 border-primary pb-1 text-primary"
-                      : "text-on-surface-variant hover:text-primary"
-                  }`}
-                >
-                  {filter.label.toUpperCase()}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </nav>
+      <DirectoryFilterNav
+        ariaLabel={filterAriaLabel}
+        filters={filters}
+        activeFilter={activeFilter}
+        onFilterChange={setActiveFilter}
+      />
 
       <main className="bg-background pb-16 pt-10 text-on-background md:pb-24 md:pt-12 lg:pb-32">
         <section className="mx-auto max-w-container-max px-margin-mobile md:px-margin-desktop">
