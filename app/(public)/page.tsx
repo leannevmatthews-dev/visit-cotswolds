@@ -86,7 +86,7 @@ export default async function HomePage() {
             <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg lg:text-[84px] text-on-background mb-3 md:mb-4">
               An Independent Guide to the Cotswolds.
             </h1>
-            <p className="font-body-lg text-on-surface-variant/80 tracking-wide uppercase font-light text-sm md:text-base">
+            <p className="font-body-lg text-on-surface-variant/80 tracking-wide uppercase font-bold text-sm md:text-base">
               Handpicked and properly researched, so you can make the most of your time here.
             </p>
           </div>
@@ -161,11 +161,11 @@ export default async function HomePage() {
                   )}
                   <div className="absolute inset-0 image-overlay-gradient" />
                   <div className="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 md:bottom-6 md:left-5">
-                    <span className="font-label-caps text-[7px] sm:text-[9px] md:text-[10px] text-limestone block mb-0.5 sm:mb-1 tracking-wider">
+                    <span className="font-label-caps text-[7px] sm:text-[9px] md:text-[10px] text-limestone block mb-1 sm:mb-1 tracking-wider">
                       {card.label}
                     </span>
                     <h3
-                      className={`font-display-lg text-xs sm:text-base md:text-xl lg:text-2xl leading-tight${"titleClass" in card && card.titleClass ? ` ${card.titleClass}` : ""}`}
+                      className={`font-display-lg home-journey-card__title md:text-xl lg:text-2xl leading-tight${"titleClass" in card && card.titleClass ? ` ${card.titleClass}` : ""}`}
                     >
                       {card.title}
                     </h3>

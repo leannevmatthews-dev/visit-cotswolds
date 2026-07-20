@@ -35,6 +35,14 @@ iframe[src*='google.com/maps'] {
     }
 }
 
+/* Homepage: journey category cards */
+@media (max-width: 767px) {
+    .home-journey-card__title {
+        font-size: clamp(1.25rem, 5.5vw, 1.5rem);
+        line-height: 1.15;
+    }
+}
+
 /* Homepage: village edit card labels */
 @media (max-width: 767px) {
     .home-village-card__copy {

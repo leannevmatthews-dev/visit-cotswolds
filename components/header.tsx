@@ -170,6 +170,15 @@ export function Header() {
             </button>
           </div>
           <ul className="site-nav-links">
+            <li>
+              <a
+                href="/"
+                className={pathname === "/" ? "is-active" : undefined}
+                onClick={() => setNavOpen(false)}
+              >
+                Home
+              </a>
+            </li>
             {NAV_ITEMS.map((item) => (
               <li key={item.id}>
                 <a
