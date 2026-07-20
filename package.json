@@ -6,7 +6,7 @@
     "dev": "node scripts/dev.mjs",
     "dev:clean": "node scripts/dev.mjs",
     "dev:reset": "pkill -f \"next dev\" 2>/dev/null || true; rm -rf .next node_modules/.cache && npm install && node scripts/dev.mjs --clean",
-    "prebuild": "pkill -f \"next dev\" 2>/dev/null || true; rm -rf .next && npm run check:attribution",
+    "prebuild": "if [ -z \"$CI\" ]; then pkill -f \"next dev\" 2>/dev/null || true; fi; rm -rf .next && npm run check:attribution",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
