@@ -18,7 +18,7 @@ export type DirectoryListing = {
 
 export type DirectoryFilterFlag = "dogFriendly" | "familyFriendly";
 
-/** Serializable filter rule — safe to pass from Server Components. */
+/** Serializable filter rule, safe to pass from Server Components. */
 export type DirectoryFilter = {
   id: string;
   label: string;

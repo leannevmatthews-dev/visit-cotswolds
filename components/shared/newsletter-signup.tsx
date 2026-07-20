@@ -6,7 +6,7 @@ const PDF_URL =
   "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/downloads/little-black-book.pdf";
 const PDF_FILENAME = "The-Little-Black-Book-of-the-Cotswolds.pdf";
 
-// Hidden pre-launch — PDF not yet built. Re-enable once guide is ready.
+// Hidden pre-launch: PDF not yet built. Re-enable once guide is ready.
 const SHOW_LITTLE_BLACK_BOOK = false;
 
 function isValidEmail(email: string): boolean {
@@ -85,7 +85,7 @@ export function NewsletterSignup() {
         </p>
         {isComplete ? (
           <p className="font-body-lg text-on-surface-variant pt-4">
-            Your guide is downloading — enjoy the Cotswolds.
+            Your guide is downloading. Enjoy the Cotswolds.
           </p>
         ) : (
           <>

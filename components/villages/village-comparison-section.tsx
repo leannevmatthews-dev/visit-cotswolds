@@ -29,7 +29,7 @@ export function VillageComparisonSection({
             </h2>
             <p className="font-body-sm text-on-surface-variant max-w-2xl leading-[1.5]">
               A quick read on how {village.name} stacks up against other popular
-              Cotswolds villages—based on our visits, not brochure copy.
+              Cotswolds villages, based on our visits, not brochure copy.
             </p>
           </div>
 

@@ -44,7 +44,7 @@ export function GuideMapEmbeds({ title, routes }: GuideMapEmbedsProps) {
         ))}
       </div>
       <p className="font-body-sm mt-3 text-on-surface-variant leading-relaxed">
-        Indicative route only. See the fastest direct train times stated above —
+        Indicative route only. See the fastest direct train times stated above.
         Google&apos;s transit routing may not always reflect the exact GWR
         service.
       </p>

@@ -1,4 +1,4 @@
-/** Villages with live guide pages — only these get internal /villages/ links. */
+/** Villages with live guide pages. Only these get internal /villages/ links. */
 export const VILLAGE_PAGE_LINKS = [
   {
     phrase: "Bourton-on-the-Water",

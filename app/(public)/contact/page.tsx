@@ -13,7 +13,7 @@ const CONTACT_HERO_IMAGE =
 export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
-    "Get in touch with Visit Cotswolds — for reader questions, local business enquiries, or anything else.",
+    "Get in touch with Visit Cotswolds for reader questions, local business enquiries, or anything else.",
   path: "/contact",
 });
 

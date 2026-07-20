@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Visit Cotswolds",
   },
   description:
-    "The most useful independent guide to the Cotswolds — village guides, places to eat and stay, things to do, and honest advice from real visits.",
+    "The most useful independent guide to the Cotswolds: village guides, places to eat and stay, things to do, and honest advice from real visits.",
   openGraph: {
     type: "website",
     images: [DEFAULT_OG_IMAGE],

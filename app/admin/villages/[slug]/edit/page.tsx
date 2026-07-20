@@ -50,7 +50,7 @@ export default async function EditVillagePage({ params }: EditVillagePageProps) 
         Edit Village
       </h1>
       <p className="font-body-sm mb-8 text-on-surface-variant">
-        Editing <span className="text-on-surface">{village.name}</span> — all
+        Editing <span className="text-on-surface">{village.name}</span>. All
         fields are pre-filled from Supabase.
       </p>
 

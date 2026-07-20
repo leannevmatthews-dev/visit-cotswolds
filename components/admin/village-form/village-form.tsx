@@ -743,7 +743,7 @@ export function VillageForm({
             label="Car park postcode or name (for map)"
             value={form.parking_guide.map_query ?? ""}
             onChange={(value) => setParkingField("map_query", value)}
-            hint="Used to generate the map pin automatically — postcode preferred, or exact car park name plus postcode."
+            hint="Used to generate the map pin automatically. Postcode preferred, or exact car park name plus postcode."
           />
         </FieldGrid>
         <details className="mt-1">
@@ -879,7 +879,7 @@ export function VillageForm({
               This village&rsquo;s ratings
             </p>
             <p className="mb-4 font-body-sm text-on-surface-variant">
-              Enter once here — these values power this village&rsquo;s &ldquo;You Are
+              Enter once here. These values power this village&rsquo;s &ldquo;You Are
               Here&rdquo; card and appear when other villages select it for comparison.
             </p>
             <FieldGrid>
@@ -941,7 +941,7 @@ export function VillageForm({
             </p>
             <p className="mb-4 font-body-sm text-on-surface-variant">
               Pick peer villages. Their live ratings are loaded from each peer&rsquo;s
-              own row — you no longer type other villages&rsquo; stats here.
+              own row. You no longer type other villages&rsquo; stats here.
             </p>
             {villageOptions.length === 0 ? (
               <p className="font-body-sm text-on-surface-variant">

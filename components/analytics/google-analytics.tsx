@@ -9,7 +9,7 @@ type GoogleAnalyticsProps = {
 
 /**
  * Loads gtag only when analytics consent is accepted.
- * Do not place these scripts in app/layout.tsx <head> — that would load GA
+ * Do not place these scripts in app/layout.tsx <head>; that would load GA
  * unconditionally and bypass consent.
  *
  * Withdrawal (Decline) clears GA cookies and reloads the page so gtag is

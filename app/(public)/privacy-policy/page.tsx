@@ -83,7 +83,7 @@ export default function PrivacyPolicyPage() {
                   Cookie Policy
                 </Link>
                 ), we use Google Analytics to understand how visitors use the
-                site — which pages are popular, how people arrive at the site,
+                site: which pages are popular, how people arrive at the site,
                 and general browsing patterns. This data is anonymised and
                 aggregated; we do not use it to identify individual visitors.
               </p>

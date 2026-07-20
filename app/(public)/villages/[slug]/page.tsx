@@ -47,7 +47,7 @@ export async function generateMetadata({
   const description =
     village.meta_description?.trim() ||
     village.brief_summary?.trim() ||
-    `Discover ${village.name} in the Cotswolds — crowd intelligence, local tips, and everything worth knowing before you visit.`;
+    `Discover ${village.name} in the Cotswolds: crowd intelligence, local tips, and everything worth knowing before you visit.`;
   const ogImage =
     village.hero_background_image_url?.trim() || DEFAULT_OG_IMAGE;
 

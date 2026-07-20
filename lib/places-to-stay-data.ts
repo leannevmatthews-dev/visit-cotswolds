@@ -175,7 +175,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     id: "the-feathered-nest",
     name: "The Feathered Nest",
     description:
-      "Four rooms above the restaurant in Nether Westcote with views across the Evenlode Valley. The valley setting is genuinely impressive — book a room that faces it.",
+      "Four rooms above the restaurant in Nether Westcote with views across the Evenlode Valley. The valley setting is genuinely impressive. Book a room that faces it.",
     category: "Inn",
     location: "Nether Westcote",
     address: "Nether Westcote OX7 6SD",
@@ -271,7 +271,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     id: "the-pig-cotswolds",
     name: "The Pig",
     description:
-      "The PIG formula works well here — kitchen garden produce, relaxed service, and rooms that feel lived-in rather than designed. Popular, so book ahead.",
+      "The PIG formula works well here: kitchen garden produce, relaxed service, and rooms that feel lived-in rather than designed. Popular, so book ahead.",
     category: "Boutique Hotel",
     location: "Barnsley, Cirencester",
     address: "Barnsley, Cirencester GL7 5EE",
@@ -303,7 +303,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     id: "the-lygon-arms",
     name: "The Lygon Arms",
     description:
-      "A 14th-century coaching inn on Broadway's high street with a history that includes Charles I. The building is the draw — the rooms have been modernised but the bones are impressive.",
+      "A 14th-century coaching inn on Broadway's high street with a history that includes Charles I. The building is the draw. The rooms have been modernised, but the bones are impressive.",
     category: "Historic Inn",
     location: "Broadway",
     address: "High Street, Broadway WR12 7DU",

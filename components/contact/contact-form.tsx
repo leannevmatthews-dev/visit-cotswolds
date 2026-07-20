@@ -75,7 +75,7 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <p className="font-body-lg text-on-surface-variant leading-relaxed">
-        Thank you for getting in touch. Your message has been sent — we&apos;ll
+        Thank you for getting in touch. Your message has been sent. We&apos;ll
         get back to you as soon as we can. If you don&apos;t hear from us, you can
         reach us directly at{" "}
         <a

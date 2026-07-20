@@ -25,7 +25,7 @@ export function villagePageMetadata(village: Village): Metadata {
     title: village.meta_title ?? `${village.name} | Visit Cotswolds`,
     description:
       village.meta_description ??
-      `Discover ${village.name} in the Cotswolds — crowd intelligence, local tips, and everything worth knowing before you visit.`,
+      `Discover ${village.name} in the Cotswolds: crowd intelligence, local tips, and everything worth knowing before you visit.`,
     path: `/villages/${village.slug}`,
   });
 }

@@ -177,7 +177,7 @@ export function iconCategoriesForValue(current: string): MaterialIconCategory[] 
   return VILLAGE_MATERIAL_ICON_CATEGORIES;
 }
 
-/** @deprecated Use iconCategoriesForValue — kept for any flat-list callers. */
+/** @deprecated Use iconCategoriesForValue. Kept for any flat-list callers. */
 export function iconOptionsForValue(current: string): readonly string[] {
   return iconCategoriesForValue(current).flatMap((category) => category.icons);
 }

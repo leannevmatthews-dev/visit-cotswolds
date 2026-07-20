@@ -11,7 +11,7 @@ export function LocalTipsSection({ village }: LocalTipsSectionProps) {
         Local Tips For {village.name}
       </h2>
       <p className="font-body-sm text-on-surface-variant mb-8 max-w-2xl">
-        Practical insights from our visits—the kind of advice you would get from
+        Practical insights from our visits: the kind of advice you would get from
         someone who has been there recently.
       </p>
       <div className="village-tips-grid">

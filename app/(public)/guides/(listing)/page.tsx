@@ -9,7 +9,7 @@ import "@/css/village-hero.css";
 export const metadata: Metadata = pageMetadata({
   title: "Guides",
   description:
-    "Cotswolds travel guides — itineraries, practical planning, and in-depth village guides from real visits.",
+    "Cotswolds travel guides: itineraries, practical planning, and in-depth village guides from real visits.",
   path: "/guides",
 });
 

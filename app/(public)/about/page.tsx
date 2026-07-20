@@ -10,7 +10,7 @@ const LEANNE_ABOUT_SUMMARY =
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "Visit Cotswolds is an independent guide to the Cotswolds. No sponsored content, no tourism board backing — just honest recommendations from real visits.",
+    "Visit Cotswolds is an independent guide to the Cotswolds. No sponsored content, no tourism board backing, just honest recommendations from real visits.",
   path: "/about",
 });
 

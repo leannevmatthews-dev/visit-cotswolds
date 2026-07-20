@@ -132,7 +132,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-slaughters-manor",
     name: "The Slaughters Manor",
     description:
-      "A 17th-century manor beside the River Eye in Lower Slaughter. The restaurant leans contemporary inside a historic shell — an interesting combination that works.",
+      "A 17th-century manor beside the River Eye in Lower Slaughter. The restaurant leans contemporary inside a historic shell, an interesting combination that works.",
     category: "Afternoon Tea",
     location: "Lower Slaughter",
     address: "Lower Slaughter, Cheltenham GL54 2HP",
@@ -162,7 +162,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-swan-inn-swinbrook",
     name: "The Swan Inn",
     description:
-      "A riverside pub with genuine history — the Mitford sisters drank here. Local game, the River Windrush outside the window, and none of the self-consciousness that ruins similar places.",
+      "A riverside pub with genuine history. The Mitford sisters drank here. Local game, the River Windrush outside the window, and none of the self-consciousness that ruins similar places.",
     category: "Gastropubs",
     location: "Swinbrook, Burford",
     address: "Swinbrook, Burford OX18 4DY",
@@ -192,7 +192,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-ebrington-arms",
     name: "The Ebrington Arms",
     description:
-      "Flagstone floors, open fires, and organic pub food that has won awards. Ebrington is an overlooked village — this pub is the reason to go.",
+      "Flagstone floors, open fires, and organic pub food that has won awards. Ebrington is an overlooked village, and this pub is the reason to go.",
     category: "Gastropubs",
     location: "Ebrington, Chipping Campden",
     address: "Ebrington, Chipping Campden GL55 6NH",
@@ -252,7 +252,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "the-fox-at-oddington",
     name: "The Fox at Oddington",
     description:
-      "An eco-conscious pub in Lower Oddington serving organic game and sourdough pizzas. The combination sounds unlikely — it works better than it should.",
+      "An eco-conscious pub in Lower Oddington serving organic game and sourdough pizzas. The combination sounds unlikely, but it works better than it should.",
     category: "Gastropubs",
     location: "Lower Oddington, Moreton-in-Marsh",
     address: "Lower Oddington, Moreton-in-Marsh GL56 0UR",
@@ -297,7 +297,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     id: "roots-and-seeds",
     name: "Roots + Seeds",
     description:
-      "A kitchen garden café on the Bathurst Estate. The setting inside Cirencester Park is the draw — the food follows the seasons and rarely disappoints.",
+      "A kitchen garden café on the Bathurst Estate. The setting inside Cirencester Park is the draw. The food follows the seasons and rarely disappoints.",
     category: "Farm Shops & Cafes",
     location: "Cirencester",
     address: "Bathurst Estate, Cirencester GL7 2BU",
@@ -617,7 +617,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
-      "https://scontent.fltn3-2.fna.fbcdn.net/v/t39.30808-6/659765039_1281565890745629_752457617225242758_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=yphg2d2gDeUQ7kNvwEXVLtP&_nc_oc=AdqrUjdUDXiNrQNPqKtYyxL8ADsCchblD0l5lch-b23AVusQtzO3ew9sDp1-YwHeHG69-FO1ZksE9NEJc3La3vql&_nc_zt=23&_nc_ht=scontent.fltn3-2.fna&_nc_gid=C2f8hqBZLzmSVoqLjc8WBg&_nc_ss=7b2a8&oh=00_AQDIif0gGEaS5sEq4F9HYZLfdeSgZYpdbaN2nqpXXdHb6A&oe=6A4D7EBE",
+      "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/the%20little%20picnic%20shop.webp",
     imageAlt: "The Little Picnic Shop, afternoon tea in Castle Combe",
     websiteUrl: "https://www.facebook.com/littlepicnicshop",
   },

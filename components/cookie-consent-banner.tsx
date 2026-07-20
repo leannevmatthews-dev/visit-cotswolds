@@ -37,7 +37,7 @@ export function CookieConsentBanner() {
 
   function decline() {
     // Same path for the initial banner and "Cookie preferences" reopen.
-    // Clear GA cookies then reload so gtag.js / dataLayer leave memory —
+    // Clear GA cookies then reload so gtag.js / dataLayer leave memory.
     // unmounting <GoogleAnalytics> alone is not enough after a prior accept.
     writeCookieConsent("declined");
     clearGoogleAnalyticsCookies();
