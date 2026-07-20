@@ -52,6 +52,7 @@ export function getOrganizationJsonLd() {
     "@type": "Organization",
     name: "Visit Cotswolds",
     url: SITE_URL,
+    logo: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/logo/visit%20cotswolds%20logo%20light%20(transparent).png",
   };
 }
 

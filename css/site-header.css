@@ -109,24 +109,28 @@
     transform: translate(-50%, -43.2%);
 }
 
-/* Footer / standalone brand mark */
+/* Footer / standalone brand mark — same crop framing as the header logo */
 .site-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    display: block;
     line-height: 0;
     text-decoration: none;
+    width: min(14rem, 85vw);
+    aspect-ratio: var(--site-logo-ratio);
+    overflow: hidden;
 }
 
 .site-logo img,
 .site-logo-svg {
-    display: block;
-    height: clamp(2.5rem, 3vw + 1rem, 3.5rem);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: calc(100% * 2000 / 430);
     width: auto;
-    aspect-ratio: var(--site-logo-ratio);
-    max-width: min(17.5rem, 90vw);
-    object-fit: cover;
-    object-position: center 43.2%;
+    max-width: none;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    transform: translate(-50%, -43.2%);
 }
 
 .site-header__icon-btn {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CookiePreferencesButton } from "@/components/cookie-preferences-button";
+import { Logo } from "@/components/logo";
 import { NAV_ITEMS } from "@/lib/nav";
 
 const FOOTER_INFORMATION_LINKS = [
@@ -23,8 +24,14 @@ export function Footer() {
       <div className="mx-auto max-w-container-max px-margin-mobile py-16 md:px-margin-desktop md:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10">
           <div>
-            <p className={footerHeadingClassName}>Visit Cotswolds</p>
-            <p className="mt-3 max-w-xs font-body-sm leading-relaxed text-on-surface-variant">
+            <Link
+              href="/"
+              className="site-logo"
+              aria-label="Visit Cotswolds"
+            >
+              <Logo className="site-logo-svg" />
+            </Link>
+            <p className="mt-4 max-w-xs font-body-sm leading-relaxed text-on-surface-variant">
               The most useful independent guide to the Cotswolds.
             </p>
           </div>
