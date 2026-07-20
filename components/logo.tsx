@@ -12,10 +12,9 @@ export function Logo({ className }: LogoProps) {
     <Image
       src={LOGO_SRC}
       alt="Visit Cotswolds"
-      width={2000}
-      height={2000}
+      width={500}
+      height={500}
       className={className}
-      priority
     />
   );
 }

@@ -1,4 +1,5 @@
 import { LogoutButton } from "@/components/admin/logout-button";
+import { MaterialSymbolsStylesheet } from "@/components/material-symbols-stylesheet";
 import "./admin.css";
 
 export default function AdminLayout({
@@ -7,7 +8,9 @@ export default function AdminLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="admin-shell min-h-dvh bg-background">
+    <>
+      <MaterialSymbolsStylesheet />
+      <div className="admin-shell min-h-dvh bg-background">
       <header className="border-b border-outline/10 bg-surface-container-low">
         <div className="mx-auto flex max-w-container-max items-center justify-between gap-4 px-margin-mobile py-4 md:px-margin-desktop">
           <div>
@@ -21,5 +24,6 @@ export default function AdminLayout({
       </header>
       {children}
     </div>
+    </>
   );
 }

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { FadeInSection } from "@/components/fade-in-section";
-import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import {
   HERO_IMAGE,
   JOURNEY_CARDS,
@@ -49,7 +48,8 @@ export default async function HomePage() {
                   className="object-cover"
                   fill
                   priority
-                  sizes="100vw"
+                  quality={65}
+                  sizes="(max-width: 768px) 100vw, 1920px"
                   src={HERO_IMAGE}
                 />
               ) : (
@@ -298,8 +298,6 @@ export default async function HomePage() {
             </div>
           </div>
         </FadeInSection>
-
-        <NewsletterSignup />
       </main>
     </>
   );
