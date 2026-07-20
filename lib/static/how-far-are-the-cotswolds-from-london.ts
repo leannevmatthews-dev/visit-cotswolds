@@ -37,7 +37,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "london-cotswolds-map",
     alt: "Map showing London and the Cotswolds with Moreton-in-Marsh, Kemble and Chippenham marked",
-    placeholder: true,
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/Map%20showing%20London%20and%20the%20Cotswolds%20with%20Moreton-in-Marsh%2C%20Kemble%20and%20Chippenham%20marked%20.png",
   },
   {
     type: "heading",
@@ -111,7 +111,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "paddington-departures",
     alt: "London Paddington station departure board showing westbound services",
-    placeholder: true,
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/London%20Paddington%20station%20departure%20board%20showing%20westbound%20services.png",
   },
   {
     type: "heading",
@@ -285,7 +285,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "london-cotswolds-train-map",
     alt: "Map showing rail routes from London Paddington towards Cotswold gateway stations",
-    placeholder: true,
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/Map%20showing%20rail%20routes%20from%20London%20Paddington%20towards%20Cotswold%20gateway%20stations.png",
   },
   {
     type: "heading",
@@ -337,6 +337,22 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     text: "Always check the current timetable for your exact travel date. GWR states that its timetables are normally updated twice a year, and engineering works can alter individual journeys.",
   },
   {
+    type: "links",
+    title: "Check times and book train tickets",
+    items: [
+      {
+        label: "National Rail Enquiries",
+        url: "https://www.nationalrail.co.uk",
+        note: "Journey planning and tickets across all operators",
+      },
+      {
+        label: "GWR",
+        url: "https://www.gwr.com",
+        note: "Main operator for direct services from London Paddington to Moreton-in-Marsh, Kemble, Chippenham and other Cotswold gateway stations",
+      },
+    ],
+  },
+  {
     type: "heading",
     level: 2,
     text: "London to the Cotswolds by car",
@@ -357,7 +373,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "cotswolds-approach-road",
     alt: "Rural road approaching the Cotswolds",
-    placeholder: true,
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/Rural%20road%20approaching%20the%20Cotswolds.png",
   },
   {
     type: "paragraph",
@@ -401,11 +417,22 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "national-express-coach",
     alt: "National Express coach",
-    placeholder: true,
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/National%20Express%20coach.png",
   },
   {
     type: "paragraph",
     text: "Coach travel can be a useful lower-cost option for a longer stay when you are happy to base yourself in one place.",
+  },
+  {
+    type: "links",
+    title: "Check times and book coach tickets",
+    items: [
+      {
+        label: "National Express",
+        url: "https://www.nationalexpress.com",
+        note: "Direct coach services from London Victoria to Cirencester and Cheltenham",
+      },
+    ],
   },
   {
     type: "paragraph",
@@ -443,7 +470,11 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "day-trip-village-square",
     alt: "Visitors exploring a Cotswold village square",
-    placeholder: true,
+    src: "https://upload.wikimedia.org/wikipedia/commons/4/42/Visitor_Information_Centre%2C_Bourton-on-the-Water_-_geograph.org.uk_-_4347135.jpg",
+    imageCredit: {
+      text: "Photo: Jaggery, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
   },
   {
     type: "paragraph",
@@ -461,7 +492,11 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "rural-road-landscape",
     alt: "Rural Cotswold road showing distance between settlements",
-    placeholder: true,
+    src: "https://upload.wikimedia.org/wikipedia/commons/6/69/A_Cotswold_road_-_geograph.org.uk_-_8309967.jpg",
+    imageCredit: {
+      text: "Photo: Philip Halling, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
   },
   {
     type: "heading",
@@ -546,7 +581,11 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "arrived-in-cotswolds",
     alt: "Arriving in a Cotswold village",
-    placeholder: true,
+    src: "https://upload.wikimedia.org/wikipedia/commons/4/41/Train_approaches_Honeybourne_Station_-_geograph.org.uk_-_5090222.jpg",
+    imageCredit: {
+      text: "Photo: David P Howard, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
   },
   {
     type: "paragraph",

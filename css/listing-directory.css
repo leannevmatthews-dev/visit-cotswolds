@@ -19,7 +19,8 @@
     transition: filter 0.3s ease;
 }
 
-.listing-card-image:hover img {
+.listing-card-image:hover img,
+.listing-directory-card:hover .listing-card-image img {
     filter: saturate(0.9) sepia(0.05) brightness(1);
 }
 

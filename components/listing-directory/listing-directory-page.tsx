@@ -25,9 +25,10 @@ function ListingCard({
   const linkProps = linkExternal
     ? { target: "_blank" as const, rel: "noopener noreferrer" }
     : {};
+  const titleId = `listing-card-title-${listing.id}`;
 
   return (
-    <article className="listing-directory-card flex flex-col gap-4">
+    <article className="listing-directory-card group flex cursor-pointer flex-col gap-4">
       <div className="relative">
         <a
           href={listing.websiteUrl}
@@ -41,7 +42,7 @@ function ListingCard({
                 alt={listing.imageAlt}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           ) : (
@@ -60,7 +61,12 @@ function ListingCard({
         ) : null}
       </div>
 
-      <div className="flex flex-col gap-2">
+      <a
+        href={listing.websiteUrl}
+        {...linkProps}
+        aria-labelledby={titleId}
+        className="flex flex-col gap-2 rounded-sm outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-limestone"
+      >
         <div
           className={`flex items-end gap-3 ${showPriceLevel ? "justify-between" : ""}`}
         >
@@ -94,7 +100,10 @@ function ListingCard({
           </span>
         ) : null}
 
-        <h2 className="listing-directory-card__name font-display-lg text-[26px] leading-tight text-on-background md:text-[28px]">
+        <h2
+          id={titleId}
+          className="listing-directory-card__name font-display-lg text-[26px] leading-tight text-on-background md:text-[28px]"
+        >
           {listing.name}
         </h2>
 
@@ -102,17 +111,13 @@ function ListingCard({
           {listing.description}
         </p>
 
-        <a
-          href={listing.websiteUrl}
-          {...linkProps}
-          className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors hover:text-primary"
-        >
+        <span className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors group-hover:text-primary">
           {linkLabel}
           <span className="material-symbols-outlined text-sm" aria-hidden="true">
             {linkExternal ? "north_east" : "arrow_forward"}
           </span>
-        </a>
-      </div>
+        </span>
+      </a>
     </article>
   );
 }

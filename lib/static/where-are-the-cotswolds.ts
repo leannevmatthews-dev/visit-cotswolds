@@ -30,8 +30,7 @@ export const whereAreTheCotswoldsContent: GuideContentBlock[] = [
     alt: "Map showing the Cotswolds in England, west of Oxford and north-east of Bristol",
     caption:
       "The Cotswolds stretch from the countryside around Bath to southern Warwickshire and Worcestershire",
-    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/where-are-the-cotswolds-map-england%20(1).svg",
-    placeholder: true,
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/where-are-the-cotswolds/Map%20showing%20the%20Cotswolds%20in%20England%2C%20west%20of%20Oxford%20and%20north-east%20of%20Bristol.png",
   },
   {
     type: "heading",
@@ -160,7 +159,11 @@ export const whereAreTheCotswoldsContent: GuideContentBlock[] = [
     type: "image",
     id: "cotswolds-boundary-sign",
     alt: "Cotswolds boundary or village entrance sign",
-    placeholder: true,
+    src: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Cotswolds_Area_of_Outstanding_Natural_Beauty_sign_near_Old_Sodbury_-_geograph.org.uk_-_4531186.jpg",
+    imageCredit: {
+      text: "Photo: Jaggery, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
   },
   {
     type: "heading",
@@ -189,8 +192,7 @@ export const whereAreTheCotswoldsContent: GuideContentBlock[] = [
     alt: "Map of the Cotswolds National Landscape boundary across six English counties",
     caption:
       "Visit Cotswolds uses the formal National Landscape boundary as its main editorial scope",
-    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/cotswolds-national-landscape-boundary-map%20(1).svg",
-    placeholder: true,
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/where-are-the-cotswolds/Map%20of%20the%20Cotswolds%20National%20Landscape%20boundary%20across%20six%20English%20counties.png",
   },
   {
     type: "heading",
@@ -346,8 +348,12 @@ export const whereAreTheCotswoldsContent: GuideContentBlock[] = [
   {
     type: "image",
     id: "gateway-town-view",
-    alt: "View of a Cotswolds gateway town",
-    placeholder: true,
+    alt: "View of Burford gateway town",
+    src: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Burford_-_geograph.org.uk_-_484969.jpg",
+    imageCredit: {
+      text: "Photo: Anthony Eden, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
   },
   {
     type: "paragraph",
@@ -398,8 +404,12 @@ export const whereAreTheCotswoldsContent: GuideContentBlock[] = [
   {
     type: "image",
     id: "wider-landscape-photo",
-    alt: "Cotswold farmland and limestone houses viewed from the hillside above the village",
-    placeholder: true,
+    alt: "Cotswold farmland and sheep landscape rolling hills",
+    src: "https://upload.wikimedia.org/wikipedia/commons/1/14/Morning%2C_Cotswolds%2C_Gloucestershire_-_Flickr_-_Kumweni.jpg",
+    imageCredit: {
+      text: "Photo: Kumweni, CC BY 2.0",
+      url: "https://creativecommons.org/licenses/by/2.0",
+    },
   },
   {
     type: "heading",

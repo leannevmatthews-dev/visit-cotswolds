@@ -40,6 +40,11 @@ export type GuideContentBlock =
   | { type: "faq"; items: { question: string; answer: string }[] }
   | { type: "notice"; text: string }
   | {
+      type: "links";
+      title: string;
+      items: { label: string; url: string; note?: string }[];
+    }
+  | {
       type: "map_embeds";
       title?: string;
       routes: { label: string; origin: string; destination: string }[];
@@ -89,8 +94,9 @@ export const GUIDES_LISTINGS: GuideListing[] = [
     description: whereAreTheCotswoldsMeta.metaDescription,
     category: whereAreTheCotswoldsMeta.category,
     location: "Cotswolds-wide",
-    imageUrl: "/images/guide-placeholder.svg",
-    imageAlt: "Where Are the Cotswolds guide",
+    imageUrl:
+      "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/where-are-the-cotswolds/where%20are%20the%20cotswolds%20hero.png",
+    imageAlt: "Hero graphic locating the Cotswolds in England",
     websiteUrl: "/guides/where-are-the-cotswolds",
   },
   {

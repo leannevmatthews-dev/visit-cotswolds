@@ -32,7 +32,7 @@ export const cotswoldsWithoutACarContent: GuideContentBlock[] = [
     type: "image",
     id: "cotswolds-car-free-map",
     alt: "Map showing useful railway stations and public transport gateways in the Cotswolds",
-    placeholder: true,
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/cotswolds-without-a-car/Map%20showing%20useful%20railway%20stations%20and%20public%20transport%20gateways%20in%20the%20Cotswolds.png",
   },
   {
     type: "heading",
@@ -167,6 +167,22 @@ export const cotswoldsWithoutACarContent: GuideContentBlock[] = [
     ],
   },
   {
+    type: "links",
+    title: "Check times and book train tickets",
+    items: [
+      {
+        label: "National Rail Enquiries",
+        url: "https://www.nationalrail.co.uk",
+        note: "Journey planning and tickets across all operators",
+      },
+      {
+        label: "GWR",
+        url: "https://www.gwr.com",
+        note: "Main operator serving Paddington and Reading routes to Moreton-in-Marsh, Kingham, Charlbury, Kemble, Stroud and Cheltenham Spa",
+      },
+    ],
+  },
+  {
     type: "paragraph",
     text: "GWR also lists stations including Hanborough and others serving different parts of the wider region.",
   },
@@ -212,7 +228,11 @@ export const cotswoldsWithoutACarContent: GuideContentBlock[] = [
     type: "image",
     id: "cotswolds-town-street-scene",
     alt: "Street scene in a Cotswolds market town",
-    placeholder: true,
+    src: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cirencester_Market_-_geograph.org.uk_-_6890191.jpg",
+    imageCredit: {
+      text: "Photo: Mike Faherty, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
   },
   {
     type: "heading",
@@ -364,6 +384,27 @@ export const cotswoldsWithoutACarContent: GuideContentBlock[] = [
   {
     type: "notice",
     text: "Check before travelling: Rural bus routes and timetables can change. Connections mentioned in this guide were checked in July 2026. Always confirm your complete outward and return journey with the operator before setting out.",
+  },
+  {
+    type: "links",
+    title: "Check bus times before you travel",
+    items: [
+      {
+        label: "Stagecoach West",
+        url: "https://www.stagecoachbus.com/about/west",
+        note: "Covers Cheltenham, Stroud, Cirencester and surrounding routes",
+      },
+      {
+        label: "Pulhams Coaches",
+        url: "https://www.pulhams.co.uk/busservices/timetables/",
+        note: "Covers Moreton-in-Marsh, Stow-on-the-Wold, Bourton-on-the-Water, Bibury and Northleach, including service 855",
+      },
+      {
+        label: "Traveline",
+        url: "https://www.traveline.info",
+        note: "Independent journey planner covering all operators",
+      },
+    ],
   },
   {
     type: "heading",
@@ -529,11 +570,19 @@ export const cotswoldsWithoutACarContent: GuideContentBlock[] = [
     type: "image",
     id: "village-taxi-rank",
     alt: "Taxi at a Cotswold village",
-    placeholder: true,
+    src: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Pink_taxi_in_Tetbury_-_geograph.org.uk_-_4188719.jpg",
+    imageCredit: {
+      text: "Photo: Jaggery, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
   },
   {
     type: "paragraph",
     text: "The limitation is availability.",
+  },
+  {
+    type: "paragraph",
+    text: "Uber's app lists coverage in Cheltenham, Stroud and Cirencester, but real availability is inconsistent. Do not count on finding a car at short notice even in those towns. In smaller Cotswold villages and market towns such as Moreton-in-Marsh, Stow-on-the-Wold, Bourton-on-the-Water, Chipping Campden and Bibury, Uber does not operate at all. A pre-booked local taxi firm is the reliable option throughout the region, not an app.",
   },
   {
     type: "paragraph",
@@ -542,6 +591,37 @@ export const cotswoldsWithoutACarContent: GuideContentBlock[] = [
   {
     type: "paragraph",
     text: "A trip that uses trains and buses for the main journeys with one or two pre-booked taxis can still be significantly easier than hiring a car for the entire stay.",
+  },
+  {
+    type: "links",
+    title: "Local taxi companies in the main Cotswolds towns",
+    items: [
+      {
+        label: "Cotswold Taxis (Moreton-in-Marsh)",
+        url: "https://www.moretoninmarshtaxis.com",
+        note: "Licensed by Cotswold District Council",
+      },
+      {
+        label: "A&A Taxis (Stroud)",
+        url: "https://www.aandataxis.co.uk",
+        note: "Serving the Stroud valley for over 40 years",
+      },
+      {
+        label: "Cirencester Where 2 Taxi",
+        url: "https://www.cirencestertaxi.com",
+        note: "Covers Kemble station transfers and surrounding villages including Bibury",
+      },
+      {
+        label: "Charlbury Taxis",
+        url: "https://charlburytaxis.com",
+        note: "Covers Charlbury, Chipping Norton and Burford",
+      },
+      {
+        label: "Starline Taxis (Cheltenham)",
+        url: "https://starlinetaxis.com",
+        note: "Established over 30 years, officially recommended by Visit Cheltenham",
+      },
+    ],
   },
   {
     type: "heading",
@@ -617,7 +697,11 @@ export const cotswoldsWithoutACarContent: GuideContentBlock[] = [
     type: "image",
     id: "settled-in-cotswolds",
     alt: "Relaxing in a Cotswold village without a car",
-    placeholder: true,
+    src: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Cotswolds_Guided_Walk_-_panoramio.jpg",
+    imageCredit: {
+      text: "Photo: Keith Daulby, CC BY 3.0",
+      url: "https://creativecommons.org/licenses/by/3.0",
+    },
   },
   {
     type: "paragraph",

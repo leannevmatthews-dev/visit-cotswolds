@@ -155,6 +155,36 @@ export function GuideBlockRenderer({
                 </p>
               </aside>
             );
+          case "links":
+            return (
+              <aside
+                key={key}
+                className="border-l-4 border-limestone bg-surface-container-low px-5 py-4 md:px-6 md:py-5"
+              >
+                <p className="font-label-caps text-[10px] tracking-widest text-limestone uppercase mb-4">
+                  {block.title}
+                </p>
+                <ul className="space-y-4">
+                  {block.items.map((item) => (
+                    <li key={item.url}>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body-sm text-limestone underline-offset-2 hover:underline"
+                      >
+                        {item.label}
+                      </a>
+                      {item.note ? (
+                        <p className="font-body-sm mt-1 text-on-surface-variant leading-relaxed">
+                          {item.note}
+                        </p>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            );
           case "map_embeds":
             return (
               <GuideMapEmbeds
