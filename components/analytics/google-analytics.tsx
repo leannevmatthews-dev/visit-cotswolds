@@ -12,10 +12,8 @@ type GoogleAnalyticsProps = {
  * Do not place these scripts in app/layout.tsx <head> — that would load GA
  * unconditionally and bypass consent.
  *
- * If the visitor later declines after accepting in the same session, these
- * Script nodes unmount, but GA already initialised in-memory cannot be fully
- * unloaded without a page refresh. That is expected/acceptable; the declined
- * choice is stored and GA will not load on the next visit.
+ * Withdrawal (Decline) clears GA cookies and reloads the page so gtag is
+ * removed from memory; see CookieConsentBanner.decline().
  */
 export function GoogleAnalytics({ enabled }: GoogleAnalyticsProps) {
   if (!enabled) return null;

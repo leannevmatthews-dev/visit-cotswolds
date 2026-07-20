@@ -53,9 +53,10 @@ export default function CookiePolicyPage() {
               </h3>
               <p className="font-body-lg text-on-surface-variant leading-relaxed">
                 We use Google Analytics to understand how visitors use our site.
-                These cookies are only set if you click &quot;Accept&quot; on our
-                cookie banner. If you click &quot;Decline,&quot; these cookies are
-                not set.
+                Our Google Analytics 4 Measurement ID is G-TYLW0J2B50. These
+                cookies are only set if you click &quot;Accept&quot; on our cookie
+                banner. If you click &quot;Decline,&quot; these cookies are not
+                set.
               </p>
 
               <div className="overflow-x-auto border border-outline-variant/20">
@@ -85,7 +86,7 @@ export default function CookiePolicyPage() {
                     </tr>
                     <tr>
                       <td className="px-4 py-3 font-mono text-sm text-on-surface">
-                        _ga_*
+                        _ga_TYLW0J2B50
                       </td>
                       <td className="px-4 py-3 leading-relaxed">
                         Persists session state

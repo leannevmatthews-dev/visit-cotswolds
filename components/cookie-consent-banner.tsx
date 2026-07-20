@@ -6,6 +6,7 @@ import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import {
   COOKIE_PREFERENCES_EVENT,
   type CookieConsentValue,
+  clearGoogleAnalyticsCookies,
   readCookieConsent,
   writeCookieConsent,
 } from "@/lib/cookie-consent";
@@ -35,11 +36,12 @@ export function CookieConsentBanner() {
   }
 
   function decline() {
-    // Declining after a prior accept this session stores the choice for future
-    // loads; GA already running in this tab is not fully removable without refresh.
+    // Same path for the initial banner and "Cookie preferences" reopen.
+    // Clear GA cookies then reload so gtag.js / dataLayer leave memory —
+    // unmounting <GoogleAnalytics> alone is not enough after a prior accept.
     writeCookieConsent("declined");
-    setConsent("declined");
-    setShowBanner(false);
+    clearGoogleAnalyticsCookies();
+    window.location.reload();
   }
 
   const gaEnabled = ready && consent === "accepted";
