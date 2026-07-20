@@ -3,10 +3,15 @@
 @import url('responsive.css');
 
 :root {
-    --site-header-height: 5.5rem;
+    --site-header-height: 7rem;
     --site-header-nav-breakpoint: 1200px;
-    --site-logo-ratio: 5 / 1;
-    --site-logo-width: clamp(9rem, 18vw, 15rem);
+    /*
+     * Source PNG is 2000×2000; opaque artwork ~1836×358.
+     * Frame uses that content width with ~20% extra vertical padding so the
+     * hills/wordmark aren’t tight to the clip edges.
+     */
+    --site-logo-ratio: 1836 / 430;
+    --site-logo-width: clamp(10rem, 20vw, 16rem);
 }
 
 .site-header {
@@ -73,24 +78,35 @@
 /* Logo sits in the centre grid column — nav flanks it on both sides */
 .site-header__logo {
     grid-column: 2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    display: block;
     line-height: 0;
     text-decoration: none;
     flex-shrink: 0;
-    width: var(--site-logo-width);
-    max-width: var(--site-logo-width);
+    width: min(
+        var(--site-logo-width),
+        calc((var(--site-header-height) - 1.5rem) * 1836 / 430)
+    );
+    max-width: 100%;
+    aspect-ratio: var(--site-logo-ratio);
+    height: auto;
+    overflow: hidden;
     z-index: 2;
 }
 
 .site-header__logo img,
 .site-header__logo-svg {
-    display: block;
-    height: clamp(2rem, 2.5vw + 0.75rem, 3rem);
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: var(--site-logo-ratio);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* Scale square asset so opaque content + padding fills the frame height */
+    height: calc(100% * 2000 / 430);
+    width: auto;
+    max-width: none;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    /* Opaque content is vertically centred around ~43.2% of the canvas */
+    transform: translate(-50%, -43.2%);
 }
 
 /* Footer / standalone brand mark */
@@ -105,10 +121,12 @@
 .site-logo img,
 .site-logo-svg {
     display: block;
-    height: clamp(2.25rem, 2.5vw + 1.25rem, 3.5rem);
+    height: clamp(2.5rem, 3vw + 1rem, 3.5rem);
     width: auto;
     aspect-ratio: var(--site-logo-ratio);
     max-width: min(17.5rem, 90vw);
+    object-fit: cover;
+    object-position: center 43.2%;
 }
 
 .site-header__icon-btn {

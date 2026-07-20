@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { CookiePreferencesButton } from "@/components/cookie-preferences-button";
 import { NAV_ITEMS } from "@/lib/nav";
 
 const FOOTER_INFORMATION_LINKS = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Use", href: "/terms" },
+  { label: "Cookie Policy", href: "/cookie-policy" },
+  { label: "Editorial Policy", href: "/editorial-policy" },
 ] as const;
 
 const footerLinkClassName =
@@ -51,6 +55,11 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <CookiePreferencesButton
+                    className={`${footerLinkClassName} text-left`}
+                  />
+                </li>
               </ul>
             </nav>
           </div>

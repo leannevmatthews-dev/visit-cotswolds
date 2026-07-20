@@ -11,6 +11,9 @@ const STATIC_PAGES = [
   "/about",
   "/contact",
   "/privacy-policy",
+  "/cookie-policy",
+  "/terms",
+  "/editorial-policy",
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
