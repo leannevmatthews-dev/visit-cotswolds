@@ -441,7 +441,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     imageUrl:
       "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/-/media/sites/cotswolds/main-site/food/aw25/venison--braised-faggot0002.jpg?la=en&h=1280&w=1920&hash=F5CF37C1A30D0DCD67C18C00D1B91312",
     imageAlt: "The Swan Hotel, restaurants in Bibury",
-    websiteUrl: "https://www.swanhotelbibury.co.uk",
+    websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/",
   },
   {
     id: "catherine-wheel-bibury",
@@ -456,7 +456,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     imageUrl:
       "https://catherinewheel-bibury.co.uk/wp-content/uploads/2025/11/Catherine-Wheel-front-view.jpg",
     imageAlt: "The Catherine Wheel, gastropub in Bibury",
-    websiteUrl: "https://www.catherinewheelbibury.co.uk",
+    websiteUrl: "https://catherinewheel-bibury.co.uk/",
   },
   {
     id: "trout-farm-cafe",

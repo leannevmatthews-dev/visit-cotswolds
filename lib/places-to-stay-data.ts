@@ -329,7 +329,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     imageUrl:
       "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/-/media/sites/cotswolds/swan/2025-rooms-swan/superior-double-twin/swan-pink-room-8-deluxe-double.jpg",
     imageAlt: "The Swan Hotel, boutique hotel in Bibury",
-    websiteUrl: "https://www.swanhotelbibury.co.uk",
+    websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/",
   },
   {
     id: "bull-burford",
