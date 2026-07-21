@@ -37,7 +37,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "london-cotswolds-map",
     alt: "Map showing London and the Cotswolds with Moreton-in-Marsh, Kemble and Chippenham marked",
-    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/Map%20showing%20London%20and%20the%20Cotswolds%20with%20Moreton-in-Marsh%2C%20Kemble%20and%20Chippenham%20marked%20.png",
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/how-far-are-the-cotswolds-from-london/Map%20showing%20London%20and%20the%20Cotswolds%20with%20Moreton-in-Marsh%2C%20Kemble%20and%20Chippenham%20marked%20.png",
   },
   {
     type: "heading",
@@ -111,7 +111,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "paddington-departures",
     alt: "London Paddington station departure board showing westbound services",
-    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/London%20Paddington%20station%20departure%20board%20showing%20westbound%20services.png",
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/how-far-are-the-cotswolds-from-london/London%20Paddington%20station%20departure%20board%20showing%20westbound%20services.png",
   },
   {
     type: "heading",
@@ -285,7 +285,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "london-cotswolds-train-map",
     alt: "Map showing rail routes from London Paddington towards Cotswold gateway stations",
-    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/Map%20showing%20rail%20routes%20from%20London%20Paddington%20towards%20Cotswold%20gateway%20stations.png",
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/how-far-are-the-cotswolds-from-london/Map%20showing%20rail%20routes%20from%20London%20Paddington%20towards%20Cotswold%20gateway%20stations.png",
   },
   {
     type: "heading",
@@ -373,7 +373,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "cotswolds-approach-road",
     alt: "Rural road approaching the Cotswolds",
-    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/Rural%20road%20approaching%20the%20Cotswolds.png",
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/how-far-are-the-cotswolds-from-london/Rural%20road%20approaching%20the%20Cotswolds.png",
   },
   {
     type: "paragraph",
@@ -417,7 +417,7 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
     type: "image",
     id: "national-express-coach",
     alt: "National Express coach",
-    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/National%20Express%20coach.png",
+    src: "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/guide-pages/how-far-are-the-cotswolds-from-london/National%20Express%20coach.png",
   },
   {
     type: "paragraph",
