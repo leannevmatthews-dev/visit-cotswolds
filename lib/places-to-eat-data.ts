@@ -435,7 +435,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "Bibury's most polished dining address. The walled garden feels secret even when it's full, and afternoon tea is the single busiest service, booked out weeks ahead most of the year.",
     category: "Restaurants",
     location: "Bibury",
-    address: "",
+    address: "The Swan Hotel, Bibury, Cirencester, Gloucestershire, GL7 5NW",
     dogFriendly: false,
     priceLevel: 2,
     imageUrl:
@@ -450,7 +450,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "A 15th-century pub a short walk uphill from Arlington Row, family-run since 2009. Locally sourced pub classics, a fire in winter, a garden in summer, and its own car park, which is rarer than it sounds in Bibury.",
     category: "Gastropubs",
     location: "Bibury",
-    address: "",
+    address: "Catherine Wheel, Arlington, Bibury, Cirencester, Gloucestershire, GL7 5ND",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -465,7 +465,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "The café at Bibury Trout Farm, England's oldest working trout farm since 1902. Simple food, trout naturally included, eaten outdoors among the ponds. More a stop between fish-feeding and crazy golf than a destination meal.",
     category: "Farm Shops & Cafes",
     location: "Bibury",
-    address: "",
+    address: "Bibury Trout Farm, Arlington, Bibury, Cirencester, Gloucestershire, GL7 5NL",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl: "https://biburytroutfarm.co.uk/wp-content/uploads/2025/06/food-2.jpg",
@@ -479,7 +479,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "A 15th-century coaching inn on Burford's High Street with an unexpected Spanish twist. Toro, its tapas restaurant, does sharing plates rather than the pub food you'd expect. Book ahead for dinner, it's popular with locals too.",
     category: "Gastropubs",
     location: "Burford",
-    address: "",
+    address: "117 High Street, Burford, Oxfordshire, OX18 4RG",
     dogFriendly: false,
     priceLevel: 2,
     imageUrl:
@@ -494,7 +494,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "An Indian restaurant on Burford High Street with a loyal following, biryani and jalfrezi are what people come back for. Spread over two floors; there's no ground-floor toilet, worth knowing if mobility is a factor.",
     category: "Restaurants",
     location: "Burford",
-    address: "",
+    address: "81 High Street, Burford, Oxfordshire, OX18 4QA",
     dogFriendly: false,
     priceLevel: 2,
     imageUrl: "https://www.thespiceloungeburford.co.uk/images/herbs_and_spices.jpg",
@@ -508,7 +508,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "An Australian-style café with sourdough melts and proper coffee, part of a small local group with its own bakery on the Hatherop estate. Seating is tight and it gets busy, more a stop than a lingering breakfast.",
     category: "Farm Shops & Cafes",
     location: "Burford",
-    address: "",
+    address: "134 High Street, Burford, Oxfordshire, OX18 4QU",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -523,7 +523,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "A bakery and tearoom on Burford High Street since 1890, in a listed building with original beams. Cream tea is the reason to come, alongside the traditional lardy cake, an old-fashioned treat that's increasingly hard to find.",
     category: "Farm Shops & Cafes",
     location: "Burford",
-    address: "",
+    address: "98 High Street, Burford, Oxfordshire, OX18 4QF",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -538,7 +538,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "Run by the King family since 2011, tucked just off the High Street rather than on it, which catches out a fair few first-time visitors circling the main drag. Multiple Cotswold Pub of the Year wins over the years rather than a one-off award to hang the reputation on. Ask for the walled garden in summer if the log fire inside isn't your thing.",
     category: "Gastropubs",
     location: "Burford",
-    address: "",
+    address: "14 Witney Street, Burford, Oxfordshire, OX18 4SN",
     dogFriendly: false,
     priceLevel: 2,
     imageUrl:
@@ -553,7 +553,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "Two AA Rosettes for a menu that goes further than the average village pub, seasonal and modern British rather than straightforward pub grub. This is a village that's hosted more than a few film crews over the years.",
     category: "Gastropubs",
     location: "Castle Combe",
-    address: "",
+    address: "West Street, Castle Combe, Wiltshire, SN14 7HN",
     dogFriendly: false,
     priceLevel: 2,
     imageUrl:
@@ -568,7 +568,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "The Manor House's Michelin-starred restaurant, adults-only for dinner (12 and up), so if you've got younger kids this isn't the meal to plan around unless you're eating in one of the hotel's other spaces instead. Executive chef Robert Potter's tasting menu draws heavily on the hotel's own kitchen garden, which shows up as a genuinely seasonal menu rather than one that just says it is.",
     category: "Restaurants",
     location: "Castle Combe",
-    address: "",
+    address: "The Manor House Hotel, Castle Combe, Chippenham, SN14 7HX",
     dogFriendly: false,
     priceLevel: 3,
     imageUrl:
@@ -583,7 +583,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "A short drive from Castle Combe at The Gibb crossroads, not actually in the village itself, which keeps it quieter than the pubs in the centre. Seasonal, locally sourced food, and a strong reputation for its Sunday roast.",
     category: "Gastropubs",
     location: "Castle Combe",
-    address: "",
+    address: "The Gibb, Castle Combe, Chippenham, Wiltshire, SN14 7LH",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -598,7 +598,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "Tucked down an alley off the main street and easy to miss, look for the small sign. Run by Philippa and Yasmin, with a log burner, local art on the walls, and a warm welcome for muddy boots and dogs.",
     category: "Farm Shops & Cafes",
     location: "Castle Combe",
-    address: "",
+    address: "The Estate Yard, Castle Combe, Wiltshire, SN14 7HU",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -613,7 +613,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "Not a café you can walk into, this is a pre-order picnic box service run by Anna, with hampers that come complete with china, blankets, and games. Order ahead; it sells out on busy weekends.",
     category: "Afternoon Tea",
     location: "Castle Combe",
-    address: "",
+    address: "The Street, Castle Combe, Wiltshire, SN14 7HU",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -628,7 +628,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "The National Trust café at Snowshill Manor, serving jacket potatoes and pasties rather than anything ambitious. Useful for refuelling between the manor's eccentric collection and the garden. Dogs welcome outside, not inside the manor.",
     category: "Farm Shops & Cafes",
     location: "Snowshill",
-    address: "",
+    address: "Snowshill Manor and Garden, Snowshill, near Broadway, Gloucestershire, WR12 7JU",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -644,7 +644,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "A 15th-century village pub serving Donnington ales alongside straightforward pub classics like Gloucester Old Spot sausages and mash. No TV, no music, just a log fire and a skittle alley round the back. Popular with walkers on the Cotswold Way, and it shows on Sundays, when tables go fast without a booking.",
     category: "Gastropubs",
     location: "Snowshill",
-    address: "",
+    address: "Snowshill, Broadway, Worcestershire, WR12 7JU",
     dogFriendly: true,
     priceLevel: 1,
     imageUrl: "http://www.snowshillarms.co.uk/wpimages/wpa5cd2b2c_05_06.jpg",
@@ -658,7 +658,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "A seasonal cabin at the lavender fields selling lavender scones, ice cream, and drinks, nothing more substantial. Only open while the lavender blooms, roughly mid-June to early August, so check dates before building a trip around it.",
     category: "Farm Shops & Cafes",
     location: "Snowshill",
-    address: "",
+    address: "Hill Barn Farm, Snowshill, Broadway, Worcestershire, WR12 7JY",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -673,7 +673,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "Handmade burgers from two brothers who started the business mid-pandemic and took third place at the National Burger Awards in 2025. Thirty seats only, worth booking, and the dry-aged beef comes from the same butcher supplying several of the area's better restaurants.",
     category: "Restaurants",
     location: "Bourton-on-the-Water",
-    address: "",
+    address: "Victoria Street, Bourton-on-the-Water, Cheltenham, GL54 2BT",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -688,7 +688,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "A family-run bakery right on the River Windrush, with a riverside terrace that's the real draw. Good pastries and a well-regarded quiche, though it gets busy fast and queues build through the middle of the day.",
     category: "Farm Shops & Cafes",
     location: "Bourton-on-the-Water",
-    address: "",
+    address: "1 Sherborne Street, Bourton-on-the-Water, Cheltenham, GL54 2BY",
     dogFriendly: false,
     priceLevel: 1,
     imageUrl:
@@ -703,7 +703,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "A 19th-century freehouse at the quieter end of Bourton, away from the crush around the river. Craft ales on tap, a proper Sunday roast, and 11 rooms upstairs if you want to stay. Parking is tight, budget extra time.",
     category: "Gastropubs",
     location: "Bourton-on-the-Water",
-    address: "",
+    address: "Lansdowne, Bourton-on-the-Water, Gloucestershire, GL54 2AR",
     dogFriendly: false,
     priceLevel: 2,
     imageUrl:
@@ -718,7 +718,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "The kitchen leans on classic pub dishes rather than trying to reinvent itself, and Sundays mean the set lunch menu only, nothing else. If you're staying at the inn you get 10% off here, which is a reason to eat in rather than walk to one of the busier spots on the main street.",
     category: "Gastropubs",
     location: "Bourton-on-the-Water",
-    address: "",
+    address: "Rissington Road, Bourton-on-the-Water, GL54 2AF",
     dogFriendly: false,
     priceLevel: 2,
     imageUrl:
@@ -733,7 +733,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "Fine dining in the centre of Bourton, with Maxi's Tipi Lounge next door for something more casual. Reviews on the food are consistently strong; service has been described as correct rather than warm, so opinions split there.",
     category: "Restaurants",
     location: "Bourton-on-the-Water",
-    address: "",
+    address: "High Street, Bourton-on-the-Water, GL54 2AN",
     dogFriendly: false,
     priceLevel: 2,
     imageUrl:

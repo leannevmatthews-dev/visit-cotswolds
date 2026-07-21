@@ -14,6 +14,7 @@ export type ListingLike = {
   websiteUrl?: string;
   address?: string;
   category?: string;
+  isAttraction?: boolean;
 };
 
 function getListingPostalAddress(address?: string) {
@@ -226,6 +227,17 @@ export function getEventListJsonLd(events: WhatsOnEvent[]) {
 
 export function getLocalBusinessListJsonLd(listings: ListingLike[]) {
   return listings.map((listing) => {
+    if (listing.isAttraction) {
+      return {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        name: listing.name,
+        description: listing.description,
+        ...(listing.imageUrl ? { image: listing.imageUrl } : {}),
+        ...(listing.websiteUrl ? { url: listing.websiteUrl } : {}),
+      };
+    }
+
     const postalAddress = getListingPostalAddress(listing.address);
 
     return {

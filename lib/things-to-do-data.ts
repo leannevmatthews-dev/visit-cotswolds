@@ -13,6 +13,7 @@ export type ThingsToDoListing = DirectoryListing & {
   familyFriendly: boolean;
   location: string;
   address: string;
+  isAttraction?: boolean;
 };
 
 export const THINGS_TO_DO_HERO_IMAGE =
@@ -445,6 +446,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "A former wool-drying meadow beside clear chalk-stream water. The riverside is the calmer side of Bibury and the start of the longer Coln walking route.",
     category: "Walks & Trails",
     location: "Bibury",
+    isAttraction: true,
     address: "",
     familyFriendly: true,
     priceLevel: 1,
@@ -461,6 +463,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "A sloping stone street running from the top of town down to the River Windrush and medieval bridge. Independent shops, pubs and cafes line both sides. It is the practical centre of any Burford visit and works better on foot than by car.",
     category: "Walks & Trails",
     location: "Burford",
+    isAttraction: true,
     address: "",
     familyFriendly: true,
     priceLevel: 1,
@@ -477,7 +480,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "Norman origins, open daily 9am to 5pm and free to enter. More than 100,000 visitors a year and one of the most historically significant churches in the Cotswolds. The Levellers connection from 1649 is documented inside.",
     category: "Historic Houses",
     location: "Burford",
-    address: "",
+    address: "Church Green, Burford, Oxfordshire, OX18 4RY",
     familyFriendly: true,
     priceLevel: 1,
     imageUrl:
@@ -493,6 +496,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "The 14th-century Market Cross stands where the three principal streets of the lower village converge. This is the recognised film-location view, the most-photographed part of Castle Combe and the centre of any visit.",
     category: "Historic Houses",
     location: "Castle Combe",
+    isAttraction: true,
     address: "",
     familyFriendly: true,
     priceLevel: 1,
@@ -509,6 +513,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "A signed walking route follows By Brook beyond the lower village through Long Dean, Nettleton Mill and gentle climbs. It covers ground most day visitors never reach and is the best way to extend a Castle Combe visit beyond the central street.",
     category: "Walks & Trails",
     location: "Castle Combe",
+    isAttraction: true,
     address: "",
     familyFriendly: true,
     priceLevel: 1,
@@ -525,6 +530,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "365 acres of formal gardens and parkland surround the hotel, and non-guests can walk the grounds even if you're not staying or eating here. Castle Combe itself gets busy with day-trippers by late morning, so this is a quieter alternative if you want the village's countryside without the crowds on the high street.",
     category: "Walks & Trails",
     location: "Castle Combe",
+    isAttraction: true,
     address: "",
     familyFriendly: true,
     priceLevel: 1,
@@ -540,7 +546,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "The eccentric former home of Charles Paget Wade, who spent decades collecting everything from samurai armour to mousetraps rather than furnishing the house the way anyone else would. It's a genuine 500-yard walk uphill from the car park to the garden, worth knowing if mobility's a factor, though a buggy runs between the two. Skip it with young children. There's little here to hold their attention room after room, and better to save the visit for when they're old enough to find the oddities interesting rather than boring.",
     category: "Historic Houses",
     location: "Snowshill",
-    address: "",
+    address: "Snowshill, near Broadway, Gloucestershire, WR12 7JU",
     familyFriendly: false,
     priceLevel: 2,
     imageUrl:
@@ -556,7 +562,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "A seasonal working lavender farm at Hill Barn Farm, Snowshill. Open 11 June to 5 August 2026, with peak flowering from 27 June onwards. Adult admission £7.75, child £3.50. Card payment only. Parking is free for patrons.",
     category: "Gardens & Estates",
     location: "Snowshill",
-    address: "",
+    address: "Hill Barn Farm, Snowshill, Broadway, Worcestershire, WR12 7JY",
     familyFriendly: true,
     priceLevel: 1,
     imageUrl:
@@ -571,6 +577,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "A signed Cotswolds National Landscape circular route linking Snowshill, Stanton and The Edge via the Cotswold Way. The full route is 6 miles; a shorter 2.5-mile option is available. Stanton makes a natural pairing with Snowshill on a walking day.",
     category: "Walks & Trails",
     location: "Snowshill",
+    isAttraction: true,
     address: "",
     familyFriendly: true,
     priceLevel: 1,
@@ -586,6 +593,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "The low stone bridges crossing the Windrush through the village centre are the reason Bourton picked up its Venice nickname. Before 10am they are genuinely photogenic; by midday in summer they are often busy.",
     category: "Walks & Trails",
     location: "Bourton-on-the-Water",
+    isAttraction: true,
     address: "",
     familyFriendly: true,
     priceLevel: 1,
@@ -602,7 +610,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "Nine acres of aviaries and woodland along the River Windrush, and the only breeding colony of King Penguins in England. It's a two-minute drive from the village centre rather than on the main street itself, so don't expect to just stumble on it during a stroll along the water. Good half-day option if you're travelling with kids and need a break from village-hopping.",
     category: "Family",
     location: "Bourton-on-the-Water",
-    address: "",
+    address: "Rissington Road, Bourton-on-the-Water, Gloucestershire, GL54 2BN",
     familyFriendly: true,
     priceLevel: 2,
     imageUrl:
@@ -617,7 +625,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "Seven small galleries of vintage cars, motorcycles and toys, best known for housing Brum, the yellow car from the children's TV series. It won't fill a whole day, so treat it as a rainy-afternoon option rather than the main reason to visit Bourton.",
     category: "Unique Experiences",
     location: "Bourton-on-the-Water",
-    address: "",
+    address: "The Old Mill, Bourton-on-the-Water, Gloucestershire, GL54 2BY",
     familyFriendly: true,
     priceLevel: 2,
     imageUrl:
@@ -632,7 +640,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "A proper wildlife park 2 miles south of Burford on the A361, with rhinos, zebras, giraffes, big cats and penguins across 160 acres. Paid admission from £17.50 adult and £12.50 child in 2026. Allow at least half a day.",
     category: "Family",
     location: "Burford",
-    address: "",
+    address: "Bradwell Grove, Burford, Oxfordshire, OX18 4JP",
     familyFriendly: true,
     priceLevel: 2,
     imageUrl:
