@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import {
+  BEFORE_YOU_GO_GUIDE_SLUGS,
+  BeforeYouGoSection,
+} from "@/components/guides/before-you-go-section";
 import { GuideBlockRenderer } from "@/components/guides/guide-block-renderer";
 import { GuidePageHero } from "@/components/guides/guide-page-hero";
 import { GuideToc } from "@/components/guides/guide-toc";
@@ -113,6 +117,11 @@ export default async function GuidePage({ params }: GuidePageProps) {
             blockOffset={tocInsertIndex}
             headingIds={headingIds}
           />
+          {(BEFORE_YOU_GO_GUIDE_SLUGS as readonly string[]).includes(
+            listing.id,
+          ) ? (
+            <BeforeYouGoSection currentSlug={listing.id} />
+          ) : null}
         </article>
       </main>
     </>

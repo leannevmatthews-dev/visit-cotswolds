@@ -411,6 +411,9 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
         />
 
         <section className="mx-auto max-w-container-max px-margin-mobile pb-24 pt-10 md:px-margin-desktop md:pb-32 md:pt-12">
+          <h2 className="font-display-lg text-[40px] md:text-[52px] text-primary leading-tight mb-8 md:mb-10">
+            Upcoming Events
+          </h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-5">
             {visibleEvents.map((event) => (
               <EventCard key={event.id} event={event} />

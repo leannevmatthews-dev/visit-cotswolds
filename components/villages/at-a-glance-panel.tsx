@@ -50,9 +50,9 @@ export function AtAGlancePanel({ village }: AtAGlancePanelProps) {
 
   return (
     <aside className="village-at-a-glance village-panel">
-      <h3 className="village-at-a-glance__title font-label-caps text-label-caps text-limestone tracking-widest">
+      <h2 className="village-at-a-glance__title font-label-caps text-label-caps text-limestone tracking-widest">
         At A Glance
-      </h3>
+      </h2>
 
       <div className="village-at-a-glance__facts">
         {facts.map((fact) => (
