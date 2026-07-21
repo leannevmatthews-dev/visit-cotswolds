@@ -306,7 +306,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     imageUrl:
       "https://rootsandseedskitchengarden.co.uk/wp-content/uploads/2024/04/Home-Page-Brunch.jpg",
     imageAlt: "Roots + Seeds, farm shop and cafe in Cirencester",
-    websiteUrl: "https://rootsandseeds.co.uk",
+    websiteUrl: "https://rootsandseedskitchengarden.co.uk",
   },
   {
     id: "the-bathurst-arms",

@@ -341,7 +341,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "https://upload.wikimedia.org/wikipedia/commons/5/57/Stow-on-the-Wold_church_-_geograph.org.uk_-_2534959.jpg",
     imageAlt: "St Edward's Church, Stow-on-the-Wold, historic houses in Stow-on-the-Wold",
     imageCredit: { text: "Photo: Philip Halling, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
-    websiteUrl: "https://www.stowbenefice.org.uk",
+    websiteUrl: "https://www.scats.org.uk",
   },
   {
     id: "cleeve-hill-walk",
