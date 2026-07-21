@@ -317,6 +317,7 @@ export function VillageForm({
             insider_tip: "",
             image_url: "",
             image_alt: "",
+            external_link: null,
           })}
           addLabel="Add thing to do"
           emptyLabel="No things to do yet."

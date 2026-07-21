@@ -81,6 +81,7 @@ export type ThingsToDoItem = {
   insider_tip: string;
   image_url: string | null;
   image_alt?: string | null;
+  external_link: string | null;
 };
 
 export type CombineWithTrip = {

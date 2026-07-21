@@ -228,7 +228,55 @@ type ThingsToDoListingSource = {
   location: string;
   imageUrl: string;
   imageAlt: string;
+  websiteUrl: string;
 };
+
+function findThingsToDoListingByTitle<
+  TListing extends { name: string },
+>(title: string, listings: TListing[]): TListing | undefined {
+  return listings.find(
+    (listing) =>
+      listing.name === title ||
+      listing.name.toLowerCase() === title.toLowerCase(),
+  );
+}
+
+/** Fill missing image/link on village things-to-do from directory listings by title. */
+export function enrichThingsToDoFromListings<
+  TItem extends {
+    title: string;
+    image_url: string | null;
+    image_alt?: string | null;
+    external_link: string | null;
+  },
+>(items: TItem[], listings: ThingsToDoListingSource[]): TItem[] {
+  return items.map((item) => {
+    const listing = findThingsToDoListingByTitle(item.title, listings);
+    if (!listing) {
+      return item;
+    }
+
+    const imageUrlEmpty = !item.image_url?.trim();
+    const imageAltEmpty = !item.image_alt?.trim();
+    const externalLinkEmpty = !item.external_link?.trim();
+
+    return {
+      ...item,
+      image_url:
+        imageUrlEmpty && listing.imageUrl.trim()
+          ? listing.imageUrl.trim()
+          : item.image_url,
+      image_alt:
+        imageAltEmpty && listing.imageAlt.trim()
+          ? listing.imageAlt.trim()
+          : item.image_alt,
+      external_link:
+        externalLinkEmpty && listing.websiteUrl.trim()
+          ? listing.websiteUrl.trim()
+          : item.external_link,
+    };
+  });
+}
 
 const THINGS_TO_DO_STOP_WORDS = new Set([
   "the",
@@ -283,6 +331,7 @@ function listingToThingsToDoItem(
     insider_tip: "",
     image_url: listing.imageUrl,
     image_alt: listing.imageAlt,
+    external_link: listing.websiteUrl.trim() || null,
   };
 }
 
@@ -292,7 +341,14 @@ export function buildVillageThingsToDo(
   thingsToDo: ThingsToDoItem[],
   listings: ThingsToDoListingSource[],
 ): ThingsToDoItem[] {
-  const result = thingsToDo.slice(0, VILLAGE_SECTION_PICK_LIMIT);
+  const curated = enrichThingsToDoFromListings(
+    thingsToDo.slice(0, VILLAGE_SECTION_PICK_LIMIT).map((item) => ({
+      ...item,
+      external_link: item.external_link ?? null,
+    })),
+    listings,
+  );
+  const result = [...curated];
 
   if (result.length >= VILLAGE_SECTION_PICK_LIMIT) {
     return result;

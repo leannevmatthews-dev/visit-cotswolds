@@ -164,6 +164,7 @@ export function toInsertPayload(state: VillageFormState): VillageInsertPayload {
       insider_tip: (item.insider_tip ?? "").trim(),
       image_url: emptyToNull(item.image_url ?? ""),
       image_alt: emptyToNull(item.image_alt ?? ""),
+      external_link: emptyToNull(item.external_link ?? ""),
     })),
     combine_with: state.combine_with.map((item) => ({
       title: (item.title ?? "").trim(),
@@ -320,6 +321,7 @@ export function villageToFormState(village: Village): VillageFormState {
       ...item,
       image_url: nullToEmpty(item.image_url),
       image_alt: nullToEmpty(item.image_alt),
+      external_link: nullToEmpty(item.external_link ?? null),
     })),
     combine_with: (village.combine_with ?? []).map(normalizeCombineWithTrip),
     places_to_stay: (village.places_to_stay ?? []).map((place) => ({

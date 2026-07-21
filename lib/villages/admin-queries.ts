@@ -47,6 +47,10 @@ export async function getVillageForAdminBySlug(
   const { curated_experiences, ...rest } = row;
   return {
     ...rest,
-    things_to_do: (curated_experiences as Village["things_to_do"] | null) ?? [],
+    things_to_do:
+      (curated_experiences as Village["things_to_do"] | null)?.map((item) => ({
+        ...item,
+        external_link: item.external_link ?? null,
+      })) ?? [],
   } as Village;
 }

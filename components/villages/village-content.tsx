@@ -103,6 +103,7 @@ function ExperienceCard({
   const imageAlt =
     experience.image_alt || fallbackListing?.imageAlt || experience.title;
   const fallbackHref = "/things-to-do";
+  const href = experience.external_link ?? fallbackHref;
   const meta = fallbackListing
     ? `${fallbackListing.category} · ${fallbackListing.location}`
     : null;
@@ -110,7 +111,7 @@ function ExperienceCard({
 
   return (
     <div className="village-pick group">
-      <a className="block text-inherit no-underline" href={fallbackHref}>
+      <a className="block text-inherit no-underline" href={href}>
         <div className="village-pick__image">
           {imageUrl ? (
             <Image

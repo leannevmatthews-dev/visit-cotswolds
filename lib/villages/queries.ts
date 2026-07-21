@@ -85,7 +85,11 @@ export async function getVillageBySlug(slug: string): Promise<Village | null> {
 
   return {
     ...rest,
-    things_to_do: (curated_experiences as ThingsToDoItem[] | null) ?? [],
+    things_to_do:
+      (curated_experiences as ThingsToDoItem[] | null)?.map((item) => ({
+        ...item,
+        external_link: item.external_link ?? null,
+      })) ?? [],
   } as Village;
 }
 
