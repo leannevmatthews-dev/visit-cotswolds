@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useState } from "react";
-import { createVillage, updateVillage } from "@/app/admin/actions";
+import { useState } from "react";
+import { createVillage, unpublishVillage, updateVillage } from "@/app/admin/actions";
 import { FormSection } from "@/components/admin/village-form/form-section";
 import { ImageUploadField } from "@/components/admin/village-form/image-upload-field";
 import {
@@ -21,6 +21,7 @@ import { slugifyName, validateVillageForm } from "@/lib/villages/form-schema";
 import {
   COTSWOLDS_REGIONS,
   type CrowdLevel,
+  type VillageStatus,
 } from "@/lib/villages/types";
 import type { FormFieldErrors, VillageFormState } from "@/lib/villages/form-types";
 
@@ -29,6 +30,7 @@ type VillageFormProps = {
   villageId?: number;
   initialData?: VillageFormState;
   originalSlug?: string;
+  currentStatus?: VillageStatus;
   /** Other villages available for comparison multi-select. */
   villageOptions?: { id: number; name: string }[];
 };
@@ -38,14 +40,19 @@ export function VillageForm({
   villageId,
   initialData,
   originalSlug,
+  currentStatus = "draft",
   villageOptions = [],
 }: VillageFormProps) {
   const [form, setForm] = useState<VillageFormState>(
     () => initialData ?? defaultVillageFormState(),
   );
+  const [status, setStatus] = useState<VillageStatus>(currentStatus);
   const [errors, setErrors] = useState<FormFieldErrors>({});
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [pending, setPending] = useState(false);
+  const [pendingAction, setPendingAction] = useState<VillageStatus | null>(
+    null,
+  );
+  const [unpublishPending, setUnpublishPending] = useState(false);
   const [slugTouched, setSlugTouched] = useState(mode === "edit");
 
   function setField<K extends keyof VillageFormState>(
@@ -71,8 +78,7 @@ export function VillageForm({
     }));
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function handleSave(status: VillageStatus) {
     setSubmitError(null);
 
     const validation = validateVillageForm(form);
@@ -82,18 +88,58 @@ export function VillageForm({
     }
 
     setErrors({});
-    setPending(true);
+    setPendingAction(status);
 
     const result =
       mode === "edit" && villageId != null && originalSlug
-        ? await updateVillage(villageId, originalSlug, form)
-        : await createVillage(form);
+        ? await updateVillage(villageId, originalSlug, form, status)
+        : await createVillage(form, status);
 
     if (result && "error" in result) {
       setSubmitError(result.error);
-      setPending(false);
+      setPendingAction(null);
+    } else {
+      setStatus(status);
     }
   }
+
+  async function handleUnpublish() {
+    if (villageId == null || !originalSlug) {
+      return;
+    }
+
+    const villageName = form.name.trim() || "this village";
+    const confirmed = window.confirm(
+      `Are you sure you want to take ${villageName} offline? It will no longer appear on the live site.`,
+    );
+
+    if (!confirmed) {
+      return;
+    }
+
+    setSubmitError(null);
+    setUnpublishPending(true);
+
+    const result = await unpublishVillage(villageId, originalSlug);
+
+    if ("error" in result) {
+      setSubmitError(result.error);
+      setUnpublishPending(false);
+      return;
+    }
+
+    setStatus("draft");
+    setUnpublishPending(false);
+  }
+
+  const isPublished = status === "published";
+  const pending = pendingAction !== null || unpublishPending;
+  const secondaryStatus: VillageStatus = isPublished ? "published" : "draft";
+  const secondaryLabel = isPublished ? "Save Changes" : "Save Draft";
+  const secondaryPendingLabel = isPublished
+    ? "Saving changes…"
+    : "Saving draft…";
+  const publishPendingLabel = isPublished ? "Saving changes…" : "Publishing…";
 
   function handleNameBlur() {
     if (!slugTouched && form.name.trim()) {
@@ -101,17 +147,23 @@ export function VillageForm({
     }
   }
 
-  const saveLabel =
-    mode === "edit"
-      ? pending
-        ? "Saving changes…"
-        : "Save changes"
-      : pending
-        ? "Saving…"
-        : "Save village";
-
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+    <form
+      onSubmit={(event) => event.preventDefault()}
+      className="flex flex-col gap-6"
+    >
+      <div className="flex items-center gap-3">
+        <span
+          className={`inline-flex items-center rounded-full px-3 py-1 font-label-caps text-[10px] tracking-widest uppercase ${
+            isPublished
+              ? "bg-limestone/15 text-limestone"
+              : "bg-on-surface-variant/10 text-on-surface-variant"
+          }`}
+        >
+          {isPublished ? "Published" : "Draft"}
+        </span>
+      </div>
+
       {(errors.form || submitError) && (
         <div
           className="border border-error/40 bg-error/10 px-4 py-3 font-body-sm text-error"
@@ -1276,7 +1328,20 @@ export function VillageForm({
       </FormSection>
 
       <div className="sticky bottom-0 z-10 -mx-margin-mobile border-t border-outline/15 bg-background/95 px-margin-mobile py-4 backdrop-blur md:-mx-margin-desktop md:px-margin-desktop">
-        <div className="flex flex-wrap items-center justify-end gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="min-w-[8rem]">
+            {mode === "edit" && isPublished && villageId != null && originalSlug ? (
+              <button
+                type="button"
+                disabled={pending}
+                onClick={handleUnpublish}
+                className="admin-cta inline-flex items-center border border-error/50 px-5 py-2.5 font-label-caps text-[10px] tracking-widest text-error transition-colors hover:bg-error/10 disabled:opacity-60"
+              >
+                {unpublishPending ? "Unpublishing…" : "Unpublish"}
+              </button>
+            ) : null}
+          </div>
+          <div className="flex flex-wrap items-center justify-end gap-3">
           <Link
             href="/admin"
             className="admin-cta inline-flex items-center border border-outline/30 px-5 py-2.5 font-label-caps text-[10px] tracking-widest text-on-surface-variant transition-colors hover:border-primary hover:text-primary"
@@ -1284,12 +1349,26 @@ export function VillageForm({
             Cancel
           </Link>
           <button
-            type="submit"
+            type="button"
             disabled={pending}
+            onClick={() => handleSave(secondaryStatus)}
+            className="admin-cta inline-flex items-center border border-outline/30 px-5 py-2.5 font-label-caps text-[10px] tracking-widest text-on-surface-variant transition-colors hover:border-primary hover:text-primary disabled:opacity-60"
+          >
+            {pending && pendingAction === secondaryStatus
+              ? secondaryPendingLabel
+              : secondaryLabel}
+          </button>
+          <button
+            type="button"
+            disabled={pending}
+            onClick={() => handleSave("published")}
             className="admin-cta inline-flex items-center bg-limestone px-6 py-2.5 font-label-caps text-label-caps text-on-background transition-colors hover:bg-white disabled:opacity-60"
           >
-            {saveLabel}
+            {pending && pendingAction === "published"
+              ? publishPendingLabel
+              : "Publish"}
           </button>
+          </div>
         </div>
       </div>
     </form>

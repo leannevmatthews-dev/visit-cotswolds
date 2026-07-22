@@ -59,6 +59,7 @@ export default async function EditVillagePage({ params }: EditVillagePageProps) 
         villageId={village.id}
         initialData={initialData}
         originalSlug={slug}
+        currentStatus={village.status}
         villageOptions={villageOptions}
       />
     </main>

@@ -40,7 +40,10 @@ function createReadClient() {
 export async function getAllVillageSlugs(): Promise<string[]> {
   const supabase = createReadClient();
 
-  const { data, error } = await supabase.from("villages").select("slug");
+  const { data, error } = await supabase
+    .from("villages")
+    .select("slug")
+    .eq("status", "published");
 
   if (error) {
     console.error("Failed to fetch village slugs:", error.message);
@@ -56,6 +59,7 @@ export async function getAllVillagesForListing(): Promise<VillageListRow[]> {
   const { data, error } = await supabase
     .from("villages")
     .select("name, slug, region_label, cotswolds_region, brief_summary, hero_gallery_urls")
+    .eq("status", "published")
     .order("name", { ascending: true });
 
   if (error) {
@@ -73,6 +77,7 @@ export async function getVillageBySlug(slug: string): Promise<Village | null> {
     .from("villages")
     .select("*")
     .eq("slug", slug)
+    .eq("status", "published")
     .single();
 
   if (error) {

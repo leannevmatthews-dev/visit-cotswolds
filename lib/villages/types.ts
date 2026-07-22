@@ -146,6 +146,8 @@ export type NearbyVillage = {
   image_alt?: string | null;
 };
 
+export type VillageStatus = "draft" | "published";
+
 export type SeasonalAdvice = {
   id: number;
   season: string;
@@ -158,6 +160,7 @@ export type Village = {
   id: number;
   slug: string;
   name: string;
+  status: VillageStatus;
   region_label: string;
   cotswolds_region: CotswoldsRegion | null;
   tagline_quote: string;

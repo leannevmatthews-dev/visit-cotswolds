@@ -9,6 +9,7 @@ import {
   toInsertPayload,
   validateVillageForm,
 } from "@/lib/villages/form-schema";
+import type { VillageStatus } from "@/lib/villages/types";
 import { createClient } from "@/utils/supabase/server";
 
 export async function deleteVillage(
@@ -39,6 +40,7 @@ export async function deleteVillage(
 
 export async function createVillage(
   state: VillageFormState,
+  status: VillageStatus,
 ): Promise<{ error: string } | never> {
   const validation = validateVillageForm(state);
 
@@ -58,7 +60,7 @@ export async function createVillage(
   }
 
   const payload = toInsertPayload(state);
-  const row = toDatabaseRow(payload);
+  const row = { ...toDatabaseRow(payload), status };
 
   const { error } = await supabase.from("villages").insert(row);
 
@@ -77,6 +79,7 @@ export async function updateVillage(
   id: number,
   originalSlug: string,
   state: VillageFormState,
+  status: VillageStatus,
 ): Promise<{ error: string } | never> {
   const validation = validateVillageForm(state);
 
@@ -96,7 +99,7 @@ export async function updateVillage(
   }
 
   const payload = toInsertPayload(state);
-  const row = toDatabaseRow(payload);
+  const row = { ...toDatabaseRow(payload), status };
 
   const { error } = await supabase.from("villages").update(row).eq("id", id);
 
@@ -111,4 +114,36 @@ export async function updateVillage(
   revalidatePath(`/admin/villages/${originalSlug}/edit`);
 
   redirect("/admin");
+}
+
+export async function unpublishVillage(
+  id: number,
+  slug: string,
+): Promise<{ success: true } | { error: string }> {
+  const cookieStore = await cookies();
+  const supabase = createClient(cookieStore);
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return { error: "You must be signed in to unpublish a village." };
+  }
+
+  const { error } = await supabase
+    .from("villages")
+    .update({ status: "draft" })
+    .eq("id", id);
+
+  if (error) {
+    return { error: error.message };
+  }
+
+  revalidatePath("/admin");
+  revalidatePath("/villages");
+  revalidatePath(`/villages/${slug}`);
+  revalidatePath(`/admin/villages/${slug}/edit`);
+
+  return { success: true };
 }

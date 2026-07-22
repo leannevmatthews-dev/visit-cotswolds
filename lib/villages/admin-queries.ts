@@ -2,10 +2,13 @@ import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import type { Village } from "@/lib/villages/types";
 
+import type { VillageStatus } from "@/lib/villages/types";
+
 export type VillageListItem = {
   id: number;
   name: string;
   slug: string;
+  status: VillageStatus;
 };
 
 export async function getAllVillagesForAdmin(): Promise<VillageListItem[]> {
@@ -14,7 +17,7 @@ export async function getAllVillagesForAdmin(): Promise<VillageListItem[]> {
 
   const { data, error } = await supabase
     .from("villages")
-    .select("id, name, slug")
+    .select("id, name, slug, status")
     .order("name", { ascending: true });
 
   if (error) {

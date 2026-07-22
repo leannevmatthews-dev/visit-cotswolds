@@ -1,6 +1,23 @@
 import Link from "next/link";
 import { DeleteVillageButton } from "@/components/admin/delete-village-button";
 import type { VillageListItem } from "@/lib/villages/admin-queries";
+import type { VillageStatus } from "@/lib/villages/types";
+
+function StatusBadge({ status }: { status: VillageStatus }) {
+  const isPublished = status === "published";
+
+  return (
+    <span
+      className={`ml-2 inline-flex items-center rounded-full px-2 py-0.5 font-label-caps text-[10px] tracking-widest uppercase ${
+        isPublished
+          ? "bg-limestone/15 text-limestone"
+          : "bg-on-surface-variant/10 text-on-surface-variant"
+      }`}
+    >
+      {isPublished ? "Published" : "Draft"}
+    </span>
+  );
+}
 
 export function VillagesTable({ villages }: { villages: VillageListItem[] }) {
   if (villages.length === 0) {
@@ -48,6 +65,7 @@ export function VillagesTable({ villages }: { villages: VillageListItem[] }) {
             >
               <td className="px-4 py-3 font-body-lg text-on-surface">
                 {village.name}
+                <StatusBadge status={village.status} />
               </td>
               <td className="px-4 py-3 font-body-sm text-on-surface-variant">
                 <code className="text-on-surface">{village.slug}</code>

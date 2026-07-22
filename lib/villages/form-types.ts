@@ -64,7 +64,10 @@ export type VillageFormState = {
   hidden_gems_image_alt: string;
 };
 
-export type VillageInsertPayload = Omit<Village, "id" | "things_to_do"> & {
+export type VillageInsertPayload = Omit<
+  Village,
+  "id" | "things_to_do" | "status"
+> & {
   curated_experiences: ThingsToDoItem[];
 };
 
