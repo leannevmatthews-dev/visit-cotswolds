@@ -24,7 +24,8 @@ import {
 const DATE_FILTER_BUTTON_CLASS =
   "flex w-full items-center justify-center gap-1.5 rounded-full border border-limestone px-6 py-2.5 font-label-caps text-[10px] transition-colors sm:w-auto xl:gap-2 xl:px-8 xl:py-4 xl:text-xs";
 
-const WHATS_ON_HERO_ACTION_BUTTON_CLASS = `${DATE_FILTER_BUTTON_CLASS} text-limestone hover:bg-limestone hover:text-primary-container`;
+const QUICK_DATE_FILTER_BUTTON_CLASS =
+  "flex w-full min-h-[44px] items-center justify-center gap-1.5 rounded-full border border-limestone px-6 py-[15px] font-label-caps text-[10px] transition-colors sm:min-h-0 sm:w-auto sm:py-2.5 xl:gap-2 xl:px-8 xl:py-4 xl:text-xs";
 
 function dateFilterButtonStateClass(isActive: boolean): string {
   return isActive
@@ -199,6 +200,7 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
   const [appliedDateRange, setAppliedDateRange] = useState<DateRange | undefined>();
   const [calendarDateRange, setCalendarDateRange] = useState<DateRange | undefined>();
   const [isDateRangeOpen, setIsDateRangeOpen] = useState(false);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
   const datePickerAnchorRef = useRef<HTMLDivElement>(null);
   const datePickerPopupRef = useRef<HTMLDivElement>(null);
@@ -229,7 +231,20 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
   }, [activeFilter, activeDateFilter, appliedDateRange, hasDateRange, upcomingEvents]);
 
   useEffect(() => {
-    if (!isDateRangeOpen || !datePickerAnchorRef.current) {
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+
+    function updateViewport() {
+      setIsMobileViewport(mediaQuery.matches);
+    }
+
+    updateViewport();
+    mediaQuery.addEventListener("change", updateViewport);
+
+    return () => mediaQuery.removeEventListener("change", updateViewport);
+  }, []);
+
+  useEffect(() => {
+    if (!isDateRangeOpen || !datePickerAnchorRef.current || isMobileViewport) {
       return;
     }
 
@@ -254,10 +269,10 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
       window.removeEventListener("resize", updatePopupPosition);
       window.removeEventListener("scroll", updatePopupPosition, true);
     };
-  }, [isDateRangeOpen]);
+  }, [isDateRangeOpen, isMobileViewport]);
 
   useEffect(() => {
-    if (!isDateRangeOpen) {
+    if (!isDateRangeOpen || isMobileViewport) {
       return;
     }
 
@@ -275,7 +290,7 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
 
     document.addEventListener("mousedown", handlePointerDown);
     return () => document.removeEventListener("mousedown", handlePointerDown);
-  }, [appliedDateRange, isDateRangeOpen]);
+  }, [appliedDateRange, isDateRangeOpen, isMobileViewport]);
 
   function clearDateRange() {
     setAppliedDateRange(undefined);
@@ -317,6 +332,40 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
     });
   }
 
+  const datePickerPopup = isDateRangeOpen ? (
+    <div
+      ref={datePickerPopupRef}
+      className={`whats-on-day-picker-popup rounded border border-limestone/20 bg-surface-container-low p-4 shadow-lg ${
+        isMobileViewport ? "relative mt-2 w-full" : "fixed w-max"
+      }`}
+      style={
+        isMobileViewport
+          ? undefined
+          : {
+              top: popupPosition.top,
+              left: popupPosition.left,
+            }
+      }
+    >
+      <DayPicker
+        mode="range"
+        min={1}
+        selected={calendarDateRange}
+        onSelect={handleRangeSelect}
+        className="whats-on-day-picker"
+      />
+      {(hasDateRange || calendarDateRange?.from) && (
+        <button
+          type="button"
+          onClick={clearDateRange}
+          className={`${DATE_FILTER_BUTTON_CLASS} mt-3 w-full ${dateFilterButtonStateClass(false)}`}
+        >
+          CLEAR
+        </button>
+      )}
+    </div>
+  ) : null;
+
   return (
     <>
       <DirectoryPageHero
@@ -344,40 +393,16 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
                 </span>
               </button>
 
-              {isDateRangeOpen &&
-                createPortal(
-                  <div
-                    ref={datePickerPopupRef}
-                    className="whats-on-day-picker-popup fixed w-max rounded border border-limestone/20 bg-surface-container-low p-4 shadow-lg"
-                    style={{
-                      top: popupPosition.top,
-                      left: popupPosition.left,
-                    }}
-                  >
-                    <DayPicker
-                      mode="range"
-                      min={1}
-                      selected={calendarDateRange}
-                      onSelect={handleRangeSelect}
-                      className="whats-on-day-picker"
-                    />
-                    {(hasDateRange || calendarDateRange?.from) && (
-                      <button
-                        type="button"
-                        onClick={clearDateRange}
-                        className={`${DATE_FILTER_BUTTON_CLASS} mt-3 w-full ${dateFilterButtonStateClass(false)}`}
-                      >
-                        CLEAR
-                      </button>
-                    )}
-                  </div>,
-                  document.body,
-                )}
+              {isMobileViewport
+                ? datePickerPopup
+                : datePickerPopup
+                  ? createPortal(datePickerPopup, document.body)
+                  : null}
             </div>
             <button
               type="button"
               onClick={() => toggleDateFilter("today")}
-              className={WHATS_ON_HERO_ACTION_BUTTON_CLASS}
+              className={`${QUICK_DATE_FILTER_BUTTON_CLASS} ${dateFilterButtonStateClass(activeDateFilter === "today")}`}
             >
               <span className="material-symbols-outlined text-sm">today</span>
               <span>TODAY</span>
@@ -385,7 +410,7 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
             <button
               type="button"
               onClick={() => toggleDateFilter("weekend")}
-              className={WHATS_ON_HERO_ACTION_BUTTON_CLASS}
+              className={`${QUICK_DATE_FILTER_BUTTON_CLASS} ${dateFilterButtonStateClass(activeDateFilter === "weekend")}`}
             >
               <span className="material-symbols-outlined text-sm">weekend</span>
               <span>THIS WEEKEND</span>
@@ -393,7 +418,7 @@ export function WhatsOnContent({ upcomingEvents }: WhatsOnContentProps) {
             <button
               type="button"
               onClick={() => toggleDateFilter("month")}
-              className={WHATS_ON_HERO_ACTION_BUTTON_CLASS}
+              className={`${QUICK_DATE_FILTER_BUTTON_CLASS} ${dateFilterButtonStateClass(activeDateFilter === "month")}`}
             >
               <span className="material-symbols-outlined text-sm">calendar_month</span>
               <span>THIS MONTH</span>
