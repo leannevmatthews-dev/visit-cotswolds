@@ -755,7 +755,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     address: "",
     dogFriendly: false,
     priceLevel: 3,
-    imageUrl: "",
+    imageUrl:
+      "https://www.oldstocksinn.com/images/content/food-and-drink-/2025/standard/old-stocks-inn-food-and-drink-2025-standard-2.jpg",
     imageAlt: "Old Stocks Inn, modern British dining in Stow-on-the-Wold",
     websiteUrl: "https://www.oldstocksinn.com",
   },
@@ -769,7 +770,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     address: "7 Park Street, Stow-on-the-Wold, GL54 1AQ",
     dogFriendly: false,
     priceLevel: 3,
-    imageUrl: "",
+    imageUrl:
+      "https://images.squarespace-cdn.com/content/v1/58834cf12994caa61ab8d07a/1757353163486-RQ7H25YB6KF6MWEPBTO5/B08AB51E-5978-4834-97FF-95C3C369E6E0.jpeg?format=1500w",
     imageAlt: "The Old Butcher's, seafood in Stow-on-the-Wold",
     websiteUrl: "",
   },
@@ -783,7 +785,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     address: "The Square, Stow-on-the-Wold, GL54 1AB",
     dogFriendly: true,
     priceLevel: 2,
-    imageUrl: "",
+    imageUrl:
+      "https://huffkins.com/cdn/shop/files/afternoon-tea-gift-set-gs20010-6_2048x.jpg?v=1697459922",
     imageAlt: "Huffkins, bakery and tea room in Stow-on-the-Wold",
     websiteUrl: "https://huffkins.com/pages/stow-cafe-bakery",
   },
@@ -797,7 +800,8 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     address: "2 Wells Barn, Sheep Street, Stow-on-the-Wold, GL54 1AB",
     dogFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://le-cdn.website-editor.net/s/f1c86d7503504c54a7b08aaacd07d5cc/dms3rep/multi/opt/Stow+on+the+Wold+Coffee+Shop-1920w.jpg?Expires=1787231811&Signature=az8dZB9TdgmkLlFHy2rEPdT3VHBY0EpF0TulU3HmCdJZ04-FhvctAM0lIvBgiq~3X-qasZno-5WNXVS5WSW8NdAcM9loMMDDmf8SHG3BsCGSlJ-1pLwRFfkgEP~ePwRm~1OFH9KufBkXp58JSl3oYwf9ZcCdC0Gqi2tG1AFUg6EH2wzDXujmS~rkxHb3mNYbI4hl1Gva79etdplhxwVDCZRDkt4zOV4l2GzuSqEhooaDEio8q2FC3zzayX0yjQ0czaCu4VF1HM5S91WSTPuWHA7bpd2QCJvBN2wEQimO2LnMjV6YOvd-EBHRIBF2uD4ekGmKNbq74lBD~jQFIfVBfQ__&Key-Pair-Id=K2NXBXLF010TJW",
     imageAlt: "Stow Town Coffee, micro-roastery in Stow-on-the-Wold",
     websiteUrl: "https://www.stowtowncoffee.co.uk",
   },

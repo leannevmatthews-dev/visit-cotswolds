@@ -642,8 +642,13 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Market Square, Stow-on-the-Wold, GL54 1AB",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Market_Square_and_Cross%2C_Stow-on-the_Wold_-_geograph.org.uk_-_7450572.jpg",
     imageAlt: "Market Square and the Market Cross, markets in Stow-on-the-Wold",
+    imageCredit: {
+      text: "Photo: David Dixon, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
     websiteUrl: "",
     isAttraction: true,
   },
@@ -658,11 +663,11 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     familyFriendly: true,
     priceLevel: 1,
     imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/5/57/Stow-on-the-Wold_church_-_geograph.org.uk_-_2534959.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/90/St_Edwards%27s_Church%2C_Stow-on-the-Wold_-_geograph.org.uk_-_7632144.jpg",
     imageAlt:
       "St Edward's Church and the Tolkien Door, historic houses in Stow-on-the-Wold",
     imageCredit: {
-      text: "Photo: Philip Halling, CC BY-SA 2.0",
+      text: "Photo: pam fray, CC BY-SA 2.0",
       url: "https://creativecommons.org/licenses/by-sa/2.0",
     },
     websiteUrl: "",
@@ -678,9 +683,14 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     address: "Market Square, Stow-on-the-Wold, GL54 1AB",
     familyFriendly: true,
     priceLevel: 1,
-    imageUrl: "",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/3/35/Stow-on-the-Wold_-_geograph.org.uk_-_6514591.jpg",
     imageAlt:
       "The Battle of Stow-on-the-Wold Site, unique experiences in Stow-on-the-Wold",
+    imageCredit: {
+      text: "Photo: Darren Haddock, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
     websiteUrl: "",
     isAttraction: true,
   },

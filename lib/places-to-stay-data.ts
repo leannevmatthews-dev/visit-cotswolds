@@ -521,7 +521,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: true,
     priceLevel: 3,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://bunny-wp-pullzone-dlshqqoicq.b-cdn.net/wp-content/uploads/2026/05/0JEP0344-scaled.jpg",
     imageAlt: "The Porch House, historic inn in Stow-on-the-Wold",
     websiteUrl: "https://www.porch-house.co.uk",
   },
@@ -536,7 +537,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 3,
     pricePerNight: "£250+",
-    imageUrl: "",
+    imageUrl:
+      "https://www.oldstocksinn.com/images/content/food-and-drink-/2025/standard/old-stocks-inn-food-and-drink-2025-standard-2.jpg",
     imageAlt: "Old Stocks Inn, boutique coaching inn in Stow-on-the-Wold",
     websiteUrl: "https://www.oldstocksinn.com",
   },
@@ -551,7 +553,8 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: false,
     priceLevel: 2,
     pricePerNight: "£150+",
-    imageUrl: "",
+    imageUrl:
+      "https://www.kingsarmsstow.co.uk/wp-content/uploads/2014/05/10-Tetbury-the-kings-arms.jpg",
     imageAlt: "The Kings Arms, historic coaching inn in Stow-on-the-Wold",
     websiteUrl: "https://www.kingsarmsstow.co.uk",
   },
@@ -566,8 +569,10 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     dogFriendly: true,
     priceLevel: 2,
     pricePerNight: "£150+",
-    imageUrl: "",
+    imageUrl:
+      "https://cdn.mos.cms.futurecdn.net/3jxhDtvQYx3tyHibwpDwr5-1600-80.jpg.webp",
     imageAlt: "The Bell at Stow, traditional inn in Stow-on-the-Wold",
+    imageCredit: { text: "Photo: Chris Orange", url: "" },
     websiteUrl: "",
   },
 ];
