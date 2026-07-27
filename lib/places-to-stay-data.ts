@@ -7,7 +7,10 @@ export type StayListingCategory =
   | "Boutique Hotel"
   | "Manor House"
   | "Inn"
-  | "Historic Inn";
+  | "Historic Inn"
+  | "Boutique Coaching Inn"
+  | "Historic Coaching Inn"
+  | "Traditional Inn";
 
 export type PlacesToStayListing = DirectoryListing & {
   category: StayListingCategory;
@@ -506,6 +509,66 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://static.wixstatic.com/media/06e2e9_aa8be2d5b2884202b4f7af6c48a0317f~mv2.jpg/v1/fill/w_1630,h_1080,fp_0.50_0.64,q_85,enc_avif,quality_auto/hero-bedroom-03.jpg",
     imageAlt: "The Lamb Inn, inn in Great Rissington",
     websiteUrl: "https://www.thelambinn.com",
+  },
+  {
+    id: "the-porch-house",
+    name: "The Porch House",
+    description:
+      "Signage on the building claims this is England's oldest inn, dating to 947AD. Worth knowing that claim is repeated everywhere but hasn't been independently verified, mostly one outlet citing another. What's not in dispute is the building itself: Grade II listed, crooked staircases, low beamed ceilings, 13 rooms mixing original stone walls with modern touches like Nespresso machines. There's no on-site parking, so plan for street parking or the car park near The Bell, a short walk away.",
+    category: "Historic Inn",
+    location: "Stow-on-the-Wold",
+    address: "1 Digbeth St, Stow-on-the-Wold, GL54 1BN",
+    dogFriendly: true,
+    priceLevel: 3,
+    pricePerNight: "£250+",
+    imageUrl: "",
+    imageAlt: "The Porch House, historic inn in Stow-on-the-Wold",
+    websiteUrl: "https://www.porch-house.co.uk",
+  },
+  {
+    id: "old-stocks-inn-stow",
+    name: "Old Stocks Inn",
+    description:
+      "16 individually designed rooms in a refurbished 17th-century coaching inn right on the market square, with king or super king Hypnos beds and rainfall showers or roll-top baths depending on the room. The 'Amazing Great Rooms' have their own freestanding baths and extra space if you want to splash out. Central enough that you won't need to drive anywhere in Stow itself.",
+    category: "Boutique Coaching Inn",
+    location: "Stow-on-the-Wold",
+    address: "",
+    dogFriendly: false,
+    priceLevel: 3,
+    pricePerNight: "£250+",
+    imageUrl: "",
+    imageAlt: "Old Stocks Inn, boutique coaching inn in Stow-on-the-Wold",
+    websiteUrl: "https://www.oldstocksinn.com",
+  },
+  {
+    id: "the-kings-arms-stow",
+    name: "The Kings Arms",
+    description:
+      "A 500-year-old former coaching inn on the market square, with 7 en-suite rooms in the main building and 3 split-level stable rooms around a courtyard. Some rooms are up steep original staircases, so it's not a great fit if stairs are an issue for anyone in your group. Reviews are mixed on room condition and heating in the older rooms, though the character and location get consistent praise. On-site parking is a genuine advantage here over some of Stow's other central hotels.",
+    category: "Historic Coaching Inn",
+    location: "Stow-on-the-Wold",
+    address: "",
+    dogFriendly: false,
+    priceLevel: 2,
+    pricePerNight: "£150+",
+    imageUrl: "",
+    imageAlt: "The Kings Arms, historic coaching inn in Stow-on-the-Wold",
+    websiteUrl: "https://www.kingsarmsstow.co.uk",
+  },
+  {
+    id: "the-bell-at-stow",
+    name: "The Bell at Stow",
+    description:
+      "13 rooms split between the main building and Stuart House, an annex a short walk up the road. Worth booking a room in the main building if walking back and forth isn't appealing, since check-in happens at the Bell regardless of where you're sleeping. Rooms run cosy rather than spacious, with narrow stairs in places, but small touches like complimentary port and biscuits get mentioned often in reviews. Reasonable base if you want to be in walking distance of the square without paying Old Stocks Inn prices.",
+    category: "Traditional Inn",
+    location: "Stow-on-the-Wold",
+    address: "",
+    dogFriendly: true,
+    priceLevel: 2,
+    pricePerNight: "£150+",
+    imageUrl: "",
+    imageAlt: "The Bell at Stow, traditional inn in Stow-on-the-Wold",
+    websiteUrl: "",
   },
 ];
 

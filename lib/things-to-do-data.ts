@@ -328,22 +328,6 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     websiteUrl: "https://www.bibury.com/arlington-row/",
   },
   {
-    id: "st-edwards-church-stow",
-    name: "St Edward's Church, Stow-on-the-Wold",
-    description:
-      "A medieval church with a doorway flanked by two ancient yew trees that have grown into the frame over centuries. Said to have inspired Tolkien's Doors of Durin. Free to visit and easy to miss if you don't know it's there. Five minutes is enough but most people stay longer.",
-    category: "Historic Houses",
-    location: "Stow-on-the-Wold",
-    address: "Stow-on-the-Wold GL54 1AB",
-    familyFriendly: true,
-    priceLevel: 1,
-    imageUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/5/57/Stow-on-the-Wold_church_-_geograph.org.uk_-_2534959.jpg",
-    imageAlt: "St Edward's Church, Stow-on-the-Wold, historic houses in Stow-on-the-Wold",
-    imageCredit: { text: "Photo: Philip Halling, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
-    websiteUrl: "https://www.scats.org.uk",
-  },
-  {
     id: "cleeve-hill-walk",
     name: "Cleeve Hill Circular Walk",
     description:
@@ -647,5 +631,57 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "https://www.cotswoldwildlifepark.co.uk/wp-content/uploads/photographer.jpg",
     imageAlt: "Cotswold Wildlife Park, family in Burford",
     websiteUrl: "https://www.cotswoldwildlifepark.co.uk",
+  },
+  {
+    id: "market-square-and-market-cross",
+    name: "Market Square and the Market Cross",
+    description:
+      "The historic heart of Stow, hosting markets since 1107 and sheep fairs where up to 20,000 animals changed hands in a day at the height of the wool trade. Now mostly antique shops and galleries around the edges, with a farmers market on the second Thursday of each month if you want to see the square doing something closer to its original job. The narrow alleys running off it, known locally as 'tures', were built to funnel sheep through single file.",
+    category: "Markets",
+    location: "Stow-on-the-Wold",
+    address: "Market Square, Stow-on-the-Wold, GL54 1AB",
+    familyFriendly: true,
+    priceLevel: 1,
+    imageUrl: "",
+    imageAlt: "Market Square and the Market Cross, markets in Stow-on-the-Wold",
+    websiteUrl: "",
+    isAttraction: true,
+  },
+  {
+    id: "st-edwards-church-tolkien-door",
+    name: "St Edward's Church and the Tolkien Door",
+    description:
+      "A 13th to 15th century church built on an earlier Saxon site, best known for its north door framed by two ancient yew trees. Local legend says it inspired Tolkien's Doors of Durin, though there's no confirmed evidence he ever referenced it directly. Inside, a memorial stone marks Captain Hastings Keyte, killed in the 1646 battle, and the church held over 1,000 Royalist prisoners overnight afterwards.",
+    category: "Historic Houses",
+    location: "Stow-on-the-Wold",
+    address: "Church Street, Stow-on-the-Wold, GL54 1BE",
+    familyFriendly: true,
+    priceLevel: 1,
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/5/57/Stow-on-the-Wold_church_-_geograph.org.uk_-_2534959.jpg",
+    imageAlt:
+      "St Edward's Church and the Tolkien Door, historic houses in Stow-on-the-Wold",
+    imageCredit: {
+      text: "Photo: Philip Halling, CC BY-SA 2.0",
+      url: "https://creativecommons.org/licenses/by-sa/2.0",
+    },
+    websiteUrl: "",
+    isAttraction: true,
+  },
+  {
+    id: "battle-of-stow-on-the-wold-site",
+    name: "The Battle of Stow-on-the-Wold Site",
+    description:
+      "The last battle of the First English Civil War was fought here on 21 March 1646, ending Royalist resistance for good. A plaque on the Market Cross marks where the Royalist commander Sir Jacob Astley is said to have surrendered while sitting on a drum. The wider archaeological battlefield site sits half a mile north along the busy A424 and isn't safely walkable, so the plaque and the church memorial are the realistic way to see this on foot.",
+    category: "Unique Experiences",
+    location: "Stow-on-the-Wold",
+    address: "Market Square, Stow-on-the-Wold, GL54 1AB",
+    familyFriendly: true,
+    priceLevel: 1,
+    imageUrl: "",
+    imageAlt:
+      "The Battle of Stow-on-the-Wold Site, unique experiences in Stow-on-the-Wold",
+    websiteUrl: "",
+    isAttraction: true,
   },
 ];

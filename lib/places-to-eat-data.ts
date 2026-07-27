@@ -5,7 +5,11 @@ export type EatListingCategory =
   | "Pubs"
   | "Afternoon Tea"
   | "Gastropubs"
-  | "Farm Shops & Cafes";
+  | "Farm Shops & Cafes"
+  | "Modern British Dining"
+  | "Seafood"
+  | "Bakery and Tea Room"
+  | "Micro-Roastery";
 
 export type PlacesToEatListing = DirectoryListing & {
   category: EatListingCategory;
@@ -740,5 +744,61 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "https://dialhousehotel.com/wp-content/uploads/smoked-salmon-sourdough-755x466.jpg",
     imageAlt: "The Dial House, restaurants in Bourton-on-the-Water",
     websiteUrl: "https://dialhousehotel.com",
+  },
+  {
+    id: "old-stocks-inn-stow",
+    name: "Old Stocks Inn",
+    description:
+      "A 2 AA Rosette restaurant inside a refurbished 17th-century coaching inn on the market square, with head chef Ian Percival running a seasonal British menu. There's a terraced garden for al fresco dining when the weather allows, plus a private dining room for small groups. This is the fine-dining option in Stow rather than a pub lunch, worth booking ahead for dinner especially at weekends.",
+    category: "Modern British Dining",
+    location: "Stow-on-the-Wold",
+    address: "",
+    dogFriendly: false,
+    priceLevel: 3,
+    imageUrl: "",
+    imageAlt: "Old Stocks Inn, modern British dining in Stow-on-the-Wold",
+    websiteUrl: "https://www.oldstocksinn.com",
+  },
+  {
+    id: "the-old-butchers-stow",
+    name: "The Old Butcher's",
+    description:
+      "Run by the Robinson family for over two decades in a former butcher's shop, now Michelin Guide listed. The menu leans heavily on seafood (oysters, scallops, Dover sole) alongside a charcoal grill for meat, split across shellfish, small plates, raw and grilled sections. Portions are generous despite some older reviews suggesting otherwise. Not the cheapest table in Stow, and it gets busy, so book ahead.",
+    category: "Seafood",
+    location: "Stow-on-the-Wold",
+    address: "7 Park Street, Stow-on-the-Wold, GL54 1AQ",
+    dogFriendly: false,
+    priceLevel: 3,
+    imageUrl: "",
+    imageAlt: "The Old Butcher's, seafood in Stow-on-the-Wold",
+    websiteUrl: "",
+  },
+  {
+    id: "huffkins-stow",
+    name: "Huffkins Stow",
+    description:
+      "A family-owned bakery and tea room chain that started in Burford in 1890, now with several branches across the Cotswolds including this one on Stow's market square. Worth knowing it's not a one-off independent, though the scones, cakes and afternoon tea are baked fresh daily on-site. Good option for a straightforward brunch or afternoon tea without the wait some of Stow's other cafes get in peak season.",
+    category: "Bakery and Tea Room",
+    location: "Stow-on-the-Wold",
+    address: "The Square, Stow-on-the-Wold, GL54 1AB",
+    dogFriendly: true,
+    priceLevel: 2,
+    imageUrl: "",
+    imageAlt: "Huffkins, bakery and tea room in Stow-on-the-Wold",
+    websiteUrl: "https://huffkins.com/pages/stow-cafe-bakery",
+  },
+  {
+    id: "stow-town-coffee",
+    name: "Stow Town Coffee",
+    description:
+      "One of the smallest commercial coffee roasteries in the UK, roasting on-site since 2010 and supplying mostly local cafes and restaurants within a 20-mile radius. This is a takeaway espresso bar, not a cafe: no food, no table service, just very fresh coffee and a small upstairs lounge if you want to sit with it for a few minutes. Good stop if you want something better than average without needing to sit down for a full cafe experience.",
+    category: "Micro-Roastery",
+    location: "Stow-on-the-Wold",
+    address: "2 Wells Barn, Sheep Street, Stow-on-the-Wold, GL54 1AB",
+    dogFriendly: true,
+    priceLevel: 1,
+    imageUrl: "",
+    imageAlt: "Stow Town Coffee, micro-roastery in Stow-on-the-Wold",
+    websiteUrl: "https://www.stowtowncoffee.co.uk",
   },
 ];
