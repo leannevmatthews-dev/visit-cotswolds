@@ -2,10 +2,29 @@ import { ListingDirectoryPage } from "@/components/listing-directory/listing-dir
 import {
   GUIDES_FILTER_CATEGORIES,
   GUIDES_HERO_IMAGE,
-  GUIDES_LISTINGS,
 } from "@/lib/guides-data";
+import type { GuideRow } from "@/lib/guides/queries";
+import type { DirectoryListing } from "@/lib/listing-directory";
 
-export function GuidesContent() {
+function guideRowToListing(guide: GuideRow): DirectoryListing {
+  return {
+    id: guide.slug,
+    name: guide.title,
+    description: guide.meta_description,
+    category: guide.category,
+    imageUrl: guide.hero_image_url ?? "",
+    imageAlt: guide.hero_image_alt ?? guide.title,
+    websiteUrl: `/guides/${guide.slug}`,
+  };
+}
+
+type GuidesContentProps = {
+  guides: GuideRow[];
+};
+
+export function GuidesContent({ guides }: GuidesContentProps) {
+  const listings = guides.map(guideRowToListing);
+
   return (
     <ListingDirectoryPage
       title="Guides"
@@ -14,7 +33,7 @@ export function GuidesContent() {
       heroImage={GUIDES_HERO_IMAGE}
       filterAriaLabel="Filter guides"
       filters={GUIDES_FILTER_CATEGORIES}
-      listings={GUIDES_LISTINGS}
+      listings={listings}
       showPriceLevel={false}
       linkExternal={false}
       linkLabel="Read guide"
