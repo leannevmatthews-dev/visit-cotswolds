@@ -113,10 +113,27 @@ export function GuideBlockRenderer({
                     </tr>
                   </thead>
                   <tbody>
-                    {block.rows.map((row) => (
-                      <tr key={row.join("|")}>
+                    {block.rows.map((row, rowIndex) => (
+                      <tr key={rowIndex}>
                         {row.map((cell, cellIndex) => (
-                          <td key={`${cellIndex}-${cell}`}>{cell}</td>
+                          <td key={cellIndex}>
+                            {typeof cell === "string" ? (
+                              cell
+                            ) : (
+                              <a
+                                href={cell.href}
+                                {...(cell.external
+                                  ? {
+                                      target: "_blank",
+                                      rel: "noopener noreferrer",
+                                    }
+                                  : {})}
+                                className="text-limestone underline underline-offset-2 hover:text-on-surface-variant transition-colors"
+                              >
+                                {cell.text}
+                              </a>
+                            )}
+                          </td>
                         ))}
                       </tr>
                     ))}

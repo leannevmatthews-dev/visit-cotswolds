@@ -34,7 +34,14 @@ export type GuideContentBlock =
     }
   | { type: "heading"; level: 2 | 3 | 4; text: string; id?: string }
   | { type: "list"; style: "bullet" | "numbered"; items: string[] }
-  | { type: "table"; headers: string[]; rows: string[][] }
+  | {
+      type: "table";
+      headers: string[];
+      rows: (
+        | string
+        | { text: string; href: string; external?: boolean }
+      )[][];
+    }
   | {
       type: "image";
       id: string;
