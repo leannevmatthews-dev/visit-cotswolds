@@ -31,6 +31,31 @@ export function GuideBlockRenderer({
                 {block.text}
               </p>
             );
+          case "paragraph_with_links":
+            return (
+              <p
+                key={key}
+                className="font-body-lg text-on-surface-variant leading-relaxed"
+              >
+                {block.segments.map((segment, i) => {
+                  if (segment.type === "text") {
+                    return <span key={i}>{segment.text}</span>;
+                  }
+                  return (
+                    <a
+                      key={i}
+                      href={segment.href}
+                      {...(segment.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="text-limestone underline underline-offset-2 hover:text-on-surface-variant transition-colors"
+                    >
+                      {segment.text}
+                    </a>
+                  );
+                })}
+              </p>
+            );
           case "heading":
             if (block.level === 2) {
               return (

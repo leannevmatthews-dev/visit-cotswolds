@@ -25,6 +25,13 @@ export type GuideListing = DirectoryListing & {
 
 export type GuideContentBlock =
   | { type: "paragraph"; text: string }
+  | {
+      type: "paragraph_with_links";
+      segments: (
+        | { type: "text"; text: string }
+        | { type: "link"; text: string; href: string; external?: boolean }
+      )[];
+    }
   | { type: "heading"; level: 2 | 3 | 4; text: string; id?: string }
   | { type: "list"; style: "bullet" | "numbered"; items: string[] }
   | { type: "table"; headers: string[]; rows: string[][] }
