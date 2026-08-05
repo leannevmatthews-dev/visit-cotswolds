@@ -16,7 +16,7 @@ export type GuideListingCategory =
   | "Plan Your Trip"
   | "Villages and Towns"
   | "Getting Around"
-  | "Local Features";
+  | "Attractions";
 
 export type GuideListing = DirectoryListing & {
   category: GuideListingCategory;
@@ -96,8 +96,8 @@ export const GUIDES_FILTER_CATEGORIES: DirectoryFilter[] = [
   },
   {
     id: "local-features",
-    label: "Local Features",
-    matchCategory: "Local Features",
+    label: "Attractions",
+    matchCategory: "Attractions",
   },
 ];
 
