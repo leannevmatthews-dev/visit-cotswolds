@@ -95,7 +95,7 @@ export const GUIDES_FILTER_CATEGORIES: DirectoryFilter[] = [
     matchCategory: "Getting Around",
   },
   {
-    id: "local-features",
+    id: "attractions",
     label: "Attractions",
     matchCategory: "Attractions",
   },
