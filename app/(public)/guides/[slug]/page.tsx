@@ -17,6 +17,11 @@ import {
   getGuideBySlug,
 } from "@/lib/guides/queries";
 import type { GuideContentBlock } from "@/lib/guides-data";
+import {
+  GUIDE_CONTENT_MAP,
+  GUIDE_META_MAP,
+  GUIDES_LISTINGS,
+} from "@/lib/guides-data";
 import { absoluteUrl } from "@/lib/seo/site";
 import {
   getArticleJsonLd,
@@ -27,21 +32,90 @@ import "@/css/village-hero.css";
 import "@/css/village-page.css";
 
 export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+
+const HARDCODED_GUIDE_SLUGS = Object.keys(GUIDE_CONTENT_MAP);
+
+type ResolvedGuide = {
+  slug: string;
+  title: string;
+  meta_title: string;
+  meta_description: string;
+  category: string;
+  hero_image_url: string | null;
+  hero_image_alt: string | null;
+  hero_image_credit: string | null;
+  hero_image_credit_url: string | null;
+  published_at: string | null;
+  created_at: string;
+  updated_at: string;
+  blocks: GuideContentBlock[];
+};
+
+async function resolveGuide(slug: string): Promise<ResolvedGuide | null> {
+  const meta = GUIDE_META_MAP[slug];
+  const blocks = GUIDE_CONTENT_MAP[slug];
+  const listing = GUIDES_LISTINGS.find((entry) => entry.id === slug);
+
+  if (meta && blocks && listing) {
+    return {
+      slug: meta.slug,
+      title: meta.title,
+      meta_title: meta.metaTitle,
+      meta_description: meta.metaDescription,
+      category: listing.category,
+      hero_image_url: listing.imageUrl ?? null,
+      hero_image_alt: listing.imageAlt ?? null,
+      hero_image_credit: listing.imageCredit?.text ?? null,
+      hero_image_credit_url: listing.imageCredit?.url ?? null,
+      published_at: meta.datePublished,
+      created_at: meta.datePublished,
+      updated_at: meta.dateModified,
+      blocks,
+    };
+  }
+
+  const guide = await getGuideBySlug(slug);
+  if (!guide) {
+    return null;
+  }
+
+  try {
+    return {
+      slug: guide.slug,
+      title: guide.title,
+      meta_title: guide.meta_title,
+      meta_description: guide.meta_description,
+      category: guide.category,
+      hero_image_url: guide.hero_image_url,
+      hero_image_alt: guide.hero_image_alt,
+      hero_image_credit: guide.hero_image_credit,
+      hero_image_credit_url: guide.hero_image_credit ? "#" : null,
+      published_at: guide.published_at,
+      created_at: guide.created_at,
+      updated_at: guide.updated_at,
+      blocks: JSON.parse(guide.content) as GuideContentBlock[],
+    };
+  } catch {
+    return null;
+  }
+}
 
 type GuidePageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
-  const slugs = await getAllPublishedGuideSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const supabaseSlugs = await getAllPublishedGuideSlugs();
+  const allSlugs = [...new Set([...HARDCODED_GUIDE_SLUGS, ...supabaseSlugs])];
+  return allSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: GuidePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const guide = await getGuideBySlug(slug);
+  const guide = await resolveGuide(slug);
 
   if (!guide) {
     return { title: "Guide Not Found" };
@@ -63,29 +137,23 @@ export async function generateMetadata({
 
 export default async function GuidePage({ params }: GuidePageProps) {
   const { slug } = await params;
-  const guide = await getGuideBySlug(slug);
+  const guide = await resolveGuide(slug);
 
   if (!guide) {
     notFound();
   }
 
-  let blocks: GuideContentBlock[] = [];
-  try {
-    blocks = JSON.parse(guide.content) as GuideContentBlock[];
-  } catch {
-    notFound();
-  }
-
-  const heroImageCredit = guide.hero_image_credit
-    ? { text: guide.hero_image_credit, url: "#" }
-    : undefined;
+  const heroImageCredit =
+    guide.hero_image_credit && guide.hero_image_credit_url
+      ? { text: guide.hero_image_credit, url: guide.hero_image_credit_url }
+      : undefined;
 
   const faqItems =
-    blocks.find((block) => block.type === "faq")?.items ?? [];
-  const tocInsertIndex = getGuideTocInsertIndex(blocks);
-  const introBlocks = blocks.slice(0, tocInsertIndex);
-  const bodyBlocks = blocks.slice(tocInsertIndex);
-  const headingIds = buildGuideH2IdByIndex(blocks);
+    guide.blocks.find((block) => block.type === "faq")?.items ?? [];
+  const tocInsertIndex = getGuideTocInsertIndex(guide.blocks);
+  const introBlocks = guide.blocks.slice(0, tocInsertIndex);
+  const bodyBlocks = guide.blocks.slice(tocInsertIndex);
+  const headingIds = buildGuideH2IdByIndex(guide.blocks);
 
   return (
     <>
@@ -123,7 +191,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
             {guide.title}
           </h1>
           <GuideBlockRenderer blocks={introBlocks} headingIds={headingIds} />
-          <GuideToc blocks={blocks} />
+          <GuideToc blocks={guide.blocks} />
           <GuideBlockRenderer
             blocks={bodyBlocks}
             blockOffset={tocInsertIndex}

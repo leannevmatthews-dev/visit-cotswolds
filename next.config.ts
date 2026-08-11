@@ -12,6 +12,18 @@ const nextConfig: NextConfig = {
         protocol: "http",
         hostname: "www.snowshillarms.co.uk",
       },
+      {
+        protocol: "https",
+        hostname: "s0.geograph.org.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "cotswoldwildlifepark.co.uk",
+      },
     ],
   },
   async redirects() {
