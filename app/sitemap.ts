@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
+import { getPublishedGuideSitemapEntries } from "@/lib/guides/queries";
 import { SITE_URL } from "@/lib/seo/site";
-import { getAllVillageSlugs } from "@/lib/villages/queries";
+import { getPublishedVillageSitemapEntries } from "@/lib/villages/queries";
 
 const STATIC_PAGES = [
   "/villages",
+  "/guides",
   "/places-to-stay",
   "/places-to-eat",
   "/things-to-do",
@@ -17,7 +19,10 @@ const STATIC_PAGES = [
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const slugs = await getAllVillageSlugs();
+  const [publishedVillages, publishedGuides] = await Promise.all([
+    getPublishedVillageSitemapEntries(),
+    getPublishedGuideSitemapEntries(),
+  ]);
   const lastModified = new Date();
 
   const staticEntries: MetadataRoute.Sitemap = [
@@ -35,12 +40,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   ];
 
-  const villageEntries: MetadataRoute.Sitemap = slugs.map((slug) => ({
-    url: `${SITE_URL}/villages/${slug}`,
-    lastModified,
-    changeFrequency: "weekly",
-    priority: 0.6,
-  }));
+  const villageEntries: MetadataRoute.Sitemap = publishedVillages.map(
+    ({ slug, updated_at }) => ({
+      url: `${SITE_URL}/villages/${slug}`,
+      lastModified: new Date(updated_at),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    }),
+  );
 
-  return [...staticEntries, ...villageEntries];
+  const guideEntries: MetadataRoute.Sitemap = publishedGuides.map(
+    ({ slug, updated_at }) => ({
+      url: `${SITE_URL}/guides/${slug}`,
+      lastModified: new Date(updated_at),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    }),
+  );
+
+  return [...staticEntries, ...villageEntries, ...guideEntries];
 }

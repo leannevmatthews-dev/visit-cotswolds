@@ -57,3 +57,24 @@ export async function getAllPublishedGuideSlugs(): Promise<string[]> {
   const guides = await getAllPublishedGuides();
   return guides.map((g) => g.slug);
 }
+
+export type GuideSitemapEntry = {
+  slug: string;
+  updated_at: string;
+};
+
+export async function getPublishedGuideSitemapEntries(): Promise<
+  GuideSitemapEntry[]
+> {
+  const supabase = createReadClient();
+  const { data, error } = await supabase
+    .from("guides")
+    .select("slug, updated_at")
+    .eq("status", "published");
+
+  if (error) {
+    throw new Error(`Failed to fetch guide sitemap entries: ${error.message}`);
+  }
+
+  return (data ?? []) as GuideSitemapEntry[];
+}

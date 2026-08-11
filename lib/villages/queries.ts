@@ -53,6 +53,30 @@ export async function getAllVillageSlugs(): Promise<string[]> {
   return (data ?? []).map((row) => row.slug);
 }
 
+export type VillageSitemapEntry = {
+  slug: string;
+  updated_at: string;
+};
+
+export async function getPublishedVillageSitemapEntries(): Promise<
+  VillageSitemapEntry[]
+> {
+  const supabase = createReadClient();
+
+  const { data, error } = await supabase
+    .from("villages")
+    .select("slug, updated_at")
+    .eq("status", "published");
+
+  if (error) {
+    throw new Error(
+      `Failed to fetch village sitemap entries: ${error.message}`,
+    );
+  }
+
+  return (data ?? []) as VillageSitemapEntry[];
+}
+
 export async function getAllVillagesForListing(): Promise<VillageListRow[]> {
   const supabase = createReadClient();
 
