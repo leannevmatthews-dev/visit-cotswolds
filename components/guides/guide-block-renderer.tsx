@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { GuideImagePlaceholder } from "@/components/guides/guide-image-placeholder";
 import { GuideMapEmbeds } from "@/components/guides/guide-map-embeds";
@@ -152,7 +153,7 @@ export function GuideBlockRenderer({
                       fill
                       sizes="(max-width: 768px) 100vw, 48rem"
                       className="object-cover object-center"
-                      unoptimized={block.src.endsWith(".svg")}
+                      unoptimized={isExternalImageUrl(block.src)}
                     />
                     {block.imageCredit ? (
                       <a

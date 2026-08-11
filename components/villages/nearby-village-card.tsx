@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import type { LinkableNearbyVillage } from "@/lib/villages/village-page-links";
+import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 
 type NearbyVillageCardProps = {
   nearby: LinkableNearbyVillage;
@@ -27,6 +28,7 @@ export function NearbyVillageCard({
               fill
               className="object-cover transition-transform duration-1000 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"
+              unoptimized={isExternalImageUrl(heroImageUrl)}
             />
           ) : (
             <VillageImagePlaceholder className="village-compare-card__placeholder absolute inset-0" />

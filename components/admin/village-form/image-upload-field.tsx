@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { Field, TextInput } from "@/components/admin/village-form/field-primitives";
 import { createClient } from "@/utils/supabase/client";
+import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 
 const ACCEPTED_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 const ACCEPT_ATTR = ".jpg,.jpeg,.png,.webp";
@@ -132,7 +133,7 @@ export function ImageUploadField({
             fill
             className="object-cover"
             sizes="160px"
-            unoptimized={value.includes("googleusercontent.com")}
+            unoptimized={isExternalImageUrl(value)}
           />
         </div>
       )}

@@ -20,7 +20,7 @@ export function GuidePageHero({
         fill
         sizes="100vw"
         priority
-        unoptimized={imageUrl.endsWith(".svg")}
+        unoptimized={true}
       />
       <div className="village-hero__gradient" aria-hidden="true" />
       {imageCredit ? (

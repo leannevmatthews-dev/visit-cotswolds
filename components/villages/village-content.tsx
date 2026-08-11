@@ -17,6 +17,7 @@ import { VisitorFitSection } from "@/components/villages/visitor-fit-section";
 import { PLACES_TO_EAT_LISTINGS } from "@/lib/places-to-eat-data";
 import { PLACES_TO_STAY_LISTINGS } from "@/lib/places-to-stay-data";
 import { THINGS_TO_DO_LISTINGS } from "@/lib/things-to-do-data";
+import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 import {
   buildVillageThingsToDo,
   enrichPlacePicksFromListings,
@@ -64,6 +65,7 @@ function PlacePickCard({
               fill
               className="object-cover"
               sizes="(max-width: 768px) 50vw, 20vw"
+              unoptimized={isExternalImageUrl(pick.image_url)}
             />
           ) : (
             <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
@@ -120,6 +122,7 @@ function ExperienceCard({
               fill
               className="object-cover"
               sizes="(max-width: 768px) 50vw, 20vw"
+              unoptimized={isExternalImageUrl(imageUrl)}
             />
           ) : (
             <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
@@ -192,6 +195,7 @@ export function VillageContent({
             fill
             priority
             sizes="100vw"
+            unoptimized={isExternalImageUrl(heroBg)}
           />
         ) : (
           <div
@@ -357,6 +361,7 @@ export function VillageContent({
                     fill
                     className="object-cover"
                     sizes="(max-width: 1279px) 100vw, 40vw"
+                    unoptimized={isExternalImageUrl(overviewImage)}
                   />
                 ) : (
                   <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[280px]" />
@@ -375,6 +380,7 @@ export function VillageContent({
                     src={ourTakeImage}
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
+                    unoptimized={isExternalImageUrl(ourTakeImage)}
                   />
                 ) : (
                   <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[280px]" />
@@ -440,6 +446,7 @@ export function VillageContent({
                     src={village.hidden_gems_image_url}
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
+                    unoptimized={isExternalImageUrl(village.hidden_gems_image_url)}
                   />
                 ) : (
                   <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[240px]" />
@@ -569,6 +576,7 @@ export function VillageContent({
                           fill
                           className="object-cover"
                           sizes="(max-width: 640px) 100vw, 33vw"
+                          unoptimized={isExternalImageUrl(business.image_url)}
                         />
                       ) : (
                         <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[200px]" />

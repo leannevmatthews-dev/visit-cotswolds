@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 
 type VillageCompareImageProps = {
   src?: string;
@@ -15,6 +16,7 @@ export function VillageCompareImage({ src, alt }: VillageCompareImageProps) {
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 33vw"
+          unoptimized={isExternalImageUrl(src)}
         />
       ) : (
         <div className="village-compare-card__placeholder" aria-hidden="true">

@@ -12,6 +12,7 @@ import { getHomepageFeaturedStays } from "@/lib/places-to-stay-data";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { getOrganizationJsonLd } from "@/lib/seo/schema";
 import { getVillageHeroImagesBySlugs } from "@/lib/villages/queries";
+import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 
 export const metadata: Metadata = {
   ...pageMetadata({
@@ -152,6 +153,7 @@ export default async function HomePage() {
                       fill
                       sizes="(max-width: 768px) 50vw, 20vw"
                       src={card.image}
+                      unoptimized={isExternalImageUrl(card.image)}
                     />
                   ) : (
                     <div
@@ -208,6 +210,7 @@ export default async function HomePage() {
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         src={imageUrl}
+                        unoptimized={isExternalImageUrl(imageUrl)}
                       />
                     ) : (
                       <div
@@ -266,6 +269,7 @@ export default async function HomePage() {
                         fill
                         sizes="(max-width: 520px) 100vw, (max-width: 1280px) 33vw, 20vw"
                         src={stay.imageUrl}
+                        unoptimized={isExternalImageUrl(stay.imageUrl)}
                       />
                     ) : (
                       <div

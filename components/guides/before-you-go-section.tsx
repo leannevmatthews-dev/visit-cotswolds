@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GUIDE_META_MAP, GUIDES_LISTINGS } from "@/lib/guides-data";
+import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 
 export const BEFORE_YOU_GO_GUIDE_SLUGS = [
   "where-are-the-cotswolds",
@@ -49,6 +50,7 @@ export function BeforeYouGoSection({ currentSlug }: BeforeYouGoSectionProps) {
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, 50vw"
+                    unoptimized={isExternalImageUrl(listing.imageUrl)}
                   />
                 ) : (
                   <div

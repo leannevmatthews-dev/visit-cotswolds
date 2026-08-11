@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
+import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 import {
   combineWithFirstOtherVillageName,
   combineWithOtherVillageName,
@@ -132,6 +133,7 @@ function CombineWithCard({
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  unoptimized={isExternalImageUrl(otherImageUrl)}
                 />
               ) : (
                 <VillageImagePlaceholder />
@@ -191,6 +193,7 @@ function CombineWithCard({
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 50vw, 20vw"
+                unoptimized={isExternalImageUrl(leftImageUrl)}
               />
             ) : (
               <VillageImagePlaceholder />
@@ -204,6 +207,7 @@ function CombineWithCard({
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 50vw, 20vw"
+                unoptimized={isExternalImageUrl(rightImageUrl)}
               />
             ) : (
               <VillageImagePlaceholder />
