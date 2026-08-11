@@ -8,12 +8,12 @@ export default function NotFound() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-on-background">
       <Header />
-      <main className="flex flex-1 flex-col items-center justify-center px-margin-mobile py-16 text-center md:px-margin-desktop md:py-24">
+      <main className="flex flex-1 flex-col items-center justify-center px-margin-mobile py-12 text-center md:px-margin-desktop md:py-24">
         <div className="mx-auto max-w-2xl space-y-6 md:space-y-8">
           <span className="font-label-caps text-label-caps tracking-[0.4em] text-limestone">
             404
           </span>
-          <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg">
+          <h1 className="font-display-lg text-[32px] md:text-display-lg">
             You&apos;ve Taken A Wrong Turn
           </h1>
           <p className="font-body-lg text-on-surface italic">
