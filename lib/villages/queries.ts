@@ -55,7 +55,6 @@ export async function getAllVillageSlugs(): Promise<string[]> {
 
 export type VillageSitemapEntry = {
   slug: string;
-  updated_at: string;
 };
 
 export async function getPublishedVillageSitemapEntries(): Promise<
@@ -65,7 +64,7 @@ export async function getPublishedVillageSitemapEntries(): Promise<
 
   const { data, error } = await supabase
     .from("villages")
-    .select("slug, updated_at")
+    .select("slug")
     .eq("status", "published");
 
   if (error) {

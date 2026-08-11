@@ -41,9 +41,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const villageEntries: MetadataRoute.Sitemap = publishedVillages.map(
-    ({ slug, updated_at }) => ({
+    ({ slug }) => ({
       url: `${SITE_URL}/villages/${slug}`,
-      lastModified: new Date(updated_at),
+      lastModified,
       changeFrequency: "weekly",
       priority: 0.6,
     }),
