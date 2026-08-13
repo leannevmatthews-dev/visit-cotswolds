@@ -2,15 +2,10 @@ import type { DirectoryFilter, DirectoryListing } from "@/lib/listing-directory"
 
 export type EatListingCategory =
   | "Restaurants"
-  | "Pubs"
   | "Pubs & Inns"
   | "Afternoon Tea"
-  | "Gastropubs"
   | "Farm Shops & Cafes"
-  | "Modern British Dining"
-  | "Seafood"
-  | "Bakery and Tea Room"
-  | "Micro-Roastery";
+  | "Bakery and Tea Room";
 
 export type PlacesToEatListing = DirectoryListing & {
   category: EatListingCategory;
@@ -28,7 +23,12 @@ export const PLACES_TO_EAT_HERO_ALT =
 export const EAT_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "all", label: "All Establishments" },
   { id: "restaurants", label: "Restaurants", matchCategory: "Restaurants" },
-  { id: "gastropubs", label: "Gastropubs", matchCategory: "Gastropubs" },
+  { id: "pubs-inns", label: "Pubs & Inns", matchCategory: "Pubs & Inns" },
+  {
+    id: "bakery-tea-rooms",
+    label: "Bakery & Tea Rooms",
+    matchCategory: "Bakery and Tea Room",
+  },
   {
     id: "farm-shops-cafes",
     label: "Farm Shops & Cafes",
@@ -63,7 +63,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Double Red Duke",
     description:
       "A coaching inn that takes its cooking seriously. Open-fire grilling, quality cuts, and interiors that feel considered rather than decorator-led.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Clanfield, Bampton",
     address: "Bourton Rd, Clanfield, Bampton OX18 2RB",
     dogFriendly: false,
@@ -123,7 +123,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Bell Inn",
     description:
       "Known for wood-fired flatbreads done properly. Unpretentious setting, consistent quality, and the kind of pub food that makes you wish more pubs tried this hard.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Langford, Lechlade",
     address: "High St, Langford, Lechlade GL7 3LN",
     dogFriendly: false,
@@ -168,7 +168,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Swan Inn",
     description:
       "A riverside pub with genuine history. The Mitford sisters drank here. Local game, the River Windrush outside the window, and none of the self-consciousness that ruins similar places.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Swinbrook, Burford",
     address: "Swinbrook, Burford OX18 4DY",
     dogFriendly: false,
@@ -198,7 +198,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Ebrington Arms",
     description:
       "Flagstone floors, open fires, and organic pub food that has won awards. Ebrington is an overlooked village, and this pub is the reason to go.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Ebrington, Chipping Campden",
     address: "Ebrington, Chipping Campden GL55 6NH",
     dogFriendly: false,
@@ -213,7 +213,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Kingham Plough",
     description:
       "On the village green in Kingham, with a kitchen that treats the local larder seriously. The balance between proper pub and serious food is harder to get right than it looks.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Kingham, Chipping Norton",
     address: "3 The Green, Kingham, Chipping Norton OX7 6YD",
     dogFriendly: false,
@@ -228,7 +228,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Woolpack Inn",
     description:
       "Laurie Lee's local in the Slad Valley. The view down the valley is reason enough, the food is better than you might expect, and it still feels like a real pub.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Slad, Stroud",
     address: "Slad Rd, Slad, Stroud GL6 7QA",
     dogFriendly: false,
@@ -243,7 +243,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Chequers",
     description:
       "Dry-aged steaks and flagstone floors in a village pub that doesn't try too hard. The kind of place that gets quietly better every time you go.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Churchill, Chipping Norton",
     address: "Church Rd, Churchill, Chipping Norton OX7 6NJ",
     dogFriendly: false,
@@ -258,7 +258,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Fox at Oddington",
     description:
       "An eco-conscious pub in Lower Oddington serving organic game and sourdough pizzas. The combination sounds unlikely, but it works better than it should.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Lower Oddington, Moreton-in-Marsh",
     address: "Lower Oddington, Moreton-in-Marsh GL56 0UR",
     dogFriendly: false,
@@ -288,7 +288,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Village Pub",
     description:
       "Across the road from Barnsley House, sharing the same kitchen garden. Comfortable, reliable, and one of the better options in the Cirencester area.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Barnsley, Cirencester",
     address: "Barnsley, Cirencester GL7 5EF",
     dogFriendly: false,
@@ -318,7 +318,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Bathurst Arms",
     description:
       "A riverside pub in North Cerney with an organic certification and a menu built around small plates. Quieter than most and worth seeking out.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "North Cerney, Cirencester",
     address: "New Rd, North Cerney, Cirencester GL7 7BZ",
     dogFriendly: false,
@@ -333,7 +333,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Porch House",
     description:
       "Reputedly England's oldest inn, dating back to 947 AD. Old low-timber beams sit alongside a genuinely ambitious modern British menu, an odd combination that somehow works in Stow-on-the-Wold.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Stow-on-the-Wold",
     address: "1 Digbeth St, Stow-on-the-Wold GL54 1BN",
     dogFriendly: false,
@@ -348,7 +348,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Mount Inn",
     description:
       "Perched high on a steep hillside in an unspoilt stone village, with classic pub food and valley views that are hard to beat anywhere else in the Cotswolds.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Stanton, Broadway",
     address: "Stanton, Broadway WR12 7NE",
     dogFriendly: false,
@@ -378,7 +378,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Wheatsheaf Inn",
     description:
       "An old coaching inn in Northleach with an ivy-draped facade and tiered cottage gardens. Rustic British cooking is the focus, done with more care than the average village pub.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Northleach",
     address: "West End, Northleach GL54 3EZ",
     dogFriendly: false,
@@ -393,7 +393,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Bell at Sapperton",
     description:
       "Tucked deep in a quiet valley near Cirencester, easy to miss if you don't know it's there. Seasonal cooking and a genuinely unusual wine wall set it apart from the standard country pub.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Sapperton, Cirencester",
     address: "Sapperton, Cirencester GL7 6LE",
     dogFriendly: false,
@@ -453,7 +453,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Catherine Wheel",
     description:
       "A 15th-century pub a short walk uphill from Arlington Row, family-run since 2009. Locally sourced pub classics, a fire in winter, a garden in summer, and its own car park, which is rarer than it sounds in Bibury.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Bibury",
     address: "Catherine Wheel, Arlington, Bibury, Cirencester, Gloucestershire, GL7 5ND",
     dogFriendly: false,
@@ -482,7 +482,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Highway Inn",
     description:
       "A 15th-century coaching inn on Burford's High Street with an unexpected Spanish twist. Toro, its tapas restaurant, does sharing plates rather than the pub food you'd expect. Book ahead for dinner, it's popular with locals too.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Burford",
     address: "117 High Street, Burford, Oxfordshire, OX18 4RG",
     dogFriendly: false,
@@ -541,7 +541,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Angel at Burford",
     description:
       "Run by the King family since 2011, tucked just off the High Street rather than on it, which catches out a fair few first-time visitors circling the main drag. Multiple Cotswold Pub of the Year wins over the years rather than a one-off award to hang the reputation on. Ask for the walled garden in summer if the log fire inside isn't your thing.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Burford",
     address: "14 Witney Street, Burford, Oxfordshire, OX18 4SN",
     dogFriendly: false,
@@ -556,7 +556,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Castle Inn",
     description:
       "Two AA Rosettes for a menu that goes further than the average village pub, seasonal and modern British rather than straightforward pub grub. This is a village that's hosted more than a few film crews over the years.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Castle Combe",
     address: "West Street, Castle Combe, Wiltshire, SN14 7HN",
     dogFriendly: false,
@@ -586,7 +586,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Salutation Inn",
     description:
       "A short drive from Castle Combe at The Gibb crossroads, not actually in the village itself, which keeps it quieter than the pubs in the centre. Seasonal, locally sourced food, and a strong reputation for its Sunday roast.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Castle Combe",
     address: "The Gibb, Castle Combe, Chippenham, Wiltshire, SN14 7LH",
     dogFriendly: false,
@@ -647,7 +647,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "Snowshill Arms",
     description:
       "A 15th-century village pub serving Donnington ales alongside straightforward pub classics like Gloucester Old Spot sausages and mash. No TV, no music, just a log fire and a skittle alley round the back. Popular with walkers on the Cotswold Way, and it shows on Sundays, when tables go fast without a booking.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Snowshill",
     address: "Snowshill, Broadway, Worcestershire, WR12 7JU",
     dogFriendly: true,
@@ -706,7 +706,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Mousetrap Inn",
     description:
       "A 19th-century freehouse at the quieter end of Bourton, away from the crush around the river. Craft ales on tap, a proper Sunday roast, and 11 rooms upstairs if you want to stay. Parking is tight, budget extra time.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Bourton-on-the-Water",
     address: "Lansdowne, Bourton-on-the-Water, Gloucestershire, GL54 2AR",
     dogFriendly: false,
@@ -721,7 +721,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Old New Inn",
     description:
       "The kitchen leans on classic pub dishes rather than trying to reinvent itself, and Sundays mean the set lunch menu only, nothing else. If you're staying at the inn you get 10% off here, which is a reason to eat in rather than walk to one of the busier spots on the main street.",
-    category: "Gastropubs",
+    category: "Pubs & Inns",
     location: "Bourton-on-the-Water",
     address: "Rissington Road, Bourton-on-the-Water, GL54 2AF",
     dogFriendly: false,
@@ -751,7 +751,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "Old Stocks Inn",
     description:
       "A 2 AA Rosette restaurant inside a refurbished 17th-century coaching inn on the market square, with head chef Ian Percival running a seasonal British menu. There's a terraced garden for al fresco dining when the weather allows, plus a private dining room for small groups. This is the fine-dining option in Stow rather than a pub lunch, worth booking ahead for dinner especially at weekends.",
-    category: "Modern British Dining",
+    category: "Restaurants",
     location: "Stow-on-the-Wold",
     address: "",
     dogFriendly: false,
@@ -766,7 +766,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "The Old Butcher's",
     description:
       "Run by the Robinson family for over two decades in a former butcher's shop, now Michelin Guide listed. The menu leans heavily on seafood (oysters, scallops, Dover sole) alongside a charcoal grill for meat, split across shellfish, small plates, raw and grilled sections. Portions are generous despite some older reviews suggesting otherwise. Not the cheapest table in Stow, and it gets busy, so book ahead.",
-    category: "Seafood",
+    category: "Restaurants",
     location: "Stow-on-the-Wold",
     address: "7 Park Street, Stow-on-the-Wold, GL54 1AQ",
     dogFriendly: false,
@@ -796,7 +796,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "Stow Town Coffee",
     description:
       "One of the smallest commercial coffee roasteries in the UK, roasting on-site since 2010 and supplying mostly local cafes and restaurants within a 20-mile radius. This is a takeaway espresso bar, not a cafe: no food, no table service, just very fresh coffee and a small upstairs lounge if you want to sit with it for a few minutes. Good stop if you want something better than average without needing to sit down for a full cafe experience.",
-    category: "Micro-Roastery",
+    category: "Restaurants",
     location: "Stow-on-the-Wold",
     address: "2 Wells Barn, Sheep Street, Stow-on-the-Wold, GL54 1AB",
     dogFriendly: true,
