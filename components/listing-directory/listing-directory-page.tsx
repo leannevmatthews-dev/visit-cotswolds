@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { DirectoryFilterNav } from "@/components/listing-directory/directory-filter-nav";
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
@@ -17,17 +17,14 @@ function ListingCardDescription({ text }: { text: string }) {
   const [overflows, setOverflows] = useState(false);
   const textRef = useRef<HTMLParagraphElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const el = textRef.current;
-    if (!el) {
+    if (!el || expanded) {
       return;
     }
 
     const update = () => {
-      if (expanded) {
-        return;
-      }
-      setOverflows(el.scrollHeight > el.clientHeight + 1);
+      setOverflows(el.scrollHeight > el.offsetHeight + 1);
     };
 
     update();
@@ -37,22 +34,26 @@ function ListingCardDescription({ text }: { text: string }) {
   }, [text, expanded]);
 
   return (
-    <div className="relative">
-      <p
-        ref={textRef}
-        className={`font-body-sm text-on-surface-variant${expanded ? "" : " line-clamp-6"}`}
-      >
-        {text}
-      </p>
+    <>
+      <div className="relative">
+        <p
+          ref={textRef}
+          className={`font-body-sm text-on-surface-variant${expanded ? "" : " line-clamp-6"}`}
+        >
+          {text}
+        </p>
+        {!expanded && overflows ? (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-b from-transparent to-background"
+          />
+        ) : null}
+      </div>
       {overflows ? (
         <button
           type="button"
           aria-expanded={expanded}
-          className={
-            expanded
-              ? "mt-1 font-body-sm text-limestone"
-              : "absolute bottom-0 right-0 bg-background pl-1 font-body-sm text-limestone"
-          }
+          className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors group-hover:text-primary"
           onClick={(event) => {
             event.preventDefault();
             event.stopPropagation();
@@ -60,9 +61,12 @@ function ListingCardDescription({ text }: { text: string }) {
           }}
         >
           {expanded ? "Read less" : "Read more"}
+          <span className="material-symbols-outlined text-sm" aria-hidden="true">
+            {expanded ? "expand_less" : "expand_more"}
+          </span>
         </button>
       ) : null}
-    </div>
+    </>
   );
 }
 
