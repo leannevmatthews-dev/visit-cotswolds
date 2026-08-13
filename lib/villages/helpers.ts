@@ -179,8 +179,25 @@ const PLACE_PICK_NAME_ALIASES: Record<string, string> = {
   "the fish arms": "The Fish Hotel",
 };
 
-function canonicalPlacePickName(name: string): string {
-  return PLACE_PICK_NAME_ALIASES[normalizePlacePickName(name)] ?? name;
+/** Village-specific remaps so shared pub names (e.g. The Swan Inn) hit the right listing. */
+const PLACE_PICK_NAME_ALIASES_BY_VILLAGE: Record<
+  string,
+  Record<string, string>
+> = {
+  broadway: {
+    "the swan inn": "The Swan (Broadway)",
+    "the bell inn": "The Bell (Broadway)",
+  },
+};
+
+function canonicalPlacePickName(name: string, villageName?: string): string {
+  const normalized = normalizePlacePickName(name);
+  const villageKey = villageName ? normalizePlacePickName(villageName) : "";
+  return (
+    PLACE_PICK_NAME_ALIASES_BY_VILLAGE[villageKey]?.[normalized] ??
+    PLACE_PICK_NAME_ALIASES[normalized] ??
+    name
+  );
 }
 
 /** Fill missing image/link on village place picks from directory listings by name. */
@@ -192,7 +209,7 @@ export function enrichPlacePicksFromListings<
     image_alt?: string | null;
     external_link: string | null;
   },
->(picks: TPick[], listings: PlacePickListing[]): TPick[] {
+>(picks: TPick[], listings: PlacePickListing[], villageName?: string): TPick[] {
   const listingsByName = new Map(
     listings.map((listing) => [
       normalizePlacePickName(listing.name),
@@ -201,7 +218,7 @@ export function enrichPlacePicksFromListings<
   );
 
   return picks.map((pick) => {
-    const name = canonicalPlacePickName(pick.name);
+    const name = canonicalPlacePickName(pick.name, villageName);
     const listing = listingsByName.get(normalizePlacePickName(name));
     if (!listing) {
       return name === pick.name ? pick : { ...pick, name };

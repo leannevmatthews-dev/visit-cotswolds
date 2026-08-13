@@ -172,10 +172,12 @@ export function VillageContent({
   const placesToStay = enrichPlacePicksFromListings(
     village.places_to_stay,
     PLACES_TO_STAY_LISTINGS,
+    village.name,
   );
   const placesToEat = enrichPlacePicksFromListings(
     village.places_to_eat,
     PLACES_TO_EAT_LISTINGS,
+    village.name,
   );
   const thingsToDo = buildVillageThingsToDo(
     village.name,
