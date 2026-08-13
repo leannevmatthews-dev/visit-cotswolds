@@ -5,9 +5,7 @@ export type ActivityListingCategory =
   | "Gardens & Estates"
   | "Historic"
   | "Museums & Galleries"
-  | "Days Out"
-  | "Unique Experiences"
-  | "Markets";
+  | "Days Out";
 
 export type ThingsToDoListing = DirectoryListing & {
   category: ActivityListingCategory;
@@ -27,8 +25,6 @@ export const THINGS_TO_DO_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "historic", label: "Historic", matchCategory: "Historic" },
   { id: "museums-galleries", label: "Museums & Galleries", matchCategory: "Museums & Galleries" },
   { id: "days-out", label: "Days Out", matchCategory: "Days Out" },
-  { id: "unique-experiences", label: "Unique Experiences", matchCategory: "Unique Experiences" },
-  { id: "markets", label: "Markets", matchCategory: "Markets" },
   { id: "family-friendly", label: "Family Friendly", requireFlag: "familyFriendly" },
 ];
 
@@ -130,7 +126,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Cotswolds Distillery",
     description:
       "A boutique distillery near Shipston-on-Stour making single malt whisky and dry gin using traditional methods. The whisky has won serious international recognition. Tours run daily and include tastings. Worth the short drive from the main Cotswolds villages.",
-    category: "Unique Experiences",
+    category: "Days Out",
     location: "Shipston-on-Stour",
     address: "Whichford Road, Stourton CV36 5EX",
     familyFriendly: false,
@@ -146,7 +142,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Woodchester Valley Vineyard",
     description:
       "A family-owned vineyard producing award-winning still and sparkling wines on steep limestone slopes in the Stroud valley. Tours and tastings run through the season. The English sparkling is genuinely competitive with Champagne.",
-    category: "Unique Experiences",
+    category: "Days Out",
     location: "Stroud",
     address: "Gydynap Lane, Stroud GL5 5EY",
     familyFriendly: false,
@@ -210,7 +206,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Stroud Farmers Market",
     description:
       "Consistently rated one of the best farmers markets in the UK. Between 45 and 60 stalls every Saturday at Cornhill Market Place with organic vegetables, artisan bread, local meat, cheese, crafts and a buskers corner. Worth timing a Stroud visit around a Saturday morning.",
-    category: "Markets",
+    category: "Days Out",
     location: "Stroud",
     address: "Cornhill Market Place, Stroud GL5 1AP",
     familyFriendly: true,
@@ -242,7 +238,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "The Cookery School at Thyme",
     description:
       "Bespoke masterclasses at the Thyme estate in Southrop using organic ingredients from the estate's own gardens. Half-day and full-day options covering bread, pastry, seasonal cooking and more. The setting makes it worth the trip even before you start cooking.",
-    category: "Unique Experiences",
+    category: "Days Out",
     location: "Southrop, Lechlade",
     address: "Southrop Manor Estate, Southrop GL7 3PW",
     familyFriendly: false,
@@ -288,7 +284,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Cotswold Falconry Centre",
     description:
       "Close-up encounters and flying demonstrations at Batsford Park near Moreton-in-Marsh. The flying displays are dramatic in a way that photographs don't capture. The centre takes its conservation work seriously and the knowledge of the staff shows. One of the better ways to spend a couple of hours in the northern Cotswolds.",
-    category: "Unique Experiences",
+    category: "Days Out",
     location: "Moreton-in-Marsh",
     address: "Batsford Park, Moreton-in-Marsh GL56 9QB",
     familyFriendly: true,
@@ -594,7 +590,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Cotswold Motoring Museum",
     description:
       "Seven small galleries of vintage cars, motorcycles and toys, best known for housing Brum, the yellow car from the children's TV series. It won't fill a whole day, so treat it as a rainy-afternoon option rather than the main reason to visit Bourton.",
-    category: "Unique Experiences",
+    category: "Days Out",
     location: "Bourton-on-the-Water",
     address: "The Old Mill, Bourton-on-the-Water, Gloucestershire, GL54 2BY",
     familyFriendly: true,
@@ -624,7 +620,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Market Square and the Market Cross",
     description:
       "The historic heart of Stow, hosting markets since 1107 and sheep fairs where up to 20,000 animals changed hands in a day at the height of the wool trade. Now mostly antique shops and galleries around the edges, with a farmers market on the second Thursday of each month if you want to see the square doing something closer to its original job. The narrow alleys running off it, known locally as 'tures', were built to funnel sheep through single file.",
-    category: "Markets",
+    category: "Days Out",
     location: "Stow-on-the-Wold",
     address: "Market Square, Stow-on-the-Wold, GL54 1AB",
     familyFriendly: true,
@@ -665,7 +661,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "The Battle of Stow-on-the-Wold Site",
     description:
       "The last battle of the First English Civil War was fought here on 21 March 1646, ending Royalist resistance for good. A plaque on the Market Cross marks where the Royalist commander Sir Jacob Astley is said to have surrendered while sitting on a drum. The wider archaeological battlefield site sits half a mile north along the busy A424 and isn't safely walkable, so the plaque and the church memorial are the realistic way to see this on foot.",
-    category: "Unique Experiences",
+    category: "Days Out",
     location: "Stow-on-the-Wold",
     address: "Market Square, Stow-on-the-Wold, GL54 1AB",
     familyFriendly: true,
