@@ -174,6 +174,15 @@ function normalizePlacePickName(name: string): string {
   return name.trim().toLowerCase();
 }
 
+/** CMS typos → directory listing names, so village picks match and display correctly. */
+const PLACE_PICK_NAME_ALIASES: Record<string, string> = {
+  "the fish arms": "The Fish Hotel",
+};
+
+function canonicalPlacePickName(name: string): string {
+  return PLACE_PICK_NAME_ALIASES[normalizePlacePickName(name)] ?? name;
+}
+
 /** Fill missing image/link on village place picks from directory listings by name. */
 export function enrichPlacePicksFromListings<
   TPick extends {
@@ -192,9 +201,10 @@ export function enrichPlacePicksFromListings<
   );
 
   return picks.map((pick) => {
-    const listing = listingsByName.get(normalizePlacePickName(pick.name));
+    const name = canonicalPlacePickName(pick.name);
+    const listing = listingsByName.get(normalizePlacePickName(name));
     if (!listing) {
-      return pick;
+      return name === pick.name ? pick : { ...pick, name };
     }
 
     const imageUrlEmpty = !pick.image_url?.trim();
@@ -203,6 +213,7 @@ export function enrichPlacePicksFromListings<
 
     return {
       ...pick,
+      name,
       location_label: listing.location.trim(),
       image_url:
         imageUrlEmpty && listing.imageUrl.trim()

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { DirectoryFilterNav } from "@/components/listing-directory/directory-filter-nav";
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
@@ -11,6 +11,60 @@ import {
   type DirectoryFilter,
   type DirectoryListing,
 } from "@/lib/listing-directory";
+
+function ListingCardDescription({ text }: { text: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const [overflows, setOverflows] = useState(false);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  useLayoutEffect(() => {
+    const el = textRef.current;
+    if (!el) {
+      return;
+    }
+
+    const update = () => {
+      if (expanded) {
+        return;
+      }
+      setOverflows(el.scrollHeight > el.clientHeight + 1);
+    };
+
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [text, expanded]);
+
+  return (
+    <div className="relative">
+      <p
+        ref={textRef}
+        className={`font-body-sm text-on-surface-variant${expanded ? "" : " line-clamp-6"}`}
+      >
+        {text}
+      </p>
+      {overflows ? (
+        <button
+          type="button"
+          aria-expanded={expanded}
+          className={
+            expanded
+              ? "mt-1 font-body-sm text-limestone"
+              : "absolute bottom-0 right-0 bg-background pl-1 font-body-sm text-limestone"
+          }
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            setExpanded((value) => !value);
+          }}
+        >
+          {expanded ? "Read less" : "Read more"}
+        </button>
+      ) : null}
+    </div>
+  );
+}
 
 function ListingCard({
   listing,
@@ -110,9 +164,7 @@ function ListingCard({
           {listing.name}
         </h2>
 
-        <p className="font-body-sm text-on-surface-variant">
-          {listing.description}
-        </p>
+        <ListingCardDescription text={listing.description} />
 
         <span className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors group-hover:text-primary">
           {linkLabel}
