@@ -836,4 +836,34 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     imageAlt: "Tavern by James Martin at The Lygon Arms, Broadway",
     websiteUrl: "https://www.lygonarmshotel.co.uk/eat-and-drink/tavern/",
   },
+  {
+    id: "the-swan-broadway",
+    name: "The Swan (Broadway)",
+    description:
+      "Traditional pub on the High Street with a good selection of ales and straightforward food. A reliable option if you want something unfussy in the centre of the village.",
+    category: "Pubs & Inns",
+    location: "Broadway",
+    address: "High Street, Broadway WR12 7AE",
+    dogFriendly: true,
+    priceLevel: 2,
+    imageUrl:
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/d3/cb/bb/caption.jpg?w=1100&h=-1&s=1",
+    imageAlt: "The Swan, pub on the High Street in Broadway",
+    websiteUrl: "https://www.theswanbroadway.co.uk",
+  },
+  {
+    id: "the-bell-broadway",
+    name: "The Bell (Broadway)",
+    description:
+      "Village pub with a relaxed atmosphere, good for a drink after a walk or a straightforward lunch without the formality of the High Street restaurants.",
+    category: "Pubs & Inns",
+    location: "Broadway",
+    address: "High Street, Broadway WR12 7DT",
+    dogFriendly: true,
+    priceLevel: 1,
+    imageUrl:
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/92/26/c9/caption.jpg?w=1400&h=-1&s=1",
+    imageAlt: "The Bell, pub in Broadway",
+    websiteUrl: "https://www.thebellbroadway.co.uk",
+  },
 ];
