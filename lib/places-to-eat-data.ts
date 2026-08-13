@@ -4,8 +4,7 @@ export type EatListingCategory =
   | "Restaurants"
   | "Pubs & Inns"
   | "Afternoon Tea"
-  | "Farm Shops & Cafes"
-  | "Bakery and Tea Room";
+  | "Farm Shops & Cafes";
 
 export type PlacesToEatListing = DirectoryListing & {
   category: EatListingCategory;
@@ -24,11 +23,6 @@ export const EAT_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "all", label: "All Establishments" },
   { id: "restaurants", label: "Restaurants", matchCategory: "Restaurants" },
   { id: "pubs-inns", label: "Pubs & Inns", matchCategory: "Pubs & Inns" },
-  {
-    id: "bakery-tea-rooms",
-    label: "Bakery & Tea Rooms",
-    matchCategory: "Bakery and Tea Room",
-  },
   {
     id: "farm-shops-cafes",
     label: "Farm Shops & Cafes",
@@ -781,7 +775,7 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
     name: "Huffkins Stow",
     description:
       "A family-owned bakery and tea room chain that started in Burford in 1890, now with several branches across the Cotswolds including this one on Stow's market square. Worth knowing it's not a one-off independent, though the scones, cakes and afternoon tea are baked fresh daily on-site. Good option for a straightforward brunch or afternoon tea without the wait some of Stow's other cafes get in peak season.",
-    category: "Bakery and Tea Room",
+    category: "Farm Shops & Cafes",
     location: "Stow-on-the-Wold",
     address: "The Square, Stow-on-the-Wold, GL54 1AB",
     dogFriendly: true,

@@ -3,13 +3,11 @@ import type { DirectoryFilter, DirectoryListing } from "@/lib/listing-directory"
 export type ActivityListingCategory =
   | "Walks & Trails"
   | "Gardens & Estates"
-  | "Historic Houses"
-  | "Historic Sites"
-  | "Unique Experiences"
-  | "Days Out"
+  | "Historic"
   | "Museums & Galleries"
-  | "Markets"
-  | "Family";
+  | "Days Out"
+  | "Unique Experiences"
+  | "Markets";
 
 export type ThingsToDoListing = DirectoryListing & {
   category: ActivityListingCategory;
@@ -24,28 +22,14 @@ export const THINGS_TO_DO_HERO_IMAGE =
 
 export const THINGS_TO_DO_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "all", label: "All Activities" },
-  {
-    id: "walks",
-    label: "Walks & Trails",
-    matchCategory: "Walks & Trails",
-  },
-  {
-    id: "gardens",
-    label: "Gardens & Estates",
-    matchCategory: "Gardens & Estates",
-  },
-  {
-    id: "historic-houses",
-    label: "Historic Houses",
-    matchCategory: "Historic Houses",
-  },
-  {
-    id: "unique-experiences",
-    label: "Unique Experiences",
-    matchCategory: "Unique Experiences",
-  },
+  { id: "walks", label: "Walks & Trails", matchCategory: "Walks & Trails" },
+  { id: "gardens", label: "Gardens & Estates", matchCategory: "Gardens & Estates" },
+  { id: "historic", label: "Historic", matchCategory: "Historic" },
+  { id: "museums-galleries", label: "Museums & Galleries", matchCategory: "Museums & Galleries" },
+  { id: "days-out", label: "Days Out", matchCategory: "Days Out" },
+  { id: "unique-experiences", label: "Unique Experiences", matchCategory: "Unique Experiences" },
   { id: "markets", label: "Markets", matchCategory: "Markets" },
-  { id: "family", label: "Family", matchCategory: "Family" },
+  { id: "family-friendly", label: "Family Friendly", requireFlag: "familyFriendly" },
 ];
 
 export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
@@ -68,7 +52,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Sudeley Castle & Gardens",
     description:
       "A Grade I listed castle in Winchcombe with ten distinct gardens and the only private burial place of an English queen. Katherine Parr is buried in the church on the grounds. The gardens are worth the visit in their own right. Allow at least half a day.",
-    category: "Historic Houses",
+    category: "Historic",
     location: "Winchcombe",
     address: "Winchcombe GL54 5LP",
     familyFriendly: true,
@@ -98,7 +82,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Kelmscott Manor",
     description:
       "William Morris's country home near Lechlade, preserved largely as it was in his lifetime. Tudor architecture, Arts and Crafts interiors and a garden that directly influenced his textile designs. Open Wednesday to Saturday on limited days, so check before you go.",
-    category: "Historic Houses",
+    category: "Historic",
     location: "Lechlade",
     address: "Kelmscott, Lechlade GL7 3HJ",
     familyFriendly: false,
@@ -130,7 +114,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Sezincote House & Garden",
     description:
       "A Neo-Mughal Indian estate in the Cotswolds with temples, waterfalls, specimen pools and an extraordinary house that the Prince Regent visited before commissioning the Brighton Pavilion. Still a private family home, open on limited afternoons. One of the most surprising things in the region.",
-    category: "Historic Houses",
+    category: "Historic",
     location: "Moreton-in-Marsh",
     address: "Sezincote, Moreton-in-Marsh GL56 9AW",
     familyFriendly: false,
@@ -210,7 +194,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Chastleton House",
     description:
       "A Jacobean house near Moreton-in-Marsh that has barely changed since 1612. The National Trust deliberately maintains it in its original faded condition rather than restoring it, which makes it feel more authentic than almost any other house of its kind. The rules of croquet were codified here in 1865.",
-    category: "Historic Houses",
+    category: "Historic",
     location: "Moreton-in-Marsh",
     address: "Chastleton, Moreton-in-Marsh GL56 0SU",
     familyFriendly: false,
@@ -289,7 +273,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Cotswold Farm Park",
     description:
       "Adam Henson's conservation farm near Guiting Power dedicated to rare British breeds. Good for families with younger children, with hands-on animal encounters, farm trails and seasonal activities. The farm is a working conservation operation, not just a visitor attraction.",
-    category: "Family",
+    category: "Days Out",
     location: "Guiting Power",
     address: "Guiting Power, Cheltenham GL54 5FL",
     familyFriendly: true,
@@ -399,7 +383,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Bibury Trout Farm",
     description:
       "One of Britain's oldest working trout farms, open to visitors for catch-your-own fishing, feeding the fish and riverside walks. A good addition to a Bibury visit that gives the trip more substance than just photographing Arlington Row. Children enjoy it and it takes about 30 minutes.",
-    category: "Family",
+    category: "Days Out",
     location: "Bibury",
     address: "Bibury, Cirencester GL7 5NL",
     familyFriendly: true,
@@ -465,7 +449,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "St John the Baptist Church",
     description:
       "Norman origins, open daily 9am to 5pm and free to enter. More than 100,000 visitors a year and one of the most historically significant churches in the Cotswolds. The Levellers connection from 1649 is documented inside.",
-    category: "Historic Houses",
+    category: "Historic",
     location: "Burford",
     address: "Church Green, Burford, Oxfordshire, OX18 4RY",
     familyFriendly: true,
@@ -481,7 +465,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "The Market Cross and Lower Village",
     description:
       "The 14th-century Market Cross stands where the three principal streets of the lower village converge. This is the recognised film-location view, the most-photographed part of Castle Combe and the centre of any visit.",
-    category: "Historic Houses",
+    category: "Historic",
     location: "Castle Combe",
     isAttraction: true,
     address: "",
@@ -531,7 +515,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Snowshill Manor and Garden",
     description:
       "The eccentric former home of Charles Paget Wade, who spent decades collecting everything from samurai armour to mousetraps rather than furnishing the house the way anyone else would. It's a genuine 500-yard walk uphill from the car park to the garden, worth knowing if mobility's a factor, though a buggy runs between the two. Skip it with young children. There's little here to hold their attention room after room, and better to save the visit for when they're old enough to find the oddities interesting rather than boring.",
-    category: "Historic Houses",
+    category: "Historic",
     location: "Snowshill",
     address: "Snowshill, near Broadway, Gloucestershire, WR12 7JU",
     familyFriendly: false,
@@ -595,7 +579,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Birdland Park and Gardens",
     description:
       "Nine acres of aviaries and woodland along the River Windrush, and the only breeding colony of King Penguins in England. It's a two-minute drive from the village centre rather than on the main street itself, so don't expect to just stumble on it during a stroll along the water. Good half-day option if you're travelling with kids and need a break from village-hopping.",
-    category: "Family",
+    category: "Days Out",
     location: "Bourton-on-the-Water",
     address: "Rissington Road, Bourton-on-the-Water, Gloucestershire, GL54 2BN",
     familyFriendly: true,
@@ -625,7 +609,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Cotswold Wildlife Park",
     description:
       "A proper wildlife park 2 miles south of Burford on the A361, with rhinos, zebras, giraffes, big cats and penguins across 160 acres. Paid admission from £17.50 adult and £12.50 child in 2026. Allow at least half a day.",
-    category: "Family",
+    category: "Days Out",
     location: "Burford",
     address: "Bradwell Grove, Burford, Oxfordshire, OX18 4JP",
     familyFriendly: true,
@@ -660,7 +644,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "St Edward's Church and the Tolkien Door",
     description:
       "A 13th to 15th century church built on an earlier Saxon site, best known for its north door framed by two ancient yew trees. Local legend says it inspired Tolkien's Doors of Durin, though there's no confirmed evidence he ever referenced it directly. Inside, a memorial stone marks Captain Hastings Keyte, killed in the 1646 battle, and the church held over 1,000 Royalist prisoners overnight afterwards.",
-    category: "Historic Houses",
+    category: "Historic",
     location: "Stow-on-the-Wold",
     address: "Church Street, Stow-on-the-Wold, GL54 1BE",
     familyFriendly: true,
@@ -702,7 +686,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     name: "Broadway Tower",
     description:
       "A 65-foot Gothic folly at 312 metres, the second highest point on the Cotswold escarpment. Built in 1798 by Capability Brown, later used as a printing press, an artists' retreat by William Morris and the Pre-Raphaelites, and a Cold War nuclear monitoring station. Three floors of exhibitions and a rooftop platform with views across up to 16 counties. Walk up from the village via the Cotswold Way rather than driving if you can manage the gradient.",
-    category: "Historic Sites",
+    category: "Historic",
     location: "Broadway",
     address: "Middle Hill, Broadway WR12 7LB",
     familyFriendly: true,
