@@ -10,6 +10,8 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   weight: ["300", "400", "500", "600"],
+  display: "swap",
+  preload: false,
 });
 
 const ebGaramond = EB_Garamond({
