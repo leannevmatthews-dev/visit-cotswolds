@@ -4,7 +4,10 @@ export type ActivityListingCategory =
   | "Walks & Trails"
   | "Gardens & Estates"
   | "Historic Houses"
+  | "Historic Sites"
   | "Unique Experiences"
+  | "Days Out"
+  | "Museums & Galleries"
   | "Markets"
   | "Family";
 
@@ -693,5 +696,52 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     },
     websiteUrl: "",
     isAttraction: true,
+  },
+  {
+    id: "broadway-tower",
+    name: "Broadway Tower",
+    description:
+      "A 65-foot Gothic folly at 312 metres, the second highest point on the Cotswold escarpment. Built in 1798 by Capability Brown, later used as a printing press, an artists' retreat by William Morris and the Pre-Raphaelites, and a Cold War nuclear monitoring station. Three floors of exhibitions and a rooftop platform with views across up to 16 counties. Walk up from the village via the Cotswold Way rather than driving if you can manage the gradient.",
+    category: "Historic Sites",
+    location: "Broadway",
+    address: "Middle Hill, Broadway WR12 7LB",
+    familyFriendly: true,
+    priceLevel: 2,
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/2/20/Broadway-tower-cotswolds-modf.jpg",
+    imageAlt: "Broadway Tower, Gothic folly on the Cotswold escarpment",
+    imageCredit: {
+      text: "© MykReeve/Aqwis, CC BY-SA 3.0",
+      url: "https://commons.wikimedia.org/wiki/File:Broadway-tower-cotswolds-modf.jpg",
+    },
+    websiteUrl: "https://www.broadwaytower.co.uk",
+  },
+  {
+    id: "gwsr-broadway",
+    name: "Gloucestershire Warwickshire Steam Railway",
+    description:
+      "Broadway station reopened in 2018, 58 years after the last regular train left. The GWSR runs 14 miles along the Cotswold escarpment to Cheltenham Racecourse via Toddington and Winchcombe, through the Greet Tunnel and across the Stanway Viaduct. Services run Tuesday, Thursday, Saturday and Sunday from spring to autumn. Check gwsr.com before visiting as the timetable changes seasonally.",
+    category: "Days Out",
+    location: "Broadway",
+    address: "Station Road, Broadway WR12 7DH",
+    familyFriendly: true,
+    priceLevel: 2,
+    imageUrl: "https://gwsr.com/media/0pvlawyf/140.jpg?width=1600",
+    imageAlt: "GWSR heritage steam railway at Broadway station",
+    websiteUrl: "https://gwsr.com",
+  },
+  {
+    id: "gordon-russell-design-museum",
+    name: "Gordon Russell Design Museum",
+    description:
+      "Free museum covering the life and work of Gordon Russell, who grew up in Broadway and shaped post-war British design from his workshop on the High Street. He chaired the utility furniture committee, influenced the Festival of Britain, and spent decades arguing that well-made objects mattered. Easy to walk past; worth not walking past.",
+    category: "Museums & Galleries",
+    location: "Broadway",
+    address: "15 Russell Square, Broadway WR12 7AP",
+    familyFriendly: true,
+    imageUrl:
+      "https://gordonrusselldesignmuseum.org/wp-content/uploads/2023/09/GRDM_building-942x487.png",
+    imageAlt: "Gordon Russell Design Museum, Broadway",
+    websiteUrl: "https://gordonrusselldesignmuseum.org",
   },
 ];

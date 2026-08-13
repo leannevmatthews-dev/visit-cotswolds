@@ -10,7 +10,8 @@ export type StayListingCategory =
   | "Historic Inn"
   | "Boutique Coaching Inn"
   | "Historic Coaching Inn"
-  | "Traditional Inn";
+  | "Traditional Inn"
+  | "Village Hotel";
 
 export type PlacesToStayListing = DirectoryListing & {
   category: StayListingCategory;
@@ -574,6 +575,22 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     imageAlt: "The Bell at Stow, traditional inn in Stow-on-the-Wold",
     imageCredit: { text: "Photo: Chris Orange", url: "" },
     websiteUrl: "",
+  },
+  {
+    id: "the-broadway-hotel",
+    name: "The Broadway Hotel",
+    description:
+      "16th-century inn on the village green, dog-friendly, 19 bedrooms and seven cottages. Tattersalls Brasserie has two AA rosettes. Straightforward, well-located, and does not try to be anything it is not.",
+    category: "Village Hotel",
+    location: "Broadway",
+    address: "The Green, Broadway WR12 7AA",
+    dogFriendly: true,
+    priceLevel: 2,
+    pricePerNight: "£150-£250",
+    imageUrl:
+      "https://hotelcms-production.imgix.net/broadway-hotel.co.uk/wp-content/uploads/2021/11/IMG_7425.jpg",
+    imageAlt: "The Broadway Hotel on the village green, Broadway",
+    websiteUrl: "https://broadway-hotel.co.uk",
   },
 ];
 

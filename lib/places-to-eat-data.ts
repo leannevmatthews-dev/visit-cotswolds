@@ -3,6 +3,7 @@ import type { DirectoryFilter, DirectoryListing } from "@/lib/listing-directory"
 export type EatListingCategory =
   | "Restaurants"
   | "Pubs"
+  | "Pubs & Inns"
   | "Afternoon Tea"
   | "Gastropubs"
   | "Farm Shops & Cafes"
@@ -804,5 +805,35 @@ export const PLACES_TO_EAT_LISTINGS: PlacesToEatListing[] = [
       "https://le-cdn.website-editor.net/s/f1c86d7503504c54a7b08aaacd07d5cc/dms3rep/multi/opt/Stow+on+the+Wold+Coffee+Shop-1920w.jpg?Expires=1787231811&Signature=az8dZB9TdgmkLlFHy2rEPdT3VHBY0EpF0TulU3HmCdJZ04-FhvctAM0lIvBgiq~3X-qasZno-5WNXVS5WSW8NdAcM9loMMDDmf8SHG3BsCGSlJ-1pLwRFfkgEP~ePwRm~1OFH9KufBkXp58JSl3oYwf9ZcCdC0Gqi2tG1AFUg6EH2wzDXujmS~rkxHb3mNYbI4hl1Gva79etdplhxwVDCZRDkt4zOV4l2GzuSqEhooaDEio8q2FC3zzayX0yjQ0czaCu4VF1HM5S91WSTPuWHA7bpd2QCJvBN2wEQimO2LnMjV6YOvd-EBHRIBF2uD4ekGmKNbq74lBD~jQFIfVBfQ__&Key-Pair-Id=K2NXBXLF010TJW",
     imageAlt: "Stow Town Coffee, micro-roastery in Stow-on-the-Wold",
     websiteUrl: "https://www.stowtowncoffee.co.uk",
+  },
+  {
+    id: "russells-of-broadway",
+    name: "Russell's of Broadway",
+    description:
+      "Steak and seafood grill in the former Gordon Russell furniture showroom on the High Street. The building is 16th century, the food is modern British, and the room is a decent place to spend an evening. Eight boutique bedrooms upstairs if you want to stay.",
+    category: "Restaurants",
+    location: "Broadway",
+    address: "20 High Street, Broadway WR12 7DT",
+    dogFriendly: false,
+    priceLevel: 3,
+    imageUrl:
+      "https://static.wixstatic.com/media/611677_7d6ecf9f86fb49a49d5eb3174ec133fc~mv2.jpg/v1/fill/w_1706,h_1024,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CoteDeBoeuf_white_web.jpg",
+    imageAlt: "Russell's of Broadway, steak and seafood restaurant on the High Street",
+    websiteUrl: "https://www.russellsofbroadway.co.uk",
+  },
+  {
+    id: "tavern-by-james-martin",
+    name: "Tavern by James Martin",
+    description:
+      "The more relaxed of the two James Martin venues at The Lygon Arms. Blackboard menu of small plates, local ales and ciders, open fire. Good option if you want something informal without leaving the High Street.",
+    category: "Pubs & Inns",
+    location: "Broadway",
+    address: "High Street, Broadway WR12 7DU",
+    dogFriendly: false,
+    priceLevel: 2,
+    imageUrl:
+      "https://www.lygonarmshotel.co.uk/media/y4ob1b1n/cpg_lygon_168.jpg?anchor=center&mode=crop&quality=70&width=730&height=444&rnd=133517048411230000",
+    imageAlt: "Tavern by James Martin at The Lygon Arms, Broadway",
+    websiteUrl: "https://www.lygonarmshotel.co.uk/eat-and-drink/tavern/",
   },
 ];
