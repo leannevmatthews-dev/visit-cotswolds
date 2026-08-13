@@ -19,6 +19,8 @@ const ebGaramond = EB_Garamond({
   variable: "--font-eb-garamond",
   weight: ["400", "500"],
   style: ["normal", "italic"],
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
