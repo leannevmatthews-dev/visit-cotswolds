@@ -1,17 +1,11 @@
 import type { DirectoryFilter, DirectoryListing } from "@/lib/listing-directory";
 
 export type StayListingCategory =
-  | "Country Estate"
+  | "Hotel"
+  | "Estate"
   | "Spa Hotel"
-  | "Exclusive Use"
-  | "Boutique Hotel"
   | "Manor House"
-  | "Inn"
-  | "Historic Inn"
-  | "Boutique Coaching Inn"
-  | "Historic Coaching Inn"
-  | "Traditional Inn"
-  | "Village Hotel";
+  | "Inn";
 
 export type PlacesToStayListing = DirectoryListing & {
   category: StayListingCategory;
@@ -26,25 +20,11 @@ export const PLACES_TO_STAY_HERO_IMAGE =
 
 export const STAY_FILTER_CATEGORIES: DirectoryFilter[] = [
   { id: "all", label: "All Properties" },
-  {
-    id: "country-estate",
-    label: "Country Estate",
-    matchCategory: "Country Estate",
-  },
-  { id: "spa-hotel", label: "Spa Hotel", matchCategory: "Spa Hotel" },
-  {
-    id: "exclusive-use",
-    label: "Exclusive Use",
-    matchCategory: "Exclusive Use",
-  },
-  {
-    id: "boutique-hotel",
-    label: "Boutique Hotel",
-    matchCategory: "Boutique Hotel",
-  },
-  { id: "manor-house", label: "Manor House", matchCategory: "Manor House" },
-  { id: "inn", label: "Inn", matchCategory: "Inn" },
-  { id: "historic-inn", label: "Historic Inn", matchCategory: "Historic Inn" },
+  { id: "hotel", label: "Hotels", matchCategory: "Hotel" },
+  { id: "estate", label: "Estates", matchCategory: "Estate" },
+  { id: "spa", label: "Spa", matchCategory: "Spa Hotel" },
+  { id: "manor", label: "Manor", matchCategory: "Manor House" },
+  { id: "inn", label: "Inns", matchCategory: "Inn" },
 ];
 
 export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
@@ -53,7 +33,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "Thyme",
     description:
       "A restored estate in Southrop with its own farm, spa, cookery school, and pub. You can spend three days here without leaving the grounds, and most people do.",
-    category: "Country Estate",
+    category: "Estate",
     location: "Southrop, Lechlade",
     address: "Southrop, Lechlade GL7 3PX",
     dogFriendly: false,
@@ -85,7 +65,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "Foxhill Manor",
     description:
       "All-inclusive and genuinely private, the whole manor is yours. One of the few places in the Cotswolds where you won't share your stay with strangers.",
-    category: "Exclusive Use",
+    category: "Estate",
     location: "Broadway",
     address: "Farncombe Estate, Broadway WR12 7LJ",
     dogFriendly: false,
@@ -100,7 +80,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Fish Hotel",
     description:
       "Treehouses, shepherd's huts, and cabin suites spread across the Farncombe Estate. A different kind of Cotswolds stay for those who don't want a traditional hotel.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Broadway",
     address: "Farncombe Estate, Broadway WR12 7LH",
     dogFriendly: false,
@@ -116,7 +96,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Painswick",
     description:
       "A Palladian villa in Painswick with valley views and interiors that feel more considered than most country house hotels. Fourteen rooms, which keeps it genuinely quiet.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Painswick",
     address: "Kemps Lane, Painswick GL6 6YB",
     dogFriendly: false,
@@ -228,7 +208,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Old Bell Hotel",
     description:
       "Claims to be England's oldest hotel, with records going back to 1220. Malmesbury is on the edge of the Cotswolds but the building alone is worth the detour.",
-    category: "Historic Inn",
+    category: "Hotel",
     location: "Malmesbury",
     address: "Abbey Row, Malmesbury SN16 0BW",
     dogFriendly: false,
@@ -276,7 +256,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Pig",
     description:
       "The PIG formula works well here: kitchen garden produce, relaxed service, and rooms that feel lived-in rather than designed. Popular, so book ahead.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Barnsley, Cirencester",
     address: "Barnsley, Cirencester GL7 5EE",
     dogFriendly: false,
@@ -292,7 +272,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "Wild Thyme & Honey",
     description:
       "A small boutique inn in Ampney Crucis with six rooms and a kitchen that takes its cooking seriously. Quiet, fairly priced, and easier to get into than the better-known options.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Ampney Crucis",
     address: "Ampney Crucis, Cirencester GL7 5RY",
     dogFriendly: false,
@@ -308,7 +288,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Lygon Arms",
     description:
       "A 14th-century coaching inn on Broadway's high street with a history that includes Charles I. The building is the draw. The rooms have been modernised, but the bones are impressive.",
-    category: "Historic Inn",
+    category: "Hotel",
     location: "Broadway",
     address: "High Street, Broadway WR12 7DU",
     dogFriendly: false,
@@ -324,7 +304,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Swan Hotel",
     description:
       "A former 17th-century coaching inn a minute's walk from Arlington Row, with 22 rooms including a handful of cottage suites that come with more space and their own entrance.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Bibury",
     address: "The Swan Hotel, Bibury, Cirencester, Gloucestershire, GL7 5NW",
     dogFriendly: false,
@@ -340,7 +320,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Bull Burford",
     description:
       "A 15th-century coaching inn on Burford's High Street that looks traditional from outside and isn't at all inside. Owned by Matthew Freud, with Banksys and Hirsts on the walls, four very different restaurants, and a hidden poker room behind an old prison door.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Burford",
     address: "105 High Street, Burford, Oxfordshire, OX18 4RG",
     dogFriendly: false,
@@ -356,7 +336,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Lamb Inn",
     description:
       "A 15th-century inn tucked down Sheep Street, just off the main bustle of Burford's High Street. Seventeen individually decorated rooms, log fires in the lounge, and a walled garden that's easy to miss from the street.",
-    category: "Historic Inn",
+    category: "Hotel",
     location: "Burford",
     address: "Sheep Street, Burford, Oxfordshire, OX18 4LR",
     dogFriendly: false,
@@ -420,7 +400,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The White Hart",
     description:
       "A 16th-century coaching inn in the quiet hamlet of Ford, a five-minute drive from Castle Combe. Eleven rooms above the pub, dogs welcome throughout, and a genuinely rural setting rather than a village-centre one.",
-    category: "Historic Inn",
+    category: "Hotel",
     location: "Ford",
     address: "Ford, Nr Chippenham, Wiltshire, SN14 8RP",
     dogFriendly: false,
@@ -436,7 +416,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Dial House",
     description:
       "A hotel in the centre of Bourton dating to 1697, with five rooms designed by Laurence Llewelyn-Bowen. A useful base if you want a proper restaurant on site rather than walking out for dinner.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Bourton-on-the-Water",
     address: "High Street, Bourton-on-the-Water, GL54 2AN",
     dogFriendly: false,
@@ -452,7 +432,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "Chester House Hotel",
     description:
       "A family-run hotel one road back from the river in Bourton, with an on-site Italian restaurant and its own car park, useful in a village where parking is often the biggest headache. Dogs are welcome, but only in the ground-floor Coach House rooms.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Bourton-on-the-Water",
     address: "Victoria Street, Bourton-on-the-Water, Gloucestershire, GL54 2BU",
     dogFriendly: false,
@@ -484,7 +464,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Lansdowne",
     description:
       "Adults-only, which sets it apart from most of the family-friendly stays clustered around the village. Fourteen rooms, all en-suite, with parking included, which matters more than it sounds in a village where finding a space in summer can eat up half an hour. Breakfast's included too, so factor that against places that charge it separately.",
-    category: "Boutique Hotel",
+    category: "Hotel",
     location: "Bourton-on-the-Water",
     address: "Lansdowne, Bourton-on-the-Water, Gloucestershire, GL54 2AR",
     dogFriendly: false,
@@ -516,7 +496,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Porch House",
     description:
       "Signage on the building claims this is England's oldest inn, dating to 947AD. Worth knowing that claim is repeated everywhere but hasn't been independently verified, mostly one outlet citing another. What's not in dispute is the building itself: Grade II listed, crooked staircases, low beamed ceilings, 13 rooms mixing original stone walls with modern touches like Nespresso machines. There's no on-site parking, so plan for street parking or the car park near The Bell, a short walk away.",
-    category: "Historic Inn",
+    category: "Hotel",
     location: "Stow-on-the-Wold",
     address: "1 Digbeth St, Stow-on-the-Wold, GL54 1BN",
     dogFriendly: true,
@@ -532,7 +512,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "Old Stocks Inn",
     description:
       "16 individually designed rooms in a refurbished 17th-century coaching inn right on the market square, with king or super king Hypnos beds and rainfall showers or roll-top baths depending on the room. The 'Amazing Great Rooms' have their own freestanding baths and extra space if you want to splash out. Central enough that you won't need to drive anywhere in Stow itself.",
-    category: "Boutique Coaching Inn",
+    category: "Inn",
     location: "Stow-on-the-Wold",
     address: "",
     dogFriendly: false,
@@ -548,7 +528,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Kings Arms",
     description:
       "A 500-year-old former coaching inn on the market square, with 7 en-suite rooms in the main building and 3 split-level stable rooms around a courtyard. Some rooms are up steep original staircases, so it's not a great fit if stairs are an issue for anyone in your group. Reviews are mixed on room condition and heating in the older rooms, though the character and location get consistent praise. On-site parking is a genuine advantage here over some of Stow's other central hotels.",
-    category: "Historic Coaching Inn",
+    category: "Inn",
     location: "Stow-on-the-Wold",
     address: "",
     dogFriendly: false,
@@ -564,7 +544,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Bell at Stow",
     description:
       "13 rooms split between the main building and Stuart House, an annex a short walk up the road. Worth booking a room in the main building if walking back and forth isn't appealing, since check-in happens at the Bell regardless of where you're sleeping. Rooms run cosy rather than spacious, with narrow stairs in places, but small touches like complimentary port and biscuits get mentioned often in reviews. Reasonable base if you want to be in walking distance of the square without paying Old Stocks Inn prices.",
-    category: "Traditional Inn",
+    category: "Inn",
     location: "Stow-on-the-Wold",
     address: "",
     dogFriendly: true,
@@ -581,7 +561,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
     name: "The Broadway Hotel",
     description:
       "16th-century inn on the village green, dog-friendly, 19 bedrooms and seven cottages. Tattersalls Brasserie has two AA rosettes. Straightforward, well-located, and does not try to be anything it is not.",
-    category: "Village Hotel",
+    category: "Hotel",
     location: "Broadway",
     address: "The Green, Broadway WR12 7AA",
     dogFriendly: true,
