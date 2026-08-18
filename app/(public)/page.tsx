@@ -52,6 +52,7 @@ export default async function HomePage() {
                   quality={65}
                   sizes="(max-width: 768px) 100vw, 1920px"
                   src={HERO_IMAGE}
+                  unoptimized={true}
                 />
               ) : (
                 <div
