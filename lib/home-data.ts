@@ -1,6 +1,3 @@
-export const HERO_IMAGE =
-  "https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/homepage/homepage-hero.jpg";
-
 export const JOURNEY_CARDS = [
   {
     href: "/villages",

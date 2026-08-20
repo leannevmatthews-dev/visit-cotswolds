@@ -4,7 +4,6 @@ import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { FadeInSection } from "@/components/fade-in-section";
 import {
-  HERO_IMAGE,
   JOURNEY_CARDS,
   VILLAGE_CARDS,
 } from "@/lib/home-data";
@@ -43,23 +42,11 @@ export default async function HomePage() {
         <section className="relative min-h-[100dvh] w-full flex flex-col overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="relative h-full w-full">
-              {HERO_IMAGE ? (
-                <Image
-                  alt="A cinematic, wide-angle photograph of a quintessential Cotswolds stone village, like Castle Combe, shrouded in a soft morning mist."
-                  className="object-cover"
-                  fill
-                  priority
-                  quality={65}
-                  sizes="(max-width: 768px) 100vw, 1920px"
-                  src={HERO_IMAGE}
-                  unoptimized={true}
-                />
-              ) : (
-                <div
-                  className="absolute inset-0 bg-surface-container-high"
-                  aria-hidden="true"
-                />
-              )}
+              <img
+                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/homepage/homepage-hero.jpg"
+                alt="Cotswolds countryside"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               <div className="absolute inset-0 image-overlay-gradient opacity-80" />
               <Link
                 href="/things-to-do"
