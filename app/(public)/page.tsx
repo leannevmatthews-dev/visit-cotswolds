@@ -43,13 +43,13 @@ export default async function HomePage() {
           <div className="absolute inset-0 z-0">
             <div className="relative h-full w-full">
               <img
-                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/homepage/homepage-hero.jpg"
+                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/where-are-the-cotswolds-map-england%20(1).svg"
                 alt="Cotswolds countryside"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 image-overlay-gradient opacity-80" />
               <Link
-                href="/things-to-do"
+                href="/villages/bourton-on-the-water"
                 className="absolute bottom-4 left-4 z-10 border px-3 py-1.5 font-label-caps text-label-caps text-[var(--color-limestone)] transition-colors hover:text-[color-mix(in_srgb,var(--color-limestone)_85%,white)]"
                 style={{
                   fontFamily: "var(--font-body)",
@@ -60,7 +60,7 @@ export default async function HomePage() {
                   borderRadius: "var(--radius-xl)",
                 }}
               >
-                Cotswolds Lavender Farm
+                Bourton on the Water
               </Link>
             </div>
           </div>
