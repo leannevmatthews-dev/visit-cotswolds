@@ -43,7 +43,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 z-0">
             <div className="relative h-full w-full">
               <img
-                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/where-are-the-cotswolds-map-england%20(1).svg"
+                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/bourton%20on%20the%20water%20in%20autumn.jpg"
                 alt="Cotswolds countryside"
                 className="absolute inset-0 w-full h-full object-cover"
               />
