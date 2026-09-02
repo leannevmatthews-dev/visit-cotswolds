@@ -175,7 +175,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     description:
       "One of the most influential gardens in England, a National Trust Arts and Crafts masterpiece of interconnected outdoor rooms near Chipping Campden. Created by Major Lawrence Johnston from 1907. Gets busy in summer. Arrive before 10am or visit in September when the crowds thin and the late-season colour is at its best.",
     category: "Gardens & Estates",
-    location: "Chipping Campden",
+    location: "Chipping Campden, Broadway",
     address: "Hidcote Bartrim, Chipping Campden GL55 6LR",
     familyFriendly: true,
     priceLevel: 2,
@@ -183,7 +183,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       "https://upload.wikimedia.org/wikipedia/commons/b/bf/Hidcote_Manor_Garden_-_geograph.org.uk_-_4298969.jpg",
     imageAlt: "Hidcote Manor Garden, garden in Chipping Campden",
     imageCredit: { text: "Photo: Michael Garlick, CC BY-SA 2.0", url: "https://creativecommons.org/licenses/by-sa/2.0" },
-    websiteUrl: "https://www.nationaltrust.org.uk/hidcote",
+    websiteUrl: "/guides/hidcote-garden",
   },
   {
     id: "chastleton-house",
@@ -694,7 +694,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
       text: "© MykReeve/Aqwis, CC BY-SA 3.0",
       url: "https://commons.wikimedia.org/wiki/File:Broadway-tower-cotswolds-modf.jpg",
     },
-    websiteUrl: "https://www.broadwaytower.co.uk",
+    websiteUrl: "/guides/broadway-tower-in-the-cotswolds",
   },
   {
     id: "gwsr-broadway",

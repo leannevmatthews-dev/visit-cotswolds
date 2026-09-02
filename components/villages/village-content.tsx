@@ -110,6 +110,9 @@ function ExperienceCard({
     ? `${fallbackListing.category} · ${fallbackListing.location}`
     : null;
   const websiteUrl = fallbackListing?.websiteUrl?.trim();
+  const websiteButtonLabel = href.startsWith("/guides/")
+    ? "Read our guide"
+    : "Visit website";
 
   return (
     <div className="village-pick group">
@@ -138,7 +141,7 @@ function ExperienceCard({
           rel="noopener noreferrer"
           className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors hover:text-primary"
         >
-          Visit website
+          {websiteButtonLabel}
           <span className="material-symbols-outlined text-sm" aria-hidden="true">
             north_east
           </span>
