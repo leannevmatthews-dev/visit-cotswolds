@@ -3,6 +3,8 @@ import { getPublishedGuideSitemapEntries } from "@/lib/guides/queries";
 import { SITE_URL } from "@/lib/seo/site";
 import { getPublishedVillageSitemapEntries } from "@/lib/villages/queries";
 
+export const revalidate = 3600;
+
 const STATIC_PAGES = [
   "/villages",
   "/guides",
