@@ -175,7 +175,7 @@ export const THINGS_TO_DO_LISTINGS: ThingsToDoListing[] = [
     description:
       "One of the most influential gardens in England, a National Trust Arts and Crafts masterpiece of interconnected outdoor rooms near Chipping Campden. Created by Major Lawrence Johnston from 1907. Gets busy in summer. Arrive before 10am or visit in September when the crowds thin and the late-season colour is at its best.",
     category: "Gardens & Estates",
-    location: "Chipping Campden, Broadway",
+    location: "Chipping Campden",
     address: "Hidcote Bartrim, Chipping Campden GL55 6LR",
     familyFriendly: true,
     priceLevel: 2,
