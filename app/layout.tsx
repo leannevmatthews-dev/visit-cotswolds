@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Inter } from "next/font/google";
+import Script from "next/script";
 import { SITE_URL } from "@/lib/seo/site";
 import "./globals.css";
 
@@ -48,6 +49,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${inter.variable} ${ebGaramond.variable}`}>
+      <head>
+        <Script
+          src="https://scripts.scriptwrapper.com/tags/3268095d-1722-4498-8f1e-54762868b6cd.js"
+          strategy="beforeInteractive"
+          data-noptimize="1"
+          data-cfasync="false"
+        />
+      </head>
       <body className="font-body-lg text-on-surface">{children}</body>
     </html>
   );
