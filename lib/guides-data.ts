@@ -62,7 +62,8 @@ export type GuideContentBlock =
       type: "map_embeds";
       title?: string;
       routes: { label: string; origin: string; destination: string }[];
-    };
+    }
+  | { type: "stay22_map"; title: string; iframe_src: string };
 
 export type GuideMeta = {
   slug: string;

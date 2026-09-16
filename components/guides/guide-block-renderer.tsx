@@ -236,6 +236,22 @@ export function GuideBlockRenderer({
                 routes={block.routes}
               />
             );
+          case "stay22_map":
+            return (
+              <div key={key} className="my-8">
+                <h3 className="font-display-lg text-headline-md mb-4">
+                  {block.title}
+                </h3>
+                <iframe
+                  src={block.iframe_src}
+                  width="100%"
+                  height="428"
+                  frameBorder="0"
+                  title={block.title}
+                  loading="lazy"
+                />
+              </div>
+            );
           default:
             return null;
         }
