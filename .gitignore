@@ -22,3 +22,8 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# design screenshots (do not commit)
+/stitch/
+/design/reference/
+/pages/screenshots/
