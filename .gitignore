@@ -23,7 +23,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# design screenshots (do not commit)
+# Ignore design screenshot folders after history cleanup
 /stitch/
 /design/reference/
 /pages/screenshots/
