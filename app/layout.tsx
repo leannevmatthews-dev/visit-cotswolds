@@ -52,7 +52,7 @@ export default function RootLayout({
       <head>
         <Script
           src="https://scripts.scriptwrapper.com/tags/3268095d-1722-4498-8f1e-54762868b6cd.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           data-noptimize="1"
           data-cfasync="false"
         />
