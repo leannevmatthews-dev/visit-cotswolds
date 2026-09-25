@@ -70,7 +70,9 @@ export async function getPublishedGuideSitemapEntries(): Promise<
   const { data, error } = await supabase
     .from("guides")
     .select("slug, updated_at")
-    .eq("status", "published");
+    .eq("status", "published")
+    .order("slug", { ascending: true })
+    .limit(1000);
 
   if (error) {
     throw new Error(`Failed to fetch guide sitemap entries: ${error.message}`);

@@ -3,7 +3,8 @@ import { getPublishedGuideSitemapEntries } from "@/lib/guides/queries";
 import { SITE_URL } from "@/lib/seo/site";
 import { getPublishedVillageSitemapEntries } from "@/lib/villages/queries";
 
-export const revalidate = 3600;
+/** Always fetch live published guides/villages so new Supabase rows appear immediately. */
+export const dynamic = "force-dynamic";
 
 const STATIC_PAGES = [
   "/villages",
@@ -45,8 +46,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const villageEntries: MetadataRoute.Sitemap = publishedVillages.map(
     ({ slug }) => ({
       url: `${SITE_URL}/villages/${slug}`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: "weekly",
+      lastModified,
+      changeFrequency: "weekly" as const,
       priority: 0.6,
     }),
   );
@@ -54,8 +55,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const guideEntries: MetadataRoute.Sitemap = publishedGuides.map(
     ({ slug, updated_at }) => ({
       url: `${SITE_URL}/guides/${slug}`,
-      lastModified: new Date(updated_at),
-      changeFrequency: "weekly",
+      lastModified: updated_at ? new Date(updated_at) : lastModified,
+      changeFrequency: "weekly" as const,
       priority: 0.8,
     }),
   );
