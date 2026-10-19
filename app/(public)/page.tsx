@@ -43,7 +43,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 z-0">
             <div className="relative h-full w-full">
               <Image
-                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/pexels-samuelsweet-8168996%20(2).jpg"
+                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/bourton%20autumn.jpg"
                 alt="Cotswolds countryside"
                 className="absolute inset-0 w-full h-full object-cover"
                 fill
@@ -158,11 +158,11 @@ export default async function HomePage() {
                     <span className="font-label-caps text-[7px] sm:text-[9px] md:text-[10px] text-limestone block mb-1 sm:mb-1 tracking-wider">
                       {card.label}
                     </span>
-                    <h3
+                    <h2
                       className={`font-display-lg home-journey-card__title md:text-xl lg:text-2xl leading-tight${"titleClass" in card && card.titleClass ? ` ${card.titleClass}` : ""}`}
                     >
                       {card.title}
-                    </h3>
+                    </h2>
                   </div>
                 </a>
               ))}
@@ -276,9 +276,9 @@ export default async function HomePage() {
                       <span className="font-label-caps text-limestone text-[10px] block mb-1 md:mb-2">
                         {stay.location}
                       </span>
-                      <h4 className="font-body-lg font-semibold text-on-surface tracking-tight text-base lg:text-lg leading-snug">
+                      <h3 className="font-body-lg font-semibold text-on-surface tracking-tight text-base lg:text-lg leading-snug">
                         {stay.name}
-                      </h4>
+                      </h3>
                     </div>
                     <div className="text-right shrink-0">
                       <span className="font-label-caps text-on-surface-variant block mb-1 text-[9px] md:text-[10px]">
