@@ -151,6 +151,15 @@ export default function PrivacyPolicyPage() {
 
             <section className="space-y-4">
               <h2 className="font-headline-md text-headline-md text-on-surface">
+                Advertising partners
+              </h2>
+              <p className="font-body-lg text-on-surface-variant leading-relaxed">
+                PASTE MEDIAVINE BLOCK HERE
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="font-headline-md text-headline-md text-on-surface">
                 Cookies
               </h2>
               <p className="font-body-lg text-on-surface-variant leading-relaxed">
