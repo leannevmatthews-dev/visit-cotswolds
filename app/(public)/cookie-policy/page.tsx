@@ -49,57 +49,39 @@ export default function CookiePolicyPage() {
               </h2>
 
               <h3 className="font-headline-md text-xl text-on-surface pt-2">
-                Analytics cookies (require your consent)
+                Analytics
               </h3>
               <p className="font-body-lg text-on-surface-variant leading-relaxed">
-                We use Google Analytics to understand how visitors use our site.
-                Our Google Analytics 4 Measurement ID is G-TYLW0J2B50. These
-                cookies are only set if you click &quot;Accept&quot; on our cookie
-                banner. If you click &quot;Decline,&quot; these cookies are not
-                set.
+                We use Google Analytics to see how people use this site: which
+                pages get read, how visitors find us, and where pages could be
+                clearer. We use it only to improve the site.
+              </p>
+              <p className="font-body-lg text-on-surface-variant leading-relaxed">
+                Google Analytics sets cookies whose names start with _ga. They
+                last up to two years. Google processes this information on our
+                behalf as our data processor. We have switched off data sharing
+                with Google, Google Signals and all advertising features, so this
+                information is not used for advertising or for Google&apos;s own
+                purposes.
+              </p>
+              <p className="font-body-lg text-on-surface-variant leading-relaxed">
+                UK law allows analytics cookies used only for this purpose to be
+                set without asking first, as long as you can opt out. You can opt
+                out at any time using the &quot;Opt out of analytics&quot; link in
+                the footer of every page. Once you opt out, Google Analytics will
+                not load in that browser. If you clear your browser&apos;s storage
+                or use a different browser or device, you will need to opt out
+                again.
               </p>
 
-              <div className="overflow-x-auto border border-outline-variant/20">
-                <table className="w-full min-w-[28rem] text-left font-body-sm text-on-surface-variant">
-                  <thead className="border-b border-outline-variant/20 bg-surface-container-low">
-                    <tr>
-                      <th className="px-4 py-3 font-label-caps text-[10px] tracking-widest text-limestone uppercase">
-                        Cookie
-                      </th>
-                      <th className="px-4 py-3 font-label-caps text-[10px] tracking-widest text-limestone uppercase">
-                        Purpose
-                      </th>
-                      <th className="px-4 py-3 font-label-caps text-[10px] tracking-widest text-limestone uppercase">
-                        Duration
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-outline-variant/10">
-                      <td className="px-4 py-3 font-mono text-sm text-on-surface">
-                        _ga
-                      </td>
-                      <td className="px-4 py-3 leading-relaxed">
-                        Distinguishes unique visitors
-                      </td>
-                      <td className="px-4 py-3">2 years</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 font-mono text-sm text-on-surface">
-                        _ga_TYLW0J2B50
-                      </td>
-                      <td className="px-4 py-3 leading-relaxed">
-                        Persists session state
-                      </td>
-                      <td className="px-4 py-3">2 years</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
+              <h3 className="font-headline-md text-xl text-on-surface pt-2">
+                Advertising
+              </h3>
               <p className="font-body-lg text-on-surface-variant leading-relaxed">
-                You can change your preference at any time using the &quot;Cookie
-                preferences&quot; link in our footer.
+                Ads on this site are served by Journey by Mediavine. Mediavine
+                asks for your consent to advertising cookies in its own pop-up,
+                and you can change your choice at any time through its
+                preferences link.
               </p>
 
               <h3 className="font-headline-md text-xl text-on-surface pt-2">
@@ -113,9 +95,6 @@ export default function CookiePolicyPage() {
                 analytics cookies. You can find out more about how Google uses
                 this data at their own privacy policy.
               </p>
-              <p className="font-body-lg text-on-surface-variant leading-relaxed">
-                We do not use advertising or retargeting cookies.
-              </p>
             </section>
 
             <section className="space-y-4">
@@ -123,9 +102,7 @@ export default function CookiePolicyPage() {
                 Managing your cookie preferences
               </h2>
               <p className="font-body-lg text-on-surface-variant leading-relaxed">
-                You can change your analytics cookie preference at any time via
-                the &quot;Cookie preferences&quot; link in the site footer. You
-                can also block or delete cookies through your browser settings,
+                You can block or delete cookies through your browser settings,
                 though this may affect how some content (such as embedded maps)
                 displays.
               </p>

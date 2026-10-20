@@ -1,4 +1,4 @@
-import { CookieConsentBanner } from "@/components/cookie-consent-banner";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import "../../css/site-header.css";
@@ -14,7 +14,7 @@ export default function PublicLayout({
       <Header />
       {children}
       <Footer />
-      <CookieConsentBanner />
+      <GoogleAnalytics />
     </>
   );
 }

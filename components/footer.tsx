@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CookiePreferencesButton } from "@/components/cookie-preferences-button";
+import { AnalyticsOptOut } from "@/components/analytics/analytics-opt-out";
 import { Logo } from "@/components/logo";
 import { NAV_ITEMS } from "@/lib/nav";
 
@@ -55,18 +55,26 @@ export function Footer() {
             <p className={`${footerHeadingClassName} mb-4`}>Information</p>
             <nav aria-label="Footer information links">
               <ul className="flex flex-col gap-3">
-                {FOOTER_INFORMATION_LINKS.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className={footerLinkClassName}>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <CookiePreferencesButton
-                    className={`${footerLinkClassName} text-left`}
-                  />
-                </li>
+                {FOOTER_INFORMATION_LINKS.flatMap((link) => {
+                  const item = (
+                    <li key={link.href}>
+                      <Link href={link.href} className={footerLinkClassName}>
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+
+                  if (link.href !== "/cookie-policy") return [item];
+
+                  return [
+                    item,
+                    <li key="analytics-opt-out">
+                      <AnalyticsOptOut
+                        className={`${footerLinkClassName} text-left`}
+                      />
+                    </li>,
+                  ];
+                })}
               </ul>
             </nav>
           </div>

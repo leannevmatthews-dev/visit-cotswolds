@@ -75,17 +75,19 @@ export default function PrivacyPolicyPage() {
                 When you browse our site
               </h3>
               <p className="font-body-lg text-on-surface-variant leading-relaxed">
-                If you accept analytics cookies (see our{" "}
+                We use Google Analytics to understand how visitors use the
+                site: which pages are popular, how people arrive at the site,
+                and general browsing patterns. This data is anonymised and
+                aggregated; we do not use it to identify individual visitors.
+                See our{" "}
                 <Link
                   href="/cookie-policy"
                   className="text-limestone underline underline-offset-4 transition-colors hover:text-on-surface"
                 >
                   Cookie Policy
                 </Link>
-                ), we use Google Analytics to understand how visitors use the
-                site: which pages are popular, how people arrive at the site,
-                and general browsing patterns. This data is anonymised and
-                aggregated; we do not use it to identify individual visitors.
+                , and use the &quot;Opt out of analytics&quot; link in the footer
+                to opt out.
               </p>
               <p className="font-body-lg text-on-surface-variant leading-relaxed">
                 We do not run an email newsletter or mailing list at this time,
@@ -103,8 +105,15 @@ export default function PrivacyPolicyPage() {
                   business and answer questions from visitors).
                 </li>
                 <li>
-                  Analytics cookies: your consent, given via our cookie banner.
-                  You can withdraw this at any time.
+                  Analytics cookies: see our{" "}
+                  <Link
+                    href="/cookie-policy"
+                    className="text-limestone underline underline-offset-4 transition-colors hover:text-on-surface"
+                  >
+                    Cookie Policy
+                  </Link>
+                  . You can opt out at any time using the &quot;Opt out of
+                  analytics&quot; link in the footer.
                 </li>
               </ul>
             </section>

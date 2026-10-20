@@ -1,22 +1,21 @@
 "use client";
 
 import Script from "next/script";
-import { GA_MEASUREMENT_ID } from "@/lib/cookie-consent";
-
-type GoogleAnalyticsProps = {
-  enabled: boolean;
-};
+import { useEffect, useState } from "react";
+import { GA_MEASUREMENT_ID, isAnalyticsOptedOut } from "@/lib/analytics";
 
 /**
- * Loads gtag only when analytics consent is accepted.
- * Do not place these scripts in app/layout.tsx <head>; that would load GA
- * unconditionally and bypass consent.
- *
- * Withdrawal (Decline) clears GA cookies and reloads the page so gtag is
- * removed from memory; see CookieConsentBanner.decline().
+ * Loads gtag on every page unless localStorage "vc_analytics_optout" is "1".
+ * The script is not injected at all when the visitor has opted out.
  */
-export function GoogleAnalytics({ enabled }: GoogleAnalyticsProps) {
-  if (!enabled) return null;
+export function GoogleAnalytics() {
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    setLoad(!isAnalyticsOptedOut());
+  }, []);
+
+  if (!load) return null;
 
   return (
     <>
