@@ -56,6 +56,17 @@ export default function RootLayout({
           data-noptimize="1"
           data-cfasync="false"
         />
+        <Script id="stay22-letmeallez" strategy="afterInteractive">
+          {`(function (s, t, a, y, twenty, two) {
+    s.Stay22 = s.Stay22 || {};
+    s.Stay22.params = { lmaID: '6a98982e10f03364e33fe014' };
+    twenty = t.createElement(a);
+    two = t.getElementsByTagName(a)[0];
+    twenty.async = 1;
+    twenty.src = y;
+    two.parentNode.insertBefore(twenty, two);
+  })(window, document, 'script', 'https://lma.stay22.com/letmeallez.js');`}
+        </Script>
       </head>
       <body className="font-body-lg text-on-surface">{children}</body>
     </html>
