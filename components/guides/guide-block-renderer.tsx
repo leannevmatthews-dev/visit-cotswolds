@@ -232,6 +232,7 @@ export function GuideBlockRenderer({
               <GuideMapEmbeds
                 key={key}
                 title={block.title}
+                caption={block.caption}
                 routes={block.routes}
               />
             );

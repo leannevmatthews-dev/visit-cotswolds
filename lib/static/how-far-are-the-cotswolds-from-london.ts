@@ -205,6 +205,8 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
   {
     type: "map_embeds",
     title: "London Paddington to Moreton-in-Marsh Station",
+    caption:
+      "Indicative route only. See the fastest direct train times stated above. Google's transit routing may not always reflect the exact GWR service.",
     routes: [
       {
         label: "",
@@ -241,6 +243,8 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
   {
     type: "map_embeds",
     title: "London Paddington to Kemble Station",
+    caption:
+      "Indicative route only. See the fastest direct train times stated above. Google's transit routing may not always reflect the exact GWR service.",
     routes: [
       {
         label: "",
@@ -273,6 +277,8 @@ export const howFarAreTheCotswoldsFromLondonContent: GuideContentBlock[] = [
   {
     type: "map_embeds",
     title: "London Paddington to Chippenham Station",
+    caption:
+      "Indicative route only. See the fastest direct train times stated above. Google's transit routing may not always reflect the exact GWR service.",
     routes: [
       {
         label: "",

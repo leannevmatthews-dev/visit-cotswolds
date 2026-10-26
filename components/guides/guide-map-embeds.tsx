@@ -7,13 +7,14 @@ type MapEmbedRoute = {
 type GuideMapEmbedsProps = {
   title?: string;
   routes: MapEmbedRoute[];
+  caption?: string;
 };
 
 function buildMapEmbedSrc(origin: string, destination: string): string {
   return `https://maps.google.com/maps?saddr=${encodeURIComponent(origin)}&daddr=${encodeURIComponent(destination)}&dirflg=r&output=embed`;
 }
 
-export function GuideMapEmbeds({ title, routes }: GuideMapEmbedsProps) {
+export function GuideMapEmbeds({ title, routes, caption }: GuideMapEmbedsProps) {
   return (
     <figure className="my-6 md:my-8">
       {title ? (
@@ -44,9 +45,7 @@ export function GuideMapEmbeds({ title, routes }: GuideMapEmbedsProps) {
         ))}
       </div>
       <p className="font-body-sm mt-3 text-on-surface-variant leading-relaxed">
-        Indicative route only. See the fastest direct train times stated above.
-        Google&apos;s transit routing may not always reflect the exact GWR
-        service.
+        {caption || "Indicative route only."}
       </p>
     </figure>
   );
