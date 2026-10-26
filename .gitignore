@@ -27,3 +27,6 @@ yarn-error.log*
 /stitch/
 /design/reference/
 /pages/screenshots/
+
+# Guide-row backups from image self-hosting
+/scripts/backups
