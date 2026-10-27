@@ -80,7 +80,7 @@ export default async function HomePage() {
               An Independent Guide to the Cotswolds.
             </h1>
             <p className="font-body-lg text-on-surface-variant/80 tracking-wide uppercase font-bold text-sm md:text-base">
-              Handpicked and properly researched, so you can make the most of your time here.
+              Handpicked recommendations for your visit
             </p>
           </div>
 
