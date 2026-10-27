@@ -91,9 +91,9 @@ export function Footer() {
             have concerns about usage, please contact us at{" "}
             <a
               className="text-on-surface-variant/70 underline underline-offset-2 transition-colors hover:text-limestone"
-              href="mailto:hello@visitcotswolds.uk"
+              href="mailto:info@visitcotswolds.uk"
             >
-              hello@visitcotswolds.uk
+              info@visitcotswolds.uk
             </a>
             .
           </p>
