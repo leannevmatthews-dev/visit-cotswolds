@@ -124,7 +124,7 @@ function StayPickCard({
         <p className="village-pick__title">{pick.name}</p>
       )}
       <p className="village-pick__meta">{meta}</p>
-      <div className="mt-2 flex flex-col items-start gap-2">
+      <div className="mt-2 flex w-full items-center justify-between gap-3">
         {bookingUrl ? (
           <a
             href={bookingUrl}
@@ -134,13 +134,15 @@ function StayPickCard({
           >
             Book
           </a>
-        ) : null}
+        ) : (
+          <span />
+        )}
         {websiteUrl ? (
           <a
             href={websiteUrl}
             target="_blank"
             rel="noopener"
-            className="font-body-sm text-xs text-on-surface-variant/70 underline-offset-2 transition-colors hover:text-on-surface-variant hover:underline"
+            className="ml-auto font-body-sm text-xs text-on-surface-variant/70 underline-offset-2 transition-colors hover:text-on-surface-variant hover:underline"
           >
             Website
           </a>
