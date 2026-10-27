@@ -9,6 +9,7 @@ import { ParkingGuideSection } from "@/components/villages/parking-guide-section
 import { ReviewedBy } from "@/components/villages/reviewed-by";
 import { SeasonalAdviceSection } from "@/components/villages/seasonal-advice-section";
 import { AffiliateDisclosure } from "@/components/shared/affiliate-disclosure";
+import { StayBookTarget } from "@/components/stays/stay-book-target";
 import { NewsletterSignup } from "@/components/shared/newsletter-signup";
 import { VillageStayMap } from "@/components/villages/village-stay-map";
 import { VillageComparisonSection } from "@/components/villages/village-comparison-section";
@@ -62,52 +63,54 @@ function StayPickCard({
   const primaryUrl = bookingUrl || websiteUrl;
   const meta = `${pick.category} · ${pick.location_label}`;
 
+  const image = (
+    <div className="village-pick__image">
+      {pick.image_url ? (
+        <Image
+          alt={pick.image_alt?.trim() || pick.name}
+          src={pick.image_url}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 50vw, 20vw"
+          unoptimized={isExternalImageUrl(pick.image_url)}
+        />
+      ) : (
+        <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
+      )}
+    </div>
+  );
+
   return (
-    <div className="village-pick village-pick--stay group">
-      {primaryUrl ? (
+    <div
+      className="village-pick village-pick--stay group"
+      {...(bookingUrl ? { "data-stay-card": "" } : {})}
+    >
+      {bookingUrl ? (
+        <StayBookTarget ariaLabel={`Book ${pick.name}`} className="block text-inherit">
+          {image}
+        </StayBookTarget>
+      ) : primaryUrl ? (
         <a
           className="block text-inherit no-underline"
           href={primaryUrl}
           target="_blank"
-          rel={bookingUrl ? "noopener sponsored" : "noopener"}
-          aria-label={bookingUrl ? `Book ${pick.name}` : `Visit ${pick.name} website`}
+          rel="noopener"
+          aria-label={`Visit ${pick.name} website`}
         >
-          <div className="village-pick__image">
-            {pick.image_url ? (
-              <Image
-                alt={pick.image_alt?.trim() || pick.name}
-                src={pick.image_url}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 20vw"
-                unoptimized={isExternalImageUrl(pick.image_url)}
-              />
-            ) : (
-              <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
-            )}
-          </div>
+          {image}
         </a>
       ) : (
-        <div className="village-pick__image">
-          {pick.image_url ? (
-            <Image
-              alt={pick.image_alt?.trim() || pick.name}
-              src={pick.image_url}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 50vw, 20vw"
-              unoptimized={isExternalImageUrl(pick.image_url)}
-            />
-          ) : (
-            <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
-          )}
-        </div>
+        image
       )}
-      {primaryUrl ? (
+      {bookingUrl ? (
+        <StayBookTarget className="village-pick__title block text-inherit">
+          {pick.name}
+        </StayBookTarget>
+      ) : primaryUrl ? (
         <a
           href={primaryUrl}
           target="_blank"
-          rel={bookingUrl ? "noopener sponsored" : "noopener"}
+          rel="noopener"
           className="village-pick__title block text-inherit no-underline"
         >
           {pick.name}
@@ -120,6 +123,7 @@ function StayPickCard({
         {bookingUrl || websiteUrl ? (
           <a
             href={bookingUrl || websiteUrl}
+            {...(bookingUrl ? { "data-stay-book": "" } : {})}
             target="_blank"
             rel={bookingUrl ? "noopener sponsored" : "noopener"}
             className="inline-flex items-center justify-center bg-limestone px-4 py-2 font-label-caps text-[10px] tracking-widest text-background uppercase transition-colors hover:bg-white"

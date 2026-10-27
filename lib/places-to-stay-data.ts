@@ -497,6 +497,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://static.wixstatic.com/media/6f40be_c1d790ea5175473fa58008c1e53be56b~mv2.png/v1/fill/w_1537,h_363,al_c,q_90,enc_avif,quality_auto/6f40be_c1d790ea5175473fa58008c1e53be56b~mv2.png",
     imageAlt: "The Lansdowne, boutique hotel in Bourton-on-the-Water",
     websiteUrl: "https://www.lansdownevilla.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/the-lansdowne-guest-house.en-gb.html",
   },
   {
     id: "lamb-inn-bourton",

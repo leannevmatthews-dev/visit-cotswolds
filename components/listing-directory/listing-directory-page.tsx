@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { AffiliateDisclosure } from "@/components/shared/affiliate-disclosure";
 import { DirectoryFilterNav } from "@/components/listing-directory/directory-filter-nav";
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
+import { StayBookTarget } from "@/components/stays/stay-book-target";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
 import {
   applyDirectoryFilter,
@@ -120,21 +121,25 @@ function ListingCard({
   );
 
   return (
-    <article className="listing-directory-card group flex h-full cursor-pointer flex-col gap-4">
+    <article
+      className="listing-directory-card group flex h-full cursor-pointer flex-col gap-4"
+      {...(stayLinks && bookingUrl ? { "data-stay-card": "" } : {})}
+    >
       <div className="relative">
-        {primaryUrl ? (
+        {stayLinks && bookingUrl ? (
+          <StayBookTarget
+            ariaLabel={`Book ${listing.name}`}
+            className="listing-directory-card__image relative block aspect-square overflow-hidden bg-surface-container"
+          >
+            {image}
+          </StayBookTarget>
+        ) : primaryUrl ? (
           <a
             href={primaryUrl}
-            {...(stayLinks && bookingUrl
-              ? { target: "_blank" as const, rel: "noopener sponsored" }
-              : stayLinks
-                ? { target: "_blank" as const, rel: "noopener" }
-                : linkProps)}
-            aria-label={
-              stayLinks && bookingUrl
-                ? `Book ${listing.name}`
-                : `Visit ${listing.name} website`
-            }
+            {...(stayLinks
+              ? { target: "_blank" as const, rel: "noopener" }
+              : linkProps)}
+            aria-label={`Visit ${listing.name} website`}
             className="listing-directory-card__image relative block aspect-square overflow-hidden bg-surface-container"
           >
             {image}
@@ -191,12 +196,17 @@ function ListingCard({
             </span>
           ) : null}
 
-          {primaryUrl ? (
+          {stayLinks && bookingUrl ? (
+            <StayBookTarget
+              id={titleId}
+              className="listing-directory-card__name font-display-lg text-[26px] leading-tight text-on-background md:text-[28px]"
+            >
+              {listing.name}
+            </StayBookTarget>
+          ) : primaryUrl ? (
             <a
               href={primaryUrl}
-              {...(bookingUrl
-                ? { target: "_blank" as const, rel: "noopener sponsored" }
-                : websiteLinkProps)}
+              {...websiteLinkProps}
               id={titleId}
               className="listing-directory-card__name font-display-lg text-[26px] leading-tight text-on-background no-underline md:text-[28px]"
             >
@@ -217,6 +227,7 @@ function ListingCard({
             {bookingUrl || websiteUrl ? (
               <a
                 href={bookingUrl || websiteUrl}
+                {...(bookingUrl ? { "data-stay-book": "" } : {})}
                 target="_blank"
                 rel={bookingUrl ? "noopener sponsored" : "noopener"}
                 className="inline-flex items-center justify-center bg-limestone px-5 py-2.5 font-label-caps text-[10px] tracking-widest text-background uppercase transition-colors hover:bg-white"
