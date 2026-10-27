@@ -1018,6 +1018,12 @@
     color: inherit;
 }
 
+.village-pick.village-pick--stay {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .village-pick__image {
     position: relative;
     aspect-ratio: 3 / 4;

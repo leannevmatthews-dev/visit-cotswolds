@@ -71,7 +71,7 @@ function StayPickCard({
   const meta = `${pick.category} · ${pick.location_label}`;
 
   return (
-    <div className="village-pick group">
+    <div className="village-pick village-pick--stay group">
       {primaryUrl ? (
         <a
           className="block text-inherit no-underline"
@@ -124,7 +124,7 @@ function StayPickCard({
         <p className="village-pick__title">{pick.name}</p>
       )}
       <p className="village-pick__meta">{meta}</p>
-      <div className="mt-2 flex w-full items-center justify-between gap-3">
+      <div className="mt-auto flex min-h-10 w-full items-center justify-between gap-3">
         {bookingUrl ? (
           <a
             href={bookingUrl}

@@ -120,7 +120,7 @@ function ListingCard({
   );
 
   return (
-    <article className="listing-directory-card group flex cursor-pointer flex-col gap-4">
+    <article className="listing-directory-card group flex h-full cursor-pointer flex-col gap-4">
       <div className="relative">
         {primaryUrl ? (
           <a
@@ -157,7 +157,7 @@ function ListingCard({
       </div>
 
       {stayLinks ? (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-1 flex-col gap-2">
           <div
             className={`flex items-end gap-3 ${showPriceLevel ? "justify-between" : ""}`}
           >
@@ -213,7 +213,7 @@ function ListingCard({
 
           <ListingCardDescription text={listing.description} />
 
-          <div className="mt-1 flex w-full items-center justify-between gap-3">
+          <div className="mt-auto flex min-h-10 w-full items-center justify-between gap-3">
             {bookingUrl ? (
               <a
                 href={bookingUrl}
@@ -242,7 +242,7 @@ function ListingCard({
           href={listing.websiteUrl}
           {...linkProps}
           aria-labelledby={titleId}
-          className="flex flex-col gap-2 rounded-sm outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-limestone"
+          className="flex flex-1 flex-col gap-2 rounded-sm outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-limestone"
         >
           <div
             className={`flex items-end gap-3 ${showPriceLevel ? "justify-between" : ""}`}
@@ -286,7 +286,7 @@ function ListingCard({
 
           <ListingCardDescription text={listing.description} />
 
-          <span className="listing-directory-card__link inline-flex items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors group-hover:text-primary">
+          <span className="listing-directory-card__link mt-auto inline-flex min-h-10 items-center gap-2 self-start font-label-caps text-[10px] tracking-widest text-limestone uppercase transition-colors group-hover:text-primary">
             {linkLabel}
             <span className="material-symbols-outlined text-sm" aria-hidden="true">
               {linkExternal ? "north_east" : "arrow_forward"}
