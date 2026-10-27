@@ -13,6 +13,8 @@ export type PlacesToStayListing = DirectoryListing & {
   location: string;
   address: string;
   pricePerNight: string;
+  /** Booking.com URL. Stay22 converts this; the hotel's own site stays on websiteUrl. */
+  bookingUrl?: string;
 };
 
 export const PLACES_TO_STAY_HERO_IMAGE =
@@ -43,6 +45,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://images.squarespace-cdn.com/content/v1/5f6b4b0c38cfbb7e2af14d5e/905d135c-12f0-4967-97bc-251c8e5a543a/Sidalcea+-+Elegant+-+Farmhouse+-+FreddieEllams+-+mar24+-++%281%29.jpg?format=1500w",
     imageAlt: "Thyme, country estate in Southrop",
     websiteUrl: "https://www.thyme.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/thyme-lechlade.en-gb.html",
   },
   {
     id: "dormy-house",
@@ -59,6 +62,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://dormyhouse.co.uk/wp-content/uploads/2023/07/750x500_Dormy_The-Studio-5.jpg",
     imageAlt: "Dormy House, spa hotel in Broadway",
     websiteUrl: "https://dormyhouse.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/dormy-house.en-gb.html",
   },
   {
     id: "foxhill-manor",
@@ -90,6 +94,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://thefishhotel.co.uk/wp-content/uploads/2023/07/750x500_Fish_small-suite.jpg",
     imageAlt: "The Fish Hotel, boutique hotel in Broadway",
     websiteUrl: "https://www.thefishhotel.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/cotswold-conference-centre.en-gb.html",
   },
   {
     id: "the-painswick",
@@ -106,6 +111,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://hotelcms-production.imgix.net/thepainswick.co.uk/wp-content/uploads/2026/05/26_June_Painswick_WR_-28.jpg?fit=crop&crop=faces&w=1600&h=1478&auto=compress,format&strip=all",
     imageAlt: "The Painswick, boutique hotel in Painswick",
     websiteUrl: "https://www.thepainswick.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/cotswolds88hotel.en-gb.html",
   },
   {
     id: "old-stocks-inn",
@@ -122,6 +128,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.oldstocksinn.com/images/content/standard-images/rooms/house/room-12/rooms-house-12-standard-2.jpg",
     imageAlt: "Old Stocks Inn, inn in Stow-on-the-Wold",
     websiteUrl: "http://www.oldstocksinn.com/",
+    bookingUrl: "https://www.booking.com/hotel/gb/the-old-stocks-restaurant-bar.en-gb.html",
   },
   {
     id: "the-wild-rabbit-rooms",
@@ -154,6 +161,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://bucklandmanor.co.uk/wp-content/uploads/sites/8/2026/01/BMA-Bedrooms-SupFourPost-Oak-Old-Photo-1000px.jpg",
     imageAlt: "Buckland Manor, manor house hotel in Buckland",
     websiteUrl: "https://www.bucklandmanor.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/buckland-manor.en-gb.html",
   },
   {
     id: "the-feathered-nest",
@@ -186,6 +194,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://r.profitroom.com/burleighcourtcotswolds/images/gallery/29d8ac38-3d84-4ec8-8fbb-1eee8ae830dd.jpeg",
     imageAlt: "Burleigh Court, manor house hotel in Minchinhampton",
     websiteUrl: "https://burleighcourtcotswolds.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/burleighcourthotel.en-gb.html",
   },
   {
     id: "lords-of-the-manor",
@@ -202,6 +211,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.lordsofthemanor.com/wp-content/uploads/2022/11/007NKP37940-768x655.jpg",
     imageAlt: "Lords of the Manor, manor house hotel in Upper Slaughter",
     websiteUrl: "https://www.lordsofthemanor.com/",
+    bookingUrl: "https://www.booking.com/hotel/gb/lordsofthemanor.en-gb.html",
   },
   {
     id: "the-old-bell-hotel",
@@ -218,6 +228,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://hotelcms-production.imgix.net/oldbellhotel.co.uk/wp-content/uploads/2022/05/Master_Room-Athelstan.jpg",
     imageAlt: "The Old Bell Hotel, historic inn in Malmesbury",
     websiteUrl: "http://www.oldbellhotel.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/oldbellhotel.en-gb.html",
   },
   {
     id: "cotswold-house",
@@ -234,6 +245,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.cotswoldhouse.com/wp-content/uploads/2025/10/No33_CottageJuniorSuite-5.jpg",
     imageAlt: "Cotswold House Hotel, spa hotel in Chipping Campden",
     websiteUrl: "http://www.cotswoldhouse.com/",
+    bookingUrl: "https://www.booking.com/hotel/gb/cotswold-house.en-gb.html",
   },
   {
     id: "the-bay-tree",
@@ -250,6 +262,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/-/media/sites/cotswolds/bay-tree/2025-rooms-bay-tree/tanfield/bay-tree-tanfield-sitting-room--fire.jpg",
     imageAlt: "The Bay Tree, inn in Burford",
     websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-bay-tree-hotel/",
+    bookingUrl: "https://www.booking.com/hotel/gb/baytreeclassic.en-gb.html",
   },
   {
     id: "the-pig-cotswolds",
@@ -282,6 +295,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://grosvenorpi-wth.imgix.net/0_JEP_2372_dba82a5be7.jpg?fm=avif&auto=format&w=2000",
     imageAlt: "Wild Thyme & Honey, boutique hotel in Ampney Crucis",
     websiteUrl: "https://www.wildthymeandhoney.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/wild-thyme-amp-honey.en-gb.html",
   },
   {
     id: "the-lygon-arms",
@@ -298,6 +312,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.lygonarmshotel.co.uk/media/ko4jkzl1/high-street-superior-room-the-lygon-arms-1.jpg?anchor=center&mode=crop&quality=70&width=2000&height=1200&rnd=134026624582400000",
     imageAlt: "The Lygon Arms, historic inn in Broadway",
     websiteUrl: "https://www.lygonarmshotel.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/lygonarms.en-gb.html",
   },
   {
     id: "swan-hotel-bibury-stay",
@@ -314,6 +329,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/-/media/sites/cotswolds/swan/2025-rooms-swan/superior-double-twin/swan-pink-room-8-deluxe-double.jpg",
     imageAlt: "The Swan Hotel, boutique hotel in Bibury",
     websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-swan-hotel/",
+    bookingUrl: "https://www.booking.com/hotel/gb/swanclassichotel.en-gb.html",
   },
   {
     id: "bull-burford",
@@ -346,6 +362,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.cotswold-inns-hotels.co.uk/the-lamb-inn/-/media/sites/cotswolds/lamb/2025-rooms-lamb/rosie/lamb--rosie--bedroom-bed--chairs.jpg?la=en&h=1280&w=1920&hash=3F1514FA25FB146E24A1CF85E2F363B3",
     imageAlt: "The Lamb Inn, historic inn in Burford",
     websiteUrl: "https://www.cotswold-inns-hotels.co.uk/the-lamb-inn",
+    bookingUrl: "https://www.booking.com/hotel/gb/the-lamb-inn.en-gb.html",
   },
   {
     id: "angel-at-burford",
@@ -362,6 +379,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://i0.wp.com/theangelatburford.co.uk/wp-content/uploads/2026/01/Untitled-design-43.png?w=1024&ssl=1",
     imageAlt: "The Angel at Burford, inn in Burford",
     websiteUrl: "https://theangelatburford.co.uk",
+    bookingUrl: "https://www.booking.com/hotel/gb/the-angel-at-burford.en-gb.html",
   },
   {
     id: "manor-house-castle-combe",
@@ -378,6 +396,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.exclusive.co.uk/media/kninnbmv/holdersmead-15.jpg?width=1210&height=800&quality=70&v=1da333ba13764a0",
     imageAlt: "The Manor House, manor house hotel in Castle Combe",
     websiteUrl: "https://www.exclusive.co.uk/the-manor-house",
+    bookingUrl: "https://www.booking.com/hotel/gb/themnorhousehotel1.en-gb.html",
   },
   {
     id: "castle-inn-stay",
@@ -394,6 +413,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.exclusive.co.uk/media/y24hk2sw/castle-inn-bedrooms-nov-23-15.jpg?rxy=0.39595007108806557,0.4597043573506188&width=588&height=546&quality=70&v=1daf54f0bc17420",
     imageAlt: "The Castle Inn, inn in Castle Combe",
     websiteUrl: "https://www.exclusive.co.uk/the-castle-inn",
+    bookingUrl: "https://www.booking.com/hotel/gb/thecastleinnhotel.en-gb.html",
   },
   {
     id: "white-hart-ford",
@@ -426,6 +446,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://dialhousehotel.com/wp-content/uploads/aubrey-1-755x466.jpg",
     imageAlt: "The Dial House, boutique hotel in Bourton-on-the-Water",
     websiteUrl: "https://dialhousehotel.com",
+    bookingUrl: "https://www.booking.com/hotel/gb/the-dial-house.en-gb.html",
   },
   {
     id: "chester-house-hotel",
@@ -442,6 +463,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://qbook-hotelier-files.s3.eu-west-2.amazonaws.com/Images/8/6/64117aafa2910cd70c5c2260d88c1af8.jpg",
     imageAlt: "Chester House Hotel, boutique hotel in Bourton-on-the-Water",
     websiteUrl: "https://chesterhousehotel.com",
+    bookingUrl: "https://www.booking.com/hotel/gb/chester-house-bourton-on-the-water.en-gb.html",
   },
   {
     id: "the-old-new-inn",
@@ -458,6 +480,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://images.squarespace-cdn.com/content/v1/63d3b9c071106579db927e96/0b668045-9978-496b-a7c6-e5eb8ae02c65/Room+7+-+Beds+2.jpg?format=1500w",
     imageAlt: "The Old New Inn, inn in Bourton-on-the-Water",
     websiteUrl: "https://www.theoldnewinn.co.uk/",
+    bookingUrl: "https://www.booking.com/hotel/gb/the-old-new-inn.en-gb.html",
   },
   {
     id: "the-lansdowne",
@@ -506,6 +529,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://bunny-wp-pullzone-dlshqqoicq.b-cdn.net/wp-content/uploads/2026/05/0JEP0344-scaled.jpg",
     imageAlt: "The Porch House, historic inn in Stow-on-the-Wold",
     websiteUrl: "https://www.porch-house.co.uk",
+    bookingUrl: "https://www.booking.com/hotel/gb/theroyalisthotel.en-gb.html",
   },
   {
     id: "old-stocks-inn-stow",
@@ -522,6 +546,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.oldstocksinn.com/images/content/food-and-drink-/2025/standard/old-stocks-inn-food-and-drink-2025-standard-2.jpg",
     imageAlt: "Old Stocks Inn, boutique coaching inn in Stow-on-the-Wold",
     websiteUrl: "https://www.oldstocksinn.com",
+    bookingUrl: "https://www.booking.com/hotel/gb/the-old-stocks-restaurant-bar.en-gb.html",
   },
   {
     id: "the-kings-arms-stow",
@@ -538,6 +563,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://www.kingsarmsstow.co.uk/wp-content/uploads/2014/05/10-Tetbury-the-kings-arms.jpg",
     imageAlt: "The Kings Arms, historic coaching inn in Stow-on-the-Wold",
     websiteUrl: "https://www.kingsarmsstow.co.uk",
+    bookingUrl: "https://www.booking.com/hotel/gb/the-kings-arms-stow-on-the-wold2.en-gb.html",
   },
   {
     id: "the-bell-at-stow",
@@ -571,6 +597,7 @@ export const PLACES_TO_STAY_LISTINGS: PlacesToStayListing[] = [
       "https://hotelcms-production.imgix.net/broadway-hotel.co.uk/wp-content/uploads/2021/11/IMG_7425.jpg",
     imageAlt: "The Broadway Hotel on the village green, Broadway",
     websiteUrl: "https://broadway-hotel.co.uk",
+    bookingUrl: "https://www.booking.com/hotel/gb/broadwayclassic.en-gb.html",
   },
 ];
 

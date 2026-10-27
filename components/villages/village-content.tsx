@@ -8,7 +8,9 @@ import { LocalTipsSection } from "@/components/villages/local-tips-section";
 import { ParkingGuideSection } from "@/components/villages/parking-guide-section";
 import { ReviewedBy } from "@/components/villages/reviewed-by";
 import { SeasonalAdviceSection } from "@/components/villages/seasonal-advice-section";
+import { AffiliateDisclosure } from "@/components/shared/affiliate-disclosure";
 import { NewsletterSignup } from "@/components/shared/newsletter-signup";
+import { VillageStayMap } from "@/components/villages/village-stay-map";
 import { VillageComparisonSection } from "@/components/villages/village-comparison-section";
 import { NearbyVillagesSection } from "@/components/villages/nearby-villages-section";
 import { VillageImagePlaceholder } from "@/components/villages/village-image-placeholder";
@@ -42,6 +44,111 @@ type VillageContentProps = {
   linkableNearbyVillages?: LinkableNearbyVillage[];
   nearbyHeroImages?: Record<string, string>;
 };
+
+function findStayListing(name: string, location: string) {
+  const matches = PLACES_TO_STAY_LISTINGS.filter(
+    (listing) => listing.name.toLowerCase() === name.trim().toLowerCase(),
+  );
+  if (matches.length <= 1) return matches[0];
+  const place = location.trim().toLowerCase();
+  return (
+    matches.find((listing) => {
+      const stayPlace = listing.location.toLowerCase();
+      return stayPlace.includes(place) || place.includes(stayPlace.split(",")[0].trim());
+    }) ?? matches[0]
+  );
+}
+
+function StayPickCard({
+  pick,
+}: {
+  pick: Village["places_to_stay"][number];
+}) {
+  const listing = findStayListing(pick.name, pick.location_label);
+  const bookingUrl = listing?.bookingUrl?.trim();
+  const websiteUrl = (pick.external_link?.trim() || listing?.websiteUrl || "").trim();
+  const primaryUrl = bookingUrl || websiteUrl;
+  const meta = `${pick.category} · ${pick.location_label}`;
+
+  return (
+    <div className="village-pick group">
+      {primaryUrl ? (
+        <a
+          className="block text-inherit no-underline"
+          href={primaryUrl}
+          target="_blank"
+          rel={bookingUrl ? "noopener sponsored" : "noopener"}
+          aria-label={bookingUrl ? `Book ${pick.name}` : `Visit ${pick.name} website`}
+        >
+          <div className="village-pick__image">
+            {pick.image_url ? (
+              <Image
+                alt={pick.image_alt?.trim() || pick.name}
+                src={pick.image_url}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 20vw"
+                unoptimized={isExternalImageUrl(pick.image_url)}
+              />
+            ) : (
+              <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
+            )}
+          </div>
+        </a>
+      ) : (
+        <div className="village-pick__image">
+          {pick.image_url ? (
+            <Image
+              alt={pick.image_alt?.trim() || pick.name}
+              src={pick.image_url}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 20vw"
+              unoptimized={isExternalImageUrl(pick.image_url)}
+            />
+          ) : (
+            <VillageImagePlaceholder className="village-compare-card__placeholder h-full min-h-[120px]" />
+          )}
+        </div>
+      )}
+      {primaryUrl ? (
+        <a
+          href={primaryUrl}
+          target="_blank"
+          rel={bookingUrl ? "noopener sponsored" : "noopener"}
+          className="village-pick__title block text-inherit no-underline"
+        >
+          {pick.name}
+        </a>
+      ) : (
+        <p className="village-pick__title">{pick.name}</p>
+      )}
+      <p className="village-pick__meta">{meta}</p>
+      <div className="mt-2 flex flex-col items-start gap-2">
+        {bookingUrl ? (
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener sponsored"
+            className="inline-flex items-center justify-center bg-limestone px-4 py-2 font-label-caps text-[10px] tracking-widest text-background uppercase transition-colors hover:bg-white"
+          >
+            Book
+          </a>
+        ) : null}
+        {websiteUrl ? (
+          <a
+            href={websiteUrl}
+            target="_blank"
+            rel="noopener"
+            className="font-body-sm text-xs text-on-surface-variant/70 underline-offset-2 transition-colors hover:text-on-surface-variant hover:underline"
+          >
+            Website
+          </a>
+        ) : null}
+      </div>
+    </div>
+  );
+}
 
 function PlacePickCard({
   pick,
@@ -260,6 +367,10 @@ export function VillageContent({
             <AtAGlancePanel village={village} />
           </div>
 
+          <div className="mt-6">
+            <AffiliateDisclosure />
+          </div>
+
           <nav className="village-jump-links" aria-label="Jump to section">
             <a href="#things-to-do">Things To Do</a>
             <a href="#where-to-eat">Where To Eat</a>
@@ -329,15 +440,15 @@ export function VillageContent({
                   </div>
                   <div className="village-picks-grid grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
                     {placesToStay.map((pick) => (
-                      <PlacePickCard
-                        key={pick.name}
-                        pick={pick}
-                        fallbackHref="/places-to-stay"
-                      />
+                      <StayPickCard key={pick.name} pick={pick} />
                     ))}
                   </div>
+                  <VillageStayMap slug={village.slug} villageName={village.name} />
                 </section>
               )}
+              {village.places_to_stay.length === 0 ? (
+                <VillageStayMap slug={village.slug} villageName={village.name} />
+              ) : null}
             </div>
           )}
 

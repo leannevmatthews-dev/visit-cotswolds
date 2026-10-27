@@ -15,6 +15,8 @@ export function PlacesToStayContent() {
       filterAriaLabel="Filter places to stay"
       filters={STAY_FILTER_CATEGORIES}
       listings={PLACES_TO_STAY_LISTINGS}
+      stayLinks
+      showAffiliateDisclosure
     />
   );
 }
