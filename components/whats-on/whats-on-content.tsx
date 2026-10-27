@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { DayPicker, type DateRange } from "react-day-picker";
 import "react-day-picker/style.css";
 import "@/css/whats-on-day-picker.css";
+import { EventCardImage } from "@/components/whats-on/event-card-image";
 import { DirectoryFilterNav } from "@/components/listing-directory/directory-filter-nav";
 import { DirectoryPageHero } from "@/components/listing-directory/directory-page-hero";
 import { NewsletterSignup } from "@/components/shared/newsletter-signup";
@@ -87,7 +87,6 @@ function shouldShowRecurringDetail(event: WhatsOnEvent): boolean {
 }
 
 function EventCard({ event }: { event: WhatsOnEvent }) {
-  const hasImage = Boolean(event.imageUrl?.trim());
   const isRecurring = Boolean(event.recurring);
   const isMultiDay = Boolean(event.endDay && event.endMonth);
 
@@ -101,19 +100,11 @@ function EventCard({ event }: { event: WhatsOnEvent }) {
         target="_blank"
       >
         <div className="absolute inset-0 overflow-hidden">
-          {hasImage ? (
-            <>
-              <Image
-                alt={event.imageAlt}
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                src={event.imageUrl}
-                unoptimized
-              />
-              <div className="glass-overlay absolute inset-0 opacity-60" />
-            </>
-          ) : null}
+          <EventCardImage
+            alt={event.imageAlt}
+            categoryLabel={formatEventCategories(event.categories)}
+            src={event.imageUrl}
+          />
         </div>
         {isRecurring ? (
           <div className={`${DATE_BADGE_POSITION_CLASS} ${DATE_BADGE_CLASS}`}>

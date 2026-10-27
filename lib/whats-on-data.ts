@@ -45,6 +45,7 @@ export const WHATS_ON_FILTERS: WhatsOnFilter[] = [
   { id: "sporting", label: "Sporting", matchCategory: "Sporting" },
   { id: "culture", label: "Culture", matchCategory: "Culture" },
   { id: "family", label: "Family", matchCategory: "Family" },
+  { id: "events", label: "Events", matchCategory: "Events" },
   {
     id: "experiences-wellness",
     label: "Experiences & Wellness",

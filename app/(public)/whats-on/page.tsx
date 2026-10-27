@@ -10,8 +10,11 @@ import {
   WHATS_ON_EVENTS,
   WHATS_ON_FILTERS,
 } from "@/lib/whats-on-data";
+import { getPublishedWhatsOnEvents } from "@/lib/whats-on-queries";
 import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
+
+export const revalidate = 600;
 
 export const metadata: Metadata = pageMetadata({
   title: "What's On In The Cotswolds",
@@ -20,8 +23,15 @@ export const metadata: Metadata = pageMetadata({
   path: "/whats-on",
 });
 
-export default function WhatsOnPage() {
-  const upcomingEvents = filterUpcomingWhatsOnEvents(WHATS_ON_EVENTS);
+export default async function WhatsOnPage() {
+  let events = WHATS_ON_EVENTS;
+  try {
+    events = await getPublishedWhatsOnEvents();
+  } catch {
+    events = WHATS_ON_EVENTS;
+  }
+
+  const upcomingEvents = filterUpcomingWhatsOnEvents(events);
   const defaultVisibleEvents = sortWhatsOnEventsByDate(
     filterWhatsOnEvents(upcomingEvents, WHATS_ON_FILTERS[0]?.id ?? "all"),
   );
