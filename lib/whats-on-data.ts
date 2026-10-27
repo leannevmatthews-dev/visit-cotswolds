@@ -32,6 +32,10 @@ export type WhatsOnEvent = {
   recurring?: string;
   /** Short schedule label for the card badge, e.g. "Every Saturday". */
   frequency?: string;
+  /** Inclusive start, YYYY-MM-DD. */
+  startDate?: string;
+  /** Inclusive end, YYYY-MM-DD. Null when the event is a single day. */
+  endDate?: string | null;
 };
 
 export const WHATS_ON_HERO_IMAGE =
@@ -852,7 +856,7 @@ const MONTH_INDEX: Record<string, number> = {
   DECEMBER: 11,
 };
 
-function parseEventDate(month: string, day: string, year: number): Date | null {
+function isoFromMonthDay(month: string, day: string, year: number): string | null {
   const monthIndex = MONTH_INDEX[month.trim().toUpperCase()];
   const dayNumber = Number.parseInt(day.trim(), 10);
 
@@ -864,54 +868,122 @@ function parseEventDate(month: string, day: string, year: number): Date | null {
     return null;
   }
 
-  const date = new Date(year, monthIndex, dayNumber);
-  date.setHours(0, 0, 0, 0);
-  return date;
+  return `${year}-${String(monthIndex + 1).padStart(2, "0")}-${String(dayNumber).padStart(2, "0")}`;
 }
 
-function getEventDate(event: WhatsOnEvent): Date | null {
-  return parseEventDate(event.month, event.day, event.year);
-}
+function eventIsoRange(event: WhatsOnEvent): { start: string; end: string } | null {
+  const start =
+    event.startDate?.slice(0, 10) ||
+    isoFromMonthDay(event.month, event.day, event.year);
 
-function getEventEndDate(event: WhatsOnEvent): Date | null {
-  if (event.endDay && event.endMonth) {
-    return parseEventDate(event.endMonth, event.endDay, event.year);
+  if (!start) {
+    return null;
   }
 
-  return getEventDate(event);
+  if (event.endDate) {
+    return { start, end: event.endDate.slice(0, 10) };
+  }
+
+  if (event.endMonth && event.endDay) {
+    const startMonth = MONTH_INDEX[event.month.trim().toUpperCase()];
+    const endMonth = MONTH_INDEX[event.endMonth.trim().toUpperCase()];
+    const endYear =
+      startMonth !== undefined && endMonth !== undefined && endMonth < startMonth
+        ? event.year + 1
+        : event.year;
+    const end = isoFromMonthDay(event.endMonth, event.endDay, endYear);
+    return { start, end: end ?? start };
+  }
+
+  return { start, end: start };
 }
 
-function eventOverlapsDateRange(
-  event: WhatsOnEvent,
-  rangeStart: Date,
-  rangeEnd: Date,
+function rangesOverlap(
+  eventStart: string,
+  eventEnd: string,
+  rangeStart: string,
+  rangeEnd: string,
 ): boolean {
-  const eventStart = getEventDate(event);
-  const eventEnd = getEventEndDate(event);
+  return eventStart <= rangeEnd && rangeStart <= eventEnd;
+}
 
-  if (eventStart === null || eventEnd === null) {
+function eventOverlapsIsoRange(
+  event: WhatsOnEvent,
+  rangeStart: string,
+  rangeEnd: string,
+): boolean {
+  const eventRange = eventIsoRange(event);
+  if (!eventRange) {
     return false;
   }
 
-  return eventStart <= rangeEnd && eventEnd >= rangeStart;
+  return rangesOverlap(eventRange.start, eventRange.end, rangeStart, rangeEnd);
 }
 
-function isDateWithinEventRange(event: WhatsOnEvent, date: Date): boolean {
-  const eventStart = getEventDate(event);
-  const eventEnd = getEventEndDate(event);
+export function londonDateIso(referenceDate: Date = new Date()): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/London",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(referenceDate);
+}
 
-  if (eventStart === null || eventEnd === null) {
-    return false;
+function addIsoDays(iso: string, days: number): string {
+  const [year, month, day] = iso.split("-").map(Number);
+  const shifted = new Date(Date.UTC(year, month - 1, day + days));
+  const nextYear = shifted.getUTCFullYear();
+  const nextMonth = String(shifted.getUTCMonth() + 1).padStart(2, "0");
+  const nextDay = String(shifted.getUTCDate()).padStart(2, "0");
+  return `${nextYear}-${nextMonth}-${nextDay}`;
+}
+
+function londonWeekdayIndex(referenceDate: Date): number {
+  const weekday = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Europe/London",
+    weekday: "short",
+  }).format(referenceDate);
+
+  return ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(weekday);
+}
+
+function weekendIsoRange(referenceDate: Date): { start: string; end: string } {
+  const today = londonDateIso(referenceDate);
+  const weekday = londonWeekdayIndex(referenceDate);
+
+  if (weekday === 6) {
+    return { start: today, end: addIsoDays(today, 1) };
   }
 
-  return date >= eventStart && date <= eventEnd;
+  if (weekday === 0) {
+    return { start: addIsoDays(today, -1), end: today };
+  }
+
+  const saturday = addIsoDays(today, 6 - weekday);
+  return { start: saturday, end: addIsoDays(saturday, 1) };
 }
 
+function monthIsoRange(referenceDate: Date): { start: string; end: string } {
+  const today = londonDateIso(referenceDate);
+  const [year, month] = today.split("-");
+  const lastDay = new Date(Date.UTC(Number(year), Number(month), 0)).getUTCDate();
+  return {
+    start: `${year}-${month}-01`,
+    end: `${year}-${month}-${String(lastDay).padStart(2, "0")}`,
+  };
+}
+
+function calendarDateIso(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
 
 export function sortWhatsOnEventsByDate(events: WhatsOnEvent[]): WhatsOnEvent[] {
   return [...events].sort((left, right) => {
-    const leftDate = getEventDate(left);
-    const rightDate = getEventDate(right);
+    const leftDate = eventIsoRange(left)?.start ?? null;
+    const rightDate = eventIsoRange(right)?.start ?? null;
 
     if (leftDate === null && rightDate === null) {
       return 0;
@@ -925,7 +997,7 @@ export function sortWhatsOnEventsByDate(events: WhatsOnEvent[]): WhatsOnEvent[] 
       return -1;
     }
 
-    return leftDate.getTime() - rightDate.getTime();
+    return leftDate < rightDate ? -1 : leftDate > rightDate ? 1 : 0;
   });
 }
 
@@ -933,40 +1005,16 @@ export function filterUpcomingWhatsOnEvents(
   events: WhatsOnEvent[],
   referenceDate: Date = new Date(),
 ): WhatsOnEvent[] {
-  const today = new Date(referenceDate);
-  today.setHours(0, 0, 0, 0);
+  const today = londonDateIso(referenceDate);
 
   return events.filter((event) => {
     if (event.recurring) {
       return true;
     }
 
-    const eventEndDate = getEventEndDate(event);
-    return eventEndDate !== null && eventEndDate >= today;
+    const eventRange = eventIsoRange(event);
+    return eventRange !== null && eventRange.end >= today;
   });
-}
-
-function getUpcomingWeekendDates(referenceDate: Date): Date[] {
-  const dayOfWeek = referenceDate.getDay();
-  let daysUntilSaturday: number;
-
-  if (dayOfWeek === 0) {
-    daysUntilSaturday = 6;
-  } else if (dayOfWeek === 6) {
-    daysUntilSaturday = 0;
-  } else {
-    daysUntilSaturday = 6 - dayOfWeek;
-  }
-
-  const saturday = new Date(referenceDate);
-  saturday.setHours(0, 0, 0, 0);
-  saturday.setDate(referenceDate.getDate() + daysUntilSaturday);
-
-  const sunday = new Date(saturday);
-  sunday.setDate(saturday.getDate() + 1);
-  sunday.setHours(0, 0, 0, 0);
-
-  return [saturday, sunday];
 }
 
 export function filterWhatsOnEventsByDate(
@@ -974,27 +1022,21 @@ export function filterWhatsOnEventsByDate(
   dateFilter: WhatsOnDateFilter,
   referenceDate: Date = new Date(),
 ): WhatsOnEvent[] {
-  const today = new Date(referenceDate);
-  today.setHours(0, 0, 0, 0);
-
   if (dateFilter === "today") {
-    return events.filter((event) => isDateWithinEventRange(event, today));
+    const today = londonDateIso(referenceDate);
+    return events.filter((event) => eventOverlapsIsoRange(event, today, today));
   }
 
   if (dateFilter === "month") {
-    const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
-    monthStart.setHours(0, 0, 0, 0);
-    const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-    monthEnd.setHours(0, 0, 0, 0);
-
+    const month = monthIsoRange(referenceDate);
     return events.filter((event) =>
-      eventOverlapsDateRange(event, monthStart, monthEnd),
+      eventOverlapsIsoRange(event, month.start, month.end),
     );
   }
 
-  const weekendDates = getUpcomingWeekendDates(referenceDate);
+  const weekend = weekendIsoRange(referenceDate);
   return events.filter((event) =>
-    weekendDates.some((weekendDate) => isDateWithinEventRange(event, weekendDate)),
+    eventOverlapsIsoRange(event, weekend.start, weekend.end),
   );
 }
 
@@ -1002,14 +1044,12 @@ export function filterWhatsOnEventsByDateRange(
   events: WhatsOnEvent[],
   range: WhatsOnDateRange,
 ): WhatsOnEvent[] {
-  const start = new Date(range.start);
-  start.setHours(0, 0, 0, 0);
-  const end = new Date(range.end);
-  end.setHours(0, 0, 0, 0);
+  const start = calendarDateIso(range.start);
+  const end = calendarDateIso(range.end);
 
   if (start > end) {
     return [];
   }
 
-  return events.filter((event) => eventOverlapsDateRange(event, start, end));
+  return events.filter((event) => eventOverlapsIsoRange(event, start, end));
 }

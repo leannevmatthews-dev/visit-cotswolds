@@ -193,13 +193,16 @@ function getEventDateFields(event: WhatsOnEvent) {
     return {};
   }
 
-  const startDate = formatEventIsoDate(event.month, event.day, event.year);
+  const startDate =
+    event.startDate?.slice(0, 10) ||
+    formatEventIsoDate(event.month, event.day, event.year);
   if (!startDate) {
     return {};
   }
 
-  const endDate =
-    event.endDay && event.endMonth
+  const endDate = event.endDate
+    ? event.endDate.slice(0, 10)
+    : event.endDay && event.endMonth
       ? formatEventIsoDate(event.endMonth, event.endDay, event.year)
       : null;
 

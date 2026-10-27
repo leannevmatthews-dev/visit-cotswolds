@@ -54,6 +54,8 @@ export function mapEventRow(row: EventRow): WhatsOnEvent {
     imageAlt: row.image_alt,
     categories: (row.categories ?? []) as WhatsOnCategory[],
     websiteUrl: row.website_url,
+    startDate: row.start_date.slice(0, 10),
+    endDate: row.end_date ? row.end_date.slice(0, 10) : null,
   };
 
   if (row.end_date) {
