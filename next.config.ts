@@ -3,6 +3,10 @@ import { STATIC_PAGE_REDIRECTS } from "./lib/static-page-routes";
 
 const nextConfig: NextConfig = {
   images: {
+    minimumCacheTTL: 2678400,
+    formats: ['image/webp'],
+    deviceSizes: [640, 828, 1200, 1920],
+    imageSizes: [256, 384],
     remotePatterns: [
       {
         protocol: "https",
