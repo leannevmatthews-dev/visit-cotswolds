@@ -200,6 +200,47 @@ function canonicalPlacePickName(name: string, villageName?: string): string {
   );
 }
 
+function normalizeWebsite(url: string | null | undefined): string {
+  return (url ?? "").trim().replace(/\/+$/, "").toLowerCase();
+}
+
+function locationMatches(listingLocation: string, pickLocation: string): boolean {
+  const place = pickLocation.trim().toLowerCase();
+  const stayPlace = listingLocation.trim().toLowerCase();
+  if (!place || !stayPlace) return false;
+  const stayTown = stayPlace.split(",")[0].trim();
+  return stayPlace.includes(place) || place.includes(stayTown);
+}
+
+/** Match a village pick to a directory listing, including shared names such as The Lamb Inn. */
+export function findPlacePickListing<
+  TListing extends { name: string; location: string; websiteUrl: string },
+>(
+  listings: TListing[],
+  name: string,
+  location: string,
+  website?: string | null,
+): TListing | undefined {
+  const matches = listings.filter(
+    (listing) =>
+      normalizePlacePickName(listing.name) === normalizePlacePickName(name),
+  );
+  if (matches.length <= 1) return matches[0];
+
+  const site = normalizeWebsite(website);
+  if (site) {
+    const bySite = matches.find(
+      (listing) => normalizeWebsite(listing.websiteUrl) === site,
+    );
+    if (bySite) return bySite;
+  }
+
+  return (
+    matches.find((listing) => locationMatches(listing.location, location)) ??
+    matches[0]
+  );
+}
+
 /** Fill missing image/link on village place picks from directory listings by name. */
 export function enrichPlacePicksFromListings<
   TPick extends {
@@ -210,16 +251,14 @@ export function enrichPlacePicksFromListings<
     external_link: string | null;
   },
 >(picks: TPick[], listings: PlacePickListing[], villageName?: string): TPick[] {
-  const listingsByName = new Map(
-    listings.map((listing) => [
-      normalizePlacePickName(listing.name),
-      listing,
-    ]),
-  );
-
   return picks.map((pick) => {
     const name = canonicalPlacePickName(pick.name, villageName);
-    const listing = listingsByName.get(normalizePlacePickName(name));
+    const listing = findPlacePickListing(
+      listings,
+      name,
+      pick.location_label,
+      pick.external_link,
+    );
     if (!listing) {
       return name === pick.name ? pick : { ...pick, name };
     }

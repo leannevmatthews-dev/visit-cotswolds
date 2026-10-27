@@ -214,18 +214,16 @@ function ListingCard({
           <ListingCardDescription text={listing.description} />
 
           <div className="mt-auto flex min-h-10 w-full items-center justify-between gap-3">
-            {bookingUrl ? (
+            {bookingUrl || websiteUrl ? (
               <a
-                href={bookingUrl}
+                href={bookingUrl || websiteUrl}
                 target="_blank"
-                rel="noopener sponsored"
+                rel={bookingUrl ? "noopener sponsored" : "noopener"}
                 className="inline-flex items-center justify-center bg-limestone px-5 py-2.5 font-label-caps text-[10px] tracking-widest text-background uppercase transition-colors hover:bg-white"
               >
                 Book
               </a>
-            ) : (
-              <span />
-            )}
+            ) : null}
             {websiteUrl ? (
               <a
                 href={websiteUrl}

@@ -23,6 +23,7 @@ import { isExternalImageUrl } from "@/lib/utils/is-external-image-url";
 import {
   buildVillageThingsToDo,
   enrichPlacePicksFromListings,
+  findPlacePickListing,
   heroImageUrl,
   splitParagraphs,
 } from "@/lib/villages/helpers";
@@ -45,26 +46,17 @@ type VillageContentProps = {
   nearbyHeroImages?: Record<string, string>;
 };
 
-function findStayListing(name: string, location: string) {
-  const matches = PLACES_TO_STAY_LISTINGS.filter(
-    (listing) => listing.name.toLowerCase() === name.trim().toLowerCase(),
-  );
-  if (matches.length <= 1) return matches[0];
-  const place = location.trim().toLowerCase();
-  return (
-    matches.find((listing) => {
-      const stayPlace = listing.location.toLowerCase();
-      return stayPlace.includes(place) || place.includes(stayPlace.split(",")[0].trim());
-    }) ?? matches[0]
-  );
-}
-
 function StayPickCard({
   pick,
 }: {
   pick: Village["places_to_stay"][number];
 }) {
-  const listing = findStayListing(pick.name, pick.location_label);
+  const listing = findPlacePickListing(
+    PLACES_TO_STAY_LISTINGS,
+    pick.name,
+    pick.location_label,
+    pick.external_link,
+  );
   const bookingUrl = listing?.bookingUrl?.trim();
   const websiteUrl = (pick.external_link?.trim() || listing?.websiteUrl || "").trim();
   const primaryUrl = bookingUrl || websiteUrl;
@@ -125,18 +117,16 @@ function StayPickCard({
       )}
       <p className="village-pick__meta">{meta}</p>
       <div className="mt-auto flex min-h-10 w-full items-center justify-between gap-3">
-        {bookingUrl ? (
+        {bookingUrl || websiteUrl ? (
           <a
-            href={bookingUrl}
+            href={bookingUrl || websiteUrl}
             target="_blank"
-            rel="noopener sponsored"
+            rel={bookingUrl ? "noopener sponsored" : "noopener"}
             className="inline-flex items-center justify-center bg-limestone px-4 py-2 font-label-caps text-[10px] tracking-widest text-background uppercase transition-colors hover:bg-white"
           >
             Book
           </a>
-        ) : (
-          <span />
-        )}
+        ) : null}
         {websiteUrl ? (
           <a
             href={websiteUrl}

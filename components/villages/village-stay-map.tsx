@@ -27,19 +27,16 @@ export function VillageStayMap({
   const src = `https://www.stay22.com/embed/gm?aid=visitcotswolds&lat=${coordinates.lat}&lng=${coordinates.lng}&campaign=village-${slug}&maincolor=${STAY22_BRAND_COLOUR}`;
 
   return (
-    <section className="mt-10" aria-labelledby={`stay-map-${slug}`}>
-      <h3
-        id={`stay-map-${slug}`}
-        className="font-headline-md mb-4 text-2xl text-primary"
-      >
-        Where to stay in {villageName}
-      </h3>
+    <figure className="mt-16 mb-16 w-full max-w-full md:mt-24 md:mb-24">
+      <figcaption className="font-body-sm mb-3 text-on-surface-variant">
+        Prices and availability around {villageName}.
+      </figcaption>
       <iframe
         src={src}
         title={`Map of places to stay in ${villageName}`}
         loading="lazy"
-        className="h-[380px] w-full rounded-lg border-0 md:h-[450px]"
+        className="h-[300px] w-full rounded-lg border-0 md:h-[340px]"
       />
-    </section>
+    </figure>
   );
 }
