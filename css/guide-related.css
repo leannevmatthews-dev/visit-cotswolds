@@ -1,0 +1,152 @@
+/* Related-guide sidebar and carousels. Classes are only rendered when sidebar_related is set. */
+
+.guide-related-layout {
+    max-width: 48rem;
+}
+
+@media (min-width: 1024px) {
+    .guide-related-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 720px) 300px;
+        column-gap: 48px;
+        align-items: start;
+        justify-content: center;
+        /* Side padding sits inside the box, so add it or the article column shrinks below 720px. */
+        max-width: calc(720px + 48px + 300px + (2 * var(--spacing-margin-desktop)));
+    }
+}
+
+.guide-related-sidebar {
+    align-self: start;
+}
+
+.guide-related-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.guide-related-heading {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    line-height: 1.15;
+    color: var(--color-primary);
+    margin: 0 0 1.25rem;
+}
+
+@media (max-width: 1023px) {
+    .guide-related-carousel-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0 0 1.25rem;
+    }
+
+    .guide-related-carousel-head .guide-related-heading {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .guide-related-swipe {
+        flex-shrink: 0;
+        margin: 0.35rem 0 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .guide-related-swipe.is-dismissed {
+        opacity: 0;
+    }
+
+    .guide-related-carousel-frame {
+        position: relative;
+        margin-right: calc(var(--spacing-margin-mobile) * -1);
+    }
+
+    .guide-related-carousel {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .guide-related-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .guide-related-carousel:focus-visible {
+        outline: 2px solid var(--color-limestone);
+        outline-offset: 2px;
+    }
+
+    .guide-related-carousel > .guide-related-card {
+        flex: 0 0 70vw;
+        scroll-snap-align: start;
+    }
+
+    .guide-related-overlay-shade {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+            to bottom,
+            transparent 35%,
+            rgba(0, 0, 0, 0.85) 100%
+        );
+    }
+
+    .guide-related-overlay-copy {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        padding: 16px;
+    }
+
+    .guide-related-carousel-fade {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 100%;
+        pointer-events: none;
+        background: linear-gradient(to right, transparent, var(--color-background));
+        transition: opacity 0.2s ease;
+    }
+
+    .guide-related-carousel-fade.is-hidden {
+        opacity: 0;
+    }
+
+    .guide-related-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .guide-related-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        border: 1px solid var(--color-limestone);
+        background: transparent;
+    }
+
+    .guide-related-dot.is-active {
+        background: var(--color-limestone);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .guide-related-carousel-frame {
+        margin-right: calc(var(--spacing-margin-desktop) * -1);
+    }
+}

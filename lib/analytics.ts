@@ -31,6 +31,25 @@ export function setAnalyticsOptOut(): void {
   }
 }
 
+type RelatedCardPlacement = "sidebar" | "inline" | "end";
+
+/** GA4 event for a related-guide card. No-op when the visitor has opted out or gtag is unavailable. */
+export function trackRelatedCardClick(params: {
+  from_slug: string;
+  to_slug: string;
+  position: number;
+  placement: RelatedCardPlacement;
+}): void {
+  if (typeof window === "undefined" || isAnalyticsOptedOut()) return;
+
+  const gtag = (
+    window as Window & { gtag?: (...args: unknown[]) => void }
+  ).gtag;
+  if (typeof gtag !== "function") return;
+
+  gtag("event", "related_card_click", params);
+}
+
 export function clearAnalyticsOptOut(): void {
   try {
     window.localStorage.removeItem(ANALYTICS_OPT_OUT_KEY);

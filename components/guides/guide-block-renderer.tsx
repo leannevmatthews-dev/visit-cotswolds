@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Fragment, type ReactNode } from "react";
 import { FaqAccordion } from "@/components/shared/faq-accordion";
 import { GuideImagePlaceholder } from "@/components/guides/guide-image-placeholder";
 import { GuideMapEmbeds } from "@/components/guides/guide-map-embeds";
@@ -8,12 +9,19 @@ type GuideBlockRendererProps = {
   blocks: GuideContentBlock[];
   blockOffset?: number;
   headingIds?: Record<number, string>;
+  /** Rendered only when a guide has related cards. */
+  relatedInsert?: {
+    inlineBeforeBlockIndex?: number;
+    inline?: ReactNode;
+    beforeFaq?: ReactNode;
+  };
 };
 
 export function GuideBlockRenderer({
   blocks,
   blockOffset = 0,
   headingIds = {},
+  relatedInsert,
 }: GuideBlockRendererProps) {
   return (
     <div className="guide-article space-y-6 md:space-y-8">
@@ -21,6 +29,47 @@ export function GuideBlockRenderer({
         const blockIndex = blockOffset + index;
         const key = `${block.type}-${blockIndex}`;
 
+        const rendered = renderGuideBlock(block, key, blockIndex, headingIds);
+        if (!rendered) return null;
+
+        const before: ReactNode[] = [];
+        if (
+          relatedInsert?.inline &&
+          block.type === "heading" &&
+          block.level === 2 &&
+          blockIndex === relatedInsert.inlineBeforeBlockIndex
+        ) {
+          before.push(
+            <div key={`${key}-inline`} className="lg:hidden">
+              {relatedInsert.inline}
+            </div>,
+          );
+        }
+        if (relatedInsert?.beforeFaq && block.type === "faq") {
+          before.push(
+            <div key={`${key}-end`} className="lg:hidden">
+              {relatedInsert.beforeFaq}
+            </div>,
+          );
+        }
+        if (before.length === 0) return rendered;
+        return (
+          <Fragment key={key}>
+            {before}
+            {rendered}
+          </Fragment>
+        );
+      })}
+    </div>
+  );
+}
+
+function renderGuideBlock(
+  block: GuideContentBlock,
+  key: string,
+  blockIndex: number,
+  headingIds: Record<number, string>,
+) {
         switch (block.type) {
           case "paragraph":
             return (
@@ -255,7 +304,4 @@ export function GuideBlockRenderer({
           default:
             return null;
         }
-      })}
-    </div>
-  );
 }

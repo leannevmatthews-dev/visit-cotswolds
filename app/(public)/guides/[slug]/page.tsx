@@ -7,6 +7,7 @@ import {
 import { GuideBlockRenderer } from "@/components/guides/guide-block-renderer";
 import { GuidePageHero } from "@/components/guides/guide-page-hero";
 import { GuideToc } from "@/components/guides/guide-toc";
+import { RelatedGuideCards } from "@/components/guides/related-guide-cards";
 import {
   buildGuideH2IdByIndex,
   getGuideTocInsertIndex,
@@ -15,6 +16,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import {
   getAllPublishedGuideSlugs,
   getGuideBySlug,
+  getGuideSidebarRelated,
+  getPublishedGuidesInOrder,
 } from "@/lib/guides/queries";
 import type { GuideContentBlock } from "@/lib/guides-data";
 import {
@@ -30,6 +33,8 @@ import {
 } from "@/lib/seo/schema";
 import "@/css/village-hero.css";
 import "@/css/village-page.css";
+import "@/css/listing-directory.css";
+import "@/css/guide-related.css";
 
 export const dynamic = "force-dynamic";
 export const dynamicParams = true;
@@ -154,6 +159,75 @@ export default async function GuidePage({ params }: GuidePageProps) {
   const introBlocks = guide.blocks.slice(0, tocInsertIndex);
   const bodyBlocks = guide.blocks.slice(tocInsertIndex);
   const headingIds = buildGuideH2IdByIndex(guide.blocks);
+  const { slugs: relatedSlugs, heading: relatedHeading } =
+    await getGuideSidebarRelated(guide.slug);
+  const relatedGuides =
+    relatedSlugs.length > 0
+      ? await getPublishedGuidesInOrder(relatedSlugs)
+      : [];
+  const fourthH2Index = guide.blocks
+    .map((block, index) =>
+      block.type === "heading" && block.level === 2 ? index : -1,
+    )
+    .filter((index) => index >= 0)[3];
+  const hasFaq = guide.blocks.some((block) => block.type === "faq");
+  const inlineRelated =
+    relatedGuides.length > 0 && fourthH2Index !== undefined ? (
+      <RelatedGuideCards
+        guides={relatedGuides}
+        fromSlug={guide.slug}
+        placement="inline"
+        layout="carousel"
+        heading={relatedHeading}
+      />
+    ) : null;
+  const endRelated =
+    relatedGuides.length > 0 ? (
+      <RelatedGuideCards
+        guides={relatedGuides}
+        fromSlug={guide.slug}
+        placement="end"
+        layout="carousel"
+        heading="Keep planning"
+      />
+    ) : null;
+  const relatedInsert =
+    inlineRelated || endRelated
+      ? {
+          inlineBeforeBlockIndex: fourthH2Index,
+          inline: inlineRelated ?? undefined,
+          beforeFaq: endRelated ?? undefined,
+        }
+      : undefined;
+
+  const articleBody = (
+    <>
+      <p className="font-label-caps text-[10px] tracking-widest text-limestone uppercase mb-4">
+        {guide.category}
+      </p>
+      <h1 className="font-display-lg text-[40px] sm:text-[48px] md:text-[56px] text-primary leading-tight mb-10 md:mb-14">
+        {guide.title}
+      </h1>
+      <GuideBlockRenderer
+        blocks={introBlocks}
+        headingIds={headingIds}
+        relatedInsert={relatedInsert}
+      />
+      <GuideToc blocks={guide.blocks} />
+      <GuideBlockRenderer
+        blocks={bodyBlocks}
+        blockOffset={tocInsertIndex}
+        headingIds={headingIds}
+        relatedInsert={relatedInsert}
+      />
+      {!hasFaq && endRelated ? (
+        <div className="lg:hidden">{endRelated}</div>
+      ) : null}
+      {(BEFORE_YOU_GO_GUIDE_SLUGS as readonly string[]).includes(guide.slug) ? (
+        <BeforeYouGoSection currentSlug={guide.slug} />
+      ) : null}
+    </>
+  );
 
   return (
     <>
@@ -183,26 +257,29 @@ export default async function GuidePage({ params }: GuidePageProps) {
         />
       ) : null}
       <main className="bg-background text-on-background pt-6 pb-16 md:pt-8 md:pb-24 lg:pt-10 lg:pb-32">
-        <article className="mx-auto max-w-3xl px-margin-mobile md:px-margin-desktop">
-          <p className="font-label-caps text-[10px] tracking-widest text-limestone uppercase mb-4">
-            {guide.category}
-          </p>
-          <h1 className="font-display-lg text-[40px] sm:text-[48px] md:text-[56px] text-primary leading-tight mb-10 md:mb-14">
-            {guide.title}
-          </h1>
-          <GuideBlockRenderer blocks={introBlocks} headingIds={headingIds} />
-          <GuideToc blocks={guide.blocks} />
-          <GuideBlockRenderer
-            blocks={bodyBlocks}
-            blockOffset={tocInsertIndex}
-            headingIds={headingIds}
-          />
-          {(BEFORE_YOU_GO_GUIDE_SLUGS as readonly string[]).includes(
-            guide.slug,
-          ) ? (
-            <BeforeYouGoSection currentSlug={guide.slug} />
-          ) : null}
-        </article>
+        {relatedGuides.length === 0 ? (
+          <article className="mx-auto max-w-3xl px-margin-mobile md:px-margin-desktop">
+            {articleBody}
+          </article>
+        ) : (
+          <div className="guide-related-layout mx-auto px-margin-mobile md:px-margin-desktop">
+            <article className="min-w-0">{articleBody}</article>
+            <aside
+              className="guide-related-sidebar hidden lg:block"
+              aria-label={relatedHeading}
+            >
+              <h2 className="font-headline-md text-[22px] md:text-[26px] text-primary leading-tight mb-8">
+                {relatedHeading}
+              </h2>
+              <RelatedGuideCards
+                guides={relatedGuides}
+                fromSlug={guide.slug}
+                placement="sidebar"
+                layout="stack"
+              />
+            </aside>
+          </div>
+        )}
       </main>
     </>
   );
