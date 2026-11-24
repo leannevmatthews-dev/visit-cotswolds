@@ -43,8 +43,8 @@ export default async function HomePage() {
           <div className="absolute inset-0 z-0">
             <div className="relative h-full w-full">
               <Image
-                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/bourton%20autumn.jpg"
-                alt="Cotswolds countryside"
+                src="https://pwwpxxeploahbcpubhnx.supabase.co/storage/v1/object/public/village-images/homepage/homepage-hero-winter.webp"
+                alt="Frost on open farmland at sunrise, with a bare oak tree and mist in the valley"
                 className="absolute inset-0 w-full h-full object-cover"
                 fill
                 priority
@@ -53,7 +53,7 @@ export default async function HomePage() {
               />
               <div className="absolute inset-0 image-overlay-gradient opacity-80" />
               <Link
-                href="/villages/bourton-on-the-water"
+                href="/guides/christmas-in-the-cotswolds"
                 className="absolute bottom-4 left-4 z-10 border px-3 py-1.5 font-label-caps text-label-caps text-[var(--color-limestone)] transition-colors hover:text-[color-mix(in_srgb,var(--color-limestone)_85%,white)]"
                 style={{
                   fontFamily: "var(--font-body)",
@@ -64,8 +64,11 @@ export default async function HomePage() {
                   borderRadius: "var(--radius-xl)",
                 }}
               >
-                Bourton on the Water
+                The Cotswolds at Christmas
               </Link>
+              <span className="absolute bottom-4 right-4 z-10 max-w-[min(100%,14rem)] text-right font-body-sm text-[10px] leading-snug text-white/70 md:text-[11px]">
+                Photo: Colin Watts / Unsplash
+              </span>
             </div>
           </div>
 
