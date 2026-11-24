@@ -64,7 +64,7 @@ export default async function HomePage() {
                   borderRadius: "var(--radius-xl)",
                 }}
               >
-                The Cotswolds at Christmas
+                The Cotswolds at Christmas guide
               </Link>
               <span className="absolute bottom-4 right-4 z-10 max-w-[min(100%,14rem)] text-right font-body-sm text-[10px] leading-snug text-white/70 md:text-[11px]">
                 Photo: Colin Watts / Unsplash
