@@ -52,23 +52,25 @@ export default async function HomePage() {
                 quality={75}
               />
               <div className="absolute inset-0 image-overlay-gradient opacity-80" />
-              <Link
-                href="/guides/christmas-in-the-cotswolds"
-                className="absolute bottom-4 left-4 z-10 border px-3 py-1.5 font-label-caps text-label-caps text-[var(--color-limestone)] transition-colors hover:text-[color-mix(in_srgb,var(--color-limestone)_85%,white)]"
-                style={{
-                  fontFamily: "var(--font-body)",
-                  backgroundColor:
-                    "color-mix(in srgb, var(--color-surface) 70%, transparent)",
-                  borderColor:
-                    "color-mix(in srgb, var(--color-outline-variant) 35%, transparent)",
-                  borderRadius: "var(--radius-xl)",
-                }}
-              >
-                The Cotswolds at Christmas guide
-              </Link>
-              <span className="absolute bottom-4 right-4 z-10 max-w-[min(100%,14rem)] text-right font-body-sm text-[10px] leading-snug text-white/70 md:text-[11px]">
-                Photo: Colin Watts / Unsplash
-              </span>
+              <div className="absolute bottom-6 left-4 right-4 z-10 flex flex-col items-start gap-2">
+                <Link
+                  href="/guides/christmas-in-the-cotswolds"
+                  className="border px-3 py-1.5 font-label-caps text-label-caps text-[var(--color-limestone)] transition-colors hover:text-[color-mix(in_srgb,var(--color-limestone)_85%,white)]"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    backgroundColor:
+                      "color-mix(in srgb, var(--color-surface) 70%, transparent)",
+                    borderColor:
+                      "color-mix(in srgb, var(--color-outline-variant) 35%, transparent)",
+                    borderRadius: "var(--radius-xl)",
+                  }}
+                >
+                  The Cotswolds at Christmas guide
+                </Link>
+                <span className="font-body-sm text-[10px] leading-snug text-white/70 md:text-[11px]">
+                  Photo: Colin Watts
+                </span>
+              </div>
             </div>
           </div>
 

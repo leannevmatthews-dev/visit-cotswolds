@@ -1,3 +1,6 @@
+import { PLACES_TO_EAT_HERO_IMAGE } from "@/lib/places-to-eat-data";
+import { THINGS_TO_DO_HERO_IMAGE } from "@/lib/things-to-do-data";
+
 export const JOURNEY_CARDS = [
   {
     href: "/villages",
@@ -20,16 +23,14 @@ export const JOURNEY_CARDS = [
     label: "EAT & DRINK",
     title: "Food & Drink",
     alt: "Fine dining scene in a historic pub",
-    image:
-      "https://bucklandmanor.co.uk/wp-content/uploads/sites/8/2026/01/4H0A8786-4-1000px.jpg",
+    image: PLACES_TO_EAT_HERO_IMAGE,
   },
   {
     href: "/things-to-do",
     label: "EXPLORE",
     title: "Things To Do",
     alt: "Painswick Rococo Garden in the Cotswolds",
-    image:
-      "https://www.rococogarden.org.uk/wp-content/uploads/2025/04/2-2.png",
+    image: THINGS_TO_DO_HERO_IMAGE,
   },
   {
     href: "/whats-on",
