@@ -259,6 +259,11 @@ function ListingCard({
             <span className="font-label-caps text-[10px] tracking-widest text-limestone uppercase">
               {listing.category}
             </span>
+            {listing.pinned ? (
+              <span className="font-label-caps text-[10px] tracking-widest text-on-surface-variant/70 uppercase">
+                Pinned
+              </span>
+            ) : null}
             {showPriceLevel && listing.priceLevel != null && (
               <span
                 className="font-body-sm text-on-surface-variant tracking-widest"

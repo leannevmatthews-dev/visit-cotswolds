@@ -14,6 +14,8 @@ export type DirectoryListing = {
   familyFriendly?: boolean;
   /** Geographic zone for villages index filtering (north, central, south). */
   listingArea?: string;
+  /** Shown on the guides listing when the guide has a pin_order. */
+  pinned?: boolean;
 };
 
 export type DirectoryFilterFlag = "dogFriendly" | "familyFriendly";

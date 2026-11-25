@@ -15,6 +15,7 @@ function guideRowToListing(guide: GuideRow): DirectoryListing {
     imageUrl: guide.hero_image_url ?? "",
     imageAlt: guide.hero_image_alt ?? guide.title,
     websiteUrl: `/guides/${guide.slug}`,
+    pinned: guide.pin_order != null,
   };
 }
 

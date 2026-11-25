@@ -3,7 +3,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { GuidesContent } from "@/components/guides/guides-content";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { getBreadcrumbJsonLd } from "@/lib/seo/schema";
-import { getAllPublishedGuides } from "@/lib/guides/queries";
+import { getPublishedGuidesForListing } from "@/lib/guides/queries";
 import "@/css/listing-directory.css";
 import "@/css/village-hero.css";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function GuidesPage() {
-  const guides = await getAllPublishedGuides();
+  const guides = await getPublishedGuidesForListing();
 
   return (
     <>

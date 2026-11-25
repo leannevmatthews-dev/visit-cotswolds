@@ -25,6 +25,8 @@ export type GuideRow = {
   created_at: string;
   updated_at: string;
   sidebar_related?: string[] | null;
+  /** Lower numbers appear first on the guides listing. Null means not pinned. */
+  pin_order?: number | null;
 };
 
 export type RelatedGuide = {
@@ -95,6 +97,23 @@ export async function getAllPublishedGuides(): Promise<GuideRow[]> {
       "id, slug, title, meta_title, meta_description, category, hero_image_url, hero_image_alt, hero_image_credit, status, published_at, created_at, updated_at",
     )
     .eq("status", "published")
+    .order("published_at", { ascending: false });
+
+  if (error) throw new Error(`Failed to fetch guides: ${error.message}`);
+  return (data ?? []) as GuideRow[];
+}
+
+const LISTING_GUIDE_COLUMNS =
+  "id, slug, title, meta_title, meta_description, category, hero_image_url, hero_image_alt, hero_image_credit, status, published_at, created_at, updated_at, pin_order";
+
+/** Published guides for /guides: pinned first (pin_order asc), then newest. */
+export async function getPublishedGuidesForListing(): Promise<GuideRow[]> {
+  const supabase = createReadClient();
+  const { data, error } = await supabase
+    .from("guides")
+    .select(LISTING_GUIDE_COLUMNS)
+    .eq("status", "published")
+    .order("pin_order", { ascending: true, nullsFirst: false })
     .order("published_at", { ascending: false });
 
   if (error) throw new Error(`Failed to fetch guides: ${error.message}`);
